@@ -18,6 +18,7 @@ def generateNamespaceJSDoc(namespace):
     formatter = Formatter()
     formatter.addLine('/**')
     formatter.addLine(' * ', '@namespace ', namespace['description'])
+    formatter.addLine(' * ', '@since ', namespace['since'])
     formatter.addLine(' */')
     return formatter.getResult()
 
@@ -37,6 +38,7 @@ def generateMethodJSDoc(method):
     if method['returntype'] != 'void':
         formatter.addLine(prefix, '@returns {', method['returntype'] + '}')
 
+    formatter.addLine(' * ', '@since ', method['since'])
     formatter.addLine(' */')
     return formatter.getResult()
 
