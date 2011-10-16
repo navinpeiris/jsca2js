@@ -1,9 +1,38 @@
 #!/usr/bin/python
 
 import json
+import re
 from formatter import Formatter
 
 METHOD_INDENTATION = 4
+
+HTML_LINK_REGEX = '<a href=\"(.*?)\">(.*?)</a>'
+HTML_TARGET_SUFFIX = '.html'
+
+def htmlToJsDocTarget(htmlTarget):
+    if '-' in htmlTarget:
+        return htmlTarget.partition('-')[0]
+    if htmlTarget.endswith(HTML_TARGET_SUFFIX):
+        return htmlTarget[0:-len(HTML_TARGET_SUFFIX)]
+    return htmlTarget
+
+
+def createJsDocLink(target):
+    return '{@link ' + target + '}'
+
+
+def convertLinks(jsDoc):
+    result = jsDoc
+    for linkMatcher in re.finditer(HTML_LINK_REGEX, jsDoc):
+        htmlLink = linkMatcher.group(0)
+        htmlTarget = linkMatcher.group(1)
+
+        jsDocTarget = htmlToJsDocTarget(htmlTarget)
+        jsDocLink = createJsDocLink(jsDocTarget)
+
+        result = result.replace(htmlLink, jsDocLink)
+    return result
+
 
 def sanitize(id):
     if id == 'default':
@@ -38,7 +67,7 @@ def generateNamespaceJSDoc(namespace):
         formatter.addLine(prefix, example['code'])
 
     formatter.addLine(' */')
-    return formatter.getResult()
+    return convertLinks(formatter.getResult())
 
 
 def generatePropertyJSDoc(property):
@@ -53,7 +82,8 @@ def generatePropertyJSDoc(property):
     formatter.addLine(prefix, '@type ', property['type'])
     formatter.addLine(prefix, '@since ', property['since'])
     formatter.addLine(' */')
-    return formatter.getResult()
+
+    return convertLinks(formatter.getResult())
 
 
 def generateMethodJSDoc(method):
@@ -73,7 +103,8 @@ def generateMethodJSDoc(method):
 
     formatter.addLine(' * ', '@since ', method['since'])
     formatter.addLine(' */')
-    return formatter.getResult()
+
+    return convertLinks(formatter.getResult())
 
 
 def formatParams(params):
