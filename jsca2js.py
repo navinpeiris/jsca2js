@@ -14,9 +14,16 @@ def decodeJsonFromFile(filePath):
     return json.JSONDecoder().decode(jsonFile.read())
 
 
+def generateNamespaceJSDoc(namespace):
+    formatter = Formatter()
+    formatter.addLine('/**')
+    formatter.addLine(' * ', '@namespace ', namespace['description'])
+    formatter.addLine(' */')
+    return formatter.getResult()
+
+
 def generateMethodJSDoc(method):
     formatter = Formatter(METHOD_INDENTATION)
-    formatter.newLine()
     formatter.addLine('/**')
 
     prefix = ' * '
@@ -42,7 +49,7 @@ def formatParams(params):
 def formatMethods(namespace):
     formatter = Formatter(METHOD_INDENTATION)
     for method in namespace['methods']:
-        formatter.addLine(generateMethodJSDoc(method))
+        formatter.add(generateMethodJSDoc(method))
         formatter.addLine('this.', method['name'], ' = function(', formatParams(method['parameters']), ") {")
         formatter.addLine('}')
         formatter.newLine()
@@ -50,9 +57,13 @@ def formatMethods(namespace):
 
 
 def formatNamespace(namespace):
+    namespaceName = namespace[0]
+    namespaceContent = namespace[1]
+
     formatter = Formatter()
-    formatter.addLine(namespace[0], ' = (function() {').newLine()
-    formatter.addLine(formatMethods(namespace[1]))
+    formatter.add(generateNamespaceJSDoc(namespaceContent))
+    formatter.addLine(namespaceName, ' = (function() {').newLine()
+    formatter.addLine(formatMethods(namespaceContent))
     formatter.addLine('}());').newLine()
     return formatter.getResult()
 

@@ -3,13 +3,15 @@ class Formatter:
         self.indent = ' ' * indentation
         self.result = ''
 
-    def addLine(self, *args):
-        self.result += self.indent + ''.join(args) + '\n'
+    def add(self, *args):
+        self.result += ''.join(args)
         return self
 
+    def addLine(self, *args):
+        return self.add(self.indent).add(''.join(args)).newLine()
+
     def newLine(self):
-        self.result += '\n'
-        return self
+        return self.add('\n')
 
     def getResult(self):
         return self.result
