@@ -20,8 +20,9 @@ def generateNamespaceJSDoc(namespace):
 
     prefix = ' * '
     if namespace['notes']:
-        formatter.addLine(prefix, '<em>Notes:</em> ', namespace['notes'])
+        formatter.addLine(prefix, 'Notes: ', namespace['notes'])
 
+    formatter.addLine(prefix, 'platforms:', ', '.join(namespace['platforms']))
     formatter.addLine(prefix, '@namespace ', namespace['description'])
     formatter.addLine(prefix, '@since ', namespace['since'])
     formatter.addLine(' */')
