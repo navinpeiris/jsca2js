@@ -31,6 +31,12 @@ def generateNamespaceJSDoc(namespace):
     formatter.addLine(prefix, 'platforms:', ', '.join(namespace['platforms']))
     formatter.addLine(prefix, '@namespace ', namespace['description'])
     formatter.addLine(prefix, '@since ', namespace['since'])
+
+    for example in namespace['examples']:
+        formatter.addLine(prefix)
+        formatter.addLine(prefix, '@example ', example['description'])
+        formatter.addLine(prefix, example['code'])
+
     formatter.addLine(' */')
     return formatter.getResult()
 
@@ -44,8 +50,8 @@ def generatePropertyJSDoc(property):
     formatter.addLine(prefix, property['value'])
     formatter.addLine(prefix, 'platforms:', ', '.join(property['platforms']))
 
-    formatter.addLine(' * ', '@type ', property['type'])
-    formatter.addLine(' * ', '@since ', property['since'])
+    formatter.addLine(prefix, '@type ', property['type'])
+    formatter.addLine(prefix, '@since ', property['since'])
     formatter.addLine(' */')
     return formatter.getResult()
 
