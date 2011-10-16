@@ -17,8 +17,13 @@ def decodeJsonFromFile(filePath):
 def generateNamespaceJSDoc(namespace):
     formatter = Formatter()
     formatter.addLine('/**')
-    formatter.addLine(' * ', '@namespace ', namespace['description'])
-    formatter.addLine(' * ', '@since ', namespace['since'])
+
+    prefix = ' * '
+    if namespace['notes']:
+        formatter.addLine(prefix, '<em>Notes:</em> ', namespace['notes'])
+
+    formatter.addLine(prefix, '@namespace ', namespace['description'])
+    formatter.addLine(prefix, '@since ', namespace['since'])
     formatter.addLine(' */')
     return formatter.getResult()
 
