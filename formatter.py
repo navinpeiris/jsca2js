@@ -1,3 +1,10 @@
+#!/usr/bin/env python
+
+__author__ = "Navin Peiris"
+__copyright__ = "Copyright 2011, Navin Peiris. All rights reserved."
+__email__ = "navinpeiris@gmail.com"
+__status__ = "Development"
+
 class Formatter:
     def __init__(self, indentation=0):
         self.indent = ' ' * indentation

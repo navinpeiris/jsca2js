@@ -1,6 +1,10 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 
-import json
+__author__ = "Navin Peiris"
+__copyright__ = "Copyright 2011, Navin Peiris. All rights reserved."
+__email__ = "navinpeiris@gmail.com"
+__status__ = "Development"
+
 import re
 from formatter import Formatter
 
@@ -34,40 +38,11 @@ def convertLinks(jsDoc):
     return result
 
 
-def sanitize(id):
+def convertIds(id):
+    """ Converts invalid JavaScript identifiers to acceptable versions."""
     if id == 'default':
         return '_' + id
     return id
-
-
-def decodeJsonFromFile(filePath):
-    try:
-        jsonFile = open(filePath, 'r')
-    except IOError:
-        raise Exception('Unable to find JSON API file in path: ' + filePath)
-
-    return json.JSONDecoder().decode(jsonFile.read())
-
-
-def generateNamespaceJSDoc(namespace):
-    formatter = Formatter()
-    formatter.addLine('/**')
-
-    prefix = ' * '
-    if namespace['notes']:
-        formatter.addLine(prefix, 'Notes: ', namespace['notes'])
-
-    formatter.addLine(prefix, 'platforms:', ', '.join(namespace['platforms']))
-    formatter.addLine(prefix, '@namespace ', namespace['description'])
-    formatter.addLine(prefix, '@since ', namespace['since'])
-
-    for example in namespace['examples']:
-        formatter.addLine(prefix)
-        formatter.addLine(prefix, '@example ', example['description'])
-        formatter.addLine(prefix, example['code'])
-
-    formatter.addLine(' */')
-    return convertLinks(formatter.getResult())
 
 
 def generatePropertyJSDoc(property):
@@ -96,7 +71,7 @@ def generateMethodJSDoc(method):
     formatter.addLine(prefix, 'platforms:', ', '.join(method['platforms']))
 
     for param in method['parameters']:
-        formatter.addLine(prefix, '@param {', param['type'], '} ', sanitize(param['name']), ' ', param['description'])
+        formatter.addLine(prefix, '@param {', param['type'], '} ', convertIds(param['name']), ' ', param['description'])
 
     if method['returntype'] != 'void':
         formatter.addLine(prefix, '@returns {', method['returntype'] + '}')
@@ -107,8 +82,29 @@ def generateMethodJSDoc(method):
     return convertLinks(formatter.getResult())
 
 
+def generateNamespaceJSDoc(namespace):
+    formatter = Formatter()
+    formatter.addLine('/**')
+
+    prefix = ' * '
+    if namespace['notes']:
+        formatter.addLine(prefix, 'Notes: ', namespace['notes'])
+
+    formatter.addLine(prefix, 'platforms:', ', '.join(namespace['platforms']))
+    formatter.addLine(prefix, '@namespace ', namespace['description'])
+    formatter.addLine(prefix, '@since ', namespace['since'])
+
+    for example in namespace['examples']:
+        formatter.addLine(prefix)
+        formatter.addLine(prefix, '@example ', example['description'])
+        formatter.addLine(prefix, example['code'])
+
+    formatter.addLine(' */')
+    return convertLinks(formatter.getResult())
+
+
 def formatParams(params):
-    paramNames = [sanitize(param['name']) for param in params]
+    paramNames = [convertIds(param['name']) for param in params]
     return ', '.join(paramNames)
 
 
@@ -116,7 +112,7 @@ def formatProperties(namespace):
     formatter = Formatter(METHOD_INDENTATION)
     for property in namespace['properties']:
         formatter.add(generatePropertyJSDoc(property))
-        formatter.addLine('this.', sanitize(property['name']), ' = null;')
+        formatter.addLine('this.', convertIds(property['name']), ' = null;')
         formatter.newLine()
     return formatter.getResult()
 
@@ -125,14 +121,14 @@ def formatMethods(namespace):
     formatter = Formatter(METHOD_INDENTATION)
     for method in namespace['methods']:
         formatter.add(generateMethodJSDoc(method))
-        formatter.addLine('this.', sanitize(method['name']), ' = function(', formatParams(method['parameters']), ") {")
+        formatter.addLine('this.', convertIds(method['name']), ' = function(', formatParams(method['parameters']), ") {")
         formatter.addLine('};')
         formatter.newLine()
     return formatter.getResult()
 
 
 def formatNamespace(namespace):
-    namespaceName = sanitize(namespace[0])
+    namespaceName = convertIds(namespace[0])
     namespaceContent = namespace[1]
 
     formatter = Formatter()
@@ -144,22 +140,8 @@ def formatNamespace(namespace):
     return formatter.getResult()
 
 
-def writeFile(string):
-    filename = 'titanium.js'
-    file = open(filename, 'w')
-    file.write(string)
-    file.close()
-
-
-def main():
-    fileName = './api.json'
-    jsonApi = decodeJsonFromFile(fileName)
-
+def convertJsca2Js(jsca):
     javascript = ''
-    for namespace in sorted(jsonApi.items()):
+    for namespace in sorted(jsca.items()):
         javascript += formatNamespace(namespace)
-
-    writeFile(javascript)
-
-if __name__ == "__main__":
-    main()
+    return javascript
