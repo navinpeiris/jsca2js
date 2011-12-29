@@ -11,7 +11,8 @@ IDE's such as [IntelliJ IDEA](http://www.jetbrains.com/idea/) or [Sublime Text 2
 (using [SublimeCodeIntel plugin](https://github.com/Kronuz/SublimeCodeIntel) for code completion and documentation 
 lookup. 
 
-The code completion will help you write this kind of stuff easily:
+If you drop this Javascript API in the root of your Titanium mobile project,
+smart JS editors' code completion will help you write this kind of stuff easily:
 
     var win = Ti.UI.createWindow(options);
     win.<completion for Window proxy object>
