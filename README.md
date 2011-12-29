@@ -8,7 +8,7 @@ JavaScript files.
 A good use case for these utilities is to generate a JavaScript file for the 
 [Titanium JSON API](http://developer.appcelerator.com/apidoc/mobile/1.8.0.1/api.json), which can then be used in 
 IDE's such as [IntelliJ IDEA](http://www.jetbrains.com/idea/) or [Sublime Text 2](http://www.sublimetext.com/) 
-(using [SublimeCodeIntel plugin](https://github.com/Kronuz/SublimeCodeIntel) for code completion and documentation 
+(using [SublimeCodeIntel plugin](https://github.com/Kronuz/SublimeCodeIntel)) for code completion and documentation 
 lookup. 
 
 If you drop this Javascript API in the root of your Titanium mobile project,
