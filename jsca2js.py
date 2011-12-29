@@ -69,7 +69,7 @@ def formatReturn(returns):
 
 def formatType(typeDef):
     if type(typeDef) is list:
-        typ = '(' + '|'.join(typeDef) + ')'
+        typ = '|'.join(typeDef)
     else:
         typ = typeDef
     return typ.replace('.', '_')
@@ -110,7 +110,7 @@ def generateMethodJSDoc(method):
         formatter.addLine(prefix, 'platforms: ', ', '.join(getPlatforms(method['platforms'])))
 
     for param in method['parameters']:
-        formatter.addLine(prefix, '@param ', formatType(param['type']), ' ', 
+        formatter.addLine(prefix, '@param {', formatType(param['type']), '} ', 
             convertIds(param['name']), ' ', param[KEYS['description']])
 
     if 'returntype' in method and method['returntype'] == 'void':

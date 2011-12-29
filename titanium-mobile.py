@@ -18,7 +18,7 @@ TITANIUM_VERSION_REGEX = re.compile('\d\.\d\.\d')
 
 def retrieveJsca(version):
     url = 'http://developer.appcelerator.com/apidoc/mobile/' + version + '/api.json'
-    cache = 'api-' + version + '.json'
+    cache = 'titanium-js/api-' + version + '.json'
     try:
         if os.path.isfile(cache):
             file = open(cache, 'r')
@@ -65,7 +65,7 @@ def main():
     print('Converting API to JavaScript')
     javascript = convertJsca2Js(jsca, version)
 
-    outputFilePath = 'titanium-mobile-' + version + '.js'
+    outputFilePath = 'titanium-js/titanium-mobile-' + version + '.js'
     print('Writing JavaScript to file: ' + outputFilePath)
     writeJsFile(javascript, outputFilePath)
 

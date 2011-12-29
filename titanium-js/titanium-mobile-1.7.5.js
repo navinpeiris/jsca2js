@@ -41,8 +41,8 @@ var Titanium = {
     /**
      * add an event listener for the instance to receive view triggered events
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function to invoke when the event is fired
+     * @param {string} name name of the event
+     * @param {function} callback callback function to invoke when the event is fired
      * @returns void
      * @since 0.1
      */
@@ -52,7 +52,7 @@ var Titanium = {
     /**
      * create and return an instance of {@link Titanium.Blob}
      * platforms: android, iphone, ipad
-     * @param object parameters (optional) a dictionary object properties defined in {@link Titanium.Blob}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.Blob}
      * @since 0.1
      */
     createBlob:function(parameters) {
@@ -61,7 +61,7 @@ var Titanium = {
     /**
      * <p>creates a new buffer based on the params</p>
      * platforms: android, iphone, ipad
-     * @param object params Key value pairs.  You can include: <tt>value</tt>, an optional initial value which will be encoded and placed in the buffer.  If value is a Number, <tt>type</tt> must also be set. This is simply a convenient way of calling {@link Titanium.Codec.encodeString} or {@link Titanium.Codec.encodeNumber} and placing the encoded value in the returned buffer.  <tt>length</tt>: the length of the buffer, with a default of 0 unless <tt>value</tt> is specified, in which case the length of the encoded <tt>value</tt>.  <tt>type</tt>, the type of data encoding to use with <tt>value</tt>, with {@link Titanium.Codec.CHARSET_UTF8} being the default if <tt>value</tt> is a String, else this argument is required in the case of <tt>value</tt> being a number.  <tt>byteOrder</tt>, the byte order of this buffer, with the default being the OS native byte order is used by default (see {@link Titanium.Codec.getNativeByteOrder}).
+     * @param {object} params Key value pairs.  You can include: <tt>value</tt>, an optional initial value which will be encoded and placed in the buffer.  If value is a Number, <tt>type</tt> must also be set. This is simply a convenient way of calling {@link Titanium.Codec.encodeString} or {@link Titanium.Codec.encodeNumber} and placing the encoded value in the returned buffer.  <tt>length</tt>: the length of the buffer, with a default of 0 unless <tt>value</tt> is specified, in which case the length of the encoded <tt>value</tt>.  <tt>type</tt>, the type of data encoding to use with <tt>value</tt>, with {@link Titanium.Codec.CHARSET_UTF8} being the default if <tt>value</tt> is a String, else this argument is required in the case of <tt>value</tt> being a number.  <tt>byteOrder</tt>, the byte order of this buffer, with the default being the OS native byte order is used by default (see {@link Titanium.Codec.getNativeByteOrder}).
      * @since 0.1
      */
     createBuffer:function(params) {
@@ -70,8 +70,8 @@ var Titanium = {
     /**
      * fire a synthesized event to the views listener
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param object event event object
+     * @param {string} name name of the event
+     * @param {object} event event object
      * @returns void
      * @since 0.1
      */
@@ -81,7 +81,7 @@ var Titanium = {
     /**
      * <p>one or more filenames to include as if the Javascript code was written in place.  This is similar to a C <tt>#include</tt> function.</p>
      * platforms: android, iphone, ipad
-     * @param string name filename to include
+     * @param {string} name filename to include
      * @returns void
      * @since 0.1
      */
@@ -91,8 +91,8 @@ var Titanium = {
     /**
      * remove a previously added event listener
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function passed in addEventListener
+     * @param {string} name name of the event
+     * @param {function} callback callback function passed in addEventListener
      * @returns void
      * @since 0.1
      */
@@ -111,8 +111,8 @@ Titanium.API = {
     /**
      * add an event listener for the instance to receive view triggered events
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function to invoke when the event is fired
+     * @param {string} name name of the event
+     * @param {function} callback callback function to invoke when the event is fired
      * @returns void
      * @since 0.1
      */
@@ -122,7 +122,7 @@ Titanium.API = {
     /**
      * <p>function for logging debug messages</p>
      * platforms: android, iphone, ipad
-     * @param string message the message to log
+     * @param {string} message the message to log
      * @returns void
      * @since 0.1
      */
@@ -132,7 +132,7 @@ Titanium.API = {
     /**
      * <p>function for logging error messages</p>
      * platforms: android, iphone, ipad
-     * @param string message the message to log
+     * @param {string} message the message to log
      * @returns void
      * @since 0.1
      */
@@ -142,8 +142,8 @@ Titanium.API = {
     /**
      * fire a synthesized event to the views listener
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param object event event object
+     * @param {string} name name of the event
+     * @param {object} event event object
      * @returns void
      * @since 0.1
      */
@@ -153,7 +153,7 @@ Titanium.API = {
     /**
      * <p>function for logging informational messages</p>
      * platforms: android, iphone, ipad
-     * @param string message the message to log
+     * @param {string} message the message to log
      * @returns void
      * @since 0.1
      */
@@ -163,8 +163,8 @@ Titanium.API = {
     /**
      * <p>function for logging custom severity messages</p>
      * platforms: android, iphone, ipad
-     * @param string level the log level
-     * @param string message the message to log
+     * @param {string} level the log level
+     * @param {string} message the message to log
      * @returns void
      * @since 0.1
      */
@@ -174,8 +174,8 @@ Titanium.API = {
     /**
      * remove a previously added event listener
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function passed in addEventListener
+     * @param {string} name name of the event
+     * @param {function} callback callback function passed in addEventListener
      * @returns void
      * @since 0.1
      */
@@ -185,7 +185,7 @@ Titanium.API = {
     /**
      * <p>function for logging warning messages</p>
      * platforms: android, iphone, ipad
-     * @param string message the message to log
+     * @param {string} message the message to log
      * @returns void
      * @since 0.1
      */
@@ -216,8 +216,8 @@ Titanium.Accelerometer = {
     /**
      * add an event listener for the instance to receive view triggered events
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function to invoke when the event is fired
+     * @param {string} name name of the event
+     * @param {function} callback callback function to invoke when the event is fired
      * @returns void
      * @since 0.1
      */
@@ -227,8 +227,8 @@ Titanium.Accelerometer = {
     /**
      * fire a synthesized event to the views listener
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param object event event object
+     * @param {string} name name of the event
+     * @param {object} event event object
      * @returns void
      * @since 0.1
      */
@@ -238,8 +238,8 @@ Titanium.Accelerometer = {
     /**
      * remove a previously added event listener
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function passed in addEventListener
+     * @param {string} name name of the event
+     * @param {function} callback callback function passed in addEventListener
      * @returns void
      * @since 0.1
      */
@@ -263,9 +263,9 @@ Titanium.Analytics = {
     /**
      * <p>send a generic event for the application session</p>
      * platforms: android, iphone, ipad
-     * @param string type the event type
-     * @param string name the event name
-     * @param object data event data or null if not specified. the object must be serializable as JSON
+     * @param {string} type the event type
+     * @param {string} name the event name
+     * @param {object} data event data or null if not specified. the object must be serializable as JSON
      * @returns void
      * @since 0.1
      */
@@ -275,8 +275,8 @@ Titanium.Analytics = {
     /**
      * add an event listener for the instance to receive view triggered events
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function to invoke when the event is fired
+     * @param {string} name name of the event
+     * @param {function} callback callback function to invoke when the event is fired
      * @returns void
      * @since 0.1
      */
@@ -286,8 +286,8 @@ Titanium.Analytics = {
     /**
      * <p>send an analytics feature event for the application session</p>
      * platforms: android, iphone, ipad
-     * @param string name the event name
-     * @param object data event data or null if not specified. the object must be serializable as JSON
+     * @param {string} name the event name
+     * @param {object} data event data or null if not specified. the object must be serializable as JSON
      * @returns void
      * @since 0.1
      */
@@ -297,8 +297,8 @@ Titanium.Analytics = {
     /**
      * fire a synthesized event to the views listener
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param object event event object
+     * @param {string} name name of the event
+     * @param {object} event event object
      * @returns void
      * @since 0.1
      */
@@ -308,10 +308,10 @@ Titanium.Analytics = {
     /**
      * <p>send an analytics nav event for the application session</p>
      * platforms: android, iphone, ipad
-     * @param string from the <tt>from</tt> location in the nav event
-     * @param string to the <tt>to</tt> location in the nav event
-     * @param string name the event name
-     * @param object data event data or null if not specified. the object must be serializable as JSON
+     * @param {string} from the <tt>from</tt> location in the nav event
+     * @param {string} to the <tt>to</tt> location in the nav event
+     * @param {string} name the event name
+     * @param {object} data event data or null if not specified. the object must be serializable as JSON
      * @returns void
      * @since 0.1
      */
@@ -321,8 +321,8 @@ Titanium.Analytics = {
     /**
      * remove a previously added event listener
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function passed in addEventListener
+     * @param {string} name name of the event
+     * @param {function} callback callback function passed in addEventListener
      * @returns void
      * @since 0.1
      */
@@ -332,8 +332,8 @@ Titanium.Analytics = {
     /**
      * <p>send a analytics settings event for the application session</p>
      * platforms: android, iphone, ipad
-     * @param string name the event name
-     * @param object data event data or null if not specified. the object must be serializable as JSON
+     * @param {string} name the event name
+     * @param {object} data event data or null if not specified. the object must be serializable as JSON
      * @returns void
      * @since 0.1
      */
@@ -343,11 +343,11 @@ Titanium.Analytics = {
     /**
      * <p>send an analytics timed event for the application session</p>
      * platforms: android, iphone, ipad
-     * @param string name the event name
-     * @param date start the event start as a Date object
-     * @param date stop the event end as a Date object
-     * @param float duration the event duration
-     * @param object data event data or null if not specified. the object must be serializable as JSON
+     * @param {string} name the event name
+     * @param {date} start the event start as a Date object
+     * @param {date} stop the event end as a Date object
+     * @param {float} duration the event duration
+     * @param {object} data event data or null if not specified. the object must be serializable as JSON
      * @returns void
      * @since 0.1
      */
@@ -357,8 +357,8 @@ Titanium.Analytics = {
     /**
      * <p>send an analytics user event for the application session</p>
      * platforms: android, iphone, ipad
-     * @param string name the event name
-     * @param object data event data or null if not specified. the object must be serializable as JSON
+     * @param {string} name the event name
+     * @param {object} data event data or null if not specified. the object must be serializable as JSON
      * @returns void
      * @since 0.1
      */
@@ -1771,8 +1771,8 @@ Titanium.Android = {
     /**
      * add an event listener for the instance to receive view triggered events
      * platforms: android
-     * @param string name name of the event
-     * @param function callback callback function to invoke when the event is fired
+     * @param {string} name name of the event
+     * @param {function} callback callback function to invoke when the event is fired
      * @returns void
      * @since 1.5
      */
@@ -1806,7 +1806,7 @@ Titanium.Android = {
     /**
      * <p>Crate a {@link Titanium.Android.Notification}. Used to notify the user of an event.</p>
      * platforms: android
-     * @param object options Options dictionary
+     * @param {object} options Options dictionary
      * @since 1.5
      */
     createNotification:function(options) {
@@ -1815,8 +1815,8 @@ Titanium.Android = {
     /**
      * <p>Create a {@link Titanium.Android.PendingIntent} to be used inside a {@link Titanium.Android.Notification}</p>
      * platforms: android
-     * @param {@link Titanium_Android_Intent_html} intent The Intent that will be executed
-     * @param int flags (optional, default: 0) Can be any of {@link Titanium.Android.FLAG_CANCEL_CURRENT}, {@link Titanium.Android.FLAG_NO_CREATE}, {@link Titanium.Android.FLAG_ONE_SHOT}, {@link Titanium.Android.FLAG_UPDATE_CURRENT}
+     * @param {{@link Titanium_Android_Intent_html}} intent The Intent that will be executed
+     * @param {int} flags (optional, default: 0) Can be any of {@link Titanium.Android.FLAG_CANCEL_CURRENT}, {@link Titanium.Android.FLAG_NO_CREATE}, {@link Titanium.Android.FLAG_ONE_SHOT}, {@link Titanium.Android.FLAG_UPDATE_CURRENT}
      * @since 1.5
      */
     createPendingIntent:function(intent, flags) {
@@ -1825,7 +1825,7 @@ Titanium.Android = {
     /**
      * <p>Create a {@link Titanium.Android.Service} so you can start/stop it and listen for events from it.</p>
      * platforms: android
-     * @param {@link Titanium_Android_Intent_html} intent An Intent created with {@link Titanium.Android.createServiceIntent} which specifies the service to be instantiated.
+     * @param {{@link Titanium_Android_Intent_html}} intent An Intent created with {@link Titanium.Android.createServiceIntent} which specifies the service to be instantiated.
      * @since 1.5
      */
     createService:function(intent) {
@@ -1834,7 +1834,7 @@ Titanium.Android = {
     /**
      * <p>Create an {@link Titanium.Android.Intent} to be used to start a Service.</p>
      * platforms: android
-     * @param object options Options dictionary -- pass in a <tt>url</tt> option to specify the path to a javascript-based service you create.
+     * @param {object} options Options dictionary -- pass in a <tt>url</tt> option to specify the path to a javascript-based service you create.
      * @since 1.5
      */
     createServiceIntent:function(options) {
@@ -1843,8 +1843,8 @@ Titanium.Android = {
     /**
      * fire a synthesized event to the views listener
      * platforms: android
-     * @param string name name of the event
-     * @param object event event object
+     * @param {string} name name of the event
+     * @param {object} event event object
      * @returns void
      * @since 1.5
      */
@@ -1854,7 +1854,7 @@ Titanium.Android = {
     /**
      * <p>Check on state of Service.</p>
      * platforms: android
-     * @param {@link Titanium_Android_Intent_html} intent An Intent created with {@link Titanium.Android.createServiceIntent} which specifies the service to check.
+     * @param {{@link Titanium_Android_Intent_html}} intent An Intent created with {@link Titanium.Android.createServiceIntent} which specifies the service to check.
      * @since 1.5
      */
     isServiceRunning:function(intent) {
@@ -1863,8 +1863,8 @@ Titanium.Android = {
     /**
      * remove a previously added event listener
      * platforms: android
-     * @param string name name of the event
-     * @param function callback callback function passed in addEventListener
+     * @param {string} name name of the event
+     * @param {function} callback callback function passed in addEventListener
      * @returns void
      * @since 1.5
      */
@@ -1874,7 +1874,7 @@ Titanium.Android = {
     /**
      * <p>Start a simple service</p>
      * platforms: android
-     * @param {@link Titanium_Android_Intent_html} intent An Intent created with {@link Titanium.Android.createServiceIntent} which specifies the service to start.
+     * @param {{@link Titanium_Android_Intent_html}} intent An Intent created with {@link Titanium.Android.createServiceIntent} which specifies the service to start.
      * @returns void
      * @since 1.5
      */
@@ -1884,7 +1884,7 @@ Titanium.Android = {
     /**
      * <p>Stop a simple service that was started with <tt>startService</tt>.</p>
      * platforms: android
-     * @param {@link Titanium_Android_Intent_html} intent An Intent created with {@link Titanium.Android.createServiceIntent} which specifies the service to stop.
+     * @param {{@link Titanium_Android_Intent_html}} intent An Intent created with {@link Titanium.Android.createServiceIntent} which specifies the service to stop.
      * @returns void
      * @since 1.5
      */
@@ -1965,8 +1965,8 @@ Titanium.Android.Activity = {
     /**
      * <p>Get an Android or Application string using the passed-in Resource ID and optional format arguments. Also see Android's documentation for {@link http://developer.android.com/reference/android/content/Context.html#getString(int)} and {@link http://developer.android.com/guide/topics/resources/string}</p>
      * platforms: android
-     * @param int resourceId A Resource ID from the Application or Android.
-     * @param Array<Object> format Optional format arguments for the String resource
+     * @param {int} resourceId A Resource ID from the Application or Android.
+     * @param {Array<Object>} format Optional format arguments for the String resource
      * @since 1.5
      */
     getString:function(resourceId, format) {
@@ -1975,7 +1975,7 @@ Titanium.Android.Activity = {
     /**
      * <p>Set the requested Activity orientation. Also see Android's documentation for {@link http://developer.android.com/reference/android/app/Activity.html#setRequestedOrientation(int)}</p>
      * platforms: android
-     * @param int orientation Can be one of {@link Titanium.Android.SCREEN_ORIENTATION_BEHIND}, {@link Titanium.Android.SCREEN_ORIENTATION_LANDSCAPE}, {@link Titanium.Android.SCREEN_ORIENTATION_NOSENSOR}, {@link Titanium.Android.SCREEN_ORIENTATION_PORTRAIT}, {@link Titanium.Android.SCREEN_ORIENTATION_SENSOR}, {@link Titanium.Android.SCREEN_ORIENTATION_UNSPECIFIED}, {@link Titanium.Android.SCREEN_ORIENTATION_USER}
+     * @param {int} orientation Can be one of {@link Titanium.Android.SCREEN_ORIENTATION_BEHIND}, {@link Titanium.Android.SCREEN_ORIENTATION_LANDSCAPE}, {@link Titanium.Android.SCREEN_ORIENTATION_NOSENSOR}, {@link Titanium.Android.SCREEN_ORIENTATION_PORTRAIT}, {@link Titanium.Android.SCREEN_ORIENTATION_SENSOR}, {@link Titanium.Android.SCREEN_ORIENTATION_UNSPECIFIED}, {@link Titanium.Android.SCREEN_ORIENTATION_USER}
      * @returns void
      * @since 1.5
      */
@@ -1985,8 +1985,8 @@ Titanium.Android.Activity = {
     /**
      * <p>Sets the result of this Activity using an Intent. This should be used in the case when the Activity responds to startActivityForResult. Also see Android's documentation for {@link http://developer.android.com/reference/android/app/Activity.html#setResult(int)}</p>
      * platforms: android
-     * @param int resultCode The result code for this Activity. Must be one of {@link Titanium.Android.RESULT_OK}, {@link Titanium.Android.RESULT_CANCELED}, {@link Titanium.Android.RESULT_FIRST_USER}
-     * @param {@link Titanium_Android_Intent_html} intent An optional {@link Titanium.Android.Intent} with extra result data
+     * @param {int} resultCode The result code for this Activity. Must be one of {@link Titanium.Android.RESULT_OK}, {@link Titanium.Android.RESULT_CANCELED}, {@link Titanium.Android.RESULT_FIRST_USER}
+     * @param {{@link Titanium_Android_Intent_html}} intent An optional {@link Titanium.Android.Intent} with extra result data
      * @returns void
      * @since 1.5
      */
@@ -1996,7 +1996,7 @@ Titanium.Android.Activity = {
     /**
      * <p>Starts a new Activity, using the passed in Intent as the description. Also see Android's documentation for {@link http://developer.android.com/reference/android/app/Activity.html#startActivity(android.content.Intent)}</p>
      * platforms: android
-     * @param {@link Titanium_Android_Intent_html} intent Description of the Activity to start
+     * @param {{@link Titanium_Android_Intent_html}} intent Description of the Activity to start
      * @returns void
      * @since 1.5
      */
@@ -2006,8 +2006,8 @@ Titanium.Android.Activity = {
     /**
      * <p>The same as <tt>startActivity</tt>, but also accepts a callback function for handling the result of the started Activity. Also see Android's documentation for {@link http://developer.android.com/reference/android/app/Activity.html#startActivityForResult(android.content.Intent, int)}</p>
      * platforms: android
-     * @param {@link Titanium_Android_Intent_html} intent Description of the Activity to start
-     * @param function callback A callback function that is executed when the Activity has set it's result. See example in {@link Titanium.Android.Activity}.
+     * @param {{@link Titanium_Android_Intent_html}} intent Description of the Activity to start
+     * @param {function} callback A callback function that is executed when the Activity has set it's result. See example in {@link Titanium.Android.Activity}.
      * @returns void
      * @since 1.5
      */
@@ -2296,8 +2296,8 @@ Titanium.Android.Calendar = {
     /**
      * add an event listener for the instance to receive view triggered events
      * platforms: android
-     * @param string name name of the event
-     * @param function callback callback function to invoke when the event is fired
+     * @param {string} name name of the event
+     * @param {function} callback callback function to invoke when the event is fired
      * @returns void
      * @since 1.5
      */
@@ -2307,7 +2307,7 @@ Titanium.Android.Calendar = {
     /**
      * create and return an instance of {@link Titanium.Android.Calendar.Alert}
      * platforms: android
-     * @param object parameters (optional) a dictionary object properties defined in {@link Titanium.Android.Calendar.Alert}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.Android.Calendar.Alert}
      * @since 1.5
      */
     createAlert:function(parameters) {
@@ -2316,7 +2316,7 @@ Titanium.Android.Calendar = {
     /**
      * create and return an instance of {@link Titanium.Android.Calendar.Calendar}
      * platforms: android
-     * @param object parameters (optional) a dictionary object properties defined in {@link Titanium.Android.Calendar.Calendar}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.Android.Calendar.Calendar}
      * @since 1.5
      */
     createCalendar:function(parameters) {
@@ -2325,7 +2325,7 @@ Titanium.Android.Calendar = {
     /**
      * create and return an instance of {@link Titanium.Android.Calendar.Event}
      * platforms: android
-     * @param object parameters (optional) a dictionary object properties defined in {@link Titanium.Android.Calendar.Event}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.Android.Calendar.Event}
      * @since 1.5
      */
     createEvent:function(parameters) {
@@ -2334,7 +2334,7 @@ Titanium.Android.Calendar = {
     /**
      * create and return an instance of {@link Titanium.Android.Calendar.Reminder}
      * platforms: android
-     * @param object parameters (optional) a dictionary object properties defined in {@link Titanium.Android.Calendar.Reminder}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.Android.Calendar.Reminder}
      * @since 1.5
      */
     createReminder:function(parameters) {
@@ -2343,8 +2343,8 @@ Titanium.Android.Calendar = {
     /**
      * fire a synthesized event to the views listener
      * platforms: android
-     * @param string name name of the event
-     * @param object event event object
+     * @param {string} name name of the event
+     * @param {object} event event object
      * @returns void
      * @since 1.5
      */
@@ -2354,7 +2354,7 @@ Titanium.Android.Calendar = {
     /**
      * <p>Returns the {@link Titanium.Android.Calendar.Calendar} object specified by the given integer id.</p>
      * platforms: android
-     * @param int id The system id of the calendar to be retrieved.
+     * @param {int} id The system id of the calendar to be retrieved.
      * @since 1.5
      */
     getCalendarById:function(id) {
@@ -2363,8 +2363,8 @@ Titanium.Android.Calendar = {
     /**
      * remove a previously added event listener
      * platforms: android
-     * @param string name name of the event
-     * @param function callback callback function passed in addEventListener
+     * @param {string} name name of the event
+     * @param {function} callback callback function passed in addEventListener
      * @returns void
      * @since 1.5
      */
@@ -2485,7 +2485,7 @@ Titanium.Android.Calendar.Calendar = {
     /**
      * <p>Add an event to the calendar. Returns the created {@link Titanium.Android.Calendar.Event}.</p>
      * platforms: android
-     * @param object properties An object defining the properties of the event.  These correspond to properties of {@link Titanium.Android.Calendar.Event}.
+     * @param {object} properties An object defining the properties of the event.  These correspond to properties of {@link Titanium.Android.Calendar.Event}.
      * @since 1.5
      */
     createEvent:function(properties) {
@@ -2494,7 +2494,7 @@ Titanium.Android.Calendar.Calendar = {
     /**
      * <p>Returns the {@link Titanium.Android.Calendar.Event} object for the event with the given integer id.</p>
      * platforms: android
-     * @param int id The integer id of the event to return.
+     * @param {int} id The integer id of the event to return.
      * @since 1.5
      */
     getEventById:function(id) {
@@ -2503,8 +2503,8 @@ Titanium.Android.Calendar.Calendar = {
     /**
      * <p>Returns an array of {@link Titanium.Android.Calendar.Event} objects with all events in the given date range.</p>
      * platforms: android
-     * @param date date1 The start date.
-     * @param date date2 The end date.
+     * @param {date} date1 The start date.
+     * @param {date} date2 The end date.
      * @since 1.5
      */
     getEventsBetweenDates:function(date1, date2) {
@@ -2513,9 +2513,9 @@ Titanium.Android.Calendar.Calendar = {
     /**
      * <p>Returns an array of {@link Titanium.Android.Calendar.Event} objects with all events on the given date.</p>
      * platforms: android
-     * @param int year The year of the desired date.
-     * @param int month The month of the desired date.  The month is zero-based, therefore January is 0 and December is 11.
-     * @param int day The day for which events should be returned.
+     * @param {int} year The year of the desired date.
+     * @param {int} month The month of the desired date.  The month is zero-based, therefore January is 0 and December is 11.
+     * @param {int} day The day for which events should be returned.
      * @since 1.5
      */
     getEventsInDate:function(year, month, day) {
@@ -2524,8 +2524,8 @@ Titanium.Android.Calendar.Calendar = {
     /**
      * <p>Returns an array of {@link Titanium.Android.Calendar.Event} objects with all events in the given month.</p>
      * platforms: android
-     * @param int year The year of the desired month.
-     * @param int month The month for which events should be returned.  The month is zero-based, therefore January is 0 and December is 11.
+     * @param {int} year The year of the desired month.
+     * @param {int} month The month for which events should be returned.  The month is zero-based, therefore January is 0 and December is 11.
      * @since 1.5
      */
     getEventsInMonth:function(year, month) {
@@ -2534,7 +2534,7 @@ Titanium.Android.Calendar.Calendar = {
     /**
      * <p>Returns an array of {@link Titanium.Android.Calendar.Event} objects with all events in the given year.</p>
      * platforms: android
-     * @param int year The year for which all events should be returned.
+     * @param {int} year The year for which all events should be returned.
      * @since 1.5
      */
     getEventsInYear:function(year) {
@@ -2668,7 +2668,7 @@ Titanium.Android.Calendar.Event = {
     /**
      * <p>create an alert for this event.  Pass a dictionary object containing attributes corresponding to properties of {@link Titanium.Android.Calendar.Alert}.  Returns the created alert.</p>
      * platforms: android
-     * @param object data Properties for the new alert, corresponding to properties of {@link Titanium.Android.Calendar.Alert}.
+     * @param {object} data Properties for the new alert, corresponding to properties of {@link Titanium.Android.Calendar.Alert}.
      * @since 1.5
      */
     createAlert:function(data) {
@@ -2677,7 +2677,7 @@ Titanium.Android.Calendar.Event = {
     /**
      * <p>create a reminder for this event.  Pass a dictionary object containing attributes corresponding to properties of {@link Titanium.Android.Calendar.Reminder}.  Returns the created Reminder.</p>
      * platforms: android
-     * @param object data Properties for the new reminder, corresponding to properties of {@link Titanium.Android.Calendar.Reminder}.
+     * @param {object} data Properties for the new reminder, corresponding to properties of {@link Titanium.Android.Calendar.Reminder}.
      * @since 1.5
      */
     createReminder:function(data) {
@@ -2686,7 +2686,7 @@ Titanium.Android.Calendar.Event = {
     /**
      * <p>Returns the value of the given extended property key string.</p>
      * platforms: android
-     * @param string name The name of the extended property whose value should be returned.
+     * @param {string} name The name of the extended property whose value should be returned.
      * @since 1.5
      */
     getExtendedProperty:function(name) {
@@ -2695,8 +2695,8 @@ Titanium.Android.Calendar.Event = {
     /**
      * <p>Set the value of the named extended property.</p>
      * platforms: android
-     * @param string name The name of the extended property whose value should be set.
-     * @param string value The value to which to set the named extended property.
+     * @param {string} name The name of the extended property whose value should be set.
+     * @param {string} value The value to which to set the named extended property.
      * @returns void
      * @since 1.5
      */
@@ -2833,7 +2833,7 @@ Titanium.Android.Intent = {
     /**
      * <p>Add a category to this Intent. See the category constants in {@link Titanium.Android}.</p>
      * platforms: android
-     * @param string name The category name. See the category constants in {@link Titanium.Android}
+     * @param {string} name The category name. See the category constants in {@link Titanium.Android}
      * @returns void
      * @since 1.5
      */
@@ -2843,7 +2843,7 @@ Titanium.Android.Intent = {
     /**
      * <p>augment the existing flags on the Intent.</p>
      * platforms: android
-     * @param int flags the flags to add to the existing set.
+     * @param {int} flags the flags to add to the existing set.
      * @returns void
      * @since 1.5
      */
@@ -2853,7 +2853,7 @@ Titanium.Android.Intent = {
     /**
      * <p>Get a boolean property from this Intent</p>
      * platforms: android
-     * @param string name The boolean property to get
+     * @param {string} name The boolean property to get
      * @since 1.5
      */
     getBooleanExtra:function(name) {
@@ -2871,7 +2871,7 @@ Titanium.Android.Intent = {
     /**
      * <p>Get a double property from this Intent</p>
      * platforms: android
-     * @param string name The double property to get
+     * @param {string} name The double property to get
      * @since 1.5
      */
     getDoubleExtra:function(name) {
@@ -2880,7 +2880,7 @@ Titanium.Android.Intent = {
     /**
      * <p>Get a int property from this Intent</p>
      * platforms: android
-     * @param string name The int property to get
+     * @param {string} name The int property to get
      * @since 1.5
      */
     getIntExtra:function(name) {
@@ -2889,7 +2889,7 @@ Titanium.Android.Intent = {
     /**
      * <p>Get a long property from this Intent</p>
      * platforms: android
-     * @param string name The long property to get
+     * @param {string} name The long property to get
      * @since 1.5
      */
     getLongExtra:function(name) {
@@ -2898,7 +2898,7 @@ Titanium.Android.Intent = {
     /**
      * <p>Get a string property from this Intent</p>
      * platforms: android
-     * @param string name The string property to get
+     * @param {string} name The string property to get
      * @since 1.5
      */
     getStringExtra:function(name) {
@@ -2907,7 +2907,7 @@ Titanium.Android.Intent = {
     /**
      * <p>Returns whether or not this Intent has a property</p>
      * platforms: android
-     * @param string name The property name to check for
+     * @param {string} name The property name to check for
      * @since 1.5
      */
     hasExtra:function(name) {
@@ -2916,8 +2916,8 @@ Titanium.Android.Intent = {
     /**
      * <p>Put an extra property on this Intent</p>
      * platforms: android
-     * @param string name The property name
-     * @param object value The property value
+     * @param {string} name The property name
+     * @param {object} value The property value
      * @returns void
      * @since 1.5
      */
@@ -2927,8 +2927,8 @@ Titanium.Android.Intent = {
     /**
      * <p>Put a URI property on this Intent (useful for {@link Titanium.Android.EXTRA_STREAM})</p>
      * platforms: android
-     * @param string name The property name
-     * @param string value The URI string
+     * @param {string} name The property name
+     * @param {string} value The URI string
      * @returns void
      * @since 1.5
      */
@@ -2993,7 +2993,7 @@ Titanium.Android.Menu = {
     /**
      * <p>creates a {@link Titanium.Android.MenuItem} from the passed creation options.</p>
      * platforms: android
-     * @param object options creation options. Supported options are itemId, groupId, title, and order.
+     * @param {object} options creation options. Supported options are itemId, groupId, title, and order.
      * @since 1.5
      */
     add:function(options) {
@@ -3020,7 +3020,7 @@ Titanium.Android.Menu = {
     /**
      * <p>locate a {@link Titanium.Android.MenuItem}</p>
      * platforms: android
-     * @param object item integer itemId or {@link Titanium.Android.MenuItem}
+     * @param {object} item integer itemId or {@link Titanium.Android.MenuItem}
      * @since 1.5
      */
     findItem:function(item) {
@@ -3029,7 +3029,7 @@ Titanium.Android.Menu = {
     /**
      * <p>return the {@link Titanium.Android.MenuItem} at a specific index</p>
      * platforms: android
-     * @param int index item at index where index < size()
+     * @param {int} index item at index where index < size()
      * @since 1.5
      */
     getItem:function(index) {
@@ -3046,7 +3046,7 @@ Titanium.Android.Menu = {
     /**
      * <p>remove all {@link Titanium.Android.MenuItem} with the specified groupId</p>
      * platforms: android
-     * @param int groupId groupId of items to remove.
+     * @param {int} groupId groupId of items to remove.
      * @returns void
      * @since 1.5
      */
@@ -3056,7 +3056,7 @@ Titanium.Android.Menu = {
     /**
      * <p>remove a specific {@link Titanium.Android.MenuItem} by the specified itemId</p>
      * platforms: android
-     * @param int itemId itemId of item to remove.
+     * @param {int} itemId itemId of item to remove.
      * @returns void
      * @since 1.5
      */
@@ -3066,8 +3066,8 @@ Titanium.Android.Menu = {
     /**
      * <p>enable or disable a group of {@link Titanium.Android.MenuItem} by groupId</p>
      * platforms: android
-     * @param int groupId groupId to enable or disable
-     * @param boolean enabled true to enable, false to disable.
+     * @param {int} groupId groupId to enable or disable
+     * @param {boolean} enabled true to enable, false to disable.
      * @returns void
      * @since 1.5
      */
@@ -3077,8 +3077,8 @@ Titanium.Android.Menu = {
     /**
      * <p>show or hide a group of {@link Titanium.Android.MenuItem} by groupId</p>
      * platforms: android
-     * @param int groupId groupId to enable or disable
-     * @param boolean visible true to show, false to hide
+     * @param {int} groupId groupId to enable or disable
+     * @param {boolean} visible true to show, false to hide
      * @returns void
      * @since 1.5
      */
@@ -3217,7 +3217,7 @@ Titanium.Android.MenuItem = {
     /**
      * <p>set the condensed title for the item</p>
      * platforms: android
-     * @param string condensedTitle new condensed title
+     * @param {string} condensedTitle new condensed title
      * @returns void
      * @since 1.5
      */
@@ -3227,7 +3227,7 @@ Titanium.Android.MenuItem = {
     /**
      * <p>set the enabled state of the item</p>
      * platforms: android
-     * @param boolean enabled true to enable item, false to disable
+     * @param {boolean} enabled true to enable item, false to disable
      * @returns void
      * @since 1.5
      */
@@ -3237,7 +3237,7 @@ Titanium.Android.MenuItem = {
     /**
      * <p>set the icon for the item</p>
      * platforms: android
-     * @param object icon icon to use with the item
+     * @param {object} icon icon to use with the item
      * @returns void
      * @since 1.5
      */
@@ -3247,7 +3247,7 @@ Titanium.Android.MenuItem = {
     /**
      * <p>set the title for the item</p>
      * platforms: android
-     * @param string title new title
+     * @param {string} title new title
      * @returns void
      * @since 1.5
      */
@@ -3257,7 +3257,7 @@ Titanium.Android.MenuItem = {
     /**
      * <p>set the visible state of the item</p>
      * platforms: android
-     * @param boolean visible true to show the item, false to hide
+     * @param {boolean} visible true to show the item, false to hide
      * @returns void
      * @since 1.5
      */
@@ -3505,8 +3505,8 @@ Titanium.Android.NotificationManager = {
     /**
      * add an event listener for the instance to receive view triggered events
      * platforms: android
-     * @param string name name of the event
-     * @param function callback callback function to invoke when the event is fired
+     * @param {string} name name of the event
+     * @param {function} callback callback function to invoke when the event is fired
      * @returns void
      * @since 1.5
      */
@@ -3516,7 +3516,7 @@ Titanium.Android.NotificationManager = {
     /**
      * <p>Cancel a previously shown notification.</p>
      * platforms: android
-     * @param int id The id you assigned to a notification.
+     * @param {int} id The id you assigned to a notification.
      * @returns void
      * @since 1.5
      */
@@ -3535,8 +3535,8 @@ Titanium.Android.NotificationManager = {
     /**
      * fire a synthesized event to the views listener
      * platforms: android
-     * @param string name name of the event
-     * @param object event event object
+     * @param {string} name name of the event
+     * @param {object} event event object
      * @returns void
      * @since 1.5
      */
@@ -3546,8 +3546,8 @@ Titanium.Android.NotificationManager = {
     /**
      * <p>Add a persistent notification to the status bar.</p>
      * platforms: android
-     * @param int id An id that may be used to cancel a shown notification.
-     * @param {@link Titanium_Android_Notification} notification An instance of {@link Titanium.Android.Notification} created with {@link Titanium.Android.createNotification}.
+     * @param {int} id An id that may be used to cancel a shown notification.
+     * @param {{@link Titanium_Android_Notification}} notification An instance of {@link Titanium.Android.Notification} created with {@link Titanium.Android.createNotification}.
      * @returns void
      * @since 1.5
      */
@@ -3557,8 +3557,8 @@ Titanium.Android.NotificationManager = {
     /**
      * remove a previously added event listener
      * platforms: android
-     * @param string name name of the event
-     * @param function callback callback function passed in addEventListener
+     * @param {string} name name of the event
+     * @param {function} callback callback function passed in addEventListener
      * @returns void
      * @since 1.5
      */
@@ -3725,9 +3725,9 @@ Titanium.Android.RemoteViews = {
     /**
      * <p>Call a method taking one boolean on a view in the layout for this RemoteViews. See Android's documentation for {@link http://developer.android.com/reference/android/widget/RemoteViews.html#setBoolean(int, java.lang.String, boolean)}</p>
      * platforms: android
-     * @param int viewId The resource id of the View (also see {@link Titanium.App.Android.R})
-     * @param string methodName The name of the method to call
-     * @param boolean value The boolean to pass to the method
+     * @param {int} viewId The resource id of the View (also see {@link Titanium.App.Android.R})
+     * @param {string} methodName The name of the method to call
+     * @param {boolean} value The boolean to pass to the method
      * @returns void
      * @since 1.6
      */
@@ -3737,10 +3737,10 @@ Titanium.Android.RemoteViews = {
     /**
      * <p>Sets a chronometer's base, format, and started flag. See Android's documentation for {@link http://developer.android.com/reference/android/widget/RemoteViews.html#setChronometer(int, long, java.lang.String, boolean)}</p>
      * platforms: android
-     * @param int viewId The resource id of the Chronometer whose values will change (also see {@link Titanium.App.Android.R})
-     * @param date base The time at which the timer would have read 0:00
-     * @param string format The Chronometer format string, or null to simply display the timer value
-     * @param boolean started True if you want the clock to be started, false if not
+     * @param {int} viewId The resource id of the Chronometer whose values will change (also see {@link Titanium.App.Android.R})
+     * @param {date} base The time at which the timer would have read 0:00
+     * @param {string} format The Chronometer format string, or null to simply display the timer value
+     * @param {boolean} started True if you want the clock to be started, false if not
      * @returns void
      * @since 1.6
      */
@@ -3750,9 +3750,9 @@ Titanium.Android.RemoteViews = {
     /**
      * <p>Call a method taking one double on a view in the layout for this RemoteViews. See Android's documentation for {@link http://developer.android.com/reference/android/widget/RemoteViews.html#setDouble(int, java.lang.String, double)}</p>
      * platforms: android
-     * @param int viewId The resource id of the View (also see {@link Titanium.App.Android.R})
-     * @param string methodName The name of the method to call
-     * @param double value The double to pass to the method
+     * @param {int} viewId The resource id of the View (also see {@link Titanium.App.Android.R})
+     * @param {string} methodName The name of the method to call
+     * @param {double} value The double to pass to the method
      * @returns void
      * @since 1.6
      */
@@ -3762,8 +3762,8 @@ Titanium.Android.RemoteViews = {
     /**
      * <p>Sets an ImageView's source given a Resource ID. See Android's documentation for {@link http://developer.android.com/reference/android/widget/RemoteViews.html#setImageViewResource(int, int)}</p>
      * platforms: android
-     * @param int viewId The resource id of the ImageView whose image should change (also see {@link Titanium.App.Android.R})
-     * @param int srcId The resource id of the image
+     * @param {int} viewId The resource id of the ImageView whose image should change (also see {@link Titanium.App.Android.R})
+     * @param {int} srcId The resource id of the image
      * @returns void
      * @since 1.6
      */
@@ -3773,8 +3773,8 @@ Titanium.Android.RemoteViews = {
     /**
      * <p>Sets an ImageView's source given a URI (supports both Android and Titanium URLs). See Android's documentation for {@link http://developer.android.com/reference/android/widget/RemoteViews.html#setImageViewUri(int, android.net.Uri)}</p>
      * platforms: android
-     * @param int viewId The resource id of the ImageView whose image should change (also see {@link Titanium.App.Android.R})
-     * @param string uri The URI of the image (both Android and Titanium URLs are supported)
+     * @param {int} viewId The resource id of the ImageView whose image should change (also see {@link Titanium.App.Android.R})
+     * @param {string} uri The URI of the image (both Android and Titanium URLs are supported)
      * @returns void
      * @since 1.6
      */
@@ -3784,9 +3784,9 @@ Titanium.Android.RemoteViews = {
     /**
      * <p>Call a method taking one int on a view in the layout for this RemoteViews. See Android's documentation for {@link http://developer.android.com/reference/android/widget/RemoteViews.html#setInt(int, java.lang.String, int)}</p>
      * platforms: android
-     * @param int viewId The resource id of the View (also see {@link Titanium.App.Android.R})
-     * @param string methodName The name of the method to call
-     * @param int value The int to pass to the method
+     * @param {int} viewId The resource id of the View (also see {@link Titanium.App.Android.R})
+     * @param {string} methodName The name of the method to call
+     * @param {int} value The int to pass to the method
      * @returns void
      * @since 1.6
      */
@@ -3796,8 +3796,8 @@ Titanium.Android.RemoteViews = {
     /**
      * <p>Launches a {@link Titanium.Android.PendingIntent} when the specified view is clicked. See Android's documentation for {@link http://developer.android.com/reference/android/widget/RemoteViews.html#setOnClickPendingIntent(int, android.app.PendingIntent)}</p>
      * platforms: android
-     * @param int viewId The resource id of the View to add a click listener to (also see {@link Titanium.App.Android.R})
-     * @param <tt>Ti_Android_PendingIntent</tt> pendingIntent The PendingIntent to execute when this view is clicked
+     * @param {int} viewId The resource id of the View to add a click listener to (also see {@link Titanium.App.Android.R})
+     * @param {<tt>Ti_Android_PendingIntent</tt>} pendingIntent The PendingIntent to execute when this view is clicked
      * @returns void
      * @since 1.6
      */
@@ -3807,10 +3807,10 @@ Titanium.Android.RemoteViews = {
     /**
      * <p>Sets the progress, max value, and indeterminate flag of a ProgressBar. See Android's documentation for {@link http://developer.android.com/reference/android/widget/RemoteViews.html#setProgressBar(int, int, int, boolean)}</p>
      * platforms: android
-     * @param int viewId The resource id of the ProgressBar to change (also see {@link Titanium.App.Android.R})
-     * @param int max The new max value of the ProgressBar
-     * @param int progress The new progress value of the ProgressBar (from 0..max)
-     * @param boolean indeterminate Whether or not the progress in indeterminate
+     * @param {int} viewId The resource id of the ProgressBar to change (also see {@link Titanium.App.Android.R})
+     * @param {int} max The new max value of the ProgressBar
+     * @param {int} progress The new progress value of the ProgressBar (from 0..max)
+     * @param {boolean} indeterminate Whether or not the progress in indeterminate
      * @returns void
      * @since 1.6
      */
@@ -3820,9 +3820,9 @@ Titanium.Android.RemoteViews = {
     /**
      * <p>Call a method taking one String on a view in the layout for this RemoteViews. See Android's documentation for {@link http://developer.android.com/reference/android/widget/RemoteViews.html#setString(int, java.lang.String, java.lang.String)}</p>
      * platforms: android
-     * @param int viewId The resource id of the View (also see {@link Titanium.App.Android.R})
-     * @param string methodName The name of the method to call
-     * @param string value The String to pass to the method
+     * @param {int} viewId The resource id of the View (also see {@link Titanium.App.Android.R})
+     * @param {string} methodName The name of the method to call
+     * @param {string} value The String to pass to the method
      * @returns void
      * @since 1.6
      */
@@ -3832,8 +3832,8 @@ Titanium.Android.RemoteViews = {
     /**
      * <p>Sets the text color of a view. See Android's documentation for {@link http://developer.android.com/reference/android/widget/RemoteViews.html#setTextColor(int, int)}</p>
      * platforms: android
-     * @param int viewId The resource id of the View whose text color will change (also see {@link Titanium.App.Android.R})
-     * @param int color A color as an integer
+     * @param {int} viewId The resource id of the View whose text color will change (also see {@link Titanium.App.Android.R})
+     * @param {int} color A color as an integer
      * @returns void
      * @since 1.6
      */
@@ -3843,8 +3843,8 @@ Titanium.Android.RemoteViews = {
     /**
      * <p>Sets the text of a TextView. See Android's documentation for {@link http://developer.android.com/reference/android/widget/RemoteViews.html#setTextViewText(int, java.lang.CharSequence)}</p>
      * platforms: android
-     * @param int viewId The resource id of the TextView whose text will change (also see {@link Titanium.App.Android.R})
-     * @param string text The new text of the TextView
+     * @param {int} viewId The resource id of the TextView whose text will change (also see {@link Titanium.App.Android.R})
+     * @param {string} text The new text of the TextView
      * @returns void
      * @since 1.6
      */
@@ -3854,9 +3854,9 @@ Titanium.Android.RemoteViews = {
     /**
      * <p>Call a method taking one Uri on a view in the layout for this RemoteViews. See Android's documentation for {@link http://developer.android.com/reference/android/widget/RemoteViews.html#setUri(int, java.lang.String, android.net.Uri)}</p>
      * platforms: android
-     * @param int viewId The resource id of the View (also see {@link Titanium.App.Android.R})
-     * @param string methodName The name of the method to call
-     * @param string value The URI (as a string) to pass to the method
+     * @param {int} viewId The resource id of the View (also see {@link Titanium.App.Android.R})
+     * @param {string} methodName The name of the method to call
+     * @param {string} value The URI (as a string) to pass to the method
      * @returns void
      * @since 1.6
      */
@@ -3866,8 +3866,8 @@ Titanium.Android.RemoteViews = {
     /**
      * <p>Sets the visibility of a View. See Android's documentation for {@link http://developer.android.com/reference/android/widget/RemoteViews.html#setViewVisibility(int, int)}</p>
      * platforms: android
-     * @param int viewId The resource id of the View whose visibility will change (also see {@link Titanium.App.Android.R})
-     * @param int visibility The visibility, one of {@link Titanium.Android.VISIBLE}, {@link Titanium.Android.INVISIBLE}, or {@link Titanium.Android.GONE}
+     * @param {int} viewId The resource id of the View whose visibility will change (also see {@link Titanium.App.Android.R})
+     * @param {int} visibility The visibility, one of {@link Titanium.Android.VISIBLE}, {@link Titanium.Android.INVISIBLE}, or {@link Titanium.Android.GONE}
      * @returns void
      * @since 1.6
      */
@@ -4068,8 +4068,8 @@ Titanium.App = {
     /**
      * add an event listener for the instance to receive view triggered events
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function to invoke when the event is fired
+     * @param {string} name name of the event
+     * @param {function} callback callback function to invoke when the event is fired
      * @returns void
      * @since 0.1
      */
@@ -4079,10 +4079,10 @@ Titanium.App = {
     /**
      * fire a synthesized event to the views listener
      * platforms: android, iphone, ipad
-     * @param string name the event name
-     * @param object data optional data payload for the event. NOTE: you can only pass JSON serializable data since the data must be transportable between contexts.
-     * @param string name name of the event
-     * @param object event event object
+     * @param {string} name the event name
+     * @param {object} data optional data payload for the event. NOTE: you can only pass JSON serializable data since the data must be transportable between contexts.
+     * @param {string} name name of the event
+     * @param {object} event event object
      * @returns void
      * @since 0.1
      */
@@ -4100,8 +4100,8 @@ Titanium.App = {
     /**
      * remove a previously added event listener
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function passed in addEventListener
+     * @param {string} name name of the event
+     * @param {function} callback callback function passed in addEventListener
      * @returns void
      * @since 0.1
      */
@@ -4144,8 +4144,8 @@ Titanium.App.Android = {
     /**
      * add an event listener for the instance to receive view triggered events
      * platforms: android
-     * @param string name name of the event
-     * @param function callback callback function to invoke when the event is fired
+     * @param {string} name name of the event
+     * @param {function} callback callback function to invoke when the event is fired
      * @returns void
      * @since 1.5
      */
@@ -4155,8 +4155,8 @@ Titanium.App.Android = {
     /**
      * fire a synthesized event to the views listener
      * platforms: android
-     * @param string name name of the event
-     * @param object event event object
+     * @param {string} name name of the event
+     * @param {object} event event object
      * @returns void
      * @since 1.5
      */
@@ -4166,8 +4166,8 @@ Titanium.App.Android = {
     /**
      * remove a previously added event listener
      * platforms: android
-     * @param string name name of the event
-     * @param function callback callback function passed in addEventListener
+     * @param {string} name name of the event
+     * @param {function} callback callback function passed in addEventListener
      * @returns void
      * @since 1.5
      */
@@ -4215,8 +4215,8 @@ Titanium.App.Properties = {
     /**
      * add an event listener for the instance to receive view triggered events
      * platforms: iphone, android, ipad
-     * @param string name name of the event
-     * @param function callback callback function to invoke when the event is fired
+     * @param {string} name name of the event
+     * @param {function} callback callback function to invoke when the event is fired
      * @returns void
      * @since 0.5
      */
@@ -4226,8 +4226,8 @@ Titanium.App.Properties = {
     /**
      * fire a synthesized event to the views listener
      * platforms: iphone, android, ipad
-     * @param string name name of the event
-     * @param object event event object
+     * @param {string} name name of the event
+     * @param {object} event event object
      * @returns void
      * @since 0.5
      */
@@ -4237,8 +4237,8 @@ Titanium.App.Properties = {
     /**
      * <p>return a boolean value</p>
      * platforms: iphone, android, ipad
-     * @param string property return a boolean value for property
-     * @param boolean _default optional default value if property is not found
+     * @param {string} property return a boolean value for property
+     * @param {boolean} _default optional default value if property is not found
      * @since 0.5
      */
     getBool:function(property, _default) {
@@ -4247,8 +4247,8 @@ Titanium.App.Properties = {
     /**
      * <p>return a double value</p>
      * platforms: iphone, android, ipad
-     * @param string property return a double value for property
-     * @param double _default optional default value if property is not found
+     * @param {string} property return a double value for property
+     * @param {double} _default optional default value if property is not found
      * @since 0.5
      */
     getDouble:function(property, _default) {
@@ -4257,8 +4257,8 @@ Titanium.App.Properties = {
     /**
      * <p>return an integer value</p>
      * platforms: iphone, android, ipad
-     * @param string property return a integer value for property
-     * @param int _default optional default value if property is not found
+     * @param {string} property return a integer value for property
+     * @param {int} _default optional default value if property is not found
      * @since 0.5
      */
     getInt:function(property, _default) {
@@ -4267,8 +4267,8 @@ Titanium.App.Properties = {
     /**
      * <p>return a value as an array</p>
      * platforms: iphone, android, ipad
-     * @param string property return an array value for property
-     * @param array _default optional default value if property is not found
+     * @param {string} property return an array value for property
+     * @param {array} _default optional default value if property is not found
      * @since 0.5
      */
     getList:function(property, _default) {
@@ -4277,8 +4277,8 @@ Titanium.App.Properties = {
     /**
      * <p>return a string value</p>
      * platforms: iphone, android, ipad
-     * @param string property return a string value for property
-     * @param string _default optional default value if property is not found
+     * @param {string} property return a string value for property
+     * @param {string} _default optional default value if property is not found
      * @since 0.5
      */
     getString:function(property, _default) {
@@ -4287,7 +4287,7 @@ Titanium.App.Properties = {
     /**
      * <p>returns true if the property exists</p>
      * platforms: iphone, android, ipad
-     * @param string property property name to check
+     * @param {string} property property name to check
      * @since 0.5
      */
     hasProperty:function(property) {
@@ -4304,8 +4304,8 @@ Titanium.App.Properties = {
     /**
      * remove a previously added event listener
      * platforms: iphone, android, ipad
-     * @param string name name of the event
-     * @param function callback callback function passed in addEventListener
+     * @param {string} name name of the event
+     * @param {function} callback callback function passed in addEventListener
      * @returns void
      * @since 0.5
      */
@@ -4315,7 +4315,7 @@ Titanium.App.Properties = {
     /**
      * <p>remove an existing property</p>
      * platforms: iphone, android, ipad
-     * @param string property property name to remove
+     * @param {string} property property name to remove
      * @returns void
      * @since 0.5
      */
@@ -4325,8 +4325,8 @@ Titanium.App.Properties = {
     /**
      * <p>set a property as a boolean value</p>
      * platforms: iphone, android, ipad
-     * @param string property property name
-     * @param boolean value value
+     * @param {string} property property name
+     * @param {boolean} value value
      * @returns void
      * @since 0.5
      */
@@ -4336,8 +4336,8 @@ Titanium.App.Properties = {
     /**
      * <p>set a property as a double value</p>
      * platforms: iphone, android, ipad
-     * @param string property property name
-     * @param double value value
+     * @param {string} property property name
+     * @param {double} value value
      * @returns void
      * @since 0.5
      */
@@ -4347,8 +4347,8 @@ Titanium.App.Properties = {
     /**
      * <p>set a property as an integer value</p>
      * platforms: iphone, android, ipad
-     * @param string property property name
-     * @param int value value
+     * @param {string} property property name
+     * @param {int} value value
      * @returns void
      * @since 0.5
      */
@@ -4358,8 +4358,8 @@ Titanium.App.Properties = {
     /**
      * <p>set a property as an array value</p>
      * platforms: iphone, android, ipad
-     * @param string property property name
-     * @param array value value
+     * @param {string} property property name
+     * @param {array} value value
      * @returns void
      * @since 0.5
      */
@@ -4369,8 +4369,8 @@ Titanium.App.Properties = {
     /**
      * <p>set a property as a string value</p>
      * platforms: iphone, android, ipad
-     * @param string property property name
-     * @param string value value
+     * @param {string} property property name
+     * @param {string} value value
      * @returns void
      * @since 0.5
      */
@@ -4389,8 +4389,8 @@ Titanium.App.iOS = {
     /**
      * add an event listener for the instance to receive view triggered events
      * platforms: iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function to invoke when the event is fired
+     * @param {string} name name of the event
+     * @param {function} callback callback function to invoke when the event is fired
      * @returns void
      * @since 1.5
      */
@@ -4418,7 +4418,7 @@ Titanium.App.iOS = {
     /**
      * create and return an instance of {@link Titanium.App.iOS.BackgroundService}
      * platforms: iphone, ipad
-     * @param object parameters (optional) a dictionary object properties defined in {@link Titanium.App.iOS.BackgroundService}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.App.iOS.BackgroundService}
      * @since 1.5
      */
     createBackgroundService:function(parameters) {
@@ -4427,7 +4427,7 @@ Titanium.App.iOS = {
     /**
      * create and return an instance of {@link Titanium.App.iOS.LocalNotification}
      * platforms: iphone, ipad
-     * @param object parameters (optional) a dictionary object properties defined in {@link Titanium.App.iOS.LocalNotification}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.App.iOS.LocalNotification}
      * @since 1.5
      */
     createLocalNotification:function(parameters) {
@@ -4436,8 +4436,8 @@ Titanium.App.iOS = {
     /**
      * fire a synthesized event to the views listener
      * platforms: iphone, ipad
-     * @param string name name of the event
-     * @param object event event object
+     * @param {string} name name of the event
+     * @param {object} event event object
      * @returns void
      * @since 1.5
      */
@@ -4447,7 +4447,7 @@ Titanium.App.iOS = {
     /**
      * <p>register a background service to run when the app is backgrounded</p>
      * platforms: iphone, ipad
-     * @param object params dictionary of key/values that are used to create the service. the <tt>url</tt> property should point to a local JavaScript url that will be executed when the app is backgrounded.
+     * @param {object} params dictionary of key/values that are used to create the service. the <tt>url</tt> property should point to a local JavaScript url that will be executed when the app is backgrounded.
      * @since 1.5
      */
     registerBackgroundService:function(params) {
@@ -4456,8 +4456,8 @@ Titanium.App.iOS = {
     /**
      * remove a previously added event listener
      * platforms: iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function passed in addEventListener
+     * @param {string} name name of the event
+     * @param {function} callback callback function passed in addEventListener
      * @returns void
      * @since 1.5
      */
@@ -4467,7 +4467,7 @@ Titanium.App.iOS = {
     /**
      * <p>schedule a local notification</p>
      * platforms: iphone, ipad
-     * @param object params dictionary of key/values that are used to create the notification. the <tt>date</tt> property is when the notification should fire, <tt>repeat</tt> is an optional property of one of: <tt>weekly</tt>, <tt>daily</tt>, <tt>yearly,</tt> <tt>monthly</tt>, <tt>alertBody</tt> is an optional property that is the body of the alert when the notification is displayed, <tt>alertAction</tt> is an optional property that represents the alert button text or the 'slide to unlock...' slider in place of unlock, <tt>alertLaunchImage</tt> is an optional property that specifies the launch image to display instead of Default.png when launching the application, <tt>badge</tt> is the optional badge value for the application, <tt>sound</tt> is the optional property to specify the sound to play when the notification is triggered and <tt>userInfo</tt> is the optional property which specifies data passed to the application upon launch when the notification is triggered.
+     * @param {object} params dictionary of key/values that are used to create the notification. the <tt>date</tt> property is when the notification should fire, <tt>repeat</tt> is an optional property of one of: <tt>weekly</tt>, <tt>daily</tt>, <tt>yearly,</tt> <tt>monthly</tt>, <tt>alertBody</tt> is an optional property that is the body of the alert when the notification is displayed, <tt>alertAction</tt> is an optional property that represents the alert button text or the 'slide to unlock...' slider in place of unlock, <tt>alertLaunchImage</tt> is an optional property that specifies the launch image to display instead of Default.png when launching the application, <tt>badge</tt> is the optional badge value for the application, <tt>sound</tt> is the optional property to specify the sound to play when the notification is triggered and <tt>userInfo</tt> is the optional property which specifies data passed to the application upon launch when the notification is triggered.
      * @since 1.5
      */
     scheduleLocalNotification:function(params) {
@@ -4490,8 +4490,8 @@ Titanium_App_iOS_BackgroundService.prototype = {
     /**
      * add an event listener for the instance to receive view triggered events
      * platforms: iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function to invoke when the event is fired
+     * @param {string} name name of the event
+     * @param {function} callback callback function to invoke when the event is fired
      * @returns void
      * @since 1.5
      */
@@ -4501,8 +4501,8 @@ Titanium_App_iOS_BackgroundService.prototype = {
     /**
      * fire a synthesized event to the views listener
      * platforms: iphone, ipad
-     * @param string name name of the event
-     * @param object event event object
+     * @param {string} name name of the event
+     * @param {object} event event object
      * @returns void
      * @since 1.5
      */
@@ -4512,8 +4512,8 @@ Titanium_App_iOS_BackgroundService.prototype = {
     /**
      * remove a previously added event listener
      * platforms: iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function passed in addEventListener
+     * @param {string} name name of the event
+     * @param {function} callback callback function passed in addEventListener
      * @returns void
      * @since 1.5
      */
@@ -4553,8 +4553,8 @@ Titanium_App_iOS_LocalNotification.prototype = {
     /**
      * add an event listener for the instance to receive view triggered events
      * platforms: iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function to invoke when the event is fired
+     * @param {string} name name of the event
+     * @param {function} callback callback function to invoke when the event is fired
      * @returns void
      * @since 1.5
      */
@@ -4573,8 +4573,8 @@ Titanium_App_iOS_LocalNotification.prototype = {
     /**
      * fire a synthesized event to the views listener
      * platforms: iphone, ipad
-     * @param string name name of the event
-     * @param object event event object
+     * @param {string} name name of the event
+     * @param {object} event event object
      * @returns void
      * @since 1.5
      */
@@ -4584,8 +4584,8 @@ Titanium_App_iOS_LocalNotification.prototype = {
     /**
      * remove a previously added event listener
      * platforms: iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function passed in addEventListener
+     * @param {string} name name of the event
+     * @param {function} callback callback function passed in addEventListener
      * @returns void
      * @since 1.5
      */
@@ -4604,9 +4604,9 @@ Titanium.Blob = {
     /**
      * <p>Generate a thumbnail version of an image, optionally with a border and rounded corners (currently iPhone/iPad only)</p>
      * platforms: android, iphone, ipad
-     * @param int size the size of the thumbnail, in either width or height
-     * @param int borderSize the optional width of the thumbnail's border. The default is 1.
-     * @param int cornerRadius the radius of the thumbnail's corners. The default is 0.
+     * @param {int} size the size of the thumbnail, in either width or height
+     * @param {int} borderSize the optional width of the thumbnail's border. The default is 1.
+     * @param {int} cornerRadius the radius of the thumbnail's corners. The default is 0.
      * @since 0.9
      */
     imageAsThumbnail:function(size, borderSize, cornerRadius) {
@@ -4649,9 +4649,9 @@ Titanium.BlobStream = {
     /**
      * <p>reads data from stream into a buffer.  Optional offset and length arguments to specify position in buffer in whichto start writing the read data, and the amount of data to read.</p>
      * platforms: iphone, android, ipad
-     * @param {@link Titanium_Buffer_html} buffer buffer to read stream data into
-     * @param Number offset (Optional) offset to start reading buffer data from
-     * @param Number length (Optional) length of data to read from buffer
+     * @param {{@link Titanium_Buffer_html}} buffer buffer to read stream data into
+     * @param {Number} offset (Optional) offset to start reading buffer data from
+     * @param {Number} length (Optional) length of data to read from buffer
      * @since 1.7
      */
     read:function(buffer, offset, length) {
@@ -4660,9 +4660,9 @@ Titanium.BlobStream = {
     /**
      * <p>writes data from buffer to stream. Optional offset and length arguments to specify position in buffer in which to start reading data that is written to the stream, and the length of the data to take from the buffer.</p>
      * platforms: iphone, android, ipad
-     * @param {@link Titanium_Buffer_html} buffer buffer to write to stream
-     * @param Number offset (Optional) offset to start writing buffer data from
-     * @param Number length (Optional) length of data to write from buffer
+     * @param {{@link Titanium_Buffer_html}} buffer buffer to write to stream
+     * @param {Number} offset (Optional) offset to start writing buffer data from
+     * @param {Number} length (Optional) length of data to write from buffer
      * @since 1.7
      */
     write:function(buffer, offset, length) {
@@ -4712,9 +4712,9 @@ Titanium.Buffer = {
     /**
      * <p>appends <tt>sourceBuffer</tt> to the current buffer.  Buffer is grown dynamically to accommodate the additional data if need be.  returns the number of bytes appended. Optional offset and length arguments to specify from where in -- and how much of -- source buffer to take.</p>
      * platforms: iphone, android, ipad
-     * @param {@link Titanium_Buffer} sourceBuffer buffer to append to current buffer
-     * @param Number sourceOffset (Optional) offset to start reading buffer data from
-     * @param Number sourceLength (Optional) length of data to read from buffer
+     * @param {{@link Titanium_Buffer}} sourceBuffer buffer to append to current buffer
+     * @param {Number} sourceOffset (Optional) offset to start reading buffer data from
+     * @param {Number} sourceLength (Optional) length of data to read from buffer
      * @since 1.7
      */
     append:function(sourceBuffer, sourceOffset, sourceLength) {
@@ -4732,8 +4732,8 @@ Titanium.Buffer = {
     /**
      * <p>create new copy of the current buffer.  Optional offset and length arguments to specify from where in -- and how much of -- source buffer to take.</p>
      * platforms: iphone, android, ipad
-     * @param Number offset (Optional) offset of buffer to start clone
-     * @param Number length (Optional) length of buffer data starting at offset to clone
+     * @param {Number} offset (Optional) offset of buffer to start clone
+     * @param {Number} length (Optional) length of buffer data starting at offset to clone
      * @since 1.7
      */
     clone:function(offset, length) {
@@ -4742,10 +4742,10 @@ Titanium.Buffer = {
     /**
      * <p>copies the contents of <tt>sourceBuffer</tt> into the current buffer at <tt>offset</tt>.  will not expand buffer if there is not enough room in the current buffer to accomodate all the requested data from <tt>sourceBuffer</tt>.  returns the number of bytes copied.  Optional sourceOffset and length arguments to specify from where in -- and how much of -- source buffer to take.</p>
      * platforms: iphone, android, ipad
-     * @param {@link Titanium_Buffer} sourceBuffer buffer to copy into current buffer
-     * @param Number offset offset to copy new buffer at
-     * @param Number sourceOffset (Optional) offset of sourceBuffer to copy data from
-     * @param Number sourceLength (Optional) length of data from sourceBuffer to copy
+     * @param {{@link Titanium_Buffer}} sourceBuffer buffer to copy into current buffer
+     * @param {Number} offset offset to copy new buffer at
+     * @param {Number} sourceOffset (Optional) offset of sourceBuffer to copy data from
+     * @param {Number} sourceLength (Optional) length of data from sourceBuffer to copy
      * @since 1.7
      */
     copy:function(sourceBuffer, offset, sourceOffset, sourceLength) {
@@ -4754,9 +4754,9 @@ Titanium.Buffer = {
     /**
      * <p>fills buffer with <tt>fillByte</tt>.  Optional offset and length arguments to specify that filling should occur starting at particular offset and finish when <tt>length</tt> bytes have been written or the end of the buffer is reached.</p>
      * platforms: iphone, android, ipad
-     * @param Number fillByte byte to fill buffer with
-     * @param Number offset (Optional) offset of where to start fill
-     * @param Number length (Optional) number of bytes to fill
+     * @param {Number} fillByte byte to fill buffer with
+     * @param {Number} offset (Optional) offset of where to start fill
+     * @param {Number} length (Optional) number of bytes to fill
      * @returns void
      * @since 1.7
      */
@@ -4766,10 +4766,10 @@ Titanium.Buffer = {
     /**
      * <p>inserts <tt>sourceBuffer</tt> into the current buffer at <tt>offset</tt>.  Buffer is grown to accommodate the new data.  returns the number of bytes inserted.  Optional sourceOffset and length arguments to specify from where in -- and how much of -- source buffer to take.</p>
      * platforms: iphone, android, ipad
-     * @param {@link Titanium_Buffer} sourceBuffer buffer to insert into current buffer
-     * @param Number offset offset to insert new buffer at
-     * @param Number sourceOffset (Optional) offset of sourceBuffer to insert data from
-     * @param Number sourceLength (Optional) length of data from sourceBuffer to insert
+     * @param {{@link Titanium_Buffer}} sourceBuffer buffer to insert into current buffer
+     * @param {Number} offset offset to insert new buffer at
+     * @param {Number} sourceOffset (Optional) offset of sourceBuffer to insert data from
+     * @param {Number} sourceLength (Optional) length of data from sourceBuffer to insert
      * @since 1.7
      */
     insert:function(sourceBuffer, offset, sourceOffset, sourceLength) {
@@ -4837,9 +4837,9 @@ Titanium.BufferStream = {
     /**
      * <p>reads data from stream into a buffer.  Optional offset and length arguments to specify position in buffer in whichto start writing the read data, and the amount of data to read.</p>
      * platforms: iphone, android, ipad
-     * @param {@link Titanium_Buffer} buffer buffer to read stream data into
-     * @param Number offset (Optional) offset to start reading buffer data from
-     * @param Number length (Optional) length of data to read from buffer
+     * @param {{@link Titanium_Buffer}} buffer buffer to read stream data into
+     * @param {Number} offset (Optional) offset to start reading buffer data from
+     * @param {Number} length (Optional) length of data to read from buffer
      * @since 1.7
      */
     read:function(buffer, offset, length) {
@@ -4848,9 +4848,9 @@ Titanium.BufferStream = {
     /**
      * <p>writes data from buffer to stream. Optional offset and length arguments to specify position in buffer in which to start reading data that is written to the stream, and the length of the data to take from the buffer.</p>
      * platforms: iphone, android, ipad
-     * @param {@link Titanium_Buffer} buffer buffer to write to stream
-     * @param Number offset (Optional) offset to start writing buffer data from
-     * @param Number length (Optional) length of data to write from buffer
+     * @param {{@link Titanium_Buffer}} buffer buffer to write to stream
+     * @param {Number} offset (Optional) offset to start writing buffer data from
+     * @param {Number} length (Optional) length of data to write from buffer
      * @since 1.7
      */
     write:function(buffer, offset, length) {
@@ -5055,8 +5055,8 @@ Titanium.Codec = {
     /**
      * add an event listener for the instance to receive view triggered events
      * platforms: iphone, android, ipad
-     * @param string name name of the event
-     * @param function callback callback function to invoke when the event is fired
+     * @param {string} name name of the event
+     * @param {function} callback callback function to invoke when the event is fired
      * @returns void
      * @since 1.7
      */
@@ -5066,7 +5066,7 @@ Titanium.Codec = {
     /**
      * <p>Decodes the <tt>source</tt> buffer (starting at the optional <tt>position</tt>) into a number using the passed in data <tt>type</tt>.  Throws an Exception if <tt>source</tt> is null, or <tt>position</tt> is greater than <tt>source.length</tt></p>
      * platforms: iphone, android, ipad
-     * @param Object options decodeNumber named options.  These are: <tt>source</tt>, the {@link Titanium.Buffer} to decode.  <tt>type</tt>, the encoding type to use, which must be one of {@link Titanium.Codec.TYPE_BYTE}, {@link Titanium.Codec.TYPE_SHORT}, {@link Titanium.Codec.TYPE_INT}, {@link Titanium.Codec.TYPE_FLOAT}, {@link Titanium.Codec.TYPE_LONG}, or {@link Titanium.Codec.TYPE_DOUBLE}.  <tt>position</tt>, the position in <tt>source</tt> to start at (optional, default is 0).  <tt>byteOrder</tt>, the byte order to decode with (optional, default is {@link Titanium.Codec.getNativeByteOrder}).
+     * @param {Object} options decodeNumber named options.  These are: <tt>source</tt>, the {@link Titanium.Buffer} to decode.  <tt>type</tt>, the encoding type to use, which must be one of {@link Titanium.Codec.TYPE_BYTE}, {@link Titanium.Codec.TYPE_SHORT}, {@link Titanium.Codec.TYPE_INT}, {@link Titanium.Codec.TYPE_FLOAT}, {@link Titanium.Codec.TYPE_LONG}, or {@link Titanium.Codec.TYPE_DOUBLE}.  <tt>position</tt>, the position in <tt>source</tt> to start at (optional, default is 0).  <tt>byteOrder</tt>, the byte order to decode with (optional, default is {@link Titanium.Codec.getNativeByteOrder}).
      * @since 1.7
      */
     decodeNumber:function(options) {
@@ -5075,7 +5075,7 @@ Titanium.Codec = {
     /**
      * <p>Decodes the <tt>source</tt> buffer into a String starting at <tt>position</tt>, with <tt>length</tt> bytes, using the supplied character set <tt>charset</tt>. Throws an Exception if <tt>charset</tt> is not a valid character set, <tt>source</tt> is null, or either <tt>position</tt>, <tt>length</tt>, or <tt>position</tt>+<tt>length</tt> is greater than <tt>source.length</tt>.</p>
      * platforms: iphone, android, ipad
-     * @param Object options decodeString named options.  These are: <tt>source</tt>, the {@link Titanium.Buffer} to decode.  <tt>position</tt>, the position to start decoding (optional, default is 0).  <tt>length</tt>, the number of bytes to decode (optional, default is the length of the source buffer).  <tt>charset</tt>, the character set to decode from (optional, default is {@link Titanium.Codec.CHARSET_UTF8}).
+     * @param {Object} options decodeString named options.  These are: <tt>source</tt>, the {@link Titanium.Buffer} to decode.  <tt>position</tt>, the position to start decoding (optional, default is 0).  <tt>length</tt>, the number of bytes to decode (optional, default is the length of the source buffer).  <tt>charset</tt>, the character set to decode from (optional, default is {@link Titanium.Codec.CHARSET_UTF8}).
      * @since 1.7
      */
     decodeString:function(options) {
@@ -5084,7 +5084,7 @@ Titanium.Codec = {
     /**
      * <p>Encodes the Number <tt>source</tt> into <tt>dest</tt> using the passed in data <tt>type</tt>.  Returns the position after the encoded number in <tt>dest</tt>.'</p>
      * platforms: iphone, android, ipad
-     * @param Object options encodeNumber named options.  These are: <tt>source</tt>, the number to be encoded.  <tt>dest</tt>, the destination {@link Titanium.Buffer} into which the encoded number will be written.  <tt>type</tt>, the encoding type to use, which must be one of {@link Titanium.Codec.TYPE_BYTE}, {@link Titanium.Codec.TYPE_SHORT}, {@link Titanium.Codec.TYPE_INT}, {@link Titanium.Codec.TYPE_FLOAT}, {@link Titanium.Codec.TYPE_LONG}, or {@link Titanium.Codec.TYPE_DOUBLE}.  <tt>position</tt>, the position in dest to set the encoded data (optional, default is 0).  <tt>byteOrder</tt>, the byte order to encode with (optional, default is {@link Titanium.Codec.getNativeByteOrder}).
+     * @param {Object} options encodeNumber named options.  These are: <tt>source</tt>, the number to be encoded.  <tt>dest</tt>, the destination {@link Titanium.Buffer} into which the encoded number will be written.  <tt>type</tt>, the encoding type to use, which must be one of {@link Titanium.Codec.TYPE_BYTE}, {@link Titanium.Codec.TYPE_SHORT}, {@link Titanium.Codec.TYPE_INT}, {@link Titanium.Codec.TYPE_FLOAT}, {@link Titanium.Codec.TYPE_LONG}, or {@link Titanium.Codec.TYPE_DOUBLE}.  <tt>position</tt>, the position in dest to set the encoded data (optional, default is 0).  <tt>byteOrder</tt>, the byte order to encode with (optional, default is {@link Titanium.Codec.getNativeByteOrder}).
      * @since 1.7
      */
     encodeNumber:function(options) {
@@ -5093,7 +5093,7 @@ Titanium.Codec = {
     /**
      * <p>Encodes the String <tt>source</tt> into <tt>dest</tt> using <tt>charset</tt>. Returns the position after the encoded String inside <tt>dest</tt>.' Throws an Exception if <tt>charset</tt> is not a valid character set, <tt>source</tt> is null, or either <tt>sourcePosition</tt>, <tt>sourceLength</tt>, or <tt>sourcePosition</tt>+<tt>sourceLength</tt> is greater than <tt>source.length</tt>.</p>
      * platforms: iphone, android, ipad
-     * @param Object options encodeString named options.  These are: <tt>source</tt>, the source string to encode.  <tt>dest</tt>, the destination {@link Titanium.Buffer}.  <tt>destPosition</tt>, the position in <tt>dest</tt> to set the encoded string (optional, default is 0).  <tt>sourcePosition</tt>, the position in <tt>source</tt> to start encoding (optional, default is 0).  <tt>sourceLength</tt>, the number of characters in <tt>source</tt> to encode (optional, default is the length of the source).  <tt>charset</tt>, the character set to use when encoding this string to bytes (optional, default is {@link Titanium.Codec.CHARSET_UTF8}).
+     * @param {Object} options encodeString named options.  These are: <tt>source</tt>, the source string to encode.  <tt>dest</tt>, the destination {@link Titanium.Buffer}.  <tt>destPosition</tt>, the position in <tt>dest</tt> to set the encoded string (optional, default is 0).  <tt>sourcePosition</tt>, the position in <tt>source</tt> to start encoding (optional, default is 0).  <tt>sourceLength</tt>, the number of characters in <tt>source</tt> to encode (optional, default is the length of the source).  <tt>charset</tt>, the character set to use when encoding this string to bytes (optional, default is {@link Titanium.Codec.CHARSET_UTF8}).
      * @since 1.7
      */
     encodeString:function(options) {
@@ -5102,8 +5102,8 @@ Titanium.Codec = {
     /**
      * fire a synthesized event to the views listener
      * platforms: iphone, android, ipad
-     * @param string name name of the event
-     * @param object event event object
+     * @param {string} name name of the event
+     * @param {object} event event object
      * @returns void
      * @since 1.7
      */
@@ -5121,8 +5121,8 @@ Titanium.Codec = {
     /**
      * remove a previously added event listener
      * platforms: iphone, android, ipad
-     * @param string name name of the event
-     * @param function callback callback function passed in addEventListener
+     * @param {string} name name of the event
+     * @param {function} callback callback function passed in addEventListener
      * @returns void
      * @since 1.7
      */
@@ -5175,8 +5175,8 @@ Titanium.Contacts = {
     /**
      * add an event listener for the instance to receive view triggered events
      * platforms: iphone, ipad, android
-     * @param string name name of the event
-     * @param function callback callback function to invoke when the event is fired
+     * @param {string} name name of the event
+     * @param {function} callback callback function to invoke when the event is fired
      * @returns void
      * @since 0.8
      */
@@ -5186,7 +5186,7 @@ Titanium.Contacts = {
     /**
      * create and return an instance of {@link Titanium.Contacts.Group}
      * platforms: iphone, ipad, android
-     * @param object parameters (optional) a dictionary object properties defined in {@link Titanium.Contacts.Group}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.Contacts.Group}
      * @since 0.8
      */
     createGroup:function(parameters) {
@@ -5195,7 +5195,7 @@ Titanium.Contacts = {
     /**
      * create and return an instance of {@link Titanium.Contacts.Person}
      * platforms: iphone, ipad, android
-     * @param object parameters (optional) a dictionary object properties defined in {@link Titanium.Contacts.Person}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.Contacts.Person}
      * @since 0.8
      */
     createPerson:function(parameters) {
@@ -5204,8 +5204,8 @@ Titanium.Contacts = {
     /**
      * fire a synthesized event to the views listener
      * platforms: iphone, ipad, android
-     * @param string name name of the event
-     * @param object event event object
+     * @param {string} name name of the event
+     * @param {object} event event object
      * @returns void
      * @since 0.8
      */
@@ -5233,7 +5233,7 @@ Titanium.Contacts = {
     /**
      * <p>Returns a {@link Titanium.Contacts.Group} object with the given ID</p>
      * platforms: iphone, ipad, android
-     * @param int id The database ID of the group to retrieve
+     * @param {int} id The database ID of the group to retrieve
      * @since 0.8
      */
     getGroupByID:function(id) {
@@ -5242,7 +5242,7 @@ Titanium.Contacts = {
     /**
      * <p>Returns an array of {@link Titanium.Contacts.Person} objects who have a name (first, last, middle, composite) which matches the given name</p>
      * platforms: iphone, ipad, android
-     * @param string name The name to match in the database
+     * @param {string} name The name to match in the database
      * @since 0.8
      */
     getPeopleWithName:function(name) {
@@ -5251,7 +5251,7 @@ Titanium.Contacts = {
     /**
      * <p>Returns a {@link Titanium.Contacts.Person} object with the given ID</p>
      * platforms: iphone, ipad, android
-     * @param int id The database ID of the person to retrieve
+     * @param {int} id The database ID of the person to retrieve
      * @since 0.8
      */
     getPersonByID:function(id) {
@@ -5260,8 +5260,8 @@ Titanium.Contacts = {
     /**
      * remove a previously added event listener
      * platforms: iphone, ipad, android
-     * @param string name name of the event
-     * @param function callback callback function passed in addEventListener
+     * @param {string} name name of the event
+     * @param {function} callback callback function passed in addEventListener
      * @returns void
      * @since 0.8
      */
@@ -5271,7 +5271,7 @@ Titanium.Contacts = {
     /**
      * <p>Removes a group from the contacts database (NOTE: not supported on Android.)</p>
      * platforms: iphone, ipad, android
-     * @param object group The {@link Titanium.Contacts.Group} object to remove from the database. (NOTE: not supported on Android.)
+     * @param {object} group The {@link Titanium.Contacts.Group} object to remove from the database. (NOTE: not supported on Android.)
      * @returns void
      * @since 0.8
      */
@@ -5281,7 +5281,7 @@ Titanium.Contacts = {
     /**
      * <p>Removes a person from the contacts database. (NOTE: not supported on Android.)</p>
      * platforms: iphone, ipad, android
-     * @param object person The {@link Titanium.Contacts.Person} object to remove from the database. (NOTE: not supported on Android.)
+     * @param {object} person The {@link Titanium.Contacts.Person} object to remove from the database. (NOTE: not supported on Android.)
      * @returns void
      * @since 0.8
      */
@@ -5309,11 +5309,11 @@ Titanium.Contacts = {
     /**
      * <p>Displays the contact picker</p>
      * platforms: iphone, ipad, android
-     * @param function cancel The function to call when selection is cancelled
-     * @param function selectedPerson The function to call when a person is selected.  Mutually exclusive with <tt>selectedProperty</tt>
-     * @param function selectedProperty The function to call when a property is selected.  Mutally exclusive with <tt>selectedPerson</tt>
-     * @param boolean animated Whether or not to animate the show/hide of the contacts picker
-     * @param array fields A list of field names to show when selecting properties, default is to show all available
+     * @param {function} cancel The function to call when selection is cancelled
+     * @param {function} selectedPerson The function to call when a person is selected.  Mutually exclusive with <tt>selectedProperty</tt>
+     * @param {function} selectedProperty The function to call when a property is selected.  Mutally exclusive with <tt>selectedPerson</tt>
+     * @param {boolean} animated Whether or not to animate the show/hide of the contacts picker
+     * @param {array} fields A list of field names to show when selecting properties, default is to show all available
      * @returns void
      * @since 0.8
      */
@@ -5340,7 +5340,7 @@ Titanium.Contacts.Group = {
     /**
      * <p>Adds a person to the group</p>
      * platforms: iphone, ipad
-     * @param object person {@link Titanium.Contacts.Person} object to remove from the group
+     * @param {object} person {@link Titanium.Contacts.Person} object to remove from the group
      * @returns void
      * @since 1.4.0
      */
@@ -5359,7 +5359,7 @@ Titanium.Contacts.Group = {
     /**
      * <p>Removes a person from the group</p>
      * platforms: iphone, ipad
-     * @param object person {@link Titanium.Contacts.Person} object to remove from the group
+     * @param {object} person {@link Titanium.Contacts.Person} object to remove from the group
      * @returns void
      * @since 1.4.0
      */
@@ -5369,7 +5369,7 @@ Titanium.Contacts.Group = {
     /**
      * <p>A list of sorted members</p>
      * platforms: iphone, ipad
-     * @param int sortBy Method for sorting.  Must be one of  {@link Titanium.Contacts.CONTACTS_SORT_FIRST_NAME} or {@link Titanium.Contacts.CONTACTS_SORT_LAST_NAME}
+     * @param {int} sortBy Method for sorting.  Must be one of  {@link Titanium.Contacts.CONTACTS_SORT_FIRST_NAME} or {@link Titanium.Contacts.CONTACTS_SORT_LAST_NAME}
      * @returns void
      * @since 1.4.0
      */
@@ -5640,8 +5640,8 @@ Titanium.Database = {
     /**
      * add an event listener for the instance to receive view triggered events
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function to invoke when the event is fired
+     * @param {string} name name of the event
+     * @param {function} callback callback function to invoke when the event is fired
      * @returns void
      * @since 0.1
      */
@@ -5651,8 +5651,8 @@ Titanium.Database = {
     /**
      * fire a synthesized event to the views listener
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param object event event object
+     * @param {string} name name of the event
+     * @param {object} event event object
      * @returns void
      * @since 0.1
      */
@@ -5662,8 +5662,8 @@ Titanium.Database = {
     /**
      * <p>install a database from the application Resources folder (at build time) and return a reference to the opened database. it is safe to call this method multiple times since this method will only install once if it doesn't already exist on the device.</p>
      * platforms: android, iphone, ipad
-     * @param string path the path (relative to the main application Resources folder at build time) to the db to install. this file must be in the SQLite 3 file format.
-     * @param string name the name of the database
+     * @param {string} path the path (relative to the main application Resources folder at build time) to the db to install. this file must be in the SQLite 3 file format.
+     * @param {string} name the name of the database
      * @since 0.1
      */
     install:function(path, name) {
@@ -5672,7 +5672,7 @@ Titanium.Database = {
     /**
      * <p>open a database. if it doesn't yet exist, create it.</p>
      * platforms: android, iphone, ipad
-     * @param string name the name of the database
+     * @param {string} name the name of the database
      * @since 0.1
      */
     open:function(name) {
@@ -5681,8 +5681,8 @@ Titanium.Database = {
     /**
      * remove a previously added event listener
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function passed in addEventListener
+     * @param {string} name name of the event
+     * @param {function} callback callback function passed in addEventListener
      * @returns void
      * @since 0.1
      */
@@ -5734,8 +5734,8 @@ Titanium.Database.DB = {
     /**
      * <p>execute a SQL statement against the database and returns a ResultSet</p>
      * platforms: android, iphone, ipad
-     * @param string sql the SQL to execute
-     * @param Array<Object> vararg one or more optional variable arguments passed to this function or an array of objects to be replaced in the query using <tt>?</tt> substitution.
+     * @param {string} sql the SQL to execute
+     * @param {Array<Object>} vararg one or more optional variable arguments passed to this function or an array of objects to be replaced in the query using <tt>?</tt> substitution.
      * @since 0.1
      */
     execute:function(sql, vararg) {
@@ -5787,8 +5787,8 @@ Titanium.Database.ResultSet = {
     /**
      * <p>retrieve a row value by field index</p>
      * platforms: android, iphone, ipad
-     * @param int index column index (which is zero based)
-     * @param int type [optional] one of ({@link Titanium.Database.FIELD_TYPE_STRING} | {@link Titanium.Database.FIELD_TYPE_INT} | {@link Titanium.Database.FIELD_TYPE_FLOAT} | {@link Titanium.Database.FIELD_TYPE_DOUBLE})
+     * @param {int} index column index (which is zero based)
+     * @param {int} type [optional] one of ({@link Titanium.Database.FIELD_TYPE_STRING} | {@link Titanium.Database.FIELD_TYPE_INT} | {@link Titanium.Database.FIELD_TYPE_FLOAT} | {@link Titanium.Database.FIELD_TYPE_DOUBLE})
      * @since 0.1
      */
     field:function(index, type) {
@@ -5797,8 +5797,8 @@ Titanium.Database.ResultSet = {
     /**
      * <p>retrieve a row value by field name</p>
      * platforms: android, iphone, ipad
-     * @param string name column name from SQL query
-     * @param int type [optional] one of ({@link Titanium.Database.FIELD_TYPE_STRING} | {@link Titanium.Database.FIELD_TYPE_INT} | {@link Titanium.Database.FIELD_TYPE_FLOAT} | {@link Titanium.Database.FIELD_TYPE_DOUBLE})
+     * @param {string} name column name from SQL query
+     * @param {int} type [optional] one of ({@link Titanium.Database.FIELD_TYPE_STRING} | {@link Titanium.Database.FIELD_TYPE_INT} | {@link Titanium.Database.FIELD_TYPE_FLOAT} | {@link Titanium.Database.FIELD_TYPE_DOUBLE})
      * @since 0.1
      */
     fieldByName:function(name, type) {
@@ -5815,7 +5815,7 @@ Titanium.Database.ResultSet = {
     /**
      * <p>return the field name for field index</p>
      * platforms: android, iphone, ipad
-     * @param int index field name column index (which is zero based)
+     * @param {int} index field name column index (which is zero based)
      * @since 0.1
      */
     fieldName:function(index) {
@@ -6109,8 +6109,8 @@ Titanium.Facebook = {
     /**
      * add an event listener for the instance to receive view triggered events
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function to invoke when the event is fired
+     * @param {string} name name of the event
+     * @param {function} callback callback function to invoke when the event is fired
      * @returns void
      * @since 0.8
      */
@@ -6129,7 +6129,7 @@ Titanium.Facebook = {
     /**
      * create and return an instance of {@link Titanium.Facebook.LoginButton}
      * platforms: android, iphone, ipad
-     * @param object parameters (optional) a dictionary object properties defined in {@link Titanium.Facebook.LoginButton}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.Facebook.LoginButton}
      * @since 0.8
      */
     createLoginButton:function(parameters) {
@@ -6138,9 +6138,9 @@ Titanium.Facebook = {
     /**
      * <p>Open a supported Facebook {@link http://developers.facebook.com/docs/reference/dialogs/}.  "feed" is just about the only useful one.</p>
      * platforms: android, iphone, ipad
-     * @param string action Specifies which dialog to show, such as "feed".
-     * @param object params A dictionary object for pre-filling some of the dialog's fields.  See example.
-     * @param function callback A callback for when dialog is completed/cancelled.  The callback should accept a single argument which will be filled with a dictionary object concerning call results: items in the dictionary can be "success" (boolean), "error" (string with the error message), "cancelled" (set to true if user cancelled) and "result" (the data returned by Facebook.)
+     * @param {string} action Specifies which dialog to show, such as "feed".
+     * @param {object} params A dictionary object for pre-filling some of the dialog's fields.  See example.
+     * @param {function} callback A callback for when dialog is completed/cancelled.  The callback should accept a single argument which will be filled with a dictionary object concerning call results: items in the dictionary can be "success" (boolean), "error" (string with the error message), "cancelled" (set to true if user cancelled) and "result" (the data returned by Facebook.)
      * @returns void
      * @since 0.8
      */
@@ -6150,8 +6150,8 @@ Titanium.Facebook = {
     /**
      * fire a synthesized event to the views listener
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param object event event object
+     * @param {string} name name of the event
+     * @param {object} event event object
      * @returns void
      * @since 0.8
      */
@@ -6170,8 +6170,8 @@ Titanium.Facebook = {
     /**
      * remove a previously added event listener
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function passed in addEventListener
+     * @param {string} name name of the event
+     * @param {function} callback callback function passed in addEventListener
      * @returns void
      * @since 0.8
      */
@@ -6181,9 +6181,9 @@ Titanium.Facebook = {
     /**
      * <p>Make a request to the deprecated {@link http://developers.facebook.com/docs/reference/rest/}.</p>
      * platforms: android, iphone, ipad
-     * @param string method The REST API method to call.
-     * @param object params A dictionary object for setting parameters required by the call, if any.  See examples.
-     * @param function callback A callback for when call is completed.  The callback should accept a single argument which will be filled with a dictionary object concerning call results: items in the dictionary can be "success" (boolean), "error" (string with the error message), "method" (the REST method call you specified), "result" (the data returned by Facebook.)
+     * @param {string} method The REST API method to call.
+     * @param {object} params A dictionary object for setting parameters required by the call, if any.  See examples.
+     * @param {function} callback A callback for when call is completed.  The callback should accept a single argument which will be filled with a dictionary object concerning call results: items in the dictionary can be "success" (boolean), "error" (string with the error message), "method" (the REST method call you specified), "result" (the data returned by Facebook.)
      * @returns void
      * @since 0.8
      */
@@ -6193,10 +6193,10 @@ Titanium.Facebook = {
     /**
      * <p>Make a {@link http://developers.facebook.com/docs/reference/api/} request.  If the request requires user authorization, be sure user is already logged-in and your app is authorized.  (You can check <tt>loggedIn</tt> for that.)</p>
      * platforms: android, iphone, ipad
-     * @param string path The graph API path to request.  For example, "me" requests [information about the logged-in user](http://developers.facebook.com/docs/reference/api/user/).
-     * @param object params A dictionary object for setting parameters required by the call, if any.  See examples.
-     * @param string httpMethod The http method (GET/POST/DELETE) to use for the call.
-     * @param function callback A callback for when call is completed.  The callback should accept a single argument which will be filled with a dictionary object concerning call results: items in the dictionary can be "success" (boolean), "error" (string with the error message), "path" (the graph call path you specified), "result" (the JSON returned by Facebook.)
+     * @param {string} path The graph API path to request.  For example, "me" requests [information about the logged-in user](http://developers.facebook.com/docs/reference/api/user/).
+     * @param {object} params A dictionary object for setting parameters required by the call, if any.  See examples.
+     * @param {string} httpMethod The http method (GET/POST/DELETE) to use for the call.
+     * @param {function} callback A callback for when call is completed.  The callback should accept a single argument which will be filled with a dictionary object concerning call results: items in the dictionary can be "success" (boolean), "error" (string with the error message), "path" (the graph call path you specified), "result" (the JSON returned by Facebook.)
      * @returns void
      * @since 0.8
      */
@@ -6504,7 +6504,7 @@ Titanium.Facebook.LoginButton = {
     /**
      * add a child to the view hierarchy
      * platforms: android, iphone, ipad
-     * @param object view the view to add to this views hiearchy
+     * @param {object} view the view to add to this views hiearchy
      * @returns void
      * @since 0.8
      */
@@ -6514,8 +6514,8 @@ Titanium.Facebook.LoginButton = {
     /**
      * add an event listener for the instance to receive view triggered events
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function to invoke when the event is fired
+     * @param {string} name name of the event
+     * @param {function} callback callback function to invoke when the event is fired
      * @returns void
      * @since 0.8
      */
@@ -6525,8 +6525,8 @@ Titanium.Facebook.LoginButton = {
     /**
      * animate the view
      * platforms: android, iphone, ipad
-     * @param object obj either a dictionary of animation properties or an Animation object
-     * @param function callback function to be invoked upon completion of the animation
+     * @param {object} obj either a dictionary of animation properties or an Animation object
+     * @param {function} callback function to be invoked upon completion of the animation
      * @returns void
      * @since 0.8
      */
@@ -6536,8 +6536,8 @@ Titanium.Facebook.LoginButton = {
     /**
      * fire a synthesized event to the views listener
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param object event event object
+     * @param {string} name name of the event
+     * @param {object} event event object
      * @returns void
      * @since 0.8
      */
@@ -6556,7 +6556,7 @@ Titanium.Facebook.LoginButton = {
     /**
      * remove a previously add view from the view hiearchy
      * platforms: android, iphone, ipad
-     * @param object view the view to remove from this views hiearchy
+     * @param {object} view the view to remove from this views hiearchy
      * @returns void
      * @since 0.8
      */
@@ -6566,8 +6566,8 @@ Titanium.Facebook.LoginButton = {
     /**
      * remove a previously added event listener
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function passed in addEventListener
+     * @param {string} name name of the event
+     * @param {function} callback callback function passed in addEventListener
      * @returns void
      * @since 0.8
      */
@@ -6586,7 +6586,7 @@ Titanium.Facebook.LoginButton = {
     /**
      * return a Blob image of the rendered view
      * platforms: android, iphone, ipad
-     * @param function f function to be invoked upon completion. if non-null, this method will be performed asynchronously. if null, it will be performed immediately
+     * @param {function} f function to be invoked upon completion. if non-null, this method will be performed asynchronously. if null, it will be performed immediately
      * @since 0.8
      */
     toImage:function(f) {
@@ -6677,8 +6677,8 @@ Titanium.Filesystem = {
     /**
      * add an event listener for the instance to receive view triggered events
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function to invoke when the event is fired
+     * @param {string} name name of the event
+     * @param {function} callback callback function to invoke when the event is fired
      * @returns void
      * @since 0.1
      */
@@ -6688,7 +6688,7 @@ Titanium.Filesystem = {
     /**
      * create and return an instance of {@link Titanium.Filesystem.File}
      * platforms: android, iphone, ipad
-     * @param object parameters (optional) a dictionary object properties defined in {@link Titanium.Filesystem.File}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.Filesystem.File}
      * @since 0.1
      */
     createFile:function(parameters) {
@@ -6713,8 +6713,8 @@ Titanium.Filesystem = {
     /**
      * fire a synthesized event to the views listener
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param object event event object
+     * @param {string} name name of the event
+     * @param {object} event event object
      * @returns void
      * @since 0.1
      */
@@ -6724,7 +6724,7 @@ Titanium.Filesystem = {
     /**
      * <p>return a fully formed file path as a {@link Titanium.Filesystem.File} object</p>
      * platforms: android, iphone, ipad
-     * @param string path one or more path arguments to form the full path joined together with the platform specific path separator. if a relative path is passed, the full path will be relative to the application resource folder.
+     * @param {string} path one or more path arguments to form the full path joined together with the platform specific path separator. if a relative path is passed, the full path will be relative to the application resource folder.
      * @since 0.1
      */
     getFile:function(path) {
@@ -6741,8 +6741,8 @@ Titanium.Filesystem = {
     /**
      * remove a previously added event listener
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function passed in addEventListener
+     * @param {string} name name of the event
+     * @param {function} callback callback function passed in addEventListener
      * @returns void
      * @since 0.1
      */
@@ -6763,8 +6763,8 @@ Titanium_Filesystem_File.prototype = {
     /**
      * add an event listener for the instance to receive view triggered events
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function to invoke when the event is fired
+     * @param {string} name name of the event
+     * @param {function} callback callback function to invoke when the event is fired
      * @returns void
      * @since 0.1
      */
@@ -6798,7 +6798,7 @@ Titanium_Filesystem_File.prototype = {
     /**
      * <p>delete the file directory path</p>
      * platforms: android, iphone, ipad
-     * @param boolean recursive pass true to recursively delete any contents. defaults to false
+     * @param {boolean} recursive pass true to recursively delete any contents. defaults to false
      * @since 0.1
      */
     deleteDirectory:function(recursive) {
@@ -6839,8 +6839,8 @@ Titanium_Filesystem_File.prototype = {
     /**
      * fire a synthesized event to the views listener
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param object event event object
+     * @param {string} name name of the event
+     * @param {object} event event object
      * @returns void
      * @since 0.1
      */
@@ -6882,7 +6882,7 @@ Titanium_Filesystem_File.prototype = {
     /**
      * <p>move the file to another path</p>
      * platforms: android, iphone, ipad
-     * @param string|object newpath new location
+     * @param {string|object} newpath new location
      * @since 0.1
      */
     move:function(newpath) {
@@ -6923,8 +6923,8 @@ Titanium_Filesystem_File.prototype = {
     /**
      * remove a previously added event listener
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function passed in addEventListener
+     * @param {string} name name of the event
+     * @param {function} callback callback function passed in addEventListener
      * @returns void
      * @since 0.1
      */
@@ -6934,7 +6934,7 @@ Titanium_Filesystem_File.prototype = {
     /**
      * <p>rename the file</p>
      * platforms: android, iphone, ipad
-     * @param string newname new name
+     * @param {string} newname new name
      * @since 0.1
      */
     rename:function(newname) {
@@ -6986,8 +6986,8 @@ Titanium_Filesystem_File.prototype = {
     /**
      * <p>write the contents to file.</p>
      * platforms: android, iphone, ipad
-     * @param string|object contents write the contents of string, blob or [[Titanium.Filesystem.File]] to file
-     * @param boolean append (optional) append the string to the end of the file.
+     * @param {string|object} contents write the contents of string, blob or [[Titanium.Filesystem.File]] to file
+     * @param {boolean} append (optional) append the string to the end of the file.
      * @since 0.1
      */
     write:function(contents, append) {
@@ -7062,9 +7062,9 @@ Titanium.Filesystem.FileStream = {
     /**
      * <p>reads data from stream into a buffer.  Optional offset and length arguments to specify position in buffer in whichto start writing the read data, and the amount of data to read.</p>
      * platforms: iphone, android, ipad
-     * @param {@link Titanium_Buffer} buffer buffer to read stream data into
-     * @param Number offset (Optional) offset to start reading buffer data from
-     * @param Number length (Optional) length of data to read from buffer
+     * @param {{@link Titanium_Buffer}} buffer buffer to read stream data into
+     * @param {Number} offset (Optional) offset to start reading buffer data from
+     * @param {Number} length (Optional) length of data to read from buffer
      * @since 1.7
      */
     read:function(buffer, offset, length) {
@@ -7073,9 +7073,9 @@ Titanium.Filesystem.FileStream = {
     /**
      * <p>writes data from buffer to stream. Optional offset and length arguments to specify position in buffer in which to start reading data that is written to the stream, and the length of the data to take from the buffer.</p>
      * platforms: iphone, android, ipad
-     * @param {@link Titanium_Buffer} buffer buffer to write to stream
-     * @param Number offset (Optional) offset to start writing buffer data from
-     * @param Number length (Optional) length of data to write from buffer
+     * @param {{@link Titanium_Buffer}} buffer buffer to write to stream
+     * @param {Number} offset (Optional) offset to start writing buffer data from
+     * @param {Number} length (Optional) length of data to write from buffer
      * @since 1.7
      */
     write:function(buffer, offset, length) {
@@ -7293,8 +7293,8 @@ Titanium.Geolocation = {
     /**
      * add an event listener for the instance to receive view triggered events
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function to invoke when the event is fired
+     * @param {string} name name of the event
+     * @param {function} callback callback function to invoke when the event is fired
      * @returns void
      * @since 0.1
      */
@@ -7304,8 +7304,8 @@ Titanium.Geolocation = {
     /**
      * fire a synthesized event to the views listener
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param object event event object
+     * @param {string} name name of the event
+     * @param {object} event event object
      * @returns void
      * @since 0.1
      */
@@ -7315,8 +7315,8 @@ Titanium.Geolocation = {
     /**
      * <p>tries to resolve an address to a location.</p>
      * platforms: android, iphone, ipad
-     * @param string address address to resolve.
-     * @param function callback function to invoke on success or failure. The event object contains the properties described as the <tt>place</tt> dictionary in {@link Titanium.Geolocation.reverseGeocoder}.
+     * @param {string} address address to resolve.
+     * @param {function} callback function to invoke on success or failure. The event object contains the properties described as the <tt>place</tt> dictionary in {@link Titanium.Geolocation.reverseGeocoder}.
      * @returns void
      * @since 0.1
      */
@@ -7326,7 +7326,7 @@ Titanium.Geolocation = {
     /**
      * <p>retrieve the current compass heading.</p>
      * platforms: android, iphone, ipad
-     * @param function callback function to invoke on success or failure of obtaining the current heading. See heading event in {@link Titanium.Geolocation}.
+     * @param {function} callback function to invoke on success or failure of obtaining the current heading. See heading event in {@link Titanium.Geolocation}.
      * @returns void
      * @since 0.1
      */
@@ -7336,7 +7336,7 @@ Titanium.Geolocation = {
     /**
      * <p>retrieve the last known location from the device. On Android, the radios are not turned on to update the location. On iOS the radios MAY be used if the location is too "old".</p>
      * platforms: android, iphone, ipad
-     * @param function callback function to invoke on success or failure of obtaining the current location. See location event in {@link Titanium.Geolocation}.
+     * @param {function} callback function to invoke on success or failure of obtaining the current location. See location event in {@link Titanium.Geolocation}.
      * @returns void
      * @since 0.1
      */
@@ -7346,8 +7346,8 @@ Titanium.Geolocation = {
     /**
      * remove a previously added event listener
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function passed in addEventListener
+     * @param {string} name name of the event
+     * @param {function} callback callback function passed in addEventListener
      * @returns void
      * @since 0.1
      */
@@ -7357,9 +7357,9 @@ Titanium.Geolocation = {
     /**
      * <p>tries to resolve a location to an address.</p>
      * platforms: android, iphone, ipad
-     * @param double latitude latitude to search
-     * @param double longitude longitude to search
-     * @param function callback function to invoke on success or failure. The event object passed contains a <tt>places</tt> array of zero or more place dictionaries. Each <tt>place</tt> dictionary contains the following properties: <tt>street</tt>, <tt>street1</tt>, <tt>city</tt>, <tt>region1</tt>, <tt>region2</tt>, <tt>postalCode</tt>, <tt>country</tt>, <tt>countryCode</tt>, <tt>longitude</tt>, <tt>latitude</tt>, <tt>displayAddress</tt>, <tt>address</tt>.
+     * @param {double} latitude latitude to search
+     * @param {double} longitude longitude to search
+     * @param {function} callback function to invoke on success or failure. The event object passed contains a <tt>places</tt> array of zero or more place dictionaries. Each <tt>place</tt> dictionary contains the following properties: <tt>street</tt>, <tt>street1</tt>, <tt>city</tt>, <tt>region1</tt>, <tt>region2</tt>, <tt>postalCode</tt>, <tt>country</tt>, <tt>countryCode</tt>, <tt>longitude</tt>, <tt>latitude</tt>, <tt>displayAddress</tt>, <tt>address</tt>.
      * @returns void
      * @since 0.1
      */
@@ -7387,8 +7387,8 @@ Titanium.Gesture = {
     /**
      * add an event listener for the instance to receive view triggered events
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function to invoke when the event is fired
+     * @param {string} name name of the event
+     * @param {function} callback callback function to invoke when the event is fired
      * @returns void
      * @since 0.8
      */
@@ -7398,8 +7398,8 @@ Titanium.Gesture = {
     /**
      * fire a synthesized event to the views listener
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param object event event object
+     * @param {string} name name of the event
+     * @param {object} event event object
      * @returns void
      * @since 0.8
      */
@@ -7409,8 +7409,8 @@ Titanium.Gesture = {
     /**
      * remove a previously added event listener
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function passed in addEventListener
+     * @param {string} name name of the event
+     * @param {function} callback callback function passed in addEventListener
      * @returns void
      * @since 0.8
      */
@@ -7478,9 +7478,9 @@ Titanium.IOStream = {
     /**
      * <p>reads data from stream into a buffer.  Optional offset and length arguments to specify position in buffer in whichto start writing the read data, and the amount of data to read.</p>
      * platforms: iphone, android, ipad
-     * @param {@link Titanium_Buffer} buffer buffer to read stream data into
-     * @param Number offset (Optional) offset to start reading buffer data from
-     * @param Number length (Optional) length of data to read from buffer
+     * @param {{@link Titanium_Buffer}} buffer buffer to read stream data into
+     * @param {Number} offset (Optional) offset to start reading buffer data from
+     * @param {Number} length (Optional) length of data to read from buffer
      * @since 1.7
      */
     read:function(buffer, offset, length) {
@@ -7489,9 +7489,9 @@ Titanium.IOStream = {
     /**
      * <p>writes data from buffer to stream. Optional offset and length arguments to specify position in buffer in which to start reading data that is written to the stream, and the length of the data to take from the buffer.</p>
      * platforms: iphone, android, ipad
-     * @param {@link Titanium_Buffer} buffer buffer to write to stream
-     * @param Number offset (Optional) offset to start writing buffer data from
-     * @param Number length (Optional) length of data to write from buffer
+     * @param {{@link Titanium_Buffer}} buffer buffer to write to stream
+     * @param {Number} offset (Optional) offset to start writing buffer data from
+     * @param {Number} length (Optional) length of data to write from buffer
      * @since 1.7
      */
     write:function(buffer, offset, length) {
@@ -7534,8 +7534,8 @@ Titanium.Locale = {
     /**
      * add an event listener for the instance to receive view triggered events
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function to invoke when the event is fired
+     * @param {string} name name of the event
+     * @param {function} callback callback function to invoke when the event is fired
      * @returns void
      * @since 1.5
      */
@@ -7545,8 +7545,8 @@ Titanium.Locale = {
     /**
      * fire a synthesized event to the views listener
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param object event event object
+     * @param {string} name name of the event
+     * @param {object} event event object
      * @returns void
      * @since 1.5
      */
@@ -7556,7 +7556,7 @@ Titanium.Locale = {
     /**
      * <p>format a telephone number according to the current locale.</p>
      * platforms: android, iphone, ipad
-     * @param string number the phone number to format
+     * @param {string} number the phone number to format
      * @since 1.5
      */
     formatTelephoneNumber:function(number) {
@@ -7565,7 +7565,7 @@ Titanium.Locale = {
     /**
      * <p>return a currency code for a given locale. (Android only)</p>
      * platforms: android, iphone, ipad
-     * @param string locale the locale for which you want to the currency code, e.g. getCurrencyCode('en-US') -> 'USD'
+     * @param {string} locale the locale for which you want to the currency code, e.g. getCurrencyCode('en-US') -> 'USD'
      * @since 1.5
      */
     getCurrencyCode:function(locale) {
@@ -7574,7 +7574,7 @@ Titanium.Locale = {
     /**
      * <p>return a currency symbol for the given currency code. (Android only)</p>
      * platforms: android, iphone, ipad
-     * @param string currencyCode the currency for which you want the symbol, e.g. getCurrencySymbol('USD') -> '$'
+     * @param {string} currencyCode the currency for which you want the symbol, e.g. getCurrencySymbol('USD') -> '$'
      * @since 1.5
      */
     getCurrencySymbol:function(currencyCode) {
@@ -7583,7 +7583,7 @@ Titanium.Locale = {
     /**
      * <p>return a currency symbol for the given locale. (Android only)</p>
      * platforms: android, iphone, ipad
-     * @param string locale the locale whose currency symbol you want, e.g. getLocaleCurrencySymbol('en-US') -> '$'
+     * @param {string} locale the locale whose currency symbol you want, e.g. getLocaleCurrencySymbol('en-US') -> '$'
      * @since 1.5
      */
     getLocaleCurrencySymbol:function(locale) {
@@ -7592,8 +7592,8 @@ Titanium.Locale = {
     /**
      * <p>return a localization string</p>
      * platforms: android, iphone, ipad
-     * @param string key the key to use when mapping into the localization file
-     * @param string hint the text to use if no key found in the localization file
+     * @param {string} key the key to use when mapping into the localization file
+     * @param {string} hint the text to use if no key found in the localization file
      * @since 1.5
      */
     getString:function(key, hint) {
@@ -7602,8 +7602,8 @@ Titanium.Locale = {
     /**
      * remove a previously added event listener
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function passed in addEventListener
+     * @param {string} name name of the event
+     * @param {function} callback callback function passed in addEventListener
      * @returns void
      * @since 1.5
      */
@@ -7672,8 +7672,8 @@ Titanium.Map = {
     /**
      * add an event listener for the instance to receive view triggered events
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function to invoke when the event is fired
+     * @param {string} name name of the event
+     * @param {function} callback callback function to invoke when the event is fired
      * @returns void
      * @since 0.8
      */
@@ -7683,7 +7683,7 @@ Titanium.Map = {
     /**
      * create and return an instance of {@link Titanium.Map.Annotation}
      * platforms: android, iphone, ipad
-     * @param object parameters (optional) a dictionary object properties defined in {@link Titanium.Map.Annotation}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.Map.Annotation}
      * @since 0.8
      */
     createAnnotation:function(parameters) {
@@ -7692,7 +7692,7 @@ Titanium.Map = {
     /**
      * create and return an instance of {@link Titanium.Map.MapView}
      * platforms: android, iphone, ipad
-     * @param object parameters (optional) a dictionary object properties defined in {@link Titanium.Map.MapView}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.Map.MapView}
      * @since 0.8
      */
     createMapView:function(parameters) {
@@ -7701,8 +7701,8 @@ Titanium.Map = {
     /**
      * fire a synthesized event to the views listener
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param object event event object
+     * @param {string} name name of the event
+     * @param {object} event event object
      * @returns void
      * @since 0.8
      */
@@ -7712,8 +7712,8 @@ Titanium.Map = {
     /**
      * remove a previously added event listener
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function passed in addEventListener
+     * @param {string} name name of the event
+     * @param {function} callback callback function passed in addEventListener
      * @returns void
      * @since 0.8
      */
@@ -7830,8 +7830,8 @@ Titanium_Map_Annotation.prototype = {
     /**
      * add an event listener for the instance to receive view triggered events
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function to invoke when the event is fired
+     * @param {string} name name of the event
+     * @param {function} callback callback function to invoke when the event is fired
      * @returns void
      * @since 0.9
      */
@@ -7841,8 +7841,8 @@ Titanium_Map_Annotation.prototype = {
     /**
      * fire a synthesized event to the views listener
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param object event event object
+     * @param {string} name name of the event
+     * @param {object} event event object
      * @returns void
      * @since 0.9
      */
@@ -7852,8 +7852,8 @@ Titanium_Map_Annotation.prototype = {
     /**
      * remove a previously added event listener
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function passed in addEventListener
+     * @param {string} name name of the event
+     * @param {function} callback callback function passed in addEventListener
      * @returns void
      * @since 0.9
      */
@@ -8209,7 +8209,7 @@ Titanium.Map.MapView = {
     /**
      * add a child to the view hierarchy
      * platforms: android, iphone, ipad
-     * @param object view the view to add to this views hiearchy
+     * @param {object} view the view to add to this views hiearchy
      * @returns void
      * @since 0.8
      */
@@ -8219,7 +8219,7 @@ Titanium.Map.MapView = {
     /**
      * <p>add a new annotation to the map</p>
      * platforms: android, iphone, ipad
-     * @param object annotation either a dictionary of properties for the annotation or a [Titanium.Map.Annotation](Titanium.Map.Annotation) instance.
+     * @param {object} annotation either a dictionary of properties for the annotation or a [Titanium.Map.Annotation](Titanium.Map.Annotation) instance.
      * @returns void
      * @since 0.8
      */
@@ -8229,7 +8229,7 @@ Titanium.Map.MapView = {
     /**
      * <p>add one or more new annotation to the map</p>
      * platforms: android, iphone, ipad
-     * @param array annotations an array of either a dictionary of properties for the annotation or a [Titanium.Map.Annotation](Titanium.Map.Annotation) instance.
+     * @param {array} annotations an array of either a dictionary of properties for the annotation or a [Titanium.Map.Annotation](Titanium.Map.Annotation) instance.
      * @returns void
      * @since 0.8
      */
@@ -8239,8 +8239,8 @@ Titanium.Map.MapView = {
     /**
      * add an event listener for the instance to receive view triggered events
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function to invoke when the event is fired
+     * @param {string} name name of the event
+     * @param {function} callback callback function to invoke when the event is fired
      * @returns void
      * @since 0.8
      */
@@ -8250,7 +8250,7 @@ Titanium.Map.MapView = {
     /**
      * <p>add a route. currently only supported on iphone</p>
      * platforms: android, iphone, ipad
-     * @param object route dictionary with the properties: <tt>name</tt> route name, <tt>points</tt> dictionary of values with longitude and latitude keys, <tt>color</tt> for the line color and <tt>width</tt> for the line width.
+     * @param {object} route dictionary with the properties: <tt>name</tt> route name, <tt>points</tt> dictionary of values with longitude and latitude keys, <tt>color</tt> for the line color and <tt>width</tt> for the line width.
      * @returns void
      * @since 0.8
      */
@@ -8260,8 +8260,8 @@ Titanium.Map.MapView = {
     /**
      * animate the view
      * platforms: android, iphone, ipad
-     * @param object obj either a dictionary of animation properties or an Animation object
-     * @param function callback function to be invoked upon completion of the animation
+     * @param {object} obj either a dictionary of animation properties or an Animation object
+     * @param {function} callback function to be invoked upon completion of the animation
      * @returns void
      * @since 0.8
      */
@@ -8271,7 +8271,7 @@ Titanium.Map.MapView = {
     /**
      * <p>cause the annotation to be deselected (hidden).</p>
      * platforms: android, iphone, ipad
-     * @param string,object annotation either a string of the annotation title or a [Titanium.Map.Annotation](Titanium.Map.Annotation) reference.
+     * @param {string,object} annotation either a string of the annotation title or a [Titanium.Map.Annotation](Titanium.Map.Annotation) reference.
      * @returns void
      * @since 0.8
      */
@@ -8281,8 +8281,8 @@ Titanium.Map.MapView = {
     /**
      * fire a synthesized event to the views listener
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param object event event object
+     * @param {string} name name of the event
+     * @param {object} event event object
      * @returns void
      * @since 0.8
      */
@@ -8301,7 +8301,7 @@ Titanium.Map.MapView = {
     /**
      * remove a previously add view from the view hiearchy
      * platforms: android, iphone, ipad
-     * @param object view the view to remove from this views hiearchy
+     * @param {object} view the view to remove from this views hiearchy
      * @returns void
      * @since 0.8
      */
@@ -8320,7 +8320,7 @@ Titanium.Map.MapView = {
     /**
      * <p>remove an existing annotation from the map</p>
      * platforms: android, iphone, ipad
-     * @param string,object annotation either a string of the annotation title or a [Titanium.Map.Annotation](Titanium.Map.Annotation) reference.
+     * @param {string,object} annotation either a string of the annotation title or a [Titanium.Map.Annotation](Titanium.Map.Annotation) reference.
      * @returns void
      * @since 0.8
      */
@@ -8330,7 +8330,7 @@ Titanium.Map.MapView = {
     /**
      * <p>remove one or more existing annotations from the map</p>
      * platforms: android, iphone, ipad
-     * @param array annotation an array of either a string of the annotation title or a [Titanium.Map.Annotation](Titanium.Map.Annotation) reference.
+     * @param {array} annotation an array of either a string of the annotation title or a [Titanium.Map.Annotation](Titanium.Map.Annotation) reference.
      * @returns void
      * @since 0.8
      */
@@ -8340,8 +8340,8 @@ Titanium.Map.MapView = {
     /**
      * remove a previously added event listener
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function passed in addEventListener
+     * @param {string} name name of the event
+     * @param {function} callback callback function passed in addEventListener
      * @returns void
      * @since 0.8
      */
@@ -8351,7 +8351,7 @@ Titanium.Map.MapView = {
     /**
      * <p>remove a previously added route. currently only supported on iphone</p>
      * platforms: android, iphone, ipad
-     * @param object route same route object used during addRoute
+     * @param {object} route same route object used during addRoute
      * @returns void
      * @since 0.8
      */
@@ -8361,7 +8361,7 @@ Titanium.Map.MapView = {
     /**
      * <p>cause the annotation to be selected (shown).</p>
      * platforms: android, iphone, ipad
-     * @param string,object annotation either a string of the annotation title or a [Titanium.Map.Annotation](Titanium.Map.Annotation) reference.
+     * @param {string,object} annotation either a string of the annotation title or a [Titanium.Map.Annotation](Titanium.Map.Annotation) reference.
      * @returns void
      * @since 0.8
      */
@@ -8371,7 +8371,7 @@ Titanium.Map.MapView = {
     /**
      * <p>set and center the map location.</p>
      * platforms: android, iphone, ipad
-     * @param object location a dictionary that specifies the following properties specifying the location to set the map: <tt>latitudeDelta</tt>, <tt>longitudeDelta</tt>, <tt>latitude</tt>, <tt>longitude</tt>.
+     * @param {object} location a dictionary that specifies the following properties specifying the location to set the map: <tt>latitudeDelta</tt>, <tt>longitudeDelta</tt>, <tt>latitude</tt>, <tt>longitude</tt>.
      * @returns void
      * @since 0.8
      */
@@ -8381,7 +8381,7 @@ Titanium.Map.MapView = {
     /**
      * <p>set the type of map (satellite, hybrid, standard)</p>
      * platforms: android, iphone, ipad
-     * @param int mapType the map type constant of either {@link Titanium.Map.STANDARD_TYPE}, {@link Titanium.Map.SATELLITE_TYPE} or {@link Titanium.Map.HYBRID_TYPE}.
+     * @param {int} mapType the map type constant of either {@link Titanium.Map.STANDARD_TYPE}, {@link Titanium.Map.SATELLITE_TYPE} or {@link Titanium.Map.HYBRID_TYPE}.
      * @returns void
      * @since 0.8
      */
@@ -8400,7 +8400,7 @@ Titanium.Map.MapView = {
     /**
      * return a Blob image of the rendered view
      * platforms: android, iphone, ipad
-     * @param function f function to be invoked upon completion. if non-null, this method will be performed asynchronously. if null, it will be performed immediately
+     * @param {function} f function to be invoked upon completion. if non-null, this method will be performed asynchronously. if null, it will be performed immediately
      * @since 0.8
      */
     toImage:function(f) {
@@ -8409,7 +8409,7 @@ Titanium.Map.MapView = {
     /**
      * <p>zoom in or out of the map</p>
      * platforms: android, iphone, ipad
-     * @param double level zoom level (can be positive or negative)
+     * @param {double} level zoom level (can be positive or negative)
      * @returns void
      * @since 0.8
      */
@@ -9268,8 +9268,8 @@ Titanium.Media = {
     /**
      * add an event listener for the instance to receive view triggered events
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function to invoke when the event is fired
+     * @param {string} name name of the event
+     * @param {function} callback callback function to invoke when the event is fired
      * @returns void
      * @since 0.1
      */
@@ -9288,7 +9288,7 @@ Titanium.Media = {
     /**
      * create and return an instance of {@link Titanium.Media.AudioPlayer}
      * platforms: android, iphone, ipad
-     * @param object parameters (optional) a dictionary object properties defined in {@link Titanium.Media.AudioPlayer}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.Media.AudioPlayer}
      * @since 0.1
      */
     createAudioPlayer:function(parameters) {
@@ -9297,7 +9297,7 @@ Titanium.Media = {
     /**
      * create and return an instance of {@link Titanium.Media.AudioRecorder}
      * platforms: android, iphone, ipad
-     * @param object parameters (optional) a dictionary object properties defined in {@link Titanium.Media.AudioRecorder}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.Media.AudioRecorder}
      * @since 0.1
      */
     createAudioRecorder:function(parameters) {
@@ -9306,7 +9306,7 @@ Titanium.Media = {
     /**
      * create and return an instance of {@link Titanium.Media.Item}
      * platforms: android, iphone, ipad
-     * @param object parameters (optional) a dictionary object properties defined in {@link Titanium.Media.Item}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.Media.Item}
      * @since 0.1
      */
     createItem:function(parameters) {
@@ -9315,7 +9315,7 @@ Titanium.Media = {
     /**
      * create and return an instance of {@link Titanium.Media.MusicPlayer}
      * platforms: android, iphone, ipad
-     * @param object parameters (optional) a dictionary object properties defined in {@link Titanium.Media.MusicPlayer}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.Media.MusicPlayer}
      * @since 0.1
      */
     createMusicPlayer:function(parameters) {
@@ -9324,7 +9324,7 @@ Titanium.Media = {
     /**
      * create and return an instance of {@link Titanium.Media.Sound}
      * platforms: android, iphone, ipad
-     * @param object parameters (optional) a dictionary object properties defined in {@link Titanium.Media.Sound}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.Media.Sound}
      * @since 0.1
      */
     createSound:function(parameters) {
@@ -9333,7 +9333,7 @@ Titanium.Media = {
     /**
      * create and return an instance of {@link Titanium.Media.VideoPlayer}
      * platforms: android, iphone, ipad
-     * @param object parameters (optional) a dictionary object properties defined in {@link Titanium.Media.VideoPlayer}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.Media.VideoPlayer}
      * @since 0.1
      */
     createVideoPlayer:function(parameters) {
@@ -9342,8 +9342,8 @@ Titanium.Media = {
     /**
      * fire a synthesized event to the views listener
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param object event event object
+     * @param {string} name name of the event
+     * @param {object} event event object
      * @returns void
      * @since 0.1
      */
@@ -9371,8 +9371,8 @@ Titanium.Media = {
     /**
      * <p>return boolean to indicate if the media type is supported</p>
      * platforms: android, iphone, ipad
-     * @param string media media type as a string of either <tt>camera</tt>, <tt>photo</tt> or <tt>photogallery</tt>.
-     * @param string type the type of media to check
+     * @param {string} media media type as a string of either <tt>camera</tt>, <tt>photo</tt> or <tt>photogallery</tt>.
+     * @param {string} type the type of media to check
      * @since 0.1
      */
     isMediaTypeSupported:function(media, type) {
@@ -9381,7 +9381,7 @@ Titanium.Media = {
     /**
      * <p>open the photo gallery picker</p>
      * platforms: android, iphone, ipad
-     * @param object options pass a dictionary with the following supported keys: <tt>success</tt> a function that will be called when the camera is completed, <tt>error</tt> a function that will be called upon receiving an error, <tt>cancel</tt> a function that will be called if the user presses the cancel button, <tt>autohide</tt> boolean if the camera should auto hide after the media capture is completed (defaults to true), <tt>animated</tt> boolean if the dialog should be animated (defaults to true) upon showing and hiding, <tt>saveToPhotoGallery</tt> boolean if the media should be saved to the photo gallery upon successful capture, <tt>allowEditing</tt> boolean if the media should be editable after capture in the UI interface, <tt>mediaTypes</tt> an array of media type constants supported by the capture device UI, <tt>showControls</tt> boolean to indicate if the built-in UI controls should be displayed, <tt>overlay</tt> view which is added as an overlay to the UI (on top), <tt>transform</tt> an transformation matrix that applies to the UI transform. For iPad, <tt>popoverView</tt> can be provided to position the photo gallery popover a specific view and <tt>arrowDirection</tt> can be provided to control the type of arrow and position of the gallery.
+     * @param {object} options pass a dictionary with the following supported keys: <tt>success</tt> a function that will be called when the camera is completed, <tt>error</tt> a function that will be called upon receiving an error, <tt>cancel</tt> a function that will be called if the user presses the cancel button, <tt>autohide</tt> boolean if the camera should auto hide after the media capture is completed (defaults to true), <tt>animated</tt> boolean if the dialog should be animated (defaults to true) upon showing and hiding, <tt>saveToPhotoGallery</tt> boolean if the media should be saved to the photo gallery upon successful capture, <tt>allowEditing</tt> boolean if the media should be editable after capture in the UI interface, <tt>mediaTypes</tt> an array of media type constants supported by the capture device UI, <tt>showControls</tt> boolean to indicate if the built-in UI controls should be displayed, <tt>overlay</tt> view which is added as an overlay to the UI (on top), <tt>transform</tt> an transformation matrix that applies to the UI transform. For iPad, <tt>popoverView</tt> can be provided to position the photo gallery popover a specific view and <tt>arrowDirection</tt> can be provided to control the type of arrow and position of the gallery.
      * @returns void
      * @since 0.1
      */
@@ -9391,8 +9391,8 @@ Titanium.Media = {
     /**
      * remove a previously added event listener
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function passed in addEventListener
+     * @param {string} name name of the event
+     * @param {function} callback callback function passed in addEventListener
      * @returns void
      * @since 0.1
      */
@@ -9402,8 +9402,8 @@ Titanium.Media = {
     /**
      * <p>save media to photo gallery / camera roll</p>
      * platforms: android, iphone, ipad
-     * @param object media save the media passed to the cameras photo roll/media gallery. must be one of Blob object or File object or an error will be generated.
-     * @param object callbacks pass a dictionary with the following supported keys: <tt>success</tt> a function that will be called when the save succeeds, and <tt>error</tt> a function that will be called upon anreceiving an error
+     * @param {object} media save the media passed to the cameras photo roll/media gallery. must be one of Blob object or File object or an error will be generated.
+     * @param {object} callbacks pass a dictionary with the following supported keys: <tt>success</tt> a function that will be called when the save succeeds, and <tt>error</tt> a function that will be called upon anreceiving an error
      * @returns void
      * @since 0.1
      */
@@ -9413,7 +9413,7 @@ Titanium.Media = {
     /**
      * <p>show the camera</p>
      * platforms: android, iphone, ipad
-     * @param object options pass a dictionary with the following supported keys: <tt>success</tt> a function that will be called when the camera is completed, <tt>error</tt> a function that will be called upon receiving an error, <tt>cancel</tt> a function that will be called if the user presses the cancel button, <tt>autohide</tt> boolean if the camera should auto hide after the media capture is completed (defaults to true), <tt>animated</tt> boolean if the dialog should be animated (defaults to true) upon showing and hiding, <tt>saveToPhotoGallery</tt> boolean if the media should be saved to the photo gallery upon successful capture, <tt>allowEditing</tt> boolean if the media should be editable after capture in the UI interface, <tt>mediaTypes</tt> an array of media type constants supported by the capture device UI, <tt>videoMaximumDuration</tt> float duration on how long in milliseconds to allow capture before completing, <tt>videoQuality</tt> constant to indicate the video quality during capture, <tt>showControls</tt> boolean to indicate if the built-in UI controls should be displayed, <tt>overlay</tt> view which is added as an overlay to the camera UI (on top), <tt>transform</tt> an transformation matrix that applies to the camera UI transform.
+     * @param {object} options pass a dictionary with the following supported keys: <tt>success</tt> a function that will be called when the camera is completed, <tt>error</tt> a function that will be called upon receiving an error, <tt>cancel</tt> a function that will be called if the user presses the cancel button, <tt>autohide</tt> boolean if the camera should auto hide after the media capture is completed (defaults to true), <tt>animated</tt> boolean if the dialog should be animated (defaults to true) upon showing and hiding, <tt>saveToPhotoGallery</tt> boolean if the media should be saved to the photo gallery upon successful capture, <tt>allowEditing</tt> boolean if the media should be editable after capture in the UI interface, <tt>mediaTypes</tt> an array of media type constants supported by the capture device UI, <tt>videoMaximumDuration</tt> float duration on how long in milliseconds to allow capture before completing, <tt>videoQuality</tt> constant to indicate the video quality during capture, <tt>showControls</tt> boolean to indicate if the built-in UI controls should be displayed, <tt>overlay</tt> view which is added as an overlay to the camera UI (on top), <tt>transform</tt> an transformation matrix that applies to the camera UI transform.
      * @returns void
      * @since 0.1
      */
@@ -9423,7 +9423,7 @@ Titanium.Media = {
     /**
      * <p>show the music library.  iPhone and iPad only.</p>
      * platforms: android, iphone, ipad
-     * @param object options pass a dictionary with the following supported keys: <tt>success</tt> a function that will be called when the camera is completed, <tt>error</tt> a function that will be called upon receiving an error, <tt>cancel</tt> a function that will be called if the user presses the cancel button, <tt>autohide</tt> boolean if the library listing should auto hide after selection is completed (defaults to true), <tt>animated</tt> boolean if the dialog should be animated (defaults to true) upon showing and hiding, <tt>mediaTypes</tt> an array of media type constants defining selectable media (see MUSIC_MEDIA_TYPE_* properties below) as either an array or a bitwise-or single value, <tt>allowMultipleSelections</tt> boolean whether or not more than one media selection is allowed
+     * @param {object} options pass a dictionary with the following supported keys: <tt>success</tt> a function that will be called when the camera is completed, <tt>error</tt> a function that will be called upon receiving an error, <tt>cancel</tt> a function that will be called if the user presses the cancel button, <tt>autohide</tt> boolean if the library listing should auto hide after selection is completed (defaults to true), <tt>animated</tt> boolean if the dialog should be animated (defaults to true) upon showing and hiding, <tt>mediaTypes</tt> an array of media type constants defining selectable media (see MUSIC_MEDIA_TYPE_* properties below) as either an array or a bitwise-or single value, <tt>allowMultipleSelections</tt> boolean whether or not more than one media selection is allowed
      * @returns void
      * @since 0.1
      */
@@ -9460,7 +9460,7 @@ Titanium.Media = {
     /**
      * <p>take a screen shot of the visible UI on the device</p>
      * platforms: android, iphone, ipad
-     * @param function callback function that will be called upon capture. the event property <tt>media</tt> will contain an image Blob object of the screenshot
+     * @param {function} callback function that will be called upon capture. the event property <tt>media</tt> will contain an image Blob object of the screenshot
      * @returns void
      * @since 0.1
      */
@@ -9488,8 +9488,8 @@ Titanium.Media.Android = {
     /**
      * add an event listener for the instance to receive view triggered events
      * platforms: android
-     * @param string name name of the event
-     * @param function callback callback function to invoke when the event is fired
+     * @param {string} name name of the event
+     * @param {function} callback callback function to invoke when the event is fired
      * @returns void
      * @since 1.7.0
      */
@@ -9499,8 +9499,8 @@ Titanium.Media.Android = {
     /**
      * fire a synthesized event to the views listener
      * platforms: android
-     * @param string name name of the event
-     * @param object event event object
+     * @param {string} name name of the event
+     * @param {object} event event object
      * @returns void
      * @since 1.7.0
      */
@@ -9510,8 +9510,8 @@ Titanium.Media.Android = {
     /**
      * remove a previously added event listener
      * platforms: android
-     * @param string name name of the event
-     * @param function callback callback function passed in addEventListener
+     * @param {string} name name of the event
+     * @param {function} callback callback function passed in addEventListener
      * @returns void
      * @since 1.7.0
      */
@@ -9521,9 +9521,9 @@ Titanium.Media.Android = {
     /**
      * <p>Use the {@link http://developer.android.com/reference/android/media/MediaScannerConnection} to request immediate scan of particular files so that they become available to the appropriate media providers (Gallery, etc.).</p>
      * platforms: android
-     * @param Array<String> paths Array of paths to the files you want to be scanned.
-     * @param Array<String> mimeTypes Array of mime types for the files in the paths parameter.  Can be null, in which case the mime type will be inferred at scan time.
-     * @param function callback A function that will be called when each file is finished being scanned.  Check the callback argument's "path" and "uri" properties to see the path that was scanned and the resulting content uri.
+     * @param {Array<String>} paths Array of paths to the files you want to be scanned.
+     * @param {Array<String>} mimeTypes Array of mime types for the files in the paths parameter.  Can be null, in which case the mime type will be inferred at scan time.
+     * @param {function} callback A function that will be called when each file is finished being scanned.  Check the callback argument's "path" and "uri" properties to see the path that was scanned and the resulting content uri.
      * @returns void
      * @since 1.7.0
      */
@@ -9533,8 +9533,8 @@ Titanium.Media.Android = {
     /**
      * <p>(Android only) Set the system homescreen wallpaper</p>
      * platforms: android
-     * @param object image Image blob such as what can be retrieved via callbacks for {@link Titanium.Media.openPhotoGallery} and {@link Titanium.Media.showCamera}, as well as from the return value of {@link Titanium.Filesystem.File.read}.
-     * @param boolean scale Set to true if you want the image to be scaled with respect to the system wallpaper desired width, or false to leave it as-is.
+     * @param {object} image Image blob such as what can be retrieved via callbacks for {@link Titanium.Media.openPhotoGallery} and {@link Titanium.Media.showCamera}, as well as from the return value of {@link Titanium.Filesystem.File.read}.
+     * @param {boolean} scale Set to true if you want the image to be scaled with respect to the system wallpaper desired width, or false to leave it as-is.
      * @returns void
      * @since 1.7.0
      */
@@ -9707,8 +9707,8 @@ Titanium_Media_AudioPlayer.prototype = {
     /**
      * add an event listener for the instance to receive view triggered events
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function to invoke when the event is fired
+     * @param {string} name name of the event
+     * @param {function} callback callback function to invoke when the event is fired
      * @returns void
      * @since 0.9
      */
@@ -9718,8 +9718,8 @@ Titanium_Media_AudioPlayer.prototype = {
     /**
      * fire a synthesized event to the views listener
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param object event event object
+     * @param {string} name name of the event
+     * @param {object} event event object
      * @returns void
      * @since 0.9
      */
@@ -9738,8 +9738,8 @@ Titanium_Media_AudioPlayer.prototype = {
     /**
      * remove a previously added event listener
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function passed in addEventListener
+     * @param {string} name name of the event
+     * @param {function} callback callback function passed in addEventListener
      * @returns void
      * @since 0.9
      */
@@ -9749,7 +9749,7 @@ Titanium_Media_AudioPlayer.prototype = {
     /**
      * <p>control the playback of the audio</p>
      * platforms: android, iphone, ipad
-     * @param boolean paused pass true to pause the current playback temporarily, false to unpause it
+     * @param {boolean} paused pass true to pause the current playback temporarily, false to unpause it
      * @returns void
      * @since 0.9
      */
@@ -9759,7 +9759,7 @@ Titanium_Media_AudioPlayer.prototype = {
     /**
      * <p>change the url of the audio playback</p>
      * platforms: android, iphone, ipad
-     * @param string url the new url
+     * @param {string} url the new url
      * @returns void
      * @since 0.9
      */
@@ -9846,8 +9846,8 @@ Titanium_Media_AudioRecorder.prototype = {
     /**
      * add an event listener for the instance to receive view triggered events
      * platforms: iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function to invoke when the event is fired
+     * @param {string} name name of the event
+     * @param {function} callback callback function to invoke when the event is fired
      * @returns void
      * @since 0.9
      */
@@ -9857,8 +9857,8 @@ Titanium_Media_AudioRecorder.prototype = {
     /**
      * fire a synthesized event to the views listener
      * platforms: iphone, ipad
-     * @param string name name of the event
-     * @param object event event object
+     * @param {string} name name of the event
+     * @param {object} event event object
      * @returns void
      * @since 0.9
      */
@@ -9877,8 +9877,8 @@ Titanium_Media_AudioRecorder.prototype = {
     /**
      * remove a previously added event listener
      * platforms: iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function passed in addEventListener
+     * @param {string} name name of the event
+     * @param {function} callback callback function passed in addEventListener
      * @returns void
      * @since 0.9
      */
@@ -10171,7 +10171,7 @@ Titanium.Media.MusicPlayer = {
     /**
      * <p>set the media queue</p>
      * platforms: iphone, ipad
-     * @param object queue a queue representation to set the player queue to.  Can be any of: A dictionary with an <tt>items</tt> key that is an array of {@link Titanium.Media.Item} objects, an array of {@link Titanium.Media.Item} objects, or a single {@link Titanium.Media.Item} object.
+     * @param {object} queue a queue representation to set the player queue to.  Can be any of: A dictionary with an <tt>items</tt> key that is an array of {@link Titanium.Media.Item} objects, an array of {@link Titanium.Media.Item} objects, or a single {@link Titanium.Media.Item} object.
      * @returns void
      * @since 1.4.0
      */
@@ -10308,8 +10308,8 @@ Titanium_Media_Sound.prototype = {
     /**
      * add an event listener for the instance to receive view triggered events
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function to invoke when the event is fired
+     * @param {string} name name of the event
+     * @param {function} callback callback function to invoke when the event is fired
      * @returns void
      * @since 0.8
      */
@@ -10319,8 +10319,8 @@ Titanium_Media_Sound.prototype = {
     /**
      * fire a synthesized event to the views listener
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param object event event object
+     * @param {string} name name of the event
+     * @param {object} event event object
      * @returns void
      * @since 0.8
      */
@@ -10397,8 +10397,8 @@ Titanium_Media_Sound.prototype = {
     /**
      * remove a previously added event listener
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function passed in addEventListener
+     * @param {string} name name of the event
+     * @param {function} callback callback function passed in addEventListener
      * @returns void
      * @since 0.8
      */
@@ -10920,7 +10920,7 @@ Titanium.Media.VideoPlayer = {
     /**
      * add a child to the view hierarchy
      * platforms: android, iphone, ipad
-     * @param object view the view to add to this views hiearchy
+     * @param {object} view the view to add to this views hiearchy
      * @returns void
      * @since 0.9
      */
@@ -10930,8 +10930,8 @@ Titanium.Media.VideoPlayer = {
     /**
      * add an event listener for the instance to receive view triggered events
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function to invoke when the event is fired
+     * @param {string} name name of the event
+     * @param {function} callback callback function to invoke when the event is fired
      * @returns void
      * @since 0.9
      */
@@ -10941,8 +10941,8 @@ Titanium.Media.VideoPlayer = {
     /**
      * animate the view
      * platforms: android, iphone, ipad
-     * @param object obj either a dictionary of animation properties or an Animation object
-     * @param function callback function to be invoked upon completion of the animation
+     * @param {object} obj either a dictionary of animation properties or an Animation object
+     * @param {function} callback function to be invoked upon completion of the animation
      * @returns void
      * @since 0.9
      */
@@ -10961,8 +10961,8 @@ Titanium.Media.VideoPlayer = {
     /**
      * fire a synthesized event to the views listener
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param object event event object
+     * @param {string} name name of the event
+     * @param {object} event event object
      * @returns void
      * @since 0.9
      */
@@ -11008,7 +11008,7 @@ Titanium.Media.VideoPlayer = {
     /**
      * remove a previously add view from the view hiearchy
      * platforms: android, iphone, ipad
-     * @param object view the view to remove from this views hiearchy
+     * @param {object} view the view to remove from this views hiearchy
      * @returns void
      * @since 0.9
      */
@@ -11018,8 +11018,8 @@ Titanium.Media.VideoPlayer = {
     /**
      * remove a previously added event listener
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function passed in addEventListener
+     * @param {string} name name of the event
+     * @param {function} callback callback function passed in addEventListener
      * @returns void
      * @since 0.9
      */
@@ -11029,8 +11029,8 @@ Titanium.Media.VideoPlayer = {
     /**
      * <p>Asynchronously request thumbnails for one or more times, provided as an array of numbers (double). Fires a <tt>thumbnail</tt> event on completion. Optionally invokes the callback function passed in the method.</p>
      * platforms: android, iphone, ipad
-     * @param array times array of doubles for each time to request
-     * @param int option either [[Titanium.Media.VIDEO_TIME_OPTION_NEAREST_KEYFRAME]] or [[Titanium.Media.VIDEO_TIME_OPTION_EXACT]].
+     * @param {array} times array of doubles for each time to request
+     * @param {int} option either [[Titanium.Media.VIDEO_TIME_OPTION_NEAREST_KEYFRAME]] or [[Titanium.Media.VIDEO_TIME_OPTION_EXACT]].
      * @returns void
      * @since 0.9
      */
@@ -11040,7 +11040,7 @@ Titanium.Media.VideoPlayer = {
     /**
      * <p>A view for customization which is always displayed behind movie content.</p>
      * platforms: android, iphone, ipad
-     * @param object view view to set
+     * @param {object} view view to set
      * @returns void
      * @since 0.9
      */
@@ -11050,7 +11050,7 @@ Titanium.Media.VideoPlayer = {
     /**
      * <p>the a non-url based media to play, either a File or Blob.</p>
      * platforms: android, iphone, ipad
-     * @param object media media to play
+     * @param {object} media media to play
      * @returns void
      * @since 0.9
      */
@@ -11060,7 +11060,7 @@ Titanium.Media.VideoPlayer = {
     /**
      * <p>the url to play</p>
      * platforms: android, iphone, ipad
-     * @param string url the url to play
+     * @param {string} url the url to play
      * @returns void
      * @since 0.9
      */
@@ -11088,8 +11088,8 @@ Titanium.Media.VideoPlayer = {
     /**
      * <p>Returns a thumbnail at the given time as a blob.</p>
      * platforms: android, iphone, ipad
-     * @param double time playback time
-     * @param int option either [[Titanium.Media.VIDEO_TIME_OPTION_NEAREST_KEYFRAME]] or [[Titanium.Media.VIDEO_TIME_OPTION_EXACT]]
+     * @param {double} time playback time
+     * @param {int} option either [[Titanium.Media.VIDEO_TIME_OPTION_NEAREST_KEYFRAME]] or [[Titanium.Media.VIDEO_TIME_OPTION_EXACT]]
      * @since 0.9
      */
     thumbnailImageAtTime:function(time, option) {
@@ -11098,7 +11098,7 @@ Titanium.Media.VideoPlayer = {
     /**
      * return a Blob image of the rendered view
      * platforms: android, iphone, ipad
-     * @param function f function to be invoked upon completion. if non-null, this method will be performed asynchronously. if null, it will be performed immediately
+     * @param {function} f function to be invoked upon completion. if non-null, this method will be performed asynchronously. if null, it will be performed immediately
      * @since 0.9
      */
     toImage:function(f) {
@@ -11300,7 +11300,7 @@ Titanium.Network = {
     /**
      * <p>adds a connectivity listener to listen for network changes. This method has been deprecated in favor of listening for a <tt>change</tt> event.</p>
      * platforms: android, iphone, ipad
-     * @param function callback callback function to invoke upon network connectivity changes
+     * @param {function} callback callback function to invoke upon network connectivity changes
      * @returns void
      * @since 0.1
      */
@@ -11310,8 +11310,8 @@ Titanium.Network = {
     /**
      * add an event listener for the instance to receive view triggered events
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function to invoke when the event is fired
+     * @param {string} name name of the event
+     * @param {function} callback callback function to invoke when the event is fired
      * @returns void
      * @since 0.1
      */
@@ -11321,9 +11321,9 @@ Titanium.Network = {
     /**
      * create and return an instance of {@link Titanium.Network.BonjourBrowser}
      * platforms: android, iphone, ipad
-     * @param string serviceType service to search for, must include the protocol type suffix (._tcp)
-     * @param string domain the Bonjour service domain to conduct the search in.  Default value is 'local.'
-     * @param object parameters (optional) a dictionary object properties defined in {@link Titanium.Network.BonjourBrowser}
+     * @param {string} serviceType service to search for, must include the protocol type suffix (._tcp)
+     * @param {string} domain the Bonjour service domain to conduct the search in.  Default value is 'local.'
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.Network.BonjourBrowser}
      * @since 0.1
      */
     createBonjourBrowser:function(serviceType, domain, parameters) {
@@ -11332,10 +11332,10 @@ Titanium.Network = {
     /**
      * create and return an instance of {@link Titanium.Network.BonjourService}
      * platforms: android, iphone, ipad
-     * @param string name the name of the service.  Must be a unique identifier for this service type and domain.
-     * @param string type the type of service.  Must include the protocol identifier (._tcp)
-     * @param string domain the domain to publish the service in.  Default value is 'local.'
-     * @param object parameters (optional) a dictionary object properties defined in {@link Titanium.Network.BonjourService}
+     * @param {string} name the name of the service.  Must be a unique identifier for this service type and domain.
+     * @param {string} type the type of service.  Must include the protocol identifier (._tcp)
+     * @param {string} domain the domain to publish the service in.  Default value is 'local.'
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.Network.BonjourService}
      * @since 0.1
      */
     createBonjourService:function(name, type, domain, parameters) {
@@ -11344,7 +11344,7 @@ Titanium.Network = {
     /**
      * create and return an instance of {@link Titanium.Network.HTTPClient}
      * platforms: android, iphone, ipad
-     * @param object parameters (optional) a dictionary object properties defined in {@link Titanium.Network.HTTPClient}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.Network.HTTPClient}
      * @since 0.1
      */
     createHTTPClient:function(parameters) {
@@ -11353,10 +11353,10 @@ Titanium.Network = {
     /**
      * create and return an instance of {@link Titanium.Network.TCPSocket}
      * platforms: android, iphone, ipad
-     * @param string hostName the host name to connect to/listen on
-     * @param int port the port for the socket
-     * @param int mode the socket's mode; one of {@link Titanium.Network.READ_MODE}, {@link Titanium.Network.WRITE_MODE}, {@link Titanium.Network.READ_WRITE_MODE}
-     * @param object parameters (optional) a dictionary object properties defined in {@link Titanium.Network.TCPSocket}
+     * @param {string} hostName the host name to connect to/listen on
+     * @param {int} port the port for the socket
+     * @param {int} mode the socket's mode; one of {@link Titanium.Network.READ_MODE}, {@link Titanium.Network.WRITE_MODE}, {@link Titanium.Network.READ_WRITE_MODE}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.Network.TCPSocket}
      * @since 0.1
      */
     createTCPSocket:function(hostName, port, mode, parameters) {
@@ -11365,7 +11365,7 @@ Titanium.Network = {
     /**
      * <p>decode a URI component part using URI encoding</p>
      * platforms: android, iphone, ipad
-     * @param string value input value to be decoded
+     * @param {string} value input value to be decoded
      * @since 0.1
      */
     decodeURIComponent:function(value) {
@@ -11374,7 +11374,7 @@ Titanium.Network = {
     /**
      * <p>encode a URI component part using URI encoding</p>
      * platforms: android, iphone, ipad
-     * @param string value input value to be encoded
+     * @param {string} value input value to be encoded
      * @since 0.1
      */
     encodeURIComponent:function(value) {
@@ -11383,8 +11383,8 @@ Titanium.Network = {
     /**
      * fire a synthesized event to the views listener
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param object event event object
+     * @param {string} name name of the event
+     * @param {object} event event object
      * @returns void
      * @since 0.1
      */
@@ -11394,7 +11394,7 @@ Titanium.Network = {
     /**
      * <p>register for push notifications with the Apple Push Notification Service. Only available on iPhone.</p>
      * platforms: android, iphone, ipad
-     * @param object config dictionary of the following: <tt>types</tt> is an array of type constants that the application would like to receive, <tt>success</tt> is a callback function that is called when the push registration is successfully completed, <tt>error</tt> is a callback function that is called when an error is received during registration and <tt>callback</tt> is a callback function that is invoked upon receiving a new push notification. This method should be called at application startup.
+     * @param {object} config dictionary of the following: <tt>types</tt> is an array of type constants that the application would like to receive, <tt>success</tt> is a callback function that is called when the push registration is successfully completed, <tt>error</tt> is a callback function that is called when an error is received during registration and <tt>callback</tt> is a callback function that is invoked upon receiving a new push notification. This method should be called at application startup.
      * @returns void
      * @since 0.1
      */
@@ -11404,7 +11404,7 @@ Titanium.Network = {
     /**
      * <p>removes a connectivity listener. This method has been deprecated in favor of listening for a <tt>change</tt> event.</p>
      * platforms: android, iphone, ipad
-     * @param function callback callback function to remove
+     * @param {function} callback callback function to remove
      * @returns void
      * @since 0.1
      */
@@ -11414,8 +11414,8 @@ Titanium.Network = {
     /**
      * remove a previously added event listener
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function passed in addEventListener
+     * @param {string} name name of the event
+     * @param {function} callback callback function passed in addEventListener
      * @returns void
      * @since 0.1
      */
@@ -11528,7 +11528,7 @@ Titanium.Network.BonjourService = {
     /**
      * <p>Publish a Bonjour service to the network.  Only works if isLocal is TRUE</p>
      * platforms: iphone, ipad
-     * @param object socket a TCPSocket object to associate with the Bonjour service.
+     * @param {object} socket a TCPSocket object to associate with the Bonjour service.
      * @returns void
      * @since 1.2.0
      */
@@ -11538,7 +11538,7 @@ Titanium.Network.BonjourService = {
     /**
      * <p>Resolve a Bonjour service from the network.  Must be done before attempting to access the service's socket information, if a remote service.  You cannot resolve a locally published service.</p>
      * platforms: iphone, ipad
-     * @param double timeout the timeout for service resolution, in seconds.  Optional, default is 120s.
+     * @param {double} timeout the timeout for service resolution, in seconds.  Optional, default is 120s.
      * @returns void
      * @since 1.2.0
      */
@@ -11743,7 +11743,7 @@ Titanium.Network.HTTPClient = {
     /**
      * <p>return the response header.</p>
      * platforms: android, iphone, ipad
-     * @param string name the header name
+     * @param {string} name the header name
      * @since 0.1
      */
     getResponseHeader:function(name) {
@@ -11752,9 +11752,9 @@ Titanium.Network.HTTPClient = {
     /**
      * <p>open the request and ready the connection</p>
      * platforms: android, iphone, ipad
-     * @param string method the HTTP method
-     * @param string url the URL for the request
-     * @param boolean async optional property to indicate if asynchronous (default) or not
+     * @param {string} method the HTTP method
+     * @param {string} url the URL for the request
+     * @param {boolean} async optional property to indicate if asynchronous (default) or not
      * @returns void
      * @since 0.1
      */
@@ -11764,7 +11764,7 @@ Titanium.Network.HTTPClient = {
     /**
      * <p>send the request (Only async is currently supported)</p>
      * platforms: android, iphone, ipad
-     * @param object data the data to send in the request. can either be null, dictionary, string, File object or Blob.
+     * @param {object} data the data to send in the request. can either be null, dictionary, string, File object or Blob.
      * @returns void
      * @since 0.1
      */
@@ -11774,8 +11774,8 @@ Titanium.Network.HTTPClient = {
     /**
      * <p>set the request header. Must be called after <tt>open</tt> but before <tt>send</tt>.</p>
      * platforms: android, iphone, ipad
-     * @param string name name of the header
-     * @param string value value of the header. May be null to clearing out a property, such as X-Requested-With
+     * @param {string} name name of the header
+     * @param {string} value value of the header. May be null to clearing out a property, such as X-Requested-With
      * @returns void
      * @since 0.1
      */
@@ -11785,7 +11785,7 @@ Titanium.Network.HTTPClient = {
     /**
      * <p>set the request timeout</p>
      * platforms: android, iphone, ipad
-     * @param double timeout the timeout in milliseconds
+     * @param {double} timeout the timeout in milliseconds
      * @returns void
      * @since 0.1
      */
@@ -11844,8 +11844,8 @@ Titanium.Network.Socket = {
     /**
      * add an event listener for the instance to receive view triggered events
      * platforms: iphone, android, ipad
-     * @param string name name of the event
-     * @param function callback callback function to invoke when the event is fired
+     * @param {string} name name of the event
+     * @param {function} callback callback function to invoke when the event is fired
      * @returns void
      * @since 1.7
      */
@@ -11855,7 +11855,7 @@ Titanium.Network.Socket = {
     /**
      * <p>returns new TCP socket object, takes object containing properties list defined in {@link Titanium.Network.Socket.TCP}.  Some properties are only needed based on whether the socket will be a connecting socket or a listening socket.</p>
      * platforms: iphone, android, ipad
-     * @param Object params creation parameters
+     * @param {Object} params creation parameters
      * @since 1.7
      */
     createTCP:function(params) {
@@ -11864,8 +11864,8 @@ Titanium.Network.Socket = {
     /**
      * fire a synthesized event to the views listener
      * platforms: iphone, android, ipad
-     * @param string name name of the event
-     * @param object event event object
+     * @param {string} name name of the event
+     * @param {object} event event object
      * @returns void
      * @since 1.7
      */
@@ -11875,8 +11875,8 @@ Titanium.Network.Socket = {
     /**
      * remove a previously added event listener
      * platforms: iphone, android, ipad
-     * @param string name name of the event
-     * @param function callback callback function passed in addEventListener
+     * @param {string} name name of the event
+     * @param {function} callback callback function passed in addEventListener
      * @returns void
      * @since 1.7
      */
@@ -11959,7 +11959,7 @@ Titanium.Network.Socket.TCP = {
     /**
      * <p>Tells a LISTENING socket to accept a connection request at the top of a listener's request queue when one becomes available. Takes an argument, a box object which assigns callbacks to the created socket. Note that the connected callback is not called (the socket does not "transition to" the CONNECTED state - it's created in the CONNECTED state) on the newly created socket.  The accepted callback is called when a new connection is accepted as a result of calling accept().  If the socket is already flagged to accept the next connection, the existing accept options will be update to use the newly specified options object. Throws an exception if the socket is not in a LISTENING state</p>
      * platforms: iphone, android, ipad
-     * @param Object params parameters that contain callbacks to be set on next accepted socket. The <tt>timeout</tt> member specifies timeout for connect and write operations.  The <tt>error</tt> member specifies a callback to be invoked if an error occurs.  See the <tt>error</tt> property for details of the callback.
+     * @param {Object} params parameters that contain callbacks to be set on next accepted socket. The <tt>timeout</tt> member specifies timeout for connect and write operations.  The <tt>error</tt> member specifies a callback to be invoked if an error occurs.  See the <tt>error</tt> property for details of the callback.
      * @returns void
      * @since 1.7
      */
@@ -12073,8 +12073,8 @@ Titanium.Network.TCPSocket = {
     /**
      * <p>write data to the socket, if the mode is WRITE_MODE or READ_WRITE_MODE</p>
      * platforms: iphone, ipad
-     * @param object,string data either a string or blob object representing the data to be transferred
-     * @param int sendTo the socket reference to send the data to.  Default is to send to all connected sockets
+     * @param {object,string} data either a string or blob object representing the data to be transferred
+     * @param {int} sendTo the socket reference to send the data to.  Default is to send to all connected sockets
      * @returns void
      * @since 1.2.0
      */
@@ -12270,8 +12270,8 @@ Titanium.Platform = {
     /**
      * add an event listener for the instance to receive view triggered events
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function to invoke when the event is fired
+     * @param {string} name name of the event
+     * @param {function} callback callback function to invoke when the event is fired
      * @returns void
      * @since 0.1
      */
@@ -12281,7 +12281,7 @@ Titanium.Platform = {
     /**
      * <p>returns whether or not a system URL can be opened. iOS only</p>
      * platforms: android, iphone, ipad
-     * @param string url the url to check
+     * @param {string} url the url to check
      * @returns void
      * @since 0.1
      */
@@ -12299,8 +12299,8 @@ Titanium.Platform = {
     /**
      * fire a synthesized event to the views listener
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param object event event object
+     * @param {string} name name of the event
+     * @param {object} event event object
      * @returns void
      * @since 0.1
      */
@@ -12310,7 +12310,7 @@ Titanium.Platform = {
     /**
      * <p>open a URL in the system default manner</p>
      * platforms: android, iphone, ipad
-     * @param string url the url to open
+     * @param {string} url the url to open
      * @returns void
      * @since 0.1
      */
@@ -12320,8 +12320,8 @@ Titanium.Platform = {
     /**
      * remove a previously added event listener
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function passed in addEventListener
+     * @param {string} name name of the event
+     * @param {function} callback callback function passed in addEventListener
      * @returns void
      * @since 0.1
      */
@@ -12408,8 +12408,8 @@ Titanium.Stream = {
     /**
      * add an event listener for the instance to receive view triggered events
      * platforms: iphone, android, ipad
-     * @param string name name of the event
-     * @param function callback callback function to invoke when the event is fired
+     * @param {string} name name of the event
+     * @param {function} callback callback function to invoke when the event is fired
      * @returns void
      * @since 1.7
      */
@@ -12419,7 +12419,7 @@ Titanium.Stream = {
     /**
      * <p>Creates stream from specified container.  Returns {@link Titanium.BufferStream} or {@link Titanium.BlobStream} depending on whether a Buffer or Blob is provided as the 'source' property in params.  Write and append mode only applies to Buffer as Blob is read only.</p>
      * platforms: iphone, android, ipad
-     * @param Object params creation arguments, which are: <tt>source</tt>, a {@link Titanium.Buffer} or {@link Titanium.Blob} on which to base the stream.  <tt>mode</tt>,  mode for the stream to be opened in, which can be {@link Titanium.Stream.MODE_READ},  {@link Titanium.Stream.MODE_WRITE} or {@link Titanium.Stream.MODE_APPEND}.
+     * @param {Object} params creation arguments, which are: <tt>source</tt>, a {@link Titanium.Buffer} or {@link Titanium.Blob} on which to base the stream.  <tt>mode</tt>,  mode for the stream to be opened in, which can be {@link Titanium.Stream.MODE_READ},  {@link Titanium.Stream.MODE_WRITE} or {@link Titanium.Stream.MODE_APPEND}.
      * @since 1.7
      */
     createStream:function(params) {
@@ -12428,8 +12428,8 @@ Titanium.Stream = {
     /**
      * fire a synthesized event to the views listener
      * platforms: iphone, android, ipad
-     * @param string name name of the event
-     * @param object event event object
+     * @param {string} name name of the event
+     * @param {object} event event object
      * @returns void
      * @since 1.7
      */
@@ -12439,10 +12439,10 @@ Titanium.Stream = {
     /**
      * <p>Pumps data from input stream to handler method</p>
      * platforms: iphone, android, ipad
-     * @param {@link Titanium_IOStream} inputStream Stream to pump from
-     * @param Function handler handler method that will receive the pumped data.  The function takes a single parameter, which in turn contains the following members: <tt>source</tt>, the stream being read from.  <tt>buffer</tt>, the {@link Titanium.Buffer} holding the data currently being pumped to the handler method (i.e., the current chunk).  <tt>bytesProcessed</tt>, the number of bytes in the current pump segment.  <tt>totalBytesProcessed</tt>, total number of bytes processed in the overall pump operation so far.  <tt>errorState</tt>, an error state if any.  <tt>errorDescription</tt>, an error description if any.
-     * @param Number maxChunkSize max size of data to pump from inputStream to the handler method at once
-     * @param Boolean isAsync true is pump operation should be async, false is not.  (Optional, default is false).
+     * @param {{@link Titanium_IOStream}} inputStream Stream to pump from
+     * @param {Function} handler handler method that will receive the pumped data.  The function takes a single parameter, which in turn contains the following members: <tt>source</tt>, the stream being read from.  <tt>buffer</tt>, the {@link Titanium.Buffer} holding the data currently being pumped to the handler method (i.e., the current chunk).  <tt>bytesProcessed</tt>, the number of bytes in the current pump segment.  <tt>totalBytesProcessed</tt>, total number of bytes processed in the overall pump operation so far.  <tt>errorState</tt>, an error state if any.  <tt>errorDescription</tt>, an error description if any.
+     * @param {Number} maxChunkSize max size of data to pump from inputStream to the handler method at once
+     * @param {Boolean} isAsync true is pump operation should be async, false is not.  (Optional, default is false).
      * @returns void
      * @since 1.7
      */
@@ -12452,11 +12452,11 @@ Titanium.Stream = {
     /**
      * <p>Async version of read on {@link Titanium.IOStream}</p>
      * platforms: iphone, android, ipad
-     * @param {@link Titanium_IOStream} sourceStream Stream to read from
-     * @param {@link Titanium_Buffer} buffer Buffer to read into
-     * @param Number offset (optional) offset to start reading buffer data from.  Default = 0.
-     * @param Number length (optional) length of data to read from buffer.  Default is buffer length.
-     * @param Function resultsCallback called with result of the read operation.  Callback parameter has these members: <tt>source</tt>, the stream being read.  <tt>bytesProcessed</tt>, the number of bytes read.  <tt>errorState</tt>, an error state if any.  <tt>errorDescription</tt>, an error description if any.
+     * @param {{@link Titanium_IOStream}} sourceStream Stream to read from
+     * @param {{@link Titanium_Buffer}} buffer Buffer to read into
+     * @param {Number} offset (optional) offset to start reading buffer data from.  Default = 0.
+     * @param {Number} length (optional) length of data to read from buffer.  Default is buffer length.
+     * @param {Function} resultsCallback called with result of the read operation.  Callback parameter has these members: <tt>source</tt>, the stream being read.  <tt>bytesProcessed</tt>, the number of bytes read.  <tt>errorState</tt>, an error state if any.  <tt>errorDescription</tt>, an error description if any.
      * @returns void
      * @since 1.7
      */
@@ -12466,9 +12466,9 @@ Titanium.Stream = {
     /**
      * <p>reads all data from {@link Titanium.IOStream}.  If you pass a buffer and callback, the read will be asynchronous and <tt>readAll</tt> won't return anything.  If you don't pass a buffer and callback, the read will be synchronous and a {@link Titanium.Buffer} with the read data will be returned.</p>
      * platforms: iphone, android, ipad
-     * @param {@link Titanium_IOStream} sourceStream Stream to read from
-     * @param {@link Titanium_Buffer} buffer Buffer to read into.  OPTIONAL: use only if you want an asynchronous read.
-     * @param Function resultsCallback called with result of the read operation.  OPTIONAL: use only if you want an asynchronous read.  Callback parameter has these members: <tt>source</tt>, the stream being read.  <tt>bytesProcessed</tt>, the number of bytes read.  <tt>errorState</tt>, an error state if any.  <tt>errorDescription</tt>, an error description if any.
+     * @param {{@link Titanium_IOStream}} sourceStream Stream to read from
+     * @param {{@link Titanium_Buffer}} buffer Buffer to read into.  OPTIONAL: use only if you want an asynchronous read.
+     * @param {Function} resultsCallback called with result of the read operation.  OPTIONAL: use only if you want an asynchronous read.  Callback parameter has these members: <tt>source</tt>, the stream being read.  <tt>bytesProcessed</tt>, the number of bytes read.  <tt>errorState</tt>, an error state if any.  <tt>errorDescription</tt>, an error description if any.
      * @returns void
      * @since 1.7
      */
@@ -12478,8 +12478,8 @@ Titanium.Stream = {
     /**
      * remove a previously added event listener
      * platforms: iphone, android, ipad
-     * @param string name name of the event
-     * @param function callback callback function passed in addEventListener
+     * @param {string} name name of the event
+     * @param {function} callback callback function passed in addEventListener
      * @returns void
      * @since 1.7
      */
@@ -12489,11 +12489,11 @@ Titanium.Stream = {
     /**
      * <p>Async version of write on {@link Titanium.IOStream} that takes offset and length</p>
      * platforms: iphone, android, ipad
-     * @param {@link Titanium_IOStream} outputStream Stream to write to
-     * @param {@link Titanium_Buffer} buffer Buffer to write from
-     * @param Number offset offset to start writing buffer data from. (Optional, default is 0).
-     * @param Number length length of data to write from buffer.  (Optional, default is buffer.length).
-     * @param Function resultsCallback called with result of the write operation. Callback parameter has these members: <tt>source</tt>, the stream being written to.  <tt>bytesProcessed</tt>, the number of bytes written.  <tt>errorState</tt>, an error state if any.  <tt>errorDescription</tt>, an error description if any.
+     * @param {{@link Titanium_IOStream}} outputStream Stream to write to
+     * @param {{@link Titanium_Buffer}} buffer Buffer to write from
+     * @param {Number} offset offset to start writing buffer data from. (Optional, default is 0).
+     * @param {Number} length length of data to write from buffer.  (Optional, default is buffer.length).
+     * @param {Function} resultsCallback called with result of the write operation. Callback parameter has these members: <tt>source</tt>, the stream being written to.  <tt>bytesProcessed</tt>, the number of bytes written.  <tt>errorState</tt>, an error state if any.  <tt>errorDescription</tt>, an error description if any.
      * @returns void
      * @since 1.7
      */
@@ -12503,10 +12503,10 @@ Titanium.Stream = {
     /**
      * <p>Writes all data from input stream to output stream.  Pass a callback function as the final argument if you wish for the write operation to be asynchronous.  The synchronous version will return a number indicating the number of bytes written.</p>
      * platforms: iphone, android, ipad
-     * @param {@link Titanium_IOStream} inputStream Stream to read from
-     * @param {@link Titanium_IOStream} outputStream Stream to write to
-     * @param Number maxChunkSize max size of data to write from inputStream to ouputStream at once
-     * @param Function resultsCallback called with result of the writeStream operation.  (OPTIONAL: use only if you want the write operation to be asynchronous).  The callback parameter has these members: <tt>fromStream</tt>, the stream being read from.  <tt>toStream</tt>, the stream being written to.  <tt>bytesProcessed</tt>, the number of bytes read and written.  <tt>errorState</tt>, an error state if any.  <tt>errorDescription</tt>, an error description if any.
+     * @param {{@link Titanium_IOStream}} inputStream Stream to read from
+     * @param {{@link Titanium_IOStream}} outputStream Stream to write to
+     * @param {Number} maxChunkSize max size of data to write from inputStream to ouputStream at once
+     * @param {Function} resultsCallback called with result of the writeStream operation.  (OPTIONAL: use only if you want the write operation to be asynchronous).  The callback parameter has these members: <tt>fromStream</tt>, the stream being read from.  <tt>toStream</tt>, the stream being written to.  <tt>bytesProcessed</tt>, the number of bytes read and written.  <tt>errorState</tt>, an error state if any.  <tt>errorDescription</tt>, an error description if any.
      * @returns void
      * @since 1.7
      */
@@ -13300,8 +13300,8 @@ Titanium.UI = {
     /**
      * add an event listener for the instance to receive view triggered events
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function to invoke when the event is fired
+     * @param {string} name name of the event
+     * @param {function} callback callback function to invoke when the event is fired
      * @returns void
      * @since 0.4
      */
@@ -13311,7 +13311,7 @@ Titanium.UI = {
     /**
      * create and return an instance of {@link Titanium.UI.2DMatrix}
      * platforms: android, iphone, ipad
-     * @param object parameters (optional) a dictionary object properties defined in {@link Titanium.UI.2DMatrix}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.UI.2DMatrix}
      * @since 0.4
      */
     create2DMatrix:function(parameters) {
@@ -13320,7 +13320,7 @@ Titanium.UI = {
     /**
      * create and return an instance of {@link Titanium.UI.3DMatrix}
      * platforms: android, iphone, ipad
-     * @param object parameters (optional) a dictionary object properties defined in {@link Titanium.UI.3DMatrix}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.UI.3DMatrix}
      * @since 0.4
      */
     create3DMatrix:function(parameters) {
@@ -13329,7 +13329,7 @@ Titanium.UI = {
     /**
      * create and return an instance of {@link Titanium.UI.ActivityIndicator}
      * platforms: android, iphone, ipad
-     * @param object parameters (optional) a dictionary object properties defined in {@link Titanium.UI.ActivityIndicator}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.UI.ActivityIndicator}
      * @since 0.4
      */
     createActivityIndicator:function(parameters) {
@@ -13338,7 +13338,7 @@ Titanium.UI = {
     /**
      * create and return an instance of {@link Titanium.UI.AlertDialog}
      * platforms: android, iphone, ipad
-     * @param object parameters (optional) a dictionary object properties defined in {@link Titanium.UI.AlertDialog}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.UI.AlertDialog}
      * @since 0.4
      */
     createAlertDialog:function(parameters) {
@@ -13347,7 +13347,7 @@ Titanium.UI = {
     /**
      * create and return an instance of {@link Titanium.UI.Animation}
      * platforms: android, iphone, ipad
-     * @param object parameters (optional) a dictionary object properties defined in {@link Titanium.UI.Animation}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.UI.Animation}
      * @since 0.4
      */
     createAnimation:function(parameters) {
@@ -13356,7 +13356,7 @@ Titanium.UI = {
     /**
      * create and return an instance of {@link Titanium.UI.Button}
      * platforms: android, iphone, ipad
-     * @param object parameters (optional) a dictionary object properties defined in {@link Titanium.UI.Button}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.UI.Button}
      * @since 0.4
      */
     createButton:function(parameters) {
@@ -13365,7 +13365,7 @@ Titanium.UI = {
     /**
      * create and return an instance of {@link Titanium.UI.ButtonBar}
      * platforms: android, iphone, ipad
-     * @param object parameters (optional) a dictionary object properties defined in {@link Titanium.UI.ButtonBar}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.UI.ButtonBar}
      * @since 0.4
      */
     createButtonBar:function(parameters) {
@@ -13374,7 +13374,7 @@ Titanium.UI = {
     /**
      * create and return an instance of {@link Titanium.UI.CoverFlowView}
      * platforms: android, iphone, ipad
-     * @param object parameters (optional) a dictionary object properties defined in {@link Titanium.UI.CoverFlowView}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.UI.CoverFlowView}
      * @since 0.4
      */
     createCoverFlowView:function(parameters) {
@@ -13383,7 +13383,7 @@ Titanium.UI = {
     /**
      * create and return an instance of {@link Titanium.UI.DashboardItem}
      * platforms: android, iphone, ipad
-     * @param object parameters (optional) a dictionary object properties defined in {@link Titanium.UI.DashboardItem}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.UI.DashboardItem}
      * @since 0.4
      */
     createDashboardItem:function(parameters) {
@@ -13392,7 +13392,7 @@ Titanium.UI = {
     /**
      * create and return an instance of {@link Titanium.UI.DashboardView}
      * platforms: android, iphone, ipad
-     * @param object parameters (optional) a dictionary object properties defined in {@link Titanium.UI.DashboardView}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.UI.DashboardView}
      * @since 0.4
      */
     createDashboardView:function(parameters) {
@@ -13401,7 +13401,7 @@ Titanium.UI = {
     /**
      * create and return an instance of {@link Titanium.UI.EmailDialog}
      * platforms: android, iphone, ipad
-     * @param object parameters (optional) a dictionary object properties defined in {@link Titanium.UI.EmailDialog}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.UI.EmailDialog}
      * @since 0.4
      */
     createEmailDialog:function(parameters) {
@@ -13410,7 +13410,7 @@ Titanium.UI = {
     /**
      * create and return an instance of {@link Titanium.UI.ImageView}
      * platforms: android, iphone, ipad
-     * @param object parameters (optional) a dictionary object properties defined in {@link Titanium.UI.ImageView}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.UI.ImageView}
      * @since 0.4
      */
     createImageView:function(parameters) {
@@ -13419,7 +13419,7 @@ Titanium.UI = {
     /**
      * create and return an instance of {@link Titanium.UI.Label}
      * platforms: android, iphone, ipad
-     * @param object parameters (optional) a dictionary object properties defined in {@link Titanium.UI.Label}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.UI.Label}
      * @since 0.4
      */
     createLabel:function(parameters) {
@@ -13428,7 +13428,7 @@ Titanium.UI = {
     /**
      * create and return an instance of {@link Titanium.UI.OptionDialog}
      * platforms: android, iphone, ipad
-     * @param object parameters (optional) a dictionary object properties defined in {@link Titanium.UI.OptionDialog}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.UI.OptionDialog}
      * @since 0.4
      */
     createOptionDialog:function(parameters) {
@@ -13437,7 +13437,7 @@ Titanium.UI = {
     /**
      * create and return an instance of {@link Titanium.UI.Picker}
      * platforms: android, iphone, ipad
-     * @param object parameters (optional) a dictionary object properties defined in {@link Titanium.UI.Picker}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.UI.Picker}
      * @since 0.4
      */
     createPicker:function(parameters) {
@@ -13446,7 +13446,7 @@ Titanium.UI = {
     /**
      * create and return an instance of {@link Titanium.UI.PickerColumn}
      * platforms: android, iphone, ipad
-     * @param object parameters (optional) a dictionary object properties defined in {@link Titanium.UI.PickerColumn}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.UI.PickerColumn}
      * @since 0.4
      */
     createPickerColumn:function(parameters) {
@@ -13455,7 +13455,7 @@ Titanium.UI = {
     /**
      * create and return an instance of {@link Titanium.UI.PickerRow}
      * platforms: android, iphone, ipad
-     * @param object parameters (optional) a dictionary object properties defined in {@link Titanium.UI.PickerRow}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.UI.PickerRow}
      * @since 0.4
      */
     createPickerRow:function(parameters) {
@@ -13464,7 +13464,7 @@ Titanium.UI = {
     /**
      * create and return an instance of {@link Titanium.UI.ProgressBar}
      * platforms: android, iphone, ipad
-     * @param object parameters (optional) a dictionary object properties defined in {@link Titanium.UI.ProgressBar}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.UI.ProgressBar}
      * @since 0.4
      */
     createProgressBar:function(parameters) {
@@ -13473,7 +13473,7 @@ Titanium.UI = {
     /**
      * create and return an instance of {@link Titanium.UI.ScrollView}
      * platforms: android, iphone, ipad
-     * @param object parameters (optional) a dictionary object properties defined in {@link Titanium.UI.ScrollView}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.UI.ScrollView}
      * @since 0.4
      */
     createScrollView:function(parameters) {
@@ -13482,7 +13482,7 @@ Titanium.UI = {
     /**
      * create and return an instance of {@link Titanium.UI.ScrollableView}
      * platforms: android, iphone, ipad
-     * @param object parameters (optional) a dictionary object properties defined in {@link Titanium.UI.ScrollableView}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.UI.ScrollableView}
      * @since 0.4
      */
     createScrollableView:function(parameters) {
@@ -13491,7 +13491,7 @@ Titanium.UI = {
     /**
      * create and return an instance of {@link Titanium.UI.SearchBar}
      * platforms: android, iphone, ipad
-     * @param object parameters (optional) a dictionary object properties defined in {@link Titanium.UI.SearchBar}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.UI.SearchBar}
      * @since 0.4
      */
     createSearchBar:function(parameters) {
@@ -13500,7 +13500,7 @@ Titanium.UI = {
     /**
      * create and return an instance of {@link Titanium.UI.Slider}
      * platforms: android, iphone, ipad
-     * @param object parameters (optional) a dictionary object properties defined in {@link Titanium.UI.Slider}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.UI.Slider}
      * @since 0.4
      */
     createSlider:function(parameters) {
@@ -13509,7 +13509,7 @@ Titanium.UI = {
     /**
      * create and return an instance of {@link Titanium.UI.Switch}
      * platforms: android, iphone, ipad
-     * @param object parameters (optional) a dictionary object properties defined in {@link Titanium.UI.Switch}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.UI.Switch}
      * @since 0.4
      */
     createSwitch:function(parameters) {
@@ -13518,7 +13518,7 @@ Titanium.UI = {
     /**
      * create and return an instance of {@link Titanium.UI.Tab}
      * platforms: android, iphone, ipad
-     * @param object parameters (optional) a dictionary object properties defined in {@link Titanium.UI.Tab}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.UI.Tab}
      * @since 0.4
      */
     createTab:function(parameters) {
@@ -13527,7 +13527,7 @@ Titanium.UI = {
     /**
      * create and return an instance of {@link Titanium.UI.TabGroup}
      * platforms: android, iphone, ipad
-     * @param object parameters (optional) a dictionary object properties defined in {@link Titanium.UI.TabGroup}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.UI.TabGroup}
      * @since 0.4
      */
     createTabGroup:function(parameters) {
@@ -13536,7 +13536,7 @@ Titanium.UI = {
     /**
      * create and return an instance of {@link Titanium.UI.TabbedBar}
      * platforms: android, iphone, ipad
-     * @param object parameters (optional) a dictionary object properties defined in {@link Titanium.UI.TabbedBar}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.UI.TabbedBar}
      * @since 0.4
      */
     createTabbedBar:function(parameters) {
@@ -13545,7 +13545,7 @@ Titanium.UI = {
     /**
      * create and return an instance of {@link Titanium.UI.TableView}
      * platforms: android, iphone, ipad
-     * @param object parameters (optional) a dictionary object properties defined in {@link Titanium.UI.TableView}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.UI.TableView}
      * @since 0.4
      */
     createTableView:function(parameters) {
@@ -13554,7 +13554,7 @@ Titanium.UI = {
     /**
      * create and return an instance of {@link Titanium.UI.TableViewRow}
      * platforms: android, iphone, ipad
-     * @param object parameters (optional) a dictionary object properties defined in {@link Titanium.UI.TableViewRow}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.UI.TableViewRow}
      * @since 0.4
      */
     createTableViewRow:function(parameters) {
@@ -13563,7 +13563,7 @@ Titanium.UI = {
     /**
      * create and return an instance of {@link Titanium.UI.TableViewSection}
      * platforms: android, iphone, ipad
-     * @param object parameters (optional) a dictionary object properties defined in {@link Titanium.UI.TableViewSection}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.UI.TableViewSection}
      * @since 0.4
      */
     createTableViewSection:function(parameters) {
@@ -13572,7 +13572,7 @@ Titanium.UI = {
     /**
      * create and return an instance of {@link Titanium.UI.TextArea}
      * platforms: android, iphone, ipad
-     * @param object parameters (optional) a dictionary object properties defined in {@link Titanium.UI.TextArea}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.UI.TextArea}
      * @since 0.4
      */
     createTextArea:function(parameters) {
@@ -13581,7 +13581,7 @@ Titanium.UI = {
     /**
      * create and return an instance of {@link Titanium.UI.TextField}
      * platforms: android, iphone, ipad
-     * @param object parameters (optional) a dictionary object properties defined in {@link Titanium.UI.TextField}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.UI.TextField}
      * @since 0.4
      */
     createTextField:function(parameters) {
@@ -13590,7 +13590,7 @@ Titanium.UI = {
     /**
      * create and return an instance of {@link Titanium.UI.Toolbar}
      * platforms: android, iphone, ipad
-     * @param object parameters (optional) a dictionary object properties defined in {@link Titanium.UI.Toolbar}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.UI.Toolbar}
      * @since 0.4
      */
     createToolbar:function(parameters) {
@@ -13599,7 +13599,7 @@ Titanium.UI = {
     /**
      * create and return an instance of {@link Titanium.UI.View}
      * platforms: android, iphone, ipad
-     * @param object parameters (optional) a dictionary object properties defined in {@link Titanium.UI.View}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.UI.View}
      * @since 0.4
      */
     createView:function(parameters) {
@@ -13608,7 +13608,7 @@ Titanium.UI = {
     /**
      * create and return an instance of {@link Titanium.UI.WebView}
      * platforms: android, iphone, ipad
-     * @param object parameters (optional) a dictionary object properties defined in {@link Titanium.UI.WebView}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.UI.WebView}
      * @since 0.4
      */
     createWebView:function(parameters) {
@@ -13617,7 +13617,7 @@ Titanium.UI = {
     /**
      * create and return an instance of {@link Titanium.UI.Window}
      * platforms: android, iphone, ipad
-     * @param object parameters (optional) a dictionary object properties defined in {@link Titanium.UI.Window}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.UI.Window}
      * @since 0.4
      */
     createWindow:function(parameters) {
@@ -13626,8 +13626,8 @@ Titanium.UI = {
     /**
      * fire a synthesized event to the views listener
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param object event event object
+     * @param {string} name name of the event
+     * @param {object} event event object
      * @returns void
      * @since 0.4
      */
@@ -13637,8 +13637,8 @@ Titanium.UI = {
     /**
      * remove a previously added event listener
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function passed in addEventListener
+     * @param {string} name name of the event
+     * @param {function} callback callback function passed in addEventListener
      * @returns void
      * @since 0.4
      */
@@ -13660,8 +13660,8 @@ Titanium_UI_2DMatrix.prototype = {
     /**
      * add an event listener for the instance to receive view triggered events
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function to invoke when the event is fired
+     * @param {string} name name of the event
+     * @param {function} callback callback function to invoke when the event is fired
      * @returns void
      * @since 0.9
      */
@@ -13671,8 +13671,8 @@ Titanium_UI_2DMatrix.prototype = {
     /**
      * fire a synthesized event to the views listener
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param object event event object
+     * @param {string} name name of the event
+     * @param {object} event event object
      * @returns void
      * @since 0.9
      */
@@ -13691,7 +13691,7 @@ Titanium_UI_2DMatrix.prototype = {
     /**
      * <p>Returns a matrix constructed by combining two existing matrix.</p>
      * platforms: android, iphone, ipad
-     * @param object t2 The second matrix. This matrix is concatenated to the matrix instance against which the function is invoked.  The result of this function is the first matrix multiplied by the second matrix. You might perform several multiplications in order to create a single matrix that contains the cumulative effects of several transformations. Note that matrix operations are not commutative - the order in which you concatenate matrices is important. That is, the result of multiplying matrix t1 by matrix t2 does not necessarily equal the result of multiplying matrix t2 by matrix t1.
+     * @param {object} t2 The second matrix. This matrix is concatenated to the matrix instance against which the function is invoked.  The result of this function is the first matrix multiplied by the second matrix. You might perform several multiplications in order to create a single matrix that contains the cumulative effects of several transformations. Note that matrix operations are not commutative - the order in which you concatenate matrices is important. That is, the result of multiplying matrix t1 by matrix t2 does not necessarily equal the result of multiplying matrix t2 by matrix t1.
      * @since 0.9
      */
     multiply:function(t2) {
@@ -13700,8 +13700,8 @@ Titanium_UI_2DMatrix.prototype = {
     /**
      * remove a previously added event listener
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function passed in addEventListener
+     * @param {string} name name of the event
+     * @param {function} callback callback function passed in addEventListener
      * @returns void
      * @since 0.9
      */
@@ -13711,7 +13711,7 @@ Titanium_UI_2DMatrix.prototype = {
     /**
      * <p>Returns a matrix constructed by rotating an existing matrix</p>
      * platforms: android, iphone, ipad
-     * @param float angle The angle, in degrees, by which to rotate the matrix. A positive value specifies counterclockwise rotation and a negative value specifies clockwise rotation.
+     * @param {float} angle The angle, in degrees, by which to rotate the matrix. A positive value specifies counterclockwise rotation and a negative value specifies clockwise rotation.
      * @since 0.9
      */
     rotate:function(angle) {
@@ -13720,8 +13720,8 @@ Titanium_UI_2DMatrix.prototype = {
     /**
      * <p>Returns a matrix constructed by scaling an existing matrix</p>
      * platforms: android, iphone, ipad
-     * @param float sx The value by which to scale x values of the matrix
-     * @param float sy The value by which to scale y values of the matrix
+     * @param {float} sx The value by which to scale x values of the matrix
+     * @param {float} sy The value by which to scale y values of the matrix
      * @since 0.9
      */
     scale:function(sx, sy) {
@@ -13730,8 +13730,8 @@ Titanium_UI_2DMatrix.prototype = {
     /**
      * <p>Returns a matrix constructed by translating an existing matrix</p>
      * platforms: android, iphone, ipad
-     * @param float tx The value by which to move x values with the matrix
-     * @param float ty The value by which to move y values with the matrix
+     * @param {float} tx The value by which to move x values with the matrix
+     * @param {float} ty The value by which to move y values with the matrix
      * @since 0.9
      */
     translate:function(tx, ty) {
@@ -13752,8 +13752,8 @@ Titanium_UI_3DMatrix.prototype = {
     /**
      * add an event listener for the instance to receive view triggered events
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function to invoke when the event is fired
+     * @param {string} name name of the event
+     * @param {function} callback callback function to invoke when the event is fired
      * @returns void
      * @since 0.9
      */
@@ -13763,8 +13763,8 @@ Titanium_UI_3DMatrix.prototype = {
     /**
      * fire a synthesized event to the views listener
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param object event event object
+     * @param {string} name name of the event
+     * @param {object} event event object
      * @returns void
      * @since 0.9
      */
@@ -13783,7 +13783,7 @@ Titanium_UI_3DMatrix.prototype = {
     /**
      * <p>Returns a matrix constructed by combining two existing matrix.</p>
      * platforms: android, iphone, ipad
-     * @param object t2 The second matrix. This matrix is concatenated to the matrix instance against which the function is invoked.  The result of this function is the first matrix multiplied by the second matrix. You might perform several multiplications in order to create a single matrix that contains the cumulative effects of several transformations. Note that matrix operations are not commutative - the order in which you concatenate matrices is important. That is, the result of multiplying matrix t1 by matrix t2 does not necessarily equal the result of multiplying matrix t2 by matrix t1.
+     * @param {object} t2 The second matrix. This matrix is concatenated to the matrix instance against which the function is invoked.  The result of this function is the first matrix multiplied by the second matrix. You might perform several multiplications in order to create a single matrix that contains the cumulative effects of several transformations. Note that matrix operations are not commutative - the order in which you concatenate matrices is important. That is, the result of multiplying matrix t1 by matrix t2 does not necessarily equal the result of multiplying matrix t2 by matrix t1.
      * @since 0.9
      */
     multiply:function(t2) {
@@ -13792,8 +13792,8 @@ Titanium_UI_3DMatrix.prototype = {
     /**
      * remove a previously added event listener
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function passed in addEventListener
+     * @param {string} name name of the event
+     * @param {function} callback callback function passed in addEventListener
      * @returns void
      * @since 0.9
      */
@@ -13803,10 +13803,10 @@ Titanium_UI_3DMatrix.prototype = {
     /**
      * <p>Returns a matrix constructed by rotating an existing matrix</p>
      * platforms: android, iphone, ipad
-     * @param float angle The angle, in degrees, by which to rotate the matrix. A positive value specifies counterclockwise rotation and a negative value specifies clockwise rotation.
-     * @param float x The x part of the vector about which to rotate
-     * @param float y The y part of the vector about which to rotate
-     * @param float z The z part of the vector about which to rotate
+     * @param {float} angle The angle, in degrees, by which to rotate the matrix. A positive value specifies counterclockwise rotation and a negative value specifies clockwise rotation.
+     * @param {float} x The x part of the vector about which to rotate
+     * @param {float} y The y part of the vector about which to rotate
+     * @param {float} z The z part of the vector about which to rotate
      * @since 0.9
      */
     rotate:function(angle, x, y, z) {
@@ -13815,9 +13815,9 @@ Titanium_UI_3DMatrix.prototype = {
     /**
      * <p>Returns a matrix constructed by scaling an existing matrix</p>
      * platforms: android, iphone, ipad
-     * @param float sx The value by which to scale x values of the matrix
-     * @param float sy The value by which to scale y values of the matrix
-     * @param float sz The value by which to scale z values of the matrix
+     * @param {float} sx The value by which to scale x values of the matrix
+     * @param {float} sy The value by which to scale y values of the matrix
+     * @param {float} sz The value by which to scale z values of the matrix
      * @since 0.9
      */
     scale:function(sx, sy, sz) {
@@ -13826,9 +13826,9 @@ Titanium_UI_3DMatrix.prototype = {
     /**
      * <p>Returns a matrix constructed by translating an existing matrix</p>
      * platforms: android, iphone, ipad
-     * @param float tx The value by which to move x values with the matrix
-     * @param float ty The value by which to move y values with the matrix
-     * @param float tz The value by which to move z values with the matrix
+     * @param {float} tx The value by which to move x values with the matrix
+     * @param {float} ty The value by which to move y values with the matrix
+     * @param {float} tz The value by which to move z values with the matrix
      * @since 0.9
      */
     translate:function(tx, ty, tz) {
@@ -13981,8 +13981,8 @@ Titanium_UI_AlertDialog.prototype = {
     /**
      * add an event listener for the instance to receive view triggered events
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function to invoke when the event is fired
+     * @param {string} name name of the event
+     * @param {function} callback callback function to invoke when the event is fired
      * @returns void
      * @since 0.8
      */
@@ -13992,8 +13992,8 @@ Titanium_UI_AlertDialog.prototype = {
     /**
      * fire a synthesized event to the views listener
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param object event event object
+     * @param {string} name name of the event
+     * @param {object} event event object
      * @returns void
      * @since 0.8
      */
@@ -14012,8 +14012,8 @@ Titanium_UI_AlertDialog.prototype = {
     /**
      * remove a previously added event listener
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function passed in addEventListener
+     * @param {string} name name of the event
+     * @param {function} callback callback function passed in addEventListener
      * @returns void
      * @since 0.8
      */
@@ -14177,8 +14177,8 @@ Titanium.UI.Android = {
     /**
      * add an event listener for the instance to receive view triggered events
      * platforms: android
-     * @param string name name of the event
-     * @param function callback callback function to invoke when the event is fired
+     * @param {string} name name of the event
+     * @param {function} callback callback function to invoke when the event is fired
      * @returns void
      * @since 1.0
      */
@@ -14188,8 +14188,8 @@ Titanium.UI.Android = {
     /**
      * fire a synthesized event to the views listener
      * platforms: android
-     * @param string name name of the event
-     * @param object event event object
+     * @param {string} name name of the event
+     * @param {object} event event object
      * @returns void
      * @since 1.0
      */
@@ -14217,8 +14217,8 @@ Titanium.UI.Android = {
     /**
      * remove a previously added event listener
      * platforms: android
-     * @param string name name of the event
-     * @param function callback callback function passed in addEventListener
+     * @param {string} name name of the event
+     * @param {function} callback callback function passed in addEventListener
      * @returns void
      * @since 1.0
      */
@@ -14416,8 +14416,8 @@ Titanium_UI_Animation.prototype = {
     /**
      * add an event listener for the instance to receive view triggered events
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function to invoke when the event is fired
+     * @param {string} name name of the event
+     * @param {function} callback callback function to invoke when the event is fired
      * @returns void
      * @since 0.9
      */
@@ -14427,8 +14427,8 @@ Titanium_UI_Animation.prototype = {
     /**
      * fire a synthesized event to the views listener
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param object event event object
+     * @param {string} name name of the event
+     * @param {object} event event object
      * @returns void
      * @since 0.9
      */
@@ -14438,8 +14438,8 @@ Titanium_UI_Animation.prototype = {
     /**
      * remove a previously added event listener
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function passed in addEventListener
+     * @param {string} name name of the event
+     * @param {function} callback callback function passed in addEventListener
      * @returns void
      * @since 0.9
      */
@@ -14812,7 +14812,7 @@ Titanium.UI.Button = {
     /**
      * add a child to the view hierarchy
      * platforms: android, iphone, ipad
-     * @param object view the view to add to this views hiearchy
+     * @param {object} view the view to add to this views hiearchy
      * @returns void
      * @since 0.8
      */
@@ -14822,8 +14822,8 @@ Titanium.UI.Button = {
     /**
      * add an event listener for the instance to receive view triggered events
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function to invoke when the event is fired
+     * @param {string} name name of the event
+     * @param {function} callback callback function to invoke when the event is fired
      * @returns void
      * @since 0.8
      */
@@ -14833,8 +14833,8 @@ Titanium.UI.Button = {
     /**
      * animate the view
      * platforms: android, iphone, ipad
-     * @param object obj either a dictionary of animation properties or an Animation object
-     * @param function callback function to be invoked upon completion of the animation
+     * @param {object} obj either a dictionary of animation properties or an Animation object
+     * @param {function} callback function to be invoked upon completion of the animation
      * @returns void
      * @since 0.8
      */
@@ -14844,8 +14844,8 @@ Titanium.UI.Button = {
     /**
      * fire a synthesized event to the views listener
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param object event event object
+     * @param {string} name name of the event
+     * @param {object} event event object
      * @returns void
      * @since 0.8
      */
@@ -14864,7 +14864,7 @@ Titanium.UI.Button = {
     /**
      * remove a previously add view from the view hiearchy
      * platforms: android, iphone, ipad
-     * @param object view the view to remove from this views hiearchy
+     * @param {object} view the view to remove from this views hiearchy
      * @returns void
      * @since 0.8
      */
@@ -14874,8 +14874,8 @@ Titanium.UI.Button = {
     /**
      * remove a previously added event listener
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function passed in addEventListener
+     * @param {string} name name of the event
+     * @param {function} callback callback function passed in addEventListener
      * @returns void
      * @since 0.8
      */
@@ -14894,7 +14894,7 @@ Titanium.UI.Button = {
     /**
      * return a Blob image of the rendered view
      * platforms: android, iphone, ipad
-     * @param function f function to be invoked upon completion. if non-null, this method will be performed asynchronously. if null, it will be performed immediately
+     * @param {function} f function to be invoked upon completion. if non-null, this method will be performed asynchronously. if null, it will be performed immediately
      * @since 0.8
      */
     toImage:function(f) {
@@ -15213,7 +15213,7 @@ Titanium.UI.ButtonBar = {
     /**
      * add a child to the view hierarchy
      * platforms: iphone, ipad
-     * @param object view the view to add to this views hiearchy
+     * @param {object} view the view to add to this views hiearchy
      * @returns void
      * @since 0.8
      */
@@ -15223,8 +15223,8 @@ Titanium.UI.ButtonBar = {
     /**
      * add an event listener for the instance to receive view triggered events
      * platforms: iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function to invoke when the event is fired
+     * @param {string} name name of the event
+     * @param {function} callback callback function to invoke when the event is fired
      * @returns void
      * @since 0.8
      */
@@ -15234,8 +15234,8 @@ Titanium.UI.ButtonBar = {
     /**
      * animate the view
      * platforms: iphone, ipad
-     * @param object obj either a dictionary of animation properties or an Animation object
-     * @param function callback function to be invoked upon completion of the animation
+     * @param {object} obj either a dictionary of animation properties or an Animation object
+     * @param {function} callback function to be invoked upon completion of the animation
      * @returns void
      * @since 0.8
      */
@@ -15245,8 +15245,8 @@ Titanium.UI.ButtonBar = {
     /**
      * fire a synthesized event to the views listener
      * platforms: iphone, ipad
-     * @param string name name of the event
-     * @param object event event object
+     * @param {string} name name of the event
+     * @param {object} event event object
      * @returns void
      * @since 0.8
      */
@@ -15265,7 +15265,7 @@ Titanium.UI.ButtonBar = {
     /**
      * remove a previously add view from the view hiearchy
      * platforms: iphone, ipad
-     * @param object view the view to remove from this views hiearchy
+     * @param {object} view the view to remove from this views hiearchy
      * @returns void
      * @since 0.8
      */
@@ -15275,8 +15275,8 @@ Titanium.UI.ButtonBar = {
     /**
      * remove a previously added event listener
      * platforms: iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function passed in addEventListener
+     * @param {string} name name of the event
+     * @param {function} callback callback function passed in addEventListener
      * @returns void
      * @since 0.8
      */
@@ -15295,7 +15295,7 @@ Titanium.UI.ButtonBar = {
     /**
      * return a Blob image of the rendered view
      * platforms: iphone, ipad
-     * @param function f function to be invoked upon completion. if non-null, this method will be performed asynchronously. if null, it will be performed immediately
+     * @param {function} f function to be invoked upon completion. if non-null, this method will be performed asynchronously. if null, it will be performed immediately
      * @since 0.8
      */
     toImage:function(f) {
@@ -15332,8 +15332,8 @@ Titanium.UI.Clipboard = {
     /**
      * add an event listener for the instance to receive view triggered events
      * platforms: iphone, android, ipad
-     * @param string name name of the event
-     * @param function callback callback function to invoke when the event is fired
+     * @param {string} name name of the event
+     * @param {function} callback callback function to invoke when the event is fired
      * @returns void
      * @since 1.5
      */
@@ -15343,7 +15343,7 @@ Titanium.UI.Clipboard = {
     /**
      * <p>Clear data of the given mime-type from the clipboard. If no mime-type is given, clear all data from the clipboard.</p>
      * platforms: iphone, android, ipad
-     * @param string type (optional) The mime-type of the data to clear.
+     * @param {string} type (optional) The mime-type of the data to clear.
      * @returns void
      * @since 1.5
      */
@@ -15362,8 +15362,8 @@ Titanium.UI.Clipboard = {
     /**
      * fire a synthesized event to the views listener
      * platforms: iphone, android, ipad
-     * @param string name name of the event
-     * @param object event event object
+     * @param {string} name name of the event
+     * @param {object} event event object
      * @returns void
      * @since 1.5
      */
@@ -15373,7 +15373,7 @@ Titanium.UI.Clipboard = {
     /**
      * <p>Get the data on the clipboard from the portion which contains data of the given mime-type.</p>
      * platforms: iphone, android, ipad
-     * @param string type The mime-type of the data to get.
+     * @param {string} type The mime-type of the data to get.
      * @returns void
      * @since 1.5
      */
@@ -15392,7 +15392,7 @@ Titanium.UI.Clipboard = {
     /**
      * <p>Return true if there is any content of the given mime-type on the clipboard.</p>
      * platforms: iphone, android, ipad
-     * @param string type (optional) The mime-type of the data to check.
+     * @param {string} type (optional) The mime-type of the data to check.
      * @returns void
      * @since 1.5
      */
@@ -15411,8 +15411,8 @@ Titanium.UI.Clipboard = {
     /**
      * remove a previously added event listener
      * platforms: iphone, android, ipad
-     * @param string name name of the event
-     * @param function callback callback function passed in addEventListener
+     * @param {string} name name of the event
+     * @param {function} callback callback function passed in addEventListener
      * @returns void
      * @since 1.5
      */
@@ -15422,8 +15422,8 @@ Titanium.UI.Clipboard = {
     /**
      * <p>Set the data on the clipboard given a mime-type and the new data. This method will set data on the appropriate portion of the clipboard for the given mime-type.</p>
      * platforms: iphone, android, ipad
-     * @param string type The mime-type of the data to set.
-     * @param object data The new clipboard text.
+     * @param {string} type The mime-type of the data to set.
+     * @param {object} data The new clipboard text.
      * @returns void
      * @since 1.5
      */
@@ -15433,7 +15433,7 @@ Titanium.UI.Clipboard = {
     /**
      * <p>Set the text on the clipboard. This will overwrite the current contents of the clipboard.</p>
      * platforms: iphone, android, ipad
-     * @param string text The new clipboard text. If the text is an empty string
+     * @param {string} text The new clipboard text. If the text is an empty string
      * @returns void
      * @since 1.5
      */
@@ -15741,7 +15741,7 @@ Titanium.UI.CoverFlowView = {
     /**
      * add a child to the view hierarchy
      * platforms: iphone, ipad
-     * @param object view the view to add to this views hiearchy
+     * @param {object} view the view to add to this views hiearchy
      * @returns void
      * @since 0.8
      */
@@ -15751,8 +15751,8 @@ Titanium.UI.CoverFlowView = {
     /**
      * add an event listener for the instance to receive view triggered events
      * platforms: iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function to invoke when the event is fired
+     * @param {string} name name of the event
+     * @param {function} callback callback function to invoke when the event is fired
      * @returns void
      * @since 0.8
      */
@@ -15762,8 +15762,8 @@ Titanium.UI.CoverFlowView = {
     /**
      * animate the view
      * platforms: iphone, ipad
-     * @param object obj either a dictionary of animation properties or an Animation object
-     * @param function callback function to be invoked upon completion of the animation
+     * @param {object} obj either a dictionary of animation properties or an Animation object
+     * @param {function} callback function to be invoked upon completion of the animation
      * @returns void
      * @since 0.8
      */
@@ -15773,8 +15773,8 @@ Titanium.UI.CoverFlowView = {
     /**
      * fire a synthesized event to the views listener
      * platforms: iphone, ipad
-     * @param string name name of the event
-     * @param object event event object
+     * @param {string} name name of the event
+     * @param {object} event event object
      * @returns void
      * @since 0.8
      */
@@ -15793,7 +15793,7 @@ Titanium.UI.CoverFlowView = {
     /**
      * remove a previously add view from the view hiearchy
      * platforms: iphone, ipad
-     * @param object view the view to remove from this views hiearchy
+     * @param {object} view the view to remove from this views hiearchy
      * @returns void
      * @since 0.8
      */
@@ -15803,8 +15803,8 @@ Titanium.UI.CoverFlowView = {
     /**
      * remove a previously added event listener
      * platforms: iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function passed in addEventListener
+     * @param {string} name name of the event
+     * @param {function} callback callback function passed in addEventListener
      * @returns void
      * @since 0.8
      */
@@ -15814,8 +15814,8 @@ Titanium.UI.CoverFlowView = {
     /**
      * <p>change an image for a index</p>
      * platforms: iphone, ipad
-     * @param int index index to change
-     * @param object image the image to set the index to. May be a TiBlob, TiFile, URL, or dictionary with 'image' (may be any of TiBlob, TiFile, URL), 'width', 'height' keys.  'auto' is not allowed, only exact sizes (although a size may be omitted to keep the image at that size).  If passed as a TiFile or URL, will perform a check for '@2x' on Retina displays
+     * @param {int} index index to change
+     * @param {object} image the image to set the index to. May be a TiBlob, TiFile, URL, or dictionary with 'image' (may be any of TiBlob, TiFile, URL), 'width', 'height' keys.  'auto' is not allowed, only exact sizes (although a size may be omitted to keep the image at that size).  If passed as a TiFile or URL, will perform a check for '@2x' on Retina displays
      * @returns void
      * @since 0.8
      */
@@ -15834,7 +15834,7 @@ Titanium.UI.CoverFlowView = {
     /**
      * return a Blob image of the rendered view
      * platforms: iphone, ipad
-     * @param function f function to be invoked upon completion. if non-null, this method will be performed asynchronously. if null, it will be performed immediately
+     * @param {function} f function to be invoked upon completion. if non-null, this method will be performed asynchronously. if null, it will be performed immediately
      * @since 0.8
      */
     toImage:function(f) {
@@ -15886,8 +15886,8 @@ Titanium_UI_DashboardItem.prototype = {
     /**
      * add an event listener for the instance to receive view triggered events
      * platforms: iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function to invoke when the event is fired
+     * @param {string} name name of the event
+     * @param {function} callback callback function to invoke when the event is fired
      * @returns void
      * @since 1.2
      */
@@ -15897,8 +15897,8 @@ Titanium_UI_DashboardItem.prototype = {
     /**
      * fire a synthesized event to the views listener
      * platforms: iphone, ipad
-     * @param string name name of the event
-     * @param object event event object
+     * @param {string} name name of the event
+     * @param {object} event event object
      * @returns void
      * @since 1.2
      */
@@ -15908,8 +15908,8 @@ Titanium_UI_DashboardItem.prototype = {
     /**
      * remove a previously added event listener
      * platforms: iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function passed in addEventListener
+     * @param {string} name name of the event
+     * @param {function} callback callback function passed in addEventListener
      * @returns void
      * @since 1.2
      */
@@ -16208,7 +16208,7 @@ Titanium.UI.DashboardView = {
     /**
      * add a child to the view hierarchy
      * platforms: iphone, ipad
-     * @param object view the view to add to this views hiearchy
+     * @param {object} view the view to add to this views hiearchy
      * @returns void
      * @since 1.2
      */
@@ -16218,8 +16218,8 @@ Titanium.UI.DashboardView = {
     /**
      * add an event listener for the instance to receive view triggered events
      * platforms: iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function to invoke when the event is fired
+     * @param {string} name name of the event
+     * @param {function} callback callback function to invoke when the event is fired
      * @returns void
      * @since 1.2
      */
@@ -16229,8 +16229,8 @@ Titanium.UI.DashboardView = {
     /**
      * animate the view
      * platforms: iphone, ipad
-     * @param object obj either a dictionary of animation properties or an Animation object
-     * @param function callback function to be invoked upon completion of the animation
+     * @param {object} obj either a dictionary of animation properties or an Animation object
+     * @param {function} callback function to be invoked upon completion of the animation
      * @returns void
      * @since 1.2
      */
@@ -16240,8 +16240,8 @@ Titanium.UI.DashboardView = {
     /**
      * fire a synthesized event to the views listener
      * platforms: iphone, ipad
-     * @param string name name of the event
-     * @param object event event object
+     * @param {string} name name of the event
+     * @param {object} event event object
      * @returns void
      * @since 1.2
      */
@@ -16260,7 +16260,7 @@ Titanium.UI.DashboardView = {
     /**
      * remove a previously add view from the view hiearchy
      * platforms: iphone, ipad
-     * @param object view the view to remove from this views hiearchy
+     * @param {object} view the view to remove from this views hiearchy
      * @returns void
      * @since 1.2
      */
@@ -16270,8 +16270,8 @@ Titanium.UI.DashboardView = {
     /**
      * remove a previously added event listener
      * platforms: iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function passed in addEventListener
+     * @param {string} name name of the event
+     * @param {function} callback callback function passed in addEventListener
      * @returns void
      * @since 1.2
      */
@@ -16308,7 +16308,7 @@ Titanium.UI.DashboardView = {
     /**
      * return a Blob image of the rendered view
      * platforms: iphone, ipad
-     * @param function f function to be invoked upon completion. if non-null, this method will be performed asynchronously. if null, it will be performed immediately
+     * @param {function} f function to be invoked upon completion. if non-null, this method will be performed asynchronously. if null, it will be performed immediately
      * @since 1.2
      */
     toImage:function(f) {
@@ -16427,7 +16427,7 @@ Titanium_UI_EmailDialog.prototype = {
     /**
      * <p>add an attachment to the email. the attachment can either be a Blob or File object. (Note: Android will only accept one attachment at this time.)</p>
      * platforms: android, iphone, ipad
-     * @param object attachment attachment object as either a Blob or File object
+     * @param {object} attachment attachment object as either a Blob or File object
      * @returns void
      * @since 0.8
      */
@@ -16437,8 +16437,8 @@ Titanium_UI_EmailDialog.prototype = {
     /**
      * add an event listener for the instance to receive view triggered events
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function to invoke when the event is fired
+     * @param {string} name name of the event
+     * @param {function} callback callback function to invoke when the event is fired
      * @returns void
      * @since 0.8
      */
@@ -16448,8 +16448,8 @@ Titanium_UI_EmailDialog.prototype = {
     /**
      * fire a synthesized event to the views listener
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param object event event object
+     * @param {string} name name of the event
+     * @param {object} event event object
      * @returns void
      * @since 0.8
      */
@@ -16468,7 +16468,7 @@ Titanium_UI_EmailDialog.prototype = {
     /**
      * <p>open the email dialog. the email dialog itself is a modal window</p>
      * platforms: android, iphone, ipad
-     * @param object properties object of animation properties. pass <tt>animated</tt> property (as boolean) to indicate if the dialog should be animated on open.
+     * @param {object} properties object of animation properties. pass <tt>animated</tt> property (as boolean) to indicate if the dialog should be animated on open.
      * @returns void
      * @since 0.8
      */
@@ -16478,8 +16478,8 @@ Titanium_UI_EmailDialog.prototype = {
     /**
      * remove a previously added event listener
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function passed in addEventListener
+     * @param {string} name name of the event
+     * @param {function} callback callback function passed in addEventListener
      * @returns void
      * @since 0.8
      */
@@ -16897,7 +16897,7 @@ Titanium.UI.ImageView = {
     /**
      * add a child to the view hierarchy
      * platforms: android, iphone, ipad
-     * @param object view the view to add to this views hiearchy
+     * @param {object} view the view to add to this views hiearchy
      * @returns void
      * @since 0.9
      */
@@ -16907,8 +16907,8 @@ Titanium.UI.ImageView = {
     /**
      * add an event listener for the instance to receive view triggered events
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function to invoke when the event is fired
+     * @param {string} name name of the event
+     * @param {function} callback callback function to invoke when the event is fired
      * @returns void
      * @since 0.9
      */
@@ -16918,8 +16918,8 @@ Titanium.UI.ImageView = {
     /**
      * animate the view
      * platforms: android, iphone, ipad
-     * @param object obj either a dictionary of animation properties or an Animation object
-     * @param function callback function to be invoked upon completion of the animation
+     * @param {object} obj either a dictionary of animation properties or an Animation object
+     * @param {function} callback function to be invoked upon completion of the animation
      * @returns void
      * @since 0.9
      */
@@ -16929,8 +16929,8 @@ Titanium.UI.ImageView = {
     /**
      * fire a synthesized event to the views listener
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param object event event object
+     * @param {string} name name of the event
+     * @param {object} event event object
      * @returns void
      * @since 0.9
      */
@@ -16958,7 +16958,7 @@ Titanium.UI.ImageView = {
     /**
      * remove a previously add view from the view hiearchy
      * platforms: android, iphone, ipad
-     * @param object view the view to remove from this views hiearchy
+     * @param {object} view the view to remove from this views hiearchy
      * @returns void
      * @since 0.9
      */
@@ -16968,8 +16968,8 @@ Titanium.UI.ImageView = {
     /**
      * remove a previously added event listener
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function passed in addEventListener
+     * @param {string} name name of the event
+     * @param {function} callback callback function passed in addEventListener
      * @returns void
      * @since 0.9
      */
@@ -17015,7 +17015,7 @@ Titanium.UI.ImageView = {
     /**
      * return a Blob image of the rendered view
      * platforms: android, iphone, ipad
-     * @param function f function to be invoked upon completion. if non-null, this method will be performed asynchronously. if null, it will be performed immediately
+     * @param {function} f function to be invoked upon completion. if non-null, this method will be performed asynchronously. if null, it will be performed immediately
      * @since 0.9
      */
     toImage:function(f) {
@@ -17463,7 +17463,7 @@ Titanium.UI.Label = {
     /**
      * add a child to the view hierarchy
      * platforms: android, iphone, ipad
-     * @param object view the view to add to this views hiearchy
+     * @param {object} view the view to add to this views hiearchy
      * @returns void
      * @since 0.8
      */
@@ -17473,8 +17473,8 @@ Titanium.UI.Label = {
     /**
      * add an event listener for the instance to receive view triggered events
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function to invoke when the event is fired
+     * @param {string} name name of the event
+     * @param {function} callback callback function to invoke when the event is fired
      * @returns void
      * @since 0.8
      */
@@ -17484,8 +17484,8 @@ Titanium.UI.Label = {
     /**
      * animate the view
      * platforms: android, iphone, ipad
-     * @param object obj either a dictionary of animation properties or an Animation object
-     * @param function callback function to be invoked upon completion of the animation
+     * @param {object} obj either a dictionary of animation properties or an Animation object
+     * @param {function} callback function to be invoked upon completion of the animation
      * @returns void
      * @since 0.8
      */
@@ -17495,8 +17495,8 @@ Titanium.UI.Label = {
     /**
      * fire a synthesized event to the views listener
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param object event event object
+     * @param {string} name name of the event
+     * @param {object} event event object
      * @returns void
      * @since 0.8
      */
@@ -17515,7 +17515,7 @@ Titanium.UI.Label = {
     /**
      * remove a previously add view from the view hiearchy
      * platforms: android, iphone, ipad
-     * @param object view the view to remove from this views hiearchy
+     * @param {object} view the view to remove from this views hiearchy
      * @returns void
      * @since 0.8
      */
@@ -17525,8 +17525,8 @@ Titanium.UI.Label = {
     /**
      * remove a previously added event listener
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function passed in addEventListener
+     * @param {string} name name of the event
+     * @param {function} callback callback function passed in addEventListener
      * @returns void
      * @since 0.8
      */
@@ -17545,7 +17545,7 @@ Titanium.UI.Label = {
     /**
      * return a Blob image of the rendered view
      * platforms: android, iphone, ipad
-     * @param function f function to be invoked upon completion. if non-null, this method will be performed asynchronously. if null, it will be performed immediately
+     * @param {function} f function to be invoked upon completion. if non-null, this method will be performed asynchronously. if null, it will be performed immediately
      * @since 0.8
      */
     toImage:function(f) {
@@ -17766,7 +17766,7 @@ Titanium_UI_Picker.prototype = {
     /**
      * <p>add an array of rows, a single row or a column to the picker</p>
      * platforms: android, iphone, ipad
-     * @param array,object data add an array of rows, a single row or a column to the picker
+     * @param {array,object} data add an array of rows, a single row or a column to the picker
      * @returns void
      * @since 0.8
      */
@@ -17776,8 +17776,8 @@ Titanium_UI_Picker.prototype = {
     /**
      * add an event listener for the instance to receive view triggered events
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function to invoke when the event is fired
+     * @param {string} name name of the event
+     * @param {function} callback callback function to invoke when the event is fired
      * @returns void
      * @since 0.8
      */
@@ -17787,8 +17787,8 @@ Titanium_UI_Picker.prototype = {
     /**
      * fire a synthesized event to the views listener
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param object event event object
+     * @param {string} name name of the event
+     * @param {object} event event object
      * @returns void
      * @since 0.8
      */
@@ -17798,7 +17798,7 @@ Titanium_UI_Picker.prototype = {
     /**
      * <p>get the selected row object for column</p>
      * platforms: android, iphone, ipad
-     * @param int index for the column index, return the row object or nil if not found
+     * @param {int} index for the column index, return the row object or nil if not found
      * @since 0.8
      */
     getSelectedRow:function(index) {
@@ -17807,7 +17807,7 @@ Titanium_UI_Picker.prototype = {
     /**
      * <p>causes the picker to reload the values from the new column.</p>
      * platforms: android, iphone, ipad
-     * @param object column new column to load
+     * @param {object} column new column to load
      * @returns void
      * @since 0.8
      */
@@ -17817,8 +17817,8 @@ Titanium_UI_Picker.prototype = {
     /**
      * remove a previously added event listener
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function passed in addEventListener
+     * @param {string} name name of the event
+     * @param {function} callback callback function passed in addEventListener
      * @returns void
      * @since 0.8
      */
@@ -17828,9 +17828,9 @@ Titanium_UI_Picker.prototype = {
     /**
      * <p>set the column's row to the selected state</p>
      * platforms: android, iphone, ipad
-     * @param int column the column index
-     * @param int row the row index
-     * @param boolean animated boolean to indicate if the selection should be animated (default) (optional)
+     * @param {int} column the column index
+     * @param {int} row the row index
+     * @param {boolean} animated boolean to indicate if the selection should be animated (default) (optional)
      * @returns void
      * @since 0.8
      */
@@ -18145,7 +18145,7 @@ Titanium.UI.PickerColumn = {
     /**
      * add a child to the view hierarchy
      * platforms: android, iphone, ipad
-     * @param object view the view to add to this views hiearchy
+     * @param {object} view the view to add to this views hiearchy
      * @returns void
      * @since 0.9
      */
@@ -18155,8 +18155,8 @@ Titanium.UI.PickerColumn = {
     /**
      * add an event listener for the instance to receive view triggered events
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function to invoke when the event is fired
+     * @param {string} name name of the event
+     * @param {function} callback callback function to invoke when the event is fired
      * @returns void
      * @since 0.9
      */
@@ -18166,7 +18166,7 @@ Titanium.UI.PickerColumn = {
     /**
      * <p>add a row to the column.</p>
      * platforms: android, iphone, ipad
-     * @param {@link Titanium_UI_PickerRow_html} row The row to add.
+     * @param {{@link Titanium_UI_PickerRow_html}} row The row to add.
      * @returns void
      * @since 0.9
      */
@@ -18176,8 +18176,8 @@ Titanium.UI.PickerColumn = {
     /**
      * animate the view
      * platforms: android, iphone, ipad
-     * @param object obj either a dictionary of animation properties or an Animation object
-     * @param function callback function to be invoked upon completion of the animation
+     * @param {object} obj either a dictionary of animation properties or an Animation object
+     * @param {function} callback function to be invoked upon completion of the animation
      * @returns void
      * @since 0.9
      */
@@ -18187,8 +18187,8 @@ Titanium.UI.PickerColumn = {
     /**
      * fire a synthesized event to the views listener
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param object event event object
+     * @param {string} name name of the event
+     * @param {object} event event object
      * @returns void
      * @since 0.9
      */
@@ -18207,7 +18207,7 @@ Titanium.UI.PickerColumn = {
     /**
      * remove a previously add view from the view hiearchy
      * platforms: android, iphone, ipad
-     * @param object view the view to remove from this views hiearchy
+     * @param {object} view the view to remove from this views hiearchy
      * @returns void
      * @since 0.9
      */
@@ -18217,8 +18217,8 @@ Titanium.UI.PickerColumn = {
     /**
      * remove a previously added event listener
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function passed in addEventListener
+     * @param {string} name name of the event
+     * @param {function} callback callback function passed in addEventListener
      * @returns void
      * @since 0.9
      */
@@ -18228,7 +18228,7 @@ Titanium.UI.PickerColumn = {
     /**
      * <p>remove a row from the column.</p>
      * platforms: android, iphone, ipad
-     * @param {@link Titanium_UI_PickerRow_html} row The row to remove.
+     * @param {{@link Titanium_UI_PickerRow_html}} row The row to remove.
      * @returns void
      * @since 0.9
      */
@@ -18247,7 +18247,7 @@ Titanium.UI.PickerColumn = {
     /**
      * return a Blob image of the rendered view
      * platforms: android, iphone, ipad
-     * @param function f function to be invoked upon completion. if non-null, this method will be performed asynchronously. if null, it will be performed immediately
+     * @param {function} f function to be invoked upon completion. if non-null, this method will be performed asynchronously. if null, it will be performed immediately
      * @since 0.9
      */
     toImage:function(f) {
@@ -18583,7 +18583,7 @@ Titanium.UI.PickerRow = {
     /**
      * add a child to the view hierarchy
      * platforms: android, iphone, ipad
-     * @param object view the view to add to this views hiearchy
+     * @param {object} view the view to add to this views hiearchy
      * @returns void
      * @since 0.9
      */
@@ -18593,8 +18593,8 @@ Titanium.UI.PickerRow = {
     /**
      * add an event listener for the instance to receive view triggered events
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function to invoke when the event is fired
+     * @param {string} name name of the event
+     * @param {function} callback callback function to invoke when the event is fired
      * @returns void
      * @since 0.9
      */
@@ -18604,8 +18604,8 @@ Titanium.UI.PickerRow = {
     /**
      * animate the view
      * platforms: android, iphone, ipad
-     * @param object obj either a dictionary of animation properties or an Animation object
-     * @param function callback function to be invoked upon completion of the animation
+     * @param {object} obj either a dictionary of animation properties or an Animation object
+     * @param {function} callback function to be invoked upon completion of the animation
      * @returns void
      * @since 0.9
      */
@@ -18615,8 +18615,8 @@ Titanium.UI.PickerRow = {
     /**
      * fire a synthesized event to the views listener
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param object event event object
+     * @param {string} name name of the event
+     * @param {object} event event object
      * @returns void
      * @since 0.9
      */
@@ -18635,7 +18635,7 @@ Titanium.UI.PickerRow = {
     /**
      * remove a previously add view from the view hiearchy
      * platforms: android, iphone, ipad
-     * @param object view the view to remove from this views hiearchy
+     * @param {object} view the view to remove from this views hiearchy
      * @returns void
      * @since 0.9
      */
@@ -18645,8 +18645,8 @@ Titanium.UI.PickerRow = {
     /**
      * remove a previously added event listener
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function passed in addEventListener
+     * @param {string} name name of the event
+     * @param {function} callback callback function passed in addEventListener
      * @returns void
      * @since 0.9
      */
@@ -18665,7 +18665,7 @@ Titanium.UI.PickerRow = {
     /**
      * return a Blob image of the rendered view
      * platforms: android, iphone, ipad
-     * @param function f function to be invoked upon completion. if non-null, this method will be performed asynchronously. if null, it will be performed immediately
+     * @param {function} f function to be invoked upon completion. if non-null, this method will be performed asynchronously. if null, it will be performed immediately
      * @since 0.9
      */
     toImage:function(f) {
@@ -19170,7 +19170,7 @@ Titanium.UI.ScrollView = {
     /**
      * add a child to the view hierarchy
      * platforms: android, iphone, ipad
-     * @param object view the view to add to this views hiearchy
+     * @param {object} view the view to add to this views hiearchy
      * @returns void
      * @since 0.9
      */
@@ -19180,8 +19180,8 @@ Titanium.UI.ScrollView = {
     /**
      * add an event listener for the instance to receive view triggered events
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function to invoke when the event is fired
+     * @param {string} name name of the event
+     * @param {function} callback callback function to invoke when the event is fired
      * @returns void
      * @since 0.9
      */
@@ -19191,8 +19191,8 @@ Titanium.UI.ScrollView = {
     /**
      * animate the view
      * platforms: android, iphone, ipad
-     * @param object obj either a dictionary of animation properties or an Animation object
-     * @param function callback function to be invoked upon completion of the animation
+     * @param {object} obj either a dictionary of animation properties or an Animation object
+     * @param {function} callback function to be invoked upon completion of the animation
      * @returns void
      * @since 0.9
      */
@@ -19202,8 +19202,8 @@ Titanium.UI.ScrollView = {
     /**
      * fire a synthesized event to the views listener
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param object event event object
+     * @param {string} name name of the event
+     * @param {object} event event object
      * @returns void
      * @since 0.9
      */
@@ -19222,7 +19222,7 @@ Titanium.UI.ScrollView = {
     /**
      * remove a previously add view from the view hiearchy
      * platforms: android, iphone, ipad
-     * @param object view the view to remove from this views hiearchy
+     * @param {object} view the view to remove from this views hiearchy
      * @returns void
      * @since 0.9
      */
@@ -19232,8 +19232,8 @@ Titanium.UI.ScrollView = {
     /**
      * remove a previously added event listener
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function passed in addEventListener
+     * @param {string} name name of the event
+     * @param {function} callback callback function passed in addEventListener
      * @returns void
      * @since 0.9
      */
@@ -19243,8 +19243,8 @@ Titanium.UI.ScrollView = {
     /**
      * <p>scrollTo a particular point</p>
      * platforms: android, iphone, ipad
-     * @param float x the x point within the view
-     * @param float y the y point within the view
+     * @param {float} x the x point within the view
+     * @param {float} y the y point within the view
      * @returns void
      * @since 0.9
      */
@@ -19263,7 +19263,7 @@ Titanium.UI.ScrollView = {
     /**
      * return a Blob image of the rendered view
      * platforms: android, iphone, ipad
-     * @param function f function to be invoked upon completion. if non-null, this method will be performed asynchronously. if null, it will be performed immediately
+     * @param {function} f function to be invoked upon completion. if non-null, this method will be performed asynchronously. if null, it will be performed immediately
      * @since 0.9
      */
     toImage:function(f) {
@@ -19637,7 +19637,7 @@ Titanium.UI.ScrollableView = {
     /**
      * add a child to the view hierarchy
      * platforms: android, iphone, ipad
-     * @param object view the view to add to this views hiearchy
+     * @param {object} view the view to add to this views hiearchy
      * @returns void
      * @since 0.8
      */
@@ -19647,8 +19647,8 @@ Titanium.UI.ScrollableView = {
     /**
      * add an event listener for the instance to receive view triggered events
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function to invoke when the event is fired
+     * @param {string} name name of the event
+     * @param {function} callback callback function to invoke when the event is fired
      * @returns void
      * @since 0.8
      */
@@ -19658,7 +19658,7 @@ Titanium.UI.ScrollableView = {
     /**
      * <p>add a new view to the Scrollable View</p>
      * platforms: android, iphone, ipad
-     * @param object view the view to add
+     * @param {object} view the view to add
      * @returns void
      * @since 0.8
      */
@@ -19668,8 +19668,8 @@ Titanium.UI.ScrollableView = {
     /**
      * animate the view
      * platforms: android, iphone, ipad
-     * @param object obj either a dictionary of animation properties or an Animation object
-     * @param function callback function to be invoked upon completion of the animation
+     * @param {object} obj either a dictionary of animation properties or an Animation object
+     * @param {function} callback function to be invoked upon completion of the animation
      * @returns void
      * @since 0.8
      */
@@ -19679,8 +19679,8 @@ Titanium.UI.ScrollableView = {
     /**
      * fire a synthesized event to the views listener
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param object event event object
+     * @param {string} name name of the event
+     * @param {object} event event object
      * @returns void
      * @since 0.8
      */
@@ -19699,7 +19699,7 @@ Titanium.UI.ScrollableView = {
     /**
      * remove a previously add view from the view hiearchy
      * platforms: android, iphone, ipad
-     * @param object view the view to remove from this views hiearchy
+     * @param {object} view the view to remove from this views hiearchy
      * @returns void
      * @since 0.8
      */
@@ -19709,8 +19709,8 @@ Titanium.UI.ScrollableView = {
     /**
      * remove a previously added event listener
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function passed in addEventListener
+     * @param {string} name name of the event
+     * @param {function} callback callback function passed in addEventListener
      * @returns void
      * @since 0.8
      */
@@ -19720,7 +19720,7 @@ Titanium.UI.ScrollableView = {
     /**
      * <p>remove an existing view from the Scrollable View</p>
      * platforms: android, iphone, ipad
-     * @param object view the view to remove
+     * @param {object} view the view to remove
      * @returns void
      * @since 0.8
      */
@@ -19730,7 +19730,7 @@ Titanium.UI.ScrollableView = {
     /**
      * <p>scroll to a specific view</p>
      * platforms: android, iphone, ipad
-     * @param int,object view either an integer index or the view object to bring into view as the currentPage
+     * @param {int,object} view either an integer index or the view object to bring into view as the currentPage
      * @returns void
      * @since 0.8
      */
@@ -19749,7 +19749,7 @@ Titanium.UI.ScrollableView = {
     /**
      * return a Blob image of the rendered view
      * platforms: android, iphone, ipad
-     * @param function f function to be invoked upon completion. if non-null, this method will be performed asynchronously. if null, it will be performed immediately
+     * @param {function} f function to be invoked upon completion. if non-null, this method will be performed asynchronously. if null, it will be performed immediately
      * @since 0.8
      */
     toImage:function(f) {
@@ -20136,7 +20136,7 @@ Titanium.UI.SearchBar = {
     /**
      * add a child to the view hierarchy
      * platforms: android, iphone, ipad
-     * @param object view the view to add to this views hiearchy
+     * @param {object} view the view to add to this views hiearchy
      * @returns void
      * @since 0.8
      */
@@ -20146,8 +20146,8 @@ Titanium.UI.SearchBar = {
     /**
      * add an event listener for the instance to receive view triggered events
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function to invoke when the event is fired
+     * @param {string} name name of the event
+     * @param {function} callback callback function to invoke when the event is fired
      * @returns void
      * @since 0.8
      */
@@ -20157,8 +20157,8 @@ Titanium.UI.SearchBar = {
     /**
      * animate the view
      * platforms: android, iphone, ipad
-     * @param object obj either a dictionary of animation properties or an Animation object
-     * @param function callback function to be invoked upon completion of the animation
+     * @param {object} obj either a dictionary of animation properties or an Animation object
+     * @param {function} callback function to be invoked upon completion of the animation
      * @returns void
      * @since 0.8
      */
@@ -20177,8 +20177,8 @@ Titanium.UI.SearchBar = {
     /**
      * fire a synthesized event to the views listener
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param object event event object
+     * @param {string} name name of the event
+     * @param {object} event event object
      * @returns void
      * @since 0.8
      */
@@ -20206,7 +20206,7 @@ Titanium.UI.SearchBar = {
     /**
      * remove a previously add view from the view hiearchy
      * platforms: android, iphone, ipad
-     * @param object view the view to remove from this views hiearchy
+     * @param {object} view the view to remove from this views hiearchy
      * @returns void
      * @since 0.8
      */
@@ -20216,8 +20216,8 @@ Titanium.UI.SearchBar = {
     /**
      * remove a previously added event listener
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function passed in addEventListener
+     * @param {string} name name of the event
+     * @param {function} callback callback function passed in addEventListener
      * @returns void
      * @since 0.8
      */
@@ -20236,7 +20236,7 @@ Titanium.UI.SearchBar = {
     /**
      * return a Blob image of the rendered view
      * platforms: android, iphone, ipad
-     * @param function f function to be invoked upon completion. if non-null, this method will be performed asynchronously. if null, it will be performed immediately
+     * @param {function} f function to be invoked upon completion. if non-null, this method will be performed asynchronously. if null, it will be performed immediately
      * @since 0.8
      */
     toImage:function(f) {
@@ -20678,7 +20678,7 @@ Titanium.UI.Slider = {
     /**
      * add a child to the view hierarchy
      * platforms: android, iphone, ipad
-     * @param object view the view to add to this views hiearchy
+     * @param {object} view the view to add to this views hiearchy
      * @returns void
      * @since 0.8
      */
@@ -20688,8 +20688,8 @@ Titanium.UI.Slider = {
     /**
      * add an event listener for the instance to receive view triggered events
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function to invoke when the event is fired
+     * @param {string} name name of the event
+     * @param {function} callback callback function to invoke when the event is fired
      * @returns void
      * @since 0.8
      */
@@ -20699,8 +20699,8 @@ Titanium.UI.Slider = {
     /**
      * animate the view
      * platforms: android, iphone, ipad
-     * @param object obj either a dictionary of animation properties or an Animation object
-     * @param function callback function to be invoked upon completion of the animation
+     * @param {object} obj either a dictionary of animation properties or an Animation object
+     * @param {function} callback function to be invoked upon completion of the animation
      * @returns void
      * @since 0.8
      */
@@ -20710,8 +20710,8 @@ Titanium.UI.Slider = {
     /**
      * fire a synthesized event to the views listener
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param object event event object
+     * @param {string} name name of the event
+     * @param {object} event event object
      * @returns void
      * @since 0.8
      */
@@ -20730,7 +20730,7 @@ Titanium.UI.Slider = {
     /**
      * remove a previously add view from the view hiearchy
      * platforms: android, iphone, ipad
-     * @param object view the view to remove from this views hiearchy
+     * @param {object} view the view to remove from this views hiearchy
      * @returns void
      * @since 0.8
      */
@@ -20740,8 +20740,8 @@ Titanium.UI.Slider = {
     /**
      * remove a previously added event listener
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function passed in addEventListener
+     * @param {string} name name of the event
+     * @param {function} callback callback function passed in addEventListener
      * @returns void
      * @since 0.8
      */
@@ -20760,7 +20760,7 @@ Titanium.UI.Slider = {
     /**
      * return a Blob image of the rendered view
      * platforms: android, iphone, ipad
-     * @param function f function to be invoked upon completion. if non-null, this method will be performed asynchronously. if null, it will be performed immediately
+     * @param {function} f function to be invoked upon completion. if non-null, this method will be performed asynchronously. if null, it will be performed immediately
      * @since 0.8
      */
     toImage:function(f) {
@@ -21117,7 +21117,7 @@ Titanium.UI.Switch = {
     /**
      * add a child to the view hierarchy
      * platforms: android, iphone, ipad
-     * @param object view the view to add to this views hiearchy
+     * @param {object} view the view to add to this views hiearchy
      * @returns void
      * @since 0.8
      */
@@ -21127,8 +21127,8 @@ Titanium.UI.Switch = {
     /**
      * add an event listener for the instance to receive view triggered events
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function to invoke when the event is fired
+     * @param {string} name name of the event
+     * @param {function} callback callback function to invoke when the event is fired
      * @returns void
      * @since 0.8
      */
@@ -21138,8 +21138,8 @@ Titanium.UI.Switch = {
     /**
      * animate the view
      * platforms: android, iphone, ipad
-     * @param object obj either a dictionary of animation properties or an Animation object
-     * @param function callback function to be invoked upon completion of the animation
+     * @param {object} obj either a dictionary of animation properties or an Animation object
+     * @param {function} callback function to be invoked upon completion of the animation
      * @returns void
      * @since 0.8
      */
@@ -21149,8 +21149,8 @@ Titanium.UI.Switch = {
     /**
      * fire a synthesized event to the views listener
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param object event event object
+     * @param {string} name name of the event
+     * @param {object} event event object
      * @returns void
      * @since 0.8
      */
@@ -21169,7 +21169,7 @@ Titanium.UI.Switch = {
     /**
      * remove a previously add view from the view hiearchy
      * platforms: android, iphone, ipad
-     * @param object view the view to remove from this views hiearchy
+     * @param {object} view the view to remove from this views hiearchy
      * @returns void
      * @since 0.8
      */
@@ -21179,8 +21179,8 @@ Titanium.UI.Switch = {
     /**
      * remove a previously added event listener
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function passed in addEventListener
+     * @param {string} name name of the event
+     * @param {function} callback callback function passed in addEventListener
      * @returns void
      * @since 0.8
      */
@@ -21199,7 +21199,7 @@ Titanium.UI.Switch = {
     /**
      * return a Blob image of the rendered view
      * platforms: android, iphone, ipad
-     * @param function f function to be invoked upon completion. if non-null, this method will be performed asynchronously. if null, it will be performed immediately
+     * @param {function} f function to be invoked upon completion. if non-null, this method will be performed asynchronously. if null, it will be performed immediately
      * @since 0.8
      */
     toImage:function(f) {
@@ -21539,7 +21539,7 @@ Titanium.UI.Tab = {
     /**
      * add a child to the view hierarchy
      * platforms: android, iphone, ipad
-     * @param object view the view to add to this views hiearchy
+     * @param {object} view the view to add to this views hiearchy
      * @returns void
      * @since 0.8
      */
@@ -21549,8 +21549,8 @@ Titanium.UI.Tab = {
     /**
      * add an event listener for the instance to receive view triggered events
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function to invoke when the event is fired
+     * @param {string} name name of the event
+     * @param {function} callback callback function to invoke when the event is fired
      * @returns void
      * @since 0.8
      */
@@ -21560,8 +21560,8 @@ Titanium.UI.Tab = {
     /**
      * animate the view
      * platforms: android, iphone, ipad
-     * @param object obj either a dictionary of animation properties or an Animation object
-     * @param function callback function to be invoked upon completion of the animation
+     * @param {object} obj either a dictionary of animation properties or an Animation object
+     * @param {function} callback function to be invoked upon completion of the animation
      * @returns void
      * @since 0.8
      */
@@ -21571,8 +21571,8 @@ Titanium.UI.Tab = {
     /**
      * fire a synthesized event to the views listener
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param object event event object
+     * @param {string} name name of the event
+     * @param {object} event event object
      * @returns void
      * @since 0.8
      */
@@ -21591,7 +21591,7 @@ Titanium.UI.Tab = {
     /**
      * remove a previously add view from the view hiearchy
      * platforms: android, iphone, ipad
-     * @param object view the view to remove from this views hiearchy
+     * @param {object} view the view to remove from this views hiearchy
      * @returns void
      * @since 0.8
      */
@@ -21601,8 +21601,8 @@ Titanium.UI.Tab = {
     /**
      * remove a previously added event listener
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function passed in addEventListener
+     * @param {string} name name of the event
+     * @param {function} callback callback function passed in addEventListener
      * @returns void
      * @since 0.8
      */
@@ -21621,7 +21621,7 @@ Titanium.UI.Tab = {
     /**
      * return a Blob image of the rendered view
      * platforms: android, iphone, ipad
-     * @param function f function to be invoked upon completion. if non-null, this method will be performed asynchronously. if null, it will be performed immediately
+     * @param {function} f function to be invoked upon completion. if non-null, this method will be performed asynchronously. if null, it will be performed immediately
      * @since 0.8
      */
     toImage:function(f) {
@@ -21968,7 +21968,7 @@ Titanium.UI.TabGroup = {
     /**
      * add a child to the view hierarchy
      * platforms: android, iphone, ipad
-     * @param object view the view to add to this views hiearchy
+     * @param {object} view the view to add to this views hiearchy
      * @returns void
      * @since 0.9
      */
@@ -21978,8 +21978,8 @@ Titanium.UI.TabGroup = {
     /**
      * add an event listener for the instance to receive view triggered events
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function to invoke when the event is fired
+     * @param {string} name name of the event
+     * @param {function} callback callback function to invoke when the event is fired
      * @returns void
      * @since 0.9
      */
@@ -21998,8 +21998,8 @@ Titanium.UI.TabGroup = {
     /**
      * animate the view
      * platforms: android, iphone, ipad
-     * @param object obj either a dictionary of animation properties or an Animation object
-     * @param function callback function to be invoked upon completion of the animation
+     * @param {object} obj either a dictionary of animation properties or an Animation object
+     * @param {function} callback function to be invoked upon completion of the animation
      * @returns void
      * @since 0.9
      */
@@ -22018,8 +22018,8 @@ Titanium.UI.TabGroup = {
     /**
      * fire a synthesized event to the views listener
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param object event event object
+     * @param {string} name name of the event
+     * @param {object} event event object
      * @returns void
      * @since 0.9
      */
@@ -22047,7 +22047,7 @@ Titanium.UI.TabGroup = {
     /**
      * remove a previously add view from the view hiearchy
      * platforms: android, iphone, ipad
-     * @param object view the view to remove from this views hiearchy
+     * @param {object} view the view to remove from this views hiearchy
      * @returns void
      * @since 0.9
      */
@@ -22057,8 +22057,8 @@ Titanium.UI.TabGroup = {
     /**
      * remove a previously added event listener
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function passed in addEventListener
+     * @param {string} name name of the event
+     * @param {function} callback callback function passed in addEventListener
      * @returns void
      * @since 0.9
      */
@@ -22077,7 +22077,7 @@ Titanium.UI.TabGroup = {
     /**
      * <p>select the currently active tab in a tab group</p>
      * platforms: android, iphone, ipad
-     * @param object indexOrObject an int representing the desired tab index or a reference to the tab object you'd like to switch to
+     * @param {object} indexOrObject an int representing the desired tab index or a reference to the tab object you'd like to switch to
      * @returns void
      * @since 0.9
      */
@@ -22096,7 +22096,7 @@ Titanium.UI.TabGroup = {
     /**
      * return a Blob image of the rendered view
      * platforms: android, iphone, ipad
-     * @param function f function to be invoked upon completion. if non-null, this method will be performed asynchronously. if null, it will be performed immediately
+     * @param {function} f function to be invoked upon completion. if non-null, this method will be performed asynchronously. if null, it will be performed immediately
      * @since 0.9
      */
     toImage:function(f) {
@@ -22415,7 +22415,7 @@ Titanium.UI.TabbedBar = {
     /**
      * add a child to the view hierarchy
      * platforms: iphone, ipad
-     * @param object view the view to add to this views hiearchy
+     * @param {object} view the view to add to this views hiearchy
      * @returns void
      * @since 0.8
      */
@@ -22425,8 +22425,8 @@ Titanium.UI.TabbedBar = {
     /**
      * add an event listener for the instance to receive view triggered events
      * platforms: iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function to invoke when the event is fired
+     * @param {string} name name of the event
+     * @param {function} callback callback function to invoke when the event is fired
      * @returns void
      * @since 0.8
      */
@@ -22436,8 +22436,8 @@ Titanium.UI.TabbedBar = {
     /**
      * animate the view
      * platforms: iphone, ipad
-     * @param object obj either a dictionary of animation properties or an Animation object
-     * @param function callback function to be invoked upon completion of the animation
+     * @param {object} obj either a dictionary of animation properties or an Animation object
+     * @param {function} callback function to be invoked upon completion of the animation
      * @returns void
      * @since 0.8
      */
@@ -22447,8 +22447,8 @@ Titanium.UI.TabbedBar = {
     /**
      * fire a synthesized event to the views listener
      * platforms: iphone, ipad
-     * @param string name name of the event
-     * @param object event event object
+     * @param {string} name name of the event
+     * @param {object} event event object
      * @returns void
      * @since 0.8
      */
@@ -22467,7 +22467,7 @@ Titanium.UI.TabbedBar = {
     /**
      * remove a previously add view from the view hiearchy
      * platforms: iphone, ipad
-     * @param object view the view to remove from this views hiearchy
+     * @param {object} view the view to remove from this views hiearchy
      * @returns void
      * @since 0.8
      */
@@ -22477,8 +22477,8 @@ Titanium.UI.TabbedBar = {
     /**
      * remove a previously added event listener
      * platforms: iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function passed in addEventListener
+     * @param {string} name name of the event
+     * @param {function} callback callback function passed in addEventListener
      * @returns void
      * @since 0.8
      */
@@ -22497,7 +22497,7 @@ Titanium.UI.TabbedBar = {
     /**
      * return a Blob image of the rendered view
      * platforms: iphone, ipad
-     * @param function f function to be invoked upon completion. if non-null, this method will be performed asynchronously. if null, it will be performed immediately
+     * @param {function} f function to be invoked upon completion. if non-null, this method will be performed asynchronously. if null, it will be performed immediately
      * @since 0.8
      */
     toImage:function(f) {
@@ -22986,7 +22986,7 @@ Titanium.UI.TableView = {
     /**
      * add a child to the view hierarchy
      * platforms: android, iphone, ipad
-     * @param object view the view to add to this views hiearchy
+     * @param {object} view the view to add to this views hiearchy
      * @returns void
      * @since 0.8
      */
@@ -22996,8 +22996,8 @@ Titanium.UI.TableView = {
     /**
      * add an event listener for the instance to receive view triggered events
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function to invoke when the event is fired
+     * @param {string} name name of the event
+     * @param {function} callback callback function to invoke when the event is fired
      * @returns void
      * @since 0.8
      */
@@ -23007,8 +23007,8 @@ Titanium.UI.TableView = {
     /**
      * animate the view
      * platforms: android, iphone, ipad
-     * @param object obj either a dictionary of animation properties or an Animation object
-     * @param function callback function to be invoked upon completion of the animation
+     * @param {object} obj either a dictionary of animation properties or an Animation object
+     * @param {function} callback function to be invoked upon completion of the animation
      * @returns void
      * @since 0.8
      */
@@ -23018,8 +23018,8 @@ Titanium.UI.TableView = {
     /**
      * <p>append a row to the table, optionally with animation</p>
      * platforms: android, iphone, ipad
-     * @param object row row to append
-     * @param object properties animation properties
+     * @param {object} row row to append
+     * @param {object} properties animation properties
      * @returns void
      * @since 0.8
      */
@@ -23029,8 +23029,8 @@ Titanium.UI.TableView = {
     /**
      * <p>delete an existing row, optionally with animation</p>
      * platforms: android, iphone, ipad
-     * @param int row index of row to delete
-     * @param object properties animation properties
+     * @param {int} row index of row to delete
+     * @param {object} properties animation properties
      * @returns void
      * @since 0.8
      */
@@ -23040,7 +23040,7 @@ Titanium.UI.TableView = {
     /**
      * <p>programmatically deselect a row</p>
      * platforms: android, iphone, ipad
-     * @param int row row index to deselect
+     * @param {int} row row index to deselect
      * @returns void
      * @since 0.8
      */
@@ -23050,8 +23050,8 @@ Titanium.UI.TableView = {
     /**
      * fire a synthesized event to the views listener
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param object event event object
+     * @param {string} name name of the event
+     * @param {object} event event object
      * @returns void
      * @since 0.8
      */
@@ -23070,9 +23070,9 @@ Titanium.UI.TableView = {
     /**
      * <p>insert a row before another row, optionally with animation</p>
      * platforms: android, iphone, ipad
-     * @param int index index
-     * @param object row row to insert
-     * @param object properties animation properties
+     * @param {int} index index
+     * @param {object} row row to insert
+     * @param {object} properties animation properties
      * @returns void
      * @since 0.8
      */
@@ -23082,9 +23082,9 @@ Titanium.UI.TableView = {
     /**
      * <p>insert a row after another row, optionally with animation</p>
      * platforms: android, iphone, ipad
-     * @param int index index
-     * @param object row row to insert
-     * @param object properties animation properties
+     * @param {int} index index
+     * @param {object} row row to insert
+     * @param {object} properties animation properties
      * @returns void
      * @since 0.8
      */
@@ -23094,7 +23094,7 @@ Titanium.UI.TableView = {
     /**
      * remove a previously add view from the view hiearchy
      * platforms: android, iphone, ipad
-     * @param object view the view to remove from this views hiearchy
+     * @param {object} view the view to remove from this views hiearchy
      * @returns void
      * @since 0.8
      */
@@ -23104,8 +23104,8 @@ Titanium.UI.TableView = {
     /**
      * remove a previously added event listener
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function passed in addEventListener
+     * @param {string} name name of the event
+     * @param {function} callback callback function passed in addEventListener
      * @returns void
      * @since 0.8
      */
@@ -23115,8 +23115,8 @@ Titanium.UI.TableView = {
     /**
      * <p>scroll to a specific row index and ensure that that row is on screen</p>
      * platforms: android, iphone, ipad
-     * @param int index index
-     * @param object properties animation properties. <tt>position</tt> property controls the position constant to use for position (on iPhone, use constants from Titanium.UI.iPhone.TableViewScrollPosition).
+     * @param {int} index index
+     * @param {object} properties animation properties. <tt>position</tt> property controls the position constant to use for position (on iPhone, use constants from Titanium.UI.iPhone.TableViewScrollPosition).
      * @returns void
      * @since 0.8
      */
@@ -23126,8 +23126,8 @@ Titanium.UI.TableView = {
     /**
      * <p>scroll the table to a specific top position where 0 is the topmost y position in the table view</p>
      * platforms: android, iphone, ipad
-     * @param float top y position
-     * @param object properties optional dictionary with the key <tt>animated</tt> (default, true) as boolean to indicate if the scroll should be animated or immediate
+     * @param {float} top y position
+     * @param {object} properties optional dictionary with the key <tt>animated</tt> (default, true) as boolean to indicate if the scroll should be animated or immediate
      * @returns void
      * @since 0.8
      */
@@ -23137,7 +23137,7 @@ Titanium.UI.TableView = {
     /**
      * <p>programmatically select a row</p>
      * platforms: android, iphone, ipad
-     * @param int row row index to select
+     * @param {int} row row index to select
      * @returns void
      * @since 0.8
      */
@@ -23147,8 +23147,8 @@ Titanium.UI.TableView = {
     /**
      * <p>set the data in the table, optionally with animation</p>
      * platforms: android, iphone, ipad
-     * @param array data data array of rows either as objects or row objects
-     * @param object properties animation properties
+     * @param {array} data data array of rows either as objects or row objects
+     * @param {object} properties animation properties
      * @returns void
      * @since 0.8
      */
@@ -23167,7 +23167,7 @@ Titanium.UI.TableView = {
     /**
      * return a Blob image of the rendered view
      * platforms: android, iphone, ipad
-     * @param function f function to be invoked upon completion. if non-null, this method will be performed asynchronously. if null, it will be performed immediately
+     * @param {function} f function to be invoked upon completion. if non-null, this method will be performed asynchronously. if null, it will be performed immediately
      * @since 0.8
      */
     toImage:function(f) {
@@ -23176,8 +23176,8 @@ Titanium.UI.TableView = {
     /**
      * <p>update an existing row, optionally with animation</p>
      * platforms: android, iphone, ipad
-     * @param object row row data to update
-     * @param object properties animation properties
+     * @param {object} row row data to update
+     * @param {object} properties animation properties
      * @returns void
      * @since 0.8
      */
@@ -23598,7 +23598,7 @@ Titanium.UI.TableViewRow = {
     /**
      * add a child to the view hierarchy
      * platforms: android, iphone, ipad
-     * @param object view the view to add to this views hiearchy
+     * @param {object} view the view to add to this views hiearchy
      * @returns void
      * @since 0.9
      */
@@ -23608,8 +23608,8 @@ Titanium.UI.TableViewRow = {
     /**
      * add an event listener for the instance to receive view triggered events
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function to invoke when the event is fired
+     * @param {string} name name of the event
+     * @param {function} callback callback function to invoke when the event is fired
      * @returns void
      * @since 0.9
      */
@@ -23619,8 +23619,8 @@ Titanium.UI.TableViewRow = {
     /**
      * animate the view
      * platforms: android, iphone, ipad
-     * @param object obj either a dictionary of animation properties or an Animation object
-     * @param function callback function to be invoked upon completion of the animation
+     * @param {object} obj either a dictionary of animation properties or an Animation object
+     * @param {function} callback function to be invoked upon completion of the animation
      * @returns void
      * @since 0.9
      */
@@ -23630,8 +23630,8 @@ Titanium.UI.TableViewRow = {
     /**
      * fire a synthesized event to the views listener
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param object event event object
+     * @param {string} name name of the event
+     * @param {object} event event object
      * @returns void
      * @since 0.9
      */
@@ -23650,7 +23650,7 @@ Titanium.UI.TableViewRow = {
     /**
      * remove a previously add view from the view hiearchy
      * platforms: android, iphone, ipad
-     * @param object view the view to remove from this views hiearchy
+     * @param {object} view the view to remove from this views hiearchy
      * @returns void
      * @since 0.9
      */
@@ -23660,8 +23660,8 @@ Titanium.UI.TableViewRow = {
     /**
      * remove a previously added event listener
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function passed in addEventListener
+     * @param {string} name name of the event
+     * @param {function} callback callback function passed in addEventListener
      * @returns void
      * @since 0.9
      */
@@ -23680,7 +23680,7 @@ Titanium.UI.TableViewRow = {
     /**
      * return a Blob image of the rendered view
      * platforms: android, iphone, ipad
-     * @param function f function to be invoked upon completion. if non-null, this method will be performed asynchronously. if null, it will be performed immediately
+     * @param {function} f function to be invoked upon completion. if non-null, this method will be performed asynchronously. if null, it will be performed immediately
      * @since 0.9
      */
     toImage:function(f) {
@@ -24029,8 +24029,8 @@ Titanium.UI.TableViewSection = {
     /**
      * add a child to the view hierarchy
      * platforms: android, iphone, ipad
-     * @param object row the row object to add to the section
-     * @param object view the view to add to this views hiearchy
+     * @param {object} row the row object to add to the section
+     * @param {object} view the view to add to this views hiearchy
      * @returns void
      * @since 0.9
      */
@@ -24040,8 +24040,8 @@ Titanium.UI.TableViewSection = {
     /**
      * add an event listener for the instance to receive view triggered events
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function to invoke when the event is fired
+     * @param {string} name name of the event
+     * @param {function} callback callback function to invoke when the event is fired
      * @returns void
      * @since 0.9
      */
@@ -24051,8 +24051,8 @@ Titanium.UI.TableViewSection = {
     /**
      * animate the view
      * platforms: android, iphone, ipad
-     * @param object obj either a dictionary of animation properties or an Animation object
-     * @param function callback function to be invoked upon completion of the animation
+     * @param {object} obj either a dictionary of animation properties or an Animation object
+     * @param {function} callback function to be invoked upon completion of the animation
      * @returns void
      * @since 0.9
      */
@@ -24062,8 +24062,8 @@ Titanium.UI.TableViewSection = {
     /**
      * fire a synthesized event to the views listener
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param object event event object
+     * @param {string} name name of the event
+     * @param {object} event event object
      * @returns void
      * @since 0.9
      */
@@ -24082,8 +24082,8 @@ Titanium.UI.TableViewSection = {
     /**
      * remove a previously add view from the view hiearchy
      * platforms: android, iphone, ipad
-     * @param object row the row object to remove from the section
-     * @param object view the view to remove from this views hiearchy
+     * @param {object} row the row object to remove from the section
+     * @param {object} view the view to remove from this views hiearchy
      * @returns void
      * @since 0.9
      */
@@ -24093,8 +24093,8 @@ Titanium.UI.TableViewSection = {
     /**
      * remove a previously added event listener
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function passed in addEventListener
+     * @param {string} name name of the event
+     * @param {function} callback callback function passed in addEventListener
      * @returns void
      * @since 0.9
      */
@@ -24113,7 +24113,7 @@ Titanium.UI.TableViewSection = {
     /**
      * return a Blob image of the rendered view
      * platforms: android, iphone, ipad
-     * @param function f function to be invoked upon completion. if non-null, this method will be performed asynchronously. if null, it will be performed immediately
+     * @param {function} f function to be invoked upon completion. if non-null, this method will be performed asynchronously. if null, it will be performed immediately
      * @since 0.9
      */
     toImage:function(f) {
@@ -24516,7 +24516,7 @@ Titanium.UI.TextArea = {
     /**
      * add a child to the view hierarchy
      * platforms: android, iphone, ipad
-     * @param object view the view to add to this views hiearchy
+     * @param {object} view the view to add to this views hiearchy
      * @returns void
      * @since 0.8
      */
@@ -24526,8 +24526,8 @@ Titanium.UI.TextArea = {
     /**
      * add an event listener for the instance to receive view triggered events
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function to invoke when the event is fired
+     * @param {string} name name of the event
+     * @param {function} callback callback function to invoke when the event is fired
      * @returns void
      * @since 0.8
      */
@@ -24537,8 +24537,8 @@ Titanium.UI.TextArea = {
     /**
      * animate the view
      * platforms: android, iphone, ipad
-     * @param object obj either a dictionary of animation properties or an Animation object
-     * @param function callback function to be invoked upon completion of the animation
+     * @param {object} obj either a dictionary of animation properties or an Animation object
+     * @param {function} callback function to be invoked upon completion of the animation
      * @returns void
      * @since 0.8
      */
@@ -24557,8 +24557,8 @@ Titanium.UI.TextArea = {
     /**
      * fire a synthesized event to the views listener
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param object event event object
+     * @param {string} name name of the event
+     * @param {object} event event object
      * @returns void
      * @since 0.8
      */
@@ -24595,7 +24595,7 @@ Titanium.UI.TextArea = {
     /**
      * remove a previously add view from the view hiearchy
      * platforms: android, iphone, ipad
-     * @param object view the view to remove from this views hiearchy
+     * @param {object} view the view to remove from this views hiearchy
      * @returns void
      * @since 0.8
      */
@@ -24605,8 +24605,8 @@ Titanium.UI.TextArea = {
     /**
      * remove a previously added event listener
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function passed in addEventListener
+     * @param {string} name name of the event
+     * @param {function} callback callback function passed in addEventListener
      * @returns void
      * @since 0.8
      */
@@ -24625,7 +24625,7 @@ Titanium.UI.TextArea = {
     /**
      * return a Blob image of the rendered view
      * platforms: android, iphone, ipad
-     * @param function f function to be invoked upon completion. if non-null, this method will be performed asynchronously. if null, it will be performed immediately
+     * @param {function} f function to be invoked upon completion. if non-null, this method will be performed asynchronously. if null, it will be performed immediately
      * @since 0.8
      */
     toImage:function(f) {
@@ -25126,7 +25126,7 @@ Titanium.UI.TextField = {
     /**
      * add a child to the view hierarchy
      * platforms: android, iphone, ipad
-     * @param object view the view to add to this views hiearchy
+     * @param {object} view the view to add to this views hiearchy
      * @returns void
      * @since 0.8
      */
@@ -25136,8 +25136,8 @@ Titanium.UI.TextField = {
     /**
      * add an event listener for the instance to receive view triggered events
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function to invoke when the event is fired
+     * @param {string} name name of the event
+     * @param {function} callback callback function to invoke when the event is fired
      * @returns void
      * @since 0.8
      */
@@ -25147,8 +25147,8 @@ Titanium.UI.TextField = {
     /**
      * animate the view
      * platforms: android, iphone, ipad
-     * @param object obj either a dictionary of animation properties or an Animation object
-     * @param function callback function to be invoked upon completion of the animation
+     * @param {object} obj either a dictionary of animation properties or an Animation object
+     * @param {function} callback function to be invoked upon completion of the animation
      * @returns void
      * @since 0.8
      */
@@ -25167,8 +25167,8 @@ Titanium.UI.TextField = {
     /**
      * fire a synthesized event to the views listener
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param object event event object
+     * @param {string} name name of the event
+     * @param {object} event event object
      * @returns void
      * @since 0.8
      */
@@ -25205,7 +25205,7 @@ Titanium.UI.TextField = {
     /**
      * remove a previously add view from the view hiearchy
      * platforms: android, iphone, ipad
-     * @param object view the view to remove from this views hiearchy
+     * @param {object} view the view to remove from this views hiearchy
      * @returns void
      * @since 0.8
      */
@@ -25215,8 +25215,8 @@ Titanium.UI.TextField = {
     /**
      * remove a previously added event listener
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function passed in addEventListener
+     * @param {string} name name of the event
+     * @param {function} callback callback function passed in addEventListener
      * @returns void
      * @since 0.8
      */
@@ -25235,7 +25235,7 @@ Titanium.UI.TextField = {
     /**
      * return a Blob image of the rendered view
      * platforms: android, iphone, ipad
-     * @param function f function to be invoked upon completion. if non-null, this method will be performed asynchronously. if null, it will be performed immediately
+     * @param {function} f function to be invoked upon completion. if non-null, this method will be performed asynchronously. if null, it will be performed immediately
      * @since 0.8
      */
     toImage:function(f) {
@@ -25517,7 +25517,7 @@ Titanium.UI.Toolbar = {
     /**
      * add a child to the view hierarchy
      * platforms: iphone, ipad
-     * @param object view the view to add to this views hiearchy
+     * @param {object} view the view to add to this views hiearchy
      * @returns void
      * @since 0.8
      */
@@ -25527,8 +25527,8 @@ Titanium.UI.Toolbar = {
     /**
      * add an event listener for the instance to receive view triggered events
      * platforms: iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function to invoke when the event is fired
+     * @param {string} name name of the event
+     * @param {function} callback callback function to invoke when the event is fired
      * @returns void
      * @since 0.8
      */
@@ -25538,8 +25538,8 @@ Titanium.UI.Toolbar = {
     /**
      * animate the view
      * platforms: iphone, ipad
-     * @param object obj either a dictionary of animation properties or an Animation object
-     * @param function callback function to be invoked upon completion of the animation
+     * @param {object} obj either a dictionary of animation properties or an Animation object
+     * @param {function} callback function to be invoked upon completion of the animation
      * @returns void
      * @since 0.8
      */
@@ -25549,8 +25549,8 @@ Titanium.UI.Toolbar = {
     /**
      * fire a synthesized event to the views listener
      * platforms: iphone, ipad
-     * @param string name name of the event
-     * @param object event event object
+     * @param {string} name name of the event
+     * @param {object} event event object
      * @returns void
      * @since 0.8
      */
@@ -25569,7 +25569,7 @@ Titanium.UI.Toolbar = {
     /**
      * remove a previously add view from the view hiearchy
      * platforms: iphone, ipad
-     * @param object view the view to remove from this views hiearchy
+     * @param {object} view the view to remove from this views hiearchy
      * @returns void
      * @since 0.8
      */
@@ -25579,8 +25579,8 @@ Titanium.UI.Toolbar = {
     /**
      * remove a previously added event listener
      * platforms: iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function passed in addEventListener
+     * @param {string} name name of the event
+     * @param {function} callback callback function passed in addEventListener
      * @returns void
      * @since 0.8
      */
@@ -25599,7 +25599,7 @@ Titanium.UI.Toolbar = {
     /**
      * return a Blob image of the rendered view
      * platforms: iphone, ipad
-     * @param function f function to be invoked upon completion. if non-null, this method will be performed asynchronously. if null, it will be performed immediately
+     * @param {function} f function to be invoked upon completion. if non-null, this method will be performed asynchronously. if null, it will be performed immediately
      * @since 0.8
      */
     toImage:function(f) {
@@ -25908,7 +25908,7 @@ Titanium.UI.View = {
     /**
      * add a child to the view hierarchy
      * platforms: android, iphone, ipad
-     * @param object view the view to add to this views hiearchy
+     * @param {object} view the view to add to this views hiearchy
      * @returns void
      * @since 0.9
      */
@@ -25918,8 +25918,8 @@ Titanium.UI.View = {
     /**
      * add an event listener for the instance to receive view triggered events
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function to invoke when the event is fired
+     * @param {string} name name of the event
+     * @param {function} callback callback function to invoke when the event is fired
      * @returns void
      * @since 0.9
      */
@@ -25929,8 +25929,8 @@ Titanium.UI.View = {
     /**
      * animate the view
      * platforms: android, iphone, ipad
-     * @param object obj either a dictionary of animation properties or an Animation object
-     * @param function callback function to be invoked upon completion of the animation
+     * @param {object} obj either a dictionary of animation properties or an Animation object
+     * @param {function} callback function to be invoked upon completion of the animation
      * @returns void
      * @since 0.9
      */
@@ -25940,8 +25940,8 @@ Titanium.UI.View = {
     /**
      * fire a synthesized event to the views listener
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param object event event object
+     * @param {string} name name of the event
+     * @param {object} event event object
      * @returns void
      * @since 0.9
      */
@@ -25960,7 +25960,7 @@ Titanium.UI.View = {
     /**
      * remove a previously add view from the view hiearchy
      * platforms: android, iphone, ipad
-     * @param object view the view to remove from this views hiearchy
+     * @param {object} view the view to remove from this views hiearchy
      * @returns void
      * @since 0.9
      */
@@ -25970,8 +25970,8 @@ Titanium.UI.View = {
     /**
      * remove a previously added event listener
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function passed in addEventListener
+     * @param {string} name name of the event
+     * @param {function} callback callback function passed in addEventListener
      * @returns void
      * @since 0.9
      */
@@ -25990,7 +25990,7 @@ Titanium.UI.View = {
     /**
      * return a Blob image of the rendered view
      * platforms: android, iphone, ipad
-     * @param function f function to be invoked upon completion. if non-null, this method will be performed asynchronously. if null, it will be performed immediately
+     * @param {function} f function to be invoked upon completion. if non-null, this method will be performed asynchronously. if null, it will be performed immediately
      * @since 0.9
      */
     toImage:function(f) {
@@ -26338,7 +26338,7 @@ Titanium.UI.WebView = {
     /**
      * add a child to the view hierarchy
      * platforms: android, iphone, ipad
-     * @param object view the view to add to this views hiearchy
+     * @param {object} view the view to add to this views hiearchy
      * @returns void
      * @since 0.8
      */
@@ -26348,8 +26348,8 @@ Titanium.UI.WebView = {
     /**
      * add an event listener for the instance to receive view triggered events
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function to invoke when the event is fired
+     * @param {string} name name of the event
+     * @param {function} callback callback function to invoke when the event is fired
      * @returns void
      * @since 0.8
      */
@@ -26359,8 +26359,8 @@ Titanium.UI.WebView = {
     /**
      * animate the view
      * platforms: android, iphone, ipad
-     * @param object obj either a dictionary of animation properties or an Animation object
-     * @param function callback function to be invoked upon completion of the animation
+     * @param {object} obj either a dictionary of animation properties or an Animation object
+     * @param {function} callback function to be invoked upon completion of the animation
      * @returns void
      * @since 0.8
      */
@@ -26386,7 +26386,7 @@ Titanium.UI.WebView = {
     /**
      * <p>invoke JavaScript inside the context of the webview and optionally, return a result</p>
      * platforms: android, iphone, ipad
-     * @param string content JavaScript code as a string. The code will be evaluated inside the webview context.
+     * @param {string} content JavaScript code as a string. The code will be evaluated inside the webview context.
      * @since 0.8
      */
     evalJS:function(content) {
@@ -26395,8 +26395,8 @@ Titanium.UI.WebView = {
     /**
      * fire a synthesized event to the views listener
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param object event event object
+     * @param {string} name name of the event
+     * @param {object} event event object
      * @returns void
      * @since 0.8
      */
@@ -26442,7 +26442,7 @@ Titanium.UI.WebView = {
     /**
      * remove a previously add view from the view hiearchy
      * platforms: android, iphone, ipad
-     * @param object view the view to remove from this views hiearchy
+     * @param {object} view the view to remove from this views hiearchy
      * @returns void
      * @since 0.8
      */
@@ -26452,8 +26452,8 @@ Titanium.UI.WebView = {
     /**
      * remove a previously added event listener
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function passed in addEventListener
+     * @param {string} name name of the event
+     * @param {function} callback callback function passed in addEventListener
      * @returns void
      * @since 0.8
      */
@@ -26472,8 +26472,8 @@ Titanium.UI.WebView = {
     /**
      * <p>set the basic authentication for the webview instance to be used on subsequent url requests</p>
      * platforms: android, iphone, ipad
-     * @param string username the username
-     * @param string password the password
+     * @param {string} username the username
+     * @param {string} password the password
      * @returns void
      * @since 0.8
      */
@@ -26501,7 +26501,7 @@ Titanium.UI.WebView = {
     /**
      * return a Blob image of the rendered view
      * platforms: android, iphone, ipad
-     * @param function f function to be invoked upon completion. if non-null, this method will be performed asynchronously. if null, it will be performed immediately
+     * @param {function} f function to be invoked upon completion. if non-null, this method will be performed asynchronously. if null, it will be performed immediately
      * @since 0.8
      */
     toImage:function(f) {
@@ -27097,7 +27097,7 @@ Titanium.UI.Window = {
     /**
      * add a child to the view hierarchy
      * platforms: android, iphone, ipad
-     * @param object view the view to add to this views hiearchy
+     * @param {object} view the view to add to this views hiearchy
      * @returns void
      * @since 0.9
      */
@@ -27107,8 +27107,8 @@ Titanium.UI.Window = {
     /**
      * add an event listener for the instance to receive view triggered events
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function to invoke when the event is fired
+     * @param {string} name name of the event
+     * @param {function} callback callback function to invoke when the event is fired
      * @returns void
      * @since 0.9
      */
@@ -27118,8 +27118,8 @@ Titanium.UI.Window = {
     /**
      * animate the view
      * platforms: android, iphone, ipad
-     * @param object obj either a dictionary of animation properties or an Animation object
-     * @param function callback function to be invoked upon completion of the animation
+     * @param {object} obj either a dictionary of animation properties or an Animation object
+     * @param {function} callback function to be invoked upon completion of the animation
      * @returns void
      * @since 0.9
      */
@@ -27129,7 +27129,7 @@ Titanium.UI.Window = {
     /**
      * <p>close the window</p>
      * platforms: android, iphone, ipad
-     * @param object options close the window with optional animation or display properties
+     * @param {object} options close the window with optional animation or display properties
      * @returns void
      * @since 0.9
      */
@@ -27139,8 +27139,8 @@ Titanium.UI.Window = {
     /**
      * fire a synthesized event to the views listener
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param object event event object
+     * @param {string} name name of the event
+     * @param {object} event event object
      * @returns void
      * @since 0.9
      */
@@ -27159,7 +27159,7 @@ Titanium.UI.Window = {
     /**
      * <p>open the window</p>
      * platforms: android, iphone, ipad
-     * @param object options open the window with optional animation or display properties
+     * @param {object} options open the window with optional animation or display properties
      * @returns void
      * @since 0.9
      */
@@ -27169,7 +27169,7 @@ Titanium.UI.Window = {
     /**
      * remove a previously add view from the view hiearchy
      * platforms: android, iphone, ipad
-     * @param object view the view to remove from this views hiearchy
+     * @param {object} view the view to remove from this views hiearchy
      * @returns void
      * @since 0.9
      */
@@ -27179,8 +27179,8 @@ Titanium.UI.Window = {
     /**
      * remove a previously added event listener
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function passed in addEventListener
+     * @param {string} name name of the event
+     * @param {function} callback callback function passed in addEventListener
      * @returns void
      * @since 0.9
      */
@@ -27199,7 +27199,7 @@ Titanium.UI.Window = {
     /**
      * return a Blob image of the rendered view
      * platforms: android, iphone, ipad
-     * @param function f function to be invoked upon completion. if non-null, this method will be performed asynchronously. if null, it will be performed immediately
+     * @param {function} f function to be invoked upon completion. if non-null, this method will be performed asynchronously. if null, it will be performed immediately
      * @since 0.9
      */
     toImage:function(f) {
@@ -27217,8 +27217,8 @@ Titanium.UI.iOS = {
     /**
      * add an event listener for the instance to receive view triggered events
      * platforms: iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function to invoke when the event is fired
+     * @param {string} name name of the event
+     * @param {function} callback callback function to invoke when the event is fired
      * @returns void
      * @since 1.4
      */
@@ -27228,7 +27228,7 @@ Titanium.UI.iOS = {
     /**
      * create and return an instance of {@link Titanium.UI.iOS.AdView}
      * platforms: iphone, ipad
-     * @param object parameters (optional) a dictionary object properties defined in {@link Titanium.UI.iOS.AdView}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.UI.iOS.AdView}
      * @since 1.4
      */
     createAdView:function(parameters) {
@@ -27237,8 +27237,8 @@ Titanium.UI.iOS = {
     /**
      * fire a synthesized event to the views listener
      * platforms: iphone, ipad
-     * @param string name name of the event
-     * @param object event event object
+     * @param {string} name name of the event
+     * @param {object} event event object
      * @returns void
      * @since 1.4
      */
@@ -27248,8 +27248,8 @@ Titanium.UI.iOS = {
     /**
      * remove a previously added event listener
      * platforms: iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function passed in addEventListener
+     * @param {string} name name of the event
+     * @param {function} callback callback function passed in addEventListener
      * @returns void
      * @since 1.4
      */
@@ -27548,7 +27548,7 @@ Titanium.UI.iOS.AdView = {
     /**
      * add a child to the view hierarchy
      * platforms: iphone, ipad
-     * @param object view the view to add to this views hiearchy
+     * @param {object} view the view to add to this views hiearchy
      * @returns void
      * @since 1.4
      */
@@ -27558,8 +27558,8 @@ Titanium.UI.iOS.AdView = {
     /**
      * add an event listener for the instance to receive view triggered events
      * platforms: iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function to invoke when the event is fired
+     * @param {string} name name of the event
+     * @param {function} callback callback function to invoke when the event is fired
      * @returns void
      * @since 1.4
      */
@@ -27569,8 +27569,8 @@ Titanium.UI.iOS.AdView = {
     /**
      * animate the view
      * platforms: iphone, ipad
-     * @param object obj either a dictionary of animation properties or an Animation object
-     * @param function callback function to be invoked upon completion of the animation
+     * @param {object} obj either a dictionary of animation properties or an Animation object
+     * @param {function} callback function to be invoked upon completion of the animation
      * @returns void
      * @since 1.4
      */
@@ -27589,8 +27589,8 @@ Titanium.UI.iOS.AdView = {
     /**
      * fire a synthesized event to the views listener
      * platforms: iphone, ipad
-     * @param string name name of the event
-     * @param object event event object
+     * @param {string} name name of the event
+     * @param {object} event event object
      * @returns void
      * @since 1.4
      */
@@ -27609,7 +27609,7 @@ Titanium.UI.iOS.AdView = {
     /**
      * remove a previously add view from the view hiearchy
      * platforms: iphone, ipad
-     * @param object view the view to remove from this views hiearchy
+     * @param {object} view the view to remove from this views hiearchy
      * @returns void
      * @since 1.4
      */
@@ -27619,8 +27619,8 @@ Titanium.UI.iOS.AdView = {
     /**
      * remove a previously added event listener
      * platforms: iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function passed in addEventListener
+     * @param {string} name name of the event
+     * @param {function} callback callback function passed in addEventListener
      * @returns void
      * @since 1.4
      */
@@ -27639,7 +27639,7 @@ Titanium.UI.iOS.AdView = {
     /**
      * return a Blob image of the rendered view
      * platforms: iphone, ipad
-     * @param function f function to be invoked upon completion. if non-null, this method will be performed asynchronously. if null, it will be performed immediately
+     * @param {function} f function to be invoked upon completion. if non-null, this method will be performed asynchronously. if null, it will be performed immediately
      * @since 1.4
      */
     toImage:function(f) {
@@ -27708,8 +27708,8 @@ Titanium.UI.iPad = {
     /**
      * add an event listener for the instance to receive view triggered events
      * platforms: ipad
-     * @param string name name of the event
-     * @param function callback callback function to invoke when the event is fired
+     * @param {string} name name of the event
+     * @param {function} callback callback function to invoke when the event is fired
      * @returns void
      * @since 1.2
      */
@@ -27719,7 +27719,7 @@ Titanium.UI.iPad = {
     /**
      * create and return an instance of {@link Titanium.UI.iPad.Popover}
      * platforms: ipad
-     * @param object parameters (optional) a dictionary object properties defined in {@link Titanium.UI.iPad.Popover}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.UI.iPad.Popover}
      * @since 1.2
      */
     createPopover:function(parameters) {
@@ -27728,7 +27728,7 @@ Titanium.UI.iPad = {
     /**
      * create and return an instance of {@link Titanium.UI.iPad.SplitWindow}
      * platforms: ipad
-     * @param object parameters (optional) a dictionary object properties defined in {@link Titanium.UI.iPad.SplitWindow}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.UI.iPad.SplitWindow}
      * @since 1.2
      */
     createSplitWindow:function(parameters) {
@@ -27737,8 +27737,8 @@ Titanium.UI.iPad = {
     /**
      * fire a synthesized event to the views listener
      * platforms: ipad
-     * @param string name name of the event
-     * @param object event event object
+     * @param {string} name name of the event
+     * @param {object} event event object
      * @returns void
      * @since 1.2
      */
@@ -27748,8 +27748,8 @@ Titanium.UI.iPad = {
     /**
      * remove a previously added event listener
      * platforms: ipad
-     * @param string name name of the event
-     * @param function callback callback function passed in addEventListener
+     * @param {string} name name of the event
+     * @param {function} callback callback function passed in addEventListener
      * @returns void
      * @since 1.2
      */
@@ -28074,7 +28074,7 @@ Titanium.UI.iPad.Popover = {
     /**
      * add a child to the view hierarchy
      * platforms: ipad
-     * @param object view the view to add to this views hiearchy
+     * @param {object} view the view to add to this views hiearchy
      * @returns void
      * @since 1.2
      */
@@ -28084,8 +28084,8 @@ Titanium.UI.iPad.Popover = {
     /**
      * add an event listener for the instance to receive view triggered events
      * platforms: ipad
-     * @param string name name of the event
-     * @param function callback callback function to invoke when the event is fired
+     * @param {string} name name of the event
+     * @param {function} callback callback function to invoke when the event is fired
      * @returns void
      * @since 1.2
      */
@@ -28095,8 +28095,8 @@ Titanium.UI.iPad.Popover = {
     /**
      * animate the view
      * platforms: ipad
-     * @param object obj either a dictionary of animation properties or an Animation object
-     * @param function callback function to be invoked upon completion of the animation
+     * @param {object} obj either a dictionary of animation properties or an Animation object
+     * @param {function} callback function to be invoked upon completion of the animation
      * @returns void
      * @since 1.2
      */
@@ -28106,8 +28106,8 @@ Titanium.UI.iPad.Popover = {
     /**
      * fire a synthesized event to the views listener
      * platforms: ipad
-     * @param string name name of the event
-     * @param object event event object
+     * @param {string} name name of the event
+     * @param {object} event event object
      * @returns void
      * @since 1.2
      */
@@ -28117,7 +28117,7 @@ Titanium.UI.iPad.Popover = {
     /**
      * hide the view
      * platforms: ipad
-     * @param object options dictionary with optional boolean property <tt>animated</tt> which indicates if the popover should be hidden with animation (defaults to true) or not
+     * @param {object} options dictionary with optional boolean property <tt>animated</tt> which indicates if the popover should be hidden with animation (defaults to true) or not
      * @returns void
      * @since 1.2
      */
@@ -28127,7 +28127,7 @@ Titanium.UI.iPad.Popover = {
     /**
      * remove a previously add view from the view hiearchy
      * platforms: ipad
-     * @param object view the view to remove from this views hiearchy
+     * @param {object} view the view to remove from this views hiearchy
      * @returns void
      * @since 1.2
      */
@@ -28137,8 +28137,8 @@ Titanium.UI.iPad.Popover = {
     /**
      * remove a previously added event listener
      * platforms: ipad
-     * @param string name name of the event
-     * @param function callback callback function passed in addEventListener
+     * @param {string} name name of the event
+     * @param {function} callback callback function passed in addEventListener
      * @returns void
      * @since 1.2
      */
@@ -28148,7 +28148,7 @@ Titanium.UI.iPad.Popover = {
     /**
      * <p>change the height of the popover</p>
      * platforms: ipad
-     * @param int,string height height of the popover
+     * @param {int,string} height height of the popover
      * @returns void
      * @since 1.2
      */
@@ -28158,7 +28158,7 @@ Titanium.UI.iPad.Popover = {
     /**
      * <p>set the passthrough views for the popover</p>
      * platforms: ipad
-     * @param array passthroughViews array of views which the user can interact with while the popover is open (i.e. clicking on these views will interact with these views, and not dismiss the popover).
+     * @param {array} passthroughViews array of views which the user can interact with while the popover is open (i.e. clicking on these views will interact with these views, and not dismiss the popover).
      * @returns void
      * @since 1.2
      */
@@ -28168,7 +28168,7 @@ Titanium.UI.iPad.Popover = {
     /**
      * <p>change the width of the popover</p>
      * platforms: ipad
-     * @param int,string width width of the popover
+     * @param {int,string} width width of the popover
      * @returns void
      * @since 1.2
      */
@@ -28178,7 +28178,7 @@ Titanium.UI.iPad.Popover = {
     /**
      * make the view visible
      * platforms: ipad
-     * @param object options dictionary of the following properties: <tt>rect</tt>, <tt>animated</tt> and <tt>view</tt>. The <tt>view</tt> property should specify the view relative to where the popover should display.  <tt>animated</tt> is a boolean indicating if the showing of the popover should be animated, defaults to true. The property <tt>rect</tt> is a dictionary with the following properties: <tt>x</tt>, <tt>y</tt>, <tt>width</tt> and <tt>height</tt>, where the rectangle in <tt>view</tt> at which to anchor the popover.
+     * @param {object} options dictionary of the following properties: <tt>rect</tt>, <tt>animated</tt> and <tt>view</tt>. The <tt>view</tt> property should specify the view relative to where the popover should display.  <tt>animated</tt> is a boolean indicating if the showing of the popover should be animated, defaults to true. The property <tt>rect</tt> is a dictionary with the following properties: <tt>x</tt>, <tt>y</tt>, <tt>width</tt> and <tt>height</tt>, where the rectangle in <tt>view</tt> at which to anchor the popover.
      * @returns void
      * @since 1.2
      */
@@ -28188,7 +28188,7 @@ Titanium.UI.iPad.Popover = {
     /**
      * return a Blob image of the rendered view
      * platforms: ipad
-     * @param function f function to be invoked upon completion. if non-null, this method will be performed asynchronously. if null, it will be performed immediately
+     * @param {function} f function to be invoked upon completion. if non-null, this method will be performed asynchronously. if null, it will be performed immediately
      * @since 1.2
      */
     toImage:function(f) {
@@ -28528,7 +28528,7 @@ Titanium.UI.iPad.SplitWindow = {
     /**
      * add a child to the view hierarchy
      * platforms: ipad
-     * @param object view the view to add to this views hiearchy
+     * @param {object} view the view to add to this views hiearchy
      * @returns void
      * @since 1.2
      */
@@ -28538,8 +28538,8 @@ Titanium.UI.iPad.SplitWindow = {
     /**
      * add an event listener for the instance to receive view triggered events
      * platforms: ipad
-     * @param string name name of the event
-     * @param function callback callback function to invoke when the event is fired
+     * @param {string} name name of the event
+     * @param {function} callback callback function to invoke when the event is fired
      * @returns void
      * @since 1.2
      */
@@ -28549,8 +28549,8 @@ Titanium.UI.iPad.SplitWindow = {
     /**
      * animate the view
      * platforms: ipad
-     * @param object obj either a dictionary of animation properties or an Animation object
-     * @param function callback function to be invoked upon completion of the animation
+     * @param {object} obj either a dictionary of animation properties or an Animation object
+     * @param {function} callback function to be invoked upon completion of the animation
      * @returns void
      * @since 1.2
      */
@@ -28560,8 +28560,8 @@ Titanium.UI.iPad.SplitWindow = {
     /**
      * fire a synthesized event to the views listener
      * platforms: ipad
-     * @param string name name of the event
-     * @param object event event object
+     * @param {string} name name of the event
+     * @param {object} event event object
      * @returns void
      * @since 1.2
      */
@@ -28580,7 +28580,7 @@ Titanium.UI.iPad.SplitWindow = {
     /**
      * remove a previously add view from the view hiearchy
      * platforms: ipad
-     * @param object view the view to remove from this views hiearchy
+     * @param {object} view the view to remove from this views hiearchy
      * @returns void
      * @since 1.2
      */
@@ -28590,8 +28590,8 @@ Titanium.UI.iPad.SplitWindow = {
     /**
      * remove a previously added event listener
      * platforms: ipad
-     * @param string name name of the event
-     * @param function callback callback function passed in addEventListener
+     * @param {string} name name of the event
+     * @param {function} callback callback function passed in addEventListener
      * @returns void
      * @since 1.2
      */
@@ -28610,7 +28610,7 @@ Titanium.UI.iPad.SplitWindow = {
     /**
      * return a Blob image of the rendered view
      * platforms: ipad
-     * @param function f function to be invoked upon completion. if non-null, this method will be performed asynchronously. if null, it will be performed immediately
+     * @param {function} f function to be invoked upon completion. if non-null, this method will be performed asynchronously. if null, it will be performed immediately
      * @since 1.2
      */
     toImage:function(f) {
@@ -28724,8 +28724,8 @@ Titanium.UI.iPhone = {
     /**
      * add an event listener for the instance to receive view triggered events
      * platforms: iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function to invoke when the event is fired
+     * @param {string} name name of the event
+     * @param {function} callback callback function to invoke when the event is fired
      * @returns void
      * @since 0.5
      */
@@ -28735,7 +28735,7 @@ Titanium.UI.iPhone = {
     /**
      * create and return an instance of {@link Titanium.UI.iPhone.NavigationGroup}
      * platforms: iphone, ipad
-     * @param object parameters (optional) a dictionary object properties defined in {@link Titanium.UI.iPhone.NavigationGroup}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.UI.iPhone.NavigationGroup}
      * @since 0.5
      */
     createNavigationGroup:function(parameters) {
@@ -28744,8 +28744,8 @@ Titanium.UI.iPhone = {
     /**
      * fire a synthesized event to the views listener
      * platforms: iphone, ipad
-     * @param string name name of the event
-     * @param object event event object
+     * @param {string} name name of the event
+     * @param {object} event event object
      * @returns void
      * @since 0.5
      */
@@ -28755,8 +28755,8 @@ Titanium.UI.iPhone = {
     /**
      * <p>convenience method to hide the status bar</p>
      * platforms: iphone, ipad
-     * @param boolean animated boolean to indicate if the action should be animated
-     * @param int animationStyle the animation style
+     * @param {boolean} animated boolean to indicate if the action should be animated
+     * @param {int} animationStyle the animation style
      * @returns void
      * @since 0.5
      */
@@ -28766,8 +28766,8 @@ Titanium.UI.iPhone = {
     /**
      * remove a previously added event listener
      * platforms: iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function passed in addEventListener
+     * @param {string} name name of the event
+     * @param {function} callback callback function passed in addEventListener
      * @returns void
      * @since 0.5
      */
@@ -28777,8 +28777,8 @@ Titanium.UI.iPhone = {
     /**
      * <p>convenience method to show the status bar</p>
      * platforms: iphone, ipad
-     * @param boolean animated boolean to indicate if the action should be animated
-     * @param int animationStyle the animation style
+     * @param {boolean} animated boolean to indicate if the action should be animated
+     * @param {int} animationStyle the animation style
      * @returns void
      * @since 0.5
      */
@@ -29169,7 +29169,7 @@ Titanium.UI.iPhone.NavigationGroup = {
     /**
      * add a child to the view hierarchy
      * platforms: iphone, ipad
-     * @param object view the view to add to this views hiearchy
+     * @param {object} view the view to add to this views hiearchy
      * @returns void
      * @since 1.2
      */
@@ -29179,8 +29179,8 @@ Titanium.UI.iPhone.NavigationGroup = {
     /**
      * add an event listener for the instance to receive view triggered events
      * platforms: iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function to invoke when the event is fired
+     * @param {string} name name of the event
+     * @param {function} callback callback function to invoke when the event is fired
      * @returns void
      * @since 1.2
      */
@@ -29190,8 +29190,8 @@ Titanium.UI.iPhone.NavigationGroup = {
     /**
      * animate the view
      * platforms: iphone, ipad
-     * @param object obj either a dictionary of animation properties or an Animation object
-     * @param function callback function to be invoked upon completion of the animation
+     * @param {object} obj either a dictionary of animation properties or an Animation object
+     * @param {function} callback function to be invoked upon completion of the animation
      * @returns void
      * @since 1.2
      */
@@ -29201,8 +29201,8 @@ Titanium.UI.iPhone.NavigationGroup = {
     /**
      * <p>close a window and remove it from the navigation group</p>
      * platforms: iphone, ipad
-     * @param object window window to close
-     * @param object properties optional dictionary. the only current property supported is <tt>animated</tt> which is a boolean to indicate if the window should be closed animated (default) or not.
+     * @param {object} window window to close
+     * @param {object} properties optional dictionary. the only current property supported is <tt>animated</tt> which is a boolean to indicate if the window should be closed animated (default) or not.
      * @returns void
      * @since 1.2
      */
@@ -29212,8 +29212,8 @@ Titanium.UI.iPhone.NavigationGroup = {
     /**
      * fire a synthesized event to the views listener
      * platforms: iphone, ipad
-     * @param string name name of the event
-     * @param object event event object
+     * @param {string} name name of the event
+     * @param {object} event event object
      * @returns void
      * @since 1.2
      */
@@ -29232,8 +29232,8 @@ Titanium.UI.iPhone.NavigationGroup = {
     /**
      * <p>open a window within the navigation group</p>
      * platforms: iphone, ipad
-     * @param object window window to open within the tab group
-     * @param object properties optional dictionary. the only current property supported is <tt>animated</tt> which is a boolean to indicate if the window should be opened animated (default) or not.
+     * @param {object} window window to open within the tab group
+     * @param {object} properties optional dictionary. the only current property supported is <tt>animated</tt> which is a boolean to indicate if the window should be opened animated (default) or not.
      * @returns void
      * @since 1.2
      */
@@ -29243,7 +29243,7 @@ Titanium.UI.iPhone.NavigationGroup = {
     /**
      * remove a previously add view from the view hiearchy
      * platforms: iphone, ipad
-     * @param object view the view to remove from this views hiearchy
+     * @param {object} view the view to remove from this views hiearchy
      * @returns void
      * @since 1.2
      */
@@ -29253,8 +29253,8 @@ Titanium.UI.iPhone.NavigationGroup = {
     /**
      * remove a previously added event listener
      * platforms: iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function passed in addEventListener
+     * @param {string} name name of the event
+     * @param {function} callback callback function passed in addEventListener
      * @returns void
      * @since 1.2
      */
@@ -29273,7 +29273,7 @@ Titanium.UI.iPhone.NavigationGroup = {
     /**
      * return a Blob image of the rendered view
      * platforms: iphone, ipad
-     * @param function f function to be invoked upon completion. if non-null, this method will be performed asynchronously. if null, it will be performed immediately
+     * @param {function} f function to be invoked upon completion. if non-null, this method will be performed asynchronously. if null, it will be performed immediately
      * @since 1.2
      */
     toImage:function(f) {
@@ -29965,8 +29965,8 @@ Titanium.Utils = {
     /**
      * add an event listener for the instance to receive view triggered events
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function to invoke when the event is fired
+     * @param {string} name name of the event
+     * @param {function} callback callback function to invoke when the event is fired
      * @returns void
      * @since 0.9
      */
@@ -29976,7 +29976,7 @@ Titanium.Utils = {
     /**
      * <p>decode a Base64 string</p>
      * platforms: android, iphone, ipad
-     * @param string str the string to use for the input
+     * @param {string} str the string to use for the input
      * @since 0.9
      */
     base64decode:function(str) {
@@ -29985,7 +29985,7 @@ Titanium.Utils = {
     /**
      * <p>encode a string into Base64</p>
      * platforms: android, iphone, ipad
-     * @param string str the string to use for the input
+     * @param {string} str the string to use for the input
      * @since 0.9
      */
     base64encode:function(str) {
@@ -29994,8 +29994,8 @@ Titanium.Utils = {
     /**
      * fire a synthesized event to the views listener
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param object event event object
+     * @param {string} name name of the event
+     * @param {object} event event object
      * @returns void
      * @since 0.9
      */
@@ -30005,7 +30005,7 @@ Titanium.Utils = {
     /**
      * <p>compute a MD5 hash algorithm against the input and return a hex-based string</p>
      * platforms: android, iphone, ipad
-     * @param string str the string to use for the input
+     * @param {string} str the string to use for the input
      * @since 0.9
      */
     md5HexDigest:function(str) {
@@ -30014,8 +30014,8 @@ Titanium.Utils = {
     /**
      * remove a previously added event listener
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function passed in addEventListener
+     * @param {string} name name of the event
+     * @param {function} callback callback function passed in addEventListener
      * @returns void
      * @since 0.9
      */
@@ -30034,8 +30034,8 @@ Titanium.XML = {
     /**
      * add an event listener for the instance to receive view triggered events
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function to invoke when the event is fired
+     * @param {string} name name of the event
+     * @param {function} callback callback function to invoke when the event is fired
      * @returns void
      * @since 0.9
      */
@@ -30045,8 +30045,8 @@ Titanium.XML = {
     /**
      * fire a synthesized event to the views listener
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param object event event object
+     * @param {string} name name of the event
+     * @param {object} event event object
      * @returns void
      * @since 0.9
      */
@@ -30056,7 +30056,7 @@ Titanium.XML = {
     /**
      * <p>parse an XML string into a DOMDocument</p>
      * platforms: android, iphone, ipad
-     * @param string xml the XML content as a string
+     * @param {string} xml the XML content as a string
      * @since 0.9
      */
     parseString:function(xml) {
@@ -30065,8 +30065,8 @@ Titanium.XML = {
     /**
      * remove a previously added event listener
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function passed in addEventListener
+     * @param {string} name name of the event
+     * @param {function} callback callback function passed in addEventListener
      * @returns void
      * @since 0.9
      */
@@ -30076,7 +30076,7 @@ Titanium.XML = {
     /**
      * <p>serialize a DOMDocument or DOMNode and its descendants into an XML string</p>
      * platforms: android, iphone, ipad
-     * @param DOMNode node the XML DOMNode or DOMDocument to serialize
+     * @param {DOMNode} node the XML DOMNode or DOMDocument to serialize
      * @since 0.9
      */
     serializeToString:function(node) {
@@ -30105,8 +30105,8 @@ Titanium.Yahoo = {
     /**
      * add an event listener for the instance to receive view triggered events
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function to invoke when the event is fired
+     * @param {string} name name of the event
+     * @param {function} callback callback function to invoke when the event is fired
      * @returns void
      * @since 0.8
      */
@@ -30116,8 +30116,8 @@ Titanium.Yahoo = {
     /**
      * fire a synthesized event to the views listener
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param object event event object
+     * @param {string} name name of the event
+     * @param {object} event event object
      * @returns void
      * @since 0.8
      */
@@ -30127,8 +30127,8 @@ Titanium.Yahoo = {
     /**
      * remove a previously added event listener
      * platforms: android, iphone, ipad
-     * @param string name name of the event
-     * @param function callback callback function passed in addEventListener
+     * @param {string} name name of the event
+     * @param {function} callback callback function passed in addEventListener
      * @returns void
      * @since 0.8
      */
@@ -30138,8 +30138,8 @@ Titanium.Yahoo = {
     /**
      * <p>invoke a Yahoo YQL query</p>
      * platforms: android, iphone, ipad
-     * @param string yql the YQL query to execute
-     * @param function callback the function to execute when the query completes. The event will contain the boolean property <tt>success</tt> if successful. If <tt>success</tt> is false, the <tt>message</tt> property will contain the error message. If <tt>success</tt> is true, the <tt>data</tt> property will contain the data payload received from the YQL.
+     * @param {string} yql the YQL query to execute
+     * @param {function} callback the function to execute when the query completes. The event will contain the boolean property <tt>success</tt> if successful. If <tt>success</tt> is false, the <tt>message</tt> property will contain the error message. If <tt>success</tt> is true, the <tt>data</tt> property will contain the data payload received from the YQL.
      * @returns void
      * @since 0.8
      */
