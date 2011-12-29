@@ -38,12 +38,17 @@ def convertLinks(jsDoc):
         result = result.replace(htmlLink, jsDocLink)
     return result
 
-
 def convertIds(id):
     """ Converts invalid JavaScript identifiers to acceptable versions."""
     if id == 'default':
         return '_' + id
     elif id.find('-') > 0:
+        return id.replace('-', '_')
+    return id
+
+def convertKey(id):
+    """ Converts invalid JavaScript hash key to acceptable versions."""
+    if id == 'default' or id.find('-') > 0:
         return '"' + id + '"'
     return id
 
@@ -158,7 +163,7 @@ def formatProperties(namespace):
     formatter = Formatter(METHOD_INDENTATION)
     for property in namespace['properties']:
         formatter.add(generatePropertyJSDoc(property))
-        formatter.addLine(convertIds(property['name']), ':null,')
+        formatter.addLine(convertKey(property['name']), ':null,')
         formatter.newLine()
     return formatter.getResult()
 
@@ -166,7 +171,7 @@ def formatMethods(namespace):
     formatter = Formatter(METHOD_INDENTATION)
     for method in namespace['methods']:
         formatter.add(generateMethodJSDoc(method))
-        formatter.addLine(convertIds(method['name']), ':function(', formatParams(method['parameters']), ") {")
+        formatter.addLine(convertKey(method['name']), ':function(', formatParams(method['parameters']), ") {")
         formatter.addLine('},')
         formatter.newLine()
     return formatter.getResult()
