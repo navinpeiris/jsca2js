@@ -19,7 +19,7 @@
  * @namespace <p>The top level Titanium module.</p>
  * @since 0.1
  */
-var Titanium = {
+var Ti = {
 
     /**
      * <p>the user-agent string used by Titanium</p>
@@ -105,7 +105,7 @@ var Titanium = {
  * @namespace <p>The top level API module.  The API module is mainly used for logging.</p>
  * @since 0.1
  */
-Titanium.API = {
+Ti.API = {
 
 
     /**
@@ -210,7 +210,7 @@ Titanium.API = {
 });
 </code></pre>
  */
-Titanium.Accelerometer = {
+Ti.Accelerometer = {
 
 
     /**
@@ -257,7 +257,7 @@ Titanium.Accelerometer = {
 <pre><code>Titanium.Analytics.featureEvent('app.feature.blah',{product:'killer'});
 </code></pre>
  */
-Titanium.Analytics = {
+Ti.Analytics = {
 
 
     /**
@@ -373,7 +373,7 @@ Titanium.Analytics = {
  * @namespace <p>The top level Android module. <tt>Ti.Android.currentActivity</tt> provides each context an Activity. This object cannot be created directly.</p>
  * @since 1.5
  */
-Titanium.Android = {
+Ti.Android = {
 
     /**
      * 
@@ -1910,7 +1910,7 @@ Titanium.Android = {
 });
 </code></pre>
  */
-Titanium.Android.Activity = {
+Ti.Android.Activity = {
 
     /**
      * <p>The Intent that was used to start this Activity</p>
@@ -2154,7 +2154,7 @@ var reminderDetails = {
 event.createReminder(reminderDetails);
 </code></pre>
  */
-Titanium.Android.Calendar = {
+Ti.Android.Calendar = {
 
     /**
      * <p>constant for the {@link Titanium.Android.Calendar.Reminder} method property.</p>
@@ -2377,7 +2377,7 @@ Titanium.Android.Calendar = {
  * @namespace <p>An object which represents a single alert for an event in an Android calendar.</p>
  * @since 1.5
  */
-Titanium.Android.Calendar.Alert = {
+Ti.Android.Calendar.Alert = {
 
     /**
      * <p>The date/time at which the alert's alarm is triggered.</p>
@@ -2447,7 +2447,7 @@ Titanium.Android.Calendar.Alert = {
  * @example Events on December 5, 2015
  * <p>See {@link Titanium.Android.Calendar} for examples.</p>
  */
-Titanium.Android.Calendar.Calendar = {
+Ti.Android.Calendar.Calendar = {
 
     /**
      * <p>Whether the calendar is hidden.</p>
@@ -2550,7 +2550,7 @@ Titanium.Android.Calendar.Calendar = {
  * @example Event API
  * <p>See {@link Titanium.Android.Calendar} for examples of retrieving event information and creating events.</p>
  */
-Titanium.Android.Calendar.Event = {
+Ti.Android.Calendar.Event = {
 
     /**
      * <p>An array of {@link Titanium.Android.Calendar.Alert} objects which are the alerts - if any - for this event.</p>
@@ -2712,7 +2712,7 @@ Titanium.Android.Calendar.Event = {
  * @example Reminder API
  * <p>See {@link Titanium.Android.Calendar} for examples of retrieving reminder information and creating reminders for events.</p>
  */
-Titanium.Android.Calendar.Reminder = {
+Ti.Android.Calendar.Reminder = {
 
     /**
      * <p>The id of the reminder.</p>
@@ -2771,7 +2771,7 @@ Ti.Android.currentActivity.startActivity(intent);
 intent.addCategory(Ti.Android.CATEGORY_DEFAULT);
 </code></pre>
  */
-Titanium.Android.Intent = {
+Ti.Android.Intent = {
 
     /**
      * <p>An action constant from {@link Titanium.Android}</p>
@@ -2979,7 +2979,7 @@ activity.onPrepareOptionsMenu = function(e) {
 win.open();
 </code></pre>
  */
-Titanium.Android.Menu = {
+Ti.Android.Menu = {
 
     /**
      * <p>array of {@link Titanium.Android.MenuItem}</p>
@@ -3099,7 +3099,7 @@ Titanium.Android.Menu = {
  * @namespace <p>The Titanium binding of an {@link http://developer.android.com/reference/android/view/MenuItem}</p>
  * @since 1.5
  */
-Titanium.Android.MenuItem = {
+Ti.Android.MenuItem = {
 
     /**
      * <p>set the enabled state of the item</p>
@@ -3272,7 +3272,7 @@ Titanium.Android.MenuItem = {
  * @namespace <p>The Titanium binding of an {@link http://developer.android.com/reference/android/app/Notification}. </p>
  * @since 1.5
  */
-Titanium.Android.Notification = {
+Ti.Android.Notification = {
 
     /**
      * <p>The audio stream type to use when playing the sound.</p>
@@ -3411,7 +3411,7 @@ Titanium.Android.Notification = {
  * @namespace <p>Module to notify users of events that happen. It is a thin wrapper on {@link http://developer.android.com/reference/android/app/NotificationManager}.</p>
  * @since 1.5
  */
-Titanium.Android.NotificationManager = {
+Ti.Android.NotificationManager = {
 
     /**
      * <p>Use all default values (where applicable).</p>
@@ -3577,7 +3577,7 @@ Titanium.Android.NotificationManager = {
  * @namespace <p>The Titanium binding of an {@link http://developer.android.com/reference/android/app/PendingIntent}</p>
  * @since 1.5
  */
-Titanium.Android.PendingIntent = {
+Ti.Android.PendingIntent = {
 
     /**
      * <p>Flags used for creating the Pending Intent. Possible values are {@link Titanium.Android.FLAG_CANCEL_CURRENT}, {@link Titanium.Android.FLAG_NO_CREATE}, {@link Titanium.Android.FLAG_ONE_SHOT}, and {@link Titanium.Android.FLAG_UPDATE_CURRENT}.</p>
@@ -3606,7 +3606,7 @@ Titanium.Android.PendingIntent = {
  * @namespace <p>The Titanium binding of {@link http://developer.android.com/reference/android/R}.  Note that this accesses Android system-wide resources, not your application's resources.  To access your application's resources, you want {@link Titanium.App.Android.R}.</p>
  * @since 1.5
  */
-Titanium.Android.R = {
+Ti.Android.R = {
 
     /**
      * <p>Animation resources, see {@link http://developer.android.com/reference/android/R.anim}</p>
@@ -3719,7 +3719,7 @@ var customLayout = Ti.Android.createRemoteViews(AppR.layout.custom_layout);
 customLayout.setTextViewText(AppR.id.custom_text, "Hello World");
 </code></pre>
  */
-Titanium.Android.RemoteViews = {
+Ti.Android.RemoteViews = {
 
 
     /**
@@ -3931,7 +3931,7 @@ service.start();
 [INFO] [1,5981] Service code has run 3 times, will now stop it.
 </code></pre>
  */
-Titanium.Android.Service = {
+Ti.Android.Service = {
 
     /**
      * <p>(read-only) The {@link Titanium.Android.Intent} used to start or bind to the Service.</p>
@@ -3974,7 +3974,7 @@ Titanium.Android.Service = {
  * @namespace <p>The top level App module.  The App module is mainly used for accessing information about the application at runtime.</p>
  * @since 0.1
  */
-Titanium.App = {
+Ti.App = {
 
     /**
      * <p>the application's copyright</p>
@@ -4130,7 +4130,7 @@ var mystring = activity.getString(R.string.mystring);
 Ti.API.debug("mystring="+mystring);
 </code></pre>
  */
-Titanium.App.Android = {
+Ti.App.Android = {
 
     /**
      * <p>The R namespace for Application Resources</p>
@@ -4183,7 +4183,7 @@ Titanium.App.Android = {
  * @namespace <p>The Titanium binding of {@link http://developer.android.com/guide/topics/resources/index}.  This gives you access to resources you have packaged for your own application.  If you want to access the system-wide Android <tt>R</tt>, use {@link Titanium.Android.R}.</p>
  * @since 1.5
  */
-Titanium.App.Android.R = {
+Ti.App.Android.R = {
 
 
 
@@ -4209,7 +4209,7 @@ for (var c=0;c<props.length;c++)
 }
 </code></pre>
  */
-Titanium.App.Properties = {
+Ti.App.Properties = {
 
 
     /**
@@ -4383,7 +4383,7 @@ Titanium.App.Properties = {
  * @namespace <p>The top level App iOS module.  The App iOS module is only available on iOS based devices.</p>
  * @since 1.5
  */
-Titanium.App.iOS = {
+Ti.App.iOS = {
 
 
     /**
@@ -4598,7 +4598,7 @@ Titanium_App_iOS_LocalNotification.prototype = {
  * @namespace <p>The blob is an abstract data type that represents binary information, often obtained through HTTPClient or via files. It often is used to store text or the actual data of an image.</p>
  * @since 0.9
  */
-Titanium.Blob = {
+Ti.Blob = {
 
 
     /**
@@ -4618,7 +4618,7 @@ Titanium.Blob = {
  * @namespace <p>Wrapper around {@link Titanium.Blob} that implements the {@link Titanium.IOStream} interface</p>
  * @since 1.7
  */
-Titanium.BlobStream = {
+Ti.BlobStream = {
 
 
     /**
@@ -4674,7 +4674,7 @@ Titanium.BlobStream = {
  * @namespace <p>Buffer is a container for raw data. A buffer is created by the method {@link Titanium.createBuffer}.</p>
  * @since 1.7
  */
-Titanium.Buffer = {
+Ti.Buffer = {
 
     /**
      * <p>The byte order of this buffer. The OS native byte order is used by default.</p>
@@ -4806,7 +4806,7 @@ Titanium.Buffer = {
  * @namespace <p>Wrapper around {@link Titanium.Buffer} that implements the {@link Titanium.IOStream} interface</p>
  * @since 1.7
  */
-Titanium.BufferStream = {
+Ti.BufferStream = {
 
 
     /**
@@ -4937,7 +4937,7 @@ var string = Ti.Codec.decodeString({
 });
 ~~~</p>
  */
-Titanium.Codec = {
+Ti.Codec = {
 
     /**
      * <p>Big Endian (network) byte order, i.e. most significant byte first.</p>
@@ -5137,7 +5137,7 @@ Titanium.Codec = {
  * @namespace <p>The top level Contacts module.  The Contacts module is used accessing the device Address Book.  (Read-only on Android.)</p>
  * @since 0.8
  */
-Titanium.Contacts = {
+Ti.Contacts = {
 
     /**
      * <p>constant for 'organization' kind property of Person object</p>
@@ -5326,7 +5326,7 @@ Titanium.Contacts = {
  * @namespace <p>An object which represents a group in the contacts database.</p>
  * @since 1.4.0
  */
-Titanium.Contacts.Group = {
+Ti.Contacts.Group = {
 
     /**
      * <p>The name of the group</p>
@@ -5383,7 +5383,7 @@ Titanium.Contacts.Group = {
  * @namespace <p>An object which represents a person in the contacts database.</p>
  * @since 0.8
  */
-Titanium.Contacts.Person = {
+Ti.Contacts.Person = {
 
     /**
      * <p>URLs of webpages associated with the person.  Multi-value, valid labels are: <tt>home</tt>, <tt>work</tt>, <tt>other</tt>, <tt>homepage</tt>.  Values are strings.</p>
@@ -5602,7 +5602,7 @@ Titanium.Contacts.Person = {
  * @namespace <p>The top level Database module.  The Database module is used for creating and accessing the in-application Database. </p>
  * @since 0.1
  */
-Titanium.Database = {
+Ti.Database = {
 
     /**
      * <p>constant for requesting a column's value returned in double form.</p>
@@ -5695,7 +5695,7 @@ Titanium.Database = {
  * @namespace <p>The Database instance returned by {@link Titanium.Database.open} or {@link Titanium.Database.install}. </p>
  * @since 0.1
  */
-Titanium.Database.DB = {
+Ti.Database.DB = {
 
     /**
      * <p>the last row identifier by the last INSERT query</p>
@@ -5756,7 +5756,7 @@ Titanium.Database.DB = {
  * @namespace <p>The ResultSet instance returned by invoking a database SQL <tt>execute</tt>.</p>
  * @since 0.1
  */
-Titanium.Database.ResultSet = {
+Ti.Database.ResultSet = {
 
     /**
      * <p>the number of rows in the result set</p>
@@ -6047,7 +6047,7 @@ Titanium.Facebook.dialog("feed", data, function(e) {
 });
 </code></pre>
  */
-Titanium.Facebook = {
+Ti.Facebook = {
 
     /**
      * <p>OAuth token set after a successful <tt>authorize</tt>.</p>
@@ -6210,7 +6210,7 @@ Titanium.Facebook = {
  * @namespace <p>The Login Button created by {@link Titanium.Facebook.createLoginButton}.  This is a Facebook-themed button that does not require a click event handler or any listeners.  It "just works" and changes its label to reflect the current state of the Facebook session.  For example, if the user is already logged in, this button will show "Logout".</p>
  * @since 0.8
  */
-Titanium.Facebook.LoginButton = {
+Ti.Facebook.LoginButton = {
 
     /**
      * a dictionary with properties x and y to indicate the anchor point value. anchor specifies the position by which animation should occur. center is 0.5, 0.5
@@ -6599,7 +6599,7 @@ Titanium.Facebook.LoginButton = {
 directories on the device.</p>
  * @since 0.1
  */
-Titanium.Filesystem = {
+Ti.Filesystem = {
 
     /**
      * <p>constant for append mode for file operations</p>
@@ -7031,7 +7031,7 @@ bytesRead = inStream.read(inBuffer, 2, 5);  // only reads "llo w" from stream
 Ti.API.info("Bytes read:" + bytesRead);  // should be 5
 </code></pre>
  */
-Titanium.Filesystem.FileStream = {
+Ti.Filesystem.FileStream = {
 
 
     /**
@@ -7087,7 +7087,7 @@ Titanium.Filesystem.FileStream = {
  * @namespace <p>The top level Geolocation module. The Geolocation module is used for accessing device location based information.</p>
  * @since 0.1
  */
-Titanium.Geolocation = {
+Ti.Geolocation = {
 
     /**
      * <p>accuracy constant</p>
@@ -7381,7 +7381,7 @@ Titanium.Geolocation = {
  * @namespace <p>The top level Gestures module.  The Gesture module is responsible for high level device gestures that are device-wide.</p>
  * @since 0.8
  */
-Titanium.Gesture = {
+Ti.Gesture = {
 
 
     /**
@@ -7447,7 +7447,7 @@ bytesRead = inStream.read(inBuffer, 2, 5);  // only reads "llo w" from stream
 Ti.API.info("Bytes read:" + bytesRead);  // should be 5
 </code></pre>
  */
-Titanium.IOStream = {
+Ti.IOStream = {
 
 
     /**
@@ -7504,7 +7504,7 @@ Titanium.IOStream = {
  * @namespace <p>The top level Locale module.  The Locale module works with localization files to which are generated during compilation into the operating system specific localization formats. The Locale module provides locale-specific strings which can be referenced at runtime.  Additionally, the module contains a few methods and properties for querying device locale information.</p>
  * @since 1.5
  */
-Titanium.Locale = {
+Ti.Locale = {
 
     /**
      * <p>return the current (default) ISO 2-letter country code for the device.</p>
@@ -7642,7 +7642,7 @@ var mapview = Titanium.Map.createView({
 win.add(mapview);
 </code></pre>
  */
-Titanium.Map = {
+Ti.Map = {
 
     /**
      * <p>Displays a satellite image of the area with road and road name information layered on top.</p>
@@ -7867,7 +7867,7 @@ Titanium_Map_Annotation.prototype = {
  * @namespace <p>The MapView is an object created by {@link Titanium.Map.createView} and is used for embedding native mapping capabilities as a view in your application.  With native maps, you can control the mapping location, the type of map, the zoom level and you can add custom annotations directly to the map.</p>
  * @since 0.8
  */
-Titanium.Map.MapView = {
+Ti.Map.MapView = {
 
     /**
      * a dictionary with properties x and y to indicate the anchor point value. anchor specifies the position by which animation should occur. center is 0.5, 0.5
@@ -8422,7 +8422,7 @@ Titanium.Map.MapView = {
  * @namespace <p>The top level Media module.  The Media module is used accessing the device's media related  functionality such as playing audio or recording video.</p>
  * @since 0.1
  */
-Titanium.Media = {
+Ti.Media = {
 
     /**
      * <p>audio file format 3GPP-2</p>
@@ -9482,7 +9482,7 @@ Titanium.Media = {
  * @namespace <p>Android-specific media-related functionality.</p>
  * @since 1.7.0
  */
-Titanium.Media.Android = {
+Ti.Media.Android = {
 
 
     /**
@@ -9918,7 +9918,7 @@ Titanium_Media_AudioRecorder.prototype = {
  * @namespace <p>A representation of a media item returned by the music picker as part of the <tt>items</tt> array in the dictionary passed to its <tt>success</tt> function.</p>
  * @since 1.4.0
  */
-Titanium.Media.Item = {
+Ti.Media.Item = {
 
     /**
      * <p>the artist for the album of the item</p>
@@ -10081,7 +10081,7 @@ Titanium.Media.Item = {
  * @namespace <p>The MusicPlayer instance returned from {@link Titanium.Media.createMusicPlayer}.  This object represents a music controller.</p>
  * @since 1.4.0
  */
-Titanium.Media.MusicPlayer = {
+Ti.Media.MusicPlayer = {
 
     /**
      * <p>the current point in song playback</p>
@@ -10466,7 +10466,7 @@ Titanium_Media_Sound.prototype = {
  * @namespace <p>The VideoPlayer object is returned by {@link Titanium.Media.createVideoPlayer} and is useful for playing videos. </p>
  * @since 0.9
  */
-Titanium.Media.VideoPlayer = {
+Ti.Media.VideoPlayer = {
 
     /**
      * <p>Whether or not the movie can be played on a remote device.  iOS 4.3+ only.</p>
@@ -11110,7 +11110,7 @@ Titanium.Media.VideoPlayer = {
  * @namespace <p>The top level Network module.  The Network module is used accessing Networking related functionality, including {@link Titanium.Network.Socket}</p>
  * @since 0.1
  */
-Titanium.Network = {
+Ti.Network = {
 
     /**
      * <p>constant value representing the ability for sockets to listen on any locally available network device</p>
@@ -11430,7 +11430,7 @@ Titanium.Network = {
 </p>
  * @since 1.2.0
  */
-Titanium.Network.BonjourBrowser = {
+Ti.Network.BonjourBrowser = {
 
     /**
      * <p>The domain the browser is searching in</p>
@@ -11482,7 +11482,7 @@ Titanium.Network.BonjourBrowser = {
  * @namespace <p>The BonjourService instance returned either from {@link Titanium.Network.createBonjourService} or via the service list from a BonjourBrowser <tt>updatedServices</tt> event.  This object describes a service on the network which is published by Bonjour.</p>
  * @since 1.2.0
  */
-Titanium.Network.BonjourService = {
+Ti.Network.BonjourService = {
 
     /**
      * <p>the domain of the service</p>
@@ -11560,7 +11560,7 @@ Titanium.Network.BonjourService = {
  * @namespace <p>The HttpClient instance returned from {@link Titanium.Network.createHTTPClient}. This object (mostly) implements the XMLHttpRequest specification.</p>
  * @since 0.1
  */
-Titanium.Network.HTTPClient = {
+Ti.Network.HTTPClient = {
 
     /**
      * <p>the DONE readyState constant</p>
@@ -11798,7 +11798,7 @@ Titanium.Network.HTTPClient = {
  * @namespace <p>Socket module</p>
  * @since 1.7
  */
-Titanium.Network.Socket = {
+Ti.Network.Socket = {
 
     /**
      * <p>state representing the closed state of a socket</p>
@@ -11889,7 +11889,7 @@ Titanium.Network.Socket = {
  * @namespace <p>TCP socket that implements the {@link Titanium.IOStream} interface.  Created by {@link Titanium.Network.Socket.createTCP}</p>
  * @since 1.7
  */
-Titanium.Network.Socket.TCP = {
+Ti.Network.Socket.TCP = {
 
     /**
      * <p>The callback to be fired when a listener accepts a connection.  The callback parameter's <tt>socket</tt> member contains the socket that is receiving the connection, and its <tt>inbound</tt> member contains the connecting socket.</p>
@@ -12000,7 +12000,7 @@ Titanium.Network.Socket.TCP = {
  * @namespace <p>DEPRECATED: USE {@link Titanium.Network.Socket.TCP} WHERE POSSIBLE.  The TCPSocket instance returned from {@link Titanium.Network.createTCPSocket}.  This object represents a socket which either listens locally on the device for connections, or connects to a remote machine.</p>
  * @since 1.2.0
  */
-Titanium.Network.TCPSocket = {
+Ti.Network.TCPSocket = {
 
     /**
      * <p>the host name to connect to.  Must be {@link Titanium.Network.INADDR_ANY} or an identifier for the local device in order to listen</p>
@@ -12088,7 +12088,7 @@ Titanium.Network.TCPSocket = {
 related functionality.</p>
  * @since 0.1
  */
-Titanium.Platform = {
+Ti.Platform = {
 
     /**
      * <p>the device is plugged in and currently being charged</p>
@@ -12335,7 +12335,7 @@ Titanium.Platform = {
  * @namespace <p>The Display Caps object returned by the {@link Titanium.Platform.displayCaps} property.</p>
  * @since 0.8
  */
-Titanium.Platform.DisplayCaps = {
+Ti.Platform.DisplayCaps = {
 
     /**
      * <p>returns the density property of the display device.</p>
@@ -12378,7 +12378,7 @@ Titanium.Platform.DisplayCaps = {
  * @namespace <p>Stream module containing stream utility methods</p>
  * @since 1.7
  */
-Titanium.Stream = {
+Ti.Stream = {
 
     /**
      * <p>append mode value.</p>
@@ -12534,7 +12534,7 @@ Titanium.Stream = {
  * @namespace <p>The main {@link Titanium.UI} module.  The UI module is responsible for native user-interface components and interaction inside Titanium.  The goal of the UI module is to provide a native experience along with native performance by compiling Javascript code into their native counterparts as part of the build process. </p>
  * @since 0.4
  */
-Titanium.UI = {
+Ti.UI = {
 
     /**
      * <p>animation curve constant</p>
@@ -13850,7 +13850,7 @@ Titanium_UI_3DMatrix.prototype = {
 actInd.show();
 </code></pre>
  */
-Titanium.UI.ActivityIndicator = {
+Ti.UI.ActivityIndicator = {
 
     /**
      * <p>the color of the message label</p>
@@ -14035,7 +14035,7 @@ Titanium_UI_AlertDialog.prototype = {
  * @namespace <p>The Android specific UI capabilities. All properties, methods and events in this namespace will only work on Android related devices.</p>
  * @since 1.0
  */
-Titanium.UI.Android = {
+Ti.UI.Android = {
 
     /**
      * <p>Auto link all supported types.</p>
@@ -14462,7 +14462,7 @@ button.addEventListener('click',function(e)
 });
 </code></pre>
  */
-Titanium.UI.Button = {
+Ti.UI.Button = {
 
     /**
      * a dictionary with properties x and y to indicate the anchor point value. anchor specifies the position by which animation should occur. center is 0.5, 0.5
@@ -14919,7 +14919,7 @@ Titanium.UI.Button = {
 win.add(bb1);
 </code></pre>
  */
-Titanium.UI.ButtonBar = {
+Ti.UI.ButtonBar = {
 
     /**
      * a dictionary with properties x and y to indicate the anchor point value. anchor specifies the position by which animation should occur. center is 0.5, 0.5
@@ -15326,7 +15326,7 @@ Titanium.UI.ButtonBar = {
 <p>On Android, only plain text is supported; other MIME types will be ignored.</p>
 <p>On iOS, images will be returned as a {@link Titanium.Blob}; the special type 'image' or an explicit MIME type may be specified. URLs can be fetched with the special 'URL' or 'text/uri-list' types, and will return strings. Other data types may or may not be correctly mapped to clipboard types by the system, and will be retrieved as binary data in a {@link Titanium.Blob}.</p>
  */
-Titanium.UI.Clipboard = {
+Ti.UI.Clipboard = {
 
 
     /**
@@ -15455,7 +15455,7 @@ Titanium.UI.Clipboard = {
 window.add(view);
 </code></pre>
  */
-Titanium.UI.CoverFlowView = {
+Ti.UI.CoverFlowView = {
 
     /**
      * a dictionary with properties x and y to indicate the anchor point value. anchor specifies the position by which animation should occur. center is 0.5, 0.5
@@ -15922,7 +15922,7 @@ Titanium_UI_DashboardItem.prototype = {
  * @namespace <p>The Dashboard View provides a view that supports the ability to have Springboard-like view of icons which can be reordered by dragging and can contain multiple pages of icons in a scrollable view. The Dashboard View is created by the method {@link Titanium.UI.createDashboardView}.</p>
  * @since 1.2
  */
-Titanium.UI.DashboardView = {
+Ti.UI.DashboardView = {
 
     /**
      * a dictionary with properties x and y to indicate the anchor point value. anchor specifies the position by which animation should occur. center is 0.5, 0.5
@@ -16499,7 +16499,7 @@ Titanium_UI_EmailDialog.prototype = {
 view.add(image);
 </code></pre>
  */
-Titanium.UI.ImageView = {
+Ti.UI.ImageView = {
 
     /**
      * a dictionary with properties x and y to indicate the anchor point value. anchor specifies the position by which animation should occur. center is 0.5, 0.5
@@ -17041,7 +17041,7 @@ Titanium.UI.ImageView = {
 });
 </code></pre>
  */
-Titanium.UI.Label = {
+Ti.UI.Label = {
 
     /**
      * a dictionary with properties x and y to indicate the anchor point value. anchor specifies the position by which animation should occur. center is 0.5, 0.5
@@ -17567,7 +17567,7 @@ Titanium.UI.Label = {
 dialog.show();
 </code></pre>
  */
-Titanium.UI.OptionDialog = {
+Ti.UI.OptionDialog = {
 
     /**
      * <p>A Titanium.UI.View. Allows for arbitrary contents inside a native dialog. Works for any dialog. (Android)</p>
@@ -17843,7 +17843,7 @@ Titanium_UI_Picker.prototype = {
  * @namespace <p>The picker row object created by {@link Titanium.UI.createPickerColumn}.</p>
  * @since 0.9
  */
-Titanium.UI.PickerColumn = {
+Ti.UI.PickerColumn = {
 
     /**
      * a dictionary with properties x and y to indicate the anchor point value. anchor specifies the position by which animation should occur. center is 0.5, 0.5
@@ -18273,7 +18273,7 @@ row.add(label);
 picker.add(row);
 </code></pre>
  */
-Titanium.UI.PickerRow = {
+Ti.UI.PickerRow = {
 
     /**
      * a dictionary with properties x and y to indicate the anchor point value. anchor specifies the position by which animation should occur. center is 0.5, 0.5
@@ -18692,7 +18692,7 @@ Titanium.UI.PickerRow = {
 });
 </code></pre>
  */
-Titanium.UI.ProgressBar = {
+Ti.UI.ProgressBar = {
 
     /**
      * <p>the color of the progress bar text</p>
@@ -18780,7 +18780,7 @@ scrollView.add(view);
 Titanium.UI.currentWindow.add(scrollView);
 </code></pre>
  */
-Titanium.UI.ScrollView = {
+Ti.UI.ScrollView = {
 
     /**
      * a dictionary with properties x and y to indicate the anchor point value. anchor specifies the position by which animation should occur. center is 0.5, 0.5
@@ -19287,7 +19287,7 @@ var scrollView = Titanium.UI.createScrollableView({
 win.add(scrollView);
 </code></pre>
  */
-Titanium.UI.ScrollableView = {
+Ti.UI.ScrollableView = {
 
     /**
      * a dictionary with properties x and y to indicate the anchor point value. anchor specifies the position by which animation should occur. center is 0.5, 0.5
@@ -19770,7 +19770,7 @@ Titanium.UI.ScrollableView = {
 });
 </code></pre>
  */
-Titanium.UI.SearchBar = {
+Ti.UI.SearchBar = {
 
     /**
      * a dictionary with properties x and y to indicate the anchor point value. anchor specifies the position by which animation should occur. center is 0.5, 0.5
@@ -20248,7 +20248,7 @@ Titanium.UI.SearchBar = {
  * @namespace <p>A Slider is created by the method {@link Titanium.UI.createSlider}.</p>
  * @since 0.8
  */
-Titanium.UI.Slider = {
+Ti.UI.Slider = {
 
     /**
      * a dictionary with properties x and y to indicate the anchor point value. anchor specifies the position by which animation should occur. center is 0.5, 0.5
@@ -20783,7 +20783,7 @@ basicSwitch.addEventListener('change',function(e)
 });
 </code></pre>
  */
-Titanium.UI.Switch = {
+Ti.UI.Switch = {
 
     /**
      * a dictionary with properties x and y to indicate the anchor point value. anchor specifies the position by which animation should occur. center is 0.5, 0.5
@@ -21221,7 +21221,7 @@ Titanium.UI.Switch = {
 tabGroup.addTab(tab);
 </code></pre>
  */
-Titanium.UI.Tab = {
+Ti.UI.Tab = {
 
     /**
      * a dictionary with properties x and y to indicate the anchor point value. anchor specifies the position by which animation should occur. center is 0.5, 0.5
@@ -21634,7 +21634,7 @@ Titanium.UI.Tab = {
  * @namespace <p>The Tab Group allows you to manage a tabbed UI of one or more windows. The Tab Group is created by the method {@link Titanium.UI.createTabGroup}.</p>
  * @since 0.9
  */
-Titanium.UI.TabGroup = {
+Ti.UI.TabGroup = {
 
     /**
      * <p>the active tab</p>
@@ -22121,7 +22121,7 @@ Titanium.UI.TabGroup = {
 win.add(bb1);
 </code></pre>
  */
-Titanium.UI.TabbedBar = {
+Ti.UI.TabbedBar = {
 
     /**
      * a dictionary with properties x and y to indicate the anchor point value. anchor specifies the position by which animation should occur. center is 0.5, 0.5
@@ -22516,7 +22516,7 @@ var table = Titanium.UI.createTableView({data:data});
 win.add(table);
 </code></pre>
  */
-Titanium.UI.TableView = {
+Ti.UI.TableView = {
 
     /**
      * <p>true if the rows can be selected</p>
@@ -23200,7 +23200,7 @@ row.height = 'auto';
 row.add(view);
 </code></pre>
  */
-Titanium.UI.TableViewRow = {
+Ti.UI.TableViewRow = {
 
     /**
      * a dictionary with properties x and y to indicate the anchor point value. anchor specifies the position by which animation should occur. center is 0.5, 0.5
@@ -23703,7 +23703,7 @@ section.add(row2);
 tableview.add(section);
 </code></pre>
  */
-Titanium.UI.TableViewSection = {
+Ti.UI.TableViewSection = {
 
     /**
      * a dictionary with properties x and y to indicate the anchor point value. anchor specifies the position by which animation should occur. center is 0.5, 0.5
@@ -24158,7 +24158,7 @@ Titanium.UI.TableViewSection = {
 });
 </code></pre>
  */
-Titanium.UI.TextArea = {
+Ti.UI.TextArea = {
 
     /**
      * a dictionary with properties x and y to indicate the anchor point value. anchor specifies the position by which animation should occur. center is 0.5, 0.5
@@ -24664,7 +24664,7 @@ Titanium.UI.TextArea = {
 });
 </code></pre>
  */
-Titanium.UI.TextField = {
+Ti.UI.TextField = {
 
     /**
      * a dictionary with properties x and y to indicate the anchor point value. anchor specifies the position by which animation should occur. center is 0.5, 0.5
@@ -25247,7 +25247,7 @@ Titanium.UI.TextField = {
  * @namespace <p>A Toolbar is created by the method {@link Titanium.UI.createToolbar}.  A Toolbar can be placed at the bottom of a window and contain buttons.</p>
  * @since 0.8
  */
-Titanium.UI.Toolbar = {
+Ti.UI.Toolbar = {
 
     /**
      * a dictionary with properties x and y to indicate the anchor point value. anchor specifies the position by which animation should occur. center is 0.5, 0.5
@@ -25622,7 +25622,7 @@ Titanium.UI.Toolbar = {
 window.add(view);
 </code></pre>
  */
-Titanium.UI.View = {
+Ti.UI.View = {
 
     /**
      * a dictionary with properties x and y to indicate the anchor point value. anchor specifies the position by which animation should occur. center is 0.5, 0.5
@@ -26012,7 +26012,7 @@ Titanium.UI.View = {
     window.open({modal:true});
 </code></pre>
  */
-Titanium.UI.WebView = {
+Ti.UI.WebView = {
 
     /**
      * a dictionary with properties x and y to indicate the anchor point value. anchor specifies the position by which animation should occur. center is 0.5, 0.5
@@ -26635,7 +26635,7 @@ window.open({
 window.open({fullscreen:true});
 </code></pre>
  */
-Titanium.UI.Window = {
+Ti.UI.Window = {
 
     /**
      * a dictionary with properties x and y to indicate the anchor point value. anchor specifies the position by which animation should occur. center is 0.5, 0.5
@@ -27211,7 +27211,7 @@ Titanium.UI.Window = {
  * @namespace <p>The Apple iOS specific UI capabilities.  All properties, methods and events in this namespace will only work on the Apple iOS related devices.</p>
  * @since 1.4
  */
-Titanium.UI.iOS = {
+Ti.UI.iOS = {
 
 
     /**
@@ -27262,7 +27262,7 @@ Titanium.UI.iOS = {
  * @namespace <p>The AdView is a view for display Apple iAds. The View is created by the method {@link Titanium.UI.iOS.createAdView}.</p>
  * @since 1.4
  */
-Titanium.UI.iOS.AdView = {
+Ti.UI.iOS.AdView = {
 
     /**
      * <p>constant for 320x50 ad sizes</p>
@@ -27654,7 +27654,7 @@ Titanium.UI.iOS.AdView = {
 <p>For iPad UI programming guidelines, please review the {@link http://developer.apple.com/iphone/library/documentation/General/Conceptual/iPadHIG/Introduction/Introduction}. </p>
  * @since 1.2
  */
-Titanium.UI.iPad = {
+Ti.UI.iPad = {
 
     /**
      * <p>An arrow that points in any direction.</p>
@@ -27780,7 +27780,7 @@ popover.show({view:button});
 });
 </code></pre>
  */
-Titanium.UI.iPad.Popover = {
+Ti.UI.iPad.Popover = {
 
     /**
      * a dictionary with properties x and y to indicate the anchor point value. anchor specifies the position by which animation should occur. center is 0.5, 0.5
@@ -28234,7 +28234,7 @@ splitwin.addEventListener('visible',function(e)
 splitwin.open();
 </code></pre>
  */
-Titanium.UI.iPad.SplitWindow = {
+Ti.UI.iPad.SplitWindow = {
 
     /**
      * a dictionary with properties x and y to indicate the anchor point value. anchor specifies the position by which animation should occur. center is 0.5, 0.5
@@ -28622,7 +28622,7 @@ Titanium.UI.iPad.SplitWindow = {
  * @namespace <p>The iPhone/iPad specific UI capabilities.  All properties, methods and events in this namespace will only work on the Apple iPhone or iPad related devices.</p>
  * @since 0.5
  */
-Titanium.UI.iPhone = {
+Ti.UI.iPhone = {
 
     /**
      * <p>The view is presented using the same style as its parent window. This is currently only available currently on iPhone/iPad and SDK 3.2+.</p>
@@ -28791,7 +28791,7 @@ Titanium.UI.iPhone = {
  * @namespace <p>A set of constants for the styles available for {@link Titanium.UI.ActivityIndicator} objects.</p>
  * @since 0.9
  */
-Titanium.UI.iPhone.ActivityIndicatorStyle = {
+Ti.UI.iPhone.ActivityIndicatorStyle = {
 
     /**
      * <p>The large white style of indicator.</p>
@@ -28826,7 +28826,7 @@ Titanium.UI.iPhone.ActivityIndicatorStyle = {
  * @namespace <p>A set of constants for the Animation Styles used for transitions.</p>
  * @since 0.9
  */
-Titanium.UI.iPhone.AnimationStyle = {
+Ti.UI.iPhone.AnimationStyle = {
 
     /**
      * <p>Curl downwards during a transition animation</p>
@@ -28899,7 +28899,7 @@ var win2 = Titanium.UI.createWindow({
 nav.open(win2,{animated:true});
 </code></pre>
  */
-Titanium.UI.iPhone.NavigationGroup = {
+Ti.UI.iPhone.NavigationGroup = {
 
     /**
      * a dictionary with properties x and y to indicate the anchor point value. anchor specifies the position by which animation should occur. center is 0.5, 0.5
@@ -29285,7 +29285,7 @@ Titanium.UI.iPhone.NavigationGroup = {
  * @namespace <p>A set of constants for the bar styles used on the <tt>style</tt> property of {@link Titanium.UI.ProgressBar}.</p>
  * @since 0.8
  */
-Titanium.UI.iPhone.ProgressBarStyle = {
+Ti.UI.iPhone.ProgressBarStyle = {
 
     /**
      * <p>The style of progress view that is used in a toolbar.</p>
@@ -29320,7 +29320,7 @@ Titanium.UI.iPhone.ProgressBarStyle = {
  * @namespace <p>A set of constants for the Animation Styles used for transition on table view rows.</p>
  * @since 0.9
  */
-Titanium.UI.iPhone.RowAnimationStyle = {
+Ti.UI.iPhone.RowAnimationStyle = {
 
     /**
      * <p>The inserted row or rows slides in from the bottom; the deleted row or rows slides out toward the bottom.</p>
@@ -29379,7 +29379,7 @@ Titanium.UI.iPhone.RowAnimationStyle = {
  * @namespace <p>A set of constants for the styles available for {@link Titanium.UI.ActivityIndicator} objects.</p>
  * @since 0.9
  */
-Titanium.UI.iPhone.ScrollIndicatorStyle = {
+Ti.UI.iPhone.ScrollIndicatorStyle = {
 
     /**
      * <p>A style of indicator which is black smaller than the default style. This style is good against a white content background.</p>
@@ -29414,7 +29414,7 @@ Titanium.UI.iPhone.ScrollIndicatorStyle = {
  * @namespace <p>A set of constants for the status bar style.</p>
  * @since 0.9
  */
-Titanium.UI.iPhone.StatusBar = {
+Ti.UI.iPhone.StatusBar = {
 
     /**
      * <p>The default status bar style</p>
@@ -29457,7 +29457,7 @@ Titanium.UI.iPhone.StatusBar = {
  * @namespace <p>A set of constants for the system button style for buttons.</p>
  * @since 0.8
  */
-Titanium.UI.iPhone.SystemButton = {
+Ti.UI.iPhone.SystemButton = {
 
     /**
      * <p>action icon. Usable in nav bars and toolbars only.</p>
@@ -29676,7 +29676,7 @@ Titanium.UI.iPhone.SystemButton = {
  * @namespace <p>A set of constants for the system button styles that can be used for the button <tt>style</tt> property.</p>
  * @since 0.8
  */
-Titanium.UI.iPhone.SystemButtonStyle = {
+Ti.UI.iPhone.SystemButtonStyle = {
 
     /**
      * <p>Used by tabbed bar and button bar only to use the more condensed style used in nav bars and tool bars.</p>
@@ -29719,7 +29719,7 @@ Titanium.UI.iPhone.SystemButtonStyle = {
  * @namespace <p>A set of constants for the system icon styles that can be used on a tab group tab.</p>
  * @since 0.8
  */
-Titanium.UI.iPhone.SystemIcon = {
+Ti.UI.iPhone.SystemIcon = {
 
     /**
      * <p>Bookmark style icon</p>
@@ -29826,7 +29826,7 @@ Titanium.UI.iPhone.SystemIcon = {
  * @namespace <p>A set of constants for the style that can be used for the <tt>selectionStyle</tt> property of {@link Titanium.UI.TableViewRow}.</p>
  * @since 0.9
  */
-Titanium.UI.iPhone.TableViewCellSelectionStyle = {
+Ti.UI.iPhone.TableViewCellSelectionStyle = {
 
     /**
      * <p>The cell when selected has a blue background. This is the default value.</p>
@@ -29861,7 +29861,7 @@ Titanium.UI.iPhone.TableViewCellSelectionStyle = {
  * @namespace <p>A set of constants for the position value that can be used for the <tt>position</tt> property of {@link Titanium.UI.TableView} when invoking <tt>scrollToIndex</tt>.</p>
  * @since 0.9
  */
-Titanium.UI.iPhone.TableViewScrollPosition = {
+Ti.UI.iPhone.TableViewScrollPosition = {
 
     /**
      * <p>The table view scrolls the row of interest to the bottom of the visible table view.</p>
@@ -29904,7 +29904,7 @@ Titanium.UI.iPhone.TableViewScrollPosition = {
  * @namespace <p>A set of constants for the style that can be used for the <tt>separatorStyle</tt> property of {@link Titanium.UI.TableView}.</p>
  * @since 0.9
  */
-Titanium.UI.iPhone.TableViewSeparatorStyle = {
+Ti.UI.iPhone.TableViewSeparatorStyle = {
 
     /**
      * <p>The separator cell has no distinct style.</p>
@@ -29931,7 +29931,7 @@ Titanium.UI.iPhone.TableViewSeparatorStyle = {
  * @namespace <p>A set of constants for the style that can be used for the button <tt>style</tt> property of {@link Titanium.UI.TableView}.</p>
  * @since 0.9
  */
-Titanium.UI.iPhone.TableViewStyle = {
+Ti.UI.iPhone.TableViewStyle = {
 
     /**
      * <p>A table view whose sections present distinct groups of rows. The section headers and footers do not float.</p>
@@ -29959,7 +29959,7 @@ Titanium.UI.iPhone.TableViewStyle = {
 useful for applications.</p>
  * @since 0.9
  */
-Titanium.Utils = {
+Ti.Utils = {
 
 
     /**
@@ -30028,7 +30028,7 @@ Titanium.Utils = {
  * @namespace <p>The top level XML module.  The XML module is used parsing and processing XML-based content.</p>
  * @since 0.9
  */
-Titanium.XML = {
+Ti.XML = {
 
 
     /**
@@ -30088,7 +30088,7 @@ Titanium.XML = {
  * @namespace <p>The DOMDocument returned from {@link Titanium.XML.parseString}. The result is an object that implementes the DOM Level 2 API.</p>
  * @since 0.9
  */
-Titanium.XML.DOMDocument = {
+Ti.XML.DOMDocument = {
 
 
 
@@ -30099,7 +30099,7 @@ Titanium.XML.DOMDocument = {
  * @namespace <p>The top level Yahoo module.  The Yahoo module is used for accessing Yahoo related API services.</p>
  * @since 0.8
  */
-Titanium.Yahoo = {
+Ti.Yahoo = {
 
 
     /**
@@ -30148,4 +30148,4 @@ Titanium.Yahoo = {
 }
 
 
-Ti = Titanium;
+var Titanium = Ti;

@@ -1032,22 +1032,22 @@ Global.prototype = {
 
     /**
      * <p>Creates an interval timer that calls <code>function</code> every <code>delay</code> milliseconds.</p>
-     * @param {Callback} function <p>The function that this interval timer will call.</p>
+     * @param {Callback} _function <p>The function that this interval timer will call.</p>
      * @param {Number} delay <p>How long the timer will wait between calls to <code>function</code>.</p>
      * @returns Number A unique timer ID.
      * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
      */
-    setInterval:function(function, delay) {
+    setInterval:function(_function, delay) {
     },
 
     /**
      * <p>Creates a timer that calls <code>function</code> once after <code>delay</code> milliseconds.</p>
-     * @param {Callback} function <p>The function that the timer will call.</p>
+     * @param {Callback} _function <p>The function that the timer will call.</p>
      * @param {Number} delay <p>How long the timer will wait before calling <code>function</code>.</p>
      * @returns Number A unique timer ID.
      * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
      */
-    setTimeout:function(function, delay) {
+    setTimeout:function(_function, delay) {
     }
 }
 
@@ -2611,7 +2611,7 @@ of the Titanium namespace, including JSON parsing, String formatting,
 timers, and the CommonJS <code>require</code> function. See {@link Global} for
 details.</p>
  */
-var Titanium = {
+var Ti = {
 
     /**
      * <p>Date of the Titanium build.</p>
@@ -2730,7 +2730,7 @@ var Titanium = {
 /**
  * platforms: Android, iPhone, iPad, Mobile Web
  */
-Titanium.API = {
+Ti.API = {
 
 
     /**
@@ -2822,7 +2822,7 @@ conserve device resources.</p>
 });
 </code></pre>
  */
-Titanium.Accelerometer = {
+Ti.Accelerometer = {
 
 
     /**
@@ -2862,7 +2862,7 @@ Titanium.Accelerometer = {
 <pre><code>Titanium.Analytics.featureEvent('app.feature.blah',{product:'killer'});
 </code></pre>
  */
-Titanium.Analytics = {
+Ti.Analytics = {
 
 
     /**
@@ -2962,7 +2962,7 @@ So if we've failed to document all of them, have a look online at the
 {@link http://developer.android.com/reference/android/content/Intent}, 
 which will give you the meaning of those ACTION, EXTRA and CATEGORY constants.</p>
  */
-Titanium.Android = {
+Ti.Android = {
 
     /**
      * 
@@ -4569,7 +4569,7 @@ var reminderDetails = {
 event.createReminder(reminderDetails);
 </code></pre>
  */
-Titanium.Android.Calendar = {
+Ti.Android.Calendar = {
 
     /**
      * <p>constant for the {@link Titanium.Android.Calendar.Reminder} method property.</p>
@@ -6451,7 +6451,7 @@ Titanium_Android_Notification.prototype = {
  * @namespace <p>The <code>NotificationManager</code> module is a thin wrapper on the Android {@link http://developer.android.com/reference/android/app/NotificationManager} class. </p>
 <p>The constants in this module are derived from the Android {@link http://developer.android.com/reference/android/app/Notification} class.</p>
  */
-Titanium.Android.NotificationManager = {
+Ti.Android.NotificationManager = {
 
     /**
      * <p>Use all default values (where applicable).</p>
@@ -7075,7 +7075,7 @@ Titanium_Android_Service.prototype = {
 /**
  * platforms: Android, iPhone, iPad, Mobile Web
  */
-Titanium.App = {
+Ti.App = {
 
     /**
      * <p>the application's copyright</p>
@@ -7321,7 +7321,7 @@ var mystring = activity.getString(R.string.mystring);
 Ti.API.debug("mystring="+mystring);
 </code></pre>
  */
-Titanium.App.Android = {
+Ti.App.Android = {
 
     /**
      * <p>The R namespace for Application Resources</p>
@@ -7416,7 +7416,7 @@ for (var c=0;c&lt;props.length;c++)
 }
 </code></pre>
  */
-Titanium.App.Properties = {
+Ti.App.Properties = {
 
 
     /**
@@ -7570,7 +7570,7 @@ Titanium.App.Properties = {
 /**
  * platforms: iPhone, iPad
  */
-Titanium.App.iOS = {
+Ti.App.iOS = {
 
 
     /**
@@ -8414,7 +8414,7 @@ Titanium_BufferStream.prototype = {
 /**
  * platforms: Android, iPhone, iPad
  */
-Titanium.Codec = {
+Ti.Codec = {
 
     /**
      * <p>Big Endian (network) byte order, i.e. most significant byte first.</p>
@@ -8599,7 +8599,7 @@ Throws an Exception if <code>charset</code> is not a valid character set,
  * @namespace <p>Contacts on Android are currently only read-only, so methods such as <code>createPerson</code>, <code>removePerson</code>, etc., are not supported.
 {@link Titanium.Contacts.Person} objects which have been removed from the database are invalidated after a save operation, whether from creating a new contact or explicitly calling <code>Titanium.Contacts.save()</code>.  Using them may result in unpredictable behavior, including crashes.</p>
  */
-Titanium.Contacts = {
+Ti.Contacts = {
 
     /**
      * <p>constant for 'organization' kind property of Person object</p>
@@ -9487,7 +9487,7 @@ Titanium_Contacts_Person.prototype = {
 /**
  * platforms: Android, iPhone, iPad, Mobile Web
  */
-Titanium.Database = {
+Ti.Database = {
 
     /**
      * <p>constant for requesting a column's value returned in double form.</p>
@@ -10124,7 +10124,7 @@ Titanium.Facebook.dialog("feed", data, function(e) {
 });
 </code></pre>
  */
-Titanium.Facebook = {
+Ti.Facebook = {
 
     /**
      * <p>OAuth token set after a successful <code>authorize</code>.</p>
@@ -11260,7 +11260,7 @@ performed asynchronously. If null, it will be performed immediately.</p>
 /**
  * platforms: Android, iPhone, iPad
  */
-Titanium.Filesystem = {
+Ti.Filesystem = {
 
     /**
      * <p>constant for append mode for file operations</p>
@@ -11792,7 +11792,7 @@ Titanium_Filesystem_FileStream.prototype = {
 /**
  * platforms: Android, iPhone, iPad, Mobile Web
  */
-Titanium.Geolocation = {
+Ti.Geolocation = {
 
     /**
      * <p>accuracy constant</p>
@@ -12139,7 +12139,7 @@ Titanium.Geolocation = {
 /**
  * platforms: Android, iPhone, iPad, Mobile Web
  */
-Titanium.Gesture = {
+Ti.Gesture = {
 
     /**
      * <p>True if current window is considered landscape by the device, false otherwise</p>
@@ -12339,7 +12339,7 @@ locale-specific strings which can be referenced at runtime.  Additionally, the m
 contains a few methods and properties for querying device locale information.</p>
 <p>The macro <code>L</code> can be used as an alias for the {@link Titanium.Locale.getString} method.</p>
  */
-Titanium.Locale = {
+Ti.Locale = {
 
     /**
      * <p>return the current (default) ISO 2-letter country code for the device.</p>
@@ -12498,7 +12498,7 @@ var mapview = Titanium.Map.createView({
 win.add(mapview);
 </code></pre>
  */
-Titanium.Map = {
+Ti.Map = {
 
     /**
      * <p>Displays a satellite image of the area with road and road name information layered on top.</p>
@@ -13976,7 +13976,7 @@ performed asynchronously. If null, it will be performed immediately.</p>
 /**
  * platforms: Android, iPhone, iPad
  */
-Titanium.Media = {
+Ti.Media = {
 
     /**
      * <p>audio file format 3GPP-2</p>
@@ -15172,7 +15172,7 @@ Titanium.Media = {
 /**
  * platforms: Android
  */
-Titanium.Media.Android = {
+Ti.Media.Android = {
 
 
     /**
@@ -18156,7 +18156,7 @@ performed asynchronously. If null, it will be performed immediately.</p>
 /**
  * platforms: Android, iPhone, iPad
  */
-Titanium.Module = {
+Ti.Module = {
 
 
     /**
@@ -18190,7 +18190,7 @@ Titanium.Module = {
 /**
  * platforms: Android, iPhone, iPad, Mobile Web
  */
-Titanium.Network = {
+Ti.Network = {
 
     /**
      * <p>constant value representing the ability for sockets to listen on any locally available network device</p>
@@ -19378,7 +19378,7 @@ Titanium_Network_HTTPClient.prototype = {
 /**
  * platforms: Android, iPhone, iPad
  */
-Titanium.Network.Socket = {
+Ti.Network.Socket = {
 
     /**
      * <p>state representing the closed state of a socket</p>
@@ -19879,7 +19879,7 @@ Titanium_Network_TCPSocket.prototype = {
 /**
  * platforms: Android, iPhone, iPad, Mobile Web
  */
-Titanium.Platform = {
+Ti.Platform = {
 
     /**
      * <p>the device is plugged in and currently being charged</p>
@@ -20423,7 +20423,7 @@ Titanium_Proxy.prototype = {
 /**
  * platforms: Android, iPhone, iPad
  */
-Titanium.Stream = {
+Ti.Stream = {
 
     /**
      * <p>append mode value.</p>
@@ -20680,7 +20680,7 @@ However, in cases where the control is in a common namespace and support
 additional features, we continue to place that functionality directly on the
 object.</p>
  */
-Titanium.UI = {
+Ti.UI = {
 
     /**
      * <p>Use the animation curve constants in {@link Titanium.UI.iOS} instead.</p>
@@ -22872,7 +22872,7 @@ Titanium_UI_AlertDialog.prototype = {
 /**
  * platforms: Android
  */
-Titanium.UI.Android = {
+Ti.UI.Android = {
 
     /**
      * <p>Auto link all supported types.</p>
@@ -25684,7 +25684,7 @@ performed asynchronously. If null, it will be performed immediately.</p>
 <p>On Android, only plain text is supported; other MIME types will be ignored.</p>
 <p>On iOS, images will be returned as a {@link Titanium.Blob}; the special type 'image' or an explicit MIME type may be specified. URLs can be fetched with the special 'URL' or 'text/uri-list' types, and will return strings. Other data types may or may not be correctly mapped to clipboard types by the system, and will be retrieved as binary data in a {@link Titanium.Blob}.</p>
  */
-Titanium.UI.Clipboard = {
+Ti.UI.Clipboard = {
 
 
     /**
@@ -50096,7 +50096,7 @@ performed asynchronously. If null, it will be performed immediately.</p>
 window.add(view);
 </code></pre>
  */
-Titanium.UI.View = {
+Ti.UI.View = {
 
     /**
      * <p>Anchor point where animation should occur, relative to the view's boundaries.</p>
@@ -53697,7 +53697,7 @@ performed asynchronously. If null, it will be performed immediately.</p>
 /**
  * platforms: iPhone, iPad
  */
-Titanium.UI.iOS = {
+Ti.UI.iOS = {
 
     /**
      * <p>animation curve constant</p>
@@ -58286,7 +58286,7 @@ and Titanium Mobile SDK 1.2 or later. </p>
 <p>For iPad UI programming guidelines, please review the [iPad Human Interface Guidelines]
 (http://developer.apple.com/iphone/library/documentation/General/Conceptual/iPadHIG/Introduction/Introduction.html).</p>
  */
-Titanium.UI.iPad = {
+Ti.UI.iPad = {
 
     /**
      * <p>An arrow that points in any direction.</p>
@@ -61791,7 +61791,7 @@ performed asynchronously. If null, it will be performed immediately.</p>
 /**
  * platforms: iPhone, iPad
  */
-Titanium.UI.iPhone = {
+Ti.UI.iPhone = {
 
     /**
      * <p>The view is presented using the same style as its parent window.</p>
@@ -63911,7 +63911,7 @@ Titanium_UI_iPhone_TableViewStyle.prototype = {
 /**
  * platforms: Android, iPhone, iPad, Mobile Web
  */
-Titanium.Utils = {
+Ti.Utils = {
 
 
     /**
@@ -63990,7 +63990,7 @@ Titanium.Utils = {
 /**
  * platforms: Android, iPhone, iPad, Mobile Web
  */
-Titanium.XML = {
+Ti.XML = {
 
 
     /**
@@ -68496,7 +68496,7 @@ Titanium_XML_Text.prototype = {
 /**
  * platforms: Android, iPhone, iPad
  */
-Titanium.Yahoo = {
+Ti.Yahoo = {
 
 
     /**
@@ -68762,4 +68762,4 @@ WriteStreamCallbackArgs.prototype = {
 }
 
 
-Ti = Titanium;
+var Titanium = Ti;

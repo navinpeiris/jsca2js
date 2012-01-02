@@ -40,7 +40,7 @@ def convertLinks(jsDoc):
 
 def convertIds(id):
     """ Converts invalid JavaScript identifiers to acceptable versions."""
-    if id == 'default':
+    if id == 'default' or id == 'function':
         return '_' + id
     elif id.find('-') > 0:
         return id.replace('-', '_')
@@ -187,6 +187,10 @@ def formatNamespace(namespace):
         formatter.addLine('function ', name, '() {').addLine('}')
         formatter.addLine(name, '.prototype = {').newLine()
     else:
+        if namespaceName == "Titanium":
+            namespaceName = "Ti";
+        else:
+            namespaceName = namespaceName.replace("Titanium.", "Ti.")
         if namespaceName.find('.') < 0:
             formatter.add('var ')
         formatter.addLine(namespaceName, ' = {').newLine()
@@ -211,7 +215,7 @@ def convertJsca2Js(jsca, version):
     for namespace in sorted(jsca.items()):
         javascript += formatNamespace(namespace)
     
-    javascript += "\nTi = Titanium;\n"
+    javascript += "\nvar Titanium = Ti;\n"
 
     return javascript.replace(",\n\n\n}", "\n}")
 
