@@ -195,14 +195,16 @@ def formatNamespace(namespace):
     formatter.add(generateNamespaceJSDoc(namespaceContent))
     if namespaceName.find('.') < 0:
         formatter.add('var ')
+        if namespaceName == 'Titanium':
+            namespaceName = 'Ti'
     if namespaceContent['subtype'] == 'proxy':
-        formatter.addLine(namespaceName, ' = function() {').addLine('}')
+        formatter.addLine(namespaceName, ' = function() {').addLine('};')
         formatter.addLine(namespaceName, '.prototype = {').newLine()
     else:
         formatter.addLine(namespaceName, ' = {').newLine()
     formatter.addLine(formatProperties(namespaceContent))
     formatter.addLine(formatMethods(namespaceContent))
-    formatter.addLine('}').newLine()
+    formatter.addLine('};').newLine()
 
     return formatter.getResult()
 
@@ -221,6 +223,8 @@ def convertJsca2Js(jsca, version):
         javascript += formatNamespace(namespace)
 
     javascript = javascript.replace('Titanium.', 'Ti.')
+    javascript = javascript.replace('.2DMatrix', '.D2Matrix')
+    javascript = javascript.replace('.3DMatrix', '.D3Matrix')
     javascript += "\nvar Titanium = Ti;\n"
 
     return javascript.replace(",\n\n\n}", "\n}")

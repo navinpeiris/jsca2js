@@ -19,7 +19,7 @@
  * @namespace <p>The top level Titanium module.</p>
  * @since 0.1
  */
-var Titanium = {
+var Ti = {
 
     /**
      * <p>the user-agent string used by Titanium</p>
@@ -98,7 +98,7 @@ var Titanium = {
      */
     removeEventListener:function(name, callback) {
     }
-}
+};
 
 /**
  * platforms: android, iphone, ipad
@@ -191,7 +191,7 @@ Ti.API = {
      */
     warn:function(message) {
     }
-}
+};
 
 /**
  * Notes: <p>You'll want to be selective about turning on and off the device accelerometer.  It's recommended you turn off the accelerometer when you're not using it.</p>
@@ -245,7 +245,7 @@ Ti.Accelerometer = {
      */
     removeEventListener:function(name, callback) {
     }
-}
+};
 
 /**
  * platforms: android, iphone, ipad
@@ -364,7 +364,7 @@ Ti.Analytics = {
      */
     userEvent:function(name, data) {
     }
-}
+};
 
 /**
  * Notes: <p>Several (almost all) of the constants you see above are directly taken from Android.  So if we've failed to document all of them, have a look online at the {@link http://developer.android.com/reference/android/app/Service}.</p>
@@ -1890,7 +1890,7 @@ Ti.Android = {
      */
     stopService:function(intent) {
     }
-}
+};
 
 /**
  * platforms: android
@@ -2013,7 +2013,7 @@ Ti.Android.Activity = {
      */
     startActivityForResult:function(intent, callback) {
     }
-}
+};
 
 /**
  * Notes: <p>The API supports retrieving information about existing events and creating new events.  However, modifying or deleting existing events is not yet supported.  Additionally, recurring events are not yet supported.</p>
@@ -2370,7 +2370,7 @@ Ti.Android.Calendar = {
      */
     removeEventListener:function(name, callback) {
     }
-}
+};
 
 /**
  * platforms: android
@@ -2437,7 +2437,7 @@ Ti.Android.Calendar.Alert = {
 
 
 
-}
+};
 
 /**
  * platforms: android
@@ -2539,7 +2539,7 @@ Ti.Android.Calendar.Calendar = {
      */
     getEventsInYear:function(year) {
     }
-}
+};
 
 /**
  * Notes: <p>The API supports retrieving information about existing events and creating new events.  However, modifying or deleting existing events is not yet supported.  Additionally, recurring events are not yet supported.</p>
@@ -2702,7 +2702,7 @@ Ti.Android.Calendar.Event = {
      */
     setExtendedProperty:function(name, value) {
     }
-}
+};
 
 /**
  * platforms: android
@@ -2740,7 +2740,7 @@ Ti.Android.Calendar.Reminder = {
 
 
 
-}
+};
 
 /**
  * platforms: android
@@ -2934,7 +2934,7 @@ Ti.Android.Intent = {
      */
     putExtraUri:function(name, value) {
     }
-}
+};
 
 /**
  * platforms: android
@@ -3092,7 +3092,7 @@ Ti.Android.Menu = {
      */
     size:function() {
     }
-}
+};
 
 /**
  * platforms: android
@@ -3263,7 +3263,7 @@ Ti.Android.MenuItem = {
      */
     setVisible:function(visible) {
     }
-}
+};
 
 /**
  * Notes: <p>If you pass contentTitle and/or contentText into {@link Ti.Android.createNotification}, then setLatestEventInfo will automatically be called with those properties (there's no need to call it separately unless you want to). You can also use a custom layout.xml wrapped in a {@link Ti.Android.RemoteViews} object in the contentView property, which gives more fine grained control and customization to how the notification actually behaves.</p>
@@ -3403,7 +3403,7 @@ Ti.Android.Notification = {
      */
     setLatestEventInfo:function() {
     }
-}
+};
 
 /**
  * Notes: <p>The constants above are taken from {@link http://developer.android.com/reference/android/app/Notification}.</p>
@@ -3564,7 +3564,7 @@ Ti.Android.NotificationManager = {
      */
     removeEventListener:function(name, callback) {
     }
-}
+};
 
 /**
  * Notes: <p>The type of Intent you choose will effect what kind of PendingIntent is created. Each type corresponds directly with a get method on Android's PendingIntent:</p>
@@ -3597,7 +3597,7 @@ Ti.Android.PendingIntent = {
 
 
 
-}
+};
 
 /**
  * Notes: <p>These properties and sub-properties are queried directly against the <tt>android.R</tt> class, and should have the same syntax. For example, to retrieve the "OK" string in Android:</p>
@@ -3706,7 +3706,7 @@ Ti.Android.R = {
 
 
 
-}
+};
 
 /**
  * platforms: android
@@ -3873,7 +3873,7 @@ Ti.Android.RemoteViews = {
      */
     setViewVisibility:function(viewId, visibility) {
     }
-}
+};
 
 /**
  * platforms: android
@@ -3967,7 +3967,7 @@ Ti.Android.Service = {
      */
     stop:function() {
     }
-}
+};
 
 /**
  * platforms: android, iphone, ipad
@@ -4107,7 +4107,7 @@ Ti.App = {
      */
     removeEventListener:function(name, callback) {
     }
-}
+};
 
 /**
  * platforms: android
@@ -4173,7 +4173,7 @@ Ti.App.Android = {
      */
     removeEventListener:function(name, callback) {
     }
-}
+};
 
 /**
  * Notes: <p>These properties and sub-properties are queried directly against your Application's <tt>R</tt> class, and should have the same syntax.  For example, if you have a file <tt>platform/android/res/drawable/icon.png</tt> in your project, you could then access its integer id like this:</p>
@@ -4187,7 +4187,7 @@ Ti.App.Android.R = {
 
 
 
-}
+};
 
 /**
  * platforms: iphone, android, ipad
@@ -4376,7 +4376,7 @@ Ti.App.Properties = {
      */
     setString:function(property, value) {
     }
-}
+};
 
 /**
  * platforms: iphone, ipad
@@ -4472,7 +4472,7 @@ Ti.App.iOS = {
      */
     scheduleLocalNotification:function(params) {
     }
-}
+};
 
 /**
  * Notes: <p>The background service runs when the Application is placed in the background and will continue to run until the service is stopped with the <tt>stop</tt> method or the <tt>unregister</tt> method.</p>
@@ -4483,7 +4483,7 @@ Ti.App.iOS = {
  * @since 1.5
  */
 Ti.App.iOS.BackgroundService = function() {
-}
+};
 Ti.App.iOS.BackgroundService.prototype = {
 
 
@@ -4537,7 +4537,7 @@ Ti.App.iOS.BackgroundService.prototype = {
      */
     unregister:function() {
     }
-}
+};
 
 /**
  * platforms: iphone, ipad
@@ -4546,7 +4546,7 @@ Ti.App.iOS.BackgroundService.prototype = {
  * @since 1.5
  */
 Ti.App.iOS.LocalNotification = function() {
-}
+};
 Ti.App.iOS.LocalNotification.prototype = {
 
 
@@ -4591,7 +4591,7 @@ Ti.App.iOS.LocalNotification.prototype = {
      */
     removeEventListener:function(name, callback) {
     }
-}
+};
 
 /**
  * platforms: android, iphone, ipad
@@ -4611,7 +4611,7 @@ Ti.Blob = {
      */
     imageAsThumbnail:function(size, borderSize, cornerRadius) {
     }
-}
+};
 
 /**
  * platforms: iphone, android, ipad
@@ -4667,7 +4667,7 @@ Ti.BlobStream = {
      */
     write:function(buffer, offset, length) {
     }
-}
+};
 
 /**
  * platforms: iphone, android, ipad
@@ -4799,7 +4799,7 @@ Ti.Buffer = {
      */
     toString:function() {
     }
-}
+};
 
 /**
  * platforms: iphone, android, ipad
@@ -4855,7 +4855,7 @@ Ti.BufferStream = {
      */
     write:function(buffer, offset, length) {
     }
-}
+};
 
 /**
  * platforms: iphone, android, ipad
@@ -5128,7 +5128,7 @@ Ti.Codec = {
      */
     removeEventListener:function(name, callback) {
     }
-}
+};
 
 /**
  * Notes: <p>Contacts on Android are currently only read-only, so methods such as <tt>createPerson</tt>, <tt>removePerson</tt>, etc., are not supported.</p>
@@ -5319,7 +5319,7 @@ Ti.Contacts = {
      */
     showContacts:function(cancel, selectedPerson, selectedProperty, animated, fields) {
     }
-}
+};
 
 /**
  * platforms: iphone, ipad
@@ -5375,7 +5375,7 @@ Ti.Contacts.Group = {
      */
     sortedMembers:function(sortBy) {
     }
-}
+};
 
 /**
  * Notes: <p>There are two kinds of properties: single value and multivalue.  Single value properties are returned as a direct value, while mutlivalue properties are returned as dictionary objects with keys which represent labels of the property, with values that are arrays of all values in the property which correspond to that label (e.g. {"home" : [address1, address2]})</p>
@@ -5595,7 +5595,7 @@ Ti.Contacts.Person = {
 
 
 
-}
+};
 
 /**
  * platforms: android, iphone, ipad
@@ -5688,7 +5688,7 @@ Ti.Database = {
      */
     removeEventListener:function(name, callback) {
     }
-}
+};
 
 /**
  * platforms: android, iphone, ipad
@@ -5749,7 +5749,7 @@ Ti.Database.DB = {
      */
     remove:function() {
     }
-}
+};
 
 /**
  * platforms: android, iphone, ipad
@@ -5836,7 +5836,7 @@ Ti.Database.ResultSet = {
      */
     next:function() {
     }
-}
+};
 
 /**
  * Notes: <p>Titanium Mobile SDK 1.6.0 marked a significant change for this module.  Older versions of the module were not compatible with the new Graph API.  Applications written for the pre-1.6.0 version of this module will <strong>not</strong> work with the 1.6.0 and higher versions.  Nor is the code shown in the examples here backwards-compatible with pre-1.6.0 Titanium Mobile SDK.</p>
@@ -6202,7 +6202,7 @@ Ti.Facebook = {
      */
     requestWithGraphPath:function(path, params, httpMethod, callback) {
     }
-}
+};
 
 /**
  * Notes: <p>See the examples in the {@link Ti.Facebook} documentation.</p>
@@ -6591,7 +6591,7 @@ Ti.Facebook.LoginButton = {
      */
     toImage:function(f) {
     }
-}
+};
 
 /**
  * platforms: android, iphone, ipad
@@ -6748,7 +6748,7 @@ Ti.Filesystem = {
      */
     removeEventListener:function(name, callback) {
     }
-}
+};
 
 /**
  * platforms: android, iphone, ipad
@@ -6756,7 +6756,7 @@ Ti.Filesystem = {
  * @since 0.1
  */
 Ti.Filesystem.File = function() {
-}
+};
 Ti.Filesystem.File.prototype = {
 
 
@@ -7000,7 +7000,7 @@ Ti.Filesystem.File.prototype = {
      */
     writeable:function() {
     }
-}
+};
 
 /**
  * platforms: iphone, android, ipad
@@ -7080,7 +7080,7 @@ Ti.Filesystem.FileStream = {
      */
     write:function(buffer, offset, length) {
     }
-}
+};
 
 /**
  * platforms: android, iphone, ipad
@@ -7374,7 +7374,7 @@ Ti.Geolocation = {
      */
     setShowCalibration:function() {
     }
-}
+};
 
 /**
  * platforms: android, iphone, ipad
@@ -7416,7 +7416,7 @@ Ti.Gesture = {
      */
     removeEventListener:function(name, callback) {
     }
-}
+};
 
 /**
  * platforms: iphone, android, ipad
@@ -7496,7 +7496,7 @@ Ti.IOStream = {
      */
     write:function(buffer, offset, length) {
     }
-}
+};
 
 /**
  * Notes: <p>The macro <tt>L</tt> can also be used which aliases the method {@link Ti.Locale.getString}.</p>
@@ -7609,7 +7609,7 @@ Ti.Locale = {
      */
     removeEventListener:function(name, callback) {
     }
-}
+};
 
 /**
  * platforms: android, iphone, ipad
@@ -7719,7 +7719,7 @@ Ti.Map = {
      */
     removeEventListener:function(name, callback) {
     }
-}
+};
 
 /**
  * platforms: android, iphone, ipad
@@ -7727,7 +7727,7 @@ Ti.Map = {
  * @since 0.9
  */
 Ti.Map.Annotation = function() {
-}
+};
 Ti.Map.Annotation.prototype = {
 
     /**
@@ -7859,7 +7859,7 @@ Ti.Map.Annotation.prototype = {
      */
     removeEventListener:function(name, callback) {
     }
-}
+};
 
 /**
  * Notes: <p>For Android, you will need to {@link http://code.google.com/android/maps} to use maps in your application.  On iPhone, you cannot call any methods on a map view until it has been added to a view.</p>
@@ -8415,7 +8415,7 @@ Ti.Map.MapView = {
      */
     zoom:function(level) {
     }
-}
+};
 
 /**
  * platforms: android, iphone, ipad
@@ -9475,7 +9475,7 @@ Ti.Media = {
      */
     vibrate:function() {
     }
-}
+};
 
 /**
  * platforms: android
@@ -9540,7 +9540,7 @@ Ti.Media.Android = {
      */
     setSystemWallpaper:function(image, scale) {
     }
-}
+};
 
 /**
  * platforms: android, iphone, ipad
@@ -9548,7 +9548,7 @@ Ti.Media.Android = {
  * @since 0.9
  */
 Ti.Media.AudioPlayer = function() {
-}
+};
 Ti.Media.AudioPlayer.prototype = {
 
     /**
@@ -9791,7 +9791,7 @@ Ti.Media.AudioPlayer.prototype = {
      */
     stop:function() {
     }
-}
+};
 
 /**
  * platforms: iphone, ipad
@@ -9799,7 +9799,7 @@ Ti.Media.AudioPlayer.prototype = {
  * @since 0.9
  */
 Ti.Media.AudioRecorder = function() {
-}
+};
 Ti.Media.AudioRecorder.prototype = {
 
     /**
@@ -9911,7 +9911,7 @@ Ti.Media.AudioRecorder.prototype = {
      */
     stop:function() {
     }
-}
+};
 
 /**
  * platforms: iphone, ipad
@@ -10074,7 +10074,7 @@ Ti.Media.Item = {
 
 
 
-}
+};
 
 /**
  * platforms: iphone, ipad
@@ -10222,7 +10222,7 @@ Ti.Media.MusicPlayer = {
      */
     stopSeeking:function() {
     }
-}
+};
 
 /**
  * Notes: <p>You can pass the property <tt>preload</tt> in the constructor as an object property to cause the audio to be preloaded before <tt>play</tt> is invoked.  For larger audio files, this is recommended if you want the audio to begin immediately when invoking <tt>play</tt>.</p>
@@ -10237,7 +10237,7 @@ player.play();
 </code></pre>
  */
 Ti.Media.Sound = function() {
-}
+};
 Ti.Media.Sound.prototype = {
 
     /**
@@ -10458,7 +10458,7 @@ Ti.Media.Sound.prototype = {
      */
     stop:function() {
     }
-}
+};
 
 /**
  * Notes: <p>Starting in iPhone 3.2 SDK, the video player can be embedded in any normal view.  However, if you create multiple video players at one time, only the last one to have its URL set will display video content or behave as if it is a view for a video player.  Prior to 3.2, only fullscreen views were available on iPhone.</p>
@@ -11103,7 +11103,7 @@ Ti.Media.VideoPlayer = {
      */
     toImage:function(f) {
     }
-}
+};
 
 /**
  * platforms: android, iphone, ipad
@@ -11421,7 +11421,7 @@ Ti.Network = {
      */
     removeEventListener:function(name, callback) {
     }
-}
+};
 
 /**
  * Notes: <p>If your application publishes Bonjour services itself, that service will be discovered by the browser if necessary; be prepared to perform a check if you do not want to list local services as available.  Bonjour service browsing is an asynchronous operation, meaning that you should be extremely careful when caching values from the 'services' property returned by the updatedServices event.  In particular, if you maintain a local copy of available services and a user tries to connect to one, you should be prepared to handle failures gracefully; the next updatedServices event should provide the new services list, but you should not rely on it being delivered before user input.  When a window which uses Bonjour browsing is closed, if you do not want to continue searching, you must call the stop() method.</p>
@@ -11474,7 +11474,7 @@ Ti.Network.BonjourBrowser = {
      */
     stopSearch:function() {
     }
-}
+};
 
 /**
  * Notes: <p>You can only publish Bonjour services attached to a socket which is currently listening; you cannot publish a service for a remotely connected socket.  If you stop the Bonjour service and wish to close the socket it uses, it is strongly recommended that you stop the service first.  When a window which publishes a Bonjour service is closed, you must stop the service if the associated socket is also to be closed, or if it is no longer necessary to publish.  Unlike other network operations, Bonjour service resolution and publishing is synchronous, so be aware that your code may block while resolution is going on.  In particular, you may wish to display UI elements indicating background activity before beginning resolution.</p>
@@ -11553,7 +11553,7 @@ Ti.Network.BonjourService = {
      */
     stop:function() {
     }
-}
+};
 
 /**
  * platforms: android, iphone, ipad
@@ -11791,7 +11791,7 @@ Ti.Network.HTTPClient = {
      */
     setTimeout:function(timeout) {
     }
-}
+};
 
 /**
  * platforms: iphone, android, ipad
@@ -11882,7 +11882,7 @@ Ti.Network.Socket = {
      */
     removeEventListener:function(name, callback) {
     }
-}
+};
 
 /**
  * platforms: iphone, android, ipad
@@ -11992,7 +11992,7 @@ Ti.Network.Socket.TCP = {
      */
     listen:function() {
     }
-}
+};
 
 /**
  * Notes: <p>Sockets are nontrivial; it is recommended that anyone using them be familiar with the basics of BSD sockets.  All sockets use TCP connections, and are asynchronous for read operations, so your program should be ready to receive 'read' events at any point.  Socket references cannot be transferred to socket objects, and vice-versa - socket references are an internal mechanism which is used only to determine which sockets to send data to and read data from.  For listening sockets, it is highly recommended that you use the {@link Ti.Network.INADDR_ANY} constant as the host name.  If a window containing a socket is closed, the socket MUST be closed also unless you intend to continue to receive data, otherwise the socket will consume resources (and potentially cause conflicts with opening the window again, if a listener) until the program is restarted.  Be aware of the differences between the listen() and connect() functions; attempting to use one when you mean the other may result in errors, unpredictable behavior, or both.</p>
@@ -12080,7 +12080,7 @@ Ti.Network.TCPSocket = {
      */
     write:function(data, sendTo) {
     }
-}
+};
 
 /**
  * platforms: android, iphone, ipad
@@ -12327,7 +12327,7 @@ Ti.Platform = {
      */
     removeEventListener:function(name, callback) {
     }
-}
+};
 
 /**
  * Notes: <p>On iPhone, the <tt>density</tt> property will return <tt>high</tt> for retina devices and <tt>medium</tt> otherwise, the <tt>dpi</tt> property will return <tt>160</tt>. For iPad, the <tt>density</tt> property will return <tt>medium</tt> and the <tt>dpi</tt> property will return <tt>130</tt>.  For Android, these values are device specific.</p>
@@ -12371,7 +12371,7 @@ Ti.Platform.DisplayCaps = {
 
 
 
-}
+};
 
 /**
  * platforms: iphone, android, ipad
@@ -12512,7 +12512,7 @@ Ti.Stream = {
      */
     writeStream:function(inputStream, outputStream, maxChunkSize, resultsCallback) {
     }
-}
+};
 
 /**
  * Notes: <h3 id="design">Design</h3>
@@ -13309,18 +13309,18 @@ Ti.UI = {
     },
 
     /**
-     * create and return an instance of {@link Ti.UI.2DMatrix}
+     * create and return an instance of {@link Ti.UI.D2Matrix}
      * platforms: android, iphone, ipad
-     * @param {object} parameters (optional) a dictionary object properties defined in {@link Ti.UI.2DMatrix}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Ti.UI.D2Matrix}
      * @since 0.4
      */
     create2DMatrix:function(parameters) {
     },
 
     /**
-     * create and return an instance of {@link Ti.UI.3DMatrix}
+     * create and return an instance of {@link Ti.UI.D3Matrix}
      * platforms: android, iphone, ipad
-     * @param {object} parameters (optional) a dictionary object properties defined in {@link Ti.UI.3DMatrix}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Ti.UI.D3Matrix}
      * @since 0.4
      */
     create3DMatrix:function(parameters) {
@@ -13644,7 +13644,7 @@ Ti.UI = {
      */
     removeEventListener:function(name, callback) {
     }
-}
+};
 
 /**
  * Notes: <p>You create an <tt>identity matrix</tt> by creating a 2D Matrix with an empty constructor.</p>
@@ -13652,9 +13652,9 @@ Ti.UI = {
  * @namespace <p>The 2DMatrix is created by {@link Ti.UI.create2DMatrix}.  The 2D Matrix is an object for holding values for an affine transformation matrix. A 2D matrix is used to rotate, scale, translate, or skew the objects in a two-dimensional space. A 2D matrix is represented by a 3 by 3 matrix. Because the third column is always (0,0,1), the data structure contains values for only the first two columns.</p>
  * @since 0.9
  */
-Ti.UI.2DMatrix = function() {
-}
-Ti.UI.2DMatrix.prototype = {
+Ti.UI.D2Matrix = function() {
+};
+Ti.UI.D2Matrix.prototype = {
 
 
     /**
@@ -13736,7 +13736,7 @@ Ti.UI.2DMatrix.prototype = {
      */
     translate:function(tx, ty) {
     }
-}
+};
 
 /**
  * Notes: <p>You create an <tt>identity matrix</tt> by creating a 3D Matrix with an empty constructor.</p>
@@ -13744,9 +13744,9 @@ Ti.UI.2DMatrix.prototype = {
  * @namespace <p>The 3DMatrix is created by {@link Ti.UI.create3DMatrix}.  The 3D Matrix is an object for holding values for an affine transformation matrix. A 3D matrix is used to rotate, scale, translate, or skew the objects in a three-dimensional space. A 3D matrix is represented by a 4 by 4 matrix. Because the forth column is always (0,0,1), the data structure contains values for only the first three columns.</p>
  * @since 0.9
  */
-Ti.UI.3DMatrix = function() {
-}
-Ti.UI.3DMatrix.prototype = {
+Ti.UI.D3Matrix = function() {
+};
+Ti.UI.D3Matrix.prototype = {
 
 
     /**
@@ -13833,7 +13833,7 @@ Ti.UI.3DMatrix.prototype = {
      */
     translate:function(tx, ty, tz) {
     }
-}
+};
 
 /**
  * Notes: <p>For iPhone, the style can be set from the constants {@link Ti.UI.iPhone.ActivityIndicatorStyle}.</p>
@@ -13910,7 +13910,7 @@ Ti.UI.ActivityIndicator = {
      */
     show:function() {
     }
-}
+};
 
 /**
  * Notes: <p>the global method <tt>alert</tt> is aliased to this object and can be invoked with a single message. For example:</p>
@@ -13934,7 +13934,7 @@ alertDialog.show();
 </code></pre>
  */
 Ti.UI.AlertDialog = function() {
-}
+};
 Ti.UI.AlertDialog.prototype = {
 
     /**
@@ -14028,7 +14028,7 @@ Ti.UI.AlertDialog.prototype = {
      */
     show:function() {
     }
-}
+};
 
 /**
  * platforms: android
@@ -14224,7 +14224,7 @@ Ti.UI.Android = {
      */
     removeEventListener:function(name, callback) {
     }
-}
+};
 
 /**
  * platforms: android, iphone, ipad
@@ -14249,7 +14249,7 @@ view.animate(animation);
 </code></pre>
  */
 Ti.UI.Animation = function() {
-}
+};
 Ti.UI.Animation.prototype = {
 
     /**
@@ -14445,7 +14445,7 @@ Ti.UI.Animation.prototype = {
      */
     removeEventListener:function(name, callback) {
     }
-}
+};
 
 /**
  * platforms: android, iphone, ipad
@@ -14899,7 +14899,7 @@ Ti.UI.Button = {
      */
     toImage:function(f) {
     }
-}
+};
 
 /**
  * Notes: <p>For iPhone, the style constants are available in the constants defined in {@link Ti.UI.iPhone.SystemButtonStyle}.</p>
@@ -15300,7 +15300,7 @@ Ti.UI.ButtonBar = {
      */
     toImage:function(f) {
     }
-}
+};
 
 /**
  * platforms: iphone, android, ipad
@@ -15439,7 +15439,7 @@ Ti.UI.Clipboard = {
      */
     setText:function(text) {
     }
-}
+};
 
 /**
  * platforms: iphone, ipad
@@ -15839,7 +15839,7 @@ Ti.UI.CoverFlowView = {
      */
     toImage:function(f) {
     }
-}
+};
 
 /**
  * platforms: iphone, ipad
@@ -15847,7 +15847,7 @@ Ti.UI.CoverFlowView = {
  * @since 1.2
  */
 Ti.UI.DashboardItem = function() {
-}
+};
 Ti.UI.DashboardItem.prototype = {
 
     /**
@@ -15915,7 +15915,7 @@ Ti.UI.DashboardItem.prototype = {
      */
     removeEventListener:function(name, callback) {
     }
-}
+};
 
 /**
  * platforms: iphone, ipad
@@ -16313,7 +16313,7 @@ Ti.UI.DashboardView = {
      */
     toImage:function(f) {
     }
-}
+};
 
 /**
  * platforms: android, iphone, ipad
@@ -16332,7 +16332,7 @@ emailDialog.open();
 </code></pre>
  */
 Ti.UI.EmailDialog = function() {
-}
+};
 Ti.UI.EmailDialog.prototype = {
 
     /**
@@ -16485,7 +16485,7 @@ Ti.UI.EmailDialog.prototype = {
      */
     removeEventListener:function(name, callback) {
     }
-}
+};
 
 /**
  * Notes: <p>If you specify a <tt>width</tt> and/or <tt>height</tt> property on the image, the image will be scaled to fit into this space if the image is larger.</p>
@@ -17020,7 +17020,7 @@ Ti.UI.ImageView = {
      */
     toImage:function(f) {
     }
-}
+};
 
 /**
  * platforms: android, iphone, ipad
@@ -17550,7 +17550,7 @@ Ti.UI.Label = {
      */
     toImage:function(f) {
     }
-}
+};
 
 /**
  * platforms: android, iphone, ipad
@@ -17634,7 +17634,7 @@ Ti.UI.OptionDialog = {
      */
     show:function() {
     }
-}
+};
 
 /**
  * Notes: <p>For Android, note the <tt>useSpinner</tt> property above.  By default, when you create a picker you will get Android's native picker control, which looks more like the classic "dropdown" widget.  If you'd prefer to use something that looks more like iOS's picker -- which looks like one or more spinning wheels --, you can set <tt>useSpinner: true</tt>.</p>
@@ -17671,7 +17671,7 @@ picker.add(row);
 </code></pre>
  */
 Ti.UI.Picker = function() {
-}
+};
 Ti.UI.Picker.prototype = {
 
     /**
@@ -17836,7 +17836,7 @@ Ti.UI.Picker.prototype = {
      */
     setSelectedRow:function(column, row, animated) {
     }
-}
+};
 
 /**
  * platforms: android, iphone, ipad
@@ -18252,7 +18252,7 @@ Ti.UI.PickerColumn = {
      */
     toImage:function(f) {
     }
-}
+};
 
 /**
  * platforms: android, iphone, ipad
@@ -18670,7 +18670,7 @@ Ti.UI.PickerRow = {
      */
     toImage:function(f) {
     }
-}
+};
 
 /**
  * Notes: <p>For iPhone, progress bar styles are constants defined in {@link Ti.UI.iPhone.ProgressBarStyle}.</p>
@@ -18752,7 +18752,7 @@ Ti.UI.ProgressBar = {
 
 
 
-}
+};
 
 /**
  * Notes: <p>If your scrollable region fits within the size of the content area the scroll view will not scroll.</p>
@@ -19268,7 +19268,7 @@ Ti.UI.ScrollView = {
      */
     toImage:function(f) {
     }
-}
+};
 
 /**
  * platforms: android, iphone, ipad
@@ -19754,7 +19754,7 @@ Ti.UI.ScrollableView = {
      */
     toImage:function(f) {
     }
-}
+};
 
 /**
  * platforms: android, iphone, ipad
@@ -20241,7 +20241,7 @@ Ti.UI.SearchBar = {
      */
     toImage:function(f) {
     }
-}
+};
 
 /**
  * platforms: android, iphone, ipad
@@ -20765,7 +20765,7 @@ Ti.UI.Slider = {
      */
     toImage:function(f) {
     }
-}
+};
 
 /**
  * platforms: android, iphone, ipad
@@ -21204,7 +21204,7 @@ Ti.UI.Switch = {
      */
     toImage:function(f) {
     }
-}
+};
 
 /**
  * platforms: android, iphone, ipad
@@ -21626,7 +21626,7 @@ Ti.UI.Tab = {
      */
     toImage:function(f) {
     }
-}
+};
 
 /**
  * Notes: <p>Note that when opening a tab group, if one or more of its tabs have been set 'active' prior to opening, or if setActiveTab() has been called while a tab is 'active', the result of which tab is initially selected is undefined.</p>
@@ -22101,7 +22101,7 @@ Ti.UI.TabGroup = {
      */
     toImage:function(f) {
     }
-}
+};
 
 /**
  * Notes: <p>For iPhone, the style constants are available in the constants defined in {@link Ti.UI.iPhone.SystemButtonStyle}.</p>
@@ -22502,7 +22502,7 @@ Ti.UI.TabbedBar = {
      */
     toImage:function(f) {
     }
-}
+};
 
 /**
  * platforms: android, iphone, ipad
@@ -23183,7 +23183,7 @@ Ti.UI.TableView = {
      */
     updateRow:function(row, properties) {
     }
-}
+};
 
 /**
  * Notes: <p>Make sure you set the tableClass on each row instance if using more than one type of row layout. You can use the same value for each instance of a row where the layout is the same - even if the value of the elements inside the row have different values.  For example, if the text is the only thing different between two cells but the layout is the same, both row instances should have the same value for tableClass.</p>
@@ -23685,7 +23685,7 @@ Ti.UI.TableViewRow = {
      */
     toImage:function(f) {
     }
-}
+};
 
 /**
  * platforms: android, iphone, ipad
@@ -24118,7 +24118,7 @@ Ti.UI.TableViewSection = {
      */
     toImage:function(f) {
     }
-}
+};
 
 /**
  * Notes: <p>Both Text Areas and Text Fields can control the buttons displayed in a button bar above the keyboard when it's visible.</p>
@@ -24630,7 +24630,7 @@ Ti.UI.TextArea = {
      */
     toImage:function(f) {
     }
-}
+};
 
 /**
  * Notes: <p>On iPhone, the borderStyle can be set with a constant from {@link Ti.UI}.</p>
@@ -25240,7 +25240,7 @@ Ti.UI.TextField = {
      */
     toImage:function(f) {
     }
-}
+};
 
 /**
  * platforms: iphone, ipad
@@ -25604,7 +25604,7 @@ Ti.UI.Toolbar = {
      */
     toImage:function(f) {
     }
-}
+};
 
 /**
  * platforms: android, iphone, ipad
@@ -25995,7 +25995,7 @@ Ti.UI.View = {
      */
     toImage:function(f) {
     }
-}
+};
 
 /**
  * Notes: <p>Creating webviews are more expensive than creating pure native views because of the requirement toload the HTML browser into memory.</p>
@@ -26506,7 +26506,7 @@ Ti.UI.WebView = {
      */
     toImage:function(f) {
     }
-}
+};
 
 /**
  * Notes: <h3 id="sub-contexts">Sub-contexts</h3>
@@ -27204,7 +27204,7 @@ Ti.UI.Window = {
      */
     toImage:function(f) {
     }
-}
+};
 
 /**
  * platforms: iphone, ipad
@@ -27255,7 +27255,7 @@ Ti.UI.iOS = {
      */
     removeEventListener:function(name, callback) {
     }
-}
+};
 
 /**
  * platforms: iphone, ipad
@@ -27644,7 +27644,7 @@ Ti.UI.iOS.AdView = {
      */
     toImage:function(f) {
     }
-}
+};
 
 /**
  * Notes: <h3 id="custom_fonts">Custom Fonts</h3>
@@ -27755,7 +27755,7 @@ Ti.UI.iPad = {
      */
     removeEventListener:function(name, callback) {
     }
-}
+};
 
 /**
  * platforms: ipad
@@ -28193,7 +28193,7 @@ Ti.UI.iPad.Popover = {
      */
     toImage:function(f) {
     }
-}
+};
 
 /**
  * Notes: <p>The SplitWindow inherits its methods and properties from {@link Ti.UI.Window}.</p>
@@ -28615,7 +28615,7 @@ Ti.UI.iPad.SplitWindow = {
      */
     toImage:function(f) {
     }
-}
+};
 
 /**
  * platforms: iphone, ipad
@@ -28784,7 +28784,7 @@ Ti.UI.iPhone = {
      */
     showStatusBar:function(animated, animationStyle) {
     }
-}
+};
 
 /**
  * platforms: iphone, ipad
@@ -28819,7 +28819,7 @@ Ti.UI.iPhone.ActivityIndicatorStyle = {
 
 
 
-}
+};
 
 /**
  * platforms: iphone, ipad
@@ -28870,7 +28870,7 @@ Ti.UI.iPhone.AnimationStyle = {
 
 
 
-}
+};
 
 /**
  * Notes: <p>The <tt>window</tt> property must be set initially in the constructor when creating a navigation group to the root level window.  All Navigation Groups must have at least one root window that cannot be removed.</p>
@@ -29278,7 +29278,7 @@ Ti.UI.iPhone.NavigationGroup = {
      */
     toImage:function(f) {
     }
-}
+};
 
 /**
  * platforms: iphone, ipad
@@ -29313,7 +29313,7 @@ Ti.UI.iPhone.ProgressBarStyle = {
 
 
 
-}
+};
 
 /**
  * platforms: iphone, ipad
@@ -29372,7 +29372,7 @@ Ti.UI.iPhone.RowAnimationStyle = {
 
 
 
-}
+};
 
 /**
  * platforms: iphone, ipad
@@ -29407,7 +29407,7 @@ Ti.UI.iPhone.ScrollIndicatorStyle = {
 
 
 
-}
+};
 
 /**
  * platforms: iphone, ipad
@@ -29450,7 +29450,7 @@ Ti.UI.iPhone.StatusBar = {
 
 
 
-}
+};
 
 /**
  * platforms: iphone, ipad
@@ -29669,7 +29669,7 @@ Ti.UI.iPhone.SystemButton = {
 
 
 
-}
+};
 
 /**
  * platforms: iphone, ipad
@@ -29712,7 +29712,7 @@ Ti.UI.iPhone.SystemButtonStyle = {
 
 
 
-}
+};
 
 /**
  * platforms: iphone, ipad
@@ -29819,7 +29819,7 @@ Ti.UI.iPhone.SystemIcon = {
 
 
 
-}
+};
 
 /**
  * platforms: iphone, ipad
@@ -29854,7 +29854,7 @@ Ti.UI.iPhone.TableViewCellSelectionStyle = {
 
 
 
-}
+};
 
 /**
  * platforms: iphone, ipad
@@ -29897,7 +29897,7 @@ Ti.UI.iPhone.TableViewScrollPosition = {
 
 
 
-}
+};
 
 /**
  * platforms: iphone, ipad
@@ -29924,7 +29924,7 @@ Ti.UI.iPhone.TableViewSeparatorStyle = {
 
 
 
-}
+};
 
 /**
  * platforms: iphone, ipad
@@ -29951,7 +29951,7 @@ Ti.UI.iPhone.TableViewStyle = {
 
 
 
-}
+};
 
 /**
  * platforms: android, iphone, ipad
@@ -30021,7 +30021,7 @@ Ti.Utils = {
      */
     removeEventListener:function(name, callback) {
     }
-}
+};
 
 /**
  * platforms: android, iphone, ipad
@@ -30081,7 +30081,7 @@ Ti.XML = {
      */
     serializeToString:function(node) {
     }
-}
+};
 
 /**
  * platforms: android, iphone, ipad
@@ -30092,7 +30092,7 @@ Ti.XML.DOMDocument = {
 
 
 
-}
+};
 
 /**
  * platforms: android, iphone, ipad
@@ -30145,7 +30145,7 @@ Ti.Yahoo = {
      */
     yql:function(yql, callback) {
     }
-}
+};
 
 
 var Titanium = Ti;

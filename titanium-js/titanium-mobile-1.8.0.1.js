@@ -2,7 +2,7 @@
  * platforms: Android, iPhone, iPad, Mobile Web
  */
 var AcceptDict = function() {
-}
+};
 AcceptDict.prototype = {
 
     /**
@@ -51,13 +51,13 @@ AcceptDict.prototype = {
      */
     setTimeout:function(timeout) {
     }
-}
+};
 
 /**
  * platforms: Android, iPhone, iPad, Mobile Web
  */
 var AcceptedCallbackArgs = function() {
-}
+};
 AcceptedCallbackArgs.prototype = {
 
     /**
@@ -106,13 +106,13 @@ AcceptedCallbackArgs.prototype = {
      */
     setSocket:function(socket) {
     }
-}
+};
 
 /**
  * platforms: Android, iPhone, iPad, Mobile Web
  */
 var ConnectedCallbackArgs = function() {
-}
+};
 ConnectedCallbackArgs.prototype = {
 
     /**
@@ -138,13 +138,13 @@ ConnectedCallbackArgs.prototype = {
      */
     setSocket:function(socket) {
     }
-}
+};
 
 /**
  * platforms: Android, iPhone, iPad
  */
 var CreateBufferArgs = function() {
-}
+};
 CreateBufferArgs.prototype = {
 
     /**
@@ -240,13 +240,13 @@ CreateBufferArgs.prototype = {
      */
     setValue:function(value) {
     }
-}
+};
 
 /**
  * platforms: Android, iPhone, iPad, Mobile Web
  */
 var CreateStreamArgs = function() {
-}
+};
 CreateStreamArgs.prototype = {
 
     /**
@@ -296,13 +296,13 @@ CreateStreamArgs.prototype = {
      */
     setSource:function(source) {
     }
-}
+};
 
 /**
  * platforms: Android, iPhone, iPad, Mobile Web
  */
 var DecodeNumberDict = function() {
-}
+};
 DecodeNumberDict.prototype = {
 
     /**
@@ -397,13 +397,13 @@ DecodeNumberDict.prototype = {
      */
     setType:function(type) {
     }
-}
+};
 
 /**
  * platforms: Android, iPhone, iPad, Mobile Web
  */
 var DecodeStringDict = function() {
-}
+};
 DecodeStringDict.prototype = {
 
     /**
@@ -498,13 +498,13 @@ DecodeStringDict.prototype = {
      */
     setSource:function(source) {
     }
-}
+};
 
 /**
  * platforms: Android, iPhone, iPad, Mobile Web
  */
 var EncodeNumberDict = function() {
-}
+};
 EncodeNumberDict.prototype = {
 
     /**
@@ -622,13 +622,13 @@ EncodeNumberDict.prototype = {
      */
     setType:function(type) {
     }
-}
+};
 
 /**
  * platforms: Android, iPhone, iPad, Mobile Web
  */
 var EncodeStringDict = function() {
-}
+};
 EncodeStringDict.prototype = {
 
     /**
@@ -769,13 +769,13 @@ EncodeStringDict.prototype = {
      */
     setSourcePosition:function(sourcePosition) {
     }
-}
+};
 
 /**
  * platforms: Android, iPhone, iPad, Mobile Web
  */
 var ErrorCallbackArgs = function() {
-}
+};
 ErrorCallbackArgs.prototype = {
 
     /**
@@ -847,13 +847,13 @@ ErrorCallbackArgs.prototype = {
      */
     setSocket:function(socket) {
     }
-}
+};
 
 /**
  * platforms: Android, iPhone, iPad, Mobile Web
  */
 var Font = function() {
-}
+};
 Font.prototype = {
 
     /**
@@ -949,7 +949,7 @@ Font.prototype = {
      */
     setFontWeight:function(fontWeight) {
     }
-}
+};
 
 /**
  * platforms: Android, iPhone, iPad, Mobile Web
@@ -965,7 +965,7 @@ as a shortcut to create and show a simple {@link Ti.UI.AlertDialog}.</p>
 <p>The macro <code>L</code> can also be used which aliases the method {@link Ti.Locale.getString}.</p>
  */
 var Global = function() {
-}
+};
 Global.prototype = {
 
 
@@ -1049,7 +1049,7 @@ Global.prototype = {
      */
     setTimeout:function(_function, delay) {
     }
-}
+};
 
 /**
  * platforms: Android, iPhone, iPad
@@ -1059,7 +1059,7 @@ These are Titanium-specific extensions for formatting data into locale-specific 
 The locale is set in device's system Settings. </p>
  */
 Global.String = function() {
-}
+};
 Global.String.prototype = {
 
 
@@ -1109,13 +1109,13 @@ Global.String.prototype = {
      */
     formatTime:function(date) {
     }
-}
+};
 
 /**
  * platforms: iPhone, iPad
  */
 var Gradient = function() {
-}
+};
 Gradient.prototype = {
 
     /**
@@ -1303,13 +1303,13 @@ Gradient.prototype = {
      */
     setType:function(type) {
     }
-}
+};
 
 /**
  * platforms: Android, iPhone, iPad, Mobile Web
  */
 var GradientColorRef = function() {
-}
+};
 GradientColorRef.prototype = {
 
     /**
@@ -1358,13 +1358,13 @@ GradientColorRef.prototype = {
      */
     setOffset:function(offset) {
     }
-}
+};
 
 /**
  * platforms: Android, iPhone, iPad, Mobile Web
  */
 var ImageAsCroppedDict = function() {
-}
+};
 ImageAsCroppedDict.prototype = {
 
     /**
@@ -1459,13 +1459,13 @@ ImageAsCroppedDict.prototype = {
      */
     setY:function(y) {
     }
-}
+};
 
 /**
  * platforms: iPhone, iPad
  */
 var MediaItemType = function() {
-}
+};
 MediaItemType.prototype = {
 
     /**
@@ -1882,13 +1882,13 @@ MediaItemType.prototype = {
      */
     setTitle:function(title) {
     }
-}
+};
 
 /**
  * platforms: iPhone, iPad
  */
 var MediaQueryInfoType = function() {
-}
+};
 MediaQueryInfoType.prototype = {
 
     /**
@@ -1939,13 +1939,13 @@ MediaQueryInfoType.prototype = {
      */
     setValue:function(value) {
     }
-}
+};
 
 /**
  * platforms: iPhone, iPad
  */
 var MediaQueryType = function() {
-}
+};
 MediaQueryType.prototype = {
 
     /**
@@ -2163,13 +2163,13 @@ MediaQueryType.prototype = {
      */
     setTitle:function(title) {
     }
-}
+};
 
 /**
  * platforms: Android, iPhone, iPad
  */
 var Point = function() {
-}
+};
 Point.prototype = {
 
     /**
@@ -2218,13 +2218,13 @@ Point.prototype = {
      */
     setY:function(y) {
     }
-}
+};
 
 /**
  * platforms: Android, iPhone, iPad, Mobile Web
  */
 var PumpCallbackArgs = function() {
-}
+};
 PumpCallbackArgs.prototype = {
 
     /**
@@ -2365,13 +2365,13 @@ PumpCallbackArgs.prototype = {
      */
     setTotalBytesProcessed:function(totalBytesProcessed) {
     }
-}
+};
 
 /**
  * platforms: Android, iPhone, iPad, Mobile Web
  */
 var ReadCallbackArgs = function() {
-}
+};
 ReadCallbackArgs.prototype = {
 
     /**
@@ -2466,7 +2466,7 @@ ReadCallbackArgs.prototype = {
      */
     setSource:function(source) {
     }
-}
+};
 
 /**
  * platforms: Android, iPhone, iPad, Mobile Web
@@ -2475,7 +2475,7 @@ ReadCallbackArgs.prototype = {
 <p><code>positon</code> only applies to the <code>scrollToIndex</code> method.</p>
  */
 var TableViewAnimationProperties = function() {
-}
+};
 TableViewAnimationProperties.prototype = {
 
     /**
@@ -2547,13 +2547,13 @@ TableViewAnimationProperties.prototype = {
      */
     setPosition:function(position) {
     }
-}
+};
 
 /**
  * platforms: Android, iPhone, iPad, Mobile Web
  */
 var TableViewIndexEntry = function() {
-}
+};
 TableViewIndexEntry.prototype = {
 
     /**
@@ -2602,7 +2602,7 @@ TableViewIndexEntry.prototype = {
      */
     setTitle:function(title) {
     }
-}
+};
 
 /**
  * platforms: Android, iPhone, iPad, Mobile Web
@@ -2611,7 +2611,7 @@ of the Titanium namespace, including JSON parsing, String formatting,
 timers, and the CommonJS <code>require</code> function. See {@link Global} for
 details.</p>
  */
-var Titanium = {
+var Ti = {
 
     /**
      * <p>Date of the Titanium build.</p>
@@ -2725,7 +2725,7 @@ var Titanium = {
      */
     setUserAgent:function(userAgent) {
     }
-}
+};
 
 /**
  * platforms: Android, iPhone, iPad, Mobile Web
@@ -2800,7 +2800,7 @@ Ti.API = {
      */
     warn:function(message) {
     }
-}
+};
 
 /**
  * platforms: Android, iPhone, iPad, Mobile Web
@@ -2851,7 +2851,7 @@ Ti.Accelerometer = {
      */
     removeEventListener:function(name, callback) {
     }
-}
+};
 
 /**
  * platforms: Android, iPhone, iPad, Mobile Web
@@ -2951,7 +2951,7 @@ Ti.Analytics = {
      */
     userEvent:function(name, data) {
     }
-}
+};
 
 /**
  * platforms: Android
@@ -4295,7 +4295,7 @@ Ti.Android = {
      */
     stopService:function(intent) {
     }
-}
+};
 
 /**
  * platforms: Android
@@ -4313,7 +4313,7 @@ Ti.Android = {
 });</p>
  */
 Ti.Android.Activity = function() {
-}
+};
 Ti.Android.Activity.prototype = {
 
     /**
@@ -4430,7 +4430,7 @@ Ti.Android.Activity.prototype = {
      */
     startActivityForResult:function(intent, callback) {
     }
-}
+};
 
 /**
  * platforms: Android
@@ -4750,13 +4750,13 @@ Ti.Android.Calendar = {
      */
     removeEventListener:function(name, callback) {
     }
-}
+};
 
 /**
  * platforms: Android
  */
 Ti.Android.Calendar.Alert = function() {
-}
+};
 Ti.Android.Calendar.Alert.prototype = {
 
     /**
@@ -4891,14 +4891,14 @@ Ti.Android.Calendar.Alert.prototype = {
      */
     removeEventListener:function(name, callback) {
     }
-}
+};
 
 /**
  * platforms: Android
  * @namespace <p>See {@link Ti.Android.Calendar} for examples.</p>
  */
 Ti.Android.Calendar.Calendar = function() {
-}
+};
 Ti.Android.Calendar.Calendar.prototype = {
 
     /**
@@ -5046,7 +5046,7 @@ Ti.Android.Calendar.Calendar.prototype = {
      */
     removeEventListener:function(name, callback) {
     }
-}
+};
 
 /**
  * platforms: Android
@@ -5057,7 +5057,7 @@ recurring events are not yet supported.</p>
 creating events.</p>
  */
 Ti.Android.Calendar.Event = function() {
-}
+};
 Ti.Android.Calendar.Event.prototype = {
 
     /**
@@ -5333,7 +5333,7 @@ Ti.Android.Calendar.Event.prototype = {
      */
     setExtendedProperty:function(name, value) {
     }
-}
+};
 
 /**
  * platforms: Android
@@ -5343,7 +5343,7 @@ of {@link Ti.Android.Calendar.Event}.</p>
 creating reminders for events.</p>
  */
 Ti.Android.Calendar.Reminder = function() {
-}
+};
 Ti.Android.Calendar.Reminder.prototype = {
 
     /**
@@ -5418,7 +5418,7 @@ Ti.Android.Calendar.Reminder.prototype = {
      */
     removeEventListener:function(name, callback) {
     }
-}
+};
 
 /**
  * platforms: Android
@@ -5445,7 +5445,7 @@ Ti.Android.currentActivity.startActivity(intent);</p>
 intent.addCategory(Ti.Android.CATEGORY_DEFAULT);</p>
  */
 Ti.Android.Intent = function() {
-}
+};
 Ti.Android.Intent.prototype = {
 
     /**
@@ -5675,7 +5675,7 @@ Ti.Android.Intent.prototype = {
      */
     setFlags:function(flags) {
     }
-}
+};
 
 /**
  * platforms: Android
@@ -5715,7 +5715,7 @@ activity.onCreateOptionsMenu = function(e) {
 win.open();</p>
  */
 Ti.Android.Menu = function() {
-}
+};
 Ti.Android.Menu.prototype = {
 
     /**
@@ -5851,13 +5851,13 @@ Ti.Android.Menu.prototype = {
      */
     size:function() {
     }
-}
+};
 
 /**
  * platforms: Android
  */
 Ti.Android.MenuItem = function() {
-}
+};
 Ti.Android.MenuItem.prototype = {
 
     /**
@@ -6048,7 +6048,7 @@ Ti.Android.MenuItem.prototype = {
      */
     setVisible:function(visible) {
     }
-}
+};
 
 /**
  * platforms: Android
@@ -6060,7 +6060,7 @@ fine grained control and customization to how the notification actually behaves.
 <p>Also see {@link http://developer.android.com/guide/topics/ui/notifiers/notifications}</p>
  */
 Ti.Android.Notification = function() {
-}
+};
 Ti.Android.Notification.prototype = {
 
     /**
@@ -6444,7 +6444,7 @@ Ti.Android.Notification.prototype = {
      */
     setWhen:function(when) {
     }
-}
+};
 
 /**
  * platforms: Android
@@ -6581,7 +6581,7 @@ Ti.Android.NotificationManager = {
      */
     removeEventListener:function(name, callback) {
     }
-}
+};
 
 /**
  * platforms: Android
@@ -6593,7 +6593,7 @@ Ti.Android.NotificationManager = {
 </ul>
  */
 Ti.Android.PendingIntent = function() {
-}
+};
 Ti.Android.PendingIntent.prototype = {
 
     /**
@@ -6653,7 +6653,7 @@ Ti.Android.PendingIntent.prototype = {
      */
     removeEventListener:function(name, callback) {
     }
-}
+};
 
 /**
  * platforms: Android
@@ -6661,7 +6661,7 @@ Ti.Android.PendingIntent.prototype = {
 <p><code>Ti.Android.currentActivity.getString(Ti.Android.R.string.ok);</code></p>
  */
 Ti.Android.R = function() {
-}
+};
 Ti.Android.R.prototype = {
 
     /**
@@ -6775,7 +6775,7 @@ Ti.Android.R.prototype = {
      */
     removeEventListener:function(name, callback) {
     }
-}
+};
 
 /**
  * platforms: Android
@@ -6786,7 +6786,7 @@ var customLayout = Ti.Android.createRemoteViews(AppR.layout.custom_layout);
 customLayout.setTextViewText(AppR.id.custom_text, "Hello World");</p>
  */
 Ti.Android.RemoteViews = function() {
-}
+};
 Ti.Android.RemoteViews.prototype = {
 
 
@@ -6942,7 +6942,7 @@ Ti.Android.RemoteViews.prototype = {
      */
     setViewVisibility:function(viewId, visibility) {
     }
-}
+};
 
 /**
  * platforms: Android
@@ -6996,7 +6996,7 @@ service.start();
 </code></pre>
  */
 Ti.Android.Service = function() {
-}
+};
 Ti.Android.Service.prototype = {
 
     /**
@@ -7070,7 +7070,7 @@ Ti.Android.Service.prototype = {
      */
     stop:function() {
     }
-}
+};
 
 /**
  * platforms: Android, iPhone, iPad, Mobile Web
@@ -7301,7 +7301,7 @@ Ti.App = {
      */
     setProximityState:function(proximityState) {
     }
-}
+};
 
 /**
  * platforms: Android
@@ -7357,7 +7357,7 @@ Ti.App.Android = {
      */
     removeEventListener:function(name, callback) {
     }
-}
+};
 
 /**
  * platforms: Android
@@ -7366,7 +7366,7 @@ Ti.App.Android = {
 </code></pre>
  */
 Ti.App.Android.R = function() {
-}
+};
 Ti.App.Android.R.prototype = {
 
 
@@ -7396,7 +7396,7 @@ Ti.App.Android.R.prototype = {
      */
     removeEventListener:function(name, callback) {
     }
-}
+};
 
 /**
  * platforms: Android, iPhone, iPad, Mobile Web
@@ -7565,7 +7565,7 @@ Ti.App.Properties = {
      */
     setString:function(property, value) {
     }
-}
+};
 
 /**
  * platforms: iPhone, iPad
@@ -7640,7 +7640,7 @@ Ti.App.iOS = {
      */
     scheduleLocalNotification:function(params) {
     }
-}
+};
 
 /**
  * platforms: iPhone, iPad
@@ -7704,7 +7704,7 @@ imposed by the operating system. In particular:</p>
 </ul>
  */
 Ti.App.iOS.BackgroundService = function() {
-}
+};
 Ti.App.iOS.BackgroundService.prototype = {
 
     /**
@@ -7763,13 +7763,13 @@ Ti.App.iOS.BackgroundService.prototype = {
      */
     unregister:function() {
     }
-}
+};
 
 /**
  * platforms: iPhone, iPad
  */
 Ti.App.iOS.LocalNotification = function() {
-}
+};
 Ti.App.iOS.LocalNotification.prototype = {
 
 
@@ -7806,13 +7806,13 @@ Ti.App.iOS.LocalNotification.prototype = {
      */
     removeEventListener:function(name, callback) {
     }
-}
+};
 
 /**
  * platforms: Android, iPhone, iPad
  */
 Ti.Blob = function() {
-}
+};
 Ti.Blob.prototype = {
 
     /**
@@ -8020,13 +8020,13 @@ Ti.Blob.prototype = {
      */
     toString:function() {
     }
-}
+};
 
 /**
  * platforms: Android, iPhone, iPad
  */
 Ti.BlobStream = function() {
-}
+};
 Ti.BlobStream.prototype = {
 
 
@@ -8097,13 +8097,13 @@ Ti.BlobStream.prototype = {
      */
     write:function(buffer) {
     }
-}
+};
 
 /**
  * platforms: Android, iPhone, iPad
  */
 Ti.Buffer = function() {
-}
+};
 Ti.Buffer.prototype = {
 
     /**
@@ -8332,13 +8332,13 @@ Ti.Buffer.prototype = {
      */
     toString:function() {
     }
-}
+};
 
 /**
  * platforms: Android, iPhone, iPad
  */
 Ti.BufferStream = function() {
-}
+};
 Ti.BufferStream.prototype = {
 
 
@@ -8409,7 +8409,7 @@ Ti.BufferStream.prototype = {
      */
     write:function(buffer) {
     }
-}
+};
 
 /**
  * platforms: Android, iPhone, iPad
@@ -8592,7 +8592,7 @@ Throws an Exception if <code>charset</code> is not a valid character set,
      */
     removeEventListener:function(name, callback) {
     }
-}
+};
 
 /**
  * platforms: Android, iPhone, iPad
@@ -8757,13 +8757,13 @@ Ti.Contacts = {
      */
     showContacts:function(cancel, selectedPerson, selectedProperty, animated, fields) {
     }
-}
+};
 
 /**
  * platforms: iPhone, iPad
  */
 Ti.Contacts.Group = function() {
-}
+};
 Ti.Contacts.Group.prototype = {
 
     /**
@@ -8847,14 +8847,14 @@ Ti.Contacts.Group.prototype = {
      */
     sortedMembers:function(sortBy) {
     }
-}
+};
 
 /**
  * platforms: Android, iPhone, iPad
  * @namespace <p>There are two kinds of properties: single value and multivalue.  Single value properties are returned as a direct value, while mutlivalue properties are returned as dictionary objects with keys which represent labels of the property, with values that are arrays of all values in the property which correspond to that label (e.g. {"home" : [address1, address2]})</p>
  */
 Ti.Contacts.Person = function() {
-}
+};
 Ti.Contacts.Person.prototype = {
 
     /**
@@ -9482,7 +9482,7 @@ Ti.Contacts.Person.prototype = {
      */
     setUrl:function(url) {
     }
-}
+};
 
 /**
  * platforms: Android, iPhone, iPad, Mobile Web
@@ -9578,13 +9578,13 @@ Ti.Database = {
      */
     removeEventListener:function(name, callback) {
     }
-}
+};
 
 /**
  * platforms: Android, iPhone, iPad, Mobile Web
  */
 Ti.Database.DB = function() {
-}
+};
 Ti.Database.DB.prototype = {
 
     /**
@@ -9707,13 +9707,13 @@ Ti.Database.DB.prototype = {
      */
     setRowsAffected:function(rowsAffected) {
     }
-}
+};
 
 /**
  * platforms: Android, iPhone, iPad, Mobile Web
  */
 Ti.Database.ResultSet = function() {
-}
+};
 Ti.Database.ResultSet.prototype = {
 
     /**
@@ -9850,13 +9850,13 @@ Ti.Database.ResultSet.prototype = {
      */
     setValidRow:function(validRow) {
     }
-}
+};
 
 /**
  * platforms: Android, iPhone, iPad
  */
 Ti.Event = function() {
-}
+};
 Ti.Event.prototype = {
 
     /**
@@ -9905,7 +9905,7 @@ Ti.Event.prototype = {
      */
     setType:function(type) {
     }
-}
+};
 
 /**
  * platforms: Android, iPhone, iPad
@@ -10368,7 +10368,7 @@ Ti.Facebook = {
      */
     setUid:function(uid) {
     }
-}
+};
 
 /**
  * platforms: Android, iPhone, iPad
@@ -10379,7 +10379,7 @@ session.  For example, if the user is already logged in, this button will show "
 <p>See the examples in the {@link Ti.Facebook} documentation.</p>
  */
 Ti.Facebook.LoginButton = function() {
-}
+};
 Ti.Facebook.LoginButton.prototype = {
 
     /**
@@ -10595,7 +10595,7 @@ One of: 'absolute', 'vertical', or 'horizontal'.</p>
 
     /**
      * <p>Transformation matrix to apply to the view.</p>
-     * @type Ti.UI.2DMatrix|Ti.UI.iOS.3DMatrix
+     * @type Ti.UI.D2Matrix|Ti.UI.iOS.D3Matrix
      * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
      */
     transform:null,
@@ -10919,8 +10919,8 @@ If this argument is not a view, an exception will be raised.</p>
 
     /**
      * <p>Gets the value of the {@link Ti.Facebook.LoginButton.transform} property.</p>
-     * @returns Ti.UI.2DMatrix
-     * @returns Ti.UI.iOS.3DMatrix
+     * @returns Ti.UI.D2Matrix
+     * @returns Ti.UI.iOS.D3Matrix
      * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
      */
     getTransform:function() {
@@ -11209,7 +11209,7 @@ If this argument is not a view, an exception will be raised.</p>
 
     /**
      * <p>Sets the value of the {@link Ti.Facebook.LoginButton.transform} property.</p>
-     * @param {Ti.UI.2DMatrix|Ti.UI.iOS.3DMatrix} transform <p>New value for the property.</p>
+     * @param {Ti.UI.D2Matrix|Ti.UI.iOS.D3Matrix} transform <p>New value for the property.</p>
      * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
      */
     setTransform:function(transform) {
@@ -11255,7 +11255,7 @@ performed asynchronously. If null, it will be performed immediately.</p>
      */
     toImage:function(f) {
     }
-}
+};
 
 /**
  * platforms: Android, iPhone, iPad
@@ -11442,13 +11442,13 @@ Ti.Filesystem = {
      */
     removeEventListener:function(name, callback) {
     }
-}
+};
 
 /**
  * platforms: Android, iPhone, iPad
  */
 Ti.Filesystem.File = function() {
-}
+};
 Ti.Filesystem.File.prototype = {
 
     /**
@@ -11710,13 +11710,13 @@ Ti.Filesystem.File.prototype = {
      */
     writeable:function() {
     }
-}
+};
 
 /**
  * platforms: Android, iPhone, iPad
  */
 Ti.Filesystem.FileStream = function() {
-}
+};
 Ti.Filesystem.FileStream.prototype = {
 
 
@@ -11787,7 +11787,7 @@ Ti.Filesystem.FileStream.prototype = {
      */
     write:function(buffer) {
     }
-}
+};
 
 /**
  * platforms: Android, iPhone, iPad, Mobile Web
@@ -12134,7 +12134,7 @@ Ti.Geolocation = {
      */
     setShowCalibration:function() {
     }
-}
+};
 
 /**
  * platforms: Android, iPhone, iPad, Mobile Web
@@ -12213,7 +12213,7 @@ Ti.Gesture = {
      */
     removeEventListener:function(name, callback) {
     }
-}
+};
 
 /**
  * platforms: Android, iPhone, iPad
@@ -12236,7 +12236,7 @@ Ti.API.info("Bytes read:" + bytesRead);  // should be 11</p>
 Ti.API.info("Bytes read:" + bytesRead);  // should be 5</p>
  */
 Ti.IOStream = function() {
-}
+};
 Ti.IOStream.prototype = {
 
 
@@ -12329,7 +12329,7 @@ Ti.IOStream.prototype = {
      */
     write:function(buffer, offset, length) {
     }
-}
+};
 
 /**
  * platforms: Android, iPhone, iPad
@@ -12467,7 +12467,7 @@ Ti.Locale = {
      */
     setCurrentCountry:function(currentCountry) {
     }
-}
+};
 
 /**
  * platforms: Android, iPhone, iPad
@@ -12566,13 +12566,13 @@ Ti.Map = {
      */
     removeEventListener:function(name, callback) {
     }
-}
+};
 
 /**
  * platforms: Android, iPhone, iPad
  */
 Ti.Map.Annotation = function() {
-}
+};
 Ti.Map.Annotation.prototype = {
 
     /**
@@ -12880,7 +12880,7 @@ Ti.Map.Annotation.prototype = {
      */
     setTitleid:function(titleid) {
     }
-}
+};
 
 /**
  * platforms: Android, iPhone, iPad
@@ -12893,7 +12893,7 @@ to use maps in your application. </p>
 <p>On iPhone, you cannot call any methods on a map view until it has been added to a view.</p>
  */
 Ti.Map.View = function() {
-}
+};
 Ti.Map.View.prototype = {
 
     /**
@@ -13137,7 +13137,7 @@ One of: 'absolute', 'vertical', or 'horizontal'.</p>
 
     /**
      * <p>Transformation matrix to apply to the view.</p>
-     * @type Ti.UI.2DMatrix|Ti.UI.iOS.3DMatrix
+     * @type Ti.UI.D2Matrix|Ti.UI.iOS.D3Matrix
      * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
      */
     transform:null,
@@ -13532,8 +13532,8 @@ If this argument is not a view, an exception will be raised.</p>
 
     /**
      * <p>Gets the value of the {@link Ti.Map.View.transform} property.</p>
-     * @returns Ti.UI.2DMatrix
-     * @returns Ti.UI.iOS.3DMatrix
+     * @returns Ti.UI.D2Matrix
+     * @returns Ti.UI.iOS.D3Matrix
      * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
      */
     getTransform:function() {
@@ -13909,7 +13909,7 @@ If this argument is not a view, an exception will be raised.</p>
 
     /**
      * <p>Sets the value of the {@link Ti.Map.View.transform} property.</p>
-     * @param {Ti.UI.2DMatrix|Ti.UI.iOS.3DMatrix} transform <p>New value for the property.</p>
+     * @param {Ti.UI.D2Matrix|Ti.UI.iOS.D3Matrix} transform <p>New value for the property.</p>
      * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
      */
     setTransform:function(transform) {
@@ -13971,7 +13971,7 @@ performed asynchronously. If null, it will be performed immediately.</p>
      */
     zoom:function(level) {
     }
-}
+};
 
 /**
  * platforms: Android, iPhone, iPad
@@ -15167,7 +15167,7 @@ Ti.Media = {
      */
     vibrate:function() {
     }
-}
+};
 
 /**
  * platforms: Android
@@ -15220,13 +15220,13 @@ Ti.Media.Android = {
      */
     setSystemWallpaper:function(image, scale) {
     }
-}
+};
 
 /**
  * platforms: Android, iPhone, iPad
  */
 Ti.Media.AudioPlayer = function() {
-}
+};
 Ti.Media.AudioPlayer.prototype = {
 
     /**
@@ -15578,13 +15578,13 @@ Ti.Media.AudioPlayer.prototype = {
      */
     stop:function() {
     }
-}
+};
 
 /**
  * platforms: iPhone, iPad
  */
 Ti.Media.AudioRecorder = function() {
-}
+};
 Ti.Media.AudioRecorder.prototype = {
 
     /**
@@ -15757,13 +15757,13 @@ Ti.Media.AudioRecorder.prototype = {
      */
     stop:function() {
     }
-}
+};
 
 /**
  * platforms: iPhone, iPad
  */
 Ti.Media.Item = function() {
-}
+};
 Ti.Media.Item.prototype = {
 
     /**
@@ -16230,13 +16230,13 @@ Ti.Media.Item.prototype = {
      */
     setTitle:function(title) {
     }
-}
+};
 
 /**
  * platforms: iPhone, iPad
  */
 Ti.Media.MusicPlayer = function() {
-}
+};
 Ti.Media.MusicPlayer.prototype = {
 
     /**
@@ -16475,7 +16475,7 @@ Ti.Media.MusicPlayer.prototype = {
      */
     stopSeeking:function() {
     }
-}
+};
 
 /**
  * platforms: Android, iPhone, iPad
@@ -16487,7 +16487,7 @@ player.play();
 </code></pre>
  */
 Ti.Media.Sound = function() {
-}
+};
 Ti.Media.Sound.prototype = {
 
     /**
@@ -16756,13 +16756,13 @@ Ti.Media.Sound.prototype = {
      */
     stop:function() {
     }
-}
+};
 
 /**
  * platforms: Android, iPhone, iPad
  */
 Ti.Media.VideoPlayer = function() {
-}
+};
 Ti.Media.VideoPlayer.prototype = {
 
     /**
@@ -17111,7 +17111,7 @@ One of: 'absolute', 'vertical', or 'horizontal'.</p>
 
     /**
      * <p>Transformation matrix to apply to the view.</p>
-     * @type Ti.UI.2DMatrix|Ti.UI.iOS.3DMatrix
+     * @type Ti.UI.D2Matrix|Ti.UI.iOS.D3Matrix
      * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     transform:null,
@@ -17608,8 +17608,8 @@ If this argument is not a view, an exception will be raised.</p>
 
     /**
      * <p>Gets the value of the {@link Ti.Media.VideoPlayer.transform} property.</p>
-     * @returns Ti.UI.2DMatrix
-     * @returns Ti.UI.iOS.3DMatrix
+     * @returns Ti.UI.D2Matrix
+     * @returns Ti.UI.iOS.D3Matrix
      * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     getTransform:function() {
@@ -18072,7 +18072,7 @@ If this argument is not a view, an exception will be raised.</p>
 
     /**
      * <p>Sets the value of the {@link Ti.Media.VideoPlayer.transform} property.</p>
-     * @param {Ti.UI.2DMatrix|Ti.UI.iOS.3DMatrix} transform <p>New value for the property.</p>
+     * @param {Ti.UI.D2Matrix|Ti.UI.iOS.D3Matrix} transform <p>New value for the property.</p>
      * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     setTransform:function(transform) {
@@ -18151,7 +18151,7 @@ performed asynchronously. If null, it will be performed immediately.</p>
      */
     toImage:function(f) {
     }
-}
+};
 
 /**
  * platforms: Android, iPhone, iPad
@@ -18185,7 +18185,7 @@ Ti.Module = {
      */
     removeEventListener:function(name, callback) {
     }
-}
+};
 
 /**
  * platforms: Android, iPhone, iPad, Mobile Web
@@ -18582,7 +18582,7 @@ Ti.Network = {
      */
     setRemoteNotificationsEnabled:function(remoteNotificationsEnabled) {
     }
-}
+};
 
 /**
  * platforms: iPhone, iPad
@@ -18599,7 +18599,7 @@ a window which uses Bonjour browsing is closed, if you do not want to continue s
 you must call the stop() method.</p>
  */
 Ti.Network.BonjourBrowser = function() {
-}
+};
 Ti.Network.BonjourBrowser.prototype = {
 
     /**
@@ -18712,7 +18712,7 @@ Ti.Network.BonjourBrowser.prototype = {
      */
     stopSearch:function() {
     }
-}
+};
 
 /**
  * platforms: iPhone, iPad
@@ -18731,7 +18731,7 @@ on.  In particular, you may wish to display UI elements indicating background ac
 before beginning resolution.</p>
  */
 Ti.Network.BonjourService = function() {
-}
+};
 Ti.Network.BonjourService.prototype = {
 
     /**
@@ -18899,14 +18899,14 @@ Ti.Network.BonjourService.prototype = {
      */
     stop:function() {
     }
-}
+};
 
 /**
  * platforms: Android, iPhone, iPad, Mobile Web
  * @namespace <p>Mobile web requires cross-domain origin policies to be configured on the web servers in order for cross-domain connections to work.</p>
  */
 Ti.Network.HTTPClient = function() {
-}
+};
 Ti.Network.HTTPClient.prototype = {
 
     /**
@@ -19373,7 +19373,7 @@ Ti.Network.HTTPClient.prototype = {
      */
     setValidatesSecureCertificate:function(validatesSecureCertificate) {
     }
-}
+};
 
 /**
  * platforms: Android, iPhone, iPad
@@ -19451,13 +19451,13 @@ Ti.Network.Socket = {
      */
     removeEventListener:function(name, callback) {
     }
-}
+};
 
 /**
  * platforms: Android, iPhone, iPad
  */
 Ti.Network.Socket.TCP = function() {
-}
+};
 Ti.Network.Socket.TCP.prototype = {
 
     /**
@@ -19692,14 +19692,14 @@ Ti.Network.Socket.TCP.prototype = {
      */
     setTimeout:function(timeout) {
     }
-}
+};
 
 /**
  * platforms: iPhone, iPad, Mobile Web
  * @namespace <p>Sockets are nontrivial; it is recommended that anyone using them be familiar with the basics of BSD sockets.  All sockets use TCP connections, and are asynchronous for read operations, so your program should be ready to receive 'read' events at any point.  Socket references cannot be transferred to socket objects, and vice-versa - socket references are an internal mechanism which is used only to determine which sockets to send data to and read data from.  For listening sockets, it is highly recommended that you use the {@link Ti.Network.INADDR_ANY} constant as the host name.  If a window containing a socket is closed, the socket MUST be closed also unless you intend to continue to receive data, otherwise the socket will consume resources (and potentially cause conflicts with opening the window again, if a listener) until the program is restarted.  Be aware of the differences between the listen() and connect() functions; attempting to use one when you mean the other may result in errors, unpredictable behavior, or both.</p>
  */
 Ti.Network.TCPSocket = function() {
-}
+};
 Ti.Network.TCPSocket.prototype = {
 
     /**
@@ -19874,7 +19874,7 @@ Ti.Network.TCPSocket.prototype = {
      */
     write:function(data, sendTo) {
     }
-}
+};
 
 /**
  * platforms: Android, iPhone, iPad, Mobile Web
@@ -20253,14 +20253,14 @@ Ti.Platform = {
      */
     removeEventListener:function(name, callback) {
     }
-}
+};
 
 /**
  * platforms: Android, iPhone, iPad, Mobile Web
  * @namespace <p>On iPhone, the <code>density</code> property will return <code>high</code> for retina devices and <code>medium</code> otherwise, the <code>dpi</code> property will return <code>160</code>. For iPad, the <code>density</code> property will return <code>medium</code> and the <code>dpi</code> property will return <code>130</code>.  For Android, these values are device specific.</p>
  */
 Ti.Platform.DisplayCaps = function() {
-}
+};
 Ti.Platform.DisplayCaps.prototype = {
 
     /**
@@ -20382,13 +20382,13 @@ Ti.Platform.DisplayCaps.prototype = {
      */
     setPlatformWidth:function(platformWidth) {
     }
-}
+};
 
 /**
  * platforms: Android, iPhone, iPad, Mobile Web
  */
 Ti.Proxy = function() {
-}
+};
 Ti.Proxy.prototype = {
 
 
@@ -20418,7 +20418,7 @@ Ti.Proxy.prototype = {
      */
     removeEventListener:function(name, callback) {
     }
-}
+};
 
 /**
  * platforms: Android, iPhone, iPad
@@ -20588,7 +20588,7 @@ Ti.Stream = {
      */
     writeStream:function(inputStream, outputStream, maxChunkSize, resultsCallback) {
     }
-}
+};
 
 /**
  * platforms: Android, iPhone, iPad, Mobile Web
@@ -21365,18 +21365,18 @@ Ti.UI = {
     },
 
     /**
-     * <p>Create and return an instance of {@link Ti.UI.2DMatrix}.</p>
-     * @param {Dictionary<Ti.UI.2DMatrix>} parameters <p>(Optional) A dictionary object with properties as defined in {@link Ti.UI.2DMatrix}.</p>
-     * @returns Ti.UI.2DMatrix
+     * <p>Create and return an instance of {@link Ti.UI.D2Matrix}.</p>
+     * @param {Dictionary<Ti.UI.D2Matrix>} parameters <p>(Optional) A dictionary object with properties as defined in {@link Ti.UI.D2Matrix}.</p>
+     * @returns Ti.UI.D2Matrix
      * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     create2DMatrix:function(parameters) {
     },
 
     /**
-     * <p>Create and return an instance of {@link Ti.UI.3DMatrix}.</p>
-     * @param {Dictionary<Ti.UI.3DMatrix>} parameters <p>(Optional) A dictionary object with properties as defined in {@link Ti.UI.3DMatrix}.</p>
-     * @returns Ti.UI.3DMatrix
+     * <p>Create and return an instance of {@link Ti.UI.D3Matrix}.</p>
+     * @param {Dictionary<Ti.UI.D3Matrix>} parameters <p>(Optional) A dictionary object with properties as defined in {@link Ti.UI.D3Matrix}.</p>
+     * @returns Ti.UI.D3Matrix
      * @since 0.9 (iPhone), 0.9 (iPad)
      */
     create3DMatrix:function(parameters) {
@@ -21760,16 +21760,16 @@ Ti.UI = {
      */
     setOrientation:function(orientation) {
     }
-}
+};
 
 /**
  * platforms: Android, iPhone, iPad
  * @namespace <p>The 2DMatrix is created by {@link Ti.UI.create2DMatrix}. A 2D matrix is used to rotate, scale, translate, or skew the objects in a two-dimensional space. A 2D matrix is represented by a 3 by 3 matrix. Because the third column is always (0,0,1), the data structure contains values for only the first two columns.
 You create an <code>identity matrix</code> by creating a 2D Matrix with an empty constructor.</p>
  */
-Ti.UI.2DMatrix = function() {
-}
-Ti.UI.2DMatrix.prototype = {
+Ti.UI.D2Matrix = function() {
+};
+Ti.UI.D2Matrix.prototype = {
 
     /**
      * <p>The entry at position [1,1] in the matrix.</p>
@@ -21833,7 +21833,7 @@ Ti.UI.2DMatrix.prototype = {
     },
 
     /**
-     * <p>Gets the value of the {@link Ti.UI.2DMatrix.a} property.</p>
+     * <p>Gets the value of the {@link Ti.UI.D2Matrix.a} property.</p>
      * @returns Number
      * @since 0.9 (iPhone), 0.9 (iPad)
      */
@@ -21841,7 +21841,7 @@ Ti.UI.2DMatrix.prototype = {
     },
 
     /**
-     * <p>Gets the value of the {@link Ti.UI.2DMatrix.b} property.</p>
+     * <p>Gets the value of the {@link Ti.UI.D2Matrix.b} property.</p>
      * @returns Number
      * @since 0.9 (iPhone), 0.9 (iPad)
      */
@@ -21849,7 +21849,7 @@ Ti.UI.2DMatrix.prototype = {
     },
 
     /**
-     * <p>Gets the value of the {@link Ti.UI.2DMatrix.c} property.</p>
+     * <p>Gets the value of the {@link Ti.UI.D2Matrix.c} property.</p>
      * @returns Number
      * @since 0.9 (iPhone), 0.9 (iPad)
      */
@@ -21857,7 +21857,7 @@ Ti.UI.2DMatrix.prototype = {
     },
 
     /**
-     * <p>Gets the value of the {@link Ti.UI.2DMatrix.d} property.</p>
+     * <p>Gets the value of the {@link Ti.UI.D2Matrix.d} property.</p>
      * @returns Number
      * @since 0.9 (iPhone), 0.9 (iPad)
      */
@@ -21865,7 +21865,7 @@ Ti.UI.2DMatrix.prototype = {
     },
 
     /**
-     * <p>Gets the value of the {@link Ti.UI.2DMatrix.tx} property.</p>
+     * <p>Gets the value of the {@link Ti.UI.D2Matrix.tx} property.</p>
      * @returns Number
      * @since 0.9 (iPhone), 0.9 (iPad)
      */
@@ -21873,7 +21873,7 @@ Ti.UI.2DMatrix.prototype = {
     },
 
     /**
-     * <p>Gets the value of the {@link Ti.UI.2DMatrix.ty} property.</p>
+     * <p>Gets the value of the {@link Ti.UI.D2Matrix.ty} property.</p>
      * @returns Number
      * @since 0.9 (iPhone), 0.9 (iPad)
      */
@@ -21925,7 +21925,7 @@ Ti.UI.2DMatrix.prototype = {
     },
 
     /**
-     * <p>Sets the value of the {@link Ti.UI.2DMatrix.a} property.</p>
+     * <p>Sets the value of the {@link Ti.UI.D2Matrix.a} property.</p>
      * @param {Number} a <p>New value for the property.</p>
      * @since 0.9 (iPhone), 0.9 (iPad)
      */
@@ -21933,7 +21933,7 @@ Ti.UI.2DMatrix.prototype = {
     },
 
     /**
-     * <p>Sets the value of the {@link Ti.UI.2DMatrix.b} property.</p>
+     * <p>Sets the value of the {@link Ti.UI.D2Matrix.b} property.</p>
      * @param {Number} b <p>New value for the property.</p>
      * @since 0.9 (iPhone), 0.9 (iPad)
      */
@@ -21941,7 +21941,7 @@ Ti.UI.2DMatrix.prototype = {
     },
 
     /**
-     * <p>Sets the value of the {@link Ti.UI.2DMatrix.c} property.</p>
+     * <p>Sets the value of the {@link Ti.UI.D2Matrix.c} property.</p>
      * @param {Number} c <p>New value for the property.</p>
      * @since 0.9 (iPhone), 0.9 (iPad)
      */
@@ -21949,7 +21949,7 @@ Ti.UI.2DMatrix.prototype = {
     },
 
     /**
-     * <p>Sets the value of the {@link Ti.UI.2DMatrix.d} property.</p>
+     * <p>Sets the value of the {@link Ti.UI.D2Matrix.d} property.</p>
      * @param {Number} d <p>New value for the property.</p>
      * @since 0.9 (iPhone), 0.9 (iPad)
      */
@@ -21957,7 +21957,7 @@ Ti.UI.2DMatrix.prototype = {
     },
 
     /**
-     * <p>Sets the value of the {@link Ti.UI.2DMatrix.tx} property.</p>
+     * <p>Sets the value of the {@link Ti.UI.D2Matrix.tx} property.</p>
      * @param {Number} tx <p>New value for the property.</p>
      * @since 0.9 (iPhone), 0.9 (iPad)
      */
@@ -21965,7 +21965,7 @@ Ti.UI.2DMatrix.prototype = {
     },
 
     /**
-     * <p>Sets the value of the {@link Ti.UI.2DMatrix.ty} property.</p>
+     * <p>Sets the value of the {@link Ti.UI.D2Matrix.ty} property.</p>
      * @param {Number} ty <p>New value for the property.</p>
      * @since 0.9 (iPhone), 0.9 (iPad)
      */
@@ -21981,7 +21981,7 @@ Ti.UI.2DMatrix.prototype = {
      */
     translate:function(tx, ty) {
     }
-}
+};
 
 /**
  * platforms: iPhone, iPad
@@ -21992,9 +21992,9 @@ space. A 3D matrix is represented by a 4 by 4 matrix. </p>
 <p>You create an <code>identity matrix</code> by creating a 3D Matrix with an empty
 constructor.</p>
  */
-Ti.UI.3DMatrix = function() {
-}
-Ti.UI.3DMatrix.prototype = {
+Ti.UI.D3Matrix = function() {
+};
+Ti.UI.D3Matrix.prototype = {
 
     /**
      * <p>The entry at position [1,1] in the matrix.</p>
@@ -22128,7 +22128,7 @@ Ti.UI.3DMatrix.prototype = {
     },
 
     /**
-     * <p>Gets the value of the {@link Ti.UI.3DMatrix.m11} property.</p>
+     * <p>Gets the value of the {@link Ti.UI.D3Matrix.m11} property.</p>
      * @returns Number
      * @since 0.9 (iPhone), 0.9 (iPad)
      */
@@ -22136,7 +22136,7 @@ Ti.UI.3DMatrix.prototype = {
     },
 
     /**
-     * <p>Gets the value of the {@link Ti.UI.3DMatrix.m12} property.</p>
+     * <p>Gets the value of the {@link Ti.UI.D3Matrix.m12} property.</p>
      * @returns Number
      * @since 0.9 (iPhone), 0.9 (iPad)
      */
@@ -22144,7 +22144,7 @@ Ti.UI.3DMatrix.prototype = {
     },
 
     /**
-     * <p>Gets the value of the {@link Ti.UI.3DMatrix.m13} property.</p>
+     * <p>Gets the value of the {@link Ti.UI.D3Matrix.m13} property.</p>
      * @returns Number
      * @since 0.9 (iPhone), 0.9 (iPad)
      */
@@ -22152,7 +22152,7 @@ Ti.UI.3DMatrix.prototype = {
     },
 
     /**
-     * <p>Gets the value of the {@link Ti.UI.3DMatrix.m14} property.</p>
+     * <p>Gets the value of the {@link Ti.UI.D3Matrix.m14} property.</p>
      * @returns Number
      * @since 0.9 (iPhone), 0.9 (iPad)
      */
@@ -22160,7 +22160,7 @@ Ti.UI.3DMatrix.prototype = {
     },
 
     /**
-     * <p>Gets the value of the {@link Ti.UI.3DMatrix.m21} property.</p>
+     * <p>Gets the value of the {@link Ti.UI.D3Matrix.m21} property.</p>
      * @returns Number
      * @since 0.9 (iPhone), 0.9 (iPad)
      */
@@ -22168,7 +22168,7 @@ Ti.UI.3DMatrix.prototype = {
     },
 
     /**
-     * <p>Gets the value of the {@link Ti.UI.3DMatrix.m22} property.</p>
+     * <p>Gets the value of the {@link Ti.UI.D3Matrix.m22} property.</p>
      * @returns Number
      * @since 0.9 (iPhone), 0.9 (iPad)
      */
@@ -22176,7 +22176,7 @@ Ti.UI.3DMatrix.prototype = {
     },
 
     /**
-     * <p>Gets the value of the {@link Ti.UI.3DMatrix.m23} property.</p>
+     * <p>Gets the value of the {@link Ti.UI.D3Matrix.m23} property.</p>
      * @returns Number
      * @since 0.9 (iPhone), 0.9 (iPad)
      */
@@ -22184,7 +22184,7 @@ Ti.UI.3DMatrix.prototype = {
     },
 
     /**
-     * <p>Gets the value of the {@link Ti.UI.3DMatrix.m24} property.</p>
+     * <p>Gets the value of the {@link Ti.UI.D3Matrix.m24} property.</p>
      * @returns Number
      * @since 0.9 (iPhone), 0.9 (iPad)
      */
@@ -22192,7 +22192,7 @@ Ti.UI.3DMatrix.prototype = {
     },
 
     /**
-     * <p>Gets the value of the {@link Ti.UI.3DMatrix.m31} property.</p>
+     * <p>Gets the value of the {@link Ti.UI.D3Matrix.m31} property.</p>
      * @returns Number
      * @since 0.9 (iPhone), 0.9 (iPad)
      */
@@ -22200,7 +22200,7 @@ Ti.UI.3DMatrix.prototype = {
     },
 
     /**
-     * <p>Gets the value of the {@link Ti.UI.3DMatrix.m32} property.</p>
+     * <p>Gets the value of the {@link Ti.UI.D3Matrix.m32} property.</p>
      * @returns Number
      * @since 0.9 (iPhone), 0.9 (iPad)
      */
@@ -22208,7 +22208,7 @@ Ti.UI.3DMatrix.prototype = {
     },
 
     /**
-     * <p>Gets the value of the {@link Ti.UI.3DMatrix.m33} property.</p>
+     * <p>Gets the value of the {@link Ti.UI.D3Matrix.m33} property.</p>
      * @returns Number
      * @since 0.9 (iPhone), 0.9 (iPad)
      */
@@ -22216,7 +22216,7 @@ Ti.UI.3DMatrix.prototype = {
     },
 
     /**
-     * <p>Gets the value of the {@link Ti.UI.3DMatrix.m34} property.</p>
+     * <p>Gets the value of the {@link Ti.UI.D3Matrix.m34} property.</p>
      * @returns Number
      * @since 0.9 (iPhone), 0.9 (iPad)
      */
@@ -22224,7 +22224,7 @@ Ti.UI.3DMatrix.prototype = {
     },
 
     /**
-     * <p>Gets the value of the {@link Ti.UI.3DMatrix.m41} property.</p>
+     * <p>Gets the value of the {@link Ti.UI.D3Matrix.m41} property.</p>
      * @returns Number
      * @since 0.9 (iPhone), 0.9 (iPad)
      */
@@ -22232,7 +22232,7 @@ Ti.UI.3DMatrix.prototype = {
     },
 
     /**
-     * <p>Gets the value of the {@link Ti.UI.3DMatrix.m42} property.</p>
+     * <p>Gets the value of the {@link Ti.UI.D3Matrix.m42} property.</p>
      * @returns Number
      * @since 0.9 (iPhone), 0.9 (iPad)
      */
@@ -22240,7 +22240,7 @@ Ti.UI.3DMatrix.prototype = {
     },
 
     /**
-     * <p>Gets the value of the {@link Ti.UI.3DMatrix.m43} property.</p>
+     * <p>Gets the value of the {@link Ti.UI.D3Matrix.m43} property.</p>
      * @returns Number
      * @since 0.9 (iPhone), 0.9 (iPad)
      */
@@ -22248,7 +22248,7 @@ Ti.UI.3DMatrix.prototype = {
     },
 
     /**
-     * <p>Gets the value of the {@link Ti.UI.3DMatrix.m44} property.</p>
+     * <p>Gets the value of the {@link Ti.UI.D3Matrix.m44} property.</p>
      * @returns Number
      * @since 0.9 (iPhone), 0.9 (iPad)
      */
@@ -22264,8 +22264,8 @@ Ti.UI.3DMatrix.prototype = {
 
     /**
      * <p>Returns a matrix constructed by combining two existing matrix.</p>
-     * @param {Ti.UI.3DMatrix} t2 <p>The second matrix. This matrix is concatenated to the matrix instance against which the function is invoked.  The result of this function is the first matrix multiplied by the second matrix. You might perform several multiplications in order to create a single matrix that contains the cumulative effects of several transformations. Note that matrix operations are not commutative - the order in which you concatenate matrices is important. That is, the result of multiplying matrix t1 by matrix t2 does not necessarily equal the result of multiplying matrix t2 by matrix t1.</p>
-     * @returns Ti.UI.3DMatrix
+     * @param {Ti.UI.D3Matrix} t2 <p>The second matrix. This matrix is concatenated to the matrix instance against which the function is invoked.  The result of this function is the first matrix multiplied by the second matrix. You might perform several multiplications in order to create a single matrix that contains the cumulative effects of several transformations. Note that matrix operations are not commutative - the order in which you concatenate matrices is important. That is, the result of multiplying matrix t1 by matrix t2 does not necessarily equal the result of multiplying matrix t2 by matrix t1.</p>
+     * @returns Ti.UI.D3Matrix
      * @since 0.9 (iPhone), 0.9 (iPad)
      */
     multiply:function(t2) {
@@ -22286,7 +22286,7 @@ Ti.UI.3DMatrix.prototype = {
      * @param {Number} x <p>The x part of the vector about which to rotate</p>
      * @param {Number} y <p>The y part of the vector about which to rotate</p>
      * @param {Number} z <p>The z part of the vector about which to rotate</p>
-     * @returns Ti.UI.3DMatrix
+     * @returns Ti.UI.D3Matrix
      * @since 0.9 (iPhone), 0.9 (iPad)
      */
     rotate:function(angle, x, y, z) {
@@ -22297,14 +22297,14 @@ Ti.UI.3DMatrix.prototype = {
      * @param {Number} sx <p>The value by which to scale x values of the matrix</p>
      * @param {Number} sy <p>The value by which to scale y values of the matrix</p>
      * @param {Number} sz <p>The value by which to scale z values of the matrix</p>
-     * @returns Ti.UI.3DMatrix
+     * @returns Ti.UI.D3Matrix
      * @since 0.9 (iPhone), 0.9 (iPad)
      */
     scale:function(sx, sy, sz) {
     },
 
     /**
-     * <p>Sets the value of the {@link Ti.UI.3DMatrix.m11} property.</p>
+     * <p>Sets the value of the {@link Ti.UI.D3Matrix.m11} property.</p>
      * @param {Number} m11 <p>New value for the property.</p>
      * @since 0.9 (iPhone), 0.9 (iPad)
      */
@@ -22312,7 +22312,7 @@ Ti.UI.3DMatrix.prototype = {
     },
 
     /**
-     * <p>Sets the value of the {@link Ti.UI.3DMatrix.m12} property.</p>
+     * <p>Sets the value of the {@link Ti.UI.D3Matrix.m12} property.</p>
      * @param {Number} m12 <p>New value for the property.</p>
      * @since 0.9 (iPhone), 0.9 (iPad)
      */
@@ -22320,7 +22320,7 @@ Ti.UI.3DMatrix.prototype = {
     },
 
     /**
-     * <p>Sets the value of the {@link Ti.UI.3DMatrix.m13} property.</p>
+     * <p>Sets the value of the {@link Ti.UI.D3Matrix.m13} property.</p>
      * @param {Number} m13 <p>New value for the property.</p>
      * @since 0.9 (iPhone), 0.9 (iPad)
      */
@@ -22328,7 +22328,7 @@ Ti.UI.3DMatrix.prototype = {
     },
 
     /**
-     * <p>Sets the value of the {@link Ti.UI.3DMatrix.m14} property.</p>
+     * <p>Sets the value of the {@link Ti.UI.D3Matrix.m14} property.</p>
      * @param {Number} m14 <p>New value for the property.</p>
      * @since 0.9 (iPhone), 0.9 (iPad)
      */
@@ -22336,7 +22336,7 @@ Ti.UI.3DMatrix.prototype = {
     },
 
     /**
-     * <p>Sets the value of the {@link Ti.UI.3DMatrix.m21} property.</p>
+     * <p>Sets the value of the {@link Ti.UI.D3Matrix.m21} property.</p>
      * @param {Number} m21 <p>New value for the property.</p>
      * @since 0.9 (iPhone), 0.9 (iPad)
      */
@@ -22344,7 +22344,7 @@ Ti.UI.3DMatrix.prototype = {
     },
 
     /**
-     * <p>Sets the value of the {@link Ti.UI.3DMatrix.m22} property.</p>
+     * <p>Sets the value of the {@link Ti.UI.D3Matrix.m22} property.</p>
      * @param {Number} m22 <p>New value for the property.</p>
      * @since 0.9 (iPhone), 0.9 (iPad)
      */
@@ -22352,7 +22352,7 @@ Ti.UI.3DMatrix.prototype = {
     },
 
     /**
-     * <p>Sets the value of the {@link Ti.UI.3DMatrix.m23} property.</p>
+     * <p>Sets the value of the {@link Ti.UI.D3Matrix.m23} property.</p>
      * @param {Number} m23 <p>New value for the property.</p>
      * @since 0.9 (iPhone), 0.9 (iPad)
      */
@@ -22360,7 +22360,7 @@ Ti.UI.3DMatrix.prototype = {
     },
 
     /**
-     * <p>Sets the value of the {@link Ti.UI.3DMatrix.m24} property.</p>
+     * <p>Sets the value of the {@link Ti.UI.D3Matrix.m24} property.</p>
      * @param {Number} m24 <p>New value for the property.</p>
      * @since 0.9 (iPhone), 0.9 (iPad)
      */
@@ -22368,7 +22368,7 @@ Ti.UI.3DMatrix.prototype = {
     },
 
     /**
-     * <p>Sets the value of the {@link Ti.UI.3DMatrix.m31} property.</p>
+     * <p>Sets the value of the {@link Ti.UI.D3Matrix.m31} property.</p>
      * @param {Number} m31 <p>New value for the property.</p>
      * @since 0.9 (iPhone), 0.9 (iPad)
      */
@@ -22376,7 +22376,7 @@ Ti.UI.3DMatrix.prototype = {
     },
 
     /**
-     * <p>Sets the value of the {@link Ti.UI.3DMatrix.m32} property.</p>
+     * <p>Sets the value of the {@link Ti.UI.D3Matrix.m32} property.</p>
      * @param {Number} m32 <p>New value for the property.</p>
      * @since 0.9 (iPhone), 0.9 (iPad)
      */
@@ -22384,7 +22384,7 @@ Ti.UI.3DMatrix.prototype = {
     },
 
     /**
-     * <p>Sets the value of the {@link Ti.UI.3DMatrix.m33} property.</p>
+     * <p>Sets the value of the {@link Ti.UI.D3Matrix.m33} property.</p>
      * @param {Number} m33 <p>New value for the property.</p>
      * @since 0.9 (iPhone), 0.9 (iPad)
      */
@@ -22392,7 +22392,7 @@ Ti.UI.3DMatrix.prototype = {
     },
 
     /**
-     * <p>Sets the value of the {@link Ti.UI.3DMatrix.m34} property.</p>
+     * <p>Sets the value of the {@link Ti.UI.D3Matrix.m34} property.</p>
      * @param {Number} m34 <p>New value for the property.</p>
      * @since 0.9 (iPhone), 0.9 (iPad)
      */
@@ -22400,7 +22400,7 @@ Ti.UI.3DMatrix.prototype = {
     },
 
     /**
-     * <p>Sets the value of the {@link Ti.UI.3DMatrix.m41} property.</p>
+     * <p>Sets the value of the {@link Ti.UI.D3Matrix.m41} property.</p>
      * @param {Number} m41 <p>New value for the property.</p>
      * @since 0.9 (iPhone), 0.9 (iPad)
      */
@@ -22408,7 +22408,7 @@ Ti.UI.3DMatrix.prototype = {
     },
 
     /**
-     * <p>Sets the value of the {@link Ti.UI.3DMatrix.m42} property.</p>
+     * <p>Sets the value of the {@link Ti.UI.D3Matrix.m42} property.</p>
      * @param {Number} m42 <p>New value for the property.</p>
      * @since 0.9 (iPhone), 0.9 (iPad)
      */
@@ -22416,7 +22416,7 @@ Ti.UI.3DMatrix.prototype = {
     },
 
     /**
-     * <p>Sets the value of the {@link Ti.UI.3DMatrix.m43} property.</p>
+     * <p>Sets the value of the {@link Ti.UI.D3Matrix.m43} property.</p>
      * @param {Number} m43 <p>New value for the property.</p>
      * @since 0.9 (iPhone), 0.9 (iPad)
      */
@@ -22424,7 +22424,7 @@ Ti.UI.3DMatrix.prototype = {
     },
 
     /**
-     * <p>Sets the value of the {@link Ti.UI.3DMatrix.m44} property.</p>
+     * <p>Sets the value of the {@link Ti.UI.D3Matrix.m44} property.</p>
      * @param {Number} m44 <p>New value for the property.</p>
      * @since 0.9 (iPhone), 0.9 (iPad)
      */
@@ -22436,12 +22436,12 @@ Ti.UI.3DMatrix.prototype = {
      * @param {Number} tx <p>The value by which to move x values with the matrix</p>
      * @param {Number} ty <p>The value by which to move y values with the matrix</p>
      * @param {Number} tz <p>The value by which to move z values with the matrix</p>
-     * @returns Ti.UI.3DMatrix
+     * @returns Ti.UI.D3Matrix
      * @since 0.9 (iPhone), 0.9 (iPad)
      */
     translate:function(tx, ty, tz) {
     }
-}
+};
 
 /**
  * platforms: Android, iPhone, iPad, Mobile Web
@@ -22484,7 +22484,7 @@ actInd.show();
 </code></pre>
  */
 Ti.UI.ActivityIndicator = function() {
-}
+};
 Ti.UI.ActivityIndicator.prototype = {
 
     /**
@@ -22643,7 +22643,7 @@ Ti.UI.ActivityIndicator.prototype = {
      */
     show:function() {
     }
-}
+};
 
 /**
  * platforms: Android, iPhone, iPad, Mobile Web
@@ -22664,7 +22664,7 @@ alertDialog.show();
 </code></pre>
  */
 Ti.UI.AlertDialog = function() {
-}
+};
 Ti.UI.AlertDialog.prototype = {
 
     /**
@@ -22867,7 +22867,7 @@ Ti.UI.AlertDialog.prototype = {
      */
     show:function() {
     }
-}
+};
 
 /**
  * platforms: Android
@@ -23153,7 +23153,7 @@ Ti.UI.Android = {
      */
     removeEventListener:function(name, callback) {
     }
-}
+};
 
 /**
  * platforms: Android, iPhone, iPad
@@ -23176,7 +23176,7 @@ view.animate(animation);
 </code></pre>
  */
 Ti.UI.Animation = function() {
-}
+};
 Ti.UI.Animation.prototype = {
 
     /**
@@ -23666,7 +23666,7 @@ Ti.UI.Animation.prototype = {
      */
     setZIndex:function(zIndex) {
     }
-}
+};
 
 /**
  * platforms: Android, iPhone, iPad, Mobile Web
@@ -23685,7 +23685,7 @@ button.addEventListener('click',function(e)
 });</p>
  */
 Ti.UI.Button = function() {
-}
+};
 Ti.UI.Button.prototype = {
 
     /**
@@ -23950,7 +23950,7 @@ One of: 'absolute', 'vertical', or 'horizontal'.</p>
 
     /**
      * <p>Transformation matrix to apply to the view.</p>
-     * @type Ti.UI.2DMatrix|Ti.UI.iOS.3DMatrix
+     * @type Ti.UI.D2Matrix|Ti.UI.iOS.D3Matrix
      * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
      */
     transform:null,
@@ -24330,8 +24330,8 @@ If this argument is not a view, an exception will be raised.</p>
 
     /**
      * <p>Gets the value of the {@link Ti.UI.Button.transform} property.</p>
-     * @returns Ti.UI.2DMatrix
-     * @returns Ti.UI.iOS.3DMatrix
+     * @returns Ti.UI.D2Matrix
+     * @returns Ti.UI.iOS.D3Matrix
      * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
      */
     getTransform:function() {
@@ -24676,7 +24676,7 @@ If this argument is not a view, an exception will be raised.</p>
 
     /**
      * <p>Sets the value of the {@link Ti.UI.Button.transform} property.</p>
-     * @param {Ti.UI.2DMatrix|Ti.UI.iOS.3DMatrix} transform <p>New value for the property.</p>
+     * @param {Ti.UI.D2Matrix|Ti.UI.iOS.D3Matrix} transform <p>New value for the property.</p>
      * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
      */
     setTransform:function(transform) {
@@ -24722,7 +24722,7 @@ performed asynchronously. If null, it will be performed immediately.</p>
      */
     toImage:function(f) {
     }
-}
+};
 
 /**
  * platforms: iPhone, iPad, Mobile Web
@@ -24740,7 +24740,7 @@ performed asynchronously. If null, it will be performed immediately.</p>
 win.add(bb1);</p>
  */
 Ti.UI.ButtonBar = function() {
-}
+};
 Ti.UI.ButtonBar.prototype = {
 
     /**
@@ -24970,7 +24970,7 @@ One of: 'absolute', 'vertical', or 'horizontal'.</p>
 
     /**
      * <p>Transformation matrix to apply to the view.</p>
-     * @type Ti.UI.2DMatrix|Ti.UI.iOS.3DMatrix
+     * @type Ti.UI.D2Matrix|Ti.UI.iOS.D3Matrix
      * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
      */
     transform:null,
@@ -25310,8 +25310,8 @@ If this argument is not a view, an exception will be raised.</p>
 
     /**
      * <p>Gets the value of the {@link Ti.UI.ButtonBar.transform} property.</p>
-     * @returns Ti.UI.2DMatrix
-     * @returns Ti.UI.iOS.3DMatrix
+     * @returns Ti.UI.D2Matrix
+     * @returns Ti.UI.iOS.D3Matrix
      * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
      */
     getTransform:function() {
@@ -25616,7 +25616,7 @@ If this argument is not a view, an exception will be raised.</p>
 
     /**
      * <p>Sets the value of the {@link Ti.UI.ButtonBar.transform} property.</p>
-     * @param {Ti.UI.2DMatrix|Ti.UI.iOS.3DMatrix} transform <p>New value for the property.</p>
+     * @param {Ti.UI.D2Matrix|Ti.UI.iOS.D3Matrix} transform <p>New value for the property.</p>
      * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
      */
     setTransform:function(transform) {
@@ -25662,7 +25662,7 @@ performed asynchronously. If null, it will be performed immediately.</p>
      */
     toImage:function(f) {
     }
-}
+};
 
 /**
  * platforms: Android, iPhone, iPad, Mobile Web
@@ -25775,13 +25775,13 @@ Ti.UI.Clipboard = {
      */
     setText:function(text) {
     }
-}
+};
 
 /**
  * platforms: iPhone, iPad
  */
 Ti.UI.DashboardItem = function() {
-}
+};
 Ti.UI.DashboardItem.prototype = {
 
     /**
@@ -25903,13 +25903,13 @@ Ti.UI.DashboardItem.prototype = {
      */
     setSelectedImage:function(selectedImage) {
     }
-}
+};
 
 /**
  * platforms: iPhone, iPad
  */
 Ti.UI.DashboardView = function() {
-}
+};
 Ti.UI.DashboardView.prototype = {
 
     /**
@@ -26125,7 +26125,7 @@ One of: 'absolute', 'vertical', or 'horizontal'.</p>
 
     /**
      * <p>Transformation matrix to apply to the view.</p>
-     * @type Ti.UI.2DMatrix|Ti.UI.iOS.3DMatrix
+     * @type Ti.UI.D2Matrix|Ti.UI.iOS.D3Matrix
      * @since 1.2 (iPhone), 1.2 (iPad)
      */
     transform:null,
@@ -26456,8 +26456,8 @@ If this argument is not a view, an exception will be raised.</p>
 
     /**
      * <p>Gets the value of the {@link Ti.UI.DashboardView.transform} property.</p>
-     * @returns Ti.UI.2DMatrix
-     * @returns Ti.UI.iOS.3DMatrix
+     * @returns Ti.UI.D2Matrix
+     * @returns Ti.UI.iOS.D3Matrix
      * @since 1.2 (iPhone), 1.2 (iPad)
      */
     getTransform:function() {
@@ -26754,7 +26754,7 @@ If this argument is not a view, an exception will be raised.</p>
 
     /**
      * <p>Sets the value of the {@link Ti.UI.DashboardView.transform} property.</p>
-     * @param {Ti.UI.2DMatrix|Ti.UI.iOS.3DMatrix} transform <p>New value for the property.</p>
+     * @param {Ti.UI.D2Matrix|Ti.UI.iOS.D3Matrix} transform <p>New value for the property.</p>
      * @since 1.2 (iPhone), 1.2 (iPad)
      */
     setTransform:function(transform) {
@@ -26822,7 +26822,7 @@ performed asynchronously. If null, it will be performed immediately.</p>
      */
     toImage:function(f) {
     }
-}
+};
 
 /**
  * platforms: Android, iPhone, iPad
@@ -26839,7 +26839,7 @@ emailDialog.open();
 </code></pre>
  */
 Ti.UI.EmailDialog = function() {
-}
+};
 Ti.UI.EmailDialog.prototype = {
 
     /**
@@ -27081,7 +27081,7 @@ Ti.UI.EmailDialog.prototype = {
      */
     setToRecipients:function(toRecipients) {
     }
-}
+};
 
 /**
  * platforms: Android, iPhone, iPad, Mobile Web
@@ -27096,7 +27096,7 @@ view.add(image);
 </code></pre>
  */
 Ti.UI.ImageView = function() {
-}
+};
 Ti.UI.ImageView.prototype = {
 
     /**
@@ -27398,7 +27398,7 @@ One of: 'absolute', 'vertical', or 'horizontal'.</p>
 
     /**
      * <p>Transformation matrix to apply to the view.</p>
-     * @type Ti.UI.2DMatrix|Ti.UI.iOS.3DMatrix
+     * @type Ti.UI.D2Matrix|Ti.UI.iOS.D3Matrix
      * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     transform:null,
@@ -27827,8 +27827,8 @@ If this argument is not a view, an exception will be raised.</p>
 
     /**
      * <p>Gets the value of the {@link Ti.UI.ImageView.transform} property.</p>
-     * @returns Ti.UI.2DMatrix
-     * @returns Ti.UI.iOS.3DMatrix
+     * @returns Ti.UI.D2Matrix
+     * @returns Ti.UI.iOS.D3Matrix
      * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     getTransform:function() {
@@ -28212,7 +28212,7 @@ If this argument is not a view, an exception will be raised.</p>
 
     /**
      * <p>Sets the value of the {@link Ti.UI.ImageView.transform} property.</p>
-     * @param {Ti.UI.2DMatrix|Ti.UI.iOS.3DMatrix} transform <p>New value for the property.</p>
+     * @param {Ti.UI.D2Matrix|Ti.UI.iOS.D3Matrix} transform <p>New value for the property.</p>
      * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     setTransform:function(transform) {
@@ -28287,7 +28287,7 @@ performed asynchronously. If null, it will be performed immediately.</p>
      */
     toImage:function(f) {
     }
-}
+};
 
 /**
  * platforms: Android, iPhone, iPad, Mobile Web
@@ -28308,7 +28308,7 @@ performed asynchronously. If null, it will be performed immediately.</p>
 </code></pre>
  */
 Ti.UI.Label = function() {
-}
+};
 Ti.UI.Label.prototype = {
 
     /**
@@ -28629,7 +28629,7 @@ One of: 'absolute', 'vertical', or 'horizontal'.</p>
 
     /**
      * <p>Transformation matrix to apply to the view.</p>
-     * @type Ti.UI.2DMatrix|Ti.UI.iOS.3DMatrix
+     * @type Ti.UI.D2Matrix|Ti.UI.iOS.D3Matrix
      * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
      */
     transform:null,
@@ -29081,8 +29081,8 @@ If this argument is not a view, an exception will be raised.</p>
 
     /**
      * <p>Gets the value of the {@link Ti.UI.Label.transform} property.</p>
-     * @returns Ti.UI.2DMatrix
-     * @returns Ti.UI.iOS.3DMatrix
+     * @returns Ti.UI.D2Matrix
+     * @returns Ti.UI.iOS.D3Matrix
      * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
      */
     getTransform:function() {
@@ -29499,7 +29499,7 @@ If this argument is not a view, an exception will be raised.</p>
 
     /**
      * <p>Sets the value of the {@link Ti.UI.Label.transform} property.</p>
-     * @param {Ti.UI.2DMatrix|Ti.UI.iOS.3DMatrix} transform <p>New value for the property.</p>
+     * @param {Ti.UI.D2Matrix|Ti.UI.iOS.D3Matrix} transform <p>New value for the property.</p>
      * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
      */
     setTransform:function(transform) {
@@ -29553,7 +29553,7 @@ performed asynchronously. If null, it will be performed immediately.</p>
      */
     toImage:function(f) {
     }
-}
+};
 
 /**
  * platforms: Android
@@ -29572,7 +29572,7 @@ toast.show();
 </code></pre>
  */
 Ti.UI.Notification = function() {
-}
+};
 Ti.UI.Notification.prototype = {
 
     /**
@@ -29802,7 +29802,7 @@ One of: 'absolute', 'vertical', or 'horizontal'.</p>
 
     /**
      * <p>Transformation matrix to apply to the view.</p>
-     * @type Ti.UI.2DMatrix|Ti.UI.iOS.3DMatrix
+     * @type Ti.UI.D2Matrix|Ti.UI.iOS.D3Matrix
      * @since 0.8 (Android)
      */
     transform:null,
@@ -30163,8 +30163,8 @@ If this argument is not a view, an exception will be raised.</p>
 
     /**
      * <p>Gets the value of the {@link Ti.UI.Notification.transform} property.</p>
-     * @returns Ti.UI.2DMatrix
-     * @returns Ti.UI.iOS.3DMatrix
+     * @returns Ti.UI.D2Matrix
+     * @returns Ti.UI.iOS.D3Matrix
      * @since 0.8 (Android)
      */
     getTransform:function() {
@@ -30493,7 +30493,7 @@ If this argument is not a view, an exception will be raised.</p>
 
     /**
      * <p>Sets the value of the {@link Ti.UI.Notification.transform} property.</p>
-     * @param {Ti.UI.2DMatrix|Ti.UI.iOS.3DMatrix} transform <p>New value for the property.</p>
+     * @param {Ti.UI.D2Matrix|Ti.UI.iOS.D3Matrix} transform <p>New value for the property.</p>
      * @since 0.8 (Android)
      */
     setTransform:function(transform) {
@@ -30563,7 +30563,7 @@ performed asynchronously. If null, it will be performed immediately.</p>
      */
     toImage:function(f) {
     }
-}
+};
 
 /**
  * platforms: Android, iPhone, iPad
@@ -30579,7 +30579,7 @@ dialog.show();
 </code></pre>
  */
 Ti.UI.OptionDialog = function() {
-}
+};
 Ti.UI.OptionDialog.prototype = {
 
     /**
@@ -30778,7 +30778,7 @@ Ti.UI.OptionDialog.prototype = {
      */
     show:function(view) {
     }
-}
+};
 
 /**
  * platforms: Android, iPhone, iPad, Mobile Web
@@ -30813,7 +30813,7 @@ picker.add(row);
 </code></pre>
  */
 Ti.UI.Picker = function() {
-}
+};
 Ti.UI.Picker.prototype = {
 
     /**
@@ -31131,13 +31131,13 @@ Ti.UI.Picker.prototype = {
      */
     setVisibleItems:function(visibleItems) {
     }
-}
+};
 
 /**
  * platforms: Android, iPhone, iPad
  */
 Ti.UI.PickerColumn = function() {
-}
+};
 Ti.UI.PickerColumn.prototype = {
 
     /**
@@ -31360,7 +31360,7 @@ One of: 'absolute', 'vertical', or 'horizontal'.</p>
 
     /**
      * <p>Transformation matrix to apply to the view.</p>
-     * @type Ti.UI.2DMatrix|Ti.UI.iOS.3DMatrix
+     * @type Ti.UI.D2Matrix|Ti.UI.iOS.D3Matrix
      * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     transform:null,
@@ -31700,8 +31700,8 @@ If this argument is not a view, an exception will be raised.</p>
 
     /**
      * <p>Gets the value of the {@link Ti.UI.PickerColumn.transform} property.</p>
-     * @returns Ti.UI.2DMatrix
-     * @returns Ti.UI.iOS.3DMatrix
+     * @returns Ti.UI.D2Matrix
+     * @returns Ti.UI.iOS.D3Matrix
      * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     getTransform:function() {
@@ -31998,7 +31998,7 @@ If this argument is not a view, an exception will be raised.</p>
 
     /**
      * <p>Sets the value of the {@link Ti.UI.PickerColumn.transform} property.</p>
-     * @param {Ti.UI.2DMatrix|Ti.UI.iOS.3DMatrix} transform <p>New value for the property.</p>
+     * @param {Ti.UI.D2Matrix|Ti.UI.iOS.D3Matrix} transform <p>New value for the property.</p>
      * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     setTransform:function(transform) {
@@ -32044,7 +32044,7 @@ performed asynchronously. If null, it will be performed immediately.</p>
      */
     toImage:function(f) {
     }
-}
+};
 
 /**
  * platforms: Android, iPhone, iPad, Mobile Web
@@ -32066,7 +32066,7 @@ picker.add(row);
 </code></pre>
  */
 Ti.UI.PickerRow = function() {
-}
+};
 Ti.UI.PickerRow.prototype = {
 
     /**
@@ -32296,7 +32296,7 @@ One of: 'absolute', 'vertical', or 'horizontal'.</p>
 
     /**
      * <p>Transformation matrix to apply to the view.</p>
-     * @type Ti.UI.2DMatrix|Ti.UI.iOS.3DMatrix
+     * @type Ti.UI.D2Matrix|Ti.UI.iOS.D3Matrix
      * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     transform:null,
@@ -32636,8 +32636,8 @@ If this argument is not a view, an exception will be raised.</p>
 
     /**
      * <p>Gets the value of the {@link Ti.UI.PickerRow.transform} property.</p>
-     * @returns Ti.UI.2DMatrix
-     * @returns Ti.UI.iOS.3DMatrix
+     * @returns Ti.UI.D2Matrix
+     * @returns Ti.UI.iOS.D3Matrix
      * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     getTransform:function() {
@@ -32942,7 +32942,7 @@ If this argument is not a view, an exception will be raised.</p>
 
     /**
      * <p>Sets the value of the {@link Ti.UI.PickerRow.transform} property.</p>
-     * @param {Ti.UI.2DMatrix|Ti.UI.iOS.3DMatrix} transform <p>New value for the property.</p>
+     * @param {Ti.UI.D2Matrix|Ti.UI.iOS.D3Matrix} transform <p>New value for the property.</p>
      * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     setTransform:function(transform) {
@@ -32988,7 +32988,7 @@ performed asynchronously. If null, it will be performed immediately.</p>
      */
     toImage:function(f) {
     }
-}
+};
 
 /**
  * platforms: Android, iPhone, iPad
@@ -33019,7 +33019,7 @@ pb.show();
 </code></pre>
  */
 Ti.UI.ProgressBar = function() {
-}
+};
 Ti.UI.ProgressBar.prototype = {
 
     /**
@@ -33270,7 +33270,7 @@ One of: 'absolute', 'vertical', or 'horizontal'.</p>
 
     /**
      * <p>Transformation matrix to apply to the view.</p>
-     * @type Ti.UI.2DMatrix|Ti.UI.iOS.3DMatrix
+     * @type Ti.UI.D2Matrix|Ti.UI.iOS.D3Matrix
      * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
      */
     transform:null,
@@ -33641,8 +33641,8 @@ If this argument is not a view, an exception will be raised.</p>
 
     /**
      * <p>Gets the value of the {@link Ti.UI.ProgressBar.transform} property.</p>
-     * @returns Ti.UI.2DMatrix
-     * @returns Ti.UI.iOS.3DMatrix
+     * @returns Ti.UI.D2Matrix
+     * @returns Ti.UI.iOS.D3Matrix
      * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
      */
     getTransform:function() {
@@ -33979,7 +33979,7 @@ If this argument is not a view, an exception will be raised.</p>
 
     /**
      * <p>Sets the value of the {@link Ti.UI.ProgressBar.transform} property.</p>
-     * @param {Ti.UI.2DMatrix|Ti.UI.iOS.3DMatrix} transform <p>New value for the property.</p>
+     * @param {Ti.UI.D2Matrix|Ti.UI.iOS.D3Matrix} transform <p>New value for the property.</p>
      * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
      */
     setTransform:function(transform) {
@@ -34033,7 +34033,7 @@ performed asynchronously. If null, it will be performed immediately.</p>
      */
     toImage:function(f) {
     }
-}
+};
 
 /**
  * platforms: Android, iPhone, iPad, Mobile Web
@@ -34075,7 +34075,7 @@ Ti.UI.currentWindow.add(scrollView);
 </code></pre>
  */
 Ti.UI.ScrollView = function() {
-}
+};
 Ti.UI.ScrollView.prototype = {
 
     /**
@@ -34363,7 +34363,7 @@ direction when this property is <em>not</em> set.</p>
 
     /**
      * <p>Transformation matrix to apply to the view.</p>
-     * @type Ti.UI.2DMatrix|Ti.UI.iOS.3DMatrix
+     * @type Ti.UI.D2Matrix|Ti.UI.iOS.D3Matrix
      * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     transform:null,
@@ -34781,8 +34781,8 @@ If this argument is not a view, an exception will be raised.</p>
 
     /**
      * <p>Gets the value of the {@link Ti.UI.ScrollView.transform} property.</p>
-     * @returns Ti.UI.2DMatrix
-     * @returns Ti.UI.iOS.3DMatrix
+     * @returns Ti.UI.D2Matrix
+     * @returns Ti.UI.iOS.D3Matrix
      * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     getTransform:function() {
@@ -35176,7 +35176,7 @@ If this argument is not a view, an exception will be raised.</p>
 
     /**
      * <p>Sets the value of the {@link Ti.UI.ScrollView.transform} property.</p>
-     * @param {Ti.UI.2DMatrix|Ti.UI.iOS.3DMatrix} transform <p>New value for the property.</p>
+     * @param {Ti.UI.D2Matrix|Ti.UI.iOS.D3Matrix} transform <p>New value for the property.</p>
      * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     setTransform:function(transform) {
@@ -35238,7 +35238,7 @@ performed asynchronously. If null, it will be performed immediately.</p>
      */
     toImage:function(f) {
     }
-}
+};
 
 /**
  * platforms: Android, iPhone, iPad
@@ -35256,7 +35256,7 @@ win.add(scrollView);
 </code></pre>
  */
 Ti.UI.ScrollableView = function() {
-}
+};
 Ti.UI.ScrollableView.prototype = {
 
     /**
@@ -35514,7 +35514,7 @@ One of: 'absolute', 'vertical', or 'horizontal'.</p>
 
     /**
      * <p>Transformation matrix to apply to the view.</p>
-     * @type Ti.UI.2DMatrix|Ti.UI.iOS.3DMatrix
+     * @type Ti.UI.D2Matrix|Ti.UI.iOS.D3Matrix
      * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
      */
     transform:null,
@@ -35901,8 +35901,8 @@ If this argument is not a view, an exception will be raised.</p>
 
     /**
      * <p>Gets the value of the {@link Ti.UI.ScrollableView.transform} property.</p>
-     * @returns Ti.UI.2DMatrix
-     * @returns Ti.UI.iOS.3DMatrix
+     * @returns Ti.UI.D2Matrix
+     * @returns Ti.UI.iOS.D3Matrix
      * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
      */
     getTransform:function() {
@@ -36255,7 +36255,7 @@ If this argument is not a view, an exception will be raised.</p>
 
     /**
      * <p>Sets the value of the {@link Ti.UI.ScrollableView.transform} property.</p>
-     * @param {Ti.UI.2DMatrix|Ti.UI.iOS.3DMatrix} transform <p>New value for the property.</p>
+     * @param {Ti.UI.D2Matrix|Ti.UI.iOS.D3Matrix} transform <p>New value for the property.</p>
      * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
      */
     setTransform:function(transform) {
@@ -36309,7 +36309,7 @@ performed asynchronously. If null, it will be performed immediately.</p>
      */
     toImage:function(f) {
     }
-}
+};
 
 /**
  * platforms: Android, iPhone, iPad, Mobile Web
@@ -36323,7 +36323,7 @@ performed asynchronously. If null, it will be performed immediately.</p>
 });</p>
  */
 Ti.UI.SearchBar = function() {
-}
+};
 Ti.UI.SearchBar.prototype = {
 
     /**
@@ -36595,7 +36595,7 @@ One of: 'absolute', 'vertical', or 'horizontal'.</p>
 
     /**
      * <p>Transformation matrix to apply to the view.</p>
-     * @type Ti.UI.2DMatrix|Ti.UI.iOS.3DMatrix
+     * @type Ti.UI.D2Matrix|Ti.UI.iOS.D3Matrix
      * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
      */
     transform:null,
@@ -37004,8 +37004,8 @@ If this argument is not a view, an exception will be raised.</p>
 
     /**
      * <p>Gets the value of the {@link Ti.UI.SearchBar.transform} property.</p>
-     * @returns Ti.UI.2DMatrix
-     * @returns Ti.UI.iOS.3DMatrix
+     * @returns Ti.UI.D2Matrix
+     * @returns Ti.UI.iOS.D3Matrix
      * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
      */
     getTransform:function() {
@@ -37366,7 +37366,7 @@ If this argument is not a view, an exception will be raised.</p>
 
     /**
      * <p>Sets the value of the {@link Ti.UI.SearchBar.transform} property.</p>
-     * @param {Ti.UI.2DMatrix|Ti.UI.iOS.3DMatrix} transform <p>New value for the property.</p>
+     * @param {Ti.UI.D2Matrix|Ti.UI.iOS.D3Matrix} transform <p>New value for the property.</p>
      * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
      */
     setTransform:function(transform) {
@@ -37420,13 +37420,13 @@ performed asynchronously. If null, it will be performed immediately.</p>
      */
     toImage:function(f) {
     }
-}
+};
 
 /**
  * platforms: Android, iPhone, iPad, Mobile Web
  */
 Ti.UI.Slider = function() {
-}
+};
 Ti.UI.Slider.prototype = {
 
     /**
@@ -37754,7 +37754,7 @@ One of: 'absolute', 'vertical', or 'horizontal'.</p>
 
     /**
      * <p>Transformation matrix to apply to the view.</p>
-     * @type Ti.UI.2DMatrix|Ti.UI.iOS.3DMatrix
+     * @type Ti.UI.D2Matrix|Ti.UI.iOS.D3Matrix
      * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
      */
     transform:null,
@@ -38213,8 +38213,8 @@ If this argument is not a view, an exception will be raised.</p>
 
     /**
      * <p>Gets the value of the {@link Ti.UI.Slider.transform} property.</p>
-     * @returns Ti.UI.2DMatrix
-     * @returns Ti.UI.iOS.3DMatrix
+     * @returns Ti.UI.D2Matrix
+     * @returns Ti.UI.iOS.D3Matrix
      * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
      */
     getTransform:function() {
@@ -38639,7 +38639,7 @@ If this argument is not a view, an exception will be raised.</p>
 
     /**
      * <p>Sets the value of the {@link Ti.UI.Slider.transform} property.</p>
-     * @param {Ti.UI.2DMatrix|Ti.UI.iOS.3DMatrix} transform <p>New value for the property.</p>
+     * @param {Ti.UI.D2Matrix|Ti.UI.iOS.D3Matrix} transform <p>New value for the property.</p>
      * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
      */
     setTransform:function(transform) {
@@ -38693,7 +38693,7 @@ performed asynchronously. If null, it will be performed immediately.</p>
      */
     toImage:function(f) {
     }
-}
+};
 
 /**
  * platforms: Android, iPhone, iPad, Mobile Web
@@ -38710,7 +38710,7 @@ basicSwitch.addEventListener('change',function(e)
 </code></pre>
  */
 Ti.UI.Switch = function() {
-}
+};
 Ti.UI.Switch.prototype = {
 
     /**
@@ -38954,7 +38954,7 @@ One of: 'absolute', 'vertical', or 'horizontal'.</p>
 
     /**
      * <p>Transformation matrix to apply to the view.</p>
-     * @type Ti.UI.2DMatrix|Ti.UI.iOS.3DMatrix
+     * @type Ti.UI.D2Matrix|Ti.UI.iOS.D3Matrix
      * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
      */
     transform:null,
@@ -39317,8 +39317,8 @@ If this argument is not a view, an exception will be raised.</p>
 
     /**
      * <p>Gets the value of the {@link Ti.UI.Switch.transform} property.</p>
-     * @returns Ti.UI.2DMatrix
-     * @returns Ti.UI.iOS.3DMatrix
+     * @returns Ti.UI.D2Matrix
+     * @returns Ti.UI.iOS.D3Matrix
      * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
      */
     getTransform:function() {
@@ -39647,7 +39647,7 @@ If this argument is not a view, an exception will be raised.</p>
 
     /**
      * <p>Sets the value of the {@link Ti.UI.Switch.transform} property.</p>
-     * @param {Ti.UI.2DMatrix|Ti.UI.iOS.3DMatrix} transform <p>New value for the property.</p>
+     * @param {Ti.UI.D2Matrix|Ti.UI.iOS.D3Matrix} transform <p>New value for the property.</p>
      * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
      */
     setTransform:function(transform) {
@@ -39701,7 +39701,7 @@ performed asynchronously. If null, it will be performed immediately.</p>
      */
     toImage:function(f) {
     }
-}
+};
 
 /**
  * platforms: Android, iPhone, iPad, Mobile Web
@@ -39738,7 +39738,7 @@ tabGroup.addTab(tab);
 </code></pre>
  */
 Ti.UI.Tab = function() {
-}
+};
 Ti.UI.Tab.prototype = {
 
     /**
@@ -39982,7 +39982,7 @@ One of: 'absolute', 'vertical', or 'horizontal'.</p>
 
     /**
      * <p>Transformation matrix to apply to the view.</p>
-     * @type Ti.UI.2DMatrix|Ti.UI.iOS.3DMatrix
+     * @type Ti.UI.D2Matrix|Ti.UI.iOS.D3Matrix
      * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
      */
     transform:null,
@@ -40353,8 +40353,8 @@ If this argument is not a view, an exception will be raised.</p>
 
     /**
      * <p>Gets the value of the {@link Ti.UI.Tab.transform} property.</p>
-     * @returns Ti.UI.2DMatrix
-     * @returns Ti.UI.iOS.3DMatrix
+     * @returns Ti.UI.D2Matrix
+     * @returns Ti.UI.iOS.D3Matrix
      * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
      */
     getTransform:function() {
@@ -40692,7 +40692,7 @@ If this argument is not a view, an exception will be raised.</p>
 
     /**
      * <p>Sets the value of the {@link Ti.UI.Tab.transform} property.</p>
-     * @param {Ti.UI.2DMatrix|Ti.UI.iOS.3DMatrix} transform <p>New value for the property.</p>
+     * @param {Ti.UI.D2Matrix|Ti.UI.iOS.D3Matrix} transform <p>New value for the property.</p>
      * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
      */
     setTransform:function(transform) {
@@ -40746,7 +40746,7 @@ performed asynchronously. If null, it will be performed immediately.</p>
      */
     toImage:function(f) {
     }
-}
+};
 
 /**
  * platforms: Android, iPhone, iPad, Mobile Web
@@ -40774,7 +40774,7 @@ to a tab group. In this case, the result of which tab is initially selected is
 undefined.</p>
  */
 Ti.UI.TabGroup = function() {
-}
+};
 Ti.UI.TabGroup.prototype = {
 
     /**
@@ -41018,7 +41018,7 @@ One of: 'absolute', 'vertical', or 'horizontal'.</p>
 
     /**
      * <p>Transformation matrix to apply to the view.</p>
-     * @type Ti.UI.2DMatrix|Ti.UI.iOS.3DMatrix
+     * @type Ti.UI.D2Matrix|Ti.UI.iOS.D3Matrix
      * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     transform:null,
@@ -41396,8 +41396,8 @@ If this argument is not a view, an exception will be raised.</p>
 
     /**
      * <p>Gets the value of the {@link Ti.UI.TabGroup.transform} property.</p>
-     * @returns Ti.UI.2DMatrix
-     * @returns Ti.UI.iOS.3DMatrix
+     * @returns Ti.UI.D2Matrix
+     * @returns Ti.UI.iOS.D3Matrix
      * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     getTransform:function() {
@@ -41741,7 +41741,7 @@ If this argument is not a view, an exception will be raised.</p>
 
     /**
      * <p>Sets the value of the {@link Ti.UI.TabGroup.transform} property.</p>
-     * @param {Ti.UI.2DMatrix|Ti.UI.iOS.3DMatrix} transform <p>New value for the property.</p>
+     * @param {Ti.UI.D2Matrix|Ti.UI.iOS.D3Matrix} transform <p>New value for the property.</p>
      * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     setTransform:function(transform) {
@@ -41795,7 +41795,7 @@ performed asynchronously. If null, it will be performed immediately.</p>
      */
     toImage:function(f) {
     }
-}
+};
 
 /**
  * platforms: iPhone, iPad
@@ -41814,7 +41814,7 @@ performed asynchronously. If null, it will be performed immediately.</p>
 win.add(bb1);</p>
  */
 Ti.UI.TabbedBar = function() {
-}
+};
 Ti.UI.TabbedBar.prototype = {
 
     /**
@@ -42044,7 +42044,7 @@ One of: 'absolute', 'vertical', or 'horizontal'.</p>
 
     /**
      * <p>Transformation matrix to apply to the view.</p>
-     * @type Ti.UI.2DMatrix|Ti.UI.iOS.3DMatrix
+     * @type Ti.UI.D2Matrix|Ti.UI.iOS.D3Matrix
      * @since 0.8 (iPhone), 0.8 (iPad)
      */
     transform:null,
@@ -42384,8 +42384,8 @@ If this argument is not a view, an exception will be raised.</p>
 
     /**
      * <p>Gets the value of the {@link Ti.UI.TabbedBar.transform} property.</p>
-     * @returns Ti.UI.2DMatrix
-     * @returns Ti.UI.iOS.3DMatrix
+     * @returns Ti.UI.D2Matrix
+     * @returns Ti.UI.iOS.D3Matrix
      * @since 0.8 (iPhone), 0.8 (iPad)
      */
     getTransform:function() {
@@ -42690,7 +42690,7 @@ If this argument is not a view, an exception will be raised.</p>
 
     /**
      * <p>Sets the value of the {@link Ti.UI.TabbedBar.transform} property.</p>
-     * @param {Ti.UI.2DMatrix|Ti.UI.iOS.3DMatrix} transform <p>New value for the property.</p>
+     * @param {Ti.UI.D2Matrix|Ti.UI.iOS.D3Matrix} transform <p>New value for the property.</p>
      * @since 0.8 (iPhone), 0.8 (iPad)
      */
     setTransform:function(transform) {
@@ -42736,7 +42736,7 @@ performed asynchronously. If null, it will be performed immediately.</p>
      */
     toImage:function(f) {
     }
-}
+};
 
 /**
  * platforms: Android, iPhone, iPad, Mobile Web
@@ -42759,7 +42759,7 @@ win.add(table);
 </code></pre>
  */
 Ti.UI.TableView = function() {
-}
+};
 Ti.UI.TableView.prototype = {
 
     /**
@@ -43129,7 +43129,7 @@ One of: 'absolute', 'vertical', or 'horizontal'.</p>
 
     /**
      * <p>Transformation matrix to apply to the view.</p>
-     * @type Ti.UI.2DMatrix|Ti.UI.iOS.3DMatrix
+     * @type Ti.UI.D2Matrix|Ti.UI.iOS.D3Matrix
      * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
      */
     transform:null,
@@ -43656,8 +43656,8 @@ If this argument is not a view, an exception will be raised.</p>
 
     /**
      * <p>Gets the value of the {@link Ti.UI.TableView.transform} property.</p>
-     * @returns Ti.UI.2DMatrix
-     * @returns Ti.UI.iOS.3DMatrix
+     * @returns Ti.UI.D2Matrix
+     * @returns Ti.UI.iOS.D3Matrix
      * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
      */
     getTransform:function() {
@@ -44169,7 +44169,7 @@ If this argument is not a view, an exception will be raised.</p>
 
     /**
      * <p>Sets the value of the {@link Ti.UI.TableView.transform} property.</p>
-     * @param {Ti.UI.2DMatrix|Ti.UI.iOS.3DMatrix} transform <p>New value for the property.</p>
+     * @param {Ti.UI.D2Matrix|Ti.UI.iOS.D3Matrix} transform <p>New value for the property.</p>
      * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
      */
     setTransform:function(transform) {
@@ -44225,7 +44225,7 @@ performed asynchronously. If null, it will be performed immediately.</p>
      */
     updateRow:function(index, row, properties) {
     }
-}
+};
 
 /**
  * platforms: Android, iPhone, iPad, Mobile Web
@@ -44241,7 +44241,7 @@ row.add(view);
 </code></pre>
  */
 Ti.UI.TableViewRow = function() {
-}
+};
 Ti.UI.TableViewRow.prototype = {
 
     /**
@@ -44547,7 +44547,7 @@ Ti.UI.TableViewRow.prototype = {
 
     /**
      * <p>Transformation matrix to apply to the view.</p>
-     * @type Ti.UI.2DMatrix|Ti.UI.iOS.3DMatrix
+     * @type Ti.UI.D2Matrix|Ti.UI.iOS.D3Matrix
      * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     transform:null,
@@ -44965,8 +44965,8 @@ If this argument is not a view, an exception will be raised.</p>
 
     /**
      * <p>Gets the value of the {@link Ti.UI.TableViewRow.transform} property.</p>
-     * @returns Ti.UI.2DMatrix
-     * @returns Ti.UI.iOS.3DMatrix
+     * @returns Ti.UI.D2Matrix
+     * @returns Ti.UI.iOS.D3Matrix
      * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     getTransform:function() {
@@ -45359,7 +45359,7 @@ If this argument is not a view, an exception will be raised.</p>
 
     /**
      * <p>Sets the value of the {@link Ti.UI.TableViewRow.transform} property.</p>
-     * @param {Ti.UI.2DMatrix|Ti.UI.iOS.3DMatrix} transform <p>New value for the property.</p>
+     * @param {Ti.UI.D2Matrix|Ti.UI.iOS.D3Matrix} transform <p>New value for the property.</p>
      * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     setTransform:function(transform) {
@@ -45405,7 +45405,7 @@ performed asynchronously. If null, it will be performed immediately.</p>
      */
     toImage:function(f) {
     }
-}
+};
 
 /**
  * platforms: Android, iPhone, iPad, Mobile Web
@@ -45422,7 +45422,7 @@ tableview.add(section);
 </code></pre>
  */
 Ti.UI.TableViewSection = function() {
-}
+};
 Ti.UI.TableViewSection.prototype = {
 
     /**
@@ -45666,7 +45666,7 @@ One of: 'absolute', 'vertical', or 'horizontal'.</p>
 
     /**
      * <p>Transformation matrix to apply to the view.</p>
-     * @type Ti.UI.2DMatrix|Ti.UI.iOS.3DMatrix
+     * @type Ti.UI.D2Matrix|Ti.UI.iOS.D3Matrix
      * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     transform:null,
@@ -46022,8 +46022,8 @@ If this argument is not a view, an exception will be raised.</p>
 
     /**
      * <p>Gets the value of the {@link Ti.UI.TableViewSection.transform} property.</p>
-     * @returns Ti.UI.2DMatrix
-     * @returns Ti.UI.iOS.3DMatrix
+     * @returns Ti.UI.D2Matrix
+     * @returns Ti.UI.iOS.D3Matrix
      * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     getTransform:function() {
@@ -46336,7 +46336,7 @@ If this argument is not a view, an exception will be raised.</p>
 
     /**
      * <p>Sets the value of the {@link Ti.UI.TableViewSection.transform} property.</p>
-     * @param {Ti.UI.2DMatrix|Ti.UI.iOS.3DMatrix} transform <p>New value for the property.</p>
+     * @param {Ti.UI.D2Matrix|Ti.UI.iOS.D3Matrix} transform <p>New value for the property.</p>
      * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     setTransform:function(transform) {
@@ -46382,7 +46382,7 @@ performed asynchronously. If null, it will be performed immediately.</p>
      */
     toImage:function(f) {
     }
-}
+};
 
 /**
  * platforms: Android, iPhone, iPad, Mobile Web
@@ -46446,7 +46446,7 @@ var textarea = Ti.UI.createTextArea({
 </code></pre>
  */
 Ti.UI.TextArea = function() {
-}
+};
 Ti.UI.TextArea.prototype = {
 
     /**
@@ -46746,7 +46746,7 @@ One of: 'absolute', 'vertical', or 'horizontal'.</p>
 
     /**
      * <p>Transformation matrix to apply to the view.</p>
-     * @type Ti.UI.2DMatrix|Ti.UI.iOS.3DMatrix
+     * @type Ti.UI.D2Matrix|Ti.UI.iOS.D3Matrix
      * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
      */
     transform:null,
@@ -47188,8 +47188,8 @@ If this argument is not a view, an exception will be raised.</p>
 
     /**
      * <p>Gets the value of the {@link Ti.UI.TextArea.transform} property.</p>
-     * @returns Ti.UI.2DMatrix
-     * @returns Ti.UI.iOS.3DMatrix
+     * @returns Ti.UI.D2Matrix
+     * @returns Ti.UI.iOS.D3Matrix
      * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
      */
     getTransform:function() {
@@ -47589,7 +47589,7 @@ If this argument is not a view, an exception will be raised.</p>
 
     /**
      * <p>Sets the value of the {@link Ti.UI.TextArea.transform} property.</p>
-     * @param {Ti.UI.2DMatrix|Ti.UI.iOS.3DMatrix} transform <p>New value for the property.</p>
+     * @param {Ti.UI.D2Matrix|Ti.UI.iOS.D3Matrix} transform <p>New value for the property.</p>
      * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
      */
     setTransform:function(transform) {
@@ -47643,7 +47643,7 @@ performed asynchronously. If null, it will be performed immediately.</p>
      */
     toImage:function(f) {
     }
-}
+};
 
 /**
  * platforms: Android, iPhone, iPad, Mobile Web
@@ -47696,7 +47696,7 @@ var textfield = Ti.UI.createTextField({
 </code></pre>
  */
 Ti.UI.TextField = function() {
-}
+};
 Ti.UI.TextField.prototype = {
 
     /**
@@ -48087,7 +48087,7 @@ One of: 'absolute', 'vertical', or 'horizontal'.</p>
 
     /**
      * <p>Transformation matrix to apply to the view.</p>
-     * @type Ti.UI.2DMatrix|Ti.UI.iOS.3DMatrix
+     * @type Ti.UI.D2Matrix|Ti.UI.iOS.D3Matrix
      * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
      */
     transform:null,
@@ -48644,8 +48644,8 @@ If this argument is not a view, an exception will be raised.</p>
 
     /**
      * <p>Gets the value of the {@link Ti.UI.TextField.transform} property.</p>
-     * @returns Ti.UI.2DMatrix
-     * @returns Ti.UI.iOS.3DMatrix
+     * @returns Ti.UI.D2Matrix
+     * @returns Ti.UI.iOS.D3Matrix
      * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
      */
     getTransform:function() {
@@ -49158,7 +49158,7 @@ If this argument is not a view, an exception will be raised.</p>
 
     /**
      * <p>Sets the value of the {@link Ti.UI.TextField.transform} property.</p>
-     * @param {Ti.UI.2DMatrix|Ti.UI.iOS.3DMatrix} transform <p>New value for the property.</p>
+     * @param {Ti.UI.D2Matrix|Ti.UI.iOS.D3Matrix} transform <p>New value for the property.</p>
      * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
      */
     setTransform:function(transform) {
@@ -49220,14 +49220,14 @@ performed asynchronously. If null, it will be performed immediately.</p>
      */
     toImage:function(f) {
     }
-}
+};
 
 /**
  * platforms: iPhone, iPad, Mobile Web
  * @namespace <p>A Toolbar is created by the method {@link Ti.UI.iOS.createToolbar}.  A Toolbar can be placed at the bottom of a window and contain buttons.</p>
  */
 Ti.UI.Toolbar = function() {
-}
+};
 Ti.UI.Toolbar.prototype = {
 
     /**
@@ -49436,7 +49436,7 @@ One of: 'absolute', 'vertical', or 'horizontal'.</p>
 
     /**
      * <p>Transformation matrix to apply to the view.</p>
-     * @type Ti.UI.2DMatrix|Ti.UI.iOS.3DMatrix
+     * @type Ti.UI.D2Matrix|Ti.UI.iOS.D3Matrix
      * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
      */
     transform:null,
@@ -49752,8 +49752,8 @@ If this argument is not a view, an exception will be raised.</p>
 
     /**
      * <p>Gets the value of the {@link Ti.UI.Toolbar.transform} property.</p>
-     * @returns Ti.UI.2DMatrix
-     * @returns Ti.UI.iOS.3DMatrix
+     * @returns Ti.UI.D2Matrix
+     * @returns Ti.UI.iOS.D3Matrix
      * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
      */
     getTransform:function() {
@@ -50034,7 +50034,7 @@ If this argument is not a view, an exception will be raised.</p>
 
     /**
      * <p>Sets the value of the {@link Ti.UI.Toolbar.transform} property.</p>
-     * @param {Ti.UI.2DMatrix|Ti.UI.iOS.3DMatrix} transform <p>New value for the property.</p>
+     * @param {Ti.UI.D2Matrix|Ti.UI.iOS.D3Matrix} transform <p>New value for the property.</p>
      * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
      */
     setTransform:function(transform) {
@@ -50080,7 +50080,7 @@ performed asynchronously. If null, it will be performed immediately.</p>
      */
     toImage:function(f) {
     }
-}
+};
 
 /**
  * platforms: Android, iPhone, iPad, Mobile Web
@@ -50304,7 +50304,7 @@ One of: 'absolute', 'vertical', or 'horizontal'.</p>
 
     /**
      * <p>Transformation matrix to apply to the view.</p>
-     * @type Ti.UI.2DMatrix|Ti.UI.iOS.3DMatrix
+     * @type Ti.UI.D2Matrix|Ti.UI.iOS.D3Matrix
      * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     transform:null,
@@ -50620,8 +50620,8 @@ If this argument is not a view, an exception will be raised.</p>
 
     /**
      * <p>Gets the value of the {@link Ti.UI.View.transform} property.</p>
-     * @returns Ti.UI.2DMatrix
-     * @returns Ti.UI.iOS.3DMatrix
+     * @returns Ti.UI.D2Matrix
+     * @returns Ti.UI.iOS.D3Matrix
      * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     getTransform:function() {
@@ -50902,7 +50902,7 @@ If this argument is not a view, an exception will be raised.</p>
 
     /**
      * <p>Sets the value of the {@link Ti.UI.View.transform} property.</p>
-     * @param {Ti.UI.2DMatrix|Ti.UI.iOS.3DMatrix} transform <p>New value for the property.</p>
+     * @param {Ti.UI.D2Matrix|Ti.UI.iOS.D3Matrix} transform <p>New value for the property.</p>
      * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     setTransform:function(transform) {
@@ -50948,7 +50948,7 @@ performed asynchronously. If null, it will be performed immediately.</p>
      */
     toImage:function(f) {
     }
-}
+};
 
 /**
  * platforms: Android, iPhone, iPad, Mobile Web
@@ -50965,7 +50965,7 @@ load the HTML browser into memory.</p>
 </code></pre>
  */
 Ti.UI.WebView = function() {
-}
+};
 Ti.UI.WebView.prototype = {
 
     /**
@@ -51216,7 +51216,7 @@ One of: 'absolute', 'vertical', or 'horizontal'.</p>
 
     /**
      * <p>Transformation matrix to apply to the view.</p>
-     * @type Ti.UI.2DMatrix|Ti.UI.iOS.3DMatrix
+     * @type Ti.UI.D2Matrix|Ti.UI.iOS.D3Matrix
      * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
      */
     transform:null,
@@ -51612,8 +51612,8 @@ If this argument is not a view, an exception will be raised.</p>
 
     /**
      * <p>Gets the value of the {@link Ti.UI.WebView.transform} property.</p>
-     * @returns Ti.UI.2DMatrix
-     * @returns Ti.UI.iOS.3DMatrix
+     * @returns Ti.UI.D2Matrix
+     * @returns Ti.UI.iOS.D3Matrix
      * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
      */
     getTransform:function() {
@@ -51987,7 +51987,7 @@ If this argument is not a view, an exception will be raised.</p>
 
     /**
      * <p>Sets the value of the {@link Ti.UI.WebView.transform} property.</p>
-     * @param {Ti.UI.2DMatrix|Ti.UI.iOS.3DMatrix} transform <p>New value for the property.</p>
+     * @param {Ti.UI.D2Matrix|Ti.UI.iOS.D3Matrix} transform <p>New value for the property.</p>
      * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
      */
     setTransform:function(transform) {
@@ -52048,7 +52048,7 @@ performed asynchronously. If null, it will be performed immediately.</p>
      */
     toImage:function(f) {
     }
-}
+};
 
 /**
  * platforms: Android, iPhone, iPad, Mobile Web
@@ -52260,7 +52260,7 @@ window.open({fullscreen:true});
 </code></pre>
  */
 Ti.UI.Window = function() {
-}
+};
 Ti.UI.Window.prototype = {
 
     /**
@@ -52620,7 +52620,7 @@ the window is the child of a tab.</p>
 
     /**
      * <p>Transformation matrix to apply to the view.</p>
-     * @type Ti.UI.2DMatrix|Ti.UI.iOS.3DMatrix
+     * @type Ti.UI.D2Matrix|Ti.UI.iOS.D3Matrix
      * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     transform:null,
@@ -53141,8 +53141,8 @@ If this argument is not a view, an exception will be raised.</p>
 
     /**
      * <p>Gets the value of the {@link Ti.UI.Window.transform} property.</p>
-     * @returns Ti.UI.2DMatrix
-     * @returns Ti.UI.iOS.3DMatrix
+     * @returns Ti.UI.D2Matrix
+     * @returns Ti.UI.iOS.D3Matrix
      * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     getTransform:function() {
@@ -53630,7 +53630,7 @@ If this argument is not a view, an exception will be raised.</p>
 
     /**
      * <p>Sets the value of the {@link Ti.UI.Window.transform} property.</p>
-     * @param {Ti.UI.2DMatrix|Ti.UI.iOS.3DMatrix} transform <p>New value for the property.</p>
+     * @param {Ti.UI.D2Matrix|Ti.UI.iOS.D3Matrix} transform <p>New value for the property.</p>
      * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     setTransform:function(transform) {
@@ -53692,7 +53692,7 @@ performed asynchronously. If null, it will be performed immediately.</p>
      */
     toImage:function(f) {
     }
-}
+};
 
 /**
  * platforms: iPhone, iPad
@@ -53976,9 +53976,9 @@ Ti.UI.iOS = {
     },
 
     /**
-     * <p>Create and return an instance of {@link Ti.UI.iOS.3DMatrix}.</p>
-     * @param {Dictionary<Ti.UI.iOS.3DMatrix>} parameters <p>(Optional) A dictionary object with properties as defined in {@link Ti.UI.iOS.3DMatrix}.</p>
-     * @returns Ti.UI.iOS.3DMatrix
+     * <p>Create and return an instance of {@link Ti.UI.iOS.D3Matrix}.</p>
+     * @param {Dictionary<Ti.UI.iOS.D3Matrix>} parameters <p>(Optional) A dictionary object with properties as defined in {@link Ti.UI.iOS.D3Matrix}.</p>
+     * @returns Ti.UI.iOS.D3Matrix
      * @since 0.9 (iPhone), 0.9 (iPad)
      */
     create3DMatrix:function(parameters) {
@@ -54037,7 +54037,7 @@ Ti.UI.iOS = {
      */
     removeEventListener:function(name, callback) {
     }
-}
+};
 
 /**
  * platforms: iPhone, iPad
@@ -54047,9 +54047,9 @@ space. A 3D matrix is represented by a 4 by 4 matrix. </p>
 <p>You create an <code>identity matrix</code> by creating a 3D Matrix with an empty
 constructor.</p>
  */
-Ti.UI.iOS.3DMatrix = function() {
-}
-Ti.UI.iOS.3DMatrix.prototype = {
+Ti.UI.iOS.D3Matrix = function() {
+};
+Ti.UI.iOS.D3Matrix.prototype = {
 
     /**
      * <p>The entry at position [1,1] in the matrix.</p>
@@ -54183,7 +54183,7 @@ Ti.UI.iOS.3DMatrix.prototype = {
     },
 
     /**
-     * <p>Gets the value of the {@link Ti.UI.iOS.3DMatrix.m11} property.</p>
+     * <p>Gets the value of the {@link Ti.UI.iOS.D3Matrix.m11} property.</p>
      * @returns Number
      * @since 0.9 (iPhone), 0.9 (iPad)
      */
@@ -54191,7 +54191,7 @@ Ti.UI.iOS.3DMatrix.prototype = {
     },
 
     /**
-     * <p>Gets the value of the {@link Ti.UI.iOS.3DMatrix.m12} property.</p>
+     * <p>Gets the value of the {@link Ti.UI.iOS.D3Matrix.m12} property.</p>
      * @returns Number
      * @since 0.9 (iPhone), 0.9 (iPad)
      */
@@ -54199,7 +54199,7 @@ Ti.UI.iOS.3DMatrix.prototype = {
     },
 
     /**
-     * <p>Gets the value of the {@link Ti.UI.iOS.3DMatrix.m13} property.</p>
+     * <p>Gets the value of the {@link Ti.UI.iOS.D3Matrix.m13} property.</p>
      * @returns Number
      * @since 0.9 (iPhone), 0.9 (iPad)
      */
@@ -54207,7 +54207,7 @@ Ti.UI.iOS.3DMatrix.prototype = {
     },
 
     /**
-     * <p>Gets the value of the {@link Ti.UI.iOS.3DMatrix.m14} property.</p>
+     * <p>Gets the value of the {@link Ti.UI.iOS.D3Matrix.m14} property.</p>
      * @returns Number
      * @since 0.9 (iPhone), 0.9 (iPad)
      */
@@ -54215,7 +54215,7 @@ Ti.UI.iOS.3DMatrix.prototype = {
     },
 
     /**
-     * <p>Gets the value of the {@link Ti.UI.iOS.3DMatrix.m21} property.</p>
+     * <p>Gets the value of the {@link Ti.UI.iOS.D3Matrix.m21} property.</p>
      * @returns Number
      * @since 0.9 (iPhone), 0.9 (iPad)
      */
@@ -54223,7 +54223,7 @@ Ti.UI.iOS.3DMatrix.prototype = {
     },
 
     /**
-     * <p>Gets the value of the {@link Ti.UI.iOS.3DMatrix.m22} property.</p>
+     * <p>Gets the value of the {@link Ti.UI.iOS.D3Matrix.m22} property.</p>
      * @returns Number
      * @since 0.9 (iPhone), 0.9 (iPad)
      */
@@ -54231,7 +54231,7 @@ Ti.UI.iOS.3DMatrix.prototype = {
     },
 
     /**
-     * <p>Gets the value of the {@link Ti.UI.iOS.3DMatrix.m23} property.</p>
+     * <p>Gets the value of the {@link Ti.UI.iOS.D3Matrix.m23} property.</p>
      * @returns Number
      * @since 0.9 (iPhone), 0.9 (iPad)
      */
@@ -54239,7 +54239,7 @@ Ti.UI.iOS.3DMatrix.prototype = {
     },
 
     /**
-     * <p>Gets the value of the {@link Ti.UI.iOS.3DMatrix.m24} property.</p>
+     * <p>Gets the value of the {@link Ti.UI.iOS.D3Matrix.m24} property.</p>
      * @returns Number
      * @since 0.9 (iPhone), 0.9 (iPad)
      */
@@ -54247,7 +54247,7 @@ Ti.UI.iOS.3DMatrix.prototype = {
     },
 
     /**
-     * <p>Gets the value of the {@link Ti.UI.iOS.3DMatrix.m31} property.</p>
+     * <p>Gets the value of the {@link Ti.UI.iOS.D3Matrix.m31} property.</p>
      * @returns Number
      * @since 0.9 (iPhone), 0.9 (iPad)
      */
@@ -54255,7 +54255,7 @@ Ti.UI.iOS.3DMatrix.prototype = {
     },
 
     /**
-     * <p>Gets the value of the {@link Ti.UI.iOS.3DMatrix.m32} property.</p>
+     * <p>Gets the value of the {@link Ti.UI.iOS.D3Matrix.m32} property.</p>
      * @returns Number
      * @since 0.9 (iPhone), 0.9 (iPad)
      */
@@ -54263,7 +54263,7 @@ Ti.UI.iOS.3DMatrix.prototype = {
     },
 
     /**
-     * <p>Gets the value of the {@link Ti.UI.iOS.3DMatrix.m33} property.</p>
+     * <p>Gets the value of the {@link Ti.UI.iOS.D3Matrix.m33} property.</p>
      * @returns Number
      * @since 0.9 (iPhone), 0.9 (iPad)
      */
@@ -54271,7 +54271,7 @@ Ti.UI.iOS.3DMatrix.prototype = {
     },
 
     /**
-     * <p>Gets the value of the {@link Ti.UI.iOS.3DMatrix.m34} property.</p>
+     * <p>Gets the value of the {@link Ti.UI.iOS.D3Matrix.m34} property.</p>
      * @returns Number
      * @since 0.9 (iPhone), 0.9 (iPad)
      */
@@ -54279,7 +54279,7 @@ Ti.UI.iOS.3DMatrix.prototype = {
     },
 
     /**
-     * <p>Gets the value of the {@link Ti.UI.iOS.3DMatrix.m41} property.</p>
+     * <p>Gets the value of the {@link Ti.UI.iOS.D3Matrix.m41} property.</p>
      * @returns Number
      * @since 0.9 (iPhone), 0.9 (iPad)
      */
@@ -54287,7 +54287,7 @@ Ti.UI.iOS.3DMatrix.prototype = {
     },
 
     /**
-     * <p>Gets the value of the {@link Ti.UI.iOS.3DMatrix.m42} property.</p>
+     * <p>Gets the value of the {@link Ti.UI.iOS.D3Matrix.m42} property.</p>
      * @returns Number
      * @since 0.9 (iPhone), 0.9 (iPad)
      */
@@ -54295,7 +54295,7 @@ Ti.UI.iOS.3DMatrix.prototype = {
     },
 
     /**
-     * <p>Gets the value of the {@link Ti.UI.iOS.3DMatrix.m43} property.</p>
+     * <p>Gets the value of the {@link Ti.UI.iOS.D3Matrix.m43} property.</p>
      * @returns Number
      * @since 0.9 (iPhone), 0.9 (iPad)
      */
@@ -54303,7 +54303,7 @@ Ti.UI.iOS.3DMatrix.prototype = {
     },
 
     /**
-     * <p>Gets the value of the {@link Ti.UI.iOS.3DMatrix.m44} property.</p>
+     * <p>Gets the value of the {@link Ti.UI.iOS.D3Matrix.m44} property.</p>
      * @returns Number
      * @since 0.9 (iPhone), 0.9 (iPad)
      */
@@ -54319,8 +54319,8 @@ Ti.UI.iOS.3DMatrix.prototype = {
 
     /**
      * <p>Returns a matrix constructed by combining two existing matrix.</p>
-     * @param {Ti.UI.iOS.3DMatrix} t2 <p>The second matrix. This matrix is concatenated to the matrix instance against which the function is invoked.  The result of this function is the first matrix multiplied by the second matrix. You might perform several multiplications in order to create a single matrix that contains the cumulative effects of several transformations. Note that matrix operations are not commutative - the order in which you concatenate matrices is important. That is, the result of multiplying matrix t1 by matrix t2 does not necessarily equal the result of multiplying matrix t2 by matrix t1.</p>
-     * @returns Ti.UI.iOS.3DMatrix
+     * @param {Ti.UI.iOS.D3Matrix} t2 <p>The second matrix. This matrix is concatenated to the matrix instance against which the function is invoked.  The result of this function is the first matrix multiplied by the second matrix. You might perform several multiplications in order to create a single matrix that contains the cumulative effects of several transformations. Note that matrix operations are not commutative - the order in which you concatenate matrices is important. That is, the result of multiplying matrix t1 by matrix t2 does not necessarily equal the result of multiplying matrix t2 by matrix t1.</p>
+     * @returns Ti.UI.iOS.D3Matrix
      * @since 0.9 (iPhone), 0.9 (iPad)
      */
     multiply:function(t2) {
@@ -54341,7 +54341,7 @@ Ti.UI.iOS.3DMatrix.prototype = {
      * @param {Number} x <p>The x part of the vector about which to rotate</p>
      * @param {Number} y <p>The y part of the vector about which to rotate</p>
      * @param {Number} z <p>The z part of the vector about which to rotate</p>
-     * @returns Ti.UI.iOS.3DMatrix
+     * @returns Ti.UI.iOS.D3Matrix
      * @since 0.9 (iPhone), 0.9 (iPad)
      */
     rotate:function(angle, x, y, z) {
@@ -54352,14 +54352,14 @@ Ti.UI.iOS.3DMatrix.prototype = {
      * @param {Number} sx <p>The value by which to scale x values of the matrix</p>
      * @param {Number} sy <p>The value by which to scale y values of the matrix</p>
      * @param {Number} sz <p>The value by which to scale z values of the matrix</p>
-     * @returns Ti.UI.iOS.3DMatrix
+     * @returns Ti.UI.iOS.D3Matrix
      * @since 0.9 (iPhone), 0.9 (iPad)
      */
     scale:function(sx, sy, sz) {
     },
 
     /**
-     * <p>Sets the value of the {@link Ti.UI.iOS.3DMatrix.m11} property.</p>
+     * <p>Sets the value of the {@link Ti.UI.iOS.D3Matrix.m11} property.</p>
      * @param {Number} m11 <p>New value for the property.</p>
      * @since 0.9 (iPhone), 0.9 (iPad)
      */
@@ -54367,7 +54367,7 @@ Ti.UI.iOS.3DMatrix.prototype = {
     },
 
     /**
-     * <p>Sets the value of the {@link Ti.UI.iOS.3DMatrix.m12} property.</p>
+     * <p>Sets the value of the {@link Ti.UI.iOS.D3Matrix.m12} property.</p>
      * @param {Number} m12 <p>New value for the property.</p>
      * @since 0.9 (iPhone), 0.9 (iPad)
      */
@@ -54375,7 +54375,7 @@ Ti.UI.iOS.3DMatrix.prototype = {
     },
 
     /**
-     * <p>Sets the value of the {@link Ti.UI.iOS.3DMatrix.m13} property.</p>
+     * <p>Sets the value of the {@link Ti.UI.iOS.D3Matrix.m13} property.</p>
      * @param {Number} m13 <p>New value for the property.</p>
      * @since 0.9 (iPhone), 0.9 (iPad)
      */
@@ -54383,7 +54383,7 @@ Ti.UI.iOS.3DMatrix.prototype = {
     },
 
     /**
-     * <p>Sets the value of the {@link Ti.UI.iOS.3DMatrix.m14} property.</p>
+     * <p>Sets the value of the {@link Ti.UI.iOS.D3Matrix.m14} property.</p>
      * @param {Number} m14 <p>New value for the property.</p>
      * @since 0.9 (iPhone), 0.9 (iPad)
      */
@@ -54391,7 +54391,7 @@ Ti.UI.iOS.3DMatrix.prototype = {
     },
 
     /**
-     * <p>Sets the value of the {@link Ti.UI.iOS.3DMatrix.m21} property.</p>
+     * <p>Sets the value of the {@link Ti.UI.iOS.D3Matrix.m21} property.</p>
      * @param {Number} m21 <p>New value for the property.</p>
      * @since 0.9 (iPhone), 0.9 (iPad)
      */
@@ -54399,7 +54399,7 @@ Ti.UI.iOS.3DMatrix.prototype = {
     },
 
     /**
-     * <p>Sets the value of the {@link Ti.UI.iOS.3DMatrix.m22} property.</p>
+     * <p>Sets the value of the {@link Ti.UI.iOS.D3Matrix.m22} property.</p>
      * @param {Number} m22 <p>New value for the property.</p>
      * @since 0.9 (iPhone), 0.9 (iPad)
      */
@@ -54407,7 +54407,7 @@ Ti.UI.iOS.3DMatrix.prototype = {
     },
 
     /**
-     * <p>Sets the value of the {@link Ti.UI.iOS.3DMatrix.m23} property.</p>
+     * <p>Sets the value of the {@link Ti.UI.iOS.D3Matrix.m23} property.</p>
      * @param {Number} m23 <p>New value for the property.</p>
      * @since 0.9 (iPhone), 0.9 (iPad)
      */
@@ -54415,7 +54415,7 @@ Ti.UI.iOS.3DMatrix.prototype = {
     },
 
     /**
-     * <p>Sets the value of the {@link Ti.UI.iOS.3DMatrix.m24} property.</p>
+     * <p>Sets the value of the {@link Ti.UI.iOS.D3Matrix.m24} property.</p>
      * @param {Number} m24 <p>New value for the property.</p>
      * @since 0.9 (iPhone), 0.9 (iPad)
      */
@@ -54423,7 +54423,7 @@ Ti.UI.iOS.3DMatrix.prototype = {
     },
 
     /**
-     * <p>Sets the value of the {@link Ti.UI.iOS.3DMatrix.m31} property.</p>
+     * <p>Sets the value of the {@link Ti.UI.iOS.D3Matrix.m31} property.</p>
      * @param {Number} m31 <p>New value for the property.</p>
      * @since 0.9 (iPhone), 0.9 (iPad)
      */
@@ -54431,7 +54431,7 @@ Ti.UI.iOS.3DMatrix.prototype = {
     },
 
     /**
-     * <p>Sets the value of the {@link Ti.UI.iOS.3DMatrix.m32} property.</p>
+     * <p>Sets the value of the {@link Ti.UI.iOS.D3Matrix.m32} property.</p>
      * @param {Number} m32 <p>New value for the property.</p>
      * @since 0.9 (iPhone), 0.9 (iPad)
      */
@@ -54439,7 +54439,7 @@ Ti.UI.iOS.3DMatrix.prototype = {
     },
 
     /**
-     * <p>Sets the value of the {@link Ti.UI.iOS.3DMatrix.m33} property.</p>
+     * <p>Sets the value of the {@link Ti.UI.iOS.D3Matrix.m33} property.</p>
      * @param {Number} m33 <p>New value for the property.</p>
      * @since 0.9 (iPhone), 0.9 (iPad)
      */
@@ -54447,7 +54447,7 @@ Ti.UI.iOS.3DMatrix.prototype = {
     },
 
     /**
-     * <p>Sets the value of the {@link Ti.UI.iOS.3DMatrix.m34} property.</p>
+     * <p>Sets the value of the {@link Ti.UI.iOS.D3Matrix.m34} property.</p>
      * @param {Number} m34 <p>New value for the property.</p>
      * @since 0.9 (iPhone), 0.9 (iPad)
      */
@@ -54455,7 +54455,7 @@ Ti.UI.iOS.3DMatrix.prototype = {
     },
 
     /**
-     * <p>Sets the value of the {@link Ti.UI.iOS.3DMatrix.m41} property.</p>
+     * <p>Sets the value of the {@link Ti.UI.iOS.D3Matrix.m41} property.</p>
      * @param {Number} m41 <p>New value for the property.</p>
      * @since 0.9 (iPhone), 0.9 (iPad)
      */
@@ -54463,7 +54463,7 @@ Ti.UI.iOS.3DMatrix.prototype = {
     },
 
     /**
-     * <p>Sets the value of the {@link Ti.UI.iOS.3DMatrix.m42} property.</p>
+     * <p>Sets the value of the {@link Ti.UI.iOS.D3Matrix.m42} property.</p>
      * @param {Number} m42 <p>New value for the property.</p>
      * @since 0.9 (iPhone), 0.9 (iPad)
      */
@@ -54471,7 +54471,7 @@ Ti.UI.iOS.3DMatrix.prototype = {
     },
 
     /**
-     * <p>Sets the value of the {@link Ti.UI.iOS.3DMatrix.m43} property.</p>
+     * <p>Sets the value of the {@link Ti.UI.iOS.D3Matrix.m43} property.</p>
      * @param {Number} m43 <p>New value for the property.</p>
      * @since 0.9 (iPhone), 0.9 (iPad)
      */
@@ -54479,7 +54479,7 @@ Ti.UI.iOS.3DMatrix.prototype = {
     },
 
     /**
-     * <p>Sets the value of the {@link Ti.UI.iOS.3DMatrix.m44} property.</p>
+     * <p>Sets the value of the {@link Ti.UI.iOS.D3Matrix.m44} property.</p>
      * @param {Number} m44 <p>New value for the property.</p>
      * @since 0.9 (iPhone), 0.9 (iPad)
      */
@@ -54491,18 +54491,18 @@ Ti.UI.iOS.3DMatrix.prototype = {
      * @param {Number} tx <p>The value by which to move x values with the matrix</p>
      * @param {Number} ty <p>The value by which to move y values with the matrix</p>
      * @param {Number} tz <p>The value by which to move z values with the matrix</p>
-     * @returns Ti.UI.iOS.3DMatrix
+     * @returns Ti.UI.iOS.D3Matrix
      * @since 0.9 (iPhone), 0.9 (iPad)
      */
     translate:function(tx, ty, tz) {
     }
-}
+};
 
 /**
  * platforms: iPhone, iPad
  */
 Ti.UI.iOS.AdView = function() {
-}
+};
 Ti.UI.iOS.AdView.prototype = {
 
     /**
@@ -54725,7 +54725,7 @@ One of: 'absolute', 'vertical', or 'horizontal'.</p>
 
     /**
      * <p>Transformation matrix to apply to the view.</p>
-     * @type Ti.UI.2DMatrix|Ti.UI.iOS.3DMatrix
+     * @type Ti.UI.D2Matrix|Ti.UI.iOS.D3Matrix
      * @since 1.4 (iPhone), 1.4 (iPad)
      */
     transform:null,
@@ -55064,8 +55064,8 @@ If this argument is not a view, an exception will be raised.</p>
 
     /**
      * <p>Gets the value of the {@link Ti.UI.iOS.AdView.transform} property.</p>
-     * @returns Ti.UI.2DMatrix
-     * @returns Ti.UI.iOS.3DMatrix
+     * @returns Ti.UI.D2Matrix
+     * @returns Ti.UI.iOS.D3Matrix
      * @since 1.4 (iPhone), 1.4 (iPad)
      */
     getTransform:function() {
@@ -55346,7 +55346,7 @@ If this argument is not a view, an exception will be raised.</p>
 
     /**
      * <p>Sets the value of the {@link Ti.UI.iOS.AdView.transform} property.</p>
-     * @param {Ti.UI.2DMatrix|Ti.UI.iOS.3DMatrix} transform <p>New value for the property.</p>
+     * @param {Ti.UI.D2Matrix|Ti.UI.iOS.D3Matrix} transform <p>New value for the property.</p>
      * @since 1.4 (iPhone), 1.4 (iPad)
      */
     setTransform:function(transform) {
@@ -55392,7 +55392,7 @@ performed asynchronously. If null, it will be performed immediately.</p>
      */
     toImage:function(f) {
     }
-}
+};
 
 /**
  * platforms: iPhone, iPad
@@ -55407,7 +55407,7 @@ window.add(view);
 </code></pre>
  */
 Ti.UI.iOS.CoverFlowView = function() {
-}
+};
 Ti.UI.iOS.CoverFlowView.prototype = {
 
     /**
@@ -55630,7 +55630,7 @@ One of: 'absolute', 'vertical', or 'horizontal'.</p>
 
     /**
      * <p>Transformation matrix to apply to the view.</p>
-     * @type Ti.UI.2DMatrix|Ti.UI.iOS.3DMatrix
+     * @type Ti.UI.D2Matrix|Ti.UI.iOS.D3Matrix
      * @since 0.8 (iPhone), 0.8 (iPad)
      */
     transform:null,
@@ -55962,8 +55962,8 @@ If this argument is not a view, an exception will be raised.</p>
 
     /**
      * <p>Gets the value of the {@link Ti.UI.iOS.CoverFlowView.transform} property.</p>
-     * @returns Ti.UI.2DMatrix
-     * @returns Ti.UI.iOS.3DMatrix
+     * @returns Ti.UI.D2Matrix
+     * @returns Ti.UI.iOS.D3Matrix
      * @since 0.8 (iPhone), 0.8 (iPad)
      */
     getTransform:function() {
@@ -56269,7 +56269,7 @@ If this argument is not a view, an exception will be raised.</p>
 
     /**
      * <p>Sets the value of the {@link Ti.UI.iOS.CoverFlowView.transform} property.</p>
-     * @param {Ti.UI.2DMatrix|Ti.UI.iOS.3DMatrix} transform <p>New value for the property.</p>
+     * @param {Ti.UI.D2Matrix|Ti.UI.iOS.D3Matrix} transform <p>New value for the property.</p>
      * @since 0.8 (iPhone), 0.8 (iPad)
      */
     setTransform:function(transform) {
@@ -56315,7 +56315,7 @@ performed asynchronously. If null, it will be performed immediately.</p>
      */
     toImage:function(f) {
     }
-}
+};
 
 /**
  * platforms: iPhone, iPad
@@ -56335,7 +56335,7 @@ maintains a state (visually distinguished as a pressed or selected look).</p>
 win.add(bb1);</p>
  */
 Ti.UI.iOS.TabbedBar = function() {
-}
+};
 Ti.UI.iOS.TabbedBar.prototype = {
 
     /**
@@ -56565,7 +56565,7 @@ One of: 'absolute', 'vertical', or 'horizontal'.</p>
 
     /**
      * <p>Transformation matrix to apply to the view.</p>
-     * @type Ti.UI.2DMatrix|Ti.UI.iOS.3DMatrix
+     * @type Ti.UI.D2Matrix|Ti.UI.iOS.D3Matrix
      * @since 0.8 (iPhone), 0.8 (iPad)
      */
     transform:null,
@@ -56905,8 +56905,8 @@ If this argument is not a view, an exception will be raised.</p>
 
     /**
      * <p>Gets the value of the {@link Ti.UI.iOS.TabbedBar.transform} property.</p>
-     * @returns Ti.UI.2DMatrix
-     * @returns Ti.UI.iOS.3DMatrix
+     * @returns Ti.UI.D2Matrix
+     * @returns Ti.UI.iOS.D3Matrix
      * @since 0.8 (iPhone), 0.8 (iPad)
      */
     getTransform:function() {
@@ -57211,7 +57211,7 @@ If this argument is not a view, an exception will be raised.</p>
 
     /**
      * <p>Sets the value of the {@link Ti.UI.iOS.TabbedBar.transform} property.</p>
-     * @param {Ti.UI.2DMatrix|Ti.UI.iOS.3DMatrix} transform <p>New value for the property.</p>
+     * @param {Ti.UI.D2Matrix|Ti.UI.iOS.D3Matrix} transform <p>New value for the property.</p>
      * @since 0.8 (iPhone), 0.8 (iPad)
      */
     setTransform:function(transform) {
@@ -57257,7 +57257,7 @@ performed asynchronously. If null, it will be performed immediately.</p>
      */
     toImage:function(f) {
     }
-}
+};
 
 /**
  * platforms: iPhone, iPad
@@ -57308,7 +57308,7 @@ this example, the toolbar buttons would be grouped tightly together on the left
 side of the toolbar.</p>
  */
 Ti.UI.iOS.Toolbar = function() {
-}
+};
 Ti.UI.iOS.Toolbar.prototype = {
 
     /**
@@ -57545,7 +57545,7 @@ One of: 'absolute', 'vertical', or 'horizontal'.</p>
 
     /**
      * <p>Transformation matrix to apply to the view.</p>
-     * @type Ti.UI.2DMatrix|Ti.UI.iOS.3DMatrix
+     * @type Ti.UI.D2Matrix|Ti.UI.iOS.D3Matrix
      * @since 0.8 (iPhone), 0.8 (iPad)
      */
     transform:null,
@@ -57900,8 +57900,8 @@ If this argument is not a view, an exception will be raised.</p>
 
     /**
      * <p>Gets the value of the {@link Ti.UI.iOS.Toolbar.transform} property.</p>
-     * @returns Ti.UI.2DMatrix
-     * @returns Ti.UI.iOS.3DMatrix
+     * @returns Ti.UI.D2Matrix
+     * @returns Ti.UI.iOS.D3Matrix
      * @since 0.8 (iPhone), 0.8 (iPad)
      */
     getTransform:function() {
@@ -58222,7 +58222,7 @@ If this argument is not a view, an exception will be raised.</p>
 
     /**
      * <p>Sets the value of the {@link Ti.UI.iOS.Toolbar.transform} property.</p>
-     * @param {Ti.UI.2DMatrix|Ti.UI.iOS.3DMatrix} transform <p>New value for the property.</p>
+     * @param {Ti.UI.D2Matrix|Ti.UI.iOS.D3Matrix} transform <p>New value for the property.</p>
      * @since 0.8 (iPhone), 0.8 (iPad)
      */
     setTransform:function(transform) {
@@ -58276,7 +58276,7 @@ performed asynchronously. If null, it will be performed immediately.</p>
      */
     toImage:function(f) {
     }
-}
+};
 
 /**
  * platforms: iPad
@@ -58384,7 +58384,7 @@ Ti.UI.iPad = {
      */
     removeEventListener:function(name, callback) {
     }
-}
+};
 
 /**
  * platforms: iPad
@@ -58431,7 +58431,7 @@ created by the method {@link Ti.UI.iPad.createDocumentViewer}.</p>
      win1.open();</p>
  */
 Ti.UI.iPad.DocumentViewer = function() {
-}
+};
 Ti.UI.iPad.DocumentViewer.prototype = {
 
     /**
@@ -58640,7 +58640,7 @@ One of: 'absolute', 'vertical', or 'horizontal'.</p>
 
     /**
      * <p>Transformation matrix to apply to the view.</p>
-     * @type Ti.UI.2DMatrix|Ti.UI.iOS.3DMatrix
+     * @type Ti.UI.D2Matrix|Ti.UI.iOS.D3Matrix
      * @since 1.8 (iPad)
      */
     transform:null,
@@ -58956,8 +58956,8 @@ If this argument is not a view, an exception will be raised.</p>
 
     /**
      * <p>Gets the value of the {@link Ti.UI.iPad.DocumentViewer.transform} property.</p>
-     * @returns Ti.UI.2DMatrix
-     * @returns Ti.UI.iOS.3DMatrix
+     * @returns Ti.UI.D2Matrix
+     * @returns Ti.UI.iOS.D3Matrix
      * @since 1.8 (iPad)
      */
     getTransform:function() {
@@ -59238,7 +59238,7 @@ If this argument is not a view, an exception will be raised.</p>
 
     /**
      * <p>Sets the value of the {@link Ti.UI.iPad.DocumentViewer.transform} property.</p>
-     * @param {Ti.UI.2DMatrix|Ti.UI.iOS.3DMatrix} transform <p>New value for the property.</p>
+     * @param {Ti.UI.D2Matrix|Ti.UI.iOS.D3Matrix} transform <p>New value for the property.</p>
      * @since 1.8 (iPad)
      */
     setTransform:function(transform) {
@@ -59294,7 +59294,7 @@ performed asynchronously. If null, it will be performed immediately.</p>
      */
     toImage:function(f) {
     }
-}
+};
 
 /**
  * platforms: iPad
@@ -59323,7 +59323,7 @@ popover.show({view:button});
 </code></pre>
  */
 Ti.UI.iPad.Popover = function() {
-}
+};
 Ti.UI.iPad.Popover.prototype = {
 
     /**
@@ -59553,7 +59553,7 @@ One of: 'absolute', 'vertical', or 'horizontal'.</p>
 
     /**
      * <p>Transformation matrix to apply to the view.</p>
-     * @type Ti.UI.2DMatrix|Ti.UI.iOS.3DMatrix
+     * @type Ti.UI.D2Matrix|Ti.UI.iOS.D3Matrix
      * @since 1.2 (iPad)
      */
     transform:null,
@@ -59893,8 +59893,8 @@ If this argument is not a view, an exception will be raised.</p>
 
     /**
      * <p>Gets the value of the {@link Ti.UI.iPad.Popover.transform} property.</p>
-     * @returns Ti.UI.2DMatrix
-     * @returns Ti.UI.iOS.3DMatrix
+     * @returns Ti.UI.D2Matrix
+     * @returns Ti.UI.iOS.D3Matrix
      * @since 1.2 (iPad)
      */
     getTransform:function() {
@@ -60207,7 +60207,7 @@ If this argument is not a view, an exception will be raised.</p>
 
     /**
      * <p>Sets the value of the {@link Ti.UI.iPad.Popover.transform} property.</p>
-     * @param {Ti.UI.2DMatrix|Ti.UI.iOS.3DMatrix} transform <p>New value for the property.</p>
+     * @param {Ti.UI.D2Matrix|Ti.UI.iOS.D3Matrix} transform <p>New value for the property.</p>
      * @since 1.2 (iPad)
      */
     setTransform:function(transform) {
@@ -60253,7 +60253,7 @@ performed asynchronously. If null, it will be performed immediately.</p>
      */
     toImage:function(f) {
     }
-}
+};
 
 /**
  * platforms: iPad
@@ -60301,7 +60301,7 @@ splitwin.open();
 </code></pre>
  */
 Ti.UI.iPad.SplitWindow = function() {
-}
+};
 Ti.UI.iPad.SplitWindow.prototype = {
 
     /**
@@ -60682,7 +60682,7 @@ the window is the child of a tab.</p>
 
     /**
      * <p>Transformation matrix to apply to the view.</p>
-     * @type Ti.UI.2DMatrix|Ti.UI.iOS.3DMatrix
+     * @type Ti.UI.D2Matrix|Ti.UI.iOS.D3Matrix
      * @since 1.2 (iPad)
      */
     transform:null,
@@ -61227,8 +61227,8 @@ If this argument is not a view, an exception will be raised.</p>
 
     /**
      * <p>Gets the value of the {@link Ti.UI.iPad.SplitWindow.transform} property.</p>
-     * @returns Ti.UI.2DMatrix
-     * @returns Ti.UI.iOS.3DMatrix
+     * @returns Ti.UI.D2Matrix
+     * @returns Ti.UI.iOS.D3Matrix
      * @since 1.2 (iPad)
      */
     getTransform:function() {
@@ -61724,7 +61724,7 @@ If this argument is not a view, an exception will be raised.</p>
 
     /**
      * <p>Sets the value of the {@link Ti.UI.iPad.SplitWindow.transform} property.</p>
-     * @param {Ti.UI.2DMatrix|Ti.UI.iOS.3DMatrix} transform <p>New value for the property.</p>
+     * @param {Ti.UI.D2Matrix|Ti.UI.iOS.D3Matrix} transform <p>New value for the property.</p>
      * @since 1.2 (iPad)
      */
     setTransform:function(transform) {
@@ -61786,7 +61786,7 @@ performed asynchronously. If null, it will be performed immediately.</p>
      */
     toImage:function(f) {
     }
-}
+};
 
 /**
  * platforms: iPhone, iPad
@@ -61995,13 +61995,13 @@ Ti.UI.iPhone = {
      */
     showStatusBar:function(animated, animationStyle) {
     }
-}
+};
 
 /**
  * platforms: iPhone, iPad
  */
 Ti.UI.iPhone.ActivityIndicatorStyle = function() {
-}
+};
 Ti.UI.iPhone.ActivityIndicatorStyle.prototype = {
 
     /**
@@ -62052,13 +62052,13 @@ Ti.UI.iPhone.ActivityIndicatorStyle.prototype = {
      */
     removeEventListener:function(name, callback) {
     }
-}
+};
 
 /**
  * platforms: iPhone, iPad
  */
 Ti.UI.iPhone.AnimationStyle = function() {
-}
+};
 Ti.UI.iPhone.AnimationStyle.prototype = {
 
     /**
@@ -62123,7 +62123,7 @@ Ti.UI.iPhone.AnimationStyle.prototype = {
      */
     removeEventListener:function(name, callback) {
     }
-}
+};
 
 /**
  * platforms: iPhone, iPad
@@ -62156,7 +62156,7 @@ nav.open(win2,{animated:true});
 </code></pre>
  */
 Ti.UI.iPhone.NavigationGroup = function() {
-}
+};
 Ti.UI.iPhone.NavigationGroup.prototype = {
 
     /**
@@ -62365,7 +62365,7 @@ One of: 'absolute', 'vertical', or 'horizontal'.</p>
 
     /**
      * <p>Transformation matrix to apply to the view.</p>
-     * @type Ti.UI.2DMatrix|Ti.UI.iOS.3DMatrix
+     * @type Ti.UI.D2Matrix|Ti.UI.iOS.D3Matrix
      * @since 1.2 (iPhone), 1.2 (iPad)
      */
     transform:null,
@@ -62690,8 +62690,8 @@ If this argument is not a view, an exception will be raised.</p>
 
     /**
      * <p>Gets the value of the {@link Ti.UI.iPhone.NavigationGroup.transform} property.</p>
-     * @returns Ti.UI.2DMatrix
-     * @returns Ti.UI.iOS.3DMatrix
+     * @returns Ti.UI.D2Matrix
+     * @returns Ti.UI.iOS.D3Matrix
      * @since 1.2 (iPhone), 1.2 (iPad)
      */
     getTransform:function() {
@@ -62981,7 +62981,7 @@ If this argument is not a view, an exception will be raised.</p>
 
     /**
      * <p>Sets the value of the {@link Ti.UI.iPhone.NavigationGroup.transform} property.</p>
-     * @param {Ti.UI.2DMatrix|Ti.UI.iOS.3DMatrix} transform <p>New value for the property.</p>
+     * @param {Ti.UI.D2Matrix|Ti.UI.iOS.D3Matrix} transform <p>New value for the property.</p>
      * @since 1.2 (iPhone), 1.2 (iPad)
      */
     setTransform:function(transform) {
@@ -63027,13 +63027,13 @@ performed asynchronously. If null, it will be performed immediately.</p>
      */
     toImage:function(f) {
     }
-}
+};
 
 /**
  * platforms: iPhone, iPad
  */
 Ti.UI.iPhone.ProgressBarStyle = function() {
-}
+};
 Ti.UI.iPhone.ProgressBarStyle.prototype = {
 
     /**
@@ -63084,13 +63084,13 @@ Ti.UI.iPhone.ProgressBarStyle.prototype = {
      */
     removeEventListener:function(name, callback) {
     }
-}
+};
 
 /**
  * platforms: iPhone, iPad
  */
 Ti.UI.iPhone.RowAnimationStyle = function() {
-}
+};
 Ti.UI.iPhone.RowAnimationStyle.prototype = {
 
     /**
@@ -63162,13 +63162,13 @@ Ti.UI.iPhone.RowAnimationStyle.prototype = {
      */
     removeEventListener:function(name, callback) {
     }
-}
+};
 
 /**
  * platforms: iPhone, iPad
  */
 Ti.UI.iPhone.ScrollIndicatorStyle = function() {
-}
+};
 Ti.UI.iPhone.ScrollIndicatorStyle.prototype = {
 
     /**
@@ -63219,13 +63219,13 @@ Ti.UI.iPhone.ScrollIndicatorStyle.prototype = {
      */
     removeEventListener:function(name, callback) {
     }
-}
+};
 
 /**
  * platforms: iPhone, iPad
  */
 Ti.UI.iPhone.StatusBar = function() {
-}
+};
 Ti.UI.iPhone.StatusBar.prototype = {
 
     /**
@@ -63283,13 +63283,13 @@ Ti.UI.iPhone.StatusBar.prototype = {
      */
     removeEventListener:function(name, callback) {
     }
-}
+};
 
 /**
  * platforms: iPhone, iPad
  */
 Ti.UI.iPhone.SystemButton = function() {
-}
+};
 Ti.UI.iPhone.SystemButton.prototype = {
 
     /**
@@ -63501,13 +63501,13 @@ Ti.UI.iPhone.SystemButton.prototype = {
      */
     removeEventListener:function(name, callback) {
     }
-}
+};
 
 /**
  * platforms: iPhone, iPad
  */
 Ti.UI.iPhone.SystemButtonStyle = function() {
-}
+};
 Ti.UI.iPhone.SystemButtonStyle.prototype = {
 
     /**
@@ -63565,13 +63565,13 @@ Ti.UI.iPhone.SystemButtonStyle.prototype = {
      */
     removeEventListener:function(name, callback) {
     }
-}
+};
 
 /**
  * platforms: iPhone, iPad
  */
 Ti.UI.iPhone.SystemIcon = function() {
-}
+};
 Ti.UI.iPhone.SystemIcon.prototype = {
 
     /**
@@ -63685,13 +63685,13 @@ Ti.UI.iPhone.SystemIcon.prototype = {
      */
     removeEventListener:function(name, callback) {
     }
-}
+};
 
 /**
  * platforms: iPhone, iPad
  */
 Ti.UI.iPhone.TableViewCellSelectionStyle = function() {
-}
+};
 Ti.UI.iPhone.TableViewCellSelectionStyle.prototype = {
 
     /**
@@ -63742,13 +63742,13 @@ Ti.UI.iPhone.TableViewCellSelectionStyle.prototype = {
      */
     removeEventListener:function(name, callback) {
     }
-}
+};
 
 /**
  * platforms: iPhone, iPad
  */
 Ti.UI.iPhone.TableViewScrollPosition = function() {
-}
+};
 Ti.UI.iPhone.TableViewScrollPosition.prototype = {
 
     /**
@@ -63806,13 +63806,13 @@ Ti.UI.iPhone.TableViewScrollPosition.prototype = {
      */
     removeEventListener:function(name, callback) {
     }
-}
+};
 
 /**
  * platforms: iPhone, iPad
  */
 Ti.UI.iPhone.TableViewSeparatorStyle = function() {
-}
+};
 Ti.UI.iPhone.TableViewSeparatorStyle.prototype = {
 
     /**
@@ -63856,13 +63856,13 @@ Ti.UI.iPhone.TableViewSeparatorStyle.prototype = {
      */
     removeEventListener:function(name, callback) {
     }
-}
+};
 
 /**
  * platforms: iPhone, iPad
  */
 Ti.UI.iPhone.TableViewStyle = function() {
-}
+};
 Ti.UI.iPhone.TableViewStyle.prototype = {
 
     /**
@@ -63906,7 +63906,7 @@ Ti.UI.iPhone.TableViewStyle.prototype = {
      */
     removeEventListener:function(name, callback) {
     }
-}
+};
 
 /**
  * platforms: Android, iPhone, iPad, Mobile Web
@@ -63985,7 +63985,7 @@ Ti.Utils = {
      */
     sha256:function(obj) {
     }
-}
+};
 
 /**
  * platforms: Android, iPhone, iPad, Mobile Web
@@ -64037,13 +64037,13 @@ Ti.XML = {
      */
     serializeToString:function(node) {
     }
-}
+};
 
 /**
  * platforms: Android, iPhone, iPad
  */
 Ti.XML.Attr = function() {
-}
+};
 Ti.XML.Attr.prototype = {
 
     /**
@@ -64522,13 +64522,13 @@ Ti.XML.Attr.prototype = {
      */
     setValue:function(value) {
     }
-}
+};
 
 /**
  * platforms: Android, iPhone, iPad
  */
 Ti.XML.CharacterData = function() {
-}
+};
 Ti.XML.CharacterData.prototype = {
 
     /**
@@ -65023,13 +65023,13 @@ Ti.XML.CharacterData.prototype = {
      */
     substringData:function(offset, count) {
     }
-}
+};
 
 /**
  * platforms: Android, iPhone, iPad
  */
 Ti.XML.DOMImplementation = function() {
-}
+};
 Ti.XML.DOMImplementation.prototype = {
 
 
@@ -65091,7 +65091,7 @@ Ti.XML.DOMImplementation.prototype = {
      */
     removeEventListener:function(name, callback) {
     }
-}
+};
 
 /**
  * platforms: Android, iPhone, iPad
@@ -65100,7 +65100,7 @@ parsed, however it is not validated, none of its default attributes will automat
 into the tree, etc.  {@link http://code.google.com/p/android/issues/detail?id=7395}.</p>
  */
 Ti.XML.Document = function() {
-}
+};
 Ti.XML.Document.prototype = {
 
     /**
@@ -65685,7 +65685,7 @@ Ti.XML.Document.prototype = {
      */
     setLocalName:function(localName) {
     }
-}
+};
 
 /**
  * platforms: Android, iPhone, iPad
@@ -65698,7 +65698,7 @@ parsed, however it is not validated, none of its default attributes will automat
 into the tree, etc.  {@link http://code.google.com/p/android/issues/detail?id=7395}.</p>
  */
 Ti.XML.DocumentType = function() {
-}
+};
 Ti.XML.DocumentType.prototype = {
 
     /**
@@ -66199,13 +66199,13 @@ Ti.XML.DocumentType.prototype = {
      */
     setLocalName:function(localName) {
     }
-}
+};
 
 /**
  * platforms: Android, iPhone, iPad
  */
 Ti.XML.Element = function() {
-}
+};
 Ti.XML.Element.prototype = {
 
     /**
@@ -66786,13 +66786,13 @@ Ti.XML.Element.prototype = {
      */
     setLocalName:function(localName) {
     }
-}
+};
 
 /**
  * platforms: Android, iPhone, iPad
  */
 Ti.XML.Entity = function() {
-}
+};
 Ti.XML.Entity.prototype = {
 
     /**
@@ -67248,13 +67248,13 @@ Ti.XML.Entity.prototype = {
      */
     setLocalName:function(localName) {
     }
-}
+};
 
 /**
  * platforms: Android, iPhone, iPad
  */
 Ti.XML.NamedNodeMap = function() {
-}
+};
 Ti.XML.NamedNodeMap.prototype = {
 
     /**
@@ -67364,13 +67364,13 @@ Ti.XML.NamedNodeMap.prototype = {
      */
     setNamedItemNS:function(node) {
     }
-}
+};
 
 /**
  * platforms: Android, iPhone, iPad
  */
 Ti.XML.Node = function() {
-}
+};
 Ti.XML.Node.prototype = {
 
     /**
@@ -67781,13 +67781,13 @@ Ti.XML.Node.prototype = {
      */
     setLocalName:function(localName) {
     }
-}
+};
 
 /**
  * platforms: Android, iPhone, iPad
  */
 Ti.XML.NodeList = function() {
-}
+};
 Ti.XML.NodeList.prototype = {
 
     /**
@@ -67841,13 +67841,13 @@ Ti.XML.NodeList.prototype = {
      */
     removeEventListener:function(name, callback) {
     }
-}
+};
 
 /**
  * platforms: Android, iPhone, iPad
  */
 Ti.XML.Notation = function() {
-}
+};
 Ti.XML.Notation.prototype = {
 
     /**
@@ -67907,13 +67907,13 @@ Ti.XML.Notation.prototype = {
      */
     removeEventListener:function(name, callback) {
     }
-}
+};
 
 /**
  * platforms: Android, iPhone, iPad
  */
 Ti.XML.ProcessingInstruction = function() {
-}
+};
 Ti.XML.ProcessingInstruction.prototype = {
 
     /**
@@ -67981,13 +67981,13 @@ Ti.XML.ProcessingInstruction.prototype = {
      */
     setData:function(data) {
     }
-}
+};
 
 /**
  * platforms: Android, iPhone, iPad
  */
 Ti.XML.Text = function() {
-}
+};
 Ti.XML.Text.prototype = {
 
     /**
@@ -68491,7 +68491,7 @@ Ti.XML.Text.prototype = {
      */
     substringData:function(offset, count) {
     }
-}
+};
 
 /**
  * platforms: Android, iPhone, iPad
@@ -68534,13 +68534,13 @@ Ti.Yahoo = {
      */
     yql:function(yql, callback) {
     }
-}
+};
 
 /**
  * platforms: Android, iPhone, iPad, Mobile Web
  */
 var WriteCallbackArgs = function() {
-}
+};
 WriteCallbackArgs.prototype = {
 
     /**
@@ -68635,13 +68635,13 @@ WriteCallbackArgs.prototype = {
      */
     setSource:function(source) {
     }
-}
+};
 
 /**
  * platforms: Android, iPhone, iPad, Mobile Web
  */
 var WriteStreamCallbackArgs = function() {
-}
+};
 WriteStreamCallbackArgs.prototype = {
 
     /**
@@ -68759,7 +68759,7 @@ WriteStreamCallbackArgs.prototype = {
      */
     setToStream:function(toStream) {
     }
-}
+};
 
 
 var Titanium = Ti;
