@@ -14,6 +14,7 @@ HTML_LINK_REGEX = '<a href=\"(.*?)\">(.*?)</a>'
 HTML_TARGET_SUFFIX = '.html'
 KEYS = {}
 
+
 def htmlToJsDocTarget(htmlTarget):
     if '-' in htmlTarget:
         return htmlTarget.partition('-')[0]
@@ -38,6 +39,7 @@ def convertLinks(jsDoc):
         result = result.replace(htmlLink, jsDocLink)
     return result
 
+
 def convertIds(id):
     """ Converts invalid JavaScript identifiers to acceptable versions."""
     if id == 'default' or id == 'function':
@@ -46,11 +48,13 @@ def convertIds(id):
         return id.replace('-', '_')
     return id
 
+
 def convertKey(id):
     """ Converts invalid JavaScript hash key to acceptable versions."""
     if id == 'default' or id.find('-') > 0:
         return '"' + id + '"'
     return id
+
 
 def getPlatforms(platforms):
     res = list()
@@ -61,18 +65,21 @@ def getPlatforms(platforms):
             res.append(platform)
     return res
 
+
 def formatReturn(returns):
-    typ = returns['type'].replace('.', '_')
+    typ = returns['type']
     if 'summary' in returns:
         return typ + ' ' + returns['summary']
     return typ
+
 
 def formatType(typeDef):
     if type(typeDef) is list:
         typ = '|'.join(typeDef)
     else:
         typ = typeDef
-    return typ.replace('.', '_')
+    return typ
+
 
 def formatSince(decl):
     if 'since' in decl:
@@ -81,6 +88,7 @@ def formatSince(decl):
     for platform in decl['platforms']:
         res.append(platform['since'] + ' (' + platform['pretty_name'] + ')')
     return ', '.join(res)
+
 
 def generatePropertyJSDoc(property):
     formatter = Formatter(METHOD_INDENTATION)
@@ -98,6 +106,7 @@ def generatePropertyJSDoc(property):
 
     return convertLinks(formatter.getResult())
 
+
 def generateMethodJSDoc(method):
     formatter = Formatter(METHOD_INDENTATION)
     formatter.addLine('/**')
@@ -106,11 +115,11 @@ def generateMethodJSDoc(method):
 
     formatter.addLine(prefix, method[KEYS['value']])
 
-    if 'since' in method: 
+    if 'since' in method:
         formatter.addLine(prefix, 'platforms: ', ', '.join(getPlatforms(method['platforms'])))
 
     for param in method['parameters']:
-        formatter.addLine(prefix, '@param {', formatType(param['type']), '} ', 
+        formatter.addLine(prefix, '@param {', formatType(param['type']), '} ',
             convertIds(param['name']), ' ', param[KEYS['description']])
 
     if 'returntype' in method and method['returntype'] == 'void':
@@ -167,6 +176,7 @@ def formatProperties(namespace):
         formatter.newLine()
     return formatter.getResult()
 
+
 def formatMethods(namespace):
     formatter = Formatter(METHOD_INDENTATION)
     for method in namespace['methods']:
@@ -176,23 +186,19 @@ def formatMethods(namespace):
         formatter.newLine()
     return formatter.getResult()
 
+
 def formatNamespace(namespace):
     namespaceName = convertIds(namespace[0])
     namespaceContent = namespace[1]
 
     formatter = Formatter()
     formatter.add(generateNamespaceJSDoc(namespaceContent))
+    if namespaceName.find('.') < 0:
+        formatter.add('var ')
     if namespaceContent['subtype'] == 'proxy':
-        name = namespaceName.replace('.', '_')
-        formatter.addLine('function ', name, '() {').addLine('}')
-        formatter.addLine(name, '.prototype = {').newLine()
+        formatter.addLine(namespaceName, ' = function() {').addLine('}')
+        formatter.addLine(namespaceName, '.prototype = {').newLine()
     else:
-        if namespaceName == "Titanium":
-            namespaceName = "Ti";
-        else:
-            namespaceName = namespaceName.replace("Titanium.", "Ti.")
-        if namespaceName.find('.') < 0:
-            formatter.add('var ')
         formatter.addLine(namespaceName, ' = {').newLine()
     formatter.addLine(formatProperties(namespaceContent))
     formatter.addLine(formatMethods(namespaceContent))
@@ -202,7 +208,6 @@ def formatNamespace(namespace):
 
 
 def convertJsca2Js(jsca, version):
-
     version = '.'.join(version.split('.')[0:2])
     if float(version) >= 1.8:
         KEYS['value'] = 'summary'
@@ -210,12 +215,12 @@ def convertJsca2Js(jsca, version):
     else:
         KEYS['value'] = 'value'
         KEYS['description'] = 'description'
-    
+
     javascript = ''
     for namespace in sorted(jsca.items()):
         javascript += formatNamespace(namespace)
-    
+
+    javascript = javascript.replace('Titanium.', 'Ti.')
     javascript += "\nvar Titanium = Ti;\n"
 
     return javascript.replace(",\n\n\n}", "\n}")
-

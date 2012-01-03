@@ -5,9 +5,9 @@
 <h4 id="timers">Timers</h4>
 <p>Titanium has built-in support for one-shot and repeating timers with two main functions: <tt>setTimeout</tt> and <tt>setInterval</tt>.  <tt>setTimeout</tt> takes 2 arguments: function and timeout in milliseconds after which the function should be executed and returns a timer handle that can be used to cancel a pending timer with <tt>clearTimeout</tt>.  <tt>setInterval</tt> takes 2 arguments: function and timeout in milliseconds for how often the function should be executed until cancelled and returns a timer handle that can be used to cancel a timer with <tt>clearInterval</tt>.</p>
 <h4 id="alert">Alert</h4>
-<p>Titanium has a built-in convenience function <tt>alert</tt> which can be used as a shortcut to {@link Titanium.UI.createAlertDialog} for creating a message box.  Note that unlike a web browser-based version of <tt>alert</tt>, the method is asynchronous. However, only one alert dialog will be visible and modal at a time.</p>
+<p>Titanium has a built-in convenience function <tt>alert</tt> which can be used as a shortcut to {@link Ti.UI.createAlertDialog} for creating a message box.  Note that unlike a web browser-based version of <tt>alert</tt>, the method is asynchronous. However, only one alert dialog will be visible and modal at a time.</p>
 <h4 id="locale">Locale</h4>
-<p>The macro <tt>L</tt> can also be used which aliases the method {@link Titanium.Locale.getString}.</p>
+<p>The macro <tt>L</tt> can also be used which aliases the method {@link Ti.Locale.getString}.</p>
 <h4 id="string_formatting">String formatting</h4>
 <p>The following are built-in functions available on the <tt>String</tt> class which are Titanium specific and will aid in formatting strings into a locale-specific string.</p>
 <p><tt>String.format</tt>: format a generic string using the {@link http://www.opengroup.org/onlinepubs/009695399/functions/printf}.</p>
@@ -19,7 +19,7 @@
  * @namespace <p>The top level Titanium module.</p>
  * @since 0.1
  */
-var Ti = {
+var Titanium = {
 
     /**
      * <p>the user-agent string used by Titanium</p>
@@ -50,9 +50,9 @@ var Ti = {
     },
 
     /**
-     * create and return an instance of {@link Titanium.Blob}
+     * create and return an instance of {@link Ti.Blob}
      * platforms: android, iphone, ipad
-     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.Blob}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Ti.Blob}
      * @since 0.1
      */
     createBlob:function(parameters) {
@@ -61,7 +61,7 @@ var Ti = {
     /**
      * <p>creates a new buffer based on the params</p>
      * platforms: android, iphone, ipad
-     * @param {object} params Key value pairs.  You can include: <tt>value</tt>, an optional initial value which will be encoded and placed in the buffer.  If value is a Number, <tt>type</tt> must also be set. This is simply a convenient way of calling {@link Titanium.Codec.encodeString} or {@link Titanium.Codec.encodeNumber} and placing the encoded value in the returned buffer.  <tt>length</tt>: the length of the buffer, with a default of 0 unless <tt>value</tt> is specified, in which case the length of the encoded <tt>value</tt>.  <tt>type</tt>, the type of data encoding to use with <tt>value</tt>, with {@link Titanium.Codec.CHARSET_UTF8} being the default if <tt>value</tt> is a String, else this argument is required in the case of <tt>value</tt> being a number.  <tt>byteOrder</tt>, the byte order of this buffer, with the default being the OS native byte order is used by default (see {@link Titanium.Codec.getNativeByteOrder}).
+     * @param {object} params Key value pairs.  You can include: <tt>value</tt>, an optional initial value which will be encoded and placed in the buffer.  If value is a Number, <tt>type</tt> must also be set. This is simply a convenient way of calling {@link Ti.Codec.encodeString} or {@link Ti.Codec.encodeNumber} and placing the encoded value in the returned buffer.  <tt>length</tt>: the length of the buffer, with a default of 0 unless <tt>value</tt> is specified, in which case the length of the encoded <tt>value</tt>.  <tt>type</tt>, the type of data encoding to use with <tt>value</tt>, with {@link Ti.Codec.CHARSET_UTF8} being the default if <tt>value</tt> is a String, else this argument is required in the case of <tt>value</tt> being a number.  <tt>byteOrder</tt>, the byte order of this buffer, with the default being the OS native byte order is used by default (see {@link Ti.Codec.getNativeByteOrder}).
      * @since 0.1
      */
     createBuffer:function(params) {
@@ -196,7 +196,7 @@ Ti.API = {
 /**
  * Notes: <p>You'll want to be selective about turning on and off the device accelerometer.  It's recommended you turn off the accelerometer when you're not using it.</p>
 <p>You can turn off the accelerometer by simply removing your event listener function.  You can turn it back on by re-adding the same function with <tt>addEventListener</tt>.</p>
-<pre><code>Titanium.Accelerometer.removeEventListener('update',myFunction);
+<pre><code>Ti.Accelerometer.removeEventListener('update',myFunction);
 </code></pre>
  * platforms: android, iphone, ipad
  * @namespace <p>The top level Accelerometer module.  The Accelerometer modules contains methods and properties for using the device accelerometer.</p>
@@ -204,7 +204,7 @@ Ti.API = {
  * 
  * @example Basic Accelerometer Event
  * <p>Adds an accelerometer update event listener which prints out the x, y and z axis as the device is moved.  You should generally remove the event when not used to conserve device resources.  If you do not have an active event listener, the accelerometer is turned off to conserve device resources.</p>
-<pre><code>Titanium.Accelerometer.addEventListener('update',function(e)
+<pre><code>Ti.Accelerometer.addEventListener('update',function(e)
 {
     Ti.API.debug("accelerometer - x:"+e.x+",y:"+e.y+",z:"+e.z);
 });
@@ -254,7 +254,7 @@ Ti.Accelerometer = {
  * 
  * @example Custom Feature Event
  * <p>This examples shows how to send a featureEvent during an application session to indicate some feature was triggered/used by the user that you would like to track.</p>
-<pre><code>Titanium.Analytics.featureEvent('app.feature.blah',{product:'killer'});
+<pre><code>Ti.Analytics.featureEvent('app.feature.blah',{product:'killer'});
 </code></pre>
  */
 Ti.Analytics = {
@@ -1780,7 +1780,7 @@ Ti.Android = {
     },
 
     /**
-     * <p>Create a {@link Titanium.Android.Intent} to be used to start a Broadcast.</p>
+     * <p>Create a {@link Ti.Android.Intent} to be used to start a Broadcast.</p>
      * platforms: android
      * @since 1.5
      */
@@ -1788,7 +1788,7 @@ Ti.Android = {
     },
 
     /**
-     * <p>Create a {@link Titanium.Android.Intent}. Used to start other Activities and for marshaling data.</p>
+     * <p>Create a {@link Ti.Android.Intent}. Used to start other Activities and for marshaling data.</p>
      * platforms: android
      * @since 1.5
      */
@@ -1804,7 +1804,7 @@ Ti.Android = {
     },
 
     /**
-     * <p>Crate a {@link Titanium.Android.Notification}. Used to notify the user of an event.</p>
+     * <p>Crate a {@link Ti.Android.Notification}. Used to notify the user of an event.</p>
      * platforms: android
      * @param {object} options Options dictionary
      * @since 1.5
@@ -1813,26 +1813,26 @@ Ti.Android = {
     },
 
     /**
-     * <p>Create a {@link Titanium.Android.PendingIntent} to be used inside a {@link Titanium.Android.Notification}</p>
+     * <p>Create a {@link Ti.Android.PendingIntent} to be used inside a {@link Ti.Android.Notification}</p>
      * platforms: android
-     * @param {{@link Titanium_Android_Intent_html}} intent The Intent that will be executed
-     * @param {int} flags (optional, default: 0) Can be any of {@link Titanium.Android.FLAG_CANCEL_CURRENT}, {@link Titanium.Android.FLAG_NO_CREATE}, {@link Titanium.Android.FLAG_ONE_SHOT}, {@link Titanium.Android.FLAG_UPDATE_CURRENT}
+     * @param {{@link Ti.Android.Intent}} intent The Intent that will be executed
+     * @param {int} flags (optional, default: 0) Can be any of {@link Ti.Android.FLAG_CANCEL_CURRENT}, {@link Ti.Android.FLAG_NO_CREATE}, {@link Ti.Android.FLAG_ONE_SHOT}, {@link Ti.Android.FLAG_UPDATE_CURRENT}
      * @since 1.5
      */
     createPendingIntent:function(intent, flags) {
     },
 
     /**
-     * <p>Create a {@link Titanium.Android.Service} so you can start/stop it and listen for events from it.</p>
+     * <p>Create a {@link Ti.Android.Service} so you can start/stop it and listen for events from it.</p>
      * platforms: android
-     * @param {{@link Titanium_Android_Intent_html}} intent An Intent created with {@link Titanium.Android.createServiceIntent} which specifies the service to be instantiated.
+     * @param {{@link Ti.Android.Intent}} intent An Intent created with {@link Ti.Android.createServiceIntent} which specifies the service to be instantiated.
      * @since 1.5
      */
     createService:function(intent) {
     },
 
     /**
-     * <p>Create an {@link Titanium.Android.Intent} to be used to start a Service.</p>
+     * <p>Create an {@link Ti.Android.Intent} to be used to start a Service.</p>
      * platforms: android
      * @param {object} options Options dictionary -- pass in a <tt>url</tt> option to specify the path to a javascript-based service you create.
      * @since 1.5
@@ -1854,7 +1854,7 @@ Ti.Android = {
     /**
      * <p>Check on state of Service.</p>
      * platforms: android
-     * @param {{@link Titanium_Android_Intent_html}} intent An Intent created with {@link Titanium.Android.createServiceIntent} which specifies the service to check.
+     * @param {{@link Ti.Android.Intent}} intent An Intent created with {@link Ti.Android.createServiceIntent} which specifies the service to check.
      * @since 1.5
      */
     isServiceRunning:function(intent) {
@@ -1874,7 +1874,7 @@ Ti.Android = {
     /**
      * <p>Start a simple service</p>
      * platforms: android
-     * @param {{@link Titanium_Android_Intent_html}} intent An Intent created with {@link Titanium.Android.createServiceIntent} which specifies the service to start.
+     * @param {{@link Ti.Android.Intent}} intent An Intent created with {@link Ti.Android.createServiceIntent} which specifies the service to start.
      * @returns void
      * @since 1.5
      */
@@ -1884,7 +1884,7 @@ Ti.Android = {
     /**
      * <p>Stop a simple service that was started with <tt>startService</tt>.</p>
      * platforms: android
-     * @param {{@link Titanium_Android_Intent_html}} intent An Intent created with {@link Titanium.Android.createServiceIntent} which specifies the service to stop.
+     * @param {{@link Ti.Android.Intent}} intent An Intent created with {@link Ti.Android.createServiceIntent} which specifies the service to stop.
      * @returns void
      * @since 1.5
      */
@@ -1903,7 +1903,7 @@ Ti.Android = {
     var requestCode = e.requestCode;
     // The result code returned from the Activity (http://developer.android.com/reference/android/app/Activity.html#StartingActivities)
     var resultCode = e.resultCode;
-    // A Titanium.Android.Intent filled with data returned from the Activity
+    // A Ti.Android.Intent filled with data returned from the Activity
     var intent = e.intent;
     // The Activity the received the result
     var source = e.source;
@@ -1915,13 +1915,13 @@ Ti.Android.Activity = {
     /**
      * <p>The Intent that was used to start this Activity</p>
      * platforms: android
-     * @type {@link Titanium_Android_Intent_html}
+     * @type {@link Ti.Android.Intent}
      * @since 1.5
      */
     intent:null,
 
     /**
-     * <p>A callback function that is called to initially create an Android {@link http://developer.android.com/guide/topics/ui/menus.html#options} for this Activity when the user presses the Menu button. See the menu examples in {@link Titanium.Android.Menu}</p>
+     * <p>A callback function that is called to initially create an Android {@link http://developer.android.com/guide/topics/ui/menus.html#options} for this Activity when the user presses the Menu button. See the menu examples in {@link Ti.Android.Menu}</p>
      * platforms: android
      * @type function
      * @since 1.5
@@ -1929,7 +1929,7 @@ Ti.Android.Activity = {
     onCreateOptionsMenu:null,
 
     /**
-     * <p>A callback function that is called to prepare an {@link http://developer.android.com/guide/topics/ui/menus.html#options} for displaying on this Activity when the user presses the Menu button. See the menu examples in {@link Titanium.Android.Menu}</p>
+     * <p>A callback function that is called to prepare an {@link http://developer.android.com/guide/topics/ui/menus.html#options} for displaying on this Activity when the user presses the Menu button. See the menu examples in {@link Ti.Android.Menu}</p>
      * platforms: android
      * @type function
      * @since 1.5
@@ -1937,7 +1937,7 @@ Ti.Android.Activity = {
     onPrepareOptionsMenu:null,
 
     /**
-     * <p>The requested orientation of this Activity. See possible constant values that begin with SCREEN_ORIENTATION in the {@link Titanium.Android} module.</p>
+     * <p>The requested orientation of this Activity. See possible constant values that begin with SCREEN_ORIENTATION in the {@link Ti.Android} module.</p>
      * platforms: android
      * @type int
      * @since 1.5
@@ -1955,7 +1955,7 @@ Ti.Android.Activity = {
     },
 
     /**
-     * <p>Returns the {@link Titanium.Android.Intent} that was used to start this Activity.</p>
+     * <p>Returns the {@link Ti.Android.Intent} that was used to start this Activity.</p>
      * platforms: android
      * @since 1.5
      */
@@ -1975,7 +1975,7 @@ Ti.Android.Activity = {
     /**
      * <p>Set the requested Activity orientation. Also see Android's documentation for {@link http://developer.android.com/reference/android/app/Activity.html#setRequestedOrientation(int)}</p>
      * platforms: android
-     * @param {int} orientation Can be one of {@link Titanium.Android.SCREEN_ORIENTATION_BEHIND}, {@link Titanium.Android.SCREEN_ORIENTATION_LANDSCAPE}, {@link Titanium.Android.SCREEN_ORIENTATION_NOSENSOR}, {@link Titanium.Android.SCREEN_ORIENTATION_PORTRAIT}, {@link Titanium.Android.SCREEN_ORIENTATION_SENSOR}, {@link Titanium.Android.SCREEN_ORIENTATION_UNSPECIFIED}, {@link Titanium.Android.SCREEN_ORIENTATION_USER}
+     * @param {int} orientation Can be one of {@link Ti.Android.SCREEN_ORIENTATION_BEHIND}, {@link Ti.Android.SCREEN_ORIENTATION_LANDSCAPE}, {@link Ti.Android.SCREEN_ORIENTATION_NOSENSOR}, {@link Ti.Android.SCREEN_ORIENTATION_PORTRAIT}, {@link Ti.Android.SCREEN_ORIENTATION_SENSOR}, {@link Ti.Android.SCREEN_ORIENTATION_UNSPECIFIED}, {@link Ti.Android.SCREEN_ORIENTATION_USER}
      * @returns void
      * @since 1.5
      */
@@ -1985,8 +1985,8 @@ Ti.Android.Activity = {
     /**
      * <p>Sets the result of this Activity using an Intent. This should be used in the case when the Activity responds to startActivityForResult. Also see Android's documentation for {@link http://developer.android.com/reference/android/app/Activity.html#setResult(int)}</p>
      * platforms: android
-     * @param {int} resultCode The result code for this Activity. Must be one of {@link Titanium.Android.RESULT_OK}, {@link Titanium.Android.RESULT_CANCELED}, {@link Titanium.Android.RESULT_FIRST_USER}
-     * @param {{@link Titanium_Android_Intent_html}} intent An optional {@link Titanium.Android.Intent} with extra result data
+     * @param {int} resultCode The result code for this Activity. Must be one of {@link Ti.Android.RESULT_OK}, {@link Ti.Android.RESULT_CANCELED}, {@link Ti.Android.RESULT_FIRST_USER}
+     * @param {{@link Ti.Android.Intent}} intent An optional {@link Ti.Android.Intent} with extra result data
      * @returns void
      * @since 1.5
      */
@@ -1996,7 +1996,7 @@ Ti.Android.Activity = {
     /**
      * <p>Starts a new Activity, using the passed in Intent as the description. Also see Android's documentation for {@link http://developer.android.com/reference/android/app/Activity.html#startActivity(android.content.Intent)}</p>
      * platforms: android
-     * @param {{@link Titanium_Android_Intent_html}} intent Description of the Activity to start
+     * @param {{@link Ti.Android.Intent}} intent Description of the Activity to start
      * @returns void
      * @since 1.5
      */
@@ -2006,8 +2006,8 @@ Ti.Android.Activity = {
     /**
      * <p>The same as <tt>startActivity</tt>, but also accepts a callback function for handling the result of the started Activity. Also see Android's documentation for {@link http://developer.android.com/reference/android/app/Activity.html#startActivityForResult(android.content.Intent, int)}</p>
      * platforms: android
-     * @param {{@link Titanium_Android_Intent_html}} intent Description of the Activity to start
-     * @param {function} callback A callback function that is executed when the Activity has set it's result. See example in {@link Titanium.Android.Activity}.
+     * @param {{@link Ti.Android.Intent}} intent Description of the Activity to start
+     * @param {function} callback A callback function that is executed when the Activity has set it's result. See example in {@link Ti.Android.Activity}.
      * @returns void
      * @since 1.5
      */
@@ -2157,7 +2157,7 @@ event.createReminder(reminderDetails);
 Ti.Android.Calendar = {
 
     /**
-     * <p>constant for the {@link Titanium.Android.Calendar.Reminder} method property.</p>
+     * <p>constant for the {@link Ti.Android.Calendar.Reminder} method property.</p>
      * platforms: android
      * @type int
      * @since 1.5
@@ -2165,7 +2165,7 @@ Ti.Android.Calendar = {
     METHOD_ALERT:null,
 
     /**
-     * <p>constant for the {@link Titanium.Android.Calendar.Reminder} method property.</p>
+     * <p>constant for the {@link Ti.Android.Calendar.Reminder} method property.</p>
      * platforms: android
      * @type int
      * @since 1.5
@@ -2173,7 +2173,7 @@ Ti.Android.Calendar = {
     METHOD_DEFAULT:null,
 
     /**
-     * <p>constant for the {@link Titanium.Android.Calendar.Reminder} method property.</p>
+     * <p>constant for the {@link Ti.Android.Calendar.Reminder} method property.</p>
      * platforms: android
      * @type int
      * @since 1.5
@@ -2181,7 +2181,7 @@ Ti.Android.Calendar = {
     METHOD_EMAIL:null,
 
     /**
-     * <p>constant for the {@link Titanium.Android.Calendar.Reminder} method property.</p>
+     * <p>constant for the {@link Ti.Android.Calendar.Reminder} method property.</p>
      * platforms: android
      * @type int
      * @since 1.5
@@ -2189,7 +2189,7 @@ Ti.Android.Calendar = {
     METHOD_SMS:null,
 
     /**
-     * <p>constant for the {@link Titanium.Android.Calendar.Alert} state property.</p>
+     * <p>constant for the {@link Ti.Android.Calendar.Alert} state property.</p>
      * platforms: android
      * @type int
      * @since 1.5
@@ -2197,7 +2197,7 @@ Ti.Android.Calendar = {
     STATE_DISMISSED:null,
 
     /**
-     * <p>constant for the {@link Titanium.Android.Calendar.Alert} state property.</p>
+     * <p>constant for the {@link Ti.Android.Calendar.Alert} state property.</p>
      * platforms: android
      * @type int
      * @since 1.5
@@ -2205,7 +2205,7 @@ Ti.Android.Calendar = {
     STATE_FIRED:null,
 
     /**
-     * <p>constant for the {@link Titanium.Android.Calendar.Alert} state property.</p>
+     * <p>constant for the {@link Ti.Android.Calendar.Alert} state property.</p>
      * platforms: android
      * @type int
      * @since 1.5
@@ -2213,7 +2213,7 @@ Ti.Android.Calendar = {
     STATE_SCHEDULED:null,
 
     /**
-     * <p>constant for the {@link Titanium.Android.Calendar.Event} status property.</p>
+     * <p>constant for the {@link Ti.Android.Calendar.Event} status property.</p>
      * platforms: android
      * @type int
      * @since 1.5
@@ -2221,7 +2221,7 @@ Ti.Android.Calendar = {
     STATUS_CANCELED:null,
 
     /**
-     * <p>constant for the {@link Titanium.Android.Calendar.Event} status property.</p>
+     * <p>constant for the {@link Ti.Android.Calendar.Event} status property.</p>
      * platforms: android
      * @type int
      * @since 1.5
@@ -2229,7 +2229,7 @@ Ti.Android.Calendar = {
     STATUS_CONFIRMED:null,
 
     /**
-     * <p>constant for the {@link Titanium.Android.Calendar.Event} status property.</p>
+     * <p>constant for the {@link Ti.Android.Calendar.Event} status property.</p>
      * platforms: android
      * @type int
      * @since 1.5
@@ -2237,7 +2237,7 @@ Ti.Android.Calendar = {
     STATUS_TENTATIVE:null,
 
     /**
-     * <p>constant for the {@link Titanium.Android.Calendar.Event} visibility property.</p>
+     * <p>constant for the {@link Ti.Android.Calendar.Event} visibility property.</p>
      * platforms: android
      * @type int
      * @since 1.5
@@ -2245,7 +2245,7 @@ Ti.Android.Calendar = {
     VISIBILITY_CONFIDENTIAL:null,
 
     /**
-     * <p>constant for the {@link Titanium.Android.Calendar.Event} visibility property.</p>
+     * <p>constant for the {@link Ti.Android.Calendar.Event} visibility property.</p>
      * platforms: android
      * @type int
      * @since 1.5
@@ -2253,7 +2253,7 @@ Ti.Android.Calendar = {
     VISIBILITY_DEFAULT:null,
 
     /**
-     * <p>constant for the {@link Titanium.Android.Calendar.Event} visibility property.</p>
+     * <p>constant for the {@link Ti.Android.Calendar.Event} visibility property.</p>
      * platforms: android
      * @type int
      * @since 1.5
@@ -2261,7 +2261,7 @@ Ti.Android.Calendar = {
     VISIBILITY_PRIVATE:null,
 
     /**
-     * <p>constant for the {@link Titanium.Android.Calendar.Event} visibility property.</p>
+     * <p>constant for the {@link Ti.Android.Calendar.Event} visibility property.</p>
      * platforms: android
      * @type int
      * @since 1.5
@@ -2269,7 +2269,7 @@ Ti.Android.Calendar = {
     VISIBILITY_PUBLIC:null,
 
     /**
-     * <p>Array of {@link Titanium.Android.Calendar.Alert} objects representing all alerts.</p>
+     * <p>Array of {@link Ti.Android.Calendar.Alert} objects representing all alerts.</p>
      * platforms: android
      * @type array
      * @since 1.5
@@ -2277,7 +2277,7 @@ Ti.Android.Calendar = {
     allAlerts:null,
 
     /**
-     * <p>Array of {@link Titanium.Android.Calendar.Calendar} objects representing all the calendars known to the native calendar app.</p>
+     * <p>Array of {@link Ti.Android.Calendar.Calendar} objects representing all the calendars known to the native calendar app.</p>
      * platforms: android
      * @type array
      * @since 1.5
@@ -2285,7 +2285,7 @@ Ti.Android.Calendar = {
     allCalendars:null,
 
     /**
-     * <p>Array of {@link Titanium.Android.Calendar.Calendar} objects representing calendars selected within the native calendar app. This may be a subset of allCalendars; for example, the native calendar application may know -- via your Gooogle account -- about calendars that you have access to but have not selected to be displayed in the native calendar app.</p>
+     * <p>Array of {@link Ti.Android.Calendar.Calendar} objects representing calendars selected within the native calendar app. This may be a subset of allCalendars; for example, the native calendar application may know -- via your Gooogle account -- about calendars that you have access to but have not selected to be displayed in the native calendar app.</p>
      * platforms: android
      * @type array
      * @since 1.5
@@ -2305,36 +2305,36 @@ Ti.Android.Calendar = {
     },
 
     /**
-     * create and return an instance of {@link Titanium.Android.Calendar.Alert}
+     * create and return an instance of {@link Ti.Android.Calendar.Alert}
      * platforms: android
-     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.Android.Calendar.Alert}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Ti.Android.Calendar.Alert}
      * @since 1.5
      */
     createAlert:function(parameters) {
     },
 
     /**
-     * create and return an instance of {@link Titanium.Android.Calendar.Calendar}
+     * create and return an instance of {@link Ti.Android.Calendar.Calendar}
      * platforms: android
-     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.Android.Calendar.Calendar}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Ti.Android.Calendar.Calendar}
      * @since 1.5
      */
     createCalendar:function(parameters) {
     },
 
     /**
-     * create and return an instance of {@link Titanium.Android.Calendar.Event}
+     * create and return an instance of {@link Ti.Android.Calendar.Event}
      * platforms: android
-     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.Android.Calendar.Event}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Ti.Android.Calendar.Event}
      * @since 1.5
      */
     createEvent:function(parameters) {
     },
 
     /**
-     * create and return an instance of {@link Titanium.Android.Calendar.Reminder}
+     * create and return an instance of {@link Ti.Android.Calendar.Reminder}
      * platforms: android
-     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.Android.Calendar.Reminder}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Ti.Android.Calendar.Reminder}
      * @since 1.5
      */
     createReminder:function(parameters) {
@@ -2352,7 +2352,7 @@ Ti.Android.Calendar = {
     },
 
     /**
-     * <p>Returns the {@link Titanium.Android.Calendar.Calendar} object specified by the given integer id.</p>
+     * <p>Returns the {@link Ti.Android.Calendar.Calendar} object specified by the given integer id.</p>
      * platforms: android
      * @param {int} id The system id of the calendar to be retrieved.
      * @since 1.5
@@ -2428,7 +2428,7 @@ Ti.Android.Calendar.Alert = {
     minutes:null,
 
     /**
-     * <p>The current state of the alert.  Possible values are the STATE_ constants in {@link Titanium.Android.Calendar}.</p>
+     * <p>The current state of the alert.  Possible values are the STATE_ constants in {@link Ti.Android.Calendar}.</p>
      * platforms: android
      * @type int
      * @since 1.5
@@ -2445,7 +2445,7 @@ Ti.Android.Calendar.Alert = {
  * @since 1.5
  * 
  * @example Events on December 5, 2015
- * <p>See {@link Titanium.Android.Calendar} for examples.</p>
+ * <p>See {@link Ti.Android.Calendar} for examples.</p>
  */
 Ti.Android.Calendar.Calendar = {
 
@@ -2483,16 +2483,16 @@ Ti.Android.Calendar.Calendar = {
 
 
     /**
-     * <p>Add an event to the calendar. Returns the created {@link Titanium.Android.Calendar.Event}.</p>
+     * <p>Add an event to the calendar. Returns the created {@link Ti.Android.Calendar.Event}.</p>
      * platforms: android
-     * @param {object} properties An object defining the properties of the event.  These correspond to properties of {@link Titanium.Android.Calendar.Event}.
+     * @param {object} properties An object defining the properties of the event.  These correspond to properties of {@link Ti.Android.Calendar.Event}.
      * @since 1.5
      */
     createEvent:function(properties) {
     },
 
     /**
-     * <p>Returns the {@link Titanium.Android.Calendar.Event} object for the event with the given integer id.</p>
+     * <p>Returns the {@link Ti.Android.Calendar.Event} object for the event with the given integer id.</p>
      * platforms: android
      * @param {int} id The integer id of the event to return.
      * @since 1.5
@@ -2501,7 +2501,7 @@ Ti.Android.Calendar.Calendar = {
     },
 
     /**
-     * <p>Returns an array of {@link Titanium.Android.Calendar.Event} objects with all events in the given date range.</p>
+     * <p>Returns an array of {@link Ti.Android.Calendar.Event} objects with all events in the given date range.</p>
      * platforms: android
      * @param {date} date1 The start date.
      * @param {date} date2 The end date.
@@ -2511,7 +2511,7 @@ Ti.Android.Calendar.Calendar = {
     },
 
     /**
-     * <p>Returns an array of {@link Titanium.Android.Calendar.Event} objects with all events on the given date.</p>
+     * <p>Returns an array of {@link Ti.Android.Calendar.Event} objects with all events on the given date.</p>
      * platforms: android
      * @param {int} year The year of the desired date.
      * @param {int} month The month of the desired date.  The month is zero-based, therefore January is 0 and December is 11.
@@ -2522,7 +2522,7 @@ Ti.Android.Calendar.Calendar = {
     },
 
     /**
-     * <p>Returns an array of {@link Titanium.Android.Calendar.Event} objects with all events in the given month.</p>
+     * <p>Returns an array of {@link Ti.Android.Calendar.Event} objects with all events in the given month.</p>
      * platforms: android
      * @param {int} year The year of the desired month.
      * @param {int} month The month for which events should be returned.  The month is zero-based, therefore January is 0 and December is 11.
@@ -2532,7 +2532,7 @@ Ti.Android.Calendar.Calendar = {
     },
 
     /**
-     * <p>Returns an array of {@link Titanium.Android.Calendar.Event} objects with all events in the given year.</p>
+     * <p>Returns an array of {@link Ti.Android.Calendar.Event} objects with all events in the given year.</p>
      * platforms: android
      * @param {int} year The year for which all events should be returned.
      * @since 1.5
@@ -2548,12 +2548,12 @@ Ti.Android.Calendar.Calendar = {
  * @since 1.5
  * 
  * @example Event API
- * <p>See {@link Titanium.Android.Calendar} for examples of retrieving event information and creating events.</p>
+ * <p>See {@link Ti.Android.Calendar} for examples of retrieving event information and creating events.</p>
  */
 Ti.Android.Calendar.Event = {
 
     /**
-     * <p>An array of {@link Titanium.Android.Calendar.Alert} objects which are the alerts - if any - for this event.</p>
+     * <p>An array of {@link Ti.Android.Calendar.Alert} objects which are the alerts - if any - for this event.</p>
      * platforms: android
      * @type array
      * @since 1.5
@@ -2633,7 +2633,7 @@ Ti.Android.Calendar.Event = {
     location:null,
 
     /**
-     * <p>An array of {@link Titanium.Android.Calendar.Reminder} objects which are the reminders - if any - for this event.</p>
+     * <p>An array of {@link Ti.Android.Calendar.Reminder} objects which are the reminders - if any - for this event.</p>
      * platforms: android
      * @type array
      * @since 1.5
@@ -2641,7 +2641,7 @@ Ti.Android.Calendar.Event = {
     reminders:null,
 
     /**
-     * <p>The status of the event.  Possible values are the STATUS constants in {@link Titanium.Android.Calendar}.</p>
+     * <p>The status of the event.  Possible values are the STATUS constants in {@link Ti.Android.Calendar}.</p>
      * platforms: android
      * @type int
      * @since 1.5
@@ -2657,7 +2657,7 @@ Ti.Android.Calendar.Event = {
     title:null,
 
     /**
-     * <p>The event's visibility.  Possible values are the VISIBILITY constants in {@link Titanium.Android.Calendar}.</p>
+     * <p>The event's visibility.  Possible values are the VISIBILITY constants in {@link Ti.Android.Calendar}.</p>
      * platforms: android
      * @type int
      * @since 1.5
@@ -2666,18 +2666,18 @@ Ti.Android.Calendar.Event = {
 
 
     /**
-     * <p>create an alert for this event.  Pass a dictionary object containing attributes corresponding to properties of {@link Titanium.Android.Calendar.Alert}.  Returns the created alert.</p>
+     * <p>create an alert for this event.  Pass a dictionary object containing attributes corresponding to properties of {@link Ti.Android.Calendar.Alert}.  Returns the created alert.</p>
      * platforms: android
-     * @param {object} data Properties for the new alert, corresponding to properties of {@link Titanium.Android.Calendar.Alert}.
+     * @param {object} data Properties for the new alert, corresponding to properties of {@link Ti.Android.Calendar.Alert}.
      * @since 1.5
      */
     createAlert:function(data) {
     },
 
     /**
-     * <p>create a reminder for this event.  Pass a dictionary object containing attributes corresponding to properties of {@link Titanium.Android.Calendar.Reminder}.  Returns the created Reminder.</p>
+     * <p>create a reminder for this event.  Pass a dictionary object containing attributes corresponding to properties of {@link Ti.Android.Calendar.Reminder}.  Returns the created Reminder.</p>
      * platforms: android
-     * @param {object} data Properties for the new reminder, corresponding to properties of {@link Titanium.Android.Calendar.Reminder}.
+     * @param {object} data Properties for the new reminder, corresponding to properties of {@link Ti.Android.Calendar.Reminder}.
      * @since 1.5
      */
     createReminder:function(data) {
@@ -2706,11 +2706,11 @@ Ti.Android.Calendar.Event = {
 
 /**
  * platforms: android
- * @namespace <p>An object which represents a single reminder for an event in an Android calendar.  Reminders should not be created directly, but rather by using the createReminder method of {@link Titanium.Android.Calendar.Event}.</p>
+ * @namespace <p>An object which represents a single reminder for an event in an Android calendar.  Reminders should not be created directly, but rather by using the createReminder method of {@link Ti.Android.Calendar.Event}.</p>
  * @since 1.5
  * 
  * @example Reminder API
- * <p>See {@link Titanium.Android.Calendar} for examples of retrieving reminder information and creating reminders for events.</p>
+ * <p>See {@link Ti.Android.Calendar} for examples of retrieving reminder information and creating reminders for events.</p>
  */
 Ti.Android.Calendar.Reminder = {
 
@@ -2723,7 +2723,7 @@ Ti.Android.Calendar.Reminder = {
     id:null,
 
     /**
-     * <p>The reminder method.  Possible values are the METHOD constants in {@link Titanium.Android.Calendar}.</p>
+     * <p>The reminder method.  Possible values are the METHOD constants in {@link Ti.Android.Calendar}.</p>
      * platforms: android
      * @type int
      * @since 1.5
@@ -2774,7 +2774,7 @@ intent.addCategory(Ti.Android.CATEGORY_DEFAULT);
 Ti.Android.Intent = {
 
     /**
-     * <p>An action constant from {@link Titanium.Android}</p>
+     * <p>An action constant from {@link Ti.Android}</p>
      * platforms: android
      * @type string
      * @since 1.5
@@ -2798,7 +2798,7 @@ Ti.Android.Intent = {
     data:null,
 
     /**
-     * <p>Intent flags. See the flags constants in {@link Titanium.Android}.</p>
+     * <p>Intent flags. See the flags constants in {@link Ti.Android}.</p>
      * platforms: android
      * @type int
      * @since 1.5
@@ -2831,9 +2831,9 @@ Ti.Android.Intent = {
 
 
     /**
-     * <p>Add a category to this Intent. See the category constants in {@link Titanium.Android}.</p>
+     * <p>Add a category to this Intent. See the category constants in {@link Ti.Android}.</p>
      * platforms: android
-     * @param {string} name The category name. See the category constants in {@link Titanium.Android}
+     * @param {string} name The category name. See the category constants in {@link Ti.Android}
      * @returns void
      * @since 1.5
      */
@@ -2925,7 +2925,7 @@ Ti.Android.Intent = {
     },
 
     /**
-     * <p>Put a URI property on this Intent (useful for {@link Titanium.Android.EXTRA_STREAM})</p>
+     * <p>Put a URI property on this Intent (useful for {@link Ti.Android.EXTRA_STREAM})</p>
      * platforms: android
      * @param {string} name The property name
      * @param {string} value The URI string
@@ -2982,7 +2982,7 @@ win.open();
 Ti.Android.Menu = {
 
     /**
-     * <p>array of {@link Titanium.Android.MenuItem}</p>
+     * <p>array of {@link Ti.Android.MenuItem}</p>
      * platforms: android
      * @type array
      * @since 1.5
@@ -2991,7 +2991,7 @@ Ti.Android.Menu = {
 
 
     /**
-     * <p>creates a {@link Titanium.Android.MenuItem} from the passed creation options.</p>
+     * <p>creates a {@link Ti.Android.MenuItem} from the passed creation options.</p>
      * platforms: android
      * @param {object} options creation options. Supported options are itemId, groupId, title, and order.
      * @since 1.5
@@ -3000,7 +3000,7 @@ Ti.Android.Menu = {
     },
 
     /**
-     * <p>clear all items from the menu. You should release all references you have retained to {@link Titanium.Android.MenuItem} previously created.</p>
+     * <p>clear all items from the menu. You should release all references you have retained to {@link Ti.Android.MenuItem} previously created.</p>
      * platforms: android
      * @returns void
      * @since 1.5
@@ -3018,16 +3018,16 @@ Ti.Android.Menu = {
     },
 
     /**
-     * <p>locate a {@link Titanium.Android.MenuItem}</p>
+     * <p>locate a {@link Ti.Android.MenuItem}</p>
      * platforms: android
-     * @param {object} item integer itemId or {@link Titanium.Android.MenuItem}
+     * @param {object} item integer itemId or {@link Ti.Android.MenuItem}
      * @since 1.5
      */
     findItem:function(item) {
     },
 
     /**
-     * <p>return the {@link Titanium.Android.MenuItem} at a specific index</p>
+     * <p>return the {@link Ti.Android.MenuItem} at a specific index</p>
      * platforms: android
      * @param {int} index item at index where index < size()
      * @since 1.5
@@ -3044,7 +3044,7 @@ Ti.Android.Menu = {
     },
 
     /**
-     * <p>remove all {@link Titanium.Android.MenuItem} with the specified groupId</p>
+     * <p>remove all {@link Ti.Android.MenuItem} with the specified groupId</p>
      * platforms: android
      * @param {int} groupId groupId of items to remove.
      * @returns void
@@ -3054,7 +3054,7 @@ Ti.Android.Menu = {
     },
 
     /**
-     * <p>remove a specific {@link Titanium.Android.MenuItem} by the specified itemId</p>
+     * <p>remove a specific {@link Ti.Android.MenuItem} by the specified itemId</p>
      * platforms: android
      * @param {int} itemId itemId of item to remove.
      * @returns void
@@ -3064,7 +3064,7 @@ Ti.Android.Menu = {
     },
 
     /**
-     * <p>enable or disable a group of {@link Titanium.Android.MenuItem} by groupId</p>
+     * <p>enable or disable a group of {@link Ti.Android.MenuItem} by groupId</p>
      * platforms: android
      * @param {int} groupId groupId to enable or disable
      * @param {boolean} enabled true to enable, false to disable.
@@ -3075,7 +3075,7 @@ Ti.Android.Menu = {
     },
 
     /**
-     * <p>show or hide a group of {@link Titanium.Android.MenuItem} by groupId</p>
+     * <p>show or hide a group of {@link Ti.Android.MenuItem} by groupId</p>
      * platforms: android
      * @param {int} groupId groupId to enable or disable
      * @param {boolean} visible true to show, false to hide
@@ -3086,7 +3086,7 @@ Ti.Android.Menu = {
     },
 
     /**
-     * <p>number of {@link Titanium.Android.MenuItem} in this menu</p>
+     * <p>number of {@link Ti.Android.MenuItem} in this menu</p>
      * platforms: android
      * @since 1.5
      */
@@ -3266,7 +3266,7 @@ Ti.Android.MenuItem = {
 }
 
 /**
- * Notes: <p>If you pass contentTitle and/or contentText into {@link Titanium.Android.createNotification}, then setLatestEventInfo will automatically be called with those properties (there's no need to call it separately unless you want to). You can also use a custom layout.xml wrapped in a {@link Titanium.Android.RemoteViews} object in the contentView property, which gives more fine grained control and customization to how the notification actually behaves.</p>
+ * Notes: <p>If you pass contentTitle and/or contentText into {@link Ti.Android.createNotification}, then setLatestEventInfo will automatically be called with those properties (there's no need to call it separately unless you want to). You can also use a custom layout.xml wrapped in a {@link Ti.Android.RemoteViews} object in the contentView property, which gives more fine grained control and customization to how the notification actually behaves.</p>
 <p>Also see {@link http://developer.android.com/guide/topics/ui/notifiers/notifications}</p>
  * platforms: android
  * @namespace <p>The Titanium binding of an {@link http://developer.android.com/reference/android/app/Notification}. </p>
@@ -3283,7 +3283,7 @@ Ti.Android.Notification = {
     audioStreamType:null,
 
     /**
-     * <p>The {@link Titanium.Android.PendingIntent} to execute when the expanded status entry is clicked.</p>
+     * <p>The {@link Ti.Android.PendingIntent} to execute when the expanded status entry is clicked.</p>
      * platforms: android
      * @type object
      * @since 1.5
@@ -3315,7 +3315,7 @@ Ti.Android.Notification = {
     defaults:null,
 
     /**
-     * <p>The {@link Titanium.Android.PendingIntent} to execute when the status entry is deleted by the user with the "Clear All Notifications" button.</p>
+     * <p>The {@link Ti.Android.PendingIntent} to execute when the status entry is deleted by the user with the "Clear All Notifications" button.</p>
      * platforms: android
      * @type object
      * @since 1.5
@@ -3323,7 +3323,7 @@ Ti.Android.Notification = {
     deleteIntent:null,
 
     /**
-     * <p>Set of flags for the notification, defaults to {@link Titanium.Android.FLAG_AUTO_CANCEL}. Possible values: {@link Titanium.Android.FLAG_AUTO_CANCEL}, {@link Titanium.Android.FLAG_INSISTENT}, {@link Titanium.Android.FLAG_NO_CLEAR}, {@link Titanium.Android.FLAG_ONGOING_EVENT}, {@link Titanium.Android.FLAG_ONLY_ALERT_ONCE}, {@link Titanium.Android.FLAG_SHOW_LIGHTS}</p>
+     * <p>Set of flags for the notification, defaults to {@link Ti.Android.FLAG_AUTO_CANCEL}. Possible values: {@link Ti.Android.FLAG_AUTO_CANCEL}, {@link Ti.Android.FLAG_INSISTENT}, {@link Ti.Android.FLAG_NO_CLEAR}, {@link Ti.Android.FLAG_ONGOING_EVENT}, {@link Ti.Android.FLAG_ONLY_ALERT_ONCE}, {@link Ti.Android.FLAG_SHOW_LIGHTS}</p>
      * platforms: android
      * @type int
      * @since 1.5
@@ -3547,7 +3547,7 @@ Ti.Android.NotificationManager = {
      * <p>Add a persistent notification to the status bar.</p>
      * platforms: android
      * @param {int} id An id that may be used to cancel a shown notification.
-     * @param {{@link Titanium_Android_Notification}} notification An instance of {@link Titanium.Android.Notification} created with {@link Titanium.Android.createNotification}.
+     * @param {{@link Ti.Android.Notification}} notification An instance of {@link Ti.Android.Notification} created with {@link Ti.Android.createNotification}.
      * @returns void
      * @since 1.5
      */
@@ -3569,9 +3569,9 @@ Ti.Android.NotificationManager = {
 /**
  * Notes: <p>The type of Intent you choose will effect what kind of PendingIntent is created. Each type corresponds directly with a get method on Android's PendingIntent:</p>
 <ul>
-<li>{@link Titanium.Android.createIntent} uses {@link http://developer.android.com/reference/android/app/PendingIntent.html#getActivity(android.content.Context, int, android.content.Intent, int)}</li>
-<li>{@link Titanium.Android.createBroadcastIntent} uses {@link http://developer.android.com/reference/android/app/PendingIntent.html#getBroadcast(android.content.Context, int, android.content.Intent, int)}</li>
-<li>{@link Titanium.Android.createServiceIntent} uses {@link http://developer.android.com/reference/android/app/PendingIntent.html#getService(android.content.Context, int, android.content.Intent, int)}</li>
+<li>{@link Ti.Android.createIntent} uses {@link http://developer.android.com/reference/android/app/PendingIntent.html#getActivity(android.content.Context, int, android.content.Intent, int)}</li>
+<li>{@link Ti.Android.createBroadcastIntent} uses {@link http://developer.android.com/reference/android/app/PendingIntent.html#getBroadcast(android.content.Context, int, android.content.Intent, int)}</li>
+<li>{@link Ti.Android.createServiceIntent} uses {@link http://developer.android.com/reference/android/app/PendingIntent.html#getService(android.content.Context, int, android.content.Intent, int)}</li>
 </ul>
  * platforms: android
  * @namespace <p>The Titanium binding of an {@link http://developer.android.com/reference/android/app/PendingIntent}</p>
@@ -3580,7 +3580,7 @@ Ti.Android.NotificationManager = {
 Ti.Android.PendingIntent = {
 
     /**
-     * <p>Flags used for creating the Pending Intent. Possible values are {@link Titanium.Android.FLAG_CANCEL_CURRENT}, {@link Titanium.Android.FLAG_NO_CREATE}, {@link Titanium.Android.FLAG_ONE_SHOT}, and {@link Titanium.Android.FLAG_UPDATE_CURRENT}.</p>
+     * <p>Flags used for creating the Pending Intent. Possible values are {@link Ti.Android.FLAG_CANCEL_CURRENT}, {@link Ti.Android.FLAG_NO_CREATE}, {@link Ti.Android.FLAG_ONE_SHOT}, and {@link Ti.Android.FLAG_UPDATE_CURRENT}.</p>
      * platforms: android
      * @type int
      * @since 1.5
@@ -3590,7 +3590,7 @@ Ti.Android.PendingIntent = {
     /**
      * <p>The intent data to pass to the Activity launched by this PendingIntent</p>
      * platforms: android
-     * @type {@link Titanium_Android_Intent}
+     * @type {@link Ti.Android.Intent}
      * @since 1.5
      */
     intent:null,
@@ -3603,7 +3603,7 @@ Ti.Android.PendingIntent = {
  * Notes: <p>These properties and sub-properties are queried directly against the <tt>android.R</tt> class, and should have the same syntax. For example, to retrieve the "OK" string in Android:</p>
 <p><tt>Ti.Android.currentActivity.getString(Ti.Android.R.string.ok);</tt></p>
  * platforms: android
- * @namespace <p>The Titanium binding of {@link http://developer.android.com/reference/android/R}.  Note that this accesses Android system-wide resources, not your application's resources.  To access your application's resources, you want {@link Titanium.App.Android.R}.</p>
+ * @namespace <p>The Titanium binding of {@link http://developer.android.com/reference/android/R}.  Note that this accesses Android system-wide resources, not your application's resources.  To access your application's resources, you want {@link Ti.App.Android.R}.</p>
  * @since 1.5
  */
 Ti.Android.R = {
@@ -3710,7 +3710,7 @@ Ti.Android.R = {
 
 /**
  * platforms: android
- * @namespace <p>The Titanium binding of {@link http://developer.android.com/reference/android/widget/RemoteViews}. RemoteViews are an API for referencing and updating views that live in another process (i.e. in a {@link Titanium.Android.Notification})</p>
+ * @namespace <p>The Titanium binding of {@link http://developer.android.com/reference/android/widget/RemoteViews}. RemoteViews are an API for referencing and updating views that live in another process (i.e. in a {@link Ti.Android.Notification})</p>
  * @since 1.6
  * 
  * @example Create a RemoteViews based on a custom layout called "custom_layout.xml", and set a label's text.
@@ -3725,7 +3725,7 @@ Ti.Android.RemoteViews = {
     /**
      * <p>Call a method taking one boolean on a view in the layout for this RemoteViews. See Android's documentation for {@link http://developer.android.com/reference/android/widget/RemoteViews.html#setBoolean(int, java.lang.String, boolean)}</p>
      * platforms: android
-     * @param {int} viewId The resource id of the View (also see {@link Titanium.App.Android.R})
+     * @param {int} viewId The resource id of the View (also see {@link Ti.App.Android.R})
      * @param {string} methodName The name of the method to call
      * @param {boolean} value The boolean to pass to the method
      * @returns void
@@ -3737,7 +3737,7 @@ Ti.Android.RemoteViews = {
     /**
      * <p>Sets a chronometer's base, format, and started flag. See Android's documentation for {@link http://developer.android.com/reference/android/widget/RemoteViews.html#setChronometer(int, long, java.lang.String, boolean)}</p>
      * platforms: android
-     * @param {int} viewId The resource id of the Chronometer whose values will change (also see {@link Titanium.App.Android.R})
+     * @param {int} viewId The resource id of the Chronometer whose values will change (also see {@link Ti.App.Android.R})
      * @param {date} base The time at which the timer would have read 0:00
      * @param {string} format The Chronometer format string, or null to simply display the timer value
      * @param {boolean} started True if you want the clock to be started, false if not
@@ -3750,7 +3750,7 @@ Ti.Android.RemoteViews = {
     /**
      * <p>Call a method taking one double on a view in the layout for this RemoteViews. See Android's documentation for {@link http://developer.android.com/reference/android/widget/RemoteViews.html#setDouble(int, java.lang.String, double)}</p>
      * platforms: android
-     * @param {int} viewId The resource id of the View (also see {@link Titanium.App.Android.R})
+     * @param {int} viewId The resource id of the View (also see {@link Ti.App.Android.R})
      * @param {string} methodName The name of the method to call
      * @param {double} value The double to pass to the method
      * @returns void
@@ -3762,7 +3762,7 @@ Ti.Android.RemoteViews = {
     /**
      * <p>Sets an ImageView's source given a Resource ID. See Android's documentation for {@link http://developer.android.com/reference/android/widget/RemoteViews.html#setImageViewResource(int, int)}</p>
      * platforms: android
-     * @param {int} viewId The resource id of the ImageView whose image should change (also see {@link Titanium.App.Android.R})
+     * @param {int} viewId The resource id of the ImageView whose image should change (also see {@link Ti.App.Android.R})
      * @param {int} srcId The resource id of the image
      * @returns void
      * @since 1.6
@@ -3773,7 +3773,7 @@ Ti.Android.RemoteViews = {
     /**
      * <p>Sets an ImageView's source given a URI (supports both Android and Titanium URLs). See Android's documentation for {@link http://developer.android.com/reference/android/widget/RemoteViews.html#setImageViewUri(int, android.net.Uri)}</p>
      * platforms: android
-     * @param {int} viewId The resource id of the ImageView whose image should change (also see {@link Titanium.App.Android.R})
+     * @param {int} viewId The resource id of the ImageView whose image should change (also see {@link Ti.App.Android.R})
      * @param {string} uri The URI of the image (both Android and Titanium URLs are supported)
      * @returns void
      * @since 1.6
@@ -3784,7 +3784,7 @@ Ti.Android.RemoteViews = {
     /**
      * <p>Call a method taking one int on a view in the layout for this RemoteViews. See Android's documentation for {@link http://developer.android.com/reference/android/widget/RemoteViews.html#setInt(int, java.lang.String, int)}</p>
      * platforms: android
-     * @param {int} viewId The resource id of the View (also see {@link Titanium.App.Android.R})
+     * @param {int} viewId The resource id of the View (also see {@link Ti.App.Android.R})
      * @param {string} methodName The name of the method to call
      * @param {int} value The int to pass to the method
      * @returns void
@@ -3794,10 +3794,10 @@ Ti.Android.RemoteViews = {
     },
 
     /**
-     * <p>Launches a {@link Titanium.Android.PendingIntent} when the specified view is clicked. See Android's documentation for {@link http://developer.android.com/reference/android/widget/RemoteViews.html#setOnClickPendingIntent(int, android.app.PendingIntent)}</p>
+     * <p>Launches a {@link Ti.Android.PendingIntent} when the specified view is clicked. See Android's documentation for {@link http://developer.android.com/reference/android/widget/RemoteViews.html#setOnClickPendingIntent(int, android.app.PendingIntent)}</p>
      * platforms: android
-     * @param {int} viewId The resource id of the View to add a click listener to (also see {@link Titanium.App.Android.R})
-     * @param {<tt>Ti_Android_PendingIntent</tt>} pendingIntent The PendingIntent to execute when this view is clicked
+     * @param {int} viewId The resource id of the View to add a click listener to (also see {@link Ti.App.Android.R})
+     * @param {<tt>Ti.Android.PendingIntent</tt>} pendingIntent The PendingIntent to execute when this view is clicked
      * @returns void
      * @since 1.6
      */
@@ -3807,7 +3807,7 @@ Ti.Android.RemoteViews = {
     /**
      * <p>Sets the progress, max value, and indeterminate flag of a ProgressBar. See Android's documentation for {@link http://developer.android.com/reference/android/widget/RemoteViews.html#setProgressBar(int, int, int, boolean)}</p>
      * platforms: android
-     * @param {int} viewId The resource id of the ProgressBar to change (also see {@link Titanium.App.Android.R})
+     * @param {int} viewId The resource id of the ProgressBar to change (also see {@link Ti.App.Android.R})
      * @param {int} max The new max value of the ProgressBar
      * @param {int} progress The new progress value of the ProgressBar (from 0..max)
      * @param {boolean} indeterminate Whether or not the progress in indeterminate
@@ -3820,7 +3820,7 @@ Ti.Android.RemoteViews = {
     /**
      * <p>Call a method taking one String on a view in the layout for this RemoteViews. See Android's documentation for {@link http://developer.android.com/reference/android/widget/RemoteViews.html#setString(int, java.lang.String, java.lang.String)}</p>
      * platforms: android
-     * @param {int} viewId The resource id of the View (also see {@link Titanium.App.Android.R})
+     * @param {int} viewId The resource id of the View (also see {@link Ti.App.Android.R})
      * @param {string} methodName The name of the method to call
      * @param {string} value The String to pass to the method
      * @returns void
@@ -3832,7 +3832,7 @@ Ti.Android.RemoteViews = {
     /**
      * <p>Sets the text color of a view. See Android's documentation for {@link http://developer.android.com/reference/android/widget/RemoteViews.html#setTextColor(int, int)}</p>
      * platforms: android
-     * @param {int} viewId The resource id of the View whose text color will change (also see {@link Titanium.App.Android.R})
+     * @param {int} viewId The resource id of the View whose text color will change (also see {@link Ti.App.Android.R})
      * @param {int} color A color as an integer
      * @returns void
      * @since 1.6
@@ -3843,7 +3843,7 @@ Ti.Android.RemoteViews = {
     /**
      * <p>Sets the text of a TextView. See Android's documentation for {@link http://developer.android.com/reference/android/widget/RemoteViews.html#setTextViewText(int, java.lang.CharSequence)}</p>
      * platforms: android
-     * @param {int} viewId The resource id of the TextView whose text will change (also see {@link Titanium.App.Android.R})
+     * @param {int} viewId The resource id of the TextView whose text will change (also see {@link Ti.App.Android.R})
      * @param {string} text The new text of the TextView
      * @returns void
      * @since 1.6
@@ -3854,7 +3854,7 @@ Ti.Android.RemoteViews = {
     /**
      * <p>Call a method taking one Uri on a view in the layout for this RemoteViews. See Android's documentation for {@link http://developer.android.com/reference/android/widget/RemoteViews.html#setUri(int, java.lang.String, android.net.Uri)}</p>
      * platforms: android
-     * @param {int} viewId The resource id of the View (also see {@link Titanium.App.Android.R})
+     * @param {int} viewId The resource id of the View (also see {@link Ti.App.Android.R})
      * @param {string} methodName The name of the method to call
      * @param {string} value The URI (as a string) to pass to the method
      * @returns void
@@ -3866,8 +3866,8 @@ Ti.Android.RemoteViews = {
     /**
      * <p>Sets the visibility of a View. See Android's documentation for {@link http://developer.android.com/reference/android/widget/RemoteViews.html#setViewVisibility(int, int)}</p>
      * platforms: android
-     * @param {int} viewId The resource id of the View whose visibility will change (also see {@link Titanium.App.Android.R})
-     * @param {int} visibility The visibility, one of {@link Titanium.Android.VISIBLE}, {@link Titanium.Android.INVISIBLE}, or {@link Titanium.Android.GONE}
+     * @param {int} viewId The resource id of the View whose visibility will change (also see {@link Ti.App.Android.R})
+     * @param {int} visibility The visibility, one of {@link Ti.Android.VISIBLE}, {@link Ti.Android.INVISIBLE}, or {@link Ti.Android.GONE}
      * @returns void
      * @since 1.6
      */
@@ -3877,16 +3877,16 @@ Ti.Android.RemoteViews = {
 
 /**
  * platforms: android
- * @namespace <p>The Titanium binding of an {@link http://developer.android.com/reference/android/app/Service}.  Can be used to start/stop the service directly and listen for service-specific events.  In the Javascript-based services you write, this can be referenced with {@link Titanium.Android.currentService}.  You can create an instance of the service with {@link Titanium.Android.createService}.</p>
+ * @namespace <p>The Titanium binding of an {@link http://developer.android.com/reference/android/app/Service}.  Can be used to start/stop the service directly and listen for service-specific events.  In the Javascript-based services you write, this can be referenced with {@link Ti.Android.currentService}.  You can create an instance of the service with {@link Ti.Android.createService}.</p>
  * @since 1.5
  * 
  * @example Hello World Service
- * <p>Your service code in its own Javascript file.  It reads the {@link Titanium.Android.Intent} which created it, to see what it should say besides "Hello World".</p>
+ * <p>Your service code in its own Javascript file.  It reads the {@link Ti.Android.Intent} which created it, to see what it should say besides "Hello World".</p>
 <p>File: myservice.js:</p>
-<pre><code>var service = Titanium.Android.currentService;
+<pre><code>var service = Ti.Android.currentService;
 var intent = service.intent;
 var message = intent.getStringExtra("message_to_echo");
-Titanium.API.info("Hello World!  I am a Service.  I have this to say: " + message);
+Ti.API.info("Hello World!  I am a Service.  I have this to say: " + message);
 </code></pre>
 
 <p>Register the service in tiapp.xml:</p>
@@ -3898,20 +3898,20 @@ Titanium.API.info("Hello World!  I am a Service.  I have this to say: " + messag
 </code></pre>
 
 <p>Code in "regular" Titanium file to launch the service and listen for pause/resume events.  Code also stops the service after its code runs 3 times.</p>
-<pre><code>var intent = Titanium.Android.createServiceIntent( { url: 'myservice.js' } );
+<pre><code>var intent = Ti.Android.createServiceIntent( { url: 'myservice.js' } );
 // Service should run its code every 2 seconds.
 intent.putExtra('interval', 2000);
 // A message that the service should 'echo'
 intent.putExtra('message_to_echo', 'Titanium rocks!');
 
-var service = Titanium.Android.createService(intent);
+var service = Ti.Android.createService(intent);
 service.addEventListener('resume', function(e) {
-    Titanium.API.info('Service code resumes, iteration ' + e.iteration);
+    Ti.API.info('Service code resumes, iteration ' + e.iteration);
 });
 service.addEventListener('pause', function(e) {
-    Titanium.API.info('Service code pauses, iteration ' + e.iteration);
+    Ti.API.info('Service code pauses, iteration ' + e.iteration);
     if (e.iteration === 3) {
-        Titanium.API.info('Service code has run 3 times, will now stop it.');
+        Ti.API.info('Service code has run 3 times, will now stop it.');
         service.stop();
     }
 });
@@ -3934,9 +3934,9 @@ service.start();
 Ti.Android.Service = {
 
     /**
-     * <p>(read-only) The {@link Titanium.Android.Intent} used to start or bind to the Service.</p>
+     * <p>(read-only) The {@link Ti.Android.Intent} used to start or bind to the Service.</p>
      * platforms: android
-     * @type {@link Titanium_Android_Intent}
+     * @type {@link Ti.Android.Intent}
      * @since 1.5
      */
     intent:null,
@@ -3951,7 +3951,7 @@ Ti.Android.Service = {
 
 
     /**
-     * <p>Start the Service.  Effective only if this instance of {@link Titanium.Android.Service} was created with {@link Titanium.Android.createService}.</p>
+     * <p>Start the Service.  Effective only if this instance of {@link Ti.Android.Service} was created with {@link Ti.Android.createService}.</p>
      * platforms: android
      * @returns void
      * @since 1.5
@@ -4135,7 +4135,7 @@ Ti.App.Android = {
     /**
      * <p>The R namespace for Application Resources</p>
      * platforms: android
-     * @type {@link Titanium_App_Android_R_html}
+     * @type {@link Ti.App.Android.R}
      * @since 1.5
      */
     R:null,
@@ -4177,10 +4177,10 @@ Ti.App.Android = {
 
 /**
  * Notes: <p>These properties and sub-properties are queried directly against your Application's <tt>R</tt> class, and should have the same syntax.  For example, if you have a file <tt>platform/android/res/drawable/icon.png</tt> in your project, you could then access its integer id like this:</p>
-<pre><code>var resid = Titanium.App.Android.R.drawable.icon;
+<pre><code>var resid = Ti.App.Android.R.drawable.icon;
 </code></pre>
  * platforms: android
- * @namespace <p>The Titanium binding of {@link http://developer.android.com/guide/topics/resources/index}.  This gives you access to resources you have packaged for your own application.  If you want to access the system-wide Android <tt>R</tt>, use {@link Titanium.Android.R}.</p>
+ * @namespace <p>The Titanium binding of {@link http://developer.android.com/guide/topics/resources/index}.  This gives you access to resources you have packaged for your own application.  If you want to access the system-wide Android <tt>R</tt>, use {@link Ti.Android.R}.</p>
  * @since 1.5
  */
 Ti.App.Android.R = {
@@ -4196,16 +4196,16 @@ Ti.App.Android.R = {
  * 
  * @example store a property
  * <p>In this example, we store a string property:</p>
-<pre><code>Titanium.App.Properties.setString("my_prop","cool");
+<pre><code>Ti.App.Properties.setString("my_prop","cool");
 </code></pre>
  * 
  * @example enumerate over saved properties
  * <p>In this example, we print out all the saved properties to the console:</p>
-<pre><code>var props = Titanium.App.Properties.listProperties();
+<pre><code>var props = Ti.App.Properties.listProperties();
 for (var c=0;c<props.length;c++)
 {
-    var value = Titanium.App.Properties.getString(props[c]);
-    Titanium.API.info(props[c]+" = "+value);
+    var value = Ti.App.Properties.getString(props[c]);
+    Ti.API.info(props[c]+" = "+value);
 }
 </code></pre>
  */
@@ -4416,18 +4416,18 @@ Ti.App.iOS = {
     },
 
     /**
-     * create and return an instance of {@link Titanium.App.iOS.BackgroundService}
+     * create and return an instance of {@link Ti.App.iOS.BackgroundService}
      * platforms: iphone, ipad
-     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.App.iOS.BackgroundService}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Ti.App.iOS.BackgroundService}
      * @since 1.5
      */
     createBackgroundService:function(parameters) {
     },
 
     /**
-     * create and return an instance of {@link Titanium.App.iOS.LocalNotification}
+     * create and return an instance of {@link Ti.App.iOS.LocalNotification}
      * platforms: iphone, ipad
-     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.App.iOS.LocalNotification}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Ti.App.iOS.LocalNotification}
      * @since 1.5
      */
     createLocalNotification:function(parameters) {
@@ -4478,13 +4478,13 @@ Ti.App.iOS = {
  * Notes: <p>The background service runs when the Application is placed in the background and will continue to run until the service is stopped with the <tt>stop</tt> method or the <tt>unregister</tt> method.</p>
 <p>Stopping a running background service will converse resources while its running in the background. However, if the application is foregrounded and then backgrounded again, it will run again.  If you want to permanently stop running the background service, you must call <tt>unregister</tt>.</p>
  * platforms: iphone, ipad
- * @namespace <p>The BackgroundService is created by {@link Titanium.App.iOS.registerBackgroundService}.<br>
+ * @namespace <p>The BackgroundService is created by {@link Ti.App.iOS.registerBackgroundService}.<br>
 </p>
  * @since 1.5
  */
-function Titanium_App_iOS_BackgroundService() {
+Ti.App.iOS.BackgroundService = function() {
 }
-Titanium_App_iOS_BackgroundService.prototype = {
+Ti.App.iOS.BackgroundService.prototype = {
 
 
     /**
@@ -4541,13 +4541,13 @@ Titanium_App_iOS_BackgroundService.prototype = {
 
 /**
  * platforms: iphone, ipad
- * @namespace <p>The LocalNotification is created by {@link Titanium.App.iOS.scheduleLocalNotification}.<br>
+ * @namespace <p>The LocalNotification is created by {@link Ti.App.iOS.scheduleLocalNotification}.<br>
 </p>
  * @since 1.5
  */
-function Titanium_App_iOS_LocalNotification() {
+Ti.App.iOS.LocalNotification = function() {
 }
-Titanium_App_iOS_LocalNotification.prototype = {
+Ti.App.iOS.LocalNotification.prototype = {
 
 
     /**
@@ -4615,7 +4615,7 @@ Ti.Blob = {
 
 /**
  * platforms: iphone, android, ipad
- * @namespace <p>Wrapper around {@link Titanium.Blob} that implements the {@link Titanium.IOStream} interface</p>
+ * @namespace <p>Wrapper around {@link Ti.Blob} that implements the {@link Ti.IOStream} interface</p>
  * @since 1.7
  */
 Ti.BlobStream = {
@@ -4649,7 +4649,7 @@ Ti.BlobStream = {
     /**
      * <p>reads data from stream into a buffer.  Optional offset and length arguments to specify position in buffer in whichto start writing the read data, and the amount of data to read.</p>
      * platforms: iphone, android, ipad
-     * @param {{@link Titanium_Buffer_html}} buffer buffer to read stream data into
+     * @param {{@link Ti.Buffer}} buffer buffer to read stream data into
      * @param {Number} offset (Optional) offset to start reading buffer data from
      * @param {Number} length (Optional) length of data to read from buffer
      * @since 1.7
@@ -4660,7 +4660,7 @@ Ti.BlobStream = {
     /**
      * <p>writes data from buffer to stream. Optional offset and length arguments to specify position in buffer in which to start reading data that is written to the stream, and the length of the data to take from the buffer.</p>
      * platforms: iphone, android, ipad
-     * @param {{@link Titanium_Buffer_html}} buffer buffer to write to stream
+     * @param {{@link Ti.Buffer}} buffer buffer to write to stream
      * @param {Number} offset (Optional) offset to start writing buffer data from
      * @param {Number} length (Optional) length of data to write from buffer
      * @since 1.7
@@ -4671,7 +4671,7 @@ Ti.BlobStream = {
 
 /**
  * platforms: iphone, android, ipad
- * @namespace <p>Buffer is a container for raw data. A buffer is created by the method {@link Titanium.createBuffer}.</p>
+ * @namespace <p>Buffer is a container for raw data. A buffer is created by the method {@link Ti.createBuffer}.</p>
  * @since 1.7
  */
 Ti.Buffer = {
@@ -4693,7 +4693,7 @@ Ti.Buffer = {
     length:null,
 
     /**
-     * <p>The type of data encoding to use with <tt>value</tt>. Required when <tt>value</tt> is a Number. When <tt>value</tt> is a String, {@link Titanium.Codec.CHARSET_UTF8} is the default.</p>
+     * <p>The type of data encoding to use with <tt>value</tt>. Required when <tt>value</tt> is a Number. When <tt>value</tt> is a String, {@link Ti.Codec.CHARSET_UTF8} is the default.</p>
      * platforms: iphone, android, ipad
      * @type String
      * @since 1.7
@@ -4701,7 +4701,7 @@ Ti.Buffer = {
     type:null,
 
     /**
-     * <p>Data to be encoded. If <tt>value</tt> is a Number, <tt>type</tt> must also be set. (this is simply a convenient way of calling {@link Titanium.Codec.encodeString} or {@link Titanium.Codec.encodeNumber}).</p>
+     * <p>Data to be encoded. If <tt>value</tt> is a Number, <tt>type</tt> must also be set. (this is simply a convenient way of calling {@link Ti.Codec.encodeString} or {@link Ti.Codec.encodeNumber}).</p>
      * platforms: iphone, android, ipad
      * @type Number, String
      * @since 1.7
@@ -4712,7 +4712,7 @@ Ti.Buffer = {
     /**
      * <p>appends <tt>sourceBuffer</tt> to the current buffer.  Buffer is grown dynamically to accommodate the additional data if need be.  returns the number of bytes appended. Optional offset and length arguments to specify from where in -- and how much of -- source buffer to take.</p>
      * platforms: iphone, android, ipad
-     * @param {{@link Titanium_Buffer}} sourceBuffer buffer to append to current buffer
+     * @param {{@link Ti.Buffer}} sourceBuffer buffer to append to current buffer
      * @param {Number} sourceOffset (Optional) offset to start reading buffer data from
      * @param {Number} sourceLength (Optional) length of data to read from buffer
      * @since 1.7
@@ -4742,7 +4742,7 @@ Ti.Buffer = {
     /**
      * <p>copies the contents of <tt>sourceBuffer</tt> into the current buffer at <tt>offset</tt>.  will not expand buffer if there is not enough room in the current buffer to accomodate all the requested data from <tt>sourceBuffer</tt>.  returns the number of bytes copied.  Optional sourceOffset and length arguments to specify from where in -- and how much of -- source buffer to take.</p>
      * platforms: iphone, android, ipad
-     * @param {{@link Titanium_Buffer}} sourceBuffer buffer to copy into current buffer
+     * @param {{@link Ti.Buffer}} sourceBuffer buffer to copy into current buffer
      * @param {Number} offset offset to copy new buffer at
      * @param {Number} sourceOffset (Optional) offset of sourceBuffer to copy data from
      * @param {Number} sourceLength (Optional) length of data from sourceBuffer to copy
@@ -4766,7 +4766,7 @@ Ti.Buffer = {
     /**
      * <p>inserts <tt>sourceBuffer</tt> into the current buffer at <tt>offset</tt>.  Buffer is grown to accommodate the new data.  returns the number of bytes inserted.  Optional sourceOffset and length arguments to specify from where in -- and how much of -- source buffer to take.</p>
      * platforms: iphone, android, ipad
-     * @param {{@link Titanium_Buffer}} sourceBuffer buffer to insert into current buffer
+     * @param {{@link Ti.Buffer}} sourceBuffer buffer to insert into current buffer
      * @param {Number} offset offset to insert new buffer at
      * @param {Number} sourceOffset (Optional) offset of sourceBuffer to insert data from
      * @param {Number} sourceLength (Optional) length of data from sourceBuffer to insert
@@ -4785,7 +4785,7 @@ Ti.Buffer = {
     },
 
     /**
-     * <p>Converts this buffer to a {@link Titanium.Blob}</p>
+     * <p>Converts this buffer to a {@link Ti.Blob}</p>
      * platforms: iphone, android, ipad
      * @since 1.7
      */
@@ -4803,7 +4803,7 @@ Ti.Buffer = {
 
 /**
  * platforms: iphone, android, ipad
- * @namespace <p>Wrapper around {@link Titanium.Buffer} that implements the {@link Titanium.IOStream} interface</p>
+ * @namespace <p>Wrapper around {@link Ti.Buffer} that implements the {@link Ti.IOStream} interface</p>
  * @since 1.7
  */
 Ti.BufferStream = {
@@ -4837,7 +4837,7 @@ Ti.BufferStream = {
     /**
      * <p>reads data from stream into a buffer.  Optional offset and length arguments to specify position in buffer in whichto start writing the read data, and the amount of data to read.</p>
      * platforms: iphone, android, ipad
-     * @param {{@link Titanium_Buffer}} buffer buffer to read stream data into
+     * @param {{@link Ti.Buffer}} buffer buffer to read stream data into
      * @param {Number} offset (Optional) offset to start reading buffer data from
      * @param {Number} length (Optional) length of data to read from buffer
      * @since 1.7
@@ -4848,7 +4848,7 @@ Ti.BufferStream = {
     /**
      * <p>writes data from buffer to stream. Optional offset and length arguments to specify position in buffer in which to start reading data that is written to the stream, and the length of the data to take from the buffer.</p>
      * platforms: iphone, android, ipad
-     * @param {{@link Titanium_Buffer}} buffer buffer to write to stream
+     * @param {{@link Ti.Buffer}} buffer buffer to write to stream
      * @param {Number} offset (Optional) offset to start writing buffer data from
      * @param {Number} length (Optional) length of data to write from buffer
      * @since 1.7
@@ -4859,7 +4859,7 @@ Ti.BufferStream = {
 
 /**
  * platforms: iphone, android, ipad
- * @namespace <p>A module for converting Numbers and Strings to and from a {@link Titanium.Buffer}.</p>
+ * @namespace <p>A module for converting Numbers and Strings to and from a {@link Ti.Buffer}.</p>
  * @since 1.7
  * 
  * @example Encoding Numbers
@@ -5066,7 +5066,7 @@ Ti.Codec = {
     /**
      * <p>Decodes the <tt>source</tt> buffer (starting at the optional <tt>position</tt>) into a number using the passed in data <tt>type</tt>.  Throws an Exception if <tt>source</tt> is null, or <tt>position</tt> is greater than <tt>source.length</tt></p>
      * platforms: iphone, android, ipad
-     * @param {Object} options decodeNumber named options.  These are: <tt>source</tt>, the {@link Titanium.Buffer} to decode.  <tt>type</tt>, the encoding type to use, which must be one of {@link Titanium.Codec.TYPE_BYTE}, {@link Titanium.Codec.TYPE_SHORT}, {@link Titanium.Codec.TYPE_INT}, {@link Titanium.Codec.TYPE_FLOAT}, {@link Titanium.Codec.TYPE_LONG}, or {@link Titanium.Codec.TYPE_DOUBLE}.  <tt>position</tt>, the position in <tt>source</tt> to start at (optional, default is 0).  <tt>byteOrder</tt>, the byte order to decode with (optional, default is {@link Titanium.Codec.getNativeByteOrder}).
+     * @param {Object} options decodeNumber named options.  These are: <tt>source</tt>, the {@link Ti.Buffer} to decode.  <tt>type</tt>, the encoding type to use, which must be one of {@link Ti.Codec.TYPE_BYTE}, {@link Ti.Codec.TYPE_SHORT}, {@link Ti.Codec.TYPE_INT}, {@link Ti.Codec.TYPE_FLOAT}, {@link Ti.Codec.TYPE_LONG}, or {@link Ti.Codec.TYPE_DOUBLE}.  <tt>position</tt>, the position in <tt>source</tt> to start at (optional, default is 0).  <tt>byteOrder</tt>, the byte order to decode with (optional, default is {@link Ti.Codec.getNativeByteOrder}).
      * @since 1.7
      */
     decodeNumber:function(options) {
@@ -5075,7 +5075,7 @@ Ti.Codec = {
     /**
      * <p>Decodes the <tt>source</tt> buffer into a String starting at <tt>position</tt>, with <tt>length</tt> bytes, using the supplied character set <tt>charset</tt>. Throws an Exception if <tt>charset</tt> is not a valid character set, <tt>source</tt> is null, or either <tt>position</tt>, <tt>length</tt>, or <tt>position</tt>+<tt>length</tt> is greater than <tt>source.length</tt>.</p>
      * platforms: iphone, android, ipad
-     * @param {Object} options decodeString named options.  These are: <tt>source</tt>, the {@link Titanium.Buffer} to decode.  <tt>position</tt>, the position to start decoding (optional, default is 0).  <tt>length</tt>, the number of bytes to decode (optional, default is the length of the source buffer).  <tt>charset</tt>, the character set to decode from (optional, default is {@link Titanium.Codec.CHARSET_UTF8}).
+     * @param {Object} options decodeString named options.  These are: <tt>source</tt>, the {@link Ti.Buffer} to decode.  <tt>position</tt>, the position to start decoding (optional, default is 0).  <tt>length</tt>, the number of bytes to decode (optional, default is the length of the source buffer).  <tt>charset</tt>, the character set to decode from (optional, default is {@link Ti.Codec.CHARSET_UTF8}).
      * @since 1.7
      */
     decodeString:function(options) {
@@ -5084,7 +5084,7 @@ Ti.Codec = {
     /**
      * <p>Encodes the Number <tt>source</tt> into <tt>dest</tt> using the passed in data <tt>type</tt>.  Returns the position after the encoded number in <tt>dest</tt>.'</p>
      * platforms: iphone, android, ipad
-     * @param {Object} options encodeNumber named options.  These are: <tt>source</tt>, the number to be encoded.  <tt>dest</tt>, the destination {@link Titanium.Buffer} into which the encoded number will be written.  <tt>type</tt>, the encoding type to use, which must be one of {@link Titanium.Codec.TYPE_BYTE}, {@link Titanium.Codec.TYPE_SHORT}, {@link Titanium.Codec.TYPE_INT}, {@link Titanium.Codec.TYPE_FLOAT}, {@link Titanium.Codec.TYPE_LONG}, or {@link Titanium.Codec.TYPE_DOUBLE}.  <tt>position</tt>, the position in dest to set the encoded data (optional, default is 0).  <tt>byteOrder</tt>, the byte order to encode with (optional, default is {@link Titanium.Codec.getNativeByteOrder}).
+     * @param {Object} options encodeNumber named options.  These are: <tt>source</tt>, the number to be encoded.  <tt>dest</tt>, the destination {@link Ti.Buffer} into which the encoded number will be written.  <tt>type</tt>, the encoding type to use, which must be one of {@link Ti.Codec.TYPE_BYTE}, {@link Ti.Codec.TYPE_SHORT}, {@link Ti.Codec.TYPE_INT}, {@link Ti.Codec.TYPE_FLOAT}, {@link Ti.Codec.TYPE_LONG}, or {@link Ti.Codec.TYPE_DOUBLE}.  <tt>position</tt>, the position in dest to set the encoded data (optional, default is 0).  <tt>byteOrder</tt>, the byte order to encode with (optional, default is {@link Ti.Codec.getNativeByteOrder}).
      * @since 1.7
      */
     encodeNumber:function(options) {
@@ -5093,7 +5093,7 @@ Ti.Codec = {
     /**
      * <p>Encodes the String <tt>source</tt> into <tt>dest</tt> using <tt>charset</tt>. Returns the position after the encoded String inside <tt>dest</tt>.' Throws an Exception if <tt>charset</tt> is not a valid character set, <tt>source</tt> is null, or either <tt>sourcePosition</tt>, <tt>sourceLength</tt>, or <tt>sourcePosition</tt>+<tt>sourceLength</tt> is greater than <tt>source.length</tt>.</p>
      * platforms: iphone, android, ipad
-     * @param {Object} options encodeString named options.  These are: <tt>source</tt>, the source string to encode.  <tt>dest</tt>, the destination {@link Titanium.Buffer}.  <tt>destPosition</tt>, the position in <tt>dest</tt> to set the encoded string (optional, default is 0).  <tt>sourcePosition</tt>, the position in <tt>source</tt> to start encoding (optional, default is 0).  <tt>sourceLength</tt>, the number of characters in <tt>source</tt> to encode (optional, default is the length of the source).  <tt>charset</tt>, the character set to use when encoding this string to bytes (optional, default is {@link Titanium.Codec.CHARSET_UTF8}).
+     * @param {Object} options encodeString named options.  These are: <tt>source</tt>, the source string to encode.  <tt>dest</tt>, the destination {@link Ti.Buffer}.  <tt>destPosition</tt>, the position in <tt>dest</tt> to set the encoded string (optional, default is 0).  <tt>sourcePosition</tt>, the position in <tt>source</tt> to start encoding (optional, default is 0).  <tt>sourceLength</tt>, the number of characters in <tt>source</tt> to encode (optional, default is the length of the source).  <tt>charset</tt>, the character set to use when encoding this string to bytes (optional, default is {@link Ti.Codec.CHARSET_UTF8}).
      * @since 1.7
      */
     encodeString:function(options) {
@@ -5111,7 +5111,7 @@ Ti.Codec = {
     },
 
     /**
-     * <p>Get the OS native byte order (either {@link Titanium.Codec.BIG_ENDIAN} or {@link Titanium.Codec.LITTLE_ENDIAN})</p>
+     * <p>Get the OS native byte order (either {@link Ti.Codec.BIG_ENDIAN} or {@link Ti.Codec.LITTLE_ENDIAN})</p>
      * platforms: iphone, android, ipad
      * @since 1.7
      */
@@ -5132,7 +5132,7 @@ Ti.Codec = {
 
 /**
  * Notes: <p>Contacts on Android are currently only read-only, so methods such as <tt>createPerson</tt>, <tt>removePerson</tt>, etc., are not supported.</p>
-<p>{@link Titanium.Contacts.Person} objects which have been removed from the database are invalidated after a save operation, whether from creating a new contact or explicitly calling {@link Titanium.Contacts.save()}.  Using them may result in unpredictable beavhior, including crashes.</p>
+<p>{@link Ti.Contacts.Person} objects which have been removed from the database are invalidated after a save operation, whether from creating a new contact or explicitly calling {@link Ti.Contacts.save()}.  Using them may result in unpredictable beavhior, including crashes.</p>
  * platforms: iphone, ipad, android
  * @namespace <p>The top level Contacts module.  The Contacts module is used accessing the device Address Book.  (Read-only on Android.)</p>
  * @since 0.8
@@ -5184,18 +5184,18 @@ Ti.Contacts = {
     },
 
     /**
-     * create and return an instance of {@link Titanium.Contacts.Group}
+     * create and return an instance of {@link Ti.Contacts.Group}
      * platforms: iphone, ipad, android
-     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.Contacts.Group}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Ti.Contacts.Group}
      * @since 0.8
      */
     createGroup:function(parameters) {
     },
 
     /**
-     * create and return an instance of {@link Titanium.Contacts.Person}
+     * create and return an instance of {@link Ti.Contacts.Person}
      * platforms: iphone, ipad, android
-     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.Contacts.Person}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Ti.Contacts.Person}
      * @since 0.8
      */
     createPerson:function(parameters) {
@@ -5213,7 +5213,7 @@ Ti.Contacts = {
     },
 
     /**
-     * <p>Returns an of all {@link Titanium.Contacts.Group} objects in the contacts database</p>
+     * <p>Returns an of all {@link Ti.Contacts.Group} objects in the contacts database</p>
      * platforms: iphone, ipad, android
      * @returns void
      * @since 0.8
@@ -5222,7 +5222,7 @@ Ti.Contacts = {
     },
 
     /**
-     * <p>Returns an array of all {@link Titanium.Contacts.Person} objects in the contacts database</p>
+     * <p>Returns an array of all {@link Ti.Contacts.Person} objects in the contacts database</p>
      * platforms: iphone, ipad, android
      * @returns void
      * @since 0.8
@@ -5231,7 +5231,7 @@ Ti.Contacts = {
     },
 
     /**
-     * <p>Returns a {@link Titanium.Contacts.Group} object with the given ID</p>
+     * <p>Returns a {@link Ti.Contacts.Group} object with the given ID</p>
      * platforms: iphone, ipad, android
      * @param {int} id The database ID of the group to retrieve
      * @since 0.8
@@ -5240,7 +5240,7 @@ Ti.Contacts = {
     },
 
     /**
-     * <p>Returns an array of {@link Titanium.Contacts.Person} objects who have a name (first, last, middle, composite) which matches the given name</p>
+     * <p>Returns an array of {@link Ti.Contacts.Person} objects who have a name (first, last, middle, composite) which matches the given name</p>
      * platforms: iphone, ipad, android
      * @param {string} name The name to match in the database
      * @since 0.8
@@ -5249,7 +5249,7 @@ Ti.Contacts = {
     },
 
     /**
-     * <p>Returns a {@link Titanium.Contacts.Person} object with the given ID</p>
+     * <p>Returns a {@link Ti.Contacts.Person} object with the given ID</p>
      * platforms: iphone, ipad, android
      * @param {int} id The database ID of the person to retrieve
      * @since 0.8
@@ -5271,7 +5271,7 @@ Ti.Contacts = {
     /**
      * <p>Removes a group from the contacts database (NOTE: not supported on Android.)</p>
      * platforms: iphone, ipad, android
-     * @param {object} group The {@link Titanium.Contacts.Group} object to remove from the database. (NOTE: not supported on Android.)
+     * @param {object} group The {@link Ti.Contacts.Group} object to remove from the database. (NOTE: not supported on Android.)
      * @returns void
      * @since 0.8
      */
@@ -5281,7 +5281,7 @@ Ti.Contacts = {
     /**
      * <p>Removes a person from the contacts database. (NOTE: not supported on Android.)</p>
      * platforms: iphone, ipad, android
-     * @param {object} person The {@link Titanium.Contacts.Person} object to remove from the database. (NOTE: not supported on Android.)
+     * @param {object} person The {@link Ti.Contacts.Person} object to remove from the database. (NOTE: not supported on Android.)
      * @returns void
      * @since 0.8
      */
@@ -5340,7 +5340,7 @@ Ti.Contacts.Group = {
     /**
      * <p>Adds a person to the group</p>
      * platforms: iphone, ipad
-     * @param {object} person {@link Titanium.Contacts.Person} object to remove from the group
+     * @param {object} person {@link Ti.Contacts.Person} object to remove from the group
      * @returns void
      * @since 1.4.0
      */
@@ -5359,7 +5359,7 @@ Ti.Contacts.Group = {
     /**
      * <p>Removes a person from the group</p>
      * platforms: iphone, ipad
-     * @param {object} person {@link Titanium.Contacts.Person} object to remove from the group
+     * @param {object} person {@link Ti.Contacts.Person} object to remove from the group
      * @returns void
      * @since 1.4.0
      */
@@ -5369,7 +5369,7 @@ Ti.Contacts.Group = {
     /**
      * <p>A list of sorted members</p>
      * platforms: iphone, ipad
-     * @param {int} sortBy Method for sorting.  Must be one of  {@link Titanium.Contacts.CONTACTS_SORT_FIRST_NAME} or {@link Titanium.Contacts.CONTACTS_SORT_LAST_NAME}
+     * @param {int} sortBy Method for sorting.  Must be one of  {@link Ti.Contacts.CONTACTS_SORT_FIRST_NAME} or {@link Ti.Contacts.CONTACTS_SORT_LAST_NAME}
      * @returns void
      * @since 1.4.0
      */
@@ -5490,7 +5490,7 @@ Ti.Contacts.Person = {
     jobTitle:null,
 
     /**
-     * <p>The kind of person.  Single value, one of {@link Titanium.Contacts.CONTACTS_KIND_PERSON} or {@link Titanium.Contacts.CONTACTS_KIND_ORGANIZATION}</p>
+     * <p>The kind of person.  Single value, one of {@link Ti.Contacts.CONTACTS_KIND_PERSON} or {@link Ti.Contacts.CONTACTS_KIND_ORGANIZATION}</p>
      * platforms: iphone, ipad
      * @type int
      * @since 0.8
@@ -5692,7 +5692,7 @@ Ti.Database = {
 
 /**
  * platforms: android, iphone, ipad
- * @namespace <p>The Database instance returned by {@link Titanium.Database.open} or {@link Titanium.Database.install}. </p>
+ * @namespace <p>The Database instance returned by {@link Ti.Database.open} or {@link Ti.Database.install}. </p>
  * @since 0.1
  */
 Ti.Database.DB = {
@@ -5788,7 +5788,7 @@ Ti.Database.ResultSet = {
      * <p>retrieve a row value by field index</p>
      * platforms: android, iphone, ipad
      * @param {int} index column index (which is zero based)
-     * @param {int} type [optional] one of ({@link Titanium.Database.FIELD_TYPE_STRING} | {@link Titanium.Database.FIELD_TYPE_INT} | {@link Titanium.Database.FIELD_TYPE_FLOAT} | {@link Titanium.Database.FIELD_TYPE_DOUBLE})
+     * @param {int} type [optional] one of ({@link Ti.Database.FIELD_TYPE_STRING} | {@link Ti.Database.FIELD_TYPE_INT} | {@link Ti.Database.FIELD_TYPE_FLOAT} | {@link Ti.Database.FIELD_TYPE_DOUBLE})
      * @since 0.1
      */
     field:function(index, type) {
@@ -5798,7 +5798,7 @@ Ti.Database.ResultSet = {
      * <p>retrieve a row value by field name</p>
      * platforms: android, iphone, ipad
      * @param {string} name column name from SQL query
-     * @param {int} type [optional] one of ({@link Titanium.Database.FIELD_TYPE_STRING} | {@link Titanium.Database.FIELD_TYPE_INT} | {@link Titanium.Database.FIELD_TYPE_FLOAT} | {@link Titanium.Database.FIELD_TYPE_DOUBLE})
+     * @param {int} type [optional] one of ({@link Ti.Database.FIELD_TYPE_STRING} | {@link Ti.Database.FIELD_TYPE_INT} | {@link Ti.Database.FIELD_TYPE_FLOAT} | {@link Ti.Database.FIELD_TYPE_DOUBLE})
      * @since 0.1
      */
     fieldByName:function(name, type) {
@@ -5851,9 +5851,9 @@ Due to how the facebook login process works on iOS, your app will need to have t
  * 
  * @example Authorize
  * <p>Shows official Facebook dialog for logging in the user and prompting the user to approve your requested permissions.  Listen for the module's "login" event to determine success/failure.</p>
-<pre><code>Titanium.Facebook.appid = '[YOUR APPID]';
-Titanium.Facebook.permissions = ['publish_stream']; // Permissions your app needs
-Titanium.Facebook.addEventListener('login', function(e) {
+<pre><code>Ti.Facebook.appid = '[YOUR APPID]';
+Ti.Facebook.permissions = ['publish_stream']; // Permissions your app needs
+Ti.Facebook.addEventListener('login', function(e) {
     if (e.success) {
         alert('Logged In');
     } else if (e.error) {
@@ -5862,15 +5862,15 @@ Titanium.Facebook.addEventListener('login', function(e) {
         alert("Cancelled");
     }
 });
-Titanium.Facebook.authorize();
+Ti.Facebook.authorize();
 </code></pre>
  * 
  * @example Logout
  * <p>Logout the user and forget the authorization token.  Listen for the module's "logout" event to determine when logout is finished.</p>
-<pre><code>Titanium.Facebook.addEventListener('logout', function(e) {
+<pre><code>Ti.Facebook.addEventListener('logout', function(e) {
     alert('Logged out');
 });
-Titanium.Facebook.logout();
+Ti.Facebook.logout();
 </code></pre>
  * 
  * @example Authorize/Logout via the special LoginButton
@@ -5878,26 +5878,26 @@ Titanium.Facebook.logout();
 <p>Note that you don't need to set a click listener or anything else on the button.  It "just works".  To listen for the actual login and logout events (which are part of the Titanium Facebook module and not specific to the login button), add listeners at the module level as in the example below.</p>
 <pre><code>// Don't forget to set your appid and requested permissions, else the login button
 // won't be effective.
-Titanium.Facebook.appid = '[your appid]';
-Titanium.Facebook.permissions = ['publish_stream'];
-Titanium.Facebook.addEventListener('login', function(e) {
+Ti.Facebook.appid = '[your appid]';
+Ti.Facebook.permissions = ['publish_stream'];
+Ti.Facebook.addEventListener('login', function(e) {
     if (e.success) {
         alert('Logged in');
     }
 });
-Titanium.Facebook.addEventListener('logout', function(e) {
+Ti.Facebook.addEventListener('logout', function(e) {
     alert('Logged out');
 });
 
 // add the button.  Note that it doesn't need a click event or anything.
-Titanium.UI.currentWindow.add(Titanium.Facebook.createLoginButton({ top: 50, style: 'wide' }));
+Ti.UI.currentWindow.add(Ti.Facebook.createLoginButton({ top: 50, style: 'wide' }));
 </code></pre>
 
 <p>The <tt>style:'wide'</tt> shows a wide version of the button that displays "Connect with Facebook" instead of just "Connect".</p>
  * 
  * @example Simple Graph API call
- * <p>This example makes a call to the "me" graph path and displays the results, which will be JSON from Facebook.  It assumes the user is already logged-in (you can check this with {@link Titanium.Facebook.loggedIn}.)</p>
-<pre><code>Titanium.Facebook.requestWithGraphPath('me', {}, 'GET', function(e) {
+ * <p>This example makes a call to the "me" graph path and displays the results, which will be JSON from Facebook.  It assumes the user is already logged-in (you can check this with {@link Ti.Facebook.loggedIn}.)</p>
+<pre><code>Ti.Facebook.requestWithGraphPath('me', {}, 'GET', function(e) {
     if (e.success) {
         alert(e.result);
     } else if (e.error) {
@@ -5911,8 +5911,8 @@ Titanium.UI.currentWindow.add(Titanium.Facebook.createLoginButton({ top: 50, sty
  * @example Create an Event with Graph API
  * <p>This example uses the Graph API to {@link http://developers.facebook.com/docs/reference/api/event/} in the logged-on user's Facebook account.  This requires the "create_event" permission.</p>
 <pre><code>// First make sure this permission exists
-Titanium.Facebook.permissions = ['create_event'];
-Titanium.Facebook.authorize();
+Ti.Facebook.permissions = ['create_event'];
+Ti.Facebook.authorize();
 
 // ...
 // ...
@@ -5928,7 +5928,7 @@ var data = {
     description: description,
     name: title
 };
-Titanium.Facebook.requestWithGraphPath('me/events', data, 'POST', function(e) {
+Ti.Facebook.requestWithGraphPath('me/events', data, 'POST', function(e) {
     if (e.success) {
         alert("Success! Returned from FB: " + e.result);
     } else {
@@ -5944,14 +5944,14 @@ Titanium.Facebook.requestWithGraphPath('me/events', data, 'POST', function(e) {
  * @example Set user's Facebook status with Graph API
  * <p>Use the Graph API to set the {@link http://developers.facebook.com/docs/reference/api/status/}.  Requires the "publish_stream" permissions.</p>
 <pre><code>// First make sure this permission exists
-Titanium.Facebook.permissions = ['publish_stream'];
-Titanium.Facebook.authorize();
+Ti.Facebook.permissions = ['publish_stream'];
+Ti.Facebook.authorize();
 
 // ...
 // ...
 
 // Now create the status message after you've confirmed that authorize() succeeded
-Titanium.Facebook.requestWithGraphPath('me/feed', {message: "Trying out FB Graph API and it's fun!"}, "POST", function(e) {
+Ti.Facebook.requestWithGraphPath('me/feed', {message: "Trying out FB Graph API and it's fun!"}, "POST", function(e) {
     if (e.success) {
         alert("Success!  From FB: " + e.result);
     } else {
@@ -5967,8 +5967,8 @@ Titanium.Facebook.requestWithGraphPath('me/feed', {message: "Trying out FB Graph
  * @example Post a photo using the Graph API
  * <p>This example {@link http://developers.facebook.com/docs/reference/api/photo/} using the Graph API.  Another example below shows how to do this with the REST API, if desired.  This requires the "publish_stream" permission.</p>
 <pre><code>// First make sure this permission exists
-Titanium.Facebook.permissions = ['publish_stream'];
-Titanium.Facebook.authorize();
+Ti.Facebook.permissions = ['publish_stream'];
+Ti.Facebook.authorize();
 
 // ...
 // ...
@@ -5980,7 +5980,7 @@ var data = {
     message: 'This is a pumpkin',
     picture: blob
 };
-Titanium.Facebook.requestWithGraphPath('me/photos', data, 'POST', function(e){
+Ti.Facebook.requestWithGraphPath('me/photos', data, 'POST', function(e){
     if (e.success) {
         alert("Success!  From FB: " + e.result);
     } else {
@@ -5996,8 +5996,8 @@ Titanium.Facebook.requestWithGraphPath('me/photos', data, 'POST', function(e){
  * @example Post a photo using the REST API
  * <p>This example {@link http://developers.facebook.com/docs/reference/rest/photos.upload/} using the REST API.  Another example above shows how to do this with the Graph API.  This requires the "publish_stream" permission.</p>
 <pre><code>// First make sure this permission exists
-Titanium.Facebook.permissions = ['publish_stream'];
-Titanium.Facebook.authorize();
+Ti.Facebook.permissions = ['publish_stream'];
+Ti.Facebook.authorize();
 
 // ...
 // ...
@@ -6009,7 +6009,7 @@ var data = {
     caption: 'This is a pumpkin',
     picture: blob
 };
-Titanium.Facebook.request('photos.upload', data, function(e){
+Ti.Facebook.request('photos.upload', data, function(e){
     if (e.success) {
         alert("Success!  From FB: " + e.result);
     } else {
@@ -6032,7 +6032,7 @@ Titanium.Facebook.request('photos.upload', data, function(e){
     picture: "http://developer.appcelerator.com/assets/img/DEV_titmobile_image.png",
     description: "You've got the ideas, now you've got the power. Titanium translates your hard won web skills into native applications..."
 };
-Titanium.Facebook.dialog("feed", data, function(e) {
+Ti.Facebook.dialog("feed", data, function(e) {
     if (e.success) {
         alert("Success!  From FB: " + e.result);
     } else {
@@ -6127,9 +6127,9 @@ Ti.Facebook = {
     },
 
     /**
-     * create and return an instance of {@link Titanium.Facebook.LoginButton}
+     * create and return an instance of {@link Ti.Facebook.LoginButton}
      * platforms: android, iphone, ipad
-     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.Facebook.LoginButton}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Ti.Facebook.LoginButton}
      * @since 0.8
      */
     createLoginButton:function(parameters) {
@@ -6205,9 +6205,9 @@ Ti.Facebook = {
 }
 
 /**
- * Notes: <p>See the examples in the {@link Titanium.Facebook} documentation.</p>
+ * Notes: <p>See the examples in the {@link Ti.Facebook} documentation.</p>
  * platforms: android, iphone, ipad
- * @namespace <p>The Login Button created by {@link Titanium.Facebook.createLoginButton}.  This is a Facebook-themed button that does not require a click event handler or any listeners.  It "just works" and changes its label to reflect the current state of the Facebook session.  For example, if the user is already logged in, this button will show "Logout".</p>
+ * @namespace <p>The Login Button created by {@link Ti.Facebook.createLoginButton}.  This is a Facebook-themed button that does not require a click event handler or any listeners.  It "just works" and changes its label to reflect the current state of the Facebook session.  For example, if the user is already logged in, this button will show "Logout".</p>
  * @since 0.8
  */
 Ti.Facebook.LoginButton = {
@@ -6437,7 +6437,7 @@ Ti.Facebook.LoginButton = {
     size:null,
 
     /**
-     * One of Titanium.UI.Android.SOFT_KEYBOARD_DEFAULT_ON_FOCUS, Titanium.UI.Android.SOFT_KEYBOARD_HIDE_ON_FOCUS, or Titanium.UI.Android.SOFT_KEYBOARD_SHOW_ON_FOCUS. (Android only)
+     * One of Ti.UI.Android.SOFT_KEYBOARD_DEFAULT_ON_FOCUS, Ti.UI.Android.SOFT_KEYBOARD_HIDE_ON_FOCUS, or Ti.UI.Android.SOFT_KEYBOARD_SHOW_ON_FOCUS. (Android only)
      * platforms: android
      * @type int
      * @since 0.8
@@ -6686,16 +6686,16 @@ Ti.Filesystem = {
     },
 
     /**
-     * create and return an instance of {@link Titanium.Filesystem.File}
+     * create and return an instance of {@link Ti.Filesystem.File}
      * platforms: android, iphone, ipad
-     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.Filesystem.File}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Ti.Filesystem.File}
      * @since 0.1
      */
     createFile:function(parameters) {
     },
 
     /**
-     * <p>create temp file and return a {@link Titanium.Filesystem.File}</p>
+     * <p>create temp file and return a {@link Ti.Filesystem.File}</p>
      * platforms: android, iphone, ipad
      * @since 0.1
      */
@@ -6703,7 +6703,7 @@ Ti.Filesystem = {
     },
 
     /**
-     * <p>create a temp file and return a {@link Titanium.Filesystem.File}</p>
+     * <p>create a temp file and return a {@link Ti.Filesystem.File}</p>
      * platforms: android, iphone, ipad
      * @since 0.1
      */
@@ -6722,7 +6722,7 @@ Ti.Filesystem = {
     },
 
     /**
-     * <p>return a fully formed file path as a {@link Titanium.Filesystem.File} object</p>
+     * <p>return a fully formed file path as a {@link Ti.Filesystem.File} object</p>
      * platforms: android, iphone, ipad
      * @param {string} path one or more path arguments to form the full path joined together with the platform specific path separator. if a relative path is passed, the full path will be relative to the application resource folder.
      * @since 0.1
@@ -6755,9 +6755,9 @@ Ti.Filesystem = {
  * @namespace <p>The File object which support various filesystem based operations.</p>
  * @since 0.1
  */
-function Titanium_Filesystem_File() {
+Ti.Filesystem.File = function() {
 }
-Titanium_Filesystem_File.prototype = {
+Ti.Filesystem.File.prototype = {
 
 
     /**
@@ -6986,7 +6986,7 @@ Titanium_Filesystem_File.prototype = {
     /**
      * <p>write the contents to file.</p>
      * platforms: android, iphone, ipad
-     * @param {string|object} contents write the contents of string, blob or [[Titanium.Filesystem.File]] to file
+     * @param {string|object} contents write the contents of string, blob or [[Ti.Filesystem.File]] to file
      * @param {boolean} append (optional) append the string to the end of the file.
      * @since 0.1
      */
@@ -7004,7 +7004,7 @@ Titanium_Filesystem_File.prototype = {
 
 /**
  * platforms: iphone, android, ipad
- * @namespace <p>Wrapper around {@link Titanium.Filesystem.File} that implements the {@link Titanium.IOStream} interface.</p>
+ * @namespace <p>Wrapper around {@link Ti.Filesystem.File} that implements the {@link Ti.IOStream} interface.</p>
  * @since 1.7
  * 
  * @example Write data to stream
@@ -7062,7 +7062,7 @@ Ti.Filesystem.FileStream = {
     /**
      * <p>reads data from stream into a buffer.  Optional offset and length arguments to specify position in buffer in whichto start writing the read data, and the amount of data to read.</p>
      * platforms: iphone, android, ipad
-     * @param {{@link Titanium_Buffer}} buffer buffer to read stream data into
+     * @param {{@link Ti.Buffer}} buffer buffer to read stream data into
      * @param {Number} offset (Optional) offset to start reading buffer data from
      * @param {Number} length (Optional) length of data to read from buffer
      * @since 1.7
@@ -7073,7 +7073,7 @@ Ti.Filesystem.FileStream = {
     /**
      * <p>writes data from buffer to stream. Optional offset and length arguments to specify position in buffer in which to start reading data that is written to the stream, and the length of the data to take from the buffer.</p>
      * platforms: iphone, android, ipad
-     * @param {{@link Titanium_Buffer}} buffer buffer to write to stream
+     * @param {{@link Ti.Buffer}} buffer buffer to write to stream
      * @param {Number} offset (Optional) offset to start writing buffer data from
      * @param {Number} length (Optional) length of data to write from buffer
      * @since 1.7
@@ -7316,7 +7316,7 @@ Ti.Geolocation = {
      * <p>tries to resolve an address to a location.</p>
      * platforms: android, iphone, ipad
      * @param {string} address address to resolve.
-     * @param {function} callback function to invoke on success or failure. The event object contains the properties described as the <tt>place</tt> dictionary in {@link Titanium.Geolocation.reverseGeocoder}.
+     * @param {function} callback function to invoke on success or failure. The event object contains the properties described as the <tt>place</tt> dictionary in {@link Ti.Geolocation.reverseGeocoder}.
      * @returns void
      * @since 0.1
      */
@@ -7326,7 +7326,7 @@ Ti.Geolocation = {
     /**
      * <p>retrieve the current compass heading.</p>
      * platforms: android, iphone, ipad
-     * @param {function} callback function to invoke on success or failure of obtaining the current heading. See heading event in {@link Titanium.Geolocation}.
+     * @param {function} callback function to invoke on success or failure of obtaining the current heading. See heading event in {@link Ti.Geolocation}.
      * @returns void
      * @since 0.1
      */
@@ -7336,7 +7336,7 @@ Ti.Geolocation = {
     /**
      * <p>retrieve the last known location from the device. On Android, the radios are not turned on to update the location. On iOS the radios MAY be used if the location is too "old".</p>
      * platforms: android, iphone, ipad
-     * @param {function} callback function to invoke on success or failure of obtaining the current location. See location event in {@link Titanium.Geolocation}.
+     * @param {function} callback function to invoke on success or failure of obtaining the current location. See location event in {@link Ti.Geolocation}.
      * @returns void
      * @since 0.1
      */
@@ -7478,7 +7478,7 @@ Ti.IOStream = {
     /**
      * <p>reads data from stream into a buffer.  Optional offset and length arguments to specify position in buffer in whichto start writing the read data, and the amount of data to read.</p>
      * platforms: iphone, android, ipad
-     * @param {{@link Titanium_Buffer}} buffer buffer to read stream data into
+     * @param {{@link Ti.Buffer}} buffer buffer to read stream data into
      * @param {Number} offset (Optional) offset to start reading buffer data from
      * @param {Number} length (Optional) length of data to read from buffer
      * @since 1.7
@@ -7489,7 +7489,7 @@ Ti.IOStream = {
     /**
      * <p>writes data from buffer to stream. Optional offset and length arguments to specify position in buffer in which to start reading data that is written to the stream, and the length of the data to take from the buffer.</p>
      * platforms: iphone, android, ipad
-     * @param {{@link Titanium_Buffer}} buffer buffer to write to stream
+     * @param {{@link Ti.Buffer}} buffer buffer to write to stream
      * @param {Number} offset (Optional) offset to start writing buffer data from
      * @param {Number} length (Optional) length of data to write from buffer
      * @since 1.7
@@ -7499,7 +7499,7 @@ Ti.IOStream = {
 }
 
 /**
- * Notes: <p>The macro <tt>L</tt> can also be used which aliases the method {@link Titanium.Locale.getString}.</p>
+ * Notes: <p>The macro <tt>L</tt> can also be used which aliases the method {@link Ti.Locale.getString}.</p>
  * platforms: android, iphone, ipad
  * @namespace <p>The top level Locale module.  The Locale module works with localization files to which are generated during compilation into the operating system specific localization formats. The Locale module provides locale-specific strings which can be referenced at runtime.  Additionally, the module contains a few methods and properties for querying device locale information.</p>
  * @since 1.5
@@ -7618,19 +7618,19 @@ Ti.Locale = {
  * 
  * @example Map Example
  * <p>This is a basic map example that uses a custom annotation on the map.</p>
-<pre><code>var mountainView = Titanium.Map.createAnnotation({
+<pre><code>var mountainView = Ti.Map.createAnnotation({
     latitude:37.390749,
     longitude:-122.081651,
     title:"Appcelerator Headquarters",
     subtitle:'Mountain View, CA',
-    pincolor:Titanium.Map.ANNOTATION_RED,
+    pincolor:Ti.Map.ANNOTATION_RED,
     animate:true,
     leftButton: '../images/appcelerator_small.png',
     myid:1 // CUSTOM ATTRIBUTE THAT IS PASSED INTO EVENT OBJECTS
 });
 
-var mapview = Titanium.Map.createView({
-    mapType: Titanium.Map.STANDARD_TYPE,
+var mapview = Ti.Map.createView({
+    mapType: Ti.Map.STANDARD_TYPE,
     region: {latitude:33.74511, longitude:-84.38993, 
             latitudeDelta:0.01, longitudeDelta:0.01},
     animate:true,
@@ -7681,18 +7681,18 @@ Ti.Map = {
     },
 
     /**
-     * create and return an instance of {@link Titanium.Map.Annotation}
+     * create and return an instance of {@link Ti.Map.Annotation}
      * platforms: android, iphone, ipad
-     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.Map.Annotation}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Ti.Map.Annotation}
      * @since 0.8
      */
     createAnnotation:function(parameters) {
     },
 
     /**
-     * create and return an instance of {@link Titanium.Map.MapView}
+     * create and return an instance of {@link Ti.Map.MapView}
      * platforms: android, iphone, ipad
-     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.Map.MapView}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Ti.Map.MapView}
      * @since 0.8
      */
     createMapView:function(parameters) {
@@ -7723,12 +7723,12 @@ Ti.Map = {
 
 /**
  * platforms: android, iphone, ipad
- * @namespace <p>An Annotation object that is created by the method {@link Titanium.Map.createAnnotation}. This object gives you low level control over annotations that can be added to a Map View.</p>
+ * @namespace <p>An Annotation object that is created by the method {@link Ti.Map.createAnnotation}. This object gives you low level control over annotations that can be added to a Map View.</p>
  * @since 0.9
  */
-function Titanium_Map_Annotation() {
+Ti.Map.Annotation = function() {
 }
-Titanium_Map_Annotation.prototype = {
+Ti.Map.Annotation.prototype = {
 
     /**
      * <p>boolean to indicate whether the pin should animate when dropped</p>
@@ -7763,7 +7763,7 @@ Titanium_Map_Annotation.prototype = {
     leftView:null,
 
     /**
-     * <p>Android only. <em>DEPRECATED</em> use {@link Titanium.Map.Annotation.image} property instead.</p>
+     * <p>Android only. <em>DEPRECATED</em> use {@link Ti.Map.Annotation.image} property instead.</p>
      * platforms: android, iphone, ipad
      * @type string
      * @since 0.9
@@ -7771,7 +7771,7 @@ Titanium_Map_Annotation.prototype = {
     pinImage:null,
 
     /**
-     * <p>the pin color as one of {@link Titanium.Map.ANNOTATION_RED}, {@link Titanium.Map.ANNOTATION_GREEN} or {@link Titanium.Map.ANNOTATION_PURPLE}.</p>
+     * <p>the pin color as one of {@link Ti.Map.ANNOTATION_RED}, {@link Ti.Map.ANNOTATION_GREEN} or {@link Ti.Map.ANNOTATION_PURPLE}.</p>
      * platforms: android, iphone, ipad
      * @type int
      * @since 0.9
@@ -7864,7 +7864,7 @@ Titanium_Map_Annotation.prototype = {
 /**
  * Notes: <p>For Android, you will need to {@link http://code.google.com/android/maps} to use maps in your application.  On iPhone, you cannot call any methods on a map view until it has been added to a view.</p>
  * platforms: android, iphone, ipad
- * @namespace <p>The MapView is an object created by {@link Titanium.Map.createView} and is used for embedding native mapping capabilities as a view in your application.  With native maps, you can control the mapping location, the type of map, the zoom level and you can add custom annotations directly to the map.</p>
+ * @namespace <p>The MapView is an object created by {@link Ti.Map.createView} and is used for embedding native mapping capabilities as a view in your application.  With native maps, you can control the mapping location, the type of map, the zoom level and you can add custom annotations directly to the map.</p>
  * @since 0.8
  */
 Ti.Map.MapView = {
@@ -8094,7 +8094,7 @@ Ti.Map.MapView = {
     location:null,
 
     /**
-     * <p>the map type constant of either {@link Titanium.Map.STANDARD_TYPE}, {@link Titanium.Map.SATELLITE_TYPE} or {@link Titanium.Map.HYBRID_TYPE}.</p>
+     * <p>the map type constant of either {@link Ti.Map.STANDARD_TYPE}, {@link Ti.Map.SATELLITE_TYPE} or {@link Ti.Map.HYBRID_TYPE}.</p>
      * platforms: android, iphone, ipad
      * @type int
      * @since 0.8
@@ -8142,7 +8142,7 @@ Ti.Map.MapView = {
     size:null,
 
     /**
-     * One of Titanium.UI.Android.SOFT_KEYBOARD_DEFAULT_ON_FOCUS, Titanium.UI.Android.SOFT_KEYBOARD_HIDE_ON_FOCUS, or Titanium.UI.Android.SOFT_KEYBOARD_SHOW_ON_FOCUS. (Android only)
+     * One of Ti.UI.Android.SOFT_KEYBOARD_DEFAULT_ON_FOCUS, Ti.UI.Android.SOFT_KEYBOARD_HIDE_ON_FOCUS, or Ti.UI.Android.SOFT_KEYBOARD_SHOW_ON_FOCUS. (Android only)
      * platforms: android
      * @type int
      * @since 0.8
@@ -8219,7 +8219,7 @@ Ti.Map.MapView = {
     /**
      * <p>add a new annotation to the map</p>
      * platforms: android, iphone, ipad
-     * @param {object} annotation either a dictionary of properties for the annotation or a [Titanium.Map.Annotation](Titanium.Map.Annotation) instance.
+     * @param {object} annotation either a dictionary of properties for the annotation or a [Ti.Map.Annotation](Ti.Map.Annotation) instance.
      * @returns void
      * @since 0.8
      */
@@ -8229,7 +8229,7 @@ Ti.Map.MapView = {
     /**
      * <p>add one or more new annotation to the map</p>
      * platforms: android, iphone, ipad
-     * @param {array} annotations an array of either a dictionary of properties for the annotation or a [Titanium.Map.Annotation](Titanium.Map.Annotation) instance.
+     * @param {array} annotations an array of either a dictionary of properties for the annotation or a [Ti.Map.Annotation](Ti.Map.Annotation) instance.
      * @returns void
      * @since 0.8
      */
@@ -8271,7 +8271,7 @@ Ti.Map.MapView = {
     /**
      * <p>cause the annotation to be deselected (hidden).</p>
      * platforms: android, iphone, ipad
-     * @param {string,object} annotation either a string of the annotation title or a [Titanium.Map.Annotation](Titanium.Map.Annotation) reference.
+     * @param {string,object} annotation either a string of the annotation title or a [Ti.Map.Annotation](Ti.Map.Annotation) reference.
      * @returns void
      * @since 0.8
      */
@@ -8320,7 +8320,7 @@ Ti.Map.MapView = {
     /**
      * <p>remove an existing annotation from the map</p>
      * platforms: android, iphone, ipad
-     * @param {string,object} annotation either a string of the annotation title or a [Titanium.Map.Annotation](Titanium.Map.Annotation) reference.
+     * @param {string,object} annotation either a string of the annotation title or a [Ti.Map.Annotation](Ti.Map.Annotation) reference.
      * @returns void
      * @since 0.8
      */
@@ -8330,7 +8330,7 @@ Ti.Map.MapView = {
     /**
      * <p>remove one or more existing annotations from the map</p>
      * platforms: android, iphone, ipad
-     * @param {array} annotation an array of either a string of the annotation title or a [Titanium.Map.Annotation](Titanium.Map.Annotation) reference.
+     * @param {array} annotation an array of either a string of the annotation title or a [Ti.Map.Annotation](Ti.Map.Annotation) reference.
      * @returns void
      * @since 0.8
      */
@@ -8361,7 +8361,7 @@ Ti.Map.MapView = {
     /**
      * <p>cause the annotation to be selected (shown).</p>
      * platforms: android, iphone, ipad
-     * @param {string,object} annotation either a string of the annotation title or a [Titanium.Map.Annotation](Titanium.Map.Annotation) reference.
+     * @param {string,object} annotation either a string of the annotation title or a [Ti.Map.Annotation](Ti.Map.Annotation) reference.
      * @returns void
      * @since 0.8
      */
@@ -8381,7 +8381,7 @@ Ti.Map.MapView = {
     /**
      * <p>set the type of map (satellite, hybrid, standard)</p>
      * platforms: android, iphone, ipad
-     * @param {int} mapType the map type constant of either {@link Titanium.Map.STANDARD_TYPE}, {@link Titanium.Map.SATELLITE_TYPE} or {@link Titanium.Map.HYBRID_TYPE}.
+     * @param {int} mapType the map type constant of either {@link Ti.Map.STANDARD_TYPE}, {@link Ti.Map.SATELLITE_TYPE} or {@link Ti.Map.HYBRID_TYPE}.
      * @returns void
      * @since 0.8
      */
@@ -8625,7 +8625,7 @@ Ti.Media = {
     AUDIO_SESSION_MODE_PLAYBACK:null,
 
     /**
-     * <p>Allows recording (input) and playback (output) of audio, such as for a VOIP (voice over IP) application. This category is appropriate for simultaneous recording and playback, and also for applications that record and play back but not simultaneously. If you want to ensure that sounds such as Messages alerts do not play while your application is recording, use  {@link Titanium.Media.AUDIO_SESSION_MODE_RECORD} instead. This category normally disallows iPod audio to mix with application audio.</p>
+     * <p>Allows recording (input) and playback (output) of audio, such as for a VOIP (voice over IP) application. This category is appropriate for simultaneous recording and playback, and also for applications that record and play back but not simultaneously. If you want to ensure that sounds such as Messages alerts do not play while your application is recording, use  {@link Ti.Media.AUDIO_SESSION_MODE_RECORD} instead. This category normally disallows iPod audio to mix with application audio.</p>
      * platforms: android, iphone, ipad
      * @type int
      * @since 0.1
@@ -8905,7 +8905,7 @@ Ti.Media = {
     VIDEO_CONTROL_DEFAULT:null,
 
     /**
-     * <p>Controls for an embedded view. Used in conjunction with movieControlStyle property of {@link Titanium.Media.VideoPlayer} in iPhone 3.2+</p>
+     * <p>Controls for an embedded view. Used in conjunction with movieControlStyle property of {@link Ti.Media.VideoPlayer} in iPhone 3.2+</p>
      * platforms: android, iphone, ipad
      * @type int
      * @since 0.1
@@ -8913,7 +8913,7 @@ Ti.Media = {
     VIDEO_CONTROL_EMBEDDED:null,
 
     /**
-     * <p>Controls for fullscreen. Used in conjunction with movieControlStyle property of {@link Titanium.Media.VideoPlayer} in iPhone 3.2+</p>
+     * <p>Controls for fullscreen. Used in conjunction with movieControlStyle property of {@link Ti.Media.VideoPlayer} in iPhone 3.2+</p>
      * platforms: android, iphone, ipad
      * @type int
      * @since 0.1
@@ -8929,7 +8929,7 @@ Ti.Media = {
     VIDEO_CONTROL_HIDDEN:null,
 
     /**
-     * <p>No controls. Used in conjunction with movieControlStyle property of {@link Titanium.Media.VideoPlayer} in iPhone 3.2+</p>
+     * <p>No controls. Used in conjunction with movieControlStyle property of {@link Ti.Media.VideoPlayer} in iPhone 3.2+</p>
      * platforms: android, iphone, ipad
      * @type int
      * @since 0.1
@@ -9001,7 +9001,7 @@ Ti.Media = {
     VIDEO_LOAD_STATE_UNKNOWN:null,
 
     /**
-     * <p>A audio type of media in the movie returned by {@link Titanium.Media.VideoPlayer} <tt>mediaTypes</tt> property</p>
+     * <p>A audio type of media in the movie returned by {@link Ti.Media.VideoPlayer} <tt>mediaTypes</tt> property</p>
      * platforms: android, iphone, ipad
      * @type int
      * @since 0.1
@@ -9009,7 +9009,7 @@ Ti.Media = {
     VIDEO_MEDIA_TYPE_AUDIO:null,
 
     /**
-     * <p>An unknown type of media in the movie returned by {@link Titanium.Media.VideoPlayer} <tt>mediaTypes</tt> property.</p>
+     * <p>An unknown type of media in the movie returned by {@link Ti.Media.VideoPlayer} <tt>mediaTypes</tt> property.</p>
      * platforms: android, iphone, ipad
      * @type int
      * @since 0.1
@@ -9017,7 +9017,7 @@ Ti.Media = {
     VIDEO_MEDIA_TYPE_NONE:null,
 
     /**
-     * <p>A video type of media in the movie returned by {@link Titanium.Media.VideoPlayer} <tt>mediaTypes</tt> property</p>
+     * <p>A video type of media in the movie returned by {@link Ti.Media.VideoPlayer} <tt>mediaTypes</tt> property</p>
      * platforms: android, iphone, ipad
      * @type int
      * @since 0.1
@@ -9121,7 +9121,7 @@ Ti.Media = {
     VIDEO_SCALING_NONE:null,
 
     /**
-     * <p>the video source type is a file. Related to the <tt>sourceType</tt> property of {@link Titanium.Media.VideoPlayer}</p>
+     * <p>the video source type is a file. Related to the <tt>sourceType</tt> property of {@link Ti.Media.VideoPlayer}</p>
      * platforms: android, iphone, ipad
      * @type int
      * @since 0.1
@@ -9129,7 +9129,7 @@ Ti.Media = {
     VIDEO_SOURCE_TYPE_FILE:null,
 
     /**
-     * <p>the video source type is a remote stream. Related to the <tt>sourceType</tt> property of {@link Titanium.Media.VideoPlayer}</p>
+     * <p>the video source type is a remote stream. Related to the <tt>sourceType</tt> property of {@link Ti.Media.VideoPlayer}</p>
      * platforms: android, iphone, ipad
      * @type int
      * @since 0.1
@@ -9137,7 +9137,7 @@ Ti.Media = {
     VIDEO_SOURCE_TYPE_STREAMING:null,
 
     /**
-     * <p>the video source type is unknown. Related to the <tt>sourceType</tt> property of {@link Titanium.Media.VideoPlayer}</p>
+     * <p>the video source type is unknown. Related to the <tt>sourceType</tt> property of {@link Ti.Media.VideoPlayer}</p>
      * platforms: android, iphone, ipad
      * @type int
      * @since 0.1
@@ -9161,7 +9161,7 @@ Ti.Media = {
     VIDEO_TIME_OPTION_NEAREST_KEYFRAME:null,
 
     /**
-     * <p>an instance of {@link Titanium.Media.MusicPlayer} representing the app-specific music player.  iPhone/iPad only</p>
+     * <p>an instance of {@link Ti.Media.MusicPlayer} representing the app-specific music player.  iPhone/iPad only</p>
      * platforms: android, iphone, ipad
      * @type object
      * @since 0.1
@@ -9249,7 +9249,7 @@ Ti.Media = {
     peakMicrophonePower:null,
 
     /**
-     * <p>an instance of {@link Titanium.Media.MusicPlayer} representing the system-wide music player.  iPhone/iPad only</p>
+     * <p>an instance of {@link Ti.Media.MusicPlayer} representing the system-wide music player.  iPhone/iPad only</p>
      * platforms: android, iphone, ipad
      * @type object
      * @since 0.1
@@ -9286,54 +9286,54 @@ Ti.Media = {
     },
 
     /**
-     * create and return an instance of {@link Titanium.Media.AudioPlayer}
+     * create and return an instance of {@link Ti.Media.AudioPlayer}
      * platforms: android, iphone, ipad
-     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.Media.AudioPlayer}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Ti.Media.AudioPlayer}
      * @since 0.1
      */
     createAudioPlayer:function(parameters) {
     },
 
     /**
-     * create and return an instance of {@link Titanium.Media.AudioRecorder}
+     * create and return an instance of {@link Ti.Media.AudioRecorder}
      * platforms: android, iphone, ipad
-     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.Media.AudioRecorder}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Ti.Media.AudioRecorder}
      * @since 0.1
      */
     createAudioRecorder:function(parameters) {
     },
 
     /**
-     * create and return an instance of {@link Titanium.Media.Item}
+     * create and return an instance of {@link Ti.Media.Item}
      * platforms: android, iphone, ipad
-     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.Media.Item}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Ti.Media.Item}
      * @since 0.1
      */
     createItem:function(parameters) {
     },
 
     /**
-     * create and return an instance of {@link Titanium.Media.MusicPlayer}
+     * create and return an instance of {@link Ti.Media.MusicPlayer}
      * platforms: android, iphone, ipad
-     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.Media.MusicPlayer}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Ti.Media.MusicPlayer}
      * @since 0.1
      */
     createMusicPlayer:function(parameters) {
     },
 
     /**
-     * create and return an instance of {@link Titanium.Media.Sound}
+     * create and return an instance of {@link Ti.Media.Sound}
      * platforms: android, iphone, ipad
-     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.Media.Sound}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Ti.Media.Sound}
      * @since 0.1
      */
     createSound:function(parameters) {
     },
 
     /**
-     * create and return an instance of {@link Titanium.Media.VideoPlayer}
+     * create and return an instance of {@link Ti.Media.VideoPlayer}
      * platforms: android, iphone, ipad
-     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.Media.VideoPlayer}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Ti.Media.VideoPlayer}
      * @since 0.1
      */
     createVideoPlayer:function(parameters) {
@@ -9533,7 +9533,7 @@ Ti.Media.Android = {
     /**
      * <p>(Android only) Set the system homescreen wallpaper</p>
      * platforms: android
-     * @param {object} image Image blob such as what can be retrieved via callbacks for {@link Titanium.Media.openPhotoGallery} and {@link Titanium.Media.showCamera}, as well as from the return value of {@link Titanium.Filesystem.File.read}.
+     * @param {object} image Image blob such as what can be retrieved via callbacks for {@link Ti.Media.openPhotoGallery} and {@link Ti.Media.showCamera}, as well as from the return value of {@link Ti.Filesystem.File.read}.
      * @param {boolean} scale Set to true if you want the image to be scaled with respect to the system wallpaper desired width, or false to leave it as-is.
      * @returns void
      * @since 1.7.0
@@ -9544,12 +9544,12 @@ Ti.Media.Android = {
 
 /**
  * platforms: android, iphone, ipad
- * @namespace <p>The AudioPlayer object is returned by {@link Titanium.Media.createAudioPlayer} and is used for streaming audio to the device and low-level control of the audio playback.</p>
+ * @namespace <p>The AudioPlayer object is returned by {@link Ti.Media.createAudioPlayer} and is used for streaming audio to the device and low-level control of the audio playback.</p>
  * @since 0.9
  */
-function Titanium_Media_AudioPlayer() {
+Ti.Media.AudioPlayer = function() {
 }
-Titanium_Media_AudioPlayer.prototype = {
+Ti.Media.AudioPlayer.prototype = {
 
     /**
      * <p>current playback is in the buffering from the network state</p>
@@ -9795,12 +9795,12 @@ Titanium_Media_AudioPlayer.prototype = {
 
 /**
  * platforms: iphone, ipad
- * @namespace <p>The AudioRecorder object is returned by {@link Titanium.Media.createAudioRecorder} and is used for recording audio from the device microphone.</p>
+ * @namespace <p>The AudioRecorder object is returned by {@link Ti.Media.createAudioRecorder} and is used for recording audio from the device microphone.</p>
  * @since 0.9
  */
-function Titanium_Media_AudioRecorder() {
+Ti.Media.AudioRecorder = function() {
 }
-Titanium_Media_AudioRecorder.prototype = {
+Ti.Media.AudioRecorder.prototype = {
 
     /**
      * <p>audio compression constant to be used for the recording</p>
@@ -10041,7 +10041,7 @@ Ti.Media.Item = {
     playbackDuration:null,
 
     /**
-     * <p>the title of a podcast item.  Only for media types of {@link Titanium.Media.MUSIC_MEDIA_TYPE_PODCAST}.</p>
+     * <p>the title of a podcast item.  Only for media types of {@link Ti.Media.MUSIC_MEDIA_TYPE_PODCAST}.</p>
      * platforms: iphone, ipad
      * @type string
      * @since 1.4.0
@@ -10078,7 +10078,7 @@ Ti.Media.Item = {
 
 /**
  * platforms: iphone, ipad
- * @namespace <p>The MusicPlayer instance returned from {@link Titanium.Media.createMusicPlayer}.  This object represents a music controller.</p>
+ * @namespace <p>The MusicPlayer instance returned from {@link Ti.Media.createMusicPlayer}.  This object represents a music controller.</p>
  * @since 1.4.0
  */
 Ti.Media.MusicPlayer = {
@@ -10100,7 +10100,7 @@ Ti.Media.MusicPlayer = {
     nowPlaying:null,
 
     /**
-     * <p>the playback state; one of {@link Titanium.Media.MUSIC_PLAYER_STATE_STOPPED}, {@link Titanium.Media.MUSIC_PLAYER_STATE_PLAYING}, {@link Titanium.Media.MUSIC_PLAYER_STATE_PAUSED}, {@link Titanium.Media.MUSIC_PLAYER_STATE_INTERRUPTED}, {@link Titanium.Media.MUSIC_PLAYER_STATE_SKEEK_FORWARD}, {@link Titanium.Media.MUSIC_PLAYER_STATE_SEEK_BACKWARD}</p>
+     * <p>the playback state; one of {@link Ti.Media.MUSIC_PLAYER_STATE_STOPPED}, {@link Ti.Media.MUSIC_PLAYER_STATE_PLAYING}, {@link Ti.Media.MUSIC_PLAYER_STATE_PAUSED}, {@link Ti.Media.MUSIC_PLAYER_STATE_INTERRUPTED}, {@link Ti.Media.MUSIC_PLAYER_STATE_SKEEK_FORWARD}, {@link Ti.Media.MUSIC_PLAYER_STATE_SEEK_BACKWARD}</p>
      * platforms: iphone, ipad
      * @type int
      * @since 1.4.0
@@ -10108,7 +10108,7 @@ Ti.Media.MusicPlayer = {
     playbackState:null,
 
     /**
-     * <p>the repeat setting; one of {@link Titanium.Media.MUSIC_PLAYER_REPEAT_DEFAULT}, {@link Titanium.Media.MUSIC_PLAYER_REPEAT_NONE}, {@link Titanium.Media.MUSIC_PLAYER_REPEAT_ONE}, {@link Titanium.Media.MUSIC_PLAYER_REPEAT_ALL}</p>
+     * <p>the repeat setting; one of {@link Ti.Media.MUSIC_PLAYER_REPEAT_DEFAULT}, {@link Ti.Media.MUSIC_PLAYER_REPEAT_NONE}, {@link Ti.Media.MUSIC_PLAYER_REPEAT_ONE}, {@link Ti.Media.MUSIC_PLAYER_REPEAT_ALL}</p>
      * platforms: iphone, ipad
      * @type int
      * @since 1.4.0
@@ -10116,7 +10116,7 @@ Ti.Media.MusicPlayer = {
     repeatMode:null,
 
     /**
-     * <p>the shuffle setting; one of {@link Titanium.Media.MUSIC_PLAYER_SHUFFLE_DEFAULT}, {@link Titanium.Media.MUSIC_PLAYER_SHUFFLE_NONE}, {@link Titanium.Media.MUSIC_PLAYER_SHUFFLE_SONGS}, {@link Titanium.Media.MUSIC_PLAYER_SHUFFLE_ALBUMS}</p>
+     * <p>the shuffle setting; one of {@link Ti.Media.MUSIC_PLAYER_SHUFFLE_DEFAULT}, {@link Ti.Media.MUSIC_PLAYER_SHUFFLE_NONE}, {@link Ti.Media.MUSIC_PLAYER_SHUFFLE_SONGS}, {@link Ti.Media.MUSIC_PLAYER_SHUFFLE_ALBUMS}</p>
      * platforms: iphone, ipad
      * @type int
      * @since 1.4.0
@@ -10171,7 +10171,7 @@ Ti.Media.MusicPlayer = {
     /**
      * <p>set the media queue</p>
      * platforms: iphone, ipad
-     * @param {object} queue a queue representation to set the player queue to.  Can be any of: A dictionary with an <tt>items</tt> key that is an array of {@link Titanium.Media.Item} objects, an array of {@link Titanium.Media.Item} objects, or a single {@link Titanium.Media.Item} object.
+     * @param {object} queue a queue representation to set the player queue to.  Can be any of: A dictionary with an <tt>items</tt> key that is an array of {@link Ti.Media.Item} objects, an array of {@link Ti.Media.Item} objects, or a single {@link Ti.Media.Item} object.
      * @returns void
      * @since 1.4.0
      */
@@ -10227,7 +10227,7 @@ Ti.Media.MusicPlayer = {
 /**
  * Notes: <p>You can pass the property <tt>preload</tt> in the constructor as an object property to cause the audio to be preloaded before <tt>play</tt> is invoked.  For larger audio files, this is recommended if you want the audio to begin immediately when invoking <tt>play</tt>.</p>
  * platforms: android, iphone, ipad
- * @namespace <p>The Sound object is returned by {@link Titanium.Media.createSound} and is useful for playing basic sounds. The Sound object loads the entire media resource in memory before playing.  If you need to support streaming, use the {@link Titanium.Media.createAudioPlayer} API.</p>
+ * @namespace <p>The Sound object is returned by {@link Ti.Media.createSound} and is useful for playing basic sounds. The Sound object loads the entire media resource in memory before playing.  If you need to support streaming, use the {@link Ti.Media.createAudioPlayer} API.</p>
  * @since 0.8
  * 
  * @example Simple Example
@@ -10236,9 +10236,9 @@ Ti.Media.MusicPlayer = {
 player.play();
 </code></pre>
  */
-function Titanium_Media_Sound() {
+Ti.Media.Sound = function() {
 }
-Titanium_Media_Sound.prototype = {
+Ti.Media.Sound.prototype = {
 
     /**
      * <p>boolean to indicate if audio should continue playing even if Activity is paused (Android only as of 1.3.0)</p>
@@ -10463,7 +10463,7 @@ Titanium_Media_Sound.prototype = {
 /**
  * Notes: <p>Starting in iPhone 3.2 SDK, the video player can be embedded in any normal view.  However, if you create multiple video players at one time, only the last one to have its URL set will display video content or behave as if it is a view for a video player.  Prior to 3.2, only fullscreen views were available on iPhone.</p>
  * platforms: android, iphone, ipad
- * @namespace <p>The VideoPlayer object is returned by {@link Titanium.Media.createVideoPlayer} and is useful for playing videos. </p>
+ * @namespace <p>The VideoPlayer object is returned by {@link Ti.Media.createVideoPlayer} and is useful for playing videos. </p>
  * @since 0.9
  */
 Ti.Media.VideoPlayer = {
@@ -10741,7 +10741,7 @@ Ti.Media.VideoPlayer = {
     media:null,
 
     /**
-     * <p>The style of the playback controls. Defaults to {@link Titanium.Media.VIDEO_CONTROL_DEFAULT}</p>
+     * <p>The style of the playback controls. Defaults to {@link Ti.Media.VIDEO_CONTROL_DEFAULT}</p>
      * platforms: android, iphone, ipad
      * @type int
      * @since 0.9
@@ -10749,7 +10749,7 @@ Ti.Media.VideoPlayer = {
     mediaControlStyle:null,
 
     /**
-     * <p>The types of media in the movie, or {@link Titanium.Media.VIDEO_MEDIA_TYPE_NONE} if not known.</p>
+     * <p>The types of media in the movie, or {@link Ti.Media.VIDEO_MEDIA_TYPE_NONE} if not known.</p>
      * platforms: android, iphone, ipad
      * @type int
      * @since 0.9
@@ -10757,7 +10757,7 @@ Ti.Media.VideoPlayer = {
     mediaTypes:null,
 
     /**
-     * <p>deprecated in 3.2+ of the iPhone SDK - use <tt>mediaControlStyle</tt>. Provides the ability to set the control mode of the movie player. Defaults to {@link Titanium.Media.VIDEO_CONTROL_DEFAULT}.</p>
+     * <p>deprecated in 3.2+ of the iPhone SDK - use <tt>mediaControlStyle</tt>. Provides the ability to set the control mode of the movie player. Defaults to {@link Ti.Media.VIDEO_CONTROL_DEFAULT}.</p>
      * platforms: android, iphone, ipad
      * @type int
      * @since 0.9
@@ -10805,7 +10805,7 @@ Ti.Media.VideoPlayer = {
     playing:null,
 
     /**
-     * <p>Determines how the movie player repeats when reaching the end of playback. Defaults to {@link Titanium.Media.VIDEO_REPEAT_MODE_NONE}.</p>
+     * <p>Determines how the movie player repeats when reaching the end of playback. Defaults to {@link Ti.Media.VIDEO_REPEAT_MODE_NONE}.</p>
      * platforms: android, iphone, ipad
      * @type int
      * @since 0.9
@@ -10821,7 +10821,7 @@ Ti.Media.VideoPlayer = {
     right:null,
 
     /**
-     * <p>Determines how the content scales to fit the view. Defaults to {@link Titanium.Media.VIDEO_SCALING_ASPECT_FIT}.</p>
+     * <p>Determines how the content scales to fit the view. Defaults to {@link Ti.Media.VIDEO_SCALING_ASPECT_FIT}.</p>
      * platforms: android, iphone, ipad
      * @type int
      * @since 0.9
@@ -10837,7 +10837,7 @@ Ti.Media.VideoPlayer = {
     size:null,
 
     /**
-     * One of Titanium.UI.Android.SOFT_KEYBOARD_DEFAULT_ON_FOCUS, Titanium.UI.Android.SOFT_KEYBOARD_HIDE_ON_FOCUS, or Titanium.UI.Android.SOFT_KEYBOARD_SHOW_ON_FOCUS. (Android only)
+     * One of Ti.UI.Android.SOFT_KEYBOARD_DEFAULT_ON_FOCUS, Ti.UI.Android.SOFT_KEYBOARD_HIDE_ON_FOCUS, or Ti.UI.Android.SOFT_KEYBOARD_SHOW_ON_FOCUS. (Android only)
      * platforms: android
      * @type int
      * @since 0.9
@@ -10845,7 +10845,7 @@ Ti.Media.VideoPlayer = {
     softKeyboardOnFocus:null,
 
     /**
-     * <p>The playback type of the movie. Defaults to {@link Titanium.Media.VIDEO_SOURCE_TYPE_UNKNOWN}. Specifying a playback type before playing the movie can result in faster load times.</p>
+     * <p>The playback type of the movie. Defaults to {@link Ti.Media.VIDEO_SOURCE_TYPE_UNKNOWN}. Specifying a playback type before playing the movie can result in faster load times.</p>
      * platforms: android, iphone, ipad
      * @type int
      * @since 0.9
@@ -11030,7 +11030,7 @@ Ti.Media.VideoPlayer = {
      * <p>Asynchronously request thumbnails for one or more times, provided as an array of numbers (double). Fires a <tt>thumbnail</tt> event on completion. Optionally invokes the callback function passed in the method.</p>
      * platforms: android, iphone, ipad
      * @param {array} times array of doubles for each time to request
-     * @param {int} option either [[Titanium.Media.VIDEO_TIME_OPTION_NEAREST_KEYFRAME]] or [[Titanium.Media.VIDEO_TIME_OPTION_EXACT]].
+     * @param {int} option either [[Ti.Media.VIDEO_TIME_OPTION_NEAREST_KEYFRAME]] or [[Ti.Media.VIDEO_TIME_OPTION_EXACT]].
      * @returns void
      * @since 0.9
      */
@@ -11089,7 +11089,7 @@ Ti.Media.VideoPlayer = {
      * <p>Returns a thumbnail at the given time as a blob.</p>
      * platforms: android, iphone, ipad
      * @param {double} time playback time
-     * @param {int} option either [[Titanium.Media.VIDEO_TIME_OPTION_NEAREST_KEYFRAME]] or [[Titanium.Media.VIDEO_TIME_OPTION_EXACT]]
+     * @param {int} option either [[Ti.Media.VIDEO_TIME_OPTION_NEAREST_KEYFRAME]] or [[Ti.Media.VIDEO_TIME_OPTION_EXACT]]
      * @since 0.9
      */
     thumbnailImageAtTime:function(time, option) {
@@ -11107,7 +11107,7 @@ Ti.Media.VideoPlayer = {
 
 /**
  * platforms: android, iphone, ipad
- * @namespace <p>The top level Network module.  The Network module is used accessing Networking related functionality, including {@link Titanium.Network.Socket}</p>
+ * @namespace <p>The top level Network module.  The Network module is used accessing Networking related functionality, including {@link Ti.Network.Socket}</p>
  * @since 0.1
  */
 Ti.Network = {
@@ -11319,44 +11319,44 @@ Ti.Network = {
     },
 
     /**
-     * create and return an instance of {@link Titanium.Network.BonjourBrowser}
+     * create and return an instance of {@link Ti.Network.BonjourBrowser}
      * platforms: android, iphone, ipad
      * @param {string} serviceType service to search for, must include the protocol type suffix (._tcp)
      * @param {string} domain the Bonjour service domain to conduct the search in.  Default value is 'local.'
-     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.Network.BonjourBrowser}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Ti.Network.BonjourBrowser}
      * @since 0.1
      */
     createBonjourBrowser:function(serviceType, domain, parameters) {
     },
 
     /**
-     * create and return an instance of {@link Titanium.Network.BonjourService}
+     * create and return an instance of {@link Ti.Network.BonjourService}
      * platforms: android, iphone, ipad
      * @param {string} name the name of the service.  Must be a unique identifier for this service type and domain.
      * @param {string} type the type of service.  Must include the protocol identifier (._tcp)
      * @param {string} domain the domain to publish the service in.  Default value is 'local.'
-     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.Network.BonjourService}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Ti.Network.BonjourService}
      * @since 0.1
      */
     createBonjourService:function(name, type, domain, parameters) {
     },
 
     /**
-     * create and return an instance of {@link Titanium.Network.HTTPClient}
+     * create and return an instance of {@link Ti.Network.HTTPClient}
      * platforms: android, iphone, ipad
-     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.Network.HTTPClient}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Ti.Network.HTTPClient}
      * @since 0.1
      */
     createHTTPClient:function(parameters) {
     },
 
     /**
-     * create and return an instance of {@link Titanium.Network.TCPSocket}
+     * create and return an instance of {@link Ti.Network.TCPSocket}
      * platforms: android, iphone, ipad
      * @param {string} hostName the host name to connect to/listen on
      * @param {int} port the port for the socket
-     * @param {int} mode the socket's mode; one of {@link Titanium.Network.READ_MODE}, {@link Titanium.Network.WRITE_MODE}, {@link Titanium.Network.READ_WRITE_MODE}
-     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.Network.TCPSocket}
+     * @param {int} mode the socket's mode; one of {@link Ti.Network.READ_MODE}, {@link Ti.Network.WRITE_MODE}, {@link Ti.Network.READ_WRITE_MODE}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Ti.Network.TCPSocket}
      * @since 0.1
      */
     createTCPSocket:function(hostName, port, mode, parameters) {
@@ -11426,7 +11426,7 @@ Ti.Network = {
 /**
  * Notes: <p>If your application publishes Bonjour services itself, that service will be discovered by the browser if necessary; be prepared to perform a check if you do not want to list local services as available.  Bonjour service browsing is an asynchronous operation, meaning that you should be extremely careful when caching values from the 'services' property returned by the updatedServices event.  In particular, if you maintain a local copy of available services and a user tries to connect to one, you should be prepared to handle failures gracefully; the next updatedServices event should provide the new services list, but you should not rely on it being delivered before user input.  When a window which uses Bonjour browsing is closed, if you do not want to continue searching, you must call the stop() method.</p>
  * platforms: iphone, ipad
- * @namespace <p>The BonjourBrowser instance returned from {@link Titanium.Network.createBonjourBrowser}.  This object is a browser for the discovery and retrieval of Bonjour services available on the network.<br>
+ * @namespace <p>The BonjourBrowser instance returned from {@link Ti.Network.createBonjourBrowser}.  This object is a browser for the discovery and retrieval of Bonjour services available on the network.<br>
 </p>
  * @since 1.2.0
  */
@@ -11479,7 +11479,7 @@ Ti.Network.BonjourBrowser = {
 /**
  * Notes: <p>You can only publish Bonjour services attached to a socket which is currently listening; you cannot publish a service for a remotely connected socket.  If you stop the Bonjour service and wish to close the socket it uses, it is strongly recommended that you stop the service first.  When a window which publishes a Bonjour service is closed, you must stop the service if the associated socket is also to be closed, or if it is no longer necessary to publish.  Unlike other network operations, Bonjour service resolution and publishing is synchronous, so be aware that your code may block while resolution is going on.  In particular, you may wish to display UI elements indicating background activity before beginning resolution.</p>
  * platforms: iphone, ipad
- * @namespace <p>The BonjourService instance returned either from {@link Titanium.Network.createBonjourService} or via the service list from a BonjourBrowser <tt>updatedServices</tt> event.  This object describes a service on the network which is published by Bonjour.</p>
+ * @namespace <p>The BonjourService instance returned either from {@link Ti.Network.createBonjourService} or via the service list from a BonjourBrowser <tt>updatedServices</tt> event.  This object describes a service on the network which is published by Bonjour.</p>
  * @since 1.2.0
  */
 Ti.Network.BonjourService = {
@@ -11557,7 +11557,7 @@ Ti.Network.BonjourService = {
 
 /**
  * platforms: android, iphone, ipad
- * @namespace <p>The HttpClient instance returned from {@link Titanium.Network.createHTTPClient}. This object (mostly) implements the XMLHttpRequest specification.</p>
+ * @namespace <p>The HttpClient instance returned from {@link Ti.Network.createHTTPClient}. This object (mostly) implements the XMLHttpRequest specification.</p>
  * @since 0.1
  */
 Ti.Network.HTTPClient = {
@@ -11853,7 +11853,7 @@ Ti.Network.Socket = {
     },
 
     /**
-     * <p>returns new TCP socket object, takes object containing properties list defined in {@link Titanium.Network.Socket.TCP}.  Some properties are only needed based on whether the socket will be a connecting socket or a listening socket.</p>
+     * <p>returns new TCP socket object, takes object containing properties list defined in {@link Ti.Network.Socket.TCP}.  Some properties are only needed based on whether the socket will be a connecting socket or a listening socket.</p>
      * platforms: iphone, android, ipad
      * @param {Object} params creation parameters
      * @since 1.7
@@ -11886,7 +11886,7 @@ Ti.Network.Socket = {
 
 /**
  * platforms: iphone, android, ipad
- * @namespace <p>TCP socket that implements the {@link Titanium.IOStream} interface.  Created by {@link Titanium.Network.Socket.createTCP}</p>
+ * @namespace <p>TCP socket that implements the {@link Ti.IOStream} interface.  Created by {@link Ti.Network.Socket.createTCP}</p>
  * @since 1.7
  */
 Ti.Network.Socket.TCP = {
@@ -11995,15 +11995,15 @@ Ti.Network.Socket.TCP = {
 }
 
 /**
- * Notes: <p>Sockets are nontrivial; it is recommended that anyone using them be familiar with the basics of BSD sockets.  All sockets use TCP connections, and are asynchronous for read operations, so your program should be ready to receive 'read' events at any point.  Socket references cannot be transferred to socket objects, and vice-versa - socket references are an internal mechanism which is used only to determine which sockets to send data to and read data from.  For listening sockets, it is highly recommended that you use the {@link Titanium.Network.INADDR_ANY} constant as the host name.  If a window containing a socket is closed, the socket MUST be closed also unless you intend to continue to receive data, otherwise the socket will consume resources (and potentially cause conflicts with opening the window again, if a listener) until the program is restarted.  Be aware of the differences between the listen() and connect() functions; attempting to use one when you mean the other may result in errors, unpredictable behavior, or both.</p>
+ * Notes: <p>Sockets are nontrivial; it is recommended that anyone using them be familiar with the basics of BSD sockets.  All sockets use TCP connections, and are asynchronous for read operations, so your program should be ready to receive 'read' events at any point.  Socket references cannot be transferred to socket objects, and vice-versa - socket references are an internal mechanism which is used only to determine which sockets to send data to and read data from.  For listening sockets, it is highly recommended that you use the {@link Ti.Network.INADDR_ANY} constant as the host name.  If a window containing a socket is closed, the socket MUST be closed also unless you intend to continue to receive data, otherwise the socket will consume resources (and potentially cause conflicts with opening the window again, if a listener) until the program is restarted.  Be aware of the differences between the listen() and connect() functions; attempting to use one when you mean the other may result in errors, unpredictable behavior, or both.</p>
  * platforms: iphone, ipad
- * @namespace <p>DEPRECATED: USE {@link Titanium.Network.Socket.TCP} WHERE POSSIBLE.  The TCPSocket instance returned from {@link Titanium.Network.createTCPSocket}.  This object represents a socket which either listens locally on the device for connections, or connects to a remote machine.</p>
+ * @namespace <p>DEPRECATED: USE {@link Ti.Network.Socket.TCP} WHERE POSSIBLE.  The TCPSocket instance returned from {@link Ti.Network.createTCPSocket}.  This object represents a socket which either listens locally on the device for connections, or connects to a remote machine.</p>
  * @since 1.2.0
  */
 Ti.Network.TCPSocket = {
 
     /**
-     * <p>the host name to connect to.  Must be {@link Titanium.Network.INADDR_ANY} or an identifier for the local device in order to listen</p>
+     * <p>the host name to connect to.  Must be {@link Ti.Network.INADDR_ANY} or an identifier for the local device in order to listen</p>
      * platforms: iphone, ipad
      * @type string
      * @since 1.2.0
@@ -12332,7 +12332,7 @@ Ti.Platform = {
 /**
  * Notes: <p>On iPhone, the <tt>density</tt> property will return <tt>high</tt> for retina devices and <tt>medium</tt> otherwise, the <tt>dpi</tt> property will return <tt>160</tt>. For iPad, the <tt>density</tt> property will return <tt>medium</tt> and the <tt>dpi</tt> property will return <tt>130</tt>.  For Android, these values are device specific.</p>
  * platforms: android, iphone, ipad
- * @namespace <p>The Display Caps object returned by the {@link Titanium.Platform.displayCaps} property.</p>
+ * @namespace <p>The Display Caps object returned by the {@link Ti.Platform.displayCaps} property.</p>
  * @since 0.8
  */
 Ti.Platform.DisplayCaps = {
@@ -12417,9 +12417,9 @@ Ti.Stream = {
     },
 
     /**
-     * <p>Creates stream from specified container.  Returns {@link Titanium.BufferStream} or {@link Titanium.BlobStream} depending on whether a Buffer or Blob is provided as the 'source' property in params.  Write and append mode only applies to Buffer as Blob is read only.</p>
+     * <p>Creates stream from specified container.  Returns {@link Ti.BufferStream} or {@link Ti.BlobStream} depending on whether a Buffer or Blob is provided as the 'source' property in params.  Write and append mode only applies to Buffer as Blob is read only.</p>
      * platforms: iphone, android, ipad
-     * @param {Object} params creation arguments, which are: <tt>source</tt>, a {@link Titanium.Buffer} or {@link Titanium.Blob} on which to base the stream.  <tt>mode</tt>,  mode for the stream to be opened in, which can be {@link Titanium.Stream.MODE_READ},  {@link Titanium.Stream.MODE_WRITE} or {@link Titanium.Stream.MODE_APPEND}.
+     * @param {Object} params creation arguments, which are: <tt>source</tt>, a {@link Ti.Buffer} or {@link Ti.Blob} on which to base the stream.  <tt>mode</tt>,  mode for the stream to be opened in, which can be {@link Ti.Stream.MODE_READ},  {@link Ti.Stream.MODE_WRITE} or {@link Ti.Stream.MODE_APPEND}.
      * @since 1.7
      */
     createStream:function(params) {
@@ -12439,8 +12439,8 @@ Ti.Stream = {
     /**
      * <p>Pumps data from input stream to handler method</p>
      * platforms: iphone, android, ipad
-     * @param {{@link Titanium_IOStream}} inputStream Stream to pump from
-     * @param {Function} handler handler method that will receive the pumped data.  The function takes a single parameter, which in turn contains the following members: <tt>source</tt>, the stream being read from.  <tt>buffer</tt>, the {@link Titanium.Buffer} holding the data currently being pumped to the handler method (i.e., the current chunk).  <tt>bytesProcessed</tt>, the number of bytes in the current pump segment.  <tt>totalBytesProcessed</tt>, total number of bytes processed in the overall pump operation so far.  <tt>errorState</tt>, an error state if any.  <tt>errorDescription</tt>, an error description if any.
+     * @param {{@link Ti.IOStream}} inputStream Stream to pump from
+     * @param {Function} handler handler method that will receive the pumped data.  The function takes a single parameter, which in turn contains the following members: <tt>source</tt>, the stream being read from.  <tt>buffer</tt>, the {@link Ti.Buffer} holding the data currently being pumped to the handler method (i.e., the current chunk).  <tt>bytesProcessed</tt>, the number of bytes in the current pump segment.  <tt>totalBytesProcessed</tt>, total number of bytes processed in the overall pump operation so far.  <tt>errorState</tt>, an error state if any.  <tt>errorDescription</tt>, an error description if any.
      * @param {Number} maxChunkSize max size of data to pump from inputStream to the handler method at once
      * @param {Boolean} isAsync true is pump operation should be async, false is not.  (Optional, default is false).
      * @returns void
@@ -12450,10 +12450,10 @@ Ti.Stream = {
     },
 
     /**
-     * <p>Async version of read on {@link Titanium.IOStream}</p>
+     * <p>Async version of read on {@link Ti.IOStream}</p>
      * platforms: iphone, android, ipad
-     * @param {{@link Titanium_IOStream}} sourceStream Stream to read from
-     * @param {{@link Titanium_Buffer}} buffer Buffer to read into
+     * @param {{@link Ti.IOStream}} sourceStream Stream to read from
+     * @param {{@link Ti.Buffer}} buffer Buffer to read into
      * @param {Number} offset (optional) offset to start reading buffer data from.  Default = 0.
      * @param {Number} length (optional) length of data to read from buffer.  Default is buffer length.
      * @param {Function} resultsCallback called with result of the read operation.  Callback parameter has these members: <tt>source</tt>, the stream being read.  <tt>bytesProcessed</tt>, the number of bytes read.  <tt>errorState</tt>, an error state if any.  <tt>errorDescription</tt>, an error description if any.
@@ -12464,10 +12464,10 @@ Ti.Stream = {
     },
 
     /**
-     * <p>reads all data from {@link Titanium.IOStream}.  If you pass a buffer and callback, the read will be asynchronous and <tt>readAll</tt> won't return anything.  If you don't pass a buffer and callback, the read will be synchronous and a {@link Titanium.Buffer} with the read data will be returned.</p>
+     * <p>reads all data from {@link Ti.IOStream}.  If you pass a buffer and callback, the read will be asynchronous and <tt>readAll</tt> won't return anything.  If you don't pass a buffer and callback, the read will be synchronous and a {@link Ti.Buffer} with the read data will be returned.</p>
      * platforms: iphone, android, ipad
-     * @param {{@link Titanium_IOStream}} sourceStream Stream to read from
-     * @param {{@link Titanium_Buffer}} buffer Buffer to read into.  OPTIONAL: use only if you want an asynchronous read.
+     * @param {{@link Ti.IOStream}} sourceStream Stream to read from
+     * @param {{@link Ti.Buffer}} buffer Buffer to read into.  OPTIONAL: use only if you want an asynchronous read.
      * @param {Function} resultsCallback called with result of the read operation.  OPTIONAL: use only if you want an asynchronous read.  Callback parameter has these members: <tt>source</tt>, the stream being read.  <tt>bytesProcessed</tt>, the number of bytes read.  <tt>errorState</tt>, an error state if any.  <tt>errorDescription</tt>, an error description if any.
      * @returns void
      * @since 1.7
@@ -12487,10 +12487,10 @@ Ti.Stream = {
     },
 
     /**
-     * <p>Async version of write on {@link Titanium.IOStream} that takes offset and length</p>
+     * <p>Async version of write on {@link Ti.IOStream} that takes offset and length</p>
      * platforms: iphone, android, ipad
-     * @param {{@link Titanium_IOStream}} outputStream Stream to write to
-     * @param {{@link Titanium_Buffer}} buffer Buffer to write from
+     * @param {{@link Ti.IOStream}} outputStream Stream to write to
+     * @param {{@link Ti.Buffer}} buffer Buffer to write from
      * @param {Number} offset offset to start writing buffer data from. (Optional, default is 0).
      * @param {Number} length length of data to write from buffer.  (Optional, default is buffer.length).
      * @param {Function} resultsCallback called with result of the write operation. Callback parameter has these members: <tt>source</tt>, the stream being written to.  <tt>bytesProcessed</tt>, the number of bytes written.  <tt>errorState</tt>, an error state if any.  <tt>errorDescription</tt>, an error description if any.
@@ -12503,8 +12503,8 @@ Ti.Stream = {
     /**
      * <p>Writes all data from input stream to output stream.  Pass a callback function as the final argument if you wish for the write operation to be asynchronous.  The synchronous version will return a number indicating the number of bytes written.</p>
      * platforms: iphone, android, ipad
-     * @param {{@link Titanium_IOStream}} inputStream Stream to read from
-     * @param {{@link Titanium_IOStream}} outputStream Stream to write to
+     * @param {{@link Ti.IOStream}} inputStream Stream to read from
+     * @param {{@link Ti.IOStream}} outputStream Stream to write to
      * @param {Number} maxChunkSize max size of data to write from inputStream to ouputStream at once
      * @param {Function} resultsCallback called with result of the writeStream operation.  (OPTIONAL: use only if you want the write operation to be asynchronous).  The callback parameter has these members: <tt>fromStream</tt>, the stream being read from.  <tt>toStream</tt>, the stream being written to.  <tt>bytesProcessed</tt>, the number of bytes read and written.  <tt>errorState</tt>, an error state if any.  <tt>errorDescription</tt>, an error description if any.
      * @returns void
@@ -12518,20 +12518,20 @@ Ti.Stream = {
  * Notes: <h3 id="design">Design</h3>
 <p>The UI module is broken down into 3 major area:</p>
 <ul>
-<li><strong>Views</strong> - {@link Titanium.UI.View} are containers that host visual elements such as controls or other views.  Views can have their properties customized, such as their border color and radius, can fire events such as swipe events or touches, and can optionally contain a hierarchy or other views as children. In Titanium, most views are specialized to perform both a visual function and set of interaction behaviors such as {@link Titanium.UI.TableView} or {@link Titanium.UI.CoverFlowView}.  Views are always named with the suffix <tt>View</tt>.</li>
-<li><strong>Controls</strong> - controls, or sometimes referred as widgets, are visual elements such as {@link Titanium.UI.Slider}, {@link Titanium.UI.Button} and {@link Titanium.UI.Switch}. They provide a visual element which has a defined behavior and typical have special configuration and special events.  Controls themselves are views and also inherit a views properties, functions and events.</li>
-<li><strong>Windows</strong> - {@link Titanium.UI.Window} are typically top-level visual constructs that are the main part of your interface. An application will always have at least one window and windows can take different shapes and sizes, can have display and interaction properties such as fullscreen or modal and can be customized, such as changing their opacity or background color. Windows themselves are views and also inherit a views properties, functions and events. There are a few specialization of Windows such as a {@link Titanium.UI.TabGroup} which offer additional behavior beyond the basic Window.</li>
+<li><strong>Views</strong> - {@link Ti.UI.View} are containers that host visual elements such as controls or other views.  Views can have their properties customized, such as their border color and radius, can fire events such as swipe events or touches, and can optionally contain a hierarchy or other views as children. In Titanium, most views are specialized to perform both a visual function and set of interaction behaviors such as {@link Ti.UI.TableView} or {@link Ti.UI.CoverFlowView}.  Views are always named with the suffix <tt>View</tt>.</li>
+<li><strong>Controls</strong> - controls, or sometimes referred as widgets, are visual elements such as {@link Ti.UI.Slider}, {@link Ti.UI.Button} and {@link Ti.UI.Switch}. They provide a visual element which has a defined behavior and typical have special configuration and special events.  Controls themselves are views and also inherit a views properties, functions and events.</li>
+<li><strong>Windows</strong> - {@link Ti.UI.Window} are typically top-level visual constructs that are the main part of your interface. An application will always have at least one window and windows can take different shapes and sizes, can have display and interaction properties such as fullscreen or modal and can be customized, such as changing their opacity or background color. Windows themselves are views and also inherit a views properties, functions and events. There are a few specialization of Windows such as a {@link Ti.UI.TabGroup} which offer additional behavior beyond the basic Window.</li>
 </ul>
-<p>Titanium uses the {@link http://en.wikipedia.org/wiki/Factory_method_pattern} for constructing objects and a general naming pattern for APIs.  For example, to construct a {@link Titanium.UI.AlertDialog}, you call the method {@link Titanium.UI.createAlertDialog}.  To create a {@link Titanium.UI.TextArea}, you call the method {@link Titanium.UI.createTextArea}.  Once an object is created, it will be available until it goes out of scope.</p>
+<p>Titanium uses the {@link http://en.wikipedia.org/wiki/Factory_method_pattern} for constructing objects and a general naming pattern for APIs.  For example, to construct a {@link Ti.UI.AlertDialog}, you call the method {@link Ti.UI.createAlertDialog}.  To create a {@link Ti.UI.TextArea}, you call the method {@link Ti.UI.createTextArea}.  Once an object is created, it will be available until it goes out of scope.</p>
 <h3 id="optimizations">Optimizations</h3>
-<p>UI objects are optimized by Titanium to not be realized into the drawing context and placed into the device UI surface until needed.  That means that you can create UI objects, set their properties and add them to their hierarchy without much worry about memory or performance.  When the native drawing surface needs to render a specific view or control, Titanium will automatically create the view as needed.  Additionally, Titanium is optimized to also release memory once the view is no longer needed, on screen or in low memory situations.  However, it's a good idea to help Titanium along in certain cases where you are no longer using objects.  For example, you should call <tt>close</tt> on a {@link Titanium.UI.Window} instance when you are no longer using it.  You can safely call <tt>open</tt> on the {@link Titanium.UI.Window} again to re-open it.<br>
+<p>UI objects are optimized by Titanium to not be realized into the drawing context and placed into the device UI surface until needed.  That means that you can create UI objects, set their properties and add them to their hierarchy without much worry about memory or performance.  When the native drawing surface needs to render a specific view or control, Titanium will automatically create the view as needed.  Additionally, Titanium is optimized to also release memory once the view is no longer needed, on screen or in low memory situations.  However, it's a good idea to help Titanium along in certain cases where you are no longer using objects.  For example, you should call <tt>close</tt> on a {@link Ti.UI.Window} instance when you are no longer using it.  You can safely call <tt>open</tt> on the {@link Ti.UI.Window} again to re-open it.<br>
 </p>
 <h3 id="global_context_and_threading">Global Context and Threading</h3>
-<p>Be careful with the objects that are created in <tt>app.js</tt> but only used once.  Since the <tt>app.js</tt> context is global and generally is not garbage collected until the application exits, you should think about the design of your application as it relates to this fact.  {@link Titanium.UI.Window} objects that are opened up with the <tt>url</tt> property to another Javascript file contain a nice way to decompose your application into smaller units.  The other benefit is that when a {@link Titanium.UI.Window} is closed, its resources can be immediately cleaned up, saving resources such as memory and CPU.  Additionally, {@link Titanium.UI.Window} objects run in a separate Javascript context and Thread. While all UI processing is done on the main UI thread, other processing inside a Window or the <tt>app.js</tt> that does not have UI interaction will run in its own thread.</p>
+<p>Be careful with the objects that are created in <tt>app.js</tt> but only used once.  Since the <tt>app.js</tt> context is global and generally is not garbage collected until the application exits, you should think about the design of your application as it relates to this fact.  {@link Ti.UI.Window} objects that are opened up with the <tt>url</tt> property to another Javascript file contain a nice way to decompose your application into smaller units.  The other benefit is that when a {@link Ti.UI.Window} is closed, its resources can be immediately cleaned up, saving resources such as memory and CPU.  Additionally, {@link Ti.UI.Window} objects run in a separate Javascript context and Thread. While all UI processing is done on the main UI thread, other processing inside a Window or the <tt>app.js</tt> that does not have UI interaction will run in its own thread.</p>
 <h3 id="portability">Portability</h3>
-<p>Titanium components are designed to be portable across as many platforms as it supports.  However, there are cases where a device either does not support a specific feature or capability or where it support additional functionality.  For cases where the device OS supports capabilities that other platforms do not, we attempt to place those capabilities in a separate namespace, such as {@link Titanium.UI.iPhone}. However, in cases where the control is in a common namespace and support additional features, we continue to place that functionality directly on the object.</p>
+<p>Titanium components are designed to be portable across as many platforms as it supports.  However, there are cases where a device either does not support a specific feature or capability or where it support additional functionality.  For cases where the device OS supports capabilities that other platforms do not, we attempt to place those capabilities in a separate namespace, such as {@link Ti.UI.iPhone}. However, in cases where the control is in a common namespace and support additional features, we continue to place that functionality directly on the object.</p>
  * platforms: android, iphone, ipad
- * @namespace <p>The main {@link Titanium.UI} module.  The UI module is responsible for native user-interface components and interaction inside Titanium.  The goal of the UI module is to provide a native experience along with native performance by compiling Javascript code into their native counterparts as part of the build process. </p>
+ * @namespace <p>The main {@link Ti.UI} module.  The UI module is responsible for native user-interface components and interaction inside Ti.  The goal of the UI module is to provide a native experience along with native performance by compiling Javascript code into their native counterparts as part of the build process. </p>
  * @since 0.4
  */
 Ti.UI = {
@@ -13283,13 +13283,13 @@ Ti.UI = {
     /**
      * <p>The active window associated with the executing Javascript context.</p>
      * platforms: android, iphone, ipad
-     * @type {@link Titanium_UI_Window_html}
+     * @type {@link Ti.UI.Window}
      * @since 0.4
      */
     currentWindow:null,
 
     /**
-     * <p>DEPRECATED.  To set an orientation, it is suggested to instead set {@link Titanium.Window.orientationModes} to the specific orientation desired.  When set, this will update the orientation of the current window to the specified orientation value</p>
+     * <p>DEPRECATED.  To set an orientation, it is suggested to instead set {@link Ti.Window.orientationModes} to the specific orientation desired.  When set, this will update the orientation of the current window to the specified orientation value</p>
      * platforms: android, iphone, ipad
      * @type int
      * @since 0.4
@@ -13309,315 +13309,315 @@ Ti.UI = {
     },
 
     /**
-     * create and return an instance of {@link Titanium.UI.2DMatrix}
+     * create and return an instance of {@link Ti.UI.2DMatrix}
      * platforms: android, iphone, ipad
-     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.UI.2DMatrix}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Ti.UI.2DMatrix}
      * @since 0.4
      */
     create2DMatrix:function(parameters) {
     },
 
     /**
-     * create and return an instance of {@link Titanium.UI.3DMatrix}
+     * create and return an instance of {@link Ti.UI.3DMatrix}
      * platforms: android, iphone, ipad
-     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.UI.3DMatrix}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Ti.UI.3DMatrix}
      * @since 0.4
      */
     create3DMatrix:function(parameters) {
     },
 
     /**
-     * create and return an instance of {@link Titanium.UI.ActivityIndicator}
+     * create and return an instance of {@link Ti.UI.ActivityIndicator}
      * platforms: android, iphone, ipad
-     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.UI.ActivityIndicator}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Ti.UI.ActivityIndicator}
      * @since 0.4
      */
     createActivityIndicator:function(parameters) {
     },
 
     /**
-     * create and return an instance of {@link Titanium.UI.AlertDialog}
+     * create and return an instance of {@link Ti.UI.AlertDialog}
      * platforms: android, iphone, ipad
-     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.UI.AlertDialog}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Ti.UI.AlertDialog}
      * @since 0.4
      */
     createAlertDialog:function(parameters) {
     },
 
     /**
-     * create and return an instance of {@link Titanium.UI.Animation}
+     * create and return an instance of {@link Ti.UI.Animation}
      * platforms: android, iphone, ipad
-     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.UI.Animation}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Ti.UI.Animation}
      * @since 0.4
      */
     createAnimation:function(parameters) {
     },
 
     /**
-     * create and return an instance of {@link Titanium.UI.Button}
+     * create and return an instance of {@link Ti.UI.Button}
      * platforms: android, iphone, ipad
-     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.UI.Button}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Ti.UI.Button}
      * @since 0.4
      */
     createButton:function(parameters) {
     },
 
     /**
-     * create and return an instance of {@link Titanium.UI.ButtonBar}
+     * create and return an instance of {@link Ti.UI.ButtonBar}
      * platforms: android, iphone, ipad
-     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.UI.ButtonBar}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Ti.UI.ButtonBar}
      * @since 0.4
      */
     createButtonBar:function(parameters) {
     },
 
     /**
-     * create and return an instance of {@link Titanium.UI.CoverFlowView}
+     * create and return an instance of {@link Ti.UI.CoverFlowView}
      * platforms: android, iphone, ipad
-     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.UI.CoverFlowView}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Ti.UI.CoverFlowView}
      * @since 0.4
      */
     createCoverFlowView:function(parameters) {
     },
 
     /**
-     * create and return an instance of {@link Titanium.UI.DashboardItem}
+     * create and return an instance of {@link Ti.UI.DashboardItem}
      * platforms: android, iphone, ipad
-     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.UI.DashboardItem}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Ti.UI.DashboardItem}
      * @since 0.4
      */
     createDashboardItem:function(parameters) {
     },
 
     /**
-     * create and return an instance of {@link Titanium.UI.DashboardView}
+     * create and return an instance of {@link Ti.UI.DashboardView}
      * platforms: android, iphone, ipad
-     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.UI.DashboardView}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Ti.UI.DashboardView}
      * @since 0.4
      */
     createDashboardView:function(parameters) {
     },
 
     /**
-     * create and return an instance of {@link Titanium.UI.EmailDialog}
+     * create and return an instance of {@link Ti.UI.EmailDialog}
      * platforms: android, iphone, ipad
-     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.UI.EmailDialog}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Ti.UI.EmailDialog}
      * @since 0.4
      */
     createEmailDialog:function(parameters) {
     },
 
     /**
-     * create and return an instance of {@link Titanium.UI.ImageView}
+     * create and return an instance of {@link Ti.UI.ImageView}
      * platforms: android, iphone, ipad
-     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.UI.ImageView}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Ti.UI.ImageView}
      * @since 0.4
      */
     createImageView:function(parameters) {
     },
 
     /**
-     * create and return an instance of {@link Titanium.UI.Label}
+     * create and return an instance of {@link Ti.UI.Label}
      * platforms: android, iphone, ipad
-     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.UI.Label}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Ti.UI.Label}
      * @since 0.4
      */
     createLabel:function(parameters) {
     },
 
     /**
-     * create and return an instance of {@link Titanium.UI.OptionDialog}
+     * create and return an instance of {@link Ti.UI.OptionDialog}
      * platforms: android, iphone, ipad
-     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.UI.OptionDialog}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Ti.UI.OptionDialog}
      * @since 0.4
      */
     createOptionDialog:function(parameters) {
     },
 
     /**
-     * create and return an instance of {@link Titanium.UI.Picker}
+     * create and return an instance of {@link Ti.UI.Picker}
      * platforms: android, iphone, ipad
-     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.UI.Picker}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Ti.UI.Picker}
      * @since 0.4
      */
     createPicker:function(parameters) {
     },
 
     /**
-     * create and return an instance of {@link Titanium.UI.PickerColumn}
+     * create and return an instance of {@link Ti.UI.PickerColumn}
      * platforms: android, iphone, ipad
-     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.UI.PickerColumn}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Ti.UI.PickerColumn}
      * @since 0.4
      */
     createPickerColumn:function(parameters) {
     },
 
     /**
-     * create and return an instance of {@link Titanium.UI.PickerRow}
+     * create and return an instance of {@link Ti.UI.PickerRow}
      * platforms: android, iphone, ipad
-     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.UI.PickerRow}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Ti.UI.PickerRow}
      * @since 0.4
      */
     createPickerRow:function(parameters) {
     },
 
     /**
-     * create and return an instance of {@link Titanium.UI.ProgressBar}
+     * create and return an instance of {@link Ti.UI.ProgressBar}
      * platforms: android, iphone, ipad
-     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.UI.ProgressBar}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Ti.UI.ProgressBar}
      * @since 0.4
      */
     createProgressBar:function(parameters) {
     },
 
     /**
-     * create and return an instance of {@link Titanium.UI.ScrollView}
+     * create and return an instance of {@link Ti.UI.ScrollView}
      * platforms: android, iphone, ipad
-     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.UI.ScrollView}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Ti.UI.ScrollView}
      * @since 0.4
      */
     createScrollView:function(parameters) {
     },
 
     /**
-     * create and return an instance of {@link Titanium.UI.ScrollableView}
+     * create and return an instance of {@link Ti.UI.ScrollableView}
      * platforms: android, iphone, ipad
-     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.UI.ScrollableView}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Ti.UI.ScrollableView}
      * @since 0.4
      */
     createScrollableView:function(parameters) {
     },
 
     /**
-     * create and return an instance of {@link Titanium.UI.SearchBar}
+     * create and return an instance of {@link Ti.UI.SearchBar}
      * platforms: android, iphone, ipad
-     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.UI.SearchBar}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Ti.UI.SearchBar}
      * @since 0.4
      */
     createSearchBar:function(parameters) {
     },
 
     /**
-     * create and return an instance of {@link Titanium.UI.Slider}
+     * create and return an instance of {@link Ti.UI.Slider}
      * platforms: android, iphone, ipad
-     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.UI.Slider}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Ti.UI.Slider}
      * @since 0.4
      */
     createSlider:function(parameters) {
     },
 
     /**
-     * create and return an instance of {@link Titanium.UI.Switch}
+     * create and return an instance of {@link Ti.UI.Switch}
      * platforms: android, iphone, ipad
-     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.UI.Switch}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Ti.UI.Switch}
      * @since 0.4
      */
     createSwitch:function(parameters) {
     },
 
     /**
-     * create and return an instance of {@link Titanium.UI.Tab}
+     * create and return an instance of {@link Ti.UI.Tab}
      * platforms: android, iphone, ipad
-     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.UI.Tab}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Ti.UI.Tab}
      * @since 0.4
      */
     createTab:function(parameters) {
     },
 
     /**
-     * create and return an instance of {@link Titanium.UI.TabGroup}
+     * create and return an instance of {@link Ti.UI.TabGroup}
      * platforms: android, iphone, ipad
-     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.UI.TabGroup}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Ti.UI.TabGroup}
      * @since 0.4
      */
     createTabGroup:function(parameters) {
     },
 
     /**
-     * create and return an instance of {@link Titanium.UI.TabbedBar}
+     * create and return an instance of {@link Ti.UI.TabbedBar}
      * platforms: android, iphone, ipad
-     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.UI.TabbedBar}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Ti.UI.TabbedBar}
      * @since 0.4
      */
     createTabbedBar:function(parameters) {
     },
 
     /**
-     * create and return an instance of {@link Titanium.UI.TableView}
+     * create and return an instance of {@link Ti.UI.TableView}
      * platforms: android, iphone, ipad
-     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.UI.TableView}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Ti.UI.TableView}
      * @since 0.4
      */
     createTableView:function(parameters) {
     },
 
     /**
-     * create and return an instance of {@link Titanium.UI.TableViewRow}
+     * create and return an instance of {@link Ti.UI.TableViewRow}
      * platforms: android, iphone, ipad
-     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.UI.TableViewRow}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Ti.UI.TableViewRow}
      * @since 0.4
      */
     createTableViewRow:function(parameters) {
     },
 
     /**
-     * create and return an instance of {@link Titanium.UI.TableViewSection}
+     * create and return an instance of {@link Ti.UI.TableViewSection}
      * platforms: android, iphone, ipad
-     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.UI.TableViewSection}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Ti.UI.TableViewSection}
      * @since 0.4
      */
     createTableViewSection:function(parameters) {
     },
 
     /**
-     * create and return an instance of {@link Titanium.UI.TextArea}
+     * create and return an instance of {@link Ti.UI.TextArea}
      * platforms: android, iphone, ipad
-     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.UI.TextArea}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Ti.UI.TextArea}
      * @since 0.4
      */
     createTextArea:function(parameters) {
     },
 
     /**
-     * create and return an instance of {@link Titanium.UI.TextField}
+     * create and return an instance of {@link Ti.UI.TextField}
      * platforms: android, iphone, ipad
-     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.UI.TextField}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Ti.UI.TextField}
      * @since 0.4
      */
     createTextField:function(parameters) {
     },
 
     /**
-     * create and return an instance of {@link Titanium.UI.Toolbar}
+     * create and return an instance of {@link Ti.UI.Toolbar}
      * platforms: android, iphone, ipad
-     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.UI.Toolbar}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Ti.UI.Toolbar}
      * @since 0.4
      */
     createToolbar:function(parameters) {
     },
 
     /**
-     * create and return an instance of {@link Titanium.UI.View}
+     * create and return an instance of {@link Ti.UI.View}
      * platforms: android, iphone, ipad
-     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.UI.View}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Ti.UI.View}
      * @since 0.4
      */
     createView:function(parameters) {
     },
 
     /**
-     * create and return an instance of {@link Titanium.UI.WebView}
+     * create and return an instance of {@link Ti.UI.WebView}
      * platforms: android, iphone, ipad
-     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.UI.WebView}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Ti.UI.WebView}
      * @since 0.4
      */
     createWebView:function(parameters) {
     },
 
     /**
-     * create and return an instance of {@link Titanium.UI.Window}
+     * create and return an instance of {@link Ti.UI.Window}
      * platforms: android, iphone, ipad
-     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.UI.Window}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Ti.UI.Window}
      * @since 0.4
      */
     createWindow:function(parameters) {
@@ -13649,12 +13649,12 @@ Ti.UI = {
 /**
  * Notes: <p>You create an <tt>identity matrix</tt> by creating a 2D Matrix with an empty constructor.</p>
  * platforms: android, iphone, ipad
- * @namespace <p>The 2DMatrix is created by {@link Titanium.UI.create2DMatrix}.  The 2D Matrix is an object for holding values for an affine transformation matrix. A 2D matrix is used to rotate, scale, translate, or skew the objects in a two-dimensional space. A 2D matrix is represented by a 3 by 3 matrix. Because the third column is always (0,0,1), the data structure contains values for only the first two columns.</p>
+ * @namespace <p>The 2DMatrix is created by {@link Ti.UI.create2DMatrix}.  The 2D Matrix is an object for holding values for an affine transformation matrix. A 2D matrix is used to rotate, scale, translate, or skew the objects in a two-dimensional space. A 2D matrix is represented by a 3 by 3 matrix. Because the third column is always (0,0,1), the data structure contains values for only the first two columns.</p>
  * @since 0.9
  */
-function Titanium_UI_2DMatrix() {
+Ti.UI.2DMatrix = function() {
 }
-Titanium_UI_2DMatrix.prototype = {
+Ti.UI.2DMatrix.prototype = {
 
 
     /**
@@ -13741,12 +13741,12 @@ Titanium_UI_2DMatrix.prototype = {
 /**
  * Notes: <p>You create an <tt>identity matrix</tt> by creating a 3D Matrix with an empty constructor.</p>
  * platforms: android, iphone, ipad
- * @namespace <p>The 3DMatrix is created by {@link Titanium.UI.create3DMatrix}.  The 3D Matrix is an object for holding values for an affine transformation matrix. A 3D matrix is used to rotate, scale, translate, or skew the objects in a three-dimensional space. A 3D matrix is represented by a 4 by 4 matrix. Because the forth column is always (0,0,1), the data structure contains values for only the first three columns.</p>
+ * @namespace <p>The 3DMatrix is created by {@link Ti.UI.create3DMatrix}.  The 3D Matrix is an object for holding values for an affine transformation matrix. A 3D matrix is used to rotate, scale, translate, or skew the objects in a three-dimensional space. A 3D matrix is represented by a 4 by 4 matrix. Because the forth column is always (0,0,1), the data structure contains values for only the first three columns.</p>
  * @since 0.9
  */
-function Titanium_UI_3DMatrix() {
+Ti.UI.3DMatrix = function() {
 }
-Titanium_UI_3DMatrix.prototype = {
+Ti.UI.3DMatrix.prototype = {
 
 
     /**
@@ -13836,14 +13836,14 @@ Titanium_UI_3DMatrix.prototype = {
 }
 
 /**
- * Notes: <p>For iPhone, the style can be set from the constants {@link Titanium.UI.iPhone.ActivityIndicatorStyle}.</p>
+ * Notes: <p>For iPhone, the style can be set from the constants {@link Ti.UI.iPhone.ActivityIndicatorStyle}.</p>
  * platforms: android, iphone, ipad
- * @namespace <p>An Activity Indicator is created by the method {@link Titanium.UI.createActivityIndicator}.  An activity indicator can be used to show the progress of an operation in the UI to let the user know some action is taking place.</p>
+ * @namespace <p>An Activity Indicator is created by the method {@link Ti.UI.createActivityIndicator}.  An activity indicator can be used to show the progress of an operation in the UI to let the user know some action is taking place.</p>
  * @since 0.8
  * 
  * @example Simple Activity Indicator
  * <p>In this example, we create a basic activity indicator and start it.</p>
-<pre><code>var actInd = Titanium.UI.createActivityIndicator({
+<pre><code>var actInd = Ti.UI.createActivityIndicator({
     height:50,
     width:10
 });
@@ -13920,12 +13920,12 @@ Ti.UI.ActivityIndicator = {
 <p>Note: you should be careful not to call alert more than once while a pending alert is visible.</p>
 <p>On iOS 4, alert dialogs will automatically be cancelled upon application suspend.</p>
  * platforms: android, iphone, ipad
- * @namespace <p>The Alert Dialog is created by {@link Titanium.UI.createAlertDialog} and allows you to show a modal application dialog.</p>
+ * @namespace <p>The Alert Dialog is created by {@link Ti.UI.createAlertDialog} and allows you to show a modal application dialog.</p>
  * @since 0.8
  * 
  * @example Simple Alert Dialog
  * <p>In this example, we show a simple alert dialog.</p>
-<pre><code>var alertDialog = Titanium.UI.createAlertDialog({
+<pre><code>var alertDialog = Ti.UI.createAlertDialog({
     title: 'Hello',
     message: 'You got mail',
     buttonNames: ['OK','Doh!']
@@ -13933,9 +13933,9 @@ Ti.UI.ActivityIndicator = {
 alertDialog.show();
 </code></pre>
  */
-function Titanium_UI_AlertDialog() {
+Ti.UI.AlertDialog = function() {
 }
-Titanium_UI_AlertDialog.prototype = {
+Ti.UI.AlertDialog.prototype = {
 
     /**
      * <p>array of button names as strings</p>
@@ -14228,15 +14228,15 @@ Ti.UI.Android = {
 
 /**
  * platforms: android, iphone, ipad
- * @namespace <p>The Animation object is used for specifying lower-level animation properties and more low-level control of events during an animation. The Animation is created by the method {@link Titanium.UI.createAnimation}.</p>
+ * @namespace <p>The Animation object is used for specifying lower-level animation properties and more low-level control of events during an animation. The Animation is created by the method {@link Ti.UI.createAnimation}.</p>
  * @since 0.9
  * 
  * @example Animation applied to a view
  * <p>Create a simple animation and apply it to the view.  In this example, the view will animate from red to black to orange over 2 seconds.</p>
-<pre><code>var view = Titanium.UI.createView({
+<pre><code>var view = Ti.UI.createView({
    backgroundColor:'red'
 });
-var animation = Titanium.UI.createAnimation();
+var animation = Ti.UI.createAnimation();
 animation.backgroundColor = 'black';
 animation.duration = 1000;
 animation.addEventListener('complete',function()
@@ -14248,9 +14248,9 @@ animation.addEventListener('complete',function()
 view.animate(animation);
 </code></pre>
  */
-function Titanium_UI_Animation() {
+Ti.UI.Animation = function() {
 }
-Titanium_UI_Animation.prototype = {
+Ti.UI.Animation.prototype = {
 
     /**
      * <p>the property specifies if the animation should be replayed in reverse upon completion</p>
@@ -14449,16 +14449,16 @@ Titanium_UI_Animation.prototype = {
 
 /**
  * platforms: android, iphone, ipad
- * @namespace <p>A Button is created by the method {@link Titanium.UI.createButton}.</p>
+ * @namespace <p>A Button is created by the method {@link Ti.UI.createButton}.</p>
  * @since 0.8
  * 
  * @example Simple Button Example
- * <pre><code>var button = Titanium.UI.createButton({
+ * <pre><code>var button = Ti.UI.createButton({
    title: 'Hello'
 });
 button.addEventListener('click',function(e)
 {
-   Titanium.API.info("You clicked the button");
+   Ti.API.info("You clicked the button");
 });
 </code></pre>
  */
@@ -14729,7 +14729,7 @@ Ti.UI.Button = {
     size:null,
 
     /**
-     * One of Titanium.UI.Android.SOFT_KEYBOARD_DEFAULT_ON_FOCUS, Titanium.UI.Android.SOFT_KEYBOARD_HIDE_ON_FOCUS, or Titanium.UI.Android.SOFT_KEYBOARD_SHOW_ON_FOCUS. (Android only)
+     * One of Ti.UI.Android.SOFT_KEYBOARD_DEFAULT_ON_FOCUS, Ti.UI.Android.SOFT_KEYBOARD_HIDE_ON_FOCUS, or Ti.UI.Android.SOFT_KEYBOARD_SHOW_ON_FOCUS. (Android only)
      * platforms: android
      * @type int
      * @since 0.8
@@ -14902,17 +14902,17 @@ Ti.UI.Button = {
 }
 
 /**
- * Notes: <p>For iPhone, the style constants are available in the constants defined in {@link Titanium.UI.iPhone.SystemButtonStyle}.</p>
+ * Notes: <p>For iPhone, the style constants are available in the constants defined in {@link Ti.UI.iPhone.SystemButtonStyle}.</p>
  * platforms: iphone, ipad
- * @namespace <p>A Button Bar is created by the method {@link Titanium.UI.createButtonBar}.</p>
+ * @namespace <p>A Button Bar is created by the method {@link Ti.UI.createButtonBar}.</p>
  * @since 0.8
  * 
  * @example Simple 3 button button bar
- * <pre><code>var bb1 = Titanium.UI.createButtonBar({
+ * <pre><code>var bb1 = Ti.UI.createButtonBar({
     labels:['One', 'Two', 'Three'],
     backgroundColor:'#336699',
     top:50,
-    style:Titanium.UI.iPhone.SystemButtonStyle.BAR,
+    style:Ti.UI.iPhone.SystemButtonStyle.BAR,
     height:25,
     width:200
 });
@@ -15324,7 +15324,7 @@ Ti.UI.ButtonBar = {
  * @example Clipboard data types
  * <p>The <em>Text() functions are equivalent to calling </em>Data() with 'text' or 'text/plain' types, and work with plain Unicode strings.</p>
 <p>On Android, only plain text is supported; other MIME types will be ignored.</p>
-<p>On iOS, images will be returned as a {@link Titanium.Blob}; the special type 'image' or an explicit MIME type may be specified. URLs can be fetched with the special 'URL' or 'text/uri-list' types, and will return strings. Other data types may or may not be correctly mapped to clipboard types by the system, and will be retrieved as binary data in a {@link Titanium.Blob}.</p>
+<p>On iOS, images will be returned as a {@link Ti.Blob}; the special type 'image' or an explicit MIME type may be specified. URLs can be fetched with the special 'URL' or 'text/uri-list' types, and will return strings. Other data types may or may not be correctly mapped to clipboard types by the system, and will be retrieved as binary data in a {@link Ti.Blob}.</p>
  */
 Ti.UI.Clipboard = {
 
@@ -15443,12 +15443,12 @@ Ti.UI.Clipboard = {
 
 /**
  * platforms: iphone, ipad
- * @namespace <p>The Cover Flow view is container for showing  animated, three dimensional images in a nice UI. The Cover Flow view is created by the method {@link Titanium.UI.createCoverFlowView}.</p>
+ * @namespace <p>The Cover Flow view is container for showing  animated, three dimensional images in a nice UI. The Cover Flow view is created by the method {@link Ti.UI.createCoverFlowView}.</p>
  * @since 0.8
  * 
  * @example Simple 3 image cover flow example
  * <p>Create a rounded view.</p>
-<pre><code>var view = Titanium.UI.createCoverFlowView({
+<pre><code>var view = Ti.UI.createCoverFlowView({
     images:['a.png','b.png','c.png'],
     backgroundColor:'#000'
 });
@@ -15843,12 +15843,12 @@ Ti.UI.CoverFlowView = {
 
 /**
  * platforms: iphone, ipad
- * @namespace <p>An item that represents a visual icon in the {@link Titanium.UI.DashboardView}. The Dashboard Item is created by the method {@link Titanium.UI.createDashboardItem}.</p>
+ * @namespace <p>An item that represents a visual icon in the {@link Ti.UI.DashboardView}. The Dashboard Item is created by the method {@link Ti.UI.createDashboardItem}.</p>
  * @since 1.2
  */
-function Titanium_UI_DashboardItem() {
+Ti.UI.DashboardItem = function() {
 }
-Titanium_UI_DashboardItem.prototype = {
+Ti.UI.DashboardItem.prototype = {
 
     /**
      * <p>the badge value or <tt>0</tt> to remove the badge</p>
@@ -15919,7 +15919,7 @@ Titanium_UI_DashboardItem.prototype = {
 
 /**
  * platforms: iphone, ipad
- * @namespace <p>The Dashboard View provides a view that supports the ability to have Springboard-like view of icons which can be reordered by dragging and can contain multiple pages of icons in a scrollable view. The Dashboard View is created by the method {@link Titanium.UI.createDashboardView}.</p>
+ * @namespace <p>The Dashboard View provides a view that supports the ability to have Springboard-like view of icons which can be reordered by dragging and can contain multiple pages of icons in a scrollable view. The Dashboard View is created by the method {@link Ti.UI.createDashboardView}.</p>
  * @since 1.2
  */
 Ti.UI.DashboardView = {
@@ -16069,7 +16069,7 @@ Ti.UI.DashboardView = {
     center:null,
 
     /**
-     * <p>an array of {@link Titanium.UI.DashboardItem} objects to display in the view</p>
+     * <p>an array of {@link Ti.UI.DashboardItem} objects to display in the view</p>
      * platforms: iphone, ipad
      * @type array
      * @since 1.2
@@ -16317,12 +16317,12 @@ Ti.UI.DashboardView = {
 
 /**
  * platforms: android, iphone, ipad
- * @namespace <p>The Email Dialog is created by {@link Titanium.UI.createEmailDialog} and allows you to send in application emails on behalf of the application user.</p>
+ * @namespace <p>The Email Dialog is created by {@link Ti.UI.createEmailDialog} and allows you to send in application emails on behalf of the application user.</p>
  * @since 0.8
  * 
  * @example Simple Email Dialog with Attachment
  * <p>In this example, we send an email with a file attachment.</p>
-<pre><code>var emailDialog = Titanium.UI.createEmailDialog()
+<pre><code>var emailDialog = Ti.UI.createEmailDialog()
 emailDialog.subject = "Hello from Titanium";
 emailDialog.toRecipients = ['foo@yahoo.com'];
 emailDialog.messageBody = '<b>Appcelerator Titanium Rocks!</b>';
@@ -16331,9 +16331,9 @@ emailDialog.addAttachment(f);
 emailDialog.open();
 </code></pre>
  */
-function Titanium_UI_EmailDialog() {
+Ti.UI.EmailDialog = function() {
 }
-Titanium_UI_EmailDialog.prototype = {
+Ti.UI.EmailDialog.prototype = {
 
     /**
      * <p>constant for the CANCELLED status result</p>
@@ -16490,12 +16490,12 @@ Titanium_UI_EmailDialog.prototype = {
 /**
  * Notes: <p>If you specify a <tt>width</tt> and/or <tt>height</tt> property on the image, the image will be scaled to fit into this space if the image is larger.</p>
  * platforms: android, iphone, ipad
- * @namespace <p>An Image View is used to display an image or a series of images in an animation. The Image View is created by the method {@link Titanium.UI.createImageView}.</p>
+ * @namespace <p>An Image View is used to display an image or a series of images in an animation. The Image View is created by the method {@link Ti.UI.createImageView}.</p>
  * @since 0.9
  * 
  * @example Basic Image View
  * <p>In this example, we create a simple image view:</p>
-<pre><code>var image = Titanium.UI.createImageView({url:'myimage.png'});
+<pre><code>var image = Ti.UI.createImageView({url:'myimage.png'});
 view.add(image);
 </code></pre>
  */
@@ -16830,7 +16830,7 @@ Ti.UI.ImageView = {
     size:null,
 
     /**
-     * One of Titanium.UI.Android.SOFT_KEYBOARD_DEFAULT_ON_FOCUS, Titanium.UI.Android.SOFT_KEYBOARD_HIDE_ON_FOCUS, or Titanium.UI.Android.SOFT_KEYBOARD_SHOW_ON_FOCUS. (Android only)
+     * One of Ti.UI.Android.SOFT_KEYBOARD_DEFAULT_ON_FOCUS, Ti.UI.Android.SOFT_KEYBOARD_HIDE_ON_FOCUS, or Ti.UI.Android.SOFT_KEYBOARD_SHOW_ON_FOCUS. (Android only)
      * platforms: android
      * @type int
      * @since 0.9
@@ -17024,12 +17024,12 @@ Ti.UI.ImageView = {
 
 /**
  * platforms: android, iphone, ipad
- * @namespace <p>A Label is created by the method {@link Titanium.UI.createLabel}.</p>
+ * @namespace <p>A Label is created by the method {@link Ti.UI.createLabel}.</p>
  * @since 0.8
  * 
  * @example Basic Label
  * <p>Create a label with a nice text shadow, 48px font that's aligned <tt>center</tt> and height <tt>auto</tt>.</p>
-<pre><code>var l2 = Titanium.UI.createLabel({
+<pre><code>var l2 = Ti.UI.createLabel({
     text:'Appcelerator',
     height:'auto',
     width:'auto',
@@ -17372,7 +17372,7 @@ Ti.UI.Label = {
     size:null,
 
     /**
-     * One of Titanium.UI.Android.SOFT_KEYBOARD_DEFAULT_ON_FOCUS, Titanium.UI.Android.SOFT_KEYBOARD_HIDE_ON_FOCUS, or Titanium.UI.Android.SOFT_KEYBOARD_SHOW_ON_FOCUS. (Android only)
+     * One of Ti.UI.Android.SOFT_KEYBOARD_DEFAULT_ON_FOCUS, Ti.UI.Android.SOFT_KEYBOARD_HIDE_ON_FOCUS, or Ti.UI.Android.SOFT_KEYBOARD_SHOW_ON_FOCUS. (Android only)
      * platforms: android
      * @type int
      * @since 0.8
@@ -17554,12 +17554,12 @@ Ti.UI.Label = {
 
 /**
  * platforms: android, iphone, ipad
- * @namespace <p>The Option Dialog is created by {@link Titanium.UI.createOptionDialog} and allows you to show a modal dialog of one or more options to the user.</p>
+ * @namespace <p>The Option Dialog is created by {@link Ti.UI.createOptionDialog} and allows you to show a modal dialog of one or more options to the user.</p>
  * @since 0.8
  * 
  * @example Simple Options Dialog with 2 Options
  * <p>In this example, we show a simple option dialog.</p>
-<pre><code>var dialog = Titanium.UI.createOptionDialog({
+<pre><code>var dialog = Ti.UI.createOptionDialog({
     title: 'Hello',
     options: ['Option 1','Option 2'],
     cancel:1
@@ -17570,7 +17570,7 @@ dialog.show();
 Ti.UI.OptionDialog = {
 
     /**
-     * <p>A Titanium.UI.View. Allows for arbitrary contents inside a native dialog. Works for any dialog. (Android)</p>
+     * <p>A Ti.UI.View. Allows for arbitrary contents inside a native dialog. Works for any dialog. (Android)</p>
      * platforms: android, iphone, ipad
      * @type object
      * @since 0.8
@@ -17641,25 +17641,25 @@ Ti.UI.OptionDialog = {
 <p>Titanium's Android picker control (both the native and the <tt>useSpinner</tt> variety) does not support/display views that are added to picker rows.  Only the <tt>title</tt> of the row will be displayed within the control.
 Titanium for Android does not support the DateTime or Count Down Timer picker type.</p>
  * platforms: android, iphone, ipad
- * @namespace <p>A Picker is created by the method {@link Titanium.UI.createPicker}.  A Picker can be used to select one or more fixed values.</p>
+ * @namespace <p>A Picker is created by the method {@link Ti.UI.createPicker}.  A Picker can be used to select one or more fixed values.</p>
  * @since 0.8
  * 
  * @example Basic Single Column Picker
  * <p>In this basic picker example, we create a one column picker with 4 rows. </p>
-<pre><code>var picker = Titanium.UI.createPicker();
+<pre><code>var picker = Ti.UI.createPicker();
 var data = [];
-data[0]=Titanium.UI.createPickerRow({title:'Bananas'});
-data[1]=Titanium.UI.createPickerRow({title:'Strawberries'});
-data[2]=Titanium.UI.createPickerRow({title:'Mangos'});
-data[3]=Titanium.UI.createPickerRow({title:'Grapes'});
+data[0]=Ti.UI.createPickerRow({title:'Bananas'});
+data[1]=Ti.UI.createPickerRow({title:'Strawberries'});
+data[2]=Ti.UI.createPickerRow({title:'Mangos'});
+data[3]=Ti.UI.createPickerRow({title:'Grapes'});
 picker.add(data);
 </code></pre>
  * 
  * @example Custom View for Row
  * <p>In this example, we use a custom label for each row in a column.</p>
-<pre><code>var picker = Titanium.UI.createPicker();
-var row = Titanium.UI.createPickerRow();
-var label = Titanium.UI.createLabel({
+<pre><code>var picker = Ti.UI.createPicker();
+var row = Ti.UI.createPickerRow();
+var label = Ti.UI.createLabel({
     text:text,
     font:{fontSize:24,fontWeight:'bold'},
     color:text,
@@ -17670,9 +17670,9 @@ row.add(label);
 picker.add(row);
 </code></pre>
  */
-function Titanium_UI_Picker() {
+Ti.UI.Picker = function() {
 }
-Titanium_UI_Picker.prototype = {
+Ti.UI.Picker.prototype = {
 
     /**
      * <p>array of column values</p>
@@ -17691,7 +17691,7 @@ Titanium_UI_Picker.prototype = {
     countDownDuration:null,
 
     /**
-     * <p>(Android only, applicable only to the {@link Titanium.UI.PICKER_TYPE_TIME} picker.)  If true, a 24-hour cloc will be used, with hours 0 through 23.  If false, a 12-hour clock will be used, with hours 1 through 12 and am/pm controls.  For reasons of backward compatibility, the default value depends on the type of time picker being used.  For the native time picker (when "useSpinner" is either un-set or false), the default is false.  For the spinner-style time picker, the default is true.</p>
+     * <p>(Android only, applicable only to the {@link Ti.UI.PICKER_TYPE_TIME} picker.)  If true, a 24-hour cloc will be used, with hours 0 through 23.  If false, a 12-hour clock will be used, with hours 1 through 12 and am/pm controls.  For reasons of backward compatibility, the default value depends on the type of time picker being used.  For the native time picker (when "useSpinner" is either un-set or false), the default is false.  For the spinner-style time picker, the default is true.</p>
      * platforms: android, iphone, ipad
      * @type boolean
      * @since 0.8
@@ -17731,7 +17731,7 @@ Titanium_UI_Picker.prototype = {
     selectionIndicator:null,
 
     /**
-     * <p>the type constant for the picker. One of {@link Titanium.UI.PICKER_TYPE_PLAIN} (default), {@link Titanium.UI.PICKER_TYPE_DATE_AND_TIME}, {@link Titanium.UI.PICKER_TYPE_DATE}, {@link Titanium.UI.PICKER_TYPE_TIME} or {@link Titanium.UI.PICKER_TYPE_COUNT_DOWN_TIMER}. (Note that Titanium's Android implementation does not support the countdown timer or date+time varieties.)</p>
+     * <p>the type constant for the picker. One of {@link Ti.UI.PICKER_TYPE_PLAIN} (default), {@link Ti.UI.PICKER_TYPE_DATE_AND_TIME}, {@link Ti.UI.PICKER_TYPE_DATE}, {@link Ti.UI.PICKER_TYPE_TIME} or {@link Ti.UI.PICKER_TYPE_COUNT_DOWN_TIMER}. (Note that Titanium's Android implementation does not support the countdown timer or date+time varieties.)</p>
      * platforms: android, iphone, ipad
      * @type int
      * @since 0.8
@@ -17739,7 +17739,7 @@ Titanium_UI_Picker.prototype = {
     type:null,
 
     /**
-     * <p>(Android only, default false.) An indicator that you wish to use a non-native Android control that looks and behaves more like the iOS picker in the sense that the user selects values by spinning a wheel.  (The native Android spinner is more like a conventional "dropdown".)  Note that this option works both plain pickers, date pickers and time pickers.  Set it preferably immediately when creating the picker, i.e., {@link Titanium.UI.createPicker({useSpinner:true});}, but definitely before <tt>.add()</tt>ing the picker to its parent.</p>
+     * <p>(Android only, default false.) An indicator that you wish to use a non-native Android control that looks and behaves more like the iOS picker in the sense that the user selects values by spinning a wheel.  (The native Android spinner is more like a conventional "dropdown".)  Note that this option works both plain pickers, date pickers and time pickers.  Set it preferably immediately when creating the picker, i.e., {@link Ti.UI.createPicker({useSpinner:true});}, but definitely before <tt>.add()</tt>ing the picker to its parent.</p>
      * platforms: android, iphone, ipad
      * @type boolean
      * @since 0.8
@@ -17840,7 +17840,7 @@ Titanium_UI_Picker.prototype = {
 
 /**
  * platforms: android, iphone, ipad
- * @namespace <p>The picker row object created by {@link Titanium.UI.createPickerColumn}.</p>
+ * @namespace <p>The picker row object created by {@link Ti.UI.createPickerColumn}.</p>
  * @since 0.9
  */
 Ti.UI.PickerColumn = {
@@ -18086,7 +18086,7 @@ Ti.UI.PickerColumn = {
     size:null,
 
     /**
-     * One of Titanium.UI.Android.SOFT_KEYBOARD_DEFAULT_ON_FOCUS, Titanium.UI.Android.SOFT_KEYBOARD_HIDE_ON_FOCUS, or Titanium.UI.Android.SOFT_KEYBOARD_SHOW_ON_FOCUS. (Android only)
+     * One of Ti.UI.Android.SOFT_KEYBOARD_DEFAULT_ON_FOCUS, Ti.UI.Android.SOFT_KEYBOARD_HIDE_ON_FOCUS, or Ti.UI.Android.SOFT_KEYBOARD_SHOW_ON_FOCUS. (Android only)
      * platforms: android
      * @type int
      * @since 0.9
@@ -18166,7 +18166,7 @@ Ti.UI.PickerColumn = {
     /**
      * <p>add a row to the column.</p>
      * platforms: android, iphone, ipad
-     * @param {{@link Titanium_UI_PickerRow_html}} row The row to add.
+     * @param {{@link Ti.UI.PickerRow}} row The row to add.
      * @returns void
      * @since 0.9
      */
@@ -18228,7 +18228,7 @@ Ti.UI.PickerColumn = {
     /**
      * <p>remove a row from the column.</p>
      * platforms: android, iphone, ipad
-     * @param {{@link Titanium_UI_PickerRow_html}} row The row to remove.
+     * @param {{@link Ti.UI.PickerRow}} row The row to remove.
      * @returns void
      * @since 0.9
      */
@@ -18256,7 +18256,7 @@ Ti.UI.PickerColumn = {
 
 /**
  * platforms: android, iphone, ipad
- * @namespace <p>The picker row object created by {@link Titanium.UI.createPickerRow}.</p>
+ * @namespace <p>The picker row object created by {@link Ti.UI.createPickerRow}.</p>
  * @since 0.9
  * 
  * @example Custom Views for a picker row
@@ -18516,7 +18516,7 @@ Ti.UI.PickerRow = {
     size:null,
 
     /**
-     * One of Titanium.UI.Android.SOFT_KEYBOARD_DEFAULT_ON_FOCUS, Titanium.UI.Android.SOFT_KEYBOARD_HIDE_ON_FOCUS, or Titanium.UI.Android.SOFT_KEYBOARD_SHOW_ON_FOCUS. (Android only)
+     * One of Ti.UI.Android.SOFT_KEYBOARD_DEFAULT_ON_FOCUS, Ti.UI.Android.SOFT_KEYBOARD_HIDE_ON_FOCUS, or Ti.UI.Android.SOFT_KEYBOARD_SHOW_ON_FOCUS. (Android only)
      * platforms: android
      * @type int
      * @since 0.9
@@ -18673,14 +18673,14 @@ Ti.UI.PickerRow = {
 }
 
 /**
- * Notes: <p>For iPhone, progress bar styles are constants defined in {@link Titanium.UI.iPhone.ProgressBarStyle}.</p>
+ * Notes: <p>For iPhone, progress bar styles are constants defined in {@link Ti.UI.iPhone.ProgressBarStyle}.</p>
  * platforms: android, iphone, ipad
- * @namespace <p>A Progress Bar is created by the method {@link Titanium.UI.createProgressBar}.</p>
+ * @namespace <p>A Progress Bar is created by the method {@link Ti.UI.createProgressBar}.</p>
  * @since 0.8
  * 
  * @example Simple Progress Bar
  * <p>In this example we create a progress bar with the min value of <tt>0</tt> and the max value of <tt>10</tt> and the current value of <tt>0</tt>.  The change the value of the progress bar to cause it to move, we would set the <tt>value</tt> property to a value between <tt>min</tt> and <tt>max</tt>.</p>
-<pre><code>var pb=Titanium.UI.createProgressBar({
+<pre><code>var pb=Ti.UI.createProgressBar({
     width:250,
     min:0,
     max:10,
@@ -18688,7 +18688,7 @@ Ti.UI.PickerRow = {
     color:'#fff',
     message:'Downloading 0 of 10',
     font:{fontSize:14, fontWeight:'bold'},
-    style:Titanium.UI.iPhone.ProgressBarStyle.PLAIN,
+    style:Ti.UI.iPhone.ProgressBarStyle.PLAIN,
 });
 </code></pre>
  */
@@ -18757,12 +18757,12 @@ Ti.UI.ProgressBar = {
 /**
  * Notes: <p>If your scrollable region fits within the size of the content area the scroll view will not scroll.</p>
  * platforms: android, iphone, ipad
- * @namespace <p>A Scroll View is used to create a scrollable region of content.  Views added to the Scroll View will be scrolled based on the content size of the Scroll View. The Scroll View is created by the method {@link Titanium.UI.createScrollView}. Note: In Android, Scroll Views can only scroll in one direction, either vertical or horizontal, but not both at the same time. See the {@link Titanium.UI.ScrollView.scrollType} property</p>
+ * @namespace <p>A Scroll View is used to create a scrollable region of content.  Views added to the Scroll View will be scrolled based on the content size of the Scroll View. The Scroll View is created by the method {@link Ti.UI.createScrollView}. Note: In Android, Scroll Views can only scroll in one direction, either vertical or horizontal, but not both at the same time. See the {@link Ti.UI.ScrollView.scrollType} property</p>
  * @since 0.9
  * 
  * @example Simple Scroll View
  * <p>Create a scroll view with content.</p>
-<pre><code>var scrollView = Titanium.UI.createScrollView({
+<pre><code>var scrollView = Ti.UI.createScrollView({
     contentWidth:'auto',
     contentHeight:'auto',
     top:0,
@@ -18777,7 +18777,7 @@ var view = Ti.UI.createView({
     top:10
 });
 scrollView.add(view);
-Titanium.UI.currentWindow.add(scrollView);
+Ti.UI.currentWindow.add(scrollView);
 </code></pre>
  */
 Ti.UI.ScrollView = {
@@ -19095,7 +19095,7 @@ Ti.UI.ScrollView = {
     size:null,
 
     /**
-     * One of Titanium.UI.Android.SOFT_KEYBOARD_DEFAULT_ON_FOCUS, Titanium.UI.Android.SOFT_KEYBOARD_HIDE_ON_FOCUS, or Titanium.UI.Android.SOFT_KEYBOARD_SHOW_ON_FOCUS. (Android only)
+     * One of Ti.UI.Android.SOFT_KEYBOARD_DEFAULT_ON_FOCUS, Ti.UI.Android.SOFT_KEYBOARD_HIDE_ON_FOCUS, or Ti.UI.Android.SOFT_KEYBOARD_SHOW_ON_FOCUS. (Android only)
      * platforms: android
      * @type int
      * @since 0.9
@@ -19272,15 +19272,15 @@ Ti.UI.ScrollView = {
 
 /**
  * platforms: android, iphone, ipad
- * @namespace <p>The Scrollable View provides a view that supports horizontal scrolling on one or more views in a gesture motion.  The Scrollable View also optionally supports a visual paging control to indicate the page that the view is visible. The Scrollable View is created by the method {@link Titanium.UI.createScrollableView}.</p>
+ * @namespace <p>The Scrollable View provides a view that supports horizontal scrolling on one or more views in a gesture motion.  The Scrollable View also optionally supports a visual paging control to indicate the page that the view is visible. The Scrollable View is created by the method {@link Ti.UI.createScrollableView}.</p>
  * @since 0.8
  * 
  * @example Simple Scrollable View with 3 Views
  * <p>Create three views and place each into a scrollable view.</p>
-<pre><code>var view1 = Titanium.UI.createView({backgroundColor:'#123'});
-var view2 = Titanium.UI.createView({backgroundColor:'#123'});
-var view3 = Titanium.UI.createView({backgroundColor:'#123'});
-var scrollView = Titanium.UI.createScrollableView({
+<pre><code>var view1 = Ti.UI.createView({backgroundColor:'#123'});
+var view2 = Ti.UI.createView({backgroundColor:'#123'});
+var view3 = Ti.UI.createView({backgroundColor:'#123'});
+var scrollView = Ti.UI.createScrollableView({
     views:[view1,view2,view3],
     showPagingControl:true
 });
@@ -19570,7 +19570,7 @@ Ti.UI.ScrollableView = {
     size:null,
 
     /**
-     * One of Titanium.UI.Android.SOFT_KEYBOARD_DEFAULT_ON_FOCUS, Titanium.UI.Android.SOFT_KEYBOARD_HIDE_ON_FOCUS, or Titanium.UI.Android.SOFT_KEYBOARD_SHOW_ON_FOCUS. (Android only)
+     * One of Ti.UI.Android.SOFT_KEYBOARD_DEFAULT_ON_FOCUS, Ti.UI.Android.SOFT_KEYBOARD_HIDE_ON_FOCUS, or Ti.UI.Android.SOFT_KEYBOARD_SHOW_ON_FOCUS. (Android only)
      * platforms: android
      * @type int
      * @since 0.8
@@ -19758,11 +19758,11 @@ Ti.UI.ScrollableView = {
 
 /**
  * platforms: android, iphone, ipad
- * @namespace <p>A Search Bar is created by the method {@link Titanium.UI.createSearchBar}.</p>
+ * @namespace <p>A Search Bar is created by the method {@link Ti.UI.createSearchBar}.</p>
  * @since 0.8
  * 
  * @example Simple Search Bar
- * <pre><code>var search = Titanium.UI.createSearchBar({
+ * <pre><code>var search = Ti.UI.createSearchBar({
     barColor:'#000', 
     showCancel:true,
     height:43,
@@ -19789,7 +19789,7 @@ Ti.UI.SearchBar = {
     animatedCenterPoint:null,
 
     /**
-     * <p>One of {@link Titanium.UI.TEXT_AUTOCAPITALIZATION_NONE}, {@link Titanium.UI.TEXT_AUTOCAPITALIZATION_WORDS}, {@link Titanium.UI.TEXT_AUTOCAPITALIZATION_SENTENCES}, or {@link Titanium.UI.TEXT_AUTOCAPITALIZATION_ALL} to indicate how the field should be capitalized during typing.</p>
+     * <p>One of {@link Ti.UI.TEXT_AUTOCAPITALIZATION_NONE}, {@link Ti.UI.TEXT_AUTOCAPITALIZATION_WORDS}, {@link Ti.UI.TEXT_AUTOCAPITALIZATION_SENTENCES}, or {@link Ti.UI.TEXT_AUTOCAPITALIZATION_ALL} to indicate how the field should be capitalized during typing.</p>
      * platforms: android, iphone, ipad
      * @type int
      * @since 0.8
@@ -20069,7 +20069,7 @@ Ti.UI.SearchBar = {
     size:null,
 
     /**
-     * One of Titanium.UI.Android.SOFT_KEYBOARD_DEFAULT_ON_FOCUS, Titanium.UI.Android.SOFT_KEYBOARD_HIDE_ON_FOCUS, or Titanium.UI.Android.SOFT_KEYBOARD_SHOW_ON_FOCUS. (Android only)
+     * One of Ti.UI.Android.SOFT_KEYBOARD_DEFAULT_ON_FOCUS, Ti.UI.Android.SOFT_KEYBOARD_HIDE_ON_FOCUS, or Ti.UI.Android.SOFT_KEYBOARD_SHOW_ON_FOCUS. (Android only)
      * platforms: android
      * @type int
      * @since 0.8
@@ -20245,7 +20245,7 @@ Ti.UI.SearchBar = {
 
 /**
  * platforms: android, iphone, ipad
- * @namespace <p>A Slider is created by the method {@link Titanium.UI.createSlider}.</p>
+ * @namespace <p>A Slider is created by the method {@link Ti.UI.createSlider}.</p>
  * @since 0.8
  */
 Ti.UI.Slider = {
@@ -20603,7 +20603,7 @@ Ti.UI.Slider = {
     size:null,
 
     /**
-     * One of Titanium.UI.Android.SOFT_KEYBOARD_DEFAULT_ON_FOCUS, Titanium.UI.Android.SOFT_KEYBOARD_HIDE_ON_FOCUS, or Titanium.UI.Android.SOFT_KEYBOARD_SHOW_ON_FOCUS. (Android only)
+     * One of Ti.UI.Android.SOFT_KEYBOARD_DEFAULT_ON_FOCUS, Ti.UI.Android.SOFT_KEYBOARD_HIDE_ON_FOCUS, or Ti.UI.Android.SOFT_KEYBOARD_SHOW_ON_FOCUS. (Android only)
      * platforms: android
      * @type int
      * @since 0.8
@@ -20769,17 +20769,17 @@ Ti.UI.Slider = {
 
 /**
  * platforms: android, iphone, ipad
- * @namespace <p>A Switch is created by the method {@link Titanium.UI.createSwitch}.</p>
+ * @namespace <p>A Switch is created by the method {@link Ti.UI.createSwitch}.</p>
  * @since 0.8
  * 
  * @example Simple Switch Example
  * <p>The following is a simple example of a switch and receiving <tt>change</tt> events.</p>
-<pre><code>var basicSwitch = Titanium.UI.createSwitch({
+<pre><code>var basicSwitch = Ti.UI.createSwitch({
     value:false
 });
 basicSwitch.addEventListener('change',function(e)
 {
-    Titanium.API.info('Basic Switch value = ' + e.value + ' act val ' + basicSwitch.value);
+    Ti.API.info('Basic Switch value = ' + e.value + ' act val ' + basicSwitch.value);
 });
 </code></pre>
  */
@@ -21018,7 +21018,7 @@ Ti.UI.Switch = {
     size:null,
 
     /**
-     * One of Titanium.UI.Android.SOFT_KEYBOARD_DEFAULT_ON_FOCUS, Titanium.UI.Android.SOFT_KEYBOARD_HIDE_ON_FOCUS, or Titanium.UI.Android.SOFT_KEYBOARD_SHOW_ON_FOCUS. (Android only)
+     * One of Ti.UI.Android.SOFT_KEYBOARD_DEFAULT_ON_FOCUS, Ti.UI.Android.SOFT_KEYBOARD_HIDE_ON_FOCUS, or Ti.UI.Android.SOFT_KEYBOARD_SHOW_ON_FOCUS. (Android only)
      * platforms: android
      * @type int
      * @since 0.8
@@ -21208,12 +21208,12 @@ Ti.UI.Switch = {
 
 /**
  * platforms: android, iphone, ipad
- * @namespace <p>A TabGroup Tab instance.  Each Tab instance maintains a stack of tab windows. Only one window within in the Tab can be visible at a time.  When a window is closed, either by the user or by code, the window is removed from the stack, make the previous window visible. The root tab window cannot be removed. The Tab Group is created by the method {@link Titanium.UI.createTab}.</p>
+ * @namespace <p>A TabGroup Tab instance.  Each Tab instance maintains a stack of tab windows. Only one window within in the Tab can be visible at a time.  When a window is closed, either by the user or by code, the window is removed from the stack, make the previous window visible. The root tab window cannot be removed. The Tab Group is created by the method {@link Ti.UI.createTab}.</p>
  * @since 0.8
  * 
  * @example Simple Tab Example
  * <p>In this example, we create a simple tab and add it to a tab group.</p>
-<pre><code>var tab = Titanium.UI.createTab({
+<pre><code>var tab = Ti.UI.createTab({
     window:mywin,
     title:'Hello',
     icon:'myicon.png'
@@ -21464,7 +21464,7 @@ Ti.UI.Tab = {
     size:null,
 
     /**
-     * One of Titanium.UI.Android.SOFT_KEYBOARD_DEFAULT_ON_FOCUS, Titanium.UI.Android.SOFT_KEYBOARD_HIDE_ON_FOCUS, or Titanium.UI.Android.SOFT_KEYBOARD_SHOW_ON_FOCUS. (Android only)
+     * One of Ti.UI.Android.SOFT_KEYBOARD_DEFAULT_ON_FOCUS, Ti.UI.Android.SOFT_KEYBOARD_HIDE_ON_FOCUS, or Ti.UI.Android.SOFT_KEYBOARD_SHOW_ON_FOCUS. (Android only)
      * platforms: android
      * @type int
      * @since 0.8
@@ -21631,7 +21631,7 @@ Ti.UI.Tab = {
 /**
  * Notes: <p>Note that when opening a tab group, if one or more of its tabs have been set 'active' prior to opening, or if setActiveTab() has been called while a tab is 'active', the result of which tab is initially selected is undefined.</p>
  * platforms: android, iphone, ipad
- * @namespace <p>The Tab Group allows you to manage a tabbed UI of one or more windows. The Tab Group is created by the method {@link Titanium.UI.createTabGroup}.</p>
+ * @namespace <p>The Tab Group allows you to manage a tabbed UI of one or more windows. The Tab Group is created by the method {@link Ti.UI.createTabGroup}.</p>
  * @since 0.9
  */
 Ti.UI.TabGroup = {
@@ -21893,7 +21893,7 @@ Ti.UI.TabGroup = {
     size:null,
 
     /**
-     * One of Titanium.UI.Android.SOFT_KEYBOARD_DEFAULT_ON_FOCUS, Titanium.UI.Android.SOFT_KEYBOARD_HIDE_ON_FOCUS, or Titanium.UI.Android.SOFT_KEYBOARD_SHOW_ON_FOCUS. (Android only)
+     * One of Ti.UI.Android.SOFT_KEYBOARD_DEFAULT_ON_FOCUS, Ti.UI.Android.SOFT_KEYBOARD_HIDE_ON_FOCUS, or Ti.UI.Android.SOFT_KEYBOARD_SHOW_ON_FOCUS. (Android only)
      * platforms: android
      * @type int
      * @since 0.9
@@ -22104,17 +22104,17 @@ Ti.UI.TabGroup = {
 }
 
 /**
- * Notes: <p>For iPhone, the style constants are available in the constants defined in {@link Titanium.UI.iPhone.SystemButtonStyle}.</p>
+ * Notes: <p>For iPhone, the style constants are available in the constants defined in {@link Ti.UI.iPhone.SystemButtonStyle}.</p>
  * platforms: iphone, ipad
- * @namespace <p>A Tabbed Bar is created by the method {@link Titanium.UI.createTabbedBar}. The difference between the Tabbed Bar and the Button Bar is that the tabbed bar visually maintains a state (visually distinguished as a pressed or selected look).</p>
+ * @namespace <p>A Tabbed Bar is created by the method {@link Ti.UI.createTabbedBar}. The difference between the Tabbed Bar and the Button Bar is that the tabbed bar visually maintains a state (visually distinguished as a pressed or selected look).</p>
  * @since 0.8
  * 
  * @example Simple Tabbed Bar with 3 items
- * <pre><code>var bb1 = Titanium.UI.createTabbedBar({
+ * <pre><code>var bb1 = Ti.UI.createTabbedBar({
     labels:['One', 'Two', 'Three'],
     backgroundColor:'#336699',
     top:50,
-    style:Titanium.UI.iPhone.SystemButtonStyle.BAR,
+    style:Ti.UI.iPhone.SystemButtonStyle.BAR,
     height:25,
     width:200
 });
@@ -22506,13 +22506,13 @@ Ti.UI.TabbedBar = {
 
 /**
  * platforms: android, iphone, ipad
- * @namespace <p>A Table View allows you to create a scrollable table of content in a list-based fashion. The Table View is created by the method {@link Titanium.UI.createTableView}.</p>
+ * @namespace <p>A Table View allows you to create a scrollable table of content in a list-based fashion. The Table View is created by the method {@link Ti.UI.createTableView}.</p>
  * @since 0.8
  * 
  * @example Simple Table View with basic rows
  * <p>The most basic example of a table view.</p>
 <pre><code>var data = [{title:"Row 1"},{title:"Row 2"}];
-var table = Titanium.UI.createTableView({data:data});
+var table = Ti.UI.createTableView({data:data});
 win.add(table);
 </code></pre>
  */
@@ -22895,7 +22895,7 @@ Ti.UI.TableView = {
     separatorColor:null,
 
     /**
-     * <p>the separator style constant. For iPhone, Titanium.UI.iPhone.TableViewSeparatorStyle</p>
+     * <p>the separator style constant. For iPhone, Ti.UI.iPhone.TableViewSeparatorStyle</p>
      * platforms: android, iphone, ipad
      * @type int
      * @since 0.8
@@ -22919,7 +22919,7 @@ Ti.UI.TableView = {
     size:null,
 
     /**
-     * One of Titanium.UI.Android.SOFT_KEYBOARD_DEFAULT_ON_FOCUS, Titanium.UI.Android.SOFT_KEYBOARD_HIDE_ON_FOCUS, or Titanium.UI.Android.SOFT_KEYBOARD_SHOW_ON_FOCUS. (Android only)
+     * One of Ti.UI.Android.SOFT_KEYBOARD_DEFAULT_ON_FOCUS, Ti.UI.Android.SOFT_KEYBOARD_HIDE_ON_FOCUS, or Ti.UI.Android.SOFT_KEYBOARD_SHOW_ON_FOCUS. (Android only)
      * platforms: android
      * @type int
      * @since 0.8
@@ -22927,7 +22927,7 @@ Ti.UI.TableView = {
     softKeyboardOnFocus:null,
 
     /**
-     * <p>iPhone only. the style of the table view. constant from {@link Titanium.UI.iPhone.TableViewStyle}</p>
+     * <p>iPhone only. the style of the table view. constant from {@link Ti.UI.iPhone.TableViewStyle}</p>
      * platforms: android, iphone, ipad
      * @type int
      * @since 0.8
@@ -23116,7 +23116,7 @@ Ti.UI.TableView = {
      * <p>scroll to a specific row index and ensure that that row is on screen</p>
      * platforms: android, iphone, ipad
      * @param {int} index index
-     * @param {object} properties animation properties. <tt>position</tt> property controls the position constant to use for position (on iPhone, use constants from Titanium.UI.iPhone.TableViewScrollPosition).
+     * @param {object} properties animation properties. <tt>position</tt> property controls the position constant to use for position (on iPhone, use constants from Ti.UI.iPhone.TableViewScrollPosition).
      * @returns void
      * @since 0.8
      */
@@ -23189,13 +23189,13 @@ Ti.UI.TableView = {
  * Notes: <p>Make sure you set the tableClass on each row instance if using more than one type of row layout. You can use the same value for each instance of a row where the layout is the same - even if the value of the elements inside the row have different values.  For example, if the text is the only thing different between two cells but the layout is the same, both row instances should have the same value for tableClass.</p>
 <p>You can listen for table row events on all rows by adding an event listener to the table view instance.  Events automatically propagate to parent views.</p>
  * platforms: android, iphone, ipad
- * @namespace <p>A TableView row object created by the method {@link Titanium.UI.createTableViewRow}.</p>
+ * @namespace <p>A TableView row object created by the method {@link Ti.UI.createTableViewRow}.</p>
  * @since 0.9
  * 
  * @example Simple Table View Row example
  * <p>In this simple example, we create a table view row with a red square in the cell.</p>
-<pre><code>var row = Titanium.UI.createTableViewRow();
-var view = Titanium.UI.createView({backgroundColor:'red',width:20,height:20});
+<pre><code>var row = Ti.UI.createTableViewRow();
+var view = Ti.UI.createView({backgroundColor:'red',width:20,height:20});
 row.height = 'auto';
 row.add(view);
 </code></pre>
@@ -23515,7 +23515,7 @@ Ti.UI.TableViewRow = {
     selectedColor:null,
 
     /**
-     * <p>a selection style constant to control the selection color. For iPhone, use the constants from Titanium.UI.iPhone.TableViewCellSelectionStyle</p>
+     * <p>a selection style constant to control the selection color. For iPhone, use the constants from Ti.UI.iPhone.TableViewCellSelectionStyle</p>
      * platforms: android, iphone, ipad
      * @type int
      * @since 0.9
@@ -23531,7 +23531,7 @@ Ti.UI.TableViewRow = {
     size:null,
 
     /**
-     * One of Titanium.UI.Android.SOFT_KEYBOARD_DEFAULT_ON_FOCUS, Titanium.UI.Android.SOFT_KEYBOARD_HIDE_ON_FOCUS, or Titanium.UI.Android.SOFT_KEYBOARD_SHOW_ON_FOCUS. (Android only)
+     * One of Ti.UI.Android.SOFT_KEYBOARD_DEFAULT_ON_FOCUS, Ti.UI.Android.SOFT_KEYBOARD_HIDE_ON_FOCUS, or Ti.UI.Android.SOFT_KEYBOARD_SHOW_ON_FOCUS. (Android only)
      * platforms: android
      * @type int
      * @since 0.9
@@ -23689,15 +23689,15 @@ Ti.UI.TableViewRow = {
 
 /**
  * platforms: android, iphone, ipad
- * @namespace <p>A TableView section object created by the method {@link Titanium.UI.createTableViewSection}.</p>
+ * @namespace <p>A TableView section object created by the method {@link Ti.UI.createTableViewSection}.</p>
  * @since 0.9
  * 
  * @example Simple Table View Section Example
  * <p>In this example, we create a section with the header <tt>Hello</tt> and add two rows to it.</p>
-<pre><code>var section = Titanium.UI.createTableViewSection();
+<pre><code>var section = Ti.UI.createTableViewSection();
 section.headerTitle = "Hello";
-var row1 = Titanium.UI.createTableViewRow({title:"Hello 1"});
-var row2 = Titanium.UI.createTableViewRow({title:"Hello 2"});
+var row1 = Ti.UI.createTableViewRow({title:"Hello 1"});
+var row2 = Ti.UI.createTableViewRow({title:"Hello 2"});
 section.add(row1);
 section.add(row2);
 tableview.add(section);
@@ -23970,7 +23970,7 @@ Ti.UI.TableViewSection = {
     size:null,
 
     /**
-     * One of Titanium.UI.Android.SOFT_KEYBOARD_DEFAULT_ON_FOCUS, Titanium.UI.Android.SOFT_KEYBOARD_HIDE_ON_FOCUS, or Titanium.UI.Android.SOFT_KEYBOARD_SHOW_ON_FOCUS. (Android only)
+     * One of Ti.UI.Android.SOFT_KEYBOARD_DEFAULT_ON_FOCUS, Ti.UI.Android.SOFT_KEYBOARD_HIDE_ON_FOCUS, or Ti.UI.Android.SOFT_KEYBOARD_SHOW_ON_FOCUS. (Android only)
      * platforms: android
      * @type int
      * @since 0.9
@@ -24123,25 +24123,25 @@ Ti.UI.TableViewSection = {
 /**
  * Notes: <p>Both Text Areas and Text Fields can control the buttons displayed in a button bar above the keyboard when it's visible.</p>
 <p>Example using a custom keyboard toolbar:</p>
-<pre><code>var textfield = Titanium.UI.createTextField({
+<pre><code>var textfield = Ti.UI.createTextField({
     color:'#336699',
     value:'Focus to see keyboard w/ toolbar',
     height:35,
     width:300,
     top:10,
-    borderStyle:Titanium.UI.INPUT_BORDERSTYLE_ROUNDED,
+    borderStyle:Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
     keyboardToolbar:[flexSpace,camera, flexSpace,tf,flexSpace, send,flexSpace],
     keyboardToolbarColor: '#999',   
     keyboardToolbarHeight: 40,
 });
 </code></pre>
  * platforms: android, iphone, ipad
- * @namespace <p>A Text Area is created by the method {@link Titanium.UI.createTextArea}. The Text Area is a multiline field.</p>
+ * @namespace <p>A Text Area is created by the method {@link Ti.UI.createTextArea}. The Text Area is a multiline field.</p>
  * @since 0.8
  * 
  * @example Basic Text Area with Customizations
  * <p>This example created a highly customized text area.</p>
-<pre><code>var ta1 = Titanium.UI.createTextArea({
+<pre><code>var ta1 = Ti.UI.createTextArea({
     value:'I am a textarea',
     height:70,
     width:300,
@@ -24149,9 +24149,9 @@ Ti.UI.TableViewSection = {
     font:{fontSize:20,fontFamily:'Marker Felt', fontWeight:'bold'},
     color:'#888',
     textAlign:'left',
-    appearance:Titanium.UI.KEYBOARD_APPEARANCE_ALERT,   
-    keyboardType:Titanium.UI.KEYBOARD_NUMBERS_PUNCTUATION,
-    returnKeyType:Titanium.UI.RETURNKEY_EMERGENCY_CALL,
+    appearance:Ti.UI.KEYBOARD_APPEARANCE_ALERT,   
+    keyboardType:Ti.UI.KEYBOARD_NUMBERS_PUNCTUATION,
+    returnKeyType:Ti.UI.RETURNKEY_EMERGENCY_CALL,
     borderWidth:2,
     borderColor:'#bbb',
     borderRadius:5
@@ -24185,7 +24185,7 @@ Ti.UI.TextArea = {
     autoLink:null,
 
     /**
-     * <p>One of {@link Titanium.UI.TEXT_AUTOCAPITALIZATION_NONE}, {@link Titanium.UI.TEXT_AUTOCAPITALIZATION_WORDS}, {@link Titanium.UI.TEXT_AUTOCAPITALIZATION_SENTENCES}, or {@link Titanium.UI.TEXT_AUTOCAPITALIZATION_ALL} to indicate how the field should be capitalized during typing. (only Android)</p>
+     * <p>One of {@link Ti.UI.TEXT_AUTOCAPITALIZATION_NONE}, {@link Ti.UI.TEXT_AUTOCAPITALIZATION_WORDS}, {@link Ti.UI.TEXT_AUTOCAPITALIZATION_SENTENCES}, or {@link Ti.UI.TEXT_AUTOCAPITALIZATION_ALL} to indicate how the field should be capitalized during typing. (only Android)</p>
      * platforms: android, iphone, ipad
      * @type int
      * @since 0.8
@@ -24441,7 +24441,7 @@ Ti.UI.TextArea = {
     size:null,
 
     /**
-     * One of Titanium.UI.Android.SOFT_KEYBOARD_DEFAULT_ON_FOCUS, Titanium.UI.Android.SOFT_KEYBOARD_HIDE_ON_FOCUS, or Titanium.UI.Android.SOFT_KEYBOARD_SHOW_ON_FOCUS. (Android only)
+     * One of Ti.UI.Android.SOFT_KEYBOARD_DEFAULT_ON_FOCUS, Ti.UI.Android.SOFT_KEYBOARD_HIDE_ON_FOCUS, or Ti.UI.Android.SOFT_KEYBOARD_SHOW_ON_FOCUS. (Android only)
      * platforms: android
      * @type int
      * @since 0.8
@@ -24633,34 +24633,34 @@ Ti.UI.TextArea = {
 }
 
 /**
- * Notes: <p>On iPhone, the borderStyle can be set with a constant from {@link Titanium.UI}.</p>
+ * Notes: <p>On iPhone, the borderStyle can be set with a constant from {@link Ti.UI}.</p>
 <p>Both Text Areas and Text Fields can control the buttons displayed in a button bar above the keyboard when it's visible.</p>
 <p>Example using a custom keyboard toolbar:</p>
-<pre><code>var textfield = Titanium.UI.createTextField({
+<pre><code>var textfield = Ti.UI.createTextField({
     color:'#336699',
     value:'Focus to see keyboard w/ toolbar',
     height:35,
     width:300,
     top:10,
-    borderStyle:Titanium.UI.INPUT_BORDERSTYLE_ROUNDED,
+    borderStyle:Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
     keyboardToolbar:[flexSpace,camera, flexSpace,tf,flexSpace, send,flexSpace],
     keyboardToolbarColor: '#999',   
     keyboardToolbarHeight: 40,
 });
 </code></pre>
  * platforms: android, iphone, ipad
- * @namespace <p>A Text Area is created by the method {@link Titanium.UI.createTextField}. The Text Field is a single line field.</p>
+ * @namespace <p>A Text Area is created by the method {@link Ti.UI.createTextField}. The Text Field is a single line field.</p>
  * @since 0.8
  * 
  * @example Basic Text Field with rounded border
  * <p>Create a simple text field with a round border style.</p>
-<pre><code>var tf1 = Titanium.UI.createTextField({
+<pre><code>var tf1 = Ti.UI.createTextField({
     color:'#336699',
     height:35,
     top:10,
     left:10,
     width:250,
-    borderStyle:Titanium.UI.INPUT_BORDERSTYLE_ROUNDED
+    borderStyle:Ti.UI.INPUT_BORDERSTYLE_ROUNDED
 });
 </code></pre>
  */
@@ -24683,7 +24683,7 @@ Ti.UI.TextField = {
     animatedCenterPoint:null,
 
     /**
-     * <p>One of {@link Titanium.UI.TEXT_AUTOCAPITALIZATION_NONE}, {@link Titanium.UI.TEXT_AUTOCAPITALIZATION_WORDS}, {@link Titanium.UI.TEXT_AUTOCAPITALIZATION_SENTENCES}, or {@link Titanium.UI.TEXT_AUTOCAPITALIZATION_ALL} to indicate how the field should be capitalized during typing.</p>
+     * <p>One of {@link Ti.UI.TEXT_AUTOCAPITALIZATION_NONE}, {@link Ti.UI.TEXT_AUTOCAPITALIZATION_WORDS}, {@link Ti.UI.TEXT_AUTOCAPITALIZATION_SENTENCES}, or {@link Ti.UI.TEXT_AUTOCAPITALIZATION_ALL} to indicate how the field should be capitalized during typing.</p>
      * platforms: android, iphone, ipad
      * @type int
      * @since 0.8
@@ -25043,7 +25043,7 @@ Ti.UI.TextField = {
     size:null,
 
     /**
-     * One of Titanium.UI.Android.SOFT_KEYBOARD_DEFAULT_ON_FOCUS, Titanium.UI.Android.SOFT_KEYBOARD_HIDE_ON_FOCUS, or Titanium.UI.Android.SOFT_KEYBOARD_SHOW_ON_FOCUS. (Android only)
+     * One of Ti.UI.Android.SOFT_KEYBOARD_DEFAULT_ON_FOCUS, Ti.UI.Android.SOFT_KEYBOARD_HIDE_ON_FOCUS, or Ti.UI.Android.SOFT_KEYBOARD_SHOW_ON_FOCUS. (Android only)
      * platforms: android
      * @type int
      * @since 0.8
@@ -25244,7 +25244,7 @@ Ti.UI.TextField = {
 
 /**
  * platforms: iphone, ipad
- * @namespace <p>A Toolbar is created by the method {@link Titanium.UI.createToolbar}.  A Toolbar can be placed at the bottom of a window and contain buttons.</p>
+ * @namespace <p>A Toolbar is created by the method {@link Ti.UI.createToolbar}.  A Toolbar can be placed at the bottom of a window and contain buttons.</p>
  * @since 0.8
  */
 Ti.UI.Toolbar = {
@@ -25608,12 +25608,12 @@ Ti.UI.Toolbar = {
 
 /**
  * platforms: android, iphone, ipad
- * @namespace <p>The View is an empty drawing surface or container. The View is created by the method {@link Titanium.UI.createView}.</p>
+ * @namespace <p>The View is an empty drawing surface or container. The View is created by the method {@link Ti.UI.createView}.</p>
  * @since 0.9
  * 
  * @example Round View Example
  * <p>Create a rounded view.</p>
-<pre><code>var view = Titanium.UI.createView({
+<pre><code>var view = Ti.UI.createView({
    borderRadius:10,
    backgroundColor:'red',
    width:50,
@@ -25849,7 +25849,7 @@ Ti.UI.View = {
     size:null,
 
     /**
-     * One of Titanium.UI.Android.SOFT_KEYBOARD_DEFAULT_ON_FOCUS, Titanium.UI.Android.SOFT_KEYBOARD_HIDE_ON_FOCUS, or Titanium.UI.Android.SOFT_KEYBOARD_SHOW_ON_FOCUS. (Android only)
+     * One of Ti.UI.Android.SOFT_KEYBOARD_DEFAULT_ON_FOCUS, Ti.UI.Android.SOFT_KEYBOARD_HIDE_ON_FOCUS, or Ti.UI.Android.SOFT_KEYBOARD_SHOW_ON_FOCUS. (Android only)
      * platforms: android
      * @type int
      * @since 0.9
@@ -26001,13 +26001,13 @@ Ti.UI.View = {
  * Notes: <p>Creating webviews are more expensive than creating pure native views because of the requirement toload the HTML browser into memory.</p>
 <p>Since a webview internally wants to handle its own events, scrolling and other related touch events against it's own view surface, you cannot have both Titanium style events against the webview instance and internal Javascript events in the DOM.  You must choose between one or the other.</p>
  * platforms: android, iphone, ipad
- * @namespace <p>The Web View allows you to open an HTML5 based view which can load either local or remote content. The content can be any valid web content such as HTML, PDF, SVG or other WebKit supported content types. The Web View is created by the method {@link Titanium.UI.createWebView}.</p>
+ * @namespace <p>The Web View allows you to open an HTML5 based view which can load either local or remote content. The content can be any valid web content such as HTML, PDF, SVG or other WebKit supported content types. The Web View is created by the method {@link Ti.UI.createWebView}.</p>
  * @since 0.8
  * 
  * @example Basic Web View to external URL example
  * <p>Create a web view to a remote URL and open the window as modal.</p>
-<pre><code>    var webview = Titanium.UI.createWebView({url:'http://www.appcelerator.com'});
-    var window = Titanium.UI.createWindow();
+<pre><code>    var webview = Ti.UI.createWebView({url:'http://www.appcelerator.com'});
+    var window = Ti.UI.createWindow();
     window.add(webview);
     window.open({modal:true});
 </code></pre>
@@ -26271,7 +26271,7 @@ Ti.UI.WebView = {
     size:null,
 
     /**
-     * One of Titanium.UI.Android.SOFT_KEYBOARD_DEFAULT_ON_FOCUS, Titanium.UI.Android.SOFT_KEYBOARD_HIDE_ON_FOCUS, or Titanium.UI.Android.SOFT_KEYBOARD_SHOW_ON_FOCUS. (Android only)
+     * One of Ti.UI.Android.SOFT_KEYBOARD_DEFAULT_ON_FOCUS, Ti.UI.Android.SOFT_KEYBOARD_HIDE_ON_FOCUS, or Ti.UI.Android.SOFT_KEYBOARD_SHOW_ON_FOCUS. (Android only)
      * platforms: android
      * @type int
      * @since 0.8
@@ -26513,7 +26513,7 @@ Ti.UI.WebView = {
 <p>Windows can be loaded from another Javascript file by specifying the property <tt>url</tt> and reference a file relative to your application <tt>Resources</tt> folder.  It's important to note that Titanium will refuse to load Javascript files from a remote URL. Loading remote Javascript from a URL and providing it with the full capabilities of the Titanium API would be very dangerous. </p>
 <p>When you Window is loaded from a separate Javascript file, the code will be executed in a separate Javascript context (called a "sub-context") than your <tt>app.js</tt> global context.  It will also execute in its own separate thread.<br>
 </p>
-<p>The special property {@link Titanium.UI.currentWindow} is available inside a sub-context that points to the Javascript instance by reference in the global context.<br>
+<p>The special property {@link Ti.UI.currentWindow} is available inside a sub-context that points to the Javascript instance by reference in the global context.<br>
 </p>
 <h3 id="passing_data">Passing Data</h3>
 <p>By default, sub-context variables cannot access Javascript references in the global context.  However, the global context can allow its sub-contexts the ability to have access to properties and functions in the global context by reference assignment.  An example best illustrates how to do this.</p>
@@ -26526,7 +26526,7 @@ function b()
 </code></pre>
 
 <p>Now, you can create a new Window - let's call it <tt>foo.js</tt> - in your <tt>app.js</tt>.</p>
-<pre><code>var w = Titanium.UI.createWindow({
+<pre><code>var w = Ti.UI.createWindow({
     url:'foo.js'
 });
 </code></pre>
@@ -26537,20 +26537,20 @@ w.b = b;
 </code></pre>
 
 <p>Of course, you could give them a different name than their original names.  However, what name you give them in your <tt>app.js</tt> is how you will reference them in <tt>foo.js</tt>.  Now, let's look at the code for <tt>foo.js</tt>.</p>
-<pre><code>alert("b() = "+Titanium.UI.currentWindow.b());
+<pre><code>alert("b() = "+Ti.UI.currentWindow.b());
 </code></pre>
 
 <p>In the above code, the <tt>foo.js</tt> will execute the function <tt>b</tt> in the global context and return the result.  Since <tt>b</tt> is a reference (vs. a copy by value), any changes made to these Javascript references will be immediately available in all sub-contexts.</p>
 <h3 id="events">Events</h3>
 <p>If you'd like to send events to a window from the global context and vice versa, you could use the built-in event mechanism.  For example, you could define a custom event called <tt>foo</tt>. The window could listen for this event and then respond with some action.  For example, in your sub-context you might define:</p>
-<pre><code>Titanium.UI.currentWindow.addEventListener('foo',function(e)
+<pre><code>Ti.UI.currentWindow.addEventListener('foo',function(e)
 {
-    Titanium.API.info("foo event received = "+JSON.stringify(e));
+    Ti.API.info("foo event received = "+JSON.stringify(e));
 });
 </code></pre>
 
 <p>You could now fire the event from <tt>app.js</tt> like this:</p>
-<pre><code>var window = Titanium.UI.createWindow({
+<pre><code>var window = Ti.UI.createWindow({
     url:'bar.js'
 });
 window.open();
@@ -26563,18 +26563,18 @@ window.fireEvent('foo',{a:'b'});
 <li>You can only send JSON-serializable data in a fireEvent.  If you attempt to send objects that have function references, they will be null.</li>
 </ul>
 <h3 id="animations">Animations</h3>
-<p>Windows can be animated like any normal {@link Titanium.UI.View}.  To transition between 2 windows, you can use the <tt>transition</tt> property on an animation.  For example, to flip right-to-left between two windows, you could do the following:</p>
-<pre><code>var window2 = Titanium.UI.createWindow({url:'foo.js'});
+<p>Windows can be animated like any normal {@link Ti.UI.View}.  To transition between 2 windows, you can use the <tt>transition</tt> property on an animation.  For example, to flip right-to-left between two windows, you could do the following:</p>
+<pre><code>var window2 = Ti.UI.createWindow({url:'foo.js'});
 var t = Ti.UI.iPhone.AnimationStyle.FLIP_FROM_LEFT;
 window1.animate({view:window2,transition:t});
 </code></pre>
 
 <p>In the above example, the <tt>window2</tt> view will be animated from the right-to-left over <tt>window1</tt>.</p>
 <p>Windows can be opened or closed with animation.  In the example below, we create a window that will open from small to large with a bounce effect.  This is done by applying a transformation at initialization time that scales the original size of the window to 0.  When the window is opened, a new 2D transformation is applied that will scale the window size from 0 to 110% of it's original size and then, after 1/20th of a second, will scale it back to it's original size at 100%. This gives the bounce effect during animation. </p>
-<pre><code>var t = Titanium.UI.create2DMatrix().scale(0);
+<pre><code>var t = Ti.UI.create2DMatrix().scale(0);
 
 // create a window with the initial transform scaled to 0
-var w = Titanium.UI.createWindow({
+var w = Ti.UI.createWindow({
     backgroundColor:'#336699',
     borderWidth:8,
     borderColor:'#999',
@@ -26586,9 +26586,9 @@ var w = Titanium.UI.createWindow({
 });
 
 // create first transform to go beyond normal size
-var t1 = Titanium.UI.create2DMatrix().scale(1.1);
+var t1 = Ti.UI.create2DMatrix().scale(1.1);
 
-var a = Titanium.UI.createAnimation();
+var a = Ti.UI.createAnimation();
 a.transform = t1;
 a.duration = 200;
 
@@ -26596,7 +26596,7 @@ a.duration = 200;
 a.addEventListener('complete', function()
 {
     // we can use the identity transform to take it back to it's real size
-    var t2 = Titanium.UI.create2DMatrix();
+    var t2 = Ti.UI.create2DMatrix();
     w.animate({transform:t2, duration:200});
 });
 </code></pre>
@@ -26607,7 +26607,7 @@ a.addEventListener('complete', function()
 <p>The example below is a modal window.</p>
 <p><img alt="modal" src="http://img.skitch.com/20100406-bqb3f8pb6e4ger7wkcdcw5mbar.png"></p>
 <p>You can create this type of modal window on iPad with the following code snippet:</p>
-<pre><code>var window = Titanium.UI.createWindow();
+<pre><code>var window = Ti.UI.createWindow();
 window.open({
     modal:true,
     modalTransitionStyle: Ti.UI.iPhone.MODAL_TRANSITION_STYLE_FLIP_HORIZONTAL,
@@ -26618,18 +26618,18 @@ window.open({
 <h3 id="android_root_windows">Android "root" Windows</h3>
 <p>In Android, you may wish to specify that a window which you create (such as the first window) should be considered the root window and that the application should exit when the back button is pressed from that window.  This is particularly useful if your application is not using a Tab Group and therefore the splash screen window is appearing whenever you press the back button from your lowest window on the stack.</p>
 <p>To indicate that a particular window should cause an application to exit when the back button is pressed, pass <tt>exitOnClose: true</tt> as one of the creation arguments, as shown here:</p>
-<pre><code>var win = Titanium.UI.createWindow({
+<pre><code>var win = Ti.UI.createWindow({
     title: 'My Root Window',
     exitOnClose: true
 });
 </code></pre>
  * platforms: android, iphone, ipad
- * @namespace <p>The Window is an empty drawing surface or container. The Window is created by the method {@link Titanium.UI.createWindow}. Unlike {@link Titanium.UI.View}, Windows can be opened and closed and can have special display properties such as <tt>fullscreen</tt> or <tt>modal</tt>.</p>
+ * @namespace <p>The Window is an empty drawing surface or container. The Window is created by the method {@link Ti.UI.createWindow}. Unlike {@link Ti.UI.View}, Windows can be opened and closed and can have special display properties such as <tt>fullscreen</tt> or <tt>modal</tt>.</p>
  * @since 0.9
  * 
  * @example Full Screen Window example
  * <p>Create a fullscreen window with a red background.</p>
-<pre><code>var window = Titanium.UI.createWindow({
+<pre><code>var window = Ti.UI.createWindow({
    backgroundColor:'red'
 });
 window.open({fullscreen:true});
@@ -26918,7 +26918,7 @@ Ti.UI.Window = {
     opacity:null,
 
     /**
-     * <p>Array of orientation mode constants defined in {@link Titanium.UI}.  On Android, orientation modes that can be set are dependant on the Android SDK level of the device itself.  It should be noted that, the definition of portrait or landscape mode can vary based on the physical orientation of the device.  For example, on some devices {@link Titanium.UI.LANDSCAPE_LEFT} represents the top of the device being at the 270 degree position but other devices may (based on camera position for example) treat this position as {@link Titanium.UI.LANDSCAPE_RIGHT}.  In general, applications for Android that need to be aware of orientation should try and limit their orientation logic to handling either portrait or landscape rather than worrying about the reverse modes.  This approach will allow the orientation modes to adopt a more natural feel for the specific device.  The following list breaks down the orientation behavior on Android:  1) ({@link Titanium.UI.PORTRAIT} OR {@link Titanium.UI.UPSIDE_PORTRAIT}) AND ({@link Titanium.UI.LANDSCAPE_LEFT} OR {@link Titanium.UI.LANDSCAPE_RIGHT}) - Enables full sensor which lets the operating system control the orientation of the screen based on the sensor inside the device.  2) {@link Titanium.UI.PORTRAIT} OR {@link Titanium.UI.UPSIDE_PORTRAIT} - Enables sensor portrait mode on Android 2.3 and above.  Sensor portrait mode on Android means the screen will shift between both portrait modes according to the sensor inside the device.  If the Android version is less than 2.3, then normal portrait mode is locked.  3) {@link Titanium.UI.LANDSCAPE_LEFT} OR {@link Titanium.UI.LANDSCAPE_RIGHT} - Enables sensor landscape mode on Android 2.3 and above.  Sensor landscape mode on Android means the screen will shift between both landscape modes according to the sensor inside the device.  If the Android version is less than 2.3, then normal landscape mode is locked.  4) {@link Titanium.UI.PORTRAIT} - Locks screen orientation to portrait mode  5) {@link Titanium.UI.LANDSCAPE} - Locks screen orientation to landscape mode  6) empty array - resets the orientation to default sensor control</p>
+     * <p>Array of orientation mode constants defined in {@link Ti.UI}.  On Android, orientation modes that can be set are dependant on the Android SDK level of the device itself.  It should be noted that, the definition of portrait or landscape mode can vary based on the physical orientation of the device.  For example, on some devices {@link Ti.UI.LANDSCAPE_LEFT} represents the top of the device being at the 270 degree position but other devices may (based on camera position for example) treat this position as {@link Ti.UI.LANDSCAPE_RIGHT}.  In general, applications for Android that need to be aware of orientation should try and limit their orientation logic to handling either portrait or landscape rather than worrying about the reverse modes.  This approach will allow the orientation modes to adopt a more natural feel for the specific device.  The following list breaks down the orientation behavior on Android:  1) ({@link Ti.UI.PORTRAIT} OR {@link Ti.UI.UPSIDE_PORTRAIT}) AND ({@link Ti.UI.LANDSCAPE_LEFT} OR {@link Ti.UI.LANDSCAPE_RIGHT}) - Enables full sensor which lets the operating system control the orientation of the screen based on the sensor inside the device.  2) {@link Ti.UI.PORTRAIT} OR {@link Ti.UI.UPSIDE_PORTRAIT} - Enables sensor portrait mode on Android 2.3 and above.  Sensor portrait mode on Android means the screen will shift between both portrait modes according to the sensor inside the device.  If the Android version is less than 2.3, then normal portrait mode is locked.  3) {@link Ti.UI.LANDSCAPE_LEFT} OR {@link Ti.UI.LANDSCAPE_RIGHT} - Enables sensor landscape mode on Android 2.3 and above.  Sensor landscape mode on Android means the screen will shift between both landscape modes according to the sensor inside the device.  If the Android version is less than 2.3, then normal landscape mode is locked.  4) {@link Ti.UI.PORTRAIT} - Locks screen orientation to portrait mode  5) {@link Ti.UI.LANDSCAPE} - Locks screen orientation to landscape mode  6) empty array - resets the orientation to default sensor control</p>
      * platforms: android, iphone, ipad
      * @type int
      * @since 0.9
@@ -26950,7 +26950,7 @@ Ti.UI.Window = {
     size:null,
 
     /**
-     * One of Titanium.UI.Android.SOFT_KEYBOARD_DEFAULT_ON_FOCUS, Titanium.UI.Android.SOFT_KEYBOARD_HIDE_ON_FOCUS, or Titanium.UI.Android.SOFT_KEYBOARD_SHOW_ON_FOCUS. (Android only)
+     * One of Ti.UI.Android.SOFT_KEYBOARD_DEFAULT_ON_FOCUS, Ti.UI.Android.SOFT_KEYBOARD_HIDE_ON_FOCUS, or Ti.UI.Android.SOFT_KEYBOARD_SHOW_ON_FOCUS. (Android only)
      * platforms: android
      * @type int
      * @since 0.9
@@ -27226,9 +27226,9 @@ Ti.UI.iOS = {
     },
 
     /**
-     * create and return an instance of {@link Titanium.UI.iOS.AdView}
+     * create and return an instance of {@link Ti.UI.iOS.AdView}
      * platforms: iphone, ipad
-     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.UI.iOS.AdView}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Ti.UI.iOS.AdView}
      * @since 1.4
      */
     createAdView:function(parameters) {
@@ -27259,7 +27259,7 @@ Ti.UI.iOS = {
 
 /**
  * platforms: iphone, ipad
- * @namespace <p>The AdView is a view for display Apple iAds. The View is created by the method {@link Titanium.UI.iOS.createAdView}.</p>
+ * @namespace <p>The AdView is a view for display Apple iAds. The View is created by the method {@link Ti.UI.iOS.createAdView}.</p>
  * @since 1.4
  */
 Ti.UI.iOS.AdView = {
@@ -27717,18 +27717,18 @@ Ti.UI.iPad = {
     },
 
     /**
-     * create and return an instance of {@link Titanium.UI.iPad.Popover}
+     * create and return an instance of {@link Ti.UI.iPad.Popover}
      * platforms: ipad
-     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.UI.iPad.Popover}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Ti.UI.iPad.Popover}
      * @since 1.2
      */
     createPopover:function(parameters) {
     },
 
     /**
-     * create and return an instance of {@link Titanium.UI.iPad.SplitWindow}
+     * create and return an instance of {@link Ti.UI.iPad.SplitWindow}
      * platforms: ipad
-     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.UI.iPad.SplitWindow}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Ti.UI.iPad.SplitWindow}
      * @since 1.2
      */
     createSplitWindow:function(parameters) {
@@ -27759,7 +27759,7 @@ Ti.UI.iPad = {
 
 /**
  * platforms: ipad
- * @namespace <p>A Popover is used to manage the presentation of content in a popover. You use popovers to present information temporarily but in a way that does not take over the entire screen like a modal view does. The popover content is layered on top of your existing content in a special type of window. The popover remains visible until the user taps outside of the popover window or you explicitly dismiss it. The Popover is created by the method {@link Titanium.UI.iPad.createPopover}.</p>
+ * @namespace <p>A Popover is used to manage the presentation of content in a popover. You use popovers to present information temporarily but in a way that does not take over the entire screen like a modal view does. The popover content is layered on top of your existing content in a special type of window. The popover remains visible until the user taps outside of the popover window or you explicitly dismiss it. The Popover is created by the method {@link Ti.UI.iPad.createPopover}.</p>
 <p><img alt="popover" src="http://img.skitch.com/20100406-pmssjk1a3a65s6ui8qnbqi59c4.png"></p>
  * @since 1.2
  * 
@@ -28196,12 +28196,12 @@ Ti.UI.iPad.Popover = {
 }
 
 /**
- * Notes: <p>The SplitWindow inherits its methods and properties from {@link Titanium.UI.Window}.</p>
+ * Notes: <p>The SplitWindow inherits its methods and properties from {@link Ti.UI.Window}.</p>
 <p>The <tt>masterView</tt> and <tt>detailView</tt> properties are required in the constructor of the SplitWindow and cannot be changed once set.</p>
 <p>The SplitWindow is a top-level window and cannot be contained within another window or view.<br>
 </p>
  * platforms: ipad
- * @namespace <p>A SplitWindow is a window that manages the presentation of two side-by-side view controllers. You use this class to implement a master-detail interface, in which the left-side view presents a list of items and the right-side presents details of the selected item. The SplitView is for use exclusively on iPad devices. The SplitWindow is created by the method {@link Titanium.UI.iPad.createSplitWindow}.</p>
+ * @namespace <p>A SplitWindow is a window that manages the presentation of two side-by-side view controllers. You use this class to implement a master-detail interface, in which the left-side view presents a list of items and the right-side presents details of the selected item. The SplitView is for use exclusively on iPad devices. The SplitWindow is created by the method {@link Ti.UI.iPad.createSplitWindow}.</p>
 <p><img alt="splitview" src="http://img.skitch.com/20100406-1f85bm9cx8t768xgsjqax1ng6y.png"></p>
  * @since 1.2
  * 
@@ -28649,7 +28649,7 @@ Ti.UI.iPhone = {
     MODAL_PRESENTATION_FULLSCREEN:null,
 
     /**
-     * <p>The height of the presented window is set to the height of the screen and the view's width is set to the width of the screen in a portrait orientation. Any uncovered areas are dimmed to prevent the user from interacting with them. (In portrait orientations, this option is essentially the same as {@link Titanium.UI.iPhone.MODAL_PRESENTATION_FULLSCREEN}). This is currently only available currently on iPhone/iPad and SDK 3.2+.</p>
+     * <p>The height of the presented window is set to the height of the screen and the view's width is set to the width of the screen in a portrait orientation. Any uncovered areas are dimmed to prevent the user from interacting with them. (In portrait orientations, this option is essentially the same as {@link Ti.UI.iPhone.MODAL_PRESENTATION_FULLSCREEN}). This is currently only available currently on iPhone/iPad and SDK 3.2+.</p>
      * platforms: iphone, ipad
      * @type int
      * @since 0.5
@@ -28681,7 +28681,7 @@ Ti.UI.iPhone = {
     MODAL_TRANSITION_STYLE_FLIP_HORIZONTAL:null,
 
     /**
-     * <p>When the window is presented, one corner of the current view curls up to reveal the modal view underneath. On dismissal, the curled up page unfurls itself back on top of the modal view. A modal view presented using this transition is itself prevented from presenting any additional modal views. This transition style is supported only if the window is presenting a {@link Titanium.UI.iPhone.MODAL_PRESENTATION_FULLSCREEN} modal presentation style.  This is currently only available currently on iPhone/iPad and SDK 3.2+.</p>
+     * <p>When the window is presented, one corner of the current view curls up to reveal the modal view underneath. On dismissal, the curled up page unfurls itself back on top of the modal view. A modal view presented using this transition is itself prevented from presenting any additional modal views. This transition style is supported only if the window is presenting a {@link Ti.UI.iPhone.MODAL_PRESENTATION_FULLSCREEN} modal presentation style.  This is currently only available currently on iPhone/iPad and SDK 3.2+.</p>
      * platforms: iphone, ipad
      * @type int
      * @since 0.5
@@ -28733,9 +28733,9 @@ Ti.UI.iPhone = {
     },
 
     /**
-     * create and return an instance of {@link Titanium.UI.iPhone.NavigationGroup}
+     * create and return an instance of {@link Ti.UI.iPhone.NavigationGroup}
      * platforms: iphone, ipad
-     * @param {object} parameters (optional) a dictionary object properties defined in {@link Titanium.UI.iPhone.NavigationGroup}
+     * @param {object} parameters (optional) a dictionary object properties defined in {@link Ti.UI.iPhone.NavigationGroup}
      * @since 0.5
      */
     createNavigationGroup:function(parameters) {
@@ -28788,7 +28788,7 @@ Ti.UI.iPhone = {
 
 /**
  * platforms: iphone, ipad
- * @namespace <p>A set of constants for the styles available for {@link Titanium.UI.ActivityIndicator} objects.</p>
+ * @namespace <p>A set of constants for the styles available for {@link Ti.UI.ActivityIndicator} objects.</p>
  * @since 0.9
  */
 Ti.UI.iPhone.ActivityIndicatorStyle = {
@@ -28875,24 +28875,24 @@ Ti.UI.iPhone.AnimationStyle = {
 /**
  * Notes: <p>The <tt>window</tt> property must be set initially in the constructor when creating a navigation group to the root level window.  All Navigation Groups must have at least one root window that cannot be removed.</p>
  * platforms: iphone, ipad
- * @namespace <p>A Navigation Group implements a specialized view that manages the navigation of hierarchical content. The Navigation Group is created by the method {@link Titanium.UI.iPhone.NavigationGroup}.</p>
+ * @namespace <p>A Navigation Group implements a specialized view that manages the navigation of hierarchical content. The Navigation Group is created by the method {@link Ti.UI.iPhone.NavigationGroup}.</p>
 <p><img alt="navgroup" src="http://img.skitch.com/20100406-rwe44533tkd94fdnbqqudxynpe.png"></p>
 <p>A Navigation Group is very similar to Tab Bars with the exception that they do not maintain a group of windows with a interface bar at the bottom.</p>
  * @since 1.2
  * 
  * @example Simple Navigation Group
  * <p>In this example, we open 2 windows in a navigation group.  When you run this, the initial window should be blue.  When you click the back button, you should see a window that should be red.</p>
-<pre><code>var win = Titanium.UI.createWindow();
-var win1 = Titanium.UI.createWindow({
+<pre><code>var win = Ti.UI.createWindow();
+var win1 = Ti.UI.createWindow({
     backgroundColor:"red",
     title:"Red Window"
 });
-var nav = Titanium.UI.iPhone.createNavigationGroup({
+var nav = Ti.UI.iPhone.createNavigationGroup({
    window: win1
 });
 win.add(nav);
 win.open();
-var win2 = Titanium.UI.createWindow({
+var win2 = Ti.UI.createWindow({
     backgroundColor:"blue",
     title:"Blue Window"
 });
@@ -29282,7 +29282,7 @@ Ti.UI.iPhone.NavigationGroup = {
 
 /**
  * platforms: iphone, ipad
- * @namespace <p>A set of constants for the bar styles used on the <tt>style</tt> property of {@link Titanium.UI.ProgressBar}.</p>
+ * @namespace <p>A set of constants for the bar styles used on the <tt>style</tt> property of {@link Ti.UI.ProgressBar}.</p>
  * @since 0.8
  */
 Ti.UI.iPhone.ProgressBarStyle = {
@@ -29376,7 +29376,7 @@ Ti.UI.iPhone.RowAnimationStyle = {
 
 /**
  * platforms: iphone, ipad
- * @namespace <p>A set of constants for the styles available for {@link Titanium.UI.ActivityIndicator} objects.</p>
+ * @namespace <p>A set of constants for the styles available for {@link Ti.UI.ActivityIndicator} objects.</p>
  * @since 0.9
  */
 Ti.UI.iPhone.ScrollIndicatorStyle = {
@@ -29823,7 +29823,7 @@ Ti.UI.iPhone.SystemIcon = {
 
 /**
  * platforms: iphone, ipad
- * @namespace <p>A set of constants for the style that can be used for the <tt>selectionStyle</tt> property of {@link Titanium.UI.TableViewRow}.</p>
+ * @namespace <p>A set of constants for the style that can be used for the <tt>selectionStyle</tt> property of {@link Ti.UI.TableViewRow}.</p>
  * @since 0.9
  */
 Ti.UI.iPhone.TableViewCellSelectionStyle = {
@@ -29858,7 +29858,7 @@ Ti.UI.iPhone.TableViewCellSelectionStyle = {
 
 /**
  * platforms: iphone, ipad
- * @namespace <p>A set of constants for the position value that can be used for the <tt>position</tt> property of {@link Titanium.UI.TableView} when invoking <tt>scrollToIndex</tt>.</p>
+ * @namespace <p>A set of constants for the position value that can be used for the <tt>position</tt> property of {@link Ti.UI.TableView} when invoking <tt>scrollToIndex</tt>.</p>
  * @since 0.9
  */
 Ti.UI.iPhone.TableViewScrollPosition = {
@@ -29901,7 +29901,7 @@ Ti.UI.iPhone.TableViewScrollPosition = {
 
 /**
  * platforms: iphone, ipad
- * @namespace <p>A set of constants for the style that can be used for the <tt>separatorStyle</tt> property of {@link Titanium.UI.TableView}.</p>
+ * @namespace <p>A set of constants for the style that can be used for the <tt>separatorStyle</tt> property of {@link Ti.UI.TableView}.</p>
  * @since 0.9
  */
 Ti.UI.iPhone.TableViewSeparatorStyle = {
@@ -29928,7 +29928,7 @@ Ti.UI.iPhone.TableViewSeparatorStyle = {
 
 /**
  * platforms: iphone, ipad
- * @namespace <p>A set of constants for the style that can be used for the button <tt>style</tt> property of {@link Titanium.UI.TableView}.</p>
+ * @namespace <p>A set of constants for the style that can be used for the button <tt>style</tt> property of {@link Ti.UI.TableView}.</p>
  * @since 0.9
  */
 Ti.UI.iPhone.TableViewStyle = {
@@ -30085,7 +30085,7 @@ Ti.XML = {
 
 /**
  * platforms: android, iphone, ipad
- * @namespace <p>The DOMDocument returned from {@link Titanium.XML.parseString}. The result is an object that implementes the DOM Level 2 API.</p>
+ * @namespace <p>The DOMDocument returned from {@link Ti.XML.parseString}. The result is an object that implementes the DOM Level 2 API.</p>
  * @since 0.9
  */
 Ti.XML.DOMDocument = {
