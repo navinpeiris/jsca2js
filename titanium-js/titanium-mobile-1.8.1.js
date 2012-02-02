@@ -1,56 +1,27 @@
 /**
  * platforms: Android, iPhone, iPad, Mobile Web
+ * @namespace <p>Simple object that defines properties to be set on the next accepted socket.</p>
  */
 var AcceptDict = function() {
 };
 AcceptDict.prototype = {
 
     /**
-     * <p>The callback to be fired after the socket enters the ERROR state</p>
+     * <p>Callback to be fired when the socket enters the {@link Ti.Network.Socket.ERROR} state.</p>
      * @type Callback<ErrorCallbackArgs>
      * @since 1.7 (Android), 1.7 (iPhone), 1.7 (iPad), 1.8 (Mobile Web)
      */
     error:null,
 
     /**
-     * <p>The timeout for connect() and all I/O write() operations. Cannot be modified when not in the INITIALIZED state</p>
+     * <p>Timeout, in milliseconds, for all <code>write</code> operations.</p>
      * @type Number
      * @since 1.7 (Android), 1.7 (iPhone), 1.7 (iPad), 1.8 (Mobile Web)
      */
     timeout:null,
 
 
-    /**
-     * <p>Gets the value of the {@link AcceptDict.error} property.</p>
-     * @returns Callback<ErrorCallbackArgs>
-     * @since 1.7 (Android), 1.7 (iPhone), 1.7 (iPad), 1.8 (Mobile Web)
-     */
-    getError:function() {
-    },
 
-    /**
-     * <p>Gets the value of the {@link AcceptDict.timeout} property.</p>
-     * @returns Number
-     * @since 1.7 (Android), 1.7 (iPhone), 1.7 (iPad), 1.8 (Mobile Web)
-     */
-    getTimeout:function() {
-    },
-
-    /**
-     * <p>Sets the value of the {@link AcceptDict.error} property.</p>
-     * @param {Callback<ErrorCallbackArgs>} error <p>New value for the property.</p>
-     * @since 1.7 (Android), 1.7 (iPhone), 1.7 (iPad), 1.8 (Mobile Web)
-     */
-    setError:function(error) {
-    },
-
-    /**
-     * <p>Sets the value of the {@link AcceptDict.timeout} property.</p>
-     * @param {Number} timeout <p>New value for the property.</p>
-     * @since 1.7 (Android), 1.7 (iPhone), 1.7 (iPad), 1.8 (Mobile Web)
-     */
-    setTimeout:function(timeout) {
-    }
 };
 
 /**
@@ -61,83 +32,275 @@ var AcceptedCallbackArgs = function() {
 AcceptedCallbackArgs.prototype = {
 
     /**
-     * <p>Socket which represents the inbound connection; this should be considered a 'connected' socket and is created in the CONNECTED state</p>
+     * <p>Socket which represents the inbound connection.</p>
      * @type Ti.Network.Socket.TCP
      * @since 1.7 (Android), 1.7 (iPhone), 1.7 (iPad), 1.8 (Mobile Web)
      */
     inbound:null,
 
     /**
-     * <p>Socket which received the connection</p>
+     * <p>Socket which received the connection.</p>
      * @type Ti.Network.Socket.TCP
      * @since 1.7 (Android), 1.7 (iPhone), 1.7 (iPad), 1.8 (Mobile Web)
      */
     socket:null,
 
 
-    /**
-     * <p>Gets the value of the {@link AcceptedCallbackArgs.inbound} property.</p>
-     * @returns Ti.Network.Socket.TCP
-     * @since 1.7 (Android), 1.7 (iPhone), 1.7 (iPad), 1.8 (Mobile Web)
-     */
-    getInbound:function() {
-    },
 
-    /**
-     * <p>Gets the value of the {@link AcceptedCallbackArgs.socket} property.</p>
-     * @returns Ti.Network.Socket.TCP
-     * @since 1.7 (Android), 1.7 (iPhone), 1.7 (iPad), 1.8 (Mobile Web)
-     */
-    getSocket:function() {
-    },
-
-    /**
-     * <p>Sets the value of the {@link AcceptedCallbackArgs.inbound} property.</p>
-     * @param {Ti.Network.Socket.TCP} inbound <p>New value for the property.</p>
-     * @since 1.7 (Android), 1.7 (iPhone), 1.7 (iPad), 1.8 (Mobile Web)
-     */
-    setInbound:function(inbound) {
-    },
-
-    /**
-     * <p>Sets the value of the {@link AcceptedCallbackArgs.socket} property.</p>
-     * @param {Ti.Network.Socket.TCP} socket <p>New value for the property.</p>
-     * @since 1.7 (Android), 1.7 (iPhone), 1.7 (iPad), 1.8 (Mobile Web)
-     */
-    setSocket:function(socket) {
-    }
 };
 
 /**
  * platforms: Android, iPhone, iPad, Mobile Web
+ * @namespace <p>A button bar or tabbed bar item can have an image or a title, but not both.
+Buttons with images and buttons with text can be mixed in the same bar, however.</p>
+<p>If both <code>image</code> and <code>title</code> properties are specified for a given item, the 
+<code>image</code> property takes precedence and the <code>title</code> property is ignored.</p>
+ */
+var BarItemType = function() {
+};
+BarItemType.prototype = {
+
+    /**
+     * <p>Whether the button is enabled initially.</p>
+     * @type Boolean
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     */
+    enabled:null,
+
+    /**
+     * <p>Button icon. If specified, takes precedence over <code>title</code>.</p>
+     * @type String|Ti.Blob|Ti.Filesystem.File
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     */
+    image:null,
+
+    /**
+     * <p>Button title, used if no <code>image</code> is specified.</p>
+     * @type String
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     */
+    title:null,
+
+    /**
+     * <p>Width for this button.</p>
+     * @type Number
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     */
+    width:null,
+
+
+
+};
+
+/**
+ * platforms: Android, iPhone, iPad, Mobile Web
+ */
+var CameraMediaItemType = function() {
+};
+CameraMediaItemType.prototype = {
+
+    /**
+     * <p>Simple object defining the user's selected crop rectangle, or <code>null</code> if the user has not edited the photo.</p>
+     * @type CropRectType
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     */
+    cropRect:null,
+
+    /**
+     * <p>The media object, as a {@link Ti.Blob}.</p>
+     * @type Ti.Blob
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     */
+    media:null,
+
+    /**
+     * <p>The type of media, either <code>MEDIA_TYPE_PHOTO</code> or <code>MEDIA_TYPE_VIDEO</code> defined in {@link Ti.Media}.</p>
+     * @type String
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     */
+    mediaType:null,
+
+
+
+};
+
+/**
+ * platforms: Android, iPhone, iPad, Mobile Web
+ */
+var CameraOptionsType = function() {
+};
+CameraOptionsType.prototype = {
+
+    /**
+     * <p>Specifies if the media should be editable after capture/selection.</p>
+     * @type Boolean
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    allowEditing:null,
+
+    /**
+     * <p>Specifies if the dialog should be animated upon showing and hiding.</p>
+     * @type Boolean
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    animated:null,
+
+    /**
+     * <p>Controls the type of arrow and position of the popover.</p>
+     * @type Number
+     * @since 0.8 (iPad)
+     */
+    arrowDirection:null,
+
+    /**
+     * <p>Specifies if the camera should be hidden automatically after the media capture is completed.</p>
+     * @type Boolean
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    autohide:null,
+
+    /**
+     * <p>Function to call if the user presses the cancel button.</p>
+     * @type Callback<Object>
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     */
+    cancel:null,
+
+    /**
+     * <p>Function to call upon receiving an error.</p>
+     * @type Callback<Object>
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     */
+    error:null,
+
+    /**
+     * <p>Show the camera in a popover.</p>
+     * @type Boolean
+     * @since 0.8 (iPad)
+     */
+    inPopOver:null,
+
+    /**
+     * <p>Array of media type constants to allow: <code>MEDIA_TYPE_PHOTO</code> or <code>MEDIA_TYPE_VIDEO</code>.</p>
+     * @type Array<String>
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    mediaTypes:null,
+
+    /**
+     * <p>View to added as an overlay to the camera UI (on top).</p>
+     * @type Ti.UI.View
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     */
+    overlay:null,
+
+    /**
+     * <p>View to position the camera or photo gallery popover on top of.</p>
+     * @type Ti.UI.View
+     * @since 0.8 (iPad)
+     */
+    popoverView:null,
+
+    /**
+     * <p>Specifies if the media should be saved to the photo gallery upon successful capture.</p>
+     * @type Boolean
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     */
+    saveToPhotoGallery:null,
+
+    /**
+     * <p>Indicates if the built-in camera controls should be displayed.</p>
+     * @type Boolean
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    showControls:null,
+
+    /**
+     * <p>Function to call when the camera is closed after a successful capture/selection.</p>
+     * @type Callback<CameraMediaItemType>
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     */
+    success:null,
+
+    /**
+     * <p>Transformation matrix to apply to the camera or photogallery view.</p>
+     * @type Ti.UI.D2Matrix
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    transform:null,
+
+    /**
+     * <p>Maximum duration (in milliseconds) to allow video capture before completing.</p>
+     * @type Number
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    videoMaximumDuration:null,
+
+    /**
+     * <p>Constant to indicate the video quality during capture.</p>
+     * @type Number
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    videoQuality:null,
+
+
+
+};
+
+/**
+ * platforms: Android, iPhone, iPad, Mobile Web
+ * @namespace <p>Only invoked following a successful {@link Ti.Network.Socket.TCP.connect}
+call.</p>
  */
 var ConnectedCallbackArgs = function() {
 };
 ConnectedCallbackArgs.prototype = {
 
     /**
-     * <p>Socket instance that has been connected</p>
+     * <p>Socket instance that has been connected.</p>
      * @type Ti.Network.Socket.TCP
      * @since 1.7 (Android), 1.7 (iPhone), 1.7 (iPad), 1.8 (Mobile Web)
      */
     socket:null,
 
 
-    /**
-     * <p>Gets the value of the {@link ConnectedCallbackArgs.socket} property.</p>
-     * @returns Ti.Network.Socket.TCP
-     * @since 1.7 (Android), 1.7 (iPhone), 1.7 (iPad), 1.8 (Mobile Web)
-     */
-    getSocket:function() {
-    },
+
+};
+
+/**
+ * platforms: Android, iPhone, iPad, Mobile Web
+ * @namespace <p>If supplied, the <code>width</code> and <code>height</code> values must be exact values,
+not <code>'auto'</code>.</p>
+<p>If the size specified is different from the size of the image, the 
+image is cropped and/or scaled to fit the specified size.</p>
+ */
+var CoverFlowImageType = function() {
+};
+CoverFlowImageType.prototype = {
 
     /**
-     * <p>Sets the value of the {@link ConnectedCallbackArgs.socket} property.</p>
-     * @param {Ti.Network.Socket.TCP} socket <p>New value for the property.</p>
-     * @since 1.7 (Android), 1.7 (iPhone), 1.7 (iPad), 1.8 (Mobile Web)
+     * <p>Display height of the image, in Apple points.</p>
+     * @type Number
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
      */
-    setSocket:function(socket) {
-    }
+    height:null,
+
+    /**
+     * <p>Image to use, as a local file URL, <code>Blob</code>, or <code>File</code>.</p>
+     * @type String|Ti.Blob|Ti.Filesystem.File
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     */
+    image:null,
+
+    /**
+     * <p>Display width for the image, in Apple points.</p>
+     * @type Number
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     */
+    width:null,
+
+
+
 };
 
 /**
@@ -176,70 +339,7 @@ CreateBufferArgs.prototype = {
     value:null,
 
 
-    /**
-     * <p>Gets the value of the {@link CreateBufferArgs.byteOrder} property.</p>
-     * @returns Number
-     * @since 1.7 (Android), 1.7 (iPhone), 1.7 (iPad)
-     */
-    getByteOrder:function() {
-    },
 
-    /**
-     * <p>Gets the value of the {@link CreateBufferArgs.length} property.</p>
-     * @returns Number
-     * @since 1.7 (Android), 1.7 (iPhone), 1.7 (iPad)
-     */
-    getLength:function() {
-    },
-
-    /**
-     * <p>Gets the value of the {@link CreateBufferArgs.type} property.</p>
-     * @returns String
-     * @since 1.7 (Android), 1.7 (iPhone), 1.7 (iPad)
-     */
-    getType:function() {
-    },
-
-    /**
-     * <p>Gets the value of the {@link CreateBufferArgs.value} property.</p>
-     * @returns String
-     * @returns Number
-     * @since 1.7 (Android), 1.7 (iPhone), 1.7 (iPad)
-     */
-    getValue:function() {
-    },
-
-    /**
-     * <p>Sets the value of the {@link CreateBufferArgs.byteOrder} property.</p>
-     * @param {Number} byteOrder <p>New value for the property.</p>
-     * @since 1.7 (Android), 1.7 (iPhone), 1.7 (iPad)
-     */
-    setByteOrder:function(byteOrder) {
-    },
-
-    /**
-     * <p>Sets the value of the {@link CreateBufferArgs.length} property.</p>
-     * @param {Number} length <p>New value for the property.</p>
-     * @since 1.7 (Android), 1.7 (iPhone), 1.7 (iPad)
-     */
-    setLength:function(length) {
-    },
-
-    /**
-     * <p>Sets the value of the {@link CreateBufferArgs.type} property.</p>
-     * @param {String} type <p>New value for the property.</p>
-     * @since 1.7 (Android), 1.7 (iPhone), 1.7 (iPad)
-     */
-    setType:function(type) {
-    },
-
-    /**
-     * <p>Sets the value of the {@link CreateBufferArgs.value} property.</p>
-     * @param {String|Number} value <p>New value for the property.</p>
-     * @since 1.7 (Android), 1.7 (iPhone), 1.7 (iPad)
-     */
-    setValue:function(value) {
-    }
 };
 
 /**
@@ -264,38 +364,46 @@ CreateStreamArgs.prototype = {
     source:null,
 
 
-    /**
-     * <p>Gets the value of the {@link CreateStreamArgs.mode} property.</p>
-     * @returns Number
-     * @since 1.7 (Android), 1.7 (iPhone), 1.7 (iPad), 1.8 (Mobile Web)
-     */
-    getMode:function() {
-    },
+
+};
+
+/**
+ * platforms: Android, iPhone, iPad, Mobile Web
+ */
+var CropRectType = function() {
+};
+CropRectType.prototype = {
 
     /**
-     * <p>Gets the value of the {@link CreateStreamArgs.source} property.</p>
-     * @returns Ti.Blob
-     * @returns Ti.Buffer
-     * @since 1.7 (Android), 1.7 (iPhone), 1.7 (iPad), 1.8 (Mobile Web)
+     * <p>Height of the crop rectangle, in pixels.</p>
+     * @type Number
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
      */
-    getSource:function() {
-    },
+    height:null,
 
     /**
-     * <p>Sets the value of the {@link CreateStreamArgs.mode} property.</p>
-     * @param {Number} mode <p>New value for the property.</p>
-     * @since 1.7 (Android), 1.7 (iPhone), 1.7 (iPad), 1.8 (Mobile Web)
+     * <p>Width of the crop rectangle, in pixels.</p>
+     * @type Number
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
      */
-    setMode:function(mode) {
-    },
+    width:null,
 
     /**
-     * <p>Sets the value of the {@link CreateStreamArgs.source} property.</p>
-     * @param {Ti.Blob|Ti.Buffer} source <p>New value for the property.</p>
-     * @since 1.7 (Android), 1.7 (iPhone), 1.7 (iPad), 1.8 (Mobile Web)
+     * <p>X coordinate of the crop rectangle's upper-left corner.</p>
+     * @type Number
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
      */
-    setSource:function(source) {
-    }
+    x:null,
+
+    /**
+     * <p>Y coordinate of the crop rectangle's upper-left corner.</p>
+     * @type Number
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     */
+    y:null,
+
+
+
 };
 
 /**
@@ -334,69 +442,7 @@ DecodeNumberDict.prototype = {
     type:null,
 
 
-    /**
-     * <p>Gets the value of the {@link DecodeNumberDict.byteOrder} property.</p>
-     * @returns Number
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
-     */
-    getByteOrder:function() {
-    },
 
-    /**
-     * <p>Gets the value of the {@link DecodeNumberDict.position} property.</p>
-     * @returns Number
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
-     */
-    getPosition:function() {
-    },
-
-    /**
-     * <p>Gets the value of the {@link DecodeNumberDict.source} property.</p>
-     * @returns Ti.Buffer
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
-     */
-    getSource:function() {
-    },
-
-    /**
-     * <p>Gets the value of the {@link DecodeNumberDict.type} property.</p>
-     * @returns String
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
-     */
-    getType:function() {
-    },
-
-    /**
-     * <p>Sets the value of the {@link DecodeNumberDict.byteOrder} property.</p>
-     * @param {Number} byteOrder <p>New value for the property.</p>
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
-     */
-    setByteOrder:function(byteOrder) {
-    },
-
-    /**
-     * <p>Sets the value of the {@link DecodeNumberDict.position} property.</p>
-     * @param {Number} position <p>New value for the property.</p>
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
-     */
-    setPosition:function(position) {
-    },
-
-    /**
-     * <p>Sets the value of the {@link DecodeNumberDict.source} property.</p>
-     * @param {Ti.Buffer} source <p>New value for the property.</p>
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
-     */
-    setSource:function(source) {
-    },
-
-    /**
-     * <p>Sets the value of the {@link DecodeNumberDict.type} property.</p>
-     * @param {String} type <p>New value for the property.</p>
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
-     */
-    setType:function(type) {
-    }
 };
 
 /**
@@ -435,69 +481,7 @@ DecodeStringDict.prototype = {
     source:null,
 
 
-    /**
-     * <p>Gets the value of the {@link DecodeStringDict.charset} property.</p>
-     * @returns String
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
-     */
-    getCharset:function() {
-    },
 
-    /**
-     * <p>Gets the value of the {@link DecodeStringDict.length} property.</p>
-     * @returns Number
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
-     */
-    getLength:function() {
-    },
-
-    /**
-     * <p>Gets the value of the {@link DecodeStringDict.position} property.</p>
-     * @returns Number
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
-     */
-    getPosition:function() {
-    },
-
-    /**
-     * <p>Gets the value of the {@link DecodeStringDict.source} property.</p>
-     * @returns Ti.Buffer
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
-     */
-    getSource:function() {
-    },
-
-    /**
-     * <p>Sets the value of the {@link DecodeStringDict.charset} property.</p>
-     * @param {String} charset <p>New value for the property.</p>
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
-     */
-    setCharset:function(charset) {
-    },
-
-    /**
-     * <p>Sets the value of the {@link DecodeStringDict.length} property.</p>
-     * @param {Number} length <p>New value for the property.</p>
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
-     */
-    setLength:function(length) {
-    },
-
-    /**
-     * <p>Sets the value of the {@link DecodeStringDict.position} property.</p>
-     * @param {Number} position <p>New value for the property.</p>
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
-     */
-    setPosition:function(position) {
-    },
-
-    /**
-     * <p>Sets the value of the {@link DecodeStringDict.source} property.</p>
-     * @param {Ti.Buffer} source <p>New value for the property.</p>
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
-     */
-    setSource:function(source) {
-    }
 };
 
 /**
@@ -543,85 +527,7 @@ EncodeNumberDict.prototype = {
     type:null,
 
 
-    /**
-     * <p>Gets the value of the {@link EncodeNumberDict.byteOrder} property.</p>
-     * @returns Number
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
-     */
-    getByteOrder:function() {
-    },
 
-    /**
-     * <p>Gets the value of the {@link EncodeNumberDict.dest} property.</p>
-     * @returns Ti.Buffer
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
-     */
-    getDest:function() {
-    },
-
-    /**
-     * <p>Gets the value of the {@link EncodeNumberDict.position} property.</p>
-     * @returns Number
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
-     */
-    getPosition:function() {
-    },
-
-    /**
-     * <p>Gets the value of the {@link EncodeNumberDict.source} property.</p>
-     * @returns Number
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
-     */
-    getSource:function() {
-    },
-
-    /**
-     * <p>Gets the value of the {@link EncodeNumberDict.type} property.</p>
-     * @returns String
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
-     */
-    getType:function() {
-    },
-
-    /**
-     * <p>Sets the value of the {@link EncodeNumberDict.byteOrder} property.</p>
-     * @param {Number} byteOrder <p>New value for the property.</p>
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
-     */
-    setByteOrder:function(byteOrder) {
-    },
-
-    /**
-     * <p>Sets the value of the {@link EncodeNumberDict.dest} property.</p>
-     * @param {Ti.Buffer} dest <p>New value for the property.</p>
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
-     */
-    setDest:function(dest) {
-    },
-
-    /**
-     * <p>Sets the value of the {@link EncodeNumberDict.position} property.</p>
-     * @param {Number} position <p>New value for the property.</p>
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
-     */
-    setPosition:function(position) {
-    },
-
-    /**
-     * <p>Sets the value of the {@link EncodeNumberDict.source} property.</p>
-     * @param {Number} source <p>New value for the property.</p>
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
-     */
-    setSource:function(source) {
-    },
-
-    /**
-     * <p>Sets the value of the {@link EncodeNumberDict.type} property.</p>
-     * @param {String} type <p>New value for the property.</p>
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
-     */
-    setType:function(type) {
-    }
 };
 
 /**
@@ -674,101 +580,7 @@ EncodeStringDict.prototype = {
     sourcePosition:null,
 
 
-    /**
-     * <p>Gets the value of the {@link EncodeStringDict.charset} property.</p>
-     * @returns String
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
-     */
-    getCharset:function() {
-    },
 
-    /**
-     * <p>Gets the value of the {@link EncodeStringDict.dest} property.</p>
-     * @returns Ti.Buffer
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
-     */
-    getDest:function() {
-    },
-
-    /**
-     * <p>Gets the value of the {@link EncodeStringDict.destPosition} property.</p>
-     * @returns Number
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
-     */
-    getDestPosition:function() {
-    },
-
-    /**
-     * <p>Gets the value of the {@link EncodeStringDict.source} property.</p>
-     * @returns String
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
-     */
-    getSource:function() {
-    },
-
-    /**
-     * <p>Gets the value of the {@link EncodeStringDict.sourceLength} property.</p>
-     * @returns Number
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
-     */
-    getSourceLength:function() {
-    },
-
-    /**
-     * <p>Gets the value of the {@link EncodeStringDict.sourcePosition} property.</p>
-     * @returns Number
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
-     */
-    getSourcePosition:function() {
-    },
-
-    /**
-     * <p>Sets the value of the {@link EncodeStringDict.charset} property.</p>
-     * @param {String} charset <p>New value for the property.</p>
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
-     */
-    setCharset:function(charset) {
-    },
-
-    /**
-     * <p>Sets the value of the {@link EncodeStringDict.dest} property.</p>
-     * @param {Ti.Buffer} dest <p>New value for the property.</p>
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
-     */
-    setDest:function(dest) {
-    },
-
-    /**
-     * <p>Sets the value of the {@link EncodeStringDict.destPosition} property.</p>
-     * @param {Number} destPosition <p>New value for the property.</p>
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
-     */
-    setDestPosition:function(destPosition) {
-    },
-
-    /**
-     * <p>Sets the value of the {@link EncodeStringDict.source} property.</p>
-     * @param {String} source <p>New value for the property.</p>
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
-     */
-    setSource:function(source) {
-    },
-
-    /**
-     * <p>Sets the value of the {@link EncodeStringDict.sourceLength} property.</p>
-     * @param {Number} sourceLength <p>New value for the property.</p>
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
-     */
-    setSourceLength:function(sourceLength) {
-    },
-
-    /**
-     * <p>Sets the value of the {@link EncodeStringDict.sourcePosition} property.</p>
-     * @param {Number} sourcePosition <p>New value for the property.</p>
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
-     */
-    setSourcePosition:function(sourcePosition) {
-    }
 };
 
 /**
@@ -779,74 +591,28 @@ var ErrorCallbackArgs = function() {
 ErrorCallbackArgs.prototype = {
 
     /**
-     * <p>A stringified description of the error</p>
+     * <p>A text description of the error.</p>
      * @type String
      * @since 1.7 (Android), 1.7 (iPhone), 1.7 (iPad), 1.8 (Mobile Web)
      */
     error:null,
 
     /**
-     * <p>The error code of the error (potentially system-dependent)</p>
+     * <p>The error code of the error (potentially system-dependent).</p>
      * @type Number
      * @since 1.7 (Android), 1.7 (iPhone), 1.7 (iPad), 1.8 (Mobile Web)
      */
     errorCode:null,
 
     /**
-     * <p>Socket that experienced the error</p>
+     * <p>Socket that experienced the error.</p>
      * @type Ti.Network.Socket.TCP
      * @since 1.7 (Android), 1.7 (iPhone), 1.7 (iPad), 1.8 (Mobile Web)
      */
     socket:null,
 
 
-    /**
-     * <p>Gets the value of the {@link ErrorCallbackArgs.error} property.</p>
-     * @returns String
-     * @since 1.7 (Android), 1.7 (iPhone), 1.7 (iPad), 1.8 (Mobile Web)
-     */
-    getError:function() {
-    },
 
-    /**
-     * <p>Gets the value of the {@link ErrorCallbackArgs.errorCode} property.</p>
-     * @returns Number
-     * @since 1.7 (Android), 1.7 (iPhone), 1.7 (iPad), 1.8 (Mobile Web)
-     */
-    getErrorCode:function() {
-    },
-
-    /**
-     * <p>Gets the value of the {@link ErrorCallbackArgs.socket} property.</p>
-     * @returns Ti.Network.Socket.TCP
-     * @since 1.7 (Android), 1.7 (iPhone), 1.7 (iPad), 1.8 (Mobile Web)
-     */
-    getSocket:function() {
-    },
-
-    /**
-     * <p>Sets the value of the {@link ErrorCallbackArgs.error} property.</p>
-     * @param {String} error <p>New value for the property.</p>
-     * @since 1.7 (Android), 1.7 (iPhone), 1.7 (iPad), 1.8 (Mobile Web)
-     */
-    setError:function(error) {
-    },
-
-    /**
-     * <p>Sets the value of the {@link ErrorCallbackArgs.errorCode} property.</p>
-     * @param {Number} errorCode <p>New value for the property.</p>
-     * @since 1.7 (Android), 1.7 (iPhone), 1.7 (iPad), 1.8 (Mobile Web)
-     */
-    setErrorCode:function(errorCode) {
-    },
-
-    /**
-     * <p>Sets the value of the {@link ErrorCallbackArgs.socket} property.</p>
-     * @param {Ti.Network.Socket.TCP} socket <p>New value for the property.</p>
-     * @since 1.7 (Android), 1.7 (iPhone), 1.7 (iPad), 1.8 (Mobile Web)
-     */
-    setSocket:function(socket) {
-    }
 };
 
 /**
@@ -885,70 +651,7 @@ Font.prototype = {
     fontWeight:null,
 
 
-    /**
-     * <p>Gets the value of the {@link Font.fontFamily} property.</p>
-     * @returns String
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
-     */
-    getFontFamily:function() {
-    },
 
-    /**
-     * <p>Gets the value of the {@link Font.fontSize} property.</p>
-     * @returns Number
-     * @returns String
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
-     */
-    getFontSize:function() {
-    },
-
-    /**
-     * <p>Gets the value of the {@link Font.fontStyle} property.</p>
-     * @returns String
-     * @since 0.8 (iPhone), 0.8 (iPad)
-     */
-    getFontStyle:function() {
-    },
-
-    /**
-     * <p>Gets the value of the {@link Font.fontWeight} property.</p>
-     * @returns String
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
-     */
-    getFontWeight:function() {
-    },
-
-    /**
-     * <p>Sets the value of the {@link Font.fontFamily} property.</p>
-     * @param {String} fontFamily <p>New value for the property.</p>
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
-     */
-    setFontFamily:function(fontFamily) {
-    },
-
-    /**
-     * <p>Sets the value of the {@link Font.fontSize} property.</p>
-     * @param {Number|String} fontSize <p>New value for the property.</p>
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
-     */
-    setFontSize:function(fontSize) {
-    },
-
-    /**
-     * <p>Sets the value of the {@link Font.fontStyle} property.</p>
-     * @param {String} fontStyle <p>New value for the property.</p>
-     * @since 0.8 (iPhone), 0.8 (iPad)
-     */
-    setFontStyle:function(fontStyle) {
-    },
-
-    /**
-     * <p>Sets the value of the {@link Font.fontWeight} property.</p>
-     * @param {String} fontWeight <p>New value for the property.</p>
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
-     */
-    setFontWeight:function(fontWeight) {
-    }
 };
 
 /**
@@ -1163,134 +866,7 @@ Gradient.prototype = {
     type:null,
 
 
-    /**
-     * <p>Gets the value of the {@link Gradient.backfillEnd} property.</p>
-     * @returns Boolean
-     * @since 1.8.0 (iPhone), 1.8.0 (iPad)
-     */
-    getBackfillEnd:function() {
-    },
 
-    /**
-     * <p>Gets the value of the {@link Gradient.backfillStart} property.</p>
-     * @returns Boolean
-     * @since 1.8.0 (iPhone), 1.8.0 (iPad)
-     */
-    getBackfillStart:function() {
-    },
-
-    /**
-     * <p>Gets the value of the {@link Gradient.colors} property.</p>
-     * @returns Array<String>
-     * @returns Array<GradientColorRef>
-     * @since 1.8.0 (iPhone), 1.8.0 (iPad)
-     */
-    getColors:function() {
-    },
-
-    /**
-     * <p>Gets the value of the {@link Gradient.endPoint} property.</p>
-     * @returns Point
-     * @since 1.8.0 (iPhone), 1.8.0 (iPad)
-     */
-    getEndPoint:function() {
-    },
-
-    /**
-     * <p>Gets the value of the {@link Gradient.endRadius} property.</p>
-     * @returns Number
-     * @since 1.8.0 (iPhone), 1.8.0 (iPad)
-     */
-    getEndRadius:function() {
-    },
-
-    /**
-     * <p>Gets the value of the {@link Gradient.startPoint} property.</p>
-     * @returns Point
-     * @since 1.8.0 (iPhone), 1.8.0 (iPad)
-     */
-    getStartPoint:function() {
-    },
-
-    /**
-     * <p>Gets the value of the {@link Gradient.startRadius} property.</p>
-     * @returns Number
-     * @since 1.8.0 (iPhone), 1.8.0 (iPad)
-     */
-    getStartRadius:function() {
-    },
-
-    /**
-     * <p>Gets the value of the {@link Gradient.type} property.</p>
-     * @returns String
-     * @since 1.8.0 (iPhone), 1.8.0 (iPad)
-     */
-    getType:function() {
-    },
-
-    /**
-     * <p>Sets the value of the {@link Gradient.backfillEnd} property.</p>
-     * @param {Boolean} backfillEnd <p>New value for the property.</p>
-     * @since 1.8.0 (iPhone), 1.8.0 (iPad)
-     */
-    setBackfillEnd:function(backfillEnd) {
-    },
-
-    /**
-     * <p>Sets the value of the {@link Gradient.backfillStart} property.</p>
-     * @param {Boolean} backfillStart <p>New value for the property.</p>
-     * @since 1.8.0 (iPhone), 1.8.0 (iPad)
-     */
-    setBackfillStart:function(backfillStart) {
-    },
-
-    /**
-     * <p>Sets the value of the {@link Gradient.colors} property.</p>
-     * @param {Array<String>|Array<GradientColorRef>} colors <p>New value for the property.</p>
-     * @since 1.8.0 (iPhone), 1.8.0 (iPad)
-     */
-    setColors:function(colors) {
-    },
-
-    /**
-     * <p>Sets the value of the {@link Gradient.endPoint} property.</p>
-     * @param {Point} endPoint <p>New value for the property.</p>
-     * @since 1.8.0 (iPhone), 1.8.0 (iPad)
-     */
-    setEndPoint:function(endPoint) {
-    },
-
-    /**
-     * <p>Sets the value of the {@link Gradient.endRadius} property.</p>
-     * @param {Number} endRadius <p>New value for the property.</p>
-     * @since 1.8.0 (iPhone), 1.8.0 (iPad)
-     */
-    setEndRadius:function(endRadius) {
-    },
-
-    /**
-     * <p>Sets the value of the {@link Gradient.startPoint} property.</p>
-     * @param {Point} startPoint <p>New value for the property.</p>
-     * @since 1.8.0 (iPhone), 1.8.0 (iPad)
-     */
-    setStartPoint:function(startPoint) {
-    },
-
-    /**
-     * <p>Sets the value of the {@link Gradient.startRadius} property.</p>
-     * @param {Number} startRadius <p>New value for the property.</p>
-     * @since 1.8.0 (iPhone), 1.8.0 (iPad)
-     */
-    setStartRadius:function(startRadius) {
-    },
-
-    /**
-     * <p>Sets the value of the {@link Gradient.type} property.</p>
-     * @param {String} type <p>New value for the property.</p>
-     * @since 1.8.0 (iPhone), 1.8.0 (iPad)
-     */
-    setType:function(type) {
-    }
 };
 
 /**
@@ -1315,37 +891,7 @@ GradientColorRef.prototype = {
     offset:null,
 
 
-    /**
-     * <p>Gets the value of the {@link GradientColorRef.color} property.</p>
-     * @returns String
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
-     */
-    getColor:function() {
-    },
 
-    /**
-     * <p>Gets the value of the {@link GradientColorRef.offset} property.</p>
-     * @returns Number
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
-     */
-    getOffset:function() {
-    },
-
-    /**
-     * <p>Sets the value of the {@link GradientColorRef.color} property.</p>
-     * @param {String} color <p>New value for the property.</p>
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
-     */
-    setColor:function(color) {
-    },
-
-    /**
-     * <p>Sets the value of the {@link GradientColorRef.offset} property.</p>
-     * @param {Number} offset <p>New value for the property.</p>
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
-     */
-    setOffset:function(offset) {
-    }
 };
 
 /**
@@ -1384,69 +930,48 @@ ImageAsCroppedDict.prototype = {
     y:null,
 
 
-    /**
-     * <p>Gets the value of the {@link ImageAsCroppedDict.height} property.</p>
-     * @returns Number
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
-     */
-    getHeight:function() {
-    },
+
+};
+
+/**
+ * platforms: Android, iPhone, iPad, Mobile Web
+ * @namespace <p>The matrix is initialized with the specified transforms.</p>
+<p>On iOS, rotation is always performed first, regardless of the order the 
+properties are specified in.</p>
+<p>On Android, specifying both <code>scale</code> and <code>rotate</code> the same dictionary results
+in an incorrect transformation.</p>
+ */
+var MatrixCreationDict = function() {
+};
+MatrixCreationDict.prototype = {
 
     /**
-     * <p>Gets the value of the {@link ImageAsCroppedDict.width} property.</p>
-     * @returns Number
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * <p>Point to rotate around, specified as a dictionary object with <code>x</code> and <code>y</code>
+properties, where { x: 0.5, y: 0.5 } represents the center of whatever is being
+rotated.</p>
+     * @type Dictionary
+     * @since 0.8 (Android)
      */
-    getWidth:function() {
-    },
+    anchorPoint:null,
 
     /**
-     * <p>Gets the value of the {@link ImageAsCroppedDict.x} property.</p>
-     * @returns Number
+     * <p>Rotation angle, in degrees. See the {@link Ti.UI.D2Matrix.rotate} method
+for a discussion of rotation.</p>
+     * @type Number
      * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
      */
-    getX:function() {
-    },
+    rotate:null,
 
     /**
-     * <p>Gets the value of the {@link ImageAsCroppedDict.y} property.</p>
-     * @returns Number
+     * <p>Scale the matrix by the specified scaling factor. The same scaling factor is used
+for both horizontal and vertical scaling.</p>
+     * @type Number
      * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
      */
-    getY:function() {
-    },
+    scale:null,
 
-    /**
-     * <p>Sets the value of the {@link ImageAsCroppedDict.height} property.</p>
-     * @param {Number} height <p>New value for the property.</p>
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
-     */
-    setHeight:function(height) {
-    },
 
-    /**
-     * <p>Sets the value of the {@link ImageAsCroppedDict.width} property.</p>
-     * @param {Number} width <p>New value for the property.</p>
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
-     */
-    setWidth:function(width) {
-    },
 
-    /**
-     * <p>Sets the value of the {@link ImageAsCroppedDict.x} property.</p>
-     * @param {Number} x <p>New value for the property.</p>
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
-     */
-    setX:function(x) {
-    },
-
-    /**
-     * <p>Sets the value of the {@link ImageAsCroppedDict.y} property.</p>
-     * @param {Number} y <p>New value for the property.</p>
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
-     */
-    setY:function(y) {
-    }
 };
 
 /**
@@ -1583,293 +1108,7 @@ MediaItemType.prototype = {
     title:null,
 
 
-    /**
-     * <p>Gets the value of the {@link MediaItemType.albumArtist} property.</p>
-     * @returns String
-     * @since 1.5 (iPhone), 1.5 (iPad)
-     */
-    getAlbumArtist:function() {
-    },
 
-    /**
-     * <p>Gets the value of the {@link MediaItemType.albumTitle} property.</p>
-     * @returns String
-     * @since 1.5 (iPhone), 1.5 (iPad)
-     */
-    getAlbumTitle:function() {
-    },
-
-    /**
-     * <p>Gets the value of the {@link MediaItemType.albumTrackCount} property.</p>
-     * @returns Number
-     * @since 1.5 (iPhone), 1.5 (iPad)
-     */
-    getAlbumTrackCount:function() {
-    },
-
-    /**
-     * <p>Gets the value of the {@link MediaItemType.albumTrackNumber} property.</p>
-     * @returns Number
-     * @since 1.5 (iPhone), 1.5 (iPad)
-     */
-    getAlbumTrackNumber:function() {
-    },
-
-    /**
-     * <p>Gets the value of the {@link MediaItemType.artist} property.</p>
-     * @returns String
-     * @since 1.5 (iPhone), 1.5 (iPad)
-     */
-    getArtist:function() {
-    },
-
-    /**
-     * <p>Gets the value of the {@link MediaItemType.composer} property.</p>
-     * @returns String
-     * @since 1.5 (iPhone), 1.5 (iPad)
-     */
-    getComposer:function() {
-    },
-
-    /**
-     * <p>Gets the value of the {@link MediaItemType.discCount} property.</p>
-     * @returns Number
-     * @since 1.5 (iPhone), 1.5 (iPad)
-     */
-    getDiscCount:function() {
-    },
-
-    /**
-     * <p>Gets the value of the {@link MediaItemType.discNumber} property.</p>
-     * @returns Number
-     * @since 1.5 (iPhone), 1.5 (iPad)
-     */
-    getDiscNumber:function() {
-    },
-
-    /**
-     * <p>Gets the value of the {@link MediaItemType.genre} property.</p>
-     * @returns String
-     * @since 1.5 (iPhone), 1.5 (iPad)
-     */
-    getGenre:function() {
-    },
-
-    /**
-     * <p>Gets the value of the {@link MediaItemType.isCompilation} property.</p>
-     * @returns Boolean
-     * @since 1.5 (iPhone), 1.5 (iPad)
-     */
-    getIsCompilation:function() {
-    },
-
-    /**
-     * <p>Gets the value of the {@link MediaItemType.lyrics} property.</p>
-     * @returns String
-     * @since 1.5 (iPhone), 1.5 (iPad)
-     */
-    getLyrics:function() {
-    },
-
-    /**
-     * <p>Gets the value of the {@link MediaItemType.mediaType} property.</p>
-     * @returns Number
-     * @since 1.5 (iPhone), 1.5 (iPad)
-     */
-    getMediaType:function() {
-    },
-
-    /**
-     * <p>Gets the value of the {@link MediaItemType.playCount} property.</p>
-     * @returns Number
-     * @since 1.5 (iPhone), 1.5 (iPad)
-     */
-    getPlayCount:function() {
-    },
-
-    /**
-     * <p>Gets the value of the {@link MediaItemType.playbackDuration} property.</p>
-     * @returns Number
-     * @since 1.5 (iPhone), 1.5 (iPad)
-     */
-    getPlaybackDuration:function() {
-    },
-
-    /**
-     * <p>Gets the value of the {@link MediaItemType.podcastTitle} property.</p>
-     * @returns String
-     * @since 1.5 (iPhone), 1.5 (iPad)
-     */
-    getPodcastTitle:function() {
-    },
-
-    /**
-     * <p>Gets the value of the {@link MediaItemType.rating} property.</p>
-     * @returns Number
-     * @since 1.5 (iPhone), 1.5 (iPad)
-     */
-    getRating:function() {
-    },
-
-    /**
-     * <p>Gets the value of the {@link MediaItemType.skipCount} property.</p>
-     * @returns Number
-     * @since 1.5 (iPhone), 1.5 (iPad)
-     */
-    getSkipCount:function() {
-    },
-
-    /**
-     * <p>Gets the value of the {@link MediaItemType.title} property.</p>
-     * @returns String
-     * @since 1.5 (iPhone), 1.5 (iPad)
-     */
-    getTitle:function() {
-    },
-
-    /**
-     * <p>Sets the value of the {@link MediaItemType.albumArtist} property.</p>
-     * @param {String} albumArtist <p>New value for the property.</p>
-     * @since 1.5 (iPhone), 1.5 (iPad)
-     */
-    setAlbumArtist:function(albumArtist) {
-    },
-
-    /**
-     * <p>Sets the value of the {@link MediaItemType.albumTitle} property.</p>
-     * @param {String} albumTitle <p>New value for the property.</p>
-     * @since 1.5 (iPhone), 1.5 (iPad)
-     */
-    setAlbumTitle:function(albumTitle) {
-    },
-
-    /**
-     * <p>Sets the value of the {@link MediaItemType.albumTrackCount} property.</p>
-     * @param {Number} albumTrackCount <p>New value for the property.</p>
-     * @since 1.5 (iPhone), 1.5 (iPad)
-     */
-    setAlbumTrackCount:function(albumTrackCount) {
-    },
-
-    /**
-     * <p>Sets the value of the {@link MediaItemType.albumTrackNumber} property.</p>
-     * @param {Number} albumTrackNumber <p>New value for the property.</p>
-     * @since 1.5 (iPhone), 1.5 (iPad)
-     */
-    setAlbumTrackNumber:function(albumTrackNumber) {
-    },
-
-    /**
-     * <p>Sets the value of the {@link MediaItemType.artist} property.</p>
-     * @param {String} artist <p>New value for the property.</p>
-     * @since 1.5 (iPhone), 1.5 (iPad)
-     */
-    setArtist:function(artist) {
-    },
-
-    /**
-     * <p>Sets the value of the {@link MediaItemType.composer} property.</p>
-     * @param {String} composer <p>New value for the property.</p>
-     * @since 1.5 (iPhone), 1.5 (iPad)
-     */
-    setComposer:function(composer) {
-    },
-
-    /**
-     * <p>Sets the value of the {@link MediaItemType.discCount} property.</p>
-     * @param {Number} discCount <p>New value for the property.</p>
-     * @since 1.5 (iPhone), 1.5 (iPad)
-     */
-    setDiscCount:function(discCount) {
-    },
-
-    /**
-     * <p>Sets the value of the {@link MediaItemType.discNumber} property.</p>
-     * @param {Number} discNumber <p>New value for the property.</p>
-     * @since 1.5 (iPhone), 1.5 (iPad)
-     */
-    setDiscNumber:function(discNumber) {
-    },
-
-    /**
-     * <p>Sets the value of the {@link MediaItemType.genre} property.</p>
-     * @param {String} genre <p>New value for the property.</p>
-     * @since 1.5 (iPhone), 1.5 (iPad)
-     */
-    setGenre:function(genre) {
-    },
-
-    /**
-     * <p>Sets the value of the {@link MediaItemType.isCompilation} property.</p>
-     * @param {Boolean} isCompilation <p>New value for the property.</p>
-     * @since 1.5 (iPhone), 1.5 (iPad)
-     */
-    setIsCompilation:function(isCompilation) {
-    },
-
-    /**
-     * <p>Sets the value of the {@link MediaItemType.lyrics} property.</p>
-     * @param {String} lyrics <p>New value for the property.</p>
-     * @since 1.5 (iPhone), 1.5 (iPad)
-     */
-    setLyrics:function(lyrics) {
-    },
-
-    /**
-     * <p>Sets the value of the {@link MediaItemType.mediaType} property.</p>
-     * @param {Number} mediaType <p>New value for the property.</p>
-     * @since 1.5 (iPhone), 1.5 (iPad)
-     */
-    setMediaType:function(mediaType) {
-    },
-
-    /**
-     * <p>Sets the value of the {@link MediaItemType.playCount} property.</p>
-     * @param {Number} playCount <p>New value for the property.</p>
-     * @since 1.5 (iPhone), 1.5 (iPad)
-     */
-    setPlayCount:function(playCount) {
-    },
-
-    /**
-     * <p>Sets the value of the {@link MediaItemType.playbackDuration} property.</p>
-     * @param {Number} playbackDuration <p>New value for the property.</p>
-     * @since 1.5 (iPhone), 1.5 (iPad)
-     */
-    setPlaybackDuration:function(playbackDuration) {
-    },
-
-    /**
-     * <p>Sets the value of the {@link MediaItemType.podcastTitle} property.</p>
-     * @param {String} podcastTitle <p>New value for the property.</p>
-     * @since 1.5 (iPhone), 1.5 (iPad)
-     */
-    setPodcastTitle:function(podcastTitle) {
-    },
-
-    /**
-     * <p>Sets the value of the {@link MediaItemType.rating} property.</p>
-     * @param {Number} rating <p>New value for the property.</p>
-     * @since 1.5 (iPhone), 1.5 (iPad)
-     */
-    setRating:function(rating) {
-    },
-
-    /**
-     * <p>Sets the value of the {@link MediaItemType.skipCount} property.</p>
-     * @param {Number} skipCount <p>New value for the property.</p>
-     * @since 1.5 (iPhone), 1.5 (iPad)
-     */
-    setSkipCount:function(skipCount) {
-    },
-
-    /**
-     * <p>Sets the value of the {@link MediaItemType.title} property.</p>
-     * @param {String} title <p>New value for the property.</p>
-     * @since 1.5 (iPhone), 1.5 (iPad)
-     */
-    setTitle:function(title) {
-    }
 };
 
 /**
@@ -1894,39 +1133,7 @@ MediaQueryInfoType.prototype = {
     value:null,
 
 
-    /**
-     * <p>Gets the value of the {@link MediaQueryInfoType.exact} property.</p>
-     * @returns Boolean
-     * @since 1.8 (iPhone), 1.8 (iPad)
-     */
-    getExact:function() {
-    },
 
-    /**
-     * <p>Gets the value of the {@link MediaQueryInfoType.value} property.</p>
-     * @returns Number
-     * @returns String
-     * @returns Boolean
-     * @since 1.8 (iPhone), 1.8 (iPad)
-     */
-    getValue:function() {
-    },
-
-    /**
-     * <p>Sets the value of the {@link MediaQueryInfoType.exact} property.</p>
-     * @param {Boolean} exact <p>New value for the property.</p>
-     * @since 1.8 (iPhone), 1.8 (iPad)
-     */
-    setExact:function(exact) {
-    },
-
-    /**
-     * <p>Sets the value of the {@link MediaQueryInfoType.value} property.</p>
-     * @param {Number|String|Boolean} value <p>New value for the property.</p>
-     * @since 1.8 (iPhone), 1.8 (iPad)
-     */
-    setValue:function(value) {
-    }
 };
 
 /**
@@ -1938,35 +1145,35 @@ MediaQueryType.prototype = {
 
     /**
      * <p>The album artist to filter on. Value should be a String.</p>
-     * @type Dictionary<MediaQueryInfoType>|String
+     * @type MediaQueryInfoType|String
      * @since 1.8 (iPhone), 1.8 (iPad)
      */
     albumArtist:null,
 
     /**
      * <p>The album title to filter on. Value should be a String.</p>
-     * @type Dictionary<MediaQueryInfoType>|String
+     * @type MediaQueryInfoType|String
      * @since 1.8 (iPhone), 1.8 (iPad)
      */
     albumTitle:null,
 
     /**
      * <p>The artist to filter on. Value should be a String.</p>
-     * @type Dictionary<MediaQueryInfoType>|String
+     * @type MediaQueryInfoType|String
      * @since 1.8 (iPhone), 1.8 (iPad)
      */
     artist:null,
 
     /**
      * <p>The composer to filter on. Value should be a String.</p>
-     * @type Dictionary<MediaQueryInfoType>|String
+     * @type MediaQueryInfoType|String
      * @since 1.8 (iPhone), 1.8 (iPad)
      */
     composer:null,
 
     /**
      * <p>The genre to filter on. Value should be a String.</p>
-     * @type Dictionary<MediaQueryInfoType>|String
+     * @type MediaQueryInfoType|String
      * @since 1.8 (iPhone), 1.8 (iPad)
      */
     genre:null,
@@ -1980,177 +1187,161 @@ MediaQueryType.prototype = {
 
     /**
      * <p>Filter by whether or not the item is a compilation. Value should be a Boolean.</p>
-     * @type Dictionary<MediaQueryInfoType>|Boolean
+     * @type MediaQueryInfoType|Boolean
      * @since 1.8 (iPhone), 1.8 (iPad)
      */
     isCompilation:null,
 
     /**
      * <p>The media type to filter on. Value should be one of the <code>MUSIC_MEDIA_TYPE_</code> constants on {@link Ti.Media}.</p>
-     * @type Dictionary<MediaQueryInfoType>|Number
+     * @type MediaQueryInfoType|Number
      * @since 1.8 (iPhone), 1.8 (iPad)
      */
     mediaType:null,
 
     /**
      * <p>The title to filter on. Value should be a String.</p>
-     * @type Dictionary<MediaQueryInfoType>|String
+     * @type MediaQueryInfoType|String
      * @since 1.8 (iPhone), 1.8 (iPad)
      */
     title:null,
 
 
-    /**
-     * <p>Gets the value of the {@link MediaQueryType.albumArtist} property.</p>
-     * @returns Dictionary<MediaQueryInfoType>
-     * @returns String
-     * @since 1.8 (iPhone), 1.8 (iPad)
-     */
-    getAlbumArtist:function() {
-    },
+
+};
+
+/**
+ * platforms: iPhone, iPad
+ */
+var MusicLibraryOptionsType = function() {
+};
+MusicLibraryOptionsType.prototype = {
 
     /**
-     * <p>Gets the value of the {@link MediaQueryType.albumTitle} property.</p>
-     * @returns Dictionary<MediaQueryInfoType>
-     * @returns String
-     * @since 1.8 (iPhone), 1.8 (iPad)
+     * <p>Set to <code>true</code> to allow the user to select multiple items from the library.</p>
+     * @type Boolean
+     * @since 0.8 (iPhone), 0.8 (iPad)
      */
-    getAlbumTitle:function() {
-    },
+    allowMultipleSelections:null,
 
     /**
-     * <p>Gets the value of the {@link MediaQueryType.artist} property.</p>
-     * @returns Dictionary<MediaQueryInfoType>
-     * @returns String
-     * @since 1.8 (iPhone), 1.8 (iPad)
+     * <p>boolean if the dialog should be animated (defaults to true) upon showing and hiding</p>
+     * @type Boolean
+     * @since 0.8 (iPhone), 0.8 (iPad)
      */
-    getArtist:function() {
-    },
+    animated:null,
 
     /**
-     * <p>Gets the value of the {@link MediaQueryType.composer} property.</p>
-     * @returns Dictionary<MediaQueryInfoType>
-     * @returns String
-     * @since 1.8 (iPhone), 1.8 (iPad)
+     * <p>Specifies that the library should be hidden automatically after media selection is completed.</p>
+     * @type Boolean
+     * @since 0.8 (iPhone), 0.8 (iPad)
      */
-    getComposer:function() {
-    },
+    autohide:null,
 
     /**
-     * <p>Gets the value of the {@link MediaQueryType.genre} property.</p>
-     * @returns Dictionary<MediaQueryInfoType>
-     * @returns String
-     * @since 1.8 (iPhone), 1.8 (iPad)
+     * <p>Function to call if the user presses the cancel button.</p>
+     * @type Callback<Object>
+     * @since 0.8 (iPhone), 0.8 (iPad)
      */
-    getGenre:function() {
-    },
+    cancel:null,
 
     /**
-     * <p>Gets the value of the {@link MediaQueryType.grouping} property.</p>
-     * @returns Number
-     * @since 1.8 (iPhone), 1.8 (iPad)
+     * <p>Function to call upon receiving an error.</p>
+     * @type Callback<Object>
+     * @since 0.8 (iPhone), 0.8 (iPad)
      */
-    getGrouping:function() {
-    },
+    error:null,
 
     /**
-     * <p>Gets the value of the {@link MediaQueryType.isCompilation} property.</p>
-     * @returns Dictionary<MediaQueryInfoType>
-     * @returns Boolean
-     * @since 1.8 (iPhone), 1.8 (iPad)
+     * <p>An array of media type constants defining selectable media.</p>
+     * @type Number|Array<Number>
+     * @since 0.8 (iPhone), 0.8 (iPad)
      */
-    getIsCompilation:function() {
-    },
+    mediaTypes:null,
 
     /**
-     * <p>Gets the value of the {@link MediaQueryType.mediaType} property.</p>
-     * @returns Dictionary<MediaQueryInfoType>
-     * @returns Number
-     * @since 1.8 (iPhone), 1.8 (iPad)
+     * <p>Function to call when the music library selection is made.</p>
+     * @type Callback<Object>
+     * @since 0.8 (iPhone), 0.8 (iPad)
      */
-    getMediaType:function() {
-    },
+    success:null,
+
+
+
+};
+
+/**
+ * platforms: Android, iPhone, iPad, Mobile Web
+ */
+var PhotoGalleryOptionsType = function() {
+};
+PhotoGalleryOptionsType.prototype = {
 
     /**
-     * <p>Gets the value of the {@link MediaQueryType.title} property.</p>
-     * @returns Dictionary<MediaQueryInfoType>
-     * @returns String
-     * @since 1.8 (iPhone), 1.8 (iPad)
+     * <p>Specifies if the media should be editable after capture/selection.</p>
+     * @type Boolean
+     * @since 0.8 (iPhone), 0.8 (iPad)
      */
-    getTitle:function() {
-    },
+    allowEditing:null,
 
     /**
-     * <p>Sets the value of the {@link MediaQueryType.albumArtist} property.</p>
-     * @param {Dictionary<MediaQueryInfoType>|String} albumArtist <p>New value for the property.</p>
-     * @since 1.8 (iPhone), 1.8 (iPad)
+     * <p>Specifies if the dialog should be animated upon showing and hiding.</p>
+     * @type Boolean
+     * @since 0.8 (iPhone), 0.8 (iPad)
      */
-    setAlbumArtist:function(albumArtist) {
-    },
+    animated:null,
 
     /**
-     * <p>Sets the value of the {@link MediaQueryType.albumTitle} property.</p>
-     * @param {Dictionary<MediaQueryInfoType>|String} albumTitle <p>New value for the property.</p>
-     * @since 1.8 (iPhone), 1.8 (iPad)
+     * <p>Controls the type of arrow and position of the popover.</p>
+     * @type Number
+     * @since 0.8 (iPad)
      */
-    setAlbumTitle:function(albumTitle) {
-    },
+    arrowDirection:null,
 
     /**
-     * <p>Sets the value of the {@link MediaQueryType.artist} property.</p>
-     * @param {Dictionary<MediaQueryInfoType>|String} artist <p>New value for the property.</p>
-     * @since 1.8 (iPhone), 1.8 (iPad)
+     * <p>Specifies if the photo gallery should be hidden automatically after the media selection is completed.</p>
+     * @type Boolean
+     * @since 0.8 (iPhone), 0.8 (iPad)
      */
-    setArtist:function(artist) {
-    },
+    autohide:null,
 
     /**
-     * <p>Sets the value of the {@link MediaQueryType.composer} property.</p>
-     * @param {Dictionary<MediaQueryInfoType>|String} composer <p>New value for the property.</p>
-     * @since 1.8 (iPhone), 1.8 (iPad)
+     * <p>Function to call if the user presses the cancel button.</p>
+     * @type Callback<Object>
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
      */
-    setComposer:function(composer) {
-    },
+    cancel:null,
 
     /**
-     * <p>Sets the value of the {@link MediaQueryType.genre} property.</p>
-     * @param {Dictionary<MediaQueryInfoType>|String} genre <p>New value for the property.</p>
-     * @since 1.8 (iPhone), 1.8 (iPad)
+     * <p>Function to call upon receiving an error.</p>
+     * @type Callback<Object>
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
      */
-    setGenre:function(genre) {
-    },
+    error:null,
 
     /**
-     * <p>Sets the value of the {@link MediaQueryType.grouping} property.</p>
-     * @param {Number} grouping <p>New value for the property.</p>
-     * @since 1.8 (iPhone), 1.8 (iPad)
+     * <p>Array of media type constants to allow: <code>MEDIA_TYPE_PHOTO</code> or <code>MEDIA_TYPE_VIDEO</code>.</p>
+     * @type Array<String>
+     * @since 0.8 (iPhone), 0.8 (iPad)
      */
-    setGrouping:function(grouping) {
-    },
+    mediaTypes:null,
 
     /**
-     * <p>Sets the value of the {@link MediaQueryType.isCompilation} property.</p>
-     * @param {Dictionary<MediaQueryInfoType>|Boolean} isCompilation <p>New value for the property.</p>
-     * @since 1.8 (iPhone), 1.8 (iPad)
+     * <p>View to position the photo gallery popover on top of.</p>
+     * @type Ti.UI.View
+     * @since 0.8 (iPad)
      */
-    setIsCompilation:function(isCompilation) {
-    },
+    popoverView:null,
 
     /**
-     * <p>Sets the value of the {@link MediaQueryType.mediaType} property.</p>
-     * @param {Dictionary<MediaQueryInfoType>|Number} mediaType <p>New value for the property.</p>
-     * @since 1.8 (iPhone), 1.8 (iPad)
+     * <p>Function to call when the photogallery is closed after a successful selection.</p>
+     * @type Callback<CameraMediaItemType>
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
      */
-    setMediaType:function(mediaType) {
-    },
+    success:null,
 
-    /**
-     * <p>Sets the value of the {@link MediaQueryType.title} property.</p>
-     * @param {Dictionary<MediaQueryInfoType>|String} title <p>New value for the property.</p>
-     * @since 1.8 (iPhone), 1.8 (iPad)
-     */
-    setTitle:function(title) {
-    }
+
+
 };
 
 /**
@@ -2175,37 +1366,64 @@ Point.prototype = {
     y:null,
 
 
-    /**
-     * <p>Gets the value of the {@link Point.x} property.</p>
-     * @returns Number
-     * @since 1.8.0 (Android), 1.8.0 (iPhone), 1.8.0 (iPad)
-     */
-    getX:function() {
-    },
+
+};
+
+/**
+ * platforms: Android
+ */
+var PreviewImageError = function() {
+};
+PreviewImageError.prototype = {
 
     /**
-     * <p>Gets the value of the {@link Point.y} property.</p>
-     * @returns Number
-     * @since 1.8.0 (Android), 1.8.0 (iPhone), 1.8.0 (iPad)
+     * <p>Error code, if applicable. See {@link Ti.Media} constants such as {@link Ti.Media.DEVICE_BUSY}.</p>
+     * @type Number
+     * @since 0.8 (Android)
      */
-    getY:function() {
-    },
+    code:null,
 
     /**
-     * <p>Sets the value of the {@link Point.x} property.</p>
-     * @param {Number} x <p>New value for the property.</p>
-     * @since 1.8.0 (Android), 1.8.0 (iPhone), 1.8.0 (iPad)
+     * <p>Description of the error.</p>
+     * @type String
+     * @since 0.8 (Android)
      */
-    setX:function(x) {
-    },
+    message:null,
+
+
+
+};
+
+/**
+ * platforms: Android
+ */
+var PreviewImageOptions = function() {
+};
+PreviewImageOptions.prototype = {
 
     /**
-     * <p>Sets the value of the {@link Point.y} property.</p>
-     * @param {Number} y <p>New value for the property.</p>
-     * @since 1.8.0 (Android), 1.8.0 (iPhone), 1.8.0 (iPad)
+     * <p>Function called back if the preview fails. Check the <code>message</code> property of passed back parameter.</p>
+     * @type Callback<PreviewImageError>
+     * @since 0.8 (Android)
      */
-    setY:function(y) {
-    }
+    error:null,
+
+    /**
+     * <p>The image to preview. Must be a blob based on a file, such as from {@link Ti.Filesystem.File.read}.</p>
+     * @type Ti.Blob
+     * @since 0.8 (Android)
+     */
+    image:null,
+
+    /**
+     * <p>Function to be called back if the preview succeeds. No info is passed.</p>
+     * @type Callback<Object>
+     * @since 0.8 (Android)
+     */
+    success:null,
+
+
+
 };
 
 /**
@@ -2258,101 +1476,114 @@ PumpCallbackArgs.prototype = {
     totalBytesProcessed:null,
 
 
-    /**
-     * <p>Gets the value of the {@link PumpCallbackArgs.buffer} property.</p>
-     * @returns Ti.Buffer
-     * @since 1.7 (Android), 1.7 (iPhone), 1.7 (iPad), 1.8 (Mobile Web)
-     */
-    getBuffer:function() {
-    },
+
+};
+
+/**
+ * platforms: Android, iPhone, iPad, Mobile Web
+ */
+var PushNotificationConfig = function() {
+};
+PushNotificationConfig.prototype = {
 
     /**
-     * <p>Gets the value of the {@link PumpCallbackArgs.bytesProcessed} property.</p>
-     * @returns Number
-     * @since 1.7 (Android), 1.7 (iPhone), 1.7 (iPad), 1.8 (Mobile Web)
+     * <p>Callback function invoked upon receiving a new push notification.</p>
+     * @type Callback<PushNotificationData>
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
      */
-    getBytesProcessed:function() {
-    },
+    callback:null,
 
     /**
-     * <p>Gets the value of the {@link PumpCallbackArgs.errorDescription} property.</p>
-     * @returns String
-     * @since 1.7 (Android), 1.7 (iPhone), 1.7 (iPad), 1.8 (Mobile Web)
+     * <p>Callback function called when an error occurs during registration.</p>
+     * @type Callback<PushNotificationErrorArg>
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
      */
-    getErrorDescription:function() {
-    },
+    error:null,
 
     /**
-     * <p>Gets the value of the {@link PumpCallbackArgs.errorState} property.</p>
-     * @returns String
-     * @since 1.7 (Android), 1.7 (iPhone), 1.7 (iPad), 1.8 (Mobile Web)
+     * <p>Callback function called when the push registration is successfully completed.</p>
+     * @type Callback<PushNotificationSuccessArg>
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
      */
-    getErrorState:function() {
-    },
+    success:null,
 
     /**
-     * <p>Gets the value of the {@link PumpCallbackArgs.source} property.</p>
-     * @returns Ti.IOStream
-     * @since 1.7 (Android), 1.7 (iPhone), 1.7 (iPad), 1.8 (Mobile Web)
+     * <p>Array of <code>NOTIFICATION_TYPE</code> constants that the application would like to receive.</p>
+     * @type Array<Number>
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
      */
-    getSource:function() {
-    },
+    types:null,
+
+
+
+};
+
+/**
+ * platforms: Android, iPhone, iPad, Mobile Web
+ */
+var PushNotificationData = function() {
+};
+PushNotificationData.prototype = {
 
     /**
-     * <p>Gets the value of the {@link PumpCallbackArgs.totalBytesProcessed} property.</p>
-     * @returns Number
-     * @since 1.7 (Android), 1.7 (iPhone), 1.7 (iPad), 1.8 (Mobile Web)
+     * <p>The <code>userinfo</code> dictionary passed to the Apple Push Notification Service.</p>
+     * @type Dictionary
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
      */
-    getTotalBytesProcessed:function() {
-    },
+    data:null,
+
+
+
+};
+
+/**
+ * platforms: Android, iPhone, iPad, Mobile Web
+ */
+var PushNotificationErrorArg = function() {
+};
+PushNotificationErrorArg.prototype = {
 
     /**
-     * <p>Sets the value of the {@link PumpCallbackArgs.buffer} property.</p>
-     * @param {Ti.Buffer} buffer <p>New value for the property.</p>
-     * @since 1.7 (Android), 1.7 (iPhone), 1.7 (iPad), 1.8 (Mobile Web)
+     * <p>Description of the error.</p>
+     * @type String
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
      */
-    setBuffer:function(buffer) {
-    },
+    error:null,
 
     /**
-     * <p>Sets the value of the {@link PumpCallbackArgs.bytesProcessed} property.</p>
-     * @param {Number} bytesProcessed <p>New value for the property.</p>
-     * @since 1.7 (Android), 1.7 (iPhone), 1.7 (iPad), 1.8 (Mobile Web)
+     * <p>The value of this string is always "remote".</p>
+     * @type String
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
      */
-    setBytesProcessed:function(bytesProcessed) {
-    },
+    type:null,
+
+
+
+};
+
+/**
+ * platforms: Android, iPhone, iPad, Mobile Web
+ */
+var PushNotificationSuccessArg = function() {
+};
+PushNotificationSuccessArg.prototype = {
 
     /**
-     * <p>Sets the value of the {@link PumpCallbackArgs.errorDescription} property.</p>
-     * @param {String} errorDescription <p>New value for the property.</p>
-     * @since 1.7 (Android), 1.7 (iPhone), 1.7 (iPad), 1.8 (Mobile Web)
+     * <p>The device token which this device was registered for.</p>
+     * @type String
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
      */
-    setErrorDescription:function(errorDescription) {
-    },
+    deviceToken:null,
 
     /**
-     * <p>Sets the value of the {@link PumpCallbackArgs.errorState} property.</p>
-     * @param {String} errorState <p>New value for the property.</p>
-     * @since 1.7 (Android), 1.7 (iPhone), 1.7 (iPad), 1.8 (Mobile Web)
+     * <p>The value of this string is always "remote".</p>
+     * @type String
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
      */
-    setErrorState:function(errorState) {
-    },
+    type:null,
 
-    /**
-     * <p>Sets the value of the {@link PumpCallbackArgs.source} property.</p>
-     * @param {Ti.IOStream} source <p>New value for the property.</p>
-     * @since 1.7 (Android), 1.7 (iPhone), 1.7 (iPad), 1.8 (Mobile Web)
-     */
-    setSource:function(source) {
-    },
 
-    /**
-     * <p>Sets the value of the {@link PumpCallbackArgs.totalBytesProcessed} property.</p>
-     * @param {Number} totalBytesProcessed <p>New value for the property.</p>
-     * @since 1.7 (Android), 1.7 (iPhone), 1.7 (iPad), 1.8 (Mobile Web)
-     */
-    setTotalBytesProcessed:function(totalBytesProcessed) {
-    }
+
 };
 
 /**
@@ -2391,69 +1622,25 @@ ReadCallbackArgs.prototype = {
     source:null,
 
 
-    /**
-     * <p>Gets the value of the {@link ReadCallbackArgs.bytesProcessed} property.</p>
-     * @returns Number
-     * @since 1.7 (Android), 1.7 (iPhone), 1.7 (iPad), 1.8 (Mobile Web)
-     */
-    getBytesProcessed:function() {
-    },
+
+};
+
+/**
+ * platforms: iPhone, iPad, Android
+ */
+var ScreenshotResult = function() {
+};
+ScreenshotResult.prototype = {
 
     /**
-     * <p>Gets the value of the {@link ReadCallbackArgs.errorDescription} property.</p>
-     * @returns String
-     * @since 1.7 (Android), 1.7 (iPhone), 1.7 (iPad), 1.8 (Mobile Web)
+     * <p>The screenshot image.</p>
+     * @type Ti.Blob
+     * @since 0.8 (iPhone), 0.8 (iPad), 0.8 (Android)
      */
-    getErrorDescription:function() {
-    },
+    media:null,
 
-    /**
-     * <p>Gets the value of the {@link ReadCallbackArgs.errorState} property.</p>
-     * @returns String
-     * @since 1.7 (Android), 1.7 (iPhone), 1.7 (iPad), 1.8 (Mobile Web)
-     */
-    getErrorState:function() {
-    },
 
-    /**
-     * <p>Gets the value of the {@link ReadCallbackArgs.source} property.</p>
-     * @returns Ti.IOStream
-     * @since 1.7 (Android), 1.7 (iPhone), 1.7 (iPad), 1.8 (Mobile Web)
-     */
-    getSource:function() {
-    },
 
-    /**
-     * <p>Sets the value of the {@link ReadCallbackArgs.bytesProcessed} property.</p>
-     * @param {Number} bytesProcessed <p>New value for the property.</p>
-     * @since 1.7 (Android), 1.7 (iPhone), 1.7 (iPad), 1.8 (Mobile Web)
-     */
-    setBytesProcessed:function(bytesProcessed) {
-    },
-
-    /**
-     * <p>Sets the value of the {@link ReadCallbackArgs.errorDescription} property.</p>
-     * @param {String} errorDescription <p>New value for the property.</p>
-     * @since 1.7 (Android), 1.7 (iPhone), 1.7 (iPad), 1.8 (Mobile Web)
-     */
-    setErrorDescription:function(errorDescription) {
-    },
-
-    /**
-     * <p>Sets the value of the {@link ReadCallbackArgs.errorState} property.</p>
-     * @param {String} errorState <p>New value for the property.</p>
-     * @since 1.7 (Android), 1.7 (iPhone), 1.7 (iPad), 1.8 (Mobile Web)
-     */
-    setErrorState:function(errorState) {
-    },
-
-    /**
-     * <p>Sets the value of the {@link ReadCallbackArgs.source} property.</p>
-     * @param {Ti.IOStream} source <p>New value for the property.</p>
-     * @since 1.7 (Android), 1.7 (iPhone), 1.7 (iPad), 1.8 (Mobile Web)
-     */
-    setSource:function(source) {
-    }
 };
 
 /**
@@ -2488,53 +1675,7 @@ TableViewAnimationProperties.prototype = {
     position:null,
 
 
-    /**
-     * <p>Gets the value of the {@link TableViewAnimationProperties.animated} property.</p>
-     * @returns Boolean
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
-     */
-    getAnimated:function() {
-    },
 
-    /**
-     * <p>Gets the value of the {@link TableViewAnimationProperties.animationStyle} property.</p>
-     * @returns Number
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
-     */
-    getAnimationStyle:function() {
-    },
-
-    /**
-     * <p>Gets the value of the {@link TableViewAnimationProperties.position} property.</p>
-     * @returns Number
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
-     */
-    getPosition:function() {
-    },
-
-    /**
-     * <p>Sets the value of the {@link TableViewAnimationProperties.animated} property.</p>
-     * @param {Boolean} animated <p>New value for the property.</p>
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
-     */
-    setAnimated:function(animated) {
-    },
-
-    /**
-     * <p>Sets the value of the {@link TableViewAnimationProperties.animationStyle} property.</p>
-     * @param {Number} animationStyle <p>New value for the property.</p>
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
-     */
-    setAnimationStyle:function(animationStyle) {
-    },
-
-    /**
-     * <p>Sets the value of the {@link TableViewAnimationProperties.position} property.</p>
-     * @param {Number} position <p>New value for the property.</p>
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
-     */
-    setPosition:function(position) {
-    }
 };
 
 /**
@@ -2559,37 +1700,7 @@ TableViewIndexEntry.prototype = {
     title:null,
 
 
-    /**
-     * <p>Gets the value of the {@link TableViewIndexEntry.index} property.</p>
-     * @returns Number
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
-     */
-    getIndex:function() {
-    },
 
-    /**
-     * <p>Gets the value of the {@link TableViewIndexEntry.title} property.</p>
-     * @returns String
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
-     */
-    getTitle:function() {
-    },
-
-    /**
-     * <p>Sets the value of the {@link TableViewIndexEntry.index} property.</p>
-     * @param {Number} index <p>New value for the property.</p>
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
-     */
-    setIndex:function(index) {
-    },
-
-    /**
-     * <p>Sets the value of the {@link TableViewIndexEntry.title} property.</p>
-     * @param {String} title <p>New value for the property.</p>
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
-     */
-    setTitle:function(title) {
-    }
 };
 
 /**
@@ -5669,38 +4780,58 @@ Ti.Android.Intent.prototype = {
  * platforms: Android
  * 
  * @example Simple menu create
- * <p>activity.onCreateOptionsMenu = function(e) {
-    var menu = e.menu;
-    var menuItem = menu.add({ title: "Item 1" });
-    menuItem.setIcon("item1.png");
-    menuItem.addEventListener("click", function(e) {
-        Ti.API.debug("I was clicked");
-    });
-};</p>
+ * <p>Create an Android menu that displays a menu item named "Item 1", which logs a debug message 
+when clicked.</p>
+<pre><code>var win = Ti.UI.createWindow({
+  fullscreen: true
+});
+
+var activity = win.activity;
+
+activity.onCreateOptionsMenu = function(e){
+  var menu = e.menu;
+  var menuItem = menu.add({ title: "Item 1" });
+  menuItem.setIcon("item1.png");
+  menuItem.addEventListener("click", function(e) {
+    Ti.API.debug("I was clicked");
+  });
+};
+
+win.open();
+</code></pre>
  * 
  * @example Dynamic menu create
- * <p>var win = Ti.UI.createWindow({ fullscreen: true });</p>
-<p>var LOGIN = 1, LOGOUT = 2;
+ * <p>Create an Android menu that displays a menu item named "Login" or "Logout", depending on the 
+value of a <code>loggedIn</code> Boolean variable. Click on the item to toggle the variable's value.</p>
+<pre><code>var win = Ti.UI.createWindow({
+  fullscreen: true
+});
+var LOGIN = 1, LOGOUT = 2;
 var loggedIn = false;
-activity.onCreateOptionsMenu = function(e) {
-    var menu = e.menu;
-    var login = menu.add({ title: "Login", itemId: LOGIN });
-    login.setIcon("login.png");
-    login.addEventListener("click", function(e) {
-        loggedIn = true;
-    });
-    var logout = menu.add({ title: "Logout", itemId: LOGOUT });
-    logout.setIcon("logout.png");
-    logout.addEventListener("click", function(e) {
-        loggedIn = false;
-    });
-};</p>
-<p>activity.onPrepareOptionsMenu = function(e) {
-    var menu = e.menu;
-    menu.findItem(LOGIN).setVisible(!loggedIn);
-    menu.findItem(LOGOUT).setVisible(loggedIn);
+
+var activity = win.activity;
+
+activity.onCreateOptionsMenu = function(e){
+  var menu = e.menu;
+  var login = menu.add({ title: "Login", itemId: LOGIN });
+  login.setIcon("login.png");
+  login.addEventListener("click", function(e) {
+    loggedIn = true;
+  });
+  var logout = menu.add({ title: "Logout", itemId: LOGOUT });
+  logout.setIcon("logout.png");
+  logout.addEventListener("click", function(e) {
+    loggedIn = false;
+  });
 };
-win.open();</p>
+
+activity.onPrepareOptionsMenu = function(e) {
+  var menu = e.menu;
+  menu.findItem(LOGIN).setVisible(!loggedIn);
+  menu.findItem(LOGOUT).setVisible(loggedIn);
+};
+win.open();
+</code></pre>
  */
 Ti.Android.Menu = function() {
 };
@@ -6598,6 +5729,13 @@ Ti.Android.PendingIntent.prototype = {
      */
     intent:null,
 
+    /**
+     * <p>If this property is true, flag {@link Ti.Android.FLAG_UPDATE_CURRENT} will be appended to flags automatically. Default value is true.</p>
+     * @type Boolean
+     * @since 1.5 (Android)
+     */
+    updateCurrentIntent:null,
+
 
     /**
      * <p>Adds the specified callback as an event listener for the named event.</p>
@@ -6631,6 +5769,14 @@ Ti.Android.PendingIntent.prototype = {
      * @since 1.5 (Android)
      */
     getIntent:function() {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.Android.PendingIntent.updateCurrentIntent} property.</p>
+     * @returns Boolean
+     * @since 1.5 (Android)
+     */
+    getUpdateCurrentIntent:function() {
     },
 
     /**
@@ -7062,81 +6208,86 @@ Ti.Android.Service.prototype = {
 
 /**
  * platforms: Android, iPhone, iPad, Mobile Web
+ * @namespace <p>The <code>App</code> module exposes a number of properties set in the <code>tiapp.xml</code> file. 
+Three of these properties, the application name, ID, and URL, must be specified in the 
+new project wizard when you create an application. </p>
+<p>Most values can be changed by editing the <code>tiapp.xml</code> file after creating the project.
+However, the GUID property is automatically generated and should not be changed.</p>
  */
 Ti.App = {
 
     /**
-     * <p>the application's copyright</p>
+     * <p>Application's copyright statement, from <code>tiapp.xml</code>.</p>
      * @type String
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
      */
     copyright:null,
 
     /**
-     * <p>the application's description</p>
+     * <p>Application's description, from <code>tiapp.xml</code>.</p>
      * @type String
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
      */
     description:null,
 
     /**
-     * <p>the application's globally unique id (this is system generated and consistent through all versions)</p>
+     * <p>Application's globally unique id, from <code>tiapp.xml</code></p>
      * @type String
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
      */
     guid:null,
 
     /**
-     * <p>the application's app id as specified in Titanium Developer or Titanium Studio</p>
+     * <p>Application's app ID, from <code>tiapp.xml</code>.</p>
      * @type String
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
      */
     id:null,
 
     /**
-     * <p>property for controlling whether the phone screen will be locked on idle time. Can be set to true to disable the timer</p>
+     * <p>Controls whether the phone screen will be locked on idle time.</p>
      * @type Boolean
      * @since 0.1 (iPhone), 0.1 (iPad)
      */
     idleTimerDisabled:null,
 
     /**
-     * <p>the application's name</p>
+     * <p>Application's name, from <code>tiapp.xml</code>.</p>
      * @type String
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
      */
     name:null,
 
     /**
-     * <p>a boolean to indicate whether proximity detection is enabled</p>
+     * <p>Boolean to indicate whether proximity detection is enabled.</p>
      * @type Boolean
      * @since 0.1 (iPhone), 0.1 (iPad)
      */
     proximityDetection:null,
 
     /**
-     * <p>the state of the device's proximity detector</p>
-     * @type Number
+     * <p>State of the device's proximity sensor.</p>
+     * @type Boolean
      * @since 0.1 (iPhone), 0.1 (iPad)
      */
     proximityState:null,
 
     /**
-     * <p>the application's publisher</p>
+     * <p>Application's publisher, from <code>tiapp.xml</code>.</p>
      * @type String
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
      */
     publisher:null,
 
     /**
-     * <p>the application url</p>
+     * <p>Application URL, from <code>tiapp.xml</code>.</p>
      * @type String
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
      */
     url:null,
 
     /**
-     * <p>the application's version</p>
+     * <p>Application version, from <code>tiapp.xml</code>.</p>
      * @type String
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
      */
@@ -7162,8 +6313,8 @@ Ti.App = {
     },
 
     /**
-     * <p>return the arguments passed to the application on startup as a dictionary</p>
-     * @returns Object
+     * <p>Return the arguments passed to the application on startup as a dictionary.</p>
+     * @returns Dictionary
      * @since 0.1 (iPhone), 0.1 (iPad)
      */
     getArguments:function() {
@@ -7227,7 +6378,7 @@ Ti.App = {
 
     /**
      * <p>Gets the value of the {@link Ti.App.proximityState} property.</p>
-     * @returns Number
+     * @returns Boolean
      * @since 0.1 (iPhone), 0.1 (iPad)
      */
     getProximityState:function() {
@@ -7280,14 +6431,6 @@ Ti.App = {
      * @since 0.1 (iPhone), 0.1 (iPad)
      */
     setProximityDetection:function(proximityDetection) {
-    },
-
-    /**
-     * <p>Sets the value of the {@link Ti.App.proximityState} property.</p>
-     * @param {Number} proximityState <p>New value for the property.</p>
-     * @since 0.1 (iPhone), 0.1 (iPad)
-     */
-    setProximityState:function(proximityState) {
     }
 };
 
@@ -9478,39 +8621,32 @@ Ti.Contacts.Person.prototype = {
 Ti.Database = {
 
     /**
-     * <p>constant for requesting a column's value returned in double form.</p>
+     * <p>Constant for requesting a column's value returned in double form.</p>
      * @type Number
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
      */
     FIELD_TYPE_DOUBLE:null,
 
     /**
-     * <p>constant for requesting a column's value returned in float form.</p>
+     * <p>Constant for requesting a column's value returned in float form.</p>
      * @type Number
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
      */
     FIELD_TYPE_FLOAT:null,
 
     /**
-     * <p>constant for requesting a column's value returned in integer form.</p>
+     * <p>Constant for requesting a column's value returned in integer form.</p>
      * @type Number
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
      */
     FIELD_TYPE_INT:null,
 
     /**
-     * <p>constant for requesting a column's value returned in string form.</p>
+     * <p>Constant for requesting a column's value returned in string form.</p>
      * @type Number
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
      */
     FIELD_TYPE_STRING:null,
-
-    /**
-     * <p>Returns a object representing the database itself.</p>
-     * @type Ti.Filesystem.File
-     * @since 1.9 (iPhone), 1.9 (iPad)
-     */
-    file:null,
 
 
     /**
@@ -9532,30 +8668,28 @@ Ti.Database = {
     },
 
     /**
-     * <p>Gets the value of the {@link Ti.Database.file} property.</p>
-     * @returns Ti.Filesystem.File
-     * @since 1.9 (iPhone), 1.9 (iPad)
-     */
-    getFile:function() {
-    },
-
-    /**
-     * <p>install a database from the application Resources folder (at build time) and return a reference to the opened database. it is safe to call this method multiple times since this method will only install once if it doesn't already exist on the device.</p>
-     * @param {String} path <p>the path (relative to the main application Resources folder at build time) to the db to install. this file must be in the SQLite 3 file format.</p>
-     * @param {String} name <p>the name of the database</p>
+     * <p>Installs an SQLite database to device's internal storage.</p>
+     * @param {String} path <p>Path and filename of the database file to copy to internal storage.
+File location is relative to the script's context unless an absolute
+path, such as one constructed with a {@link Ti.Filesystem} 
+constant, is used.</p>
+     * @param {String} dbName <p>Destination filename, which will subsequently be passed to
+{@link Ti.Database.open}.</p>
      * @returns Ti.Database.DB
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad)
      */
-    install:function(path, name) {
+    install:function(path, dbName) {
     },
 
     /**
-     * <p>open a database. if it doesn't yet exist, create it.</p>
-     * @param {String} name <p>the name of the database</p>
+     * <p>Opens an SQLite database.</p>
+     * @param {String} dbName <p>The dbname previously passed to {@link Ti.Database.install}. On Android, 
+an absolute path to the file, including one that is constructed with a 
+{@link Ti.Filesystem} constant, may be used.</p>
      * @returns Ti.Database.DB
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
      */
-    open:function(name) {
+    open:function(dbName) {
     },
 
     /**
@@ -9576,21 +8710,29 @@ Ti.Database.DB = function() {
 Ti.Database.DB.prototype = {
 
     /**
-     * <p>the last row identifier by the last INSERT query</p>
+     * <p>A <code>File</code> object representing the file where this database is stored. Must
+only be used for setting file properties.</p>
+     * @type Ti.Filesystem.File
+     * @since 1.9 (iPhone), 1.9 (iPad)
+     */
+    file:null,
+
+    /**
+     * <p>The identifier of the last populated row.</p>
      * @type Number
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
      */
     lastInsertRowId:null,
 
     /**
-     * <p>the name of the database</p>
+     * <p>The name of the database.</p>
      * @type String
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
      */
     name:null,
 
     /**
-     * <p>the number of rows affected by the last query</p>
+     * <p>The number of rows affected by the last query.</p>
      * @type Number
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
      */
@@ -9607,17 +8749,19 @@ Ti.Database.DB.prototype = {
     },
 
     /**
-     * <p>close the database and release resources from memory. once closed, this instance is no longer valid and must no longer be used.</p>
+     * <p>Closes the database and releases resources from memory. Once closed, this
+instance is no longer valid and should not be used.</p>
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
      */
     close:function() {
     },
 
     /**
-     * <p>execute a SQL statement against the database and returns a ResultSet</p>
-     * @param {String} sql <p>the SQL to execute</p>
-     * @param {Array<Object>} vararg <p>one or more optional variable arguments passed to this function or an array of objects to be replaced in the query using <code>?</code> substitution.</p>
-     * @returns Object
+     * <p>Executes an SQL statement against the database and returns a <code>ResultSet</code>.</p>
+     * @param {String} sql <p>SQL to execute. May include placeholders for parameter substitution.</p>
+     * @param {String|Array<String>|Object|Array<Object>} vararg <p>Either a variable ordered list of zero or more values, or an array of values,
+to be substituted with the respective <code>?</code> placeholder of the query.</p>
+     * @returns Ti.Database.ResultSet
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
      */
     execute:function(sql, vararg) {
@@ -9630,6 +8774,14 @@ Ti.Database.DB.prototype = {
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
      */
     fireEvent:function(name, event) {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.Database.DB.file} property.</p>
+     * @returns Ti.Filesystem.File
+     * @since 1.9 (iPhone), 1.9 (iPad)
+     */
+    getFile:function() {
     },
 
     /**
@@ -9657,8 +8809,10 @@ Ti.Database.DB.prototype = {
     },
 
     /**
-     * <p>remove the database files for this instance from disk. WARNING: this is a destructive operation and cannot be reversed. All data in the database will be lost upon calling this function. Use with caution.</p>
-     * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
+     * <p>Removes the database files for this instance from disk. WARNING: this is
+a destructive operation and cannot be reversed. All data in the database
+will be lost; use with caution.</p>
+     * @since 0.1 (Android)
      */
     remove:function() {
     },
@@ -9699,22 +8853,50 @@ Ti.Database.DB.prototype = {
 
 /**
  * platforms: Android, iPhone, iPad, Mobile Web
+ * 
+ * @example Using ResultSet
+ * <p>The following code will install a database and execute SQL statements that will create a 
+table, insert data into it, query the table and iterate through the returned ResultSet.</p>
+<pre><code>var db = Ti.Database.open('mydb1Installed');
+db.execute('CREATE TABLE IF NOT EXISTS people (name TEXT, phone_number TEXT, city TEXT)');
+db.execute('DELETE FROM people');
+
+var thisName = 'Arthur';
+var thisPhoneNo = '1-617-000-0000';
+var thisCity = 'Mountain View';
+db.execute('INSERT INTO people (name, phone_number, city) VALUES (?, ?, ?)', thisName, thisPhoneNo, thisCity);
+
+var personArray = ['Paul','020 7000 0000', 'London'];
+db.execute('INSERT INTO people (name, phone_number, city) VALUES (?, ?, ?)', personArray);
+
+var rows = db.execute('SELECT rowid,name,phone_number,city FROM people');
+db.close();
+
+while (rows.isValidRow())
+{
+  Ti.API.info('Person ---&gt; ROWID: ' + rows.fieldByName('rowid') + ', name:' + rows.field(1) + ', phone_number: ' + rows.fieldByName('phone_number') + ', city: ' + rows.field(3));
+  rows.next();
+}
+rows.close();
+</code></pre>
+<p>Note that the above <code>SELECT</code> query contains the {@link http://www.sqlite.org/lang_createtable.html#rowid}
+field, which contains an SQLite-specific unique identifier for each row.</p>
  */
 Ti.Database.ResultSet = function() {
 };
 Ti.Database.ResultSet.prototype = {
 
     /**
-     * <p>the number of rows in the result set</p>
+     * <p>The number of rows in this result set.</p>
      * @type Number
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
      */
     rowCount:null,
 
     /**
-     * <p>returns true if the current row is still valid</p>
+     * <p>Indicates whether the current row is valid.</p>
      * @type Boolean
-     * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
+     * @since 0.1 (iPhone), 0.1 (iPad)
      */
     validRow:null,
 
@@ -9729,34 +8911,43 @@ Ti.Database.ResultSet.prototype = {
     },
 
     /**
-     * <p>close the result set and release resources. once closed, this result set must no longer be used</p>
+     * <p>Closes this result set and release resources. Once closed, the result set must no longer 
+be used.</p>
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
      */
     close:function() {
     },
 
     /**
-     * <p>retrieve a row value by field index</p>
-     * @param {Number} index <p>column index (which is zero based)</p>
-     * @param {Number} type <p>One of ({@link Ti.Database.FIELD_TYPE_STRING} | {@link Ti.Database.FIELD_TYPE_INT} | {@link Ti.Database.FIELD_TYPE_FLOAT} | {@link Ti.Database.FIELD_TYPE_DOUBLE})</p>
-     * @returns Object
+     * <p>Retrieves the value for the specified field in the current row, 
+and casts it to the specified type (String, Integer, Float or Double.)</p>
+     * @param {Number} index <p>A zero-based column index.</p>
+     * @param {Number} type <p>One of ({@link Ti.Database.FIELD_TYPE_STRING} | {@link Ti.Database.FIELD_TYPE_INT} | 
+{@link Ti.Database.FIELD_TYPE_FLOAT} | {@link Ti.Database.FIELD_TYPE_DOUBLE})</p>
+     * @returns String
+     * @returns Number
+     * @returns Ti.Blob
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
      */
     field:function(index, type) {
     },
 
     /**
-     * <p>retrieve a row value by field name</p>
-     * @param {String} name <p>column name from SQL query</p>
-     * @param {Number} type <p>One of ({@link Ti.Database.FIELD_TYPE_STRING} | {@link Ti.Database.FIELD_TYPE_INT} | {@link Ti.Database.FIELD_TYPE_FLOAT} | {@link Ti.Database.FIELD_TYPE_DOUBLE})</p>
-     * @returns Object
+     * <p>Retrieves the value for the specified field in the current row, 
+and casts it to the specified type (String, Integer, Float or Double.)</p>
+     * @param {String} name <p>A column name or alias used in the SQL query.</p>
+     * @param {Number} type <p>One of ({@link Ti.Database.FIELD_TYPE_STRING} | {@link Ti.Database.FIELD_TYPE_INT} | 
+{@link Ti.Database.FIELD_TYPE_FLOAT} | {@link Ti.Database.FIELD_TYPE_DOUBLE})</p>
+     * @returns String
+     * @returns Number
+     * @returns Ti.Blob
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
      */
     fieldByName:function(name, type) {
     },
 
     /**
-     * <p>return the number of columns in the result set</p>
+     * <p>Returns the number of columns in this result set.</p>
      * @returns Number
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
      */
@@ -9764,8 +8955,8 @@ Ti.Database.ResultSet.prototype = {
     },
 
     /**
-     * <p>return the field name for field index</p>
-     * @param {Number} index <p>field name column index (which is zero based)</p>
+     * <p>Returns the field name for the specified field index.</p>
+     * @param {Number} index <p>A zero-based column index for the field.</p>
      * @returns String
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
      */
@@ -9792,13 +8983,13 @@ Ti.Database.ResultSet.prototype = {
     /**
      * <p>Gets the value of the {@link Ti.Database.ResultSet.validRow} property.</p>
      * @returns Boolean
-     * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
+     * @since 0.1 (iPhone), 0.1 (iPad)
      */
     getValidRow:function() {
     },
 
     /**
-     * <p>return true if the row is a valid row</p>
+     * <p>Returns whether the current row is valid.</p>
      * @returns Boolean
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
      */
@@ -9806,9 +8997,9 @@ Ti.Database.ResultSet.prototype = {
     },
 
     /**
-     * <p>iterate to the next row in the result set.</p>
-     * @returns Boolean If the next operation goes past the final row, this returns false.  Else true.
-
+     * <p>Advances to the next row in the result set and returns <code>true</code> if one exists, 
+or <code>false</code> otherwise.</p>
+     * @returns Boolean
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
      */
     next:function() {
@@ -9821,22 +9012,6 @@ Ti.Database.ResultSet.prototype = {
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
      */
     removeEventListener:function(name, callback) {
-    },
-
-    /**
-     * <p>Sets the value of the {@link Ti.Database.ResultSet.rowCount} property.</p>
-     * @param {Number} rowCount <p>New value for the property.</p>
-     * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
-     */
-    setRowCount:function(rowCount) {
-    },
-
-    /**
-     * <p>Sets the value of the {@link Ti.Database.ResultSet.validRow} property.</p>
-     * @param {Boolean} validRow <p>New value for the property.</p>
-     * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
-     */
-    setValidRow:function(validRow) {
     }
 };
 
@@ -9862,37 +9037,7 @@ Ti.Event.prototype = {
     type:null,
 
 
-    /**
-     * <p>Gets the value of the {@link Ti.Event.source} property.</p>
-     * @returns Object
-     * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad)
-     */
-    getSource:function() {
-    },
 
-    /**
-     * <p>Gets the value of the {@link Ti.Event.type} property.</p>
-     * @returns String
-     * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad)
-     */
-    getType:function() {
-    },
-
-    /**
-     * <p>Sets the value of the {@link Ti.Event.source} property.</p>
-     * @param {Object} source <p>New value for the property.</p>
-     * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad)
-     */
-    setSource:function(source) {
-    },
-
-    /**
-     * <p>Sets the value of the {@link Ti.Event.type} property.</p>
-     * @param {String} type <p>New value for the property.</p>
-     * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad)
-     */
-    setType:function(type) {
-    }
 };
 
 /**
@@ -9903,8 +9048,8 @@ Facebook through the {@link http://developers.facebook.com/docs/reference/api/}
 {@link http://developers.facebook.com/docs/reference/rest/} (see <code>request</code>).
 Due to how the facebook login process works on iOS, your app will need to have the following 
 in your tiapp.xml if you target those platforms:</p>
-<property name="ti.facebook.appid">your_app_id_here</property>
-
+<pre><code>&lt;property name="ti.facebook.appid"&gt;your_facebook_app_id_here&lt;/property&gt;
+</code></pre>
 <p>You must still set Ti.Facebook.appid within your app itself to use the facebook module.<br />
 This property is used only for configuring your app to interface with the facebook 
 login process.</p>
@@ -10441,6 +9586,13 @@ Ti.Facebook.LoginButton.prototype = {
     backgroundLeftCap:null,
 
     /**
+     * <p>Toggle for whether or not to tile a background across a view.</p>
+     * @type Boolean
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    backgroundRepeat:null,
+
+    /**
      * <p>Selected background color of the view.</p>
      * @type String
      * @since 0.8 (Android), 1.8 (Mobile Web)
@@ -10497,6 +9649,13 @@ Ti.Facebook.LoginButton.prototype = {
     center:null,
 
     /**
+     * <p>Array of this view's child views.</p>
+     * @type Array<Ti.UI.View>
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
+     */
+    children:null,
+
+    /**
      * <p>Whether view should be focusable while navigating with the trackball.</p>
      * @type Boolean
      * @since 0.8 (Android)
@@ -10547,7 +9706,7 @@ One of: 'absolute', 'vertical', or 'horizontal'.</p>
     right:null,
 
     /**
-     * <p>Size of the view as a dictionary of width and height properties.</p>
+     * <p>Rendered size of the view as a dictionary of width and height properties.</p>
      * @type Object
      * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
      */
@@ -10741,6 +9900,14 @@ If this argument is not a view, an exception will be raised.</p>
     },
 
     /**
+     * <p>Gets the value of the {@link Ti.Facebook.LoginButton.backgroundRepeat} property.</p>
+     * @returns Boolean
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    getBackgroundRepeat:function() {
+    },
+
+    /**
      * <p>Gets the value of the {@link Ti.Facebook.LoginButton.backgroundSelectedColor} property.</p>
      * @returns String
      * @since 0.8 (Android), 1.8 (Mobile Web)
@@ -10803,6 +9970,14 @@ If this argument is not a view, an exception will be raised.</p>
      * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
      */
     getCenter:function() {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.Facebook.LoginButton.children} property.</p>
+     * @returns Array<Ti.UI.View>
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
+     */
+    getChildren:function() {
     },
 
     /**
@@ -11036,6 +10211,14 @@ If this argument is not a view, an exception will be raised.</p>
     },
 
     /**
+     * <p>Sets the value of the {@link Ti.Facebook.LoginButton.backgroundRepeat} property.</p>
+     * @param {Boolean} backgroundRepeat <p>New value for the property.</p>
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    setBackgroundRepeat:function(backgroundRepeat) {
+    },
+
+    /**
      * <p>Sets the value of the {@link Ti.Facebook.LoginButton.backgroundSelectedColor} property.</p>
      * @param {String} backgroundSelectedColor <p>New value for the property.</p>
      * @since 0.8 (Android), 1.8 (Mobile Web)
@@ -11156,14 +10339,6 @@ If this argument is not a view, an exception will be raised.</p>
     },
 
     /**
-     * <p>Sets the value of the {@link Ti.Facebook.LoginButton.size} property.</p>
-     * @param {Object} size <p>New value for the property.</p>
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
-     */
-    setSize:function(size) {
-    },
-
-    /**
      * <p>Sets the value of the {@link Ti.Facebook.LoginButton.softKeyboardOnFocus} property.</p>
      * @param {Number} softKeyboardOnFocus <p>New value for the property.</p>
      * @since 0.8 (Android)
@@ -11251,63 +10426,77 @@ performed asynchronously. If null, it will be performed immediately.</p>
 Ti.Filesystem = {
 
     /**
-     * <p>constant for append mode for file operations</p>
+     * <p>Constant for append mode for file operations.</p>
      * @type Number
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad)
      */
     MODE_APPEND:null,
 
     /**
-     * <p>constant for read mode for file operations</p>
+     * <p>Constant for read mode for file operations.</p>
      * @type Number
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad)
      */
     MODE_READ:null,
 
     /**
-     * <p>constant for write mode for file operations</p>
+     * <p>Constant for write mode for file operations.</p>
      * @type Number
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad)
      */
     MODE_WRITE:null,
 
     /**
-     * <p>constant where your application data directory is located. this directory should be used to place applications-specific files. on iPhone, this directory is also backed up.</p>
+     * <p>Path to the application's data directory.</p>
      * @type String
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad)
      */
     applicationDataDirectory:null,
 
     /**
-     * <p>constant where your application is located</p>
+     * <p>Path to the iOS application directory.</p>
      * @type String
-     * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad)
+     * @since 0.1 (iPhone), 0.1 (iPad)
      */
     applicationDirectory:null,
 
     /**
-     * <p>platform specific line ending constant</p>
+     * <p>Path to the application support directory.</p>
+     * @type String
+     * @since 0.1 (iPhone), 0.1 (iPad)
+     */
+    applicationSupportDirectory:null,
+
+    /**
+     * <p>Path to a directory on removable storage, such as SD card.</p>
+     * @type String
+     * @since 0.1 (Android)
+     */
+    externalStorageDirectory:null,
+
+    /**
+     * <p>Platform-specific line ending constant.</p>
      * @type String
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad)
      */
     lineEnding:null,
 
     /**
-     * <p>constant where your application resources are located</p>
+     * <p>Path to the application's resource directory.</p>
      * @type String
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad)
      */
     resourcesDirectory:null,
 
     /**
-     * <p>path separator constant</p>
+     * <p>Platform-specific path separator constant.</p>
      * @type String
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad)
      */
     separator:null,
 
     /**
-     * <p>constant where your application can place temporary files</p>
+     * <p>Path for the application's temporary directory.</p>
      * @type String
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad)
      */
@@ -11333,7 +10522,7 @@ Ti.Filesystem = {
     },
 
     /**
-     * <p>create temp file and return a {@link Ti.Filesystem.File}</p>
+     * <p>Creates a temporary directory and returns a {@link Ti.Filesystem.File} object representing the new directory.</p>
      * @returns Ti.Filesystem.File
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad)
      */
@@ -11341,7 +10530,7 @@ Ti.Filesystem = {
     },
 
     /**
-     * <p>create a temp file and return a {@link Ti.Filesystem.File}</p>
+     * <p>Creates a temporary file and returns a {@link Ti.Filesystem.File} object representing the new file.</p>
      * @returns Ti.Filesystem.File
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad)
      */
@@ -11368,14 +10557,30 @@ Ti.Filesystem = {
     /**
      * <p>Gets the value of the {@link Ti.Filesystem.applicationDirectory} property.</p>
      * @returns String
-     * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad)
+     * @since 0.1 (iPhone), 0.1 (iPad)
      */
     getApplicationDirectory:function() {
     },
 
     /**
-     * <p>return a fully formed file path as a {@link Ti.Filesystem.File} object</p>
-     * @param {String} path <p>one or more path arguments to form the full path joined together with the platform specific path separator. if a relative path is passed, the full path will be relative to the application resource folder.</p>
+     * <p>Gets the value of the {@link Ti.Filesystem.applicationSupportDirectory} property.</p>
+     * @returns String
+     * @since 0.1 (iPhone), 0.1 (iPad)
+     */
+    getApplicationSupportDirectory:function() {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.Filesystem.externalStorageDirectory} property.</p>
+     * @returns String
+     * @since 0.1 (Android)
+     */
+    getExternalStorageDirectory:function() {
+    },
+
+    /**
+     * <p>Returns a <code>File</code> object representing the file identified by the path arguments.</p>
+     * @param {String} path <p>One or more path components. Path arguments are joined together using the platform specific path separator to form the full path.</p>
      * @returns Ti.Filesystem.File
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad)
      */
@@ -11415,7 +10620,7 @@ Ti.Filesystem = {
     },
 
     /**
-     * <p>returns true if the android device supports external storage such as an SD card. Returns false on iOS.</p>
+     * <p>Returns <code>true</code> if the device supports external storage <em>and</em> the external storage device is mounted.</p>
      * @returns Boolean
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad)
      */
@@ -11434,17 +10639,118 @@ Ti.Filesystem = {
 
 /**
  * platforms: Android, iPhone, iPad
+ * @namespace <p>Use the {@link Ti.Filesystem.getFile} method to get a handle to a <code>File</code> object,
+which represents a given path.  There does not need to be an existing file or directory 
+does not need to exist before <code>getFile</code> is called. If the file doesn't exist, and 
+the file path identifies a file in a writable directory, writing to the file 
+creates the file implicitly. </p>
+<p>See {@link Ti.Filesystem} for constants identifying commonly-used device directories.</p>
+<p>Use the {@link Ti.Filesystem.File.exists} method to test whether the file exists.</p>
+<p>A file object can point to an ordinary file, a directory or a symbolic link.
+Use {@link Ti.Filesystem.File.createDirectory} to create a directory.
+Use the {@link Ti.Filesystem.File.getDirectoryListing} method to
+retrieve a list of the directory's contents.</p>
+<p>The <code>File</code> object doesn't provide methods for random access into the file.
+The <code>read</code> method reads the file's entire contents into a <code>Blob</code> object.
+The <code>write</code> method can either overwrite the entire file or append to an
+existing file. </p>
+<p>For random access to a file, such as accessing a small portion of a larger file, 
+you can open a file as a {@link Ti.Filesystem.FileStream} object. Use the 
+{@link Ti.Filesystem.File.open} method to get a <code>FileStream</code> for an 
+existing <code>File</code> object, or use the <code>Ti.Filesystem.openStream</code> method 
+to get a <code>FileStream</code> directly without calling <code>getFile</code> first.</p>
+<p>The {@link Ti.Filesystem} module defines a number of properties and methods related to 
+filesystem access, including properties that specify paths for application-specific 
+directories, and methods for creating temporary files and directories.</p>
+<p>On Android, files may be stored on external storage (that is, removable media such as 
+SD Cards).</p>
+<p>Note that once created with <code>getFile</code>, the path associated with a file object is
+immutable. If you move the underlying file using {@link Ti.Filesystem.File.move} 
+or {@link Ti.Filesystem.File.rename}, you can no longer access it with the 
+original <code>File</code> object. You must use <code>getFile</code> to get a handle to the new path.</p>
+ * 
+ * @example Reading a File
+ * <p>Data files shipped with the application are stored in the resources directory.</p>
+<p>This example reads string data from a text file.</p>
+<pre><code>// resourcesDirectory is actually the default location, so the first 
+// argument could be omitted here.
+file = Ti.Filesystem.getFile(Ti.Filesystem.resourcesDirectory, "textfile.txt");
+var blob = file.read();
+var readText = blob.text;
+// dispose of file handle &amp; blob.
+file = null;
+blob = null;
+</code></pre>
+ * 
+ * @example Creating a Subdirectory
+ * <p>Files that the application writes to need to be stored outside of the 
+resources directory, since that directory is read-only.</p>
+<p>This example creates a subdirectory to store downloaded images.
+The example assumes that two variables are defined elsewhere in the code:
+myImageID, a string containing some kind of ID for the downloaded image, 
+and myImageData, a <code>Blob</code> containing JPEG image data.</p>
+<pre><code>var imageDir = Ti.Filesystem.getFile(Ti.Filesystem.applicationDataDirectory,            
+    'downloaded_images');
+if (! imageDir.exists()) {
+    imageDir.createDirectory();
+}
+
+// .resolve() provides the resolved native path for the directory.
+var imageFile  = Ti.Filesystem.getFile(imageDir.resolve(), myImageID + '.jpg');
+Ti.API.info("ImageFile path is: " + imageFile.resolve());
+if (imageFile.write(myImageData)===false) {
+    // handle write error
+}
+// dispose of file handles
+imageFile = null;
+imageDir = null;
+</code></pre>
  */
 Ti.Filesystem.File = function() {
 };
 Ti.Filesystem.File.prototype = {
 
     /**
-     * <p>returns the fully resolved native path</p>
+     * <p><code>true</code> if the file is executable.</p>
+     * @type Boolean
+     * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad)
+     */
+    executable:null,
+
+    /**
+     * <p>Set to <code>true</code> if the file is hidden.</p>
+     * @type Boolean
+     * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad)
+     */
+    hidden:null,
+
+    /**
+     * <p>Name of the file.</p>
+     * @type String
+     * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad)
+     */
+    name:null,
+
+    /**
+     * <p>Returns the fully resolved native path.</p>
      * @type String
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad)
      */
     nativePath:null,
+
+    /**
+     * <p>A <code>File</code> object representing the parent directory of the file identified by this object.</p>
+     * @type Ti.Filesystem.File
+     * @since 0.1 (Android)
+     */
+    parent:null,
+
+    /**
+     * <p><code>true</code> if the file identified by this object is read-only.</p>
+     * @type Boolean
+     * @since 0.1 (Android)
+     */
+    readonly:null,
 
     /**
      * <p>Value indicating whether or not to back up to a cloud service.</p>
@@ -11452,6 +10758,34 @@ Ti.Filesystem.File.prototype = {
      * @since 1.8.0 (iPhone), 1.8.0 (iPad)
      */
     remoteBackup:null,
+
+    /**
+     * <p>Size, in bytes, of the file identified by this object.</p>
+     * @type Number
+     * @since 0.1 (Android)
+     */
+    size:null,
+
+    /**
+     * <p><code>true</code> if the file identified by this object is a symbolic link.</p>
+     * @type Boolean
+     * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad)
+     */
+    symbolicLink:null,
+
+    /**
+     * <p><code>true</code> if the file identified by this object is writable.</p>
+     * @type Boolean
+     * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad)
+     */
+    writable:null,
+
+    /**
+     * <p>Use {@link Ti.Filesystem.File.writable} instead.</p>
+     * @type Boolean
+     * @since 0.1 (iPhone), 0.1 (iPad)
+     */
+    writeable:null,
 
 
     /**
@@ -11464,7 +10798,25 @@ Ti.Filesystem.File.prototype = {
     },
 
     /**
-     * <p>create a directory at the path for the file object</p>
+     * <p>Appends data to the file identified by this file object.</p>
+     * @param {String|Ti.Blob|Ti.Filesystem.File} data <p>Data to append.</p>
+     * @returns Boolean
+     * @since 0.1 (iPhone), 0.1 (iPad)
+     */
+    append:function(data) {
+    },
+
+    /**
+     * <p>Copies the file identified by this file object to a new path.</p>
+     * @param {String} destinationPath <p>Destination path to copy to.</p>
+     * @returns Boolean
+     * @since 0.1 (Android)
+     */
+    copy:function(destinationPath) {
+    },
+
+    /**
+     * <p>Creates a directory at the path identified by this file object.</p>
      * @returns Boolean
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad)
      */
@@ -11472,15 +10824,15 @@ Ti.Filesystem.File.prototype = {
     },
 
     /**
-     * <p>create a file path at the path for the file object</p>
+     * <p>Creates a file at the path identified by this file object.</p>
      * @returns Boolean
-     * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad)
+     * @since 0.1 (iPhone), 0.1 (iPad)
      */
     createFile:function() {
     },
 
     /**
-     * <p>return the created timestamp for the file</p>
+     * <p>Returns the creation timestamp for the file identified by this file object.</p>
      * @returns Number
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad)
      */
@@ -11488,8 +10840,8 @@ Ti.Filesystem.File.prototype = {
     },
 
     /**
-     * <p>delete the file directory path</p>
-     * @param {Boolean} recursive <p>pass true to recursively delete any contents. defaults to false</p>
+     * <p>Deletes the directory identified by this file object.</p>
+     * @param {Boolean} recursive <p>Pass <code>true</code> to recursively delete any directory contents.</p>
      * @returns Boolean
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad)
      */
@@ -11497,7 +10849,7 @@ Ti.Filesystem.File.prototype = {
     },
 
     /**
-     * <p>delete the file</p>
+     * <p>Deletes the file identified by this file object.</p>
      * @returns Boolean
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad)
      */
@@ -11505,15 +10857,7 @@ Ti.Filesystem.File.prototype = {
     },
 
     /**
-     * <p>returns true if the file is executable</p>
-     * @returns Boolean Returns true if file is executable.
-     * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad)
-     */
-    executable:function() {
-    },
-
-    /**
-     * <p>returns true if the file or directory exists on the device</p>
+     * <p>Returns <code>true</code> if the file or directory identified by this file object exists on the device.</p>
      * @returns Boolean
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad)
      */
@@ -11521,7 +10865,7 @@ Ti.Filesystem.File.prototype = {
     },
 
     /**
-     * <p>return the file extension</p>
+     * <p>Returns the extension for the file identified by this file object.</p>
      * @returns String
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad)
      */
@@ -11538,11 +10882,36 @@ Ti.Filesystem.File.prototype = {
     },
 
     /**
-     * <p>return an array of paths in the directory of the file object</p>
+     * <p>Returns a listing of the directory identified by this file object, or <code>null</code>
+if this object doesn't identify a directory.</p>
      * @returns Array<String>
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad)
      */
     getDirectoryListing:function() {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.Filesystem.File.executable} property.</p>
+     * @returns Boolean
+     * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad)
+     */
+    getExecutable:function() {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.Filesystem.File.hidden} property.</p>
+     * @returns Boolean
+     * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad)
+     */
+    getHidden:function() {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.Filesystem.File.name} property.</p>
+     * @returns String
+     * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad)
+     */
+    getName:function() {
     },
 
     /**
@@ -11554,11 +10923,20 @@ Ti.Filesystem.File.prototype = {
     },
 
     /**
-     * <p>return the file parent</p>
+     * <p>Returns the path of the parent directory holding the file identified by this file object, as a String <strong>or</strong> as a <code>File</code> object.</p>
+     * @returns String
      * @returns Ti.Filesystem.File
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad)
      */
     getParent:function() {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.Filesystem.File.readonly} property.</p>
+     * @returns Boolean
+     * @since 0.1 (Android)
+     */
+    getReadonly:function() {
     },
 
     /**
@@ -11570,15 +10948,55 @@ Ti.Filesystem.File.prototype = {
     },
 
     /**
-     * <p>returns true if the file is hidden</p>
-     * @returns Boolean
-     * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad)
+     * <p>Gets the value of the {@link Ti.Filesystem.File.size} property.</p>
+     * @returns Number
+     * @since 0.1 (Android)
      */
-    hidden:function() {
+    getSize:function() {
     },
 
     /**
-     * <p>return the last modification timestamp for the file</p>
+     * <p>Gets the value of the {@link Ti.Filesystem.File.symbolicLink} property.</p>
+     * @returns Boolean
+     * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad)
+     */
+    getSymbolicLink:function() {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.Filesystem.File.writable} property.</p>
+     * @returns Boolean
+     * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad)
+     */
+    getWritable:function() {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.Filesystem.File.writeable} property.</p>
+     * @returns Boolean
+     * @since 0.1 (iPhone), 0.1 (iPad)
+     */
+    getWriteable:function() {
+    },
+
+    /**
+     * <p>Returns <code>true</code> if this file object represents a directory.</p>
+     * @returns Boolean
+     * @since 0.1 (Android)
+     */
+    isDirectory:function() {
+    },
+
+    /**
+     * <p>Returns <code>true</code> if this file object represents an ordinary file.</p>
+     * @returns Boolean
+     * @since 0.1 (Android)
+     */
+    isFile:function() {
+    },
+
+    /**
+     * <p>Returns the last modification time for this file.</p>
      * @returns Number
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad)
      */
@@ -11586,8 +11004,8 @@ Ti.Filesystem.File.prototype = {
     },
 
     /**
-     * <p>move the file to another path</p>
-     * @param {String|Object} newpath <p>new location</p>
+     * <p>Moves the file identified by this file object to another path.</p>
+     * @param {String} newpath <p>New location for the file.</p>
      * @returns Boolean
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad)
      */
@@ -11595,27 +11013,20 @@ Ti.Filesystem.File.prototype = {
     },
 
     /**
-     * <p>the name of the file</p>
-     * @returns String
+     * <p>Opens the file identified by this file object for random access.</p>
+     * @param {Number} mode <p>Mode to open the file in: <code>MODE_READ</code>, <code>MODE_WRITE</code>, or <code>MODE_APPEND</code>.</p>
+     * @returns Ti.Filesystem.FileStream
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad)
      */
-    name:function() {
+    open:function(mode) {
     },
 
     /**
-     * <p>return the contents of file as blob</p>
+     * <p>Returns the contents of the file identified by this file object as a <code>Blob</code>.</p>
      * @returns Ti.Blob
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad)
      */
     read:function() {
-    },
-
-    /**
-     * <p>returns true if the file is readonly</p>
-     * @returns Boolean
-     * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad)
-     */
-    readonly:function() {
     },
 
     /**
@@ -11628,8 +11039,8 @@ Ti.Filesystem.File.prototype = {
     },
 
     /**
-     * <p>rename the file</p>
-     * @param {String} newname <p>new name</p>
+     * <p>Renames the file identified by this file object.</p>
+     * @param {String} newname <p>New name for the file.</p>
      * @returns Boolean
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad)
      */
@@ -11637,24 +11048,11 @@ Ti.Filesystem.File.prototype = {
     },
 
     /**
-     * <p>make the file executable</p>
+     * <p>Sets the value of the {@link Ti.Filesystem.File.hidden} property.</p>
+     * @param {Boolean} hidden <p>New value for the property.</p>
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad)
      */
-    setExecutable:function() {
-    },
-
-    /**
-     * <p>make the file hidden</p>
-     * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad)
-     */
-    setHidden:function() {
-    },
-
-    /**
-     * <p>make the file readonly</p>
-     * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad)
-     */
-    setReadonly:function() {
+    setHidden:function(hidden) {
     },
 
     /**
@@ -11666,37 +11064,21 @@ Ti.Filesystem.File.prototype = {
     },
 
     /**
-     * <p>return boolean to indicate if the path has space available for storage</p>
-     * @returns Boolean
+     * <p>Returns the amount of free space available on the device where the file identified by this file object is stored.</p>
+     * @returns Number
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad)
      */
     spaceAvailable:function() {
     },
 
     /**
-     * <p>returns true if the file points to a symbolic link</p>
+     * <p>Writes the specified data to the file identified by this file object.</p>
+     * @param {String|Ti.Filesystem.File|Ti.Blob} data <p>Data to write, as a String, <code>Blob</code> or <code>File</code> object.</p>
+     * @param {Boolean} append <p>If <code>true</code>, append the data to the end of the file.</p>
      * @returns Boolean
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad)
      */
-    symbolicLink:function() {
-    },
-
-    /**
-     * <p>write the contents to file.</p>
-     * @param {String|Ti.Filesystem.File|Ti.Blob} contents <p>write the contents of string, blob or {@link Ti.Filesystem.File} to file</p>
-     * @param {Boolean} append <p>(optional) append the string to the end of the file.</p>
-     * @returns Boolean
-     * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad)
-     */
-    write:function(contents, append) {
-    },
-
-    /**
-     * <p>returns true if the file is writeable</p>
-     * @returns Boolean
-     * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad)
-     */
-    writeable:function() {
+    write:function(data, append) {
     }
 };
 
@@ -11930,7 +11312,7 @@ Ti.Geolocation = {
     locationServicesAuthorization:null,
 
     /**
-     * <p>returns true if the user has enabled or disable location services for the device (not the application).</p>
+     * <p>Indicates if the user has enabled or disabled location services for the device (not the application).</p>
      * @type Boolean
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
      */
@@ -12571,8 +11953,8 @@ Ti.Map.Annotation.prototype = {
     animate:null,
 
     /**
-     * <p>image for the pin instead of default image.</p>
-     * @type String
+     * <p>The image for the pin instead of the default image.</p>
+     * @type String|Ti.Blob
      * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     image:null,
@@ -12677,6 +12059,7 @@ Ti.Map.Annotation.prototype = {
     /**
      * <p>Gets the value of the {@link Ti.Map.Annotation.image} property.</p>
      * @returns String
+     * @returns Ti.Blob
      * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     getImage:function() {
@@ -12783,7 +12166,7 @@ Ti.Map.Annotation.prototype = {
 
     /**
      * <p>Sets the value of the {@link Ti.Map.Annotation.image} property.</p>
-     * @param {String} image <p>New value for the property.</p>
+     * @param {String|Ti.Blob} image <p>New value for the property.</p>
      * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     setImage:function(image) {
@@ -12969,6 +12352,13 @@ Ti.Map.View.prototype = {
     backgroundLeftCap:null,
 
     /**
+     * <p>Toggle for whether or not to tile a background across a view.</p>
+     * @type Boolean
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    backgroundRepeat:null,
+
+    /**
      * <p>Selected background color of the view.</p>
      * @type String
      * @since 0.8 (Android), 1.8 (Mobile Web)
@@ -13025,6 +12415,13 @@ Ti.Map.View.prototype = {
     center:null,
 
     /**
+     * <p>Array of this view's child views.</p>
+     * @type Array<Ti.UI.View>
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
+     */
+    children:null,
+
+    /**
      * <p>Whether view should be focusable while navigating with the trackball.</p>
      * @type Boolean
      * @since 0.8 (Android)
@@ -13046,6 +12443,13 @@ Ti.Map.View.prototype = {
     keepScreenOn:null,
 
     /**
+     * <p>The amount of north-to-south distance (measured in degrees) displayed on the map.</p>
+     * @type Number
+     * @since 1.9.0 (iPhone), 1.9.0 (iPad)
+     */
+    latitudeDelta:null,
+
+    /**
      * <p>Specifies how the view positions its children. 
 One of: 'absolute', 'vertical', or 'horizontal'.</p>
      * @type String
@@ -13059,6 +12463,13 @@ One of: 'absolute', 'vertical', or 'horizontal'.</p>
      * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
      */
     left:null,
+
+    /**
+     * <p>The amount of east-to-west distance (measured in degrees) displayed on the map.</p>
+     * @type Number
+     * @since 1.9.0 (iPhone), 1.9.0 (iPad)
+     */
+    longitudeDelta:null,
 
     /**
      * <p>the map type constant of either {@link Ti.Map.STANDARD_TYPE}, {@link Ti.Map.SATELLITE_TYPE} or {@link Ti.Map.HYBRID_TYPE}.</p>
@@ -13096,7 +12507,7 @@ One of: 'absolute', 'vertical', or 'horizontal'.</p>
     right:null,
 
     /**
-     * <p>Size of the view as a dictionary of width and height properties.</p>
+     * <p>Rendered size of the view as a dictionary of width and height properties.</p>
      * @type Object
      * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
      */
@@ -13338,6 +12749,14 @@ If this argument is not a view, an exception will be raised.</p>
     },
 
     /**
+     * <p>Gets the value of the {@link Ti.Map.View.backgroundRepeat} property.</p>
+     * @returns Boolean
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    getBackgroundRepeat:function() {
+    },
+
+    /**
      * <p>Gets the value of the {@link Ti.Map.View.backgroundSelectedColor} property.</p>
      * @returns String
      * @since 0.8 (Android), 1.8 (Mobile Web)
@@ -13403,6 +12822,14 @@ If this argument is not a view, an exception will be raised.</p>
     },
 
     /**
+     * <p>Gets the value of the {@link Ti.Map.View.children} property.</p>
+     * @returns Array<Ti.UI.View>
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
+     */
+    getChildren:function() {
+    },
+
+    /**
      * <p>Gets the value of the {@link Ti.Map.View.focusable} property.</p>
      * @returns Boolean
      * @since 0.8 (Android)
@@ -13428,6 +12855,14 @@ If this argument is not a view, an exception will be raised.</p>
     },
 
     /**
+     * <p>Gets the value of the {@link Ti.Map.View.latitudeDelta} property.</p>
+     * @returns Number
+     * @since 1.9.0 (iPhone), 1.9.0 (iPad)
+     */
+    getLatitudeDelta:function() {
+    },
+
+    /**
      * <p>Gets the value of the {@link Ti.Map.View.layout} property.</p>
      * @returns String
      * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
@@ -13442,6 +12877,14 @@ If this argument is not a view, an exception will be raised.</p>
      * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
      */
     getLeft:function() {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.Map.View.longitudeDelta} property.</p>
+     * @returns Number
+     * @since 1.9.0 (iPhone), 1.9.0 (iPad)
+     */
+    getLongitudeDelta:function() {
     },
 
     /**
@@ -13712,6 +13155,14 @@ If this argument is not a view, an exception will be raised.</p>
     },
 
     /**
+     * <p>Sets the value of the {@link Ti.Map.View.backgroundRepeat} property.</p>
+     * @param {Boolean} backgroundRepeat <p>New value for the property.</p>
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    setBackgroundRepeat:function(backgroundRepeat) {
+    },
+
+    /**
      * <p>Sets the value of the {@link Ti.Map.View.backgroundSelectedColor} property.</p>
      * @param {String} backgroundSelectedColor <p>New value for the property.</p>
      * @since 0.8 (Android), 1.8 (Mobile Web)
@@ -13864,14 +13315,6 @@ If this argument is not a view, an exception will be raised.</p>
     },
 
     /**
-     * <p>Sets the value of the {@link Ti.Map.View.size} property.</p>
-     * @param {Object} size <p>New value for the property.</p>
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
-     */
-    setSize:function(size) {
-    },
-
-    /**
      * <p>Sets the value of the {@link Ti.Map.View.softKeyboardOnFocus} property.</p>
      * @param {Number} softKeyboardOnFocus <p>New value for the property.</p>
      * @since 0.8 (Android)
@@ -13963,494 +13406,496 @@ performed asynchronously. If null, it will be performed immediately.</p>
 
 /**
  * platforms: Android, iPhone, iPad
+ * @namespace <p>The Media module is used accessing the device's media related  functionality such 
+as playing audio or recording video.</p>
  */
 Ti.Media = {
 
     /**
-     * <p>audio file format 3GPP-2</p>
+     * <p>Audio file format 3GPP2.</p>
      * @type Number
      * @since 0.1 (iPhone), 0.1 (iPad)
      */
     AUDIO_FILEFORMAT_3GP2:null,
 
     /**
-     * <p>audio file format 3GPP</p>
+     * <p>Audio file format 3GPP.</p>
      * @type Number
      * @since 0.1 (iPhone), 0.1 (iPad)
      */
     AUDIO_FILEFORMAT_3GPP:null,
 
     /**
-     * <p>audio file format AIFF</p>
+     * <p>Audio file format Audio Interchange File Format (AIFF).</p>
      * @type Number
      * @since 0.1 (iPhone), 0.1 (iPad)
      */
     AUDIO_FILEFORMAT_AIFF:null,
 
     /**
-     * <p>audio file format AMR</p>
+     * <p>Audio file format Adaptive Multi-Rate (AMR).</p>
      * @type Number
      * @since 0.1 (iPhone), 0.1 (iPad)
      */
     AUDIO_FILEFORMAT_AMR:null,
 
     /**
-     * <p>audio file format Apple Compressed Audio Format (CAF)</p>
+     * <p>Audio file format Apple Compressed Audio Format (CAF)</p>
      * @type Number
      * @since 0.1 (iPhone), 0.1 (iPad)
      */
     AUDIO_FILEFORMAT_CAF:null,
 
     /**
-     * <p>audio file format MP3</p>
+     * <p>Audio file format MP3.</p>
      * @type Number
      * @since 0.1 (iPhone), 0.1 (iPad)
      */
     AUDIO_FILEFORMAT_MP3:null,
 
     /**
-     * <p>audio file format MP4</p>
+     * <p>Audio file format MP4.</p>
      * @type Number
      * @since 0.1 (iPhone), 0.1 (iPad)
      */
     AUDIO_FILEFORMAT_MP4:null,
 
     /**
-     * <p>audio file format MP4A</p>
+     * <p>Audio file format MP4A.</p>
      * @type Number
      * @since 0.1 (iPhone), 0.1 (iPad)
      */
     AUDIO_FILEFORMAT_MP4A:null,
 
     /**
-     * <p>audio file format WAVE</p>
+     * <p>Audio file format WAVE.</p>
      * @type Number
      * @since 0.1 (iPhone), 0.1 (iPad)
      */
     AUDIO_FILEFORMAT_WAVE:null,
 
     /**
-     * <p>audio format MPEG4 AAC encoding</p>
+     * <p>Audio format MPEG4 AAC encoding.</p>
      * @type Number
      * @since 0.1 (iPhone), 0.1 (iPad)
      */
     AUDIO_FORMAT_AAC:null,
 
     /**
-     * <p>audio format 8-bit aLaw encoding</p>
+     * <p>Audio format 8-bit aLaw encoding.</p>
      * @type Number
      * @since 0.1 (iPhone), 0.1 (iPad)
      */
     AUDIO_FORMAT_ALAW:null,
 
     /**
-     * <p>audio format apple lossless encoding</p>
+     * <p>Audio format Apple lossless encoding.</p>
      * @type Number
      * @since 0.1 (iPhone), 0.1 (iPad)
      */
     AUDIO_FORMAT_APPLE_LOSSLESS:null,
 
     /**
-     * <p>audio format iLBC encoding</p>
+     * <p>Audio format iLBC encoding.</p>
      * @type Number
      * @since 0.1 (iPhone), 0.1 (iPad)
      */
     AUDIO_FORMAT_ILBC:null,
 
     /**
-     * <p>audio format Apple IMA4 encoding</p>
+     * <p>Audio format Apple IMA4 encoding.</p>
      * @type Number
      * @since 0.1 (iPhone), 0.1 (iPad)
      */
     AUDIO_FORMAT_IMA4:null,
 
     /**
-     * <p>audio format Linear 16-bit, PCM encoding</p>
+     * <p>Audio format 16-bit, linear PCM encoding.</p>
      * @type Number
      * @since 0.1 (iPhone), 0.1 (iPad)
      */
     AUDIO_FORMAT_LINEAR_PCM:null,
 
     /**
-     * <p>audio format 8-bit muLaw encoding</p>
+     * <p>Audio format 8-bit muLaw encoding.</p>
      * @type Number
      * @since 0.1 (iPhone), 0.1 (iPad)
      */
     AUDIO_FORMAT_ULAW:null,
 
     /**
-     * <p>constant for line type headphones</p>
+     * <p>Line-type constant for headphones.</p>
      * @type Number
      * @since 0.1 (iPhone), 0.1 (iPad)
      */
     AUDIO_HEADPHONES:null,
 
     /**
-     * <p>constant line type headphones and microphone</p>
+     * <p>Line-type constant for headphones and microphone.</p>
      * @type Number
      * @since 0.1 (iPhone), 0.1 (iPad)
      */
     AUDIO_HEADPHONES_AND_MIC:null,
 
     /**
-     * <p>constant line type headset in/out</p>
+     * <p>Line-type constant for headset in/out.</p>
      * @type Number
      * @since 0.1 (iPhone), 0.1 (iPad)
      */
     AUDIO_HEADSET_INOUT:null,
 
     /**
-     * <p>constant line type line out</p>
+     * <p>Line-type constant for line-out.</p>
      * @type Number
      * @since 0.1 (iPhone), 0.1 (iPad)
      */
     AUDIO_LINEOUT:null,
 
     /**
-     * <p>constant line type microphone</p>
+     * <p>Line-type constant for microphone.</p>
      * @type Number
      * @since 0.1 (iPhone), 0.1 (iPad)
      */
     AUDIO_MICROPHONE:null,
 
     /**
-     * <p>constant line type muted switch is on</p>
+     * <p>Line-type constant indicated mute switch is on.</p>
      * @type Number
      * @since 0.1 (iPhone), 0.1 (iPad)
      */
     AUDIO_MUTED:null,
 
     /**
-     * <p>constant line type receiver and microphone</p>
+     * <p>Line-type constant indicating receiver and microphone.</p>
      * @type Number
      * @since 0.1 (iPhone), 0.1 (iPad)
      */
     AUDIO_RECEIVER_AND_MIC:null,
 
     /**
-     * <p>For long-duration sounds such as rain, car engine noise, and so on. It is also for 'play along' style applications, such a virtual piano that a user plays over iPod audio.</p>
+     * <p>For long-duration sounds such as rain, car engine noise, and so on.</p>
      * @type Number
      * @since 0.1 (iPhone), 0.1 (iPad)
      */
     AUDIO_SESSION_MODE_AMBIENT:null,
 
     /**
-     * <p>For playing recorded music or other sounds that are central to the successful use of your application. When using this mode, your application audio continues with the Ring/Silent switch set to silent or when the screen locks. This property normally disallows iPod audio to mix with application audio</p>
+     * <p>Session mode for playing recorded music or other sounds that are central to the successful use of your application.</p>
      * @type Number
      * @since 0.1 (iPhone), 0.1 (iPad)
      */
     AUDIO_SESSION_MODE_PLAYBACK:null,
 
     /**
-     * <p>Allows recording (input) and playback (output) of audio, such as for a VOIP (voice over IP) application. This category is appropriate for simultaneous recording and playback, and also for applications that record and play back but not simultaneously. If you want to ensure that sounds such as Messages alerts do not play while your application is recording, use  {@link Ti.Media.AUDIO_SESSION_MODE_RECORD} instead. This category normally disallows iPod audio to mix with application audio.</p>
+     * <p>Session mode for recording (input) and playback (output) of audio, such as for a VOIP (voice over IP) application.</p>
      * @type Number
      * @since 0.1 (iPhone), 0.1 (iPad)
      */
     AUDIO_SESSION_MODE_PLAY_AND_RECORD:null,
 
     /**
-     * <p>For recording audio; it silences playback audio.</p>
+     * <p>Session mode for recording audio; it silences playback audio.</p>
      * @type Number
      * @since 0.1 (iPhone), 0.1 (iPad)
      */
     AUDIO_SESSION_MODE_RECORD:null,
 
     /**
-     * <p>The solo ambient sound category is for long-duration sounds such as rain, car engine noise, and so on. When you use this category, audio from built-in applications, such as the iPod, is silenced. Your audio is silenced when the Ring/Silent switch is set to <code>silent</code> or when the screen locks.</p>
+     * <p>Session mode for long-duration sounds such as rain, car engine noise, and so on.</p>
      * @type Number
      * @since 0.1 (iPhone), 0.1 (iPad)
      */
     AUDIO_SESSION_MODE_SOLO_AMBIENT:null,
 
     /**
-     * <p>constant line type speaker</p>
+     * <p>Line-type constant for speaker output.</p>
      * @type Number
      * @since 0.1 (iPhone), 0.1 (iPad)
      */
     AUDIO_SPEAKER:null,
 
     /**
-     * <p>constant line type unavailable</p>
+     * <p>Line-type constant indicating that audio is unavailable.</p>
      * @type Number
      * @since 0.1 (iPhone), 0.1 (iPad)
      */
     AUDIO_UNAVAILABLE:null,
 
     /**
-     * <p>constant line type unknown or not determined</p>
+     * <p>Line-type constant indicating that line-type is unknown or not determined.</p>
      * @type Number
      * @since 0.1 (iPhone), 0.1 (iPad)
      */
     AUDIO_UNKNOWN:null,
 
     /**
-     * <p>constant for media device busy error</p>
+     * <p>Constant for media device busy error.</p>
      * @type Number
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad)
      */
     DEVICE_BUSY:null,
 
     /**
-     * <p>media type constant to signify photo</p>
-     * @type Number
+     * <p>Media type constant for photo media.</p>
+     * @type String
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad)
      */
     MEDIA_TYPE_PHOTO:null,
 
     /**
-     * <p>media type constant to signify video</p>
-     * @type Number
+     * <p>Media type constant for video media.</p>
+     * @type String
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad)
      */
     MEDIA_TYPE_VIDEO:null,
 
     /**
-     * <p>The constant for grouping query results by album</p>
+     * <p>Constant for grouping query results by album.</p>
      * @type Number
      * @since 0.1 (iPhone), 0.1 (iPad)
      */
     MUSIC_MEDIA_GROUP_ALBUM:null,
 
     /**
-     * <p>The constant for grouping query results by album artist</p>
+     * <p>Constant for grouping query results by album and artist.</p>
      * @type Number
      * @since 0.1 (iPhone), 0.1 (iPad)
      */
     MUSIC_MEDIA_GROUP_ALBUM_ARTIST:null,
 
     /**
-     * <p>The constant for grouping query results by artist</p>
+     * <p>Constant for grouping query results by artist.</p>
      * @type Number
      * @since 0.1 (iPhone), 0.1 (iPad)
      */
     MUSIC_MEDIA_GROUP_ARTIST:null,
 
     /**
-     * <p>The constant for grouping query results by composer</p>
+     * <p>Constant for grouping query results by composer.</p>
      * @type Number
      * @since 0.1 (iPhone), 0.1 (iPad)
      */
     MUSIC_MEDIA_GROUP_COMPOSER:null,
 
     /**
-     * <p>The constant for grouping query results by genre</p>
+     * <p>Constant for grouping query results by genre.</p>
      * @type Number
      * @since 0.1 (iPhone), 0.1 (iPad)
      */
     MUSIC_MEDIA_GROUP_GENRE:null,
 
     /**
-     * <p>The constant for grouping query results by playlist</p>
+     * <p>Constant for grouping query results by playlist.</p>
      * @type Number
      * @since 0.1 (iPhone), 0.1 (iPad)
      */
     MUSIC_MEDIA_GROUP_PLAYLIST:null,
 
     /**
-     * <p>The constant for grouping query results by podcast title</p>
+     * <p>Constant for grouping query results by podcast title.</p>
      * @type Number
      * @since 0.1 (iPhone), 0.1 (iPad)
      */
     MUSIC_MEDIA_GROUP_PODCAST_TITLE:null,
 
     /**
-     * <p>The constant for grouping query results by title</p>
+     * <p>Constant for grouping query results by title.</p>
      * @type Number
      * @since 0.1 (iPhone), 0.1 (iPad)
      */
     MUSIC_MEDIA_GROUP_TITLE:null,
 
     /**
-     * <p>media containing any content</p>
+     * <p>Music library media containing any type of content.</p>
      * @type Number
      * @since 0.1 (iPhone), 0.1 (iPad)
      */
     MUSIC_MEDIA_TYPE_ALL:null,
 
     /**
-     * <p>media containing any audio content</p>
+     * <p>Music library media containing any type of audio content.</p>
      * @type Number
      * @since 0.1 (iPhone), 0.1 (iPad)
      */
     MUSIC_MEDIA_TYPE_ANY_AUDIO:null,
 
     /**
-     * <p>media containing audiobook content</p>
+     * <p>Music library media containing audiobook content.</p>
      * @type Number
      * @since 0.1 (iPhone), 0.1 (iPad)
      */
     MUSIC_MEDIA_TYPE_AUDIOBOOK:null,
 
     /**
-     * <p>media containing music content</p>
+     * <p>Music library media containing music content.</p>
      * @type Number
      * @since 0.1 (iPhone), 0.1 (iPad)
      */
     MUSIC_MEDIA_TYPE_MUSIC:null,
 
     /**
-     * <p>media containing podcast content</p>
+     * <p>Music library media containing podcast content.</p>
      * @type Number
      * @since 0.1 (iPhone), 0.1 (iPad)
      */
     MUSIC_MEDIA_TYPE_PODCAST:null,
 
     /**
-     * <p>constant for repeating all setting</p>
+     * <p>Constant for "Repeat All" setting.</p>
      * @type Number
      * @since 0.1 (iPhone), 0.1 (iPad)
      */
     MUSIC_PLAYER_REPEAT_ALL:null,
 
     /**
-     * <p>constant for user default repeat setting</p>
+     * <p>Constant for user's default repeat setting.</p>
      * @type Number
      * @since 0.1 (iPhone), 0.1 (iPad)
      */
     MUSIC_PLAYER_REPEAT_DEFAULT:null,
 
     /**
-     * <p>constant for no repeat setting</p>
+     * <p>Constant for "No Repeat" setting.</p>
      * @type Number
      * @since 0.1 (iPhone), 0.1 (iPad)
      */
     MUSIC_PLAYER_REPEAT_NONE:null,
 
     /**
-     * <p>constant for repeating one item setting</p>
+     * <p>Constant for "Repeat one item" setting.</p>
      * @type Number
      * @since 0.1 (iPhone), 0.1 (iPad)
      */
     MUSIC_PLAYER_REPEAT_ONE:null,
 
     /**
-     * <p>constant for shuffling complete albums setting</p>
+     * <p>Constant for shuffling complete albums setting.</p>
      * @type Number
      * @since 0.1 (iPhone), 0.1 (iPad)
      */
     MUSIC_PLAYER_SHUFFLE_ALBUMS:null,
 
     /**
-     * <p>constant for user default shuffle setting</p>
+     * <p>Constant for user's default shuffle setting.</p>
      * @type Number
      * @since 0.1 (iPhone), 0.1 (iPad)
      */
     MUSIC_PLAYER_SHUFFLE_DEFAULT:null,
 
     /**
-     * <p>constant for no shuffle setting</p>
+     * <p>Constant for "no shuffle" setting.</p>
      * @type Number
      * @since 0.1 (iPhone), 0.1 (iPad)
      */
     MUSIC_PLAYER_SHUFFLE_NONE:null,
 
     /**
-     * <p>constant for shuffling songs setting</p>
+     * <p>Constant for shuffling songs setting.</p>
      * @type Number
      * @since 0.1 (iPhone), 0.1 (iPad)
      */
     MUSIC_PLAYER_SHUFFLE_SONGS:null,
 
     /**
-     * <p>constant for interrupted state</p>
+     * <p>Constant for interrupted state.</p>
      * @type Number
      * @since 0.1 (iPhone), 0.1 (iPad)
      */
     MUSIC_PLAYER_STATE_INTERRUPTED:null,
 
     /**
-     * <p>constant for paused state</p>
+     * <p>Constant for paused state.</p>
      * @type Number
      * @since 0.1 (iPhone), 0.1 (iPad)
      */
     MUSIC_PLAYER_STATE_PAUSED:null,
 
     /**
-     * <p>constant for playing state</p>
+     * <p>Constant for playing state.</p>
      * @type Number
      * @since 0.1 (iPhone), 0.1 (iPad)
      */
     MUSIC_PLAYER_STATE_PLAYING:null,
 
     /**
-     * <p>constant for backward seek state</p>
+     * <p>Constant for backward seek state.</p>
      * @type Number
      * @since 0.1 (iPhone), 0.1 (iPad)
      */
     MUSIC_PLAYER_STATE_SEEK_BACKWARD:null,
 
     /**
-     * <p>constant for forward seek state</p>
+     * <p>Constant for forward seek state.</p>
      * @type Number
      * @since 0.1 (iPhone), 0.1 (iPad)
      */
     MUSIC_PLAYER_STATE_SKEEK_FORWARD:null,
 
     /**
-     * <p>constant for stopped state</p>
+     * <p>Constant for stopped state.</p>
      * @type Number
      * @since 0.1 (iPhone), 0.1 (iPad)
      */
     MUSIC_PLAYER_STATE_STOPPED:null,
 
     /**
-     * <p>constant for media no camera error</p>
+     * <p>Constant for media no camera error.</p>
      * @type Number
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad)
      */
     NO_CAMERA:null,
 
     /**
-     * <p>constant for media no video error</p>
+     * <p>Constant for media no video error.</p>
      * @type Number
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad)
      */
     NO_VIDEO:null,
 
     /**
-     * <p>media type constant to use high-quality video recording. Recorded files are suitable for on-device playback and for wired transfer to the Desktop using Image Capture; they are likely to be too large for transfer using Wi-Fi.</p>
+     * <p>Media type constant for high-quality video recording.</p>
      * @type Number
      * @since 0.1 (iPhone), 0.1 (iPad)
      */
     QUALITY_HIGH:null,
 
     /**
-     * <p>media type constant to use use low-quality video recording. Recorded files can usually be transferred over the cellular network.</p>
+     * <p>Media type constant for low-quality video recording.</p>
      * @type Number
      * @since 0.1 (iPhone), 0.1 (iPad)
      */
     QUALITY_LOW:null,
 
     /**
-     * <p>media type constant to use medium-quality video recording. Recorded files can usually be transferred using Wi-Fi. This is the default video quality setting.</p>
+     * <p>Media type constant for medium-quality video recording.</p>
      * @type Number
      * @since 0.1 (iPhone), 0.1 (iPad)
      */
     QUALITY_MEDIUM:null,
 
     /**
-     * <p>constant for unknown media error</p>
+     * <p>Constant for unknown media error.</p>
      * @type Number
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad)
      */
     UNKNOWN_ERROR:null,
 
     /**
-     * <p>constant for video controls default</p>
+     * <p>Constant for default video controls.</p>
      * @type Number
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad)
      */
     VIDEO_CONTROL_DEFAULT:null,
 
     /**
-     * <p>Controls for an embedded view. Used in conjunction with movieControlStyle property of {@link Ti.Media.VideoPlayer} in iPhone 3.2+</p>
+     * <p>Constant for video controls for an embedded view.</p>
      * @type Number
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad)
      */
     VIDEO_CONTROL_EMBEDDED:null,
 
     /**
-     * <p>Controls for fullscreen. Used in conjunction with movieControlStyle property of {@link Ti.Media.VideoPlayer} in iPhone 3.2+</p>
+     * <p>Constant for fullscreen video controls.</p>
      * @type Number
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad)
      */
@@ -14464,70 +13909,70 @@ Ti.Media = {
     VIDEO_CONTROL_HIDDEN:null,
 
     /**
-     * <p>No controls. Used in conjunction with movieControlStyle property of {@link Ti.Media.VideoPlayer} in iPhone 3.2+</p>
+     * <p>Constant for no video controls.</p>
      * @type Number
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad)
      */
     VIDEO_CONTROL_NONE:null,
 
     /**
-     * <p>constant for video controls volume only</p>
+     * <p>Constant for video controls volume only.</p>
      * @type Number
      * @since 0.1 (iPhone), 0.1 (iPad)
      */
     VIDEO_CONTROL_VOLUME_ONLY:null,
 
     /**
-     * <p>the video playback ended normally</p>
+     * <p>Video playback ended normally.</p>
      * @type Number
-     * @since 0.1 (iPhone), 0.1 (iPad)
+     * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad)
      */
     VIDEO_FINISH_REASON_PLAYBACK_ENDED:null,
 
     /**
-     * <p>the video playback ended abnormally</p>
+     * <p>Video playback ended abnormally.</p>
      * @type Number
-     * @since 0.1 (iPhone), 0.1 (iPad)
+     * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad)
      */
     VIDEO_FINISH_REASON_PLAYBACK_ERROR:null,
 
     /**
-     * <p>the video playback ended by user action (such as clicking the <code>Done</code> button)</p>
+     * <p>Video playback ended by user action (such as clicking the <code>Done</code> button).</p>
      * @type Number
-     * @since 0.1 (iPhone), 0.1 (iPad)
+     * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad)
      */
     VIDEO_FINISH_REASON_USER_EXITED:null,
 
     /**
-     * <p>the current media is playable</p>
+     * <p>Current media is playable.</p>
      * @type Number
-     * @since 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
+     * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad)
      */
     VIDEO_LOAD_STATE_PLAYABLE:null,
 
     /**
-     * <p>playback will be automatically started in this state when <code>autoplay</code> is true</p>
+     * <p>Playback will be automatically started in this state when <code>autoplay</code> is true.</p>
      * @type Number
-     * @since 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
+     * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad)
      */
     VIDEO_LOAD_STATE_PLAYTHROUGH_OK:null,
 
     /**
-     * <p>playback will be automatically paused in this state, if started</p>
+     * <p>Playback will be automatically paused in this state, if started.</p>
      * @type Number
-     * @since 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
+     * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad)
      */
     VIDEO_LOAD_STATE_STALLED:null,
 
     /**
-     * <p>the current load state is not known</p>
+     * <p>Current load state is not known.</p>
      * @type Number
-     * @since 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
+     * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad)
      */
     VIDEO_LOAD_STATE_UNKNOWN:null,
 
     /**
-     * <p>A audio type of media in the movie returned by {@link Ti.Media.VideoPlayer} <code>mediaTypes</code> property</p>
+     * <p>A audio type of media in the movie returned by {@link Ti.Media.VideoPlayer} <code>mediaTypes</code> property.</p>
      * @type Number
      * @since 0.1 (iPhone), 0.1 (iPad)
      */
@@ -14541,217 +13986,217 @@ Ti.Media = {
     VIDEO_MEDIA_TYPE_NONE:null,
 
     /**
-     * <p>A video type of media in the movie returned by {@link Ti.Media.VideoPlayer} <code>mediaTypes</code> property</p>
+     * <p>A video type of media in the movie returned by {@link Ti.Media.VideoPlayer} <code>mediaTypes</code> property.</p>
      * @type Number
      * @since 0.1 (iPhone), 0.1 (iPad)
      */
     VIDEO_MEDIA_TYPE_VIDEO:null,
 
     /**
-     * <p>playback has been interrupted</p>
+     * <p>Video playback has been interrupted.</p>
      * @type Number
-     * @since 0.1 (iPhone), 0.1 (iPad)
+     * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad)
      */
     VIDEO_PLAYBACK_STATE_INTERRUPTED:null,
 
     /**
-     * <p>playback is paused</p>
+     * <p>Video playback is paused.</p>
      * @type Number
-     * @since 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
+     * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad)
      */
     VIDEO_PLAYBACK_STATE_PAUSED:null,
 
     /**
-     * <p>playback is playing</p>
+     * <p>Video is being played.</p>
      * @type Number
-     * @since 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
+     * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad)
      */
     VIDEO_PLAYBACK_STATE_PLAYING:null,
 
     /**
-     * <p>playback is rewinding</p>
+     * <p>Video playback is rewinding.</p>
      * @type Number
-     * @since 0.1 (iPhone), 0.1 (iPad)
+     * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad)
      */
     VIDEO_PLAYBACK_STATE_SEEKING_BACKWARD:null,
 
     /**
-     * <p>playback is seeking forward</p>
+     * <p>Video playback is seeking forward.</p>
      * @type Number
-     * @since 0.1 (iPhone), 0.1 (iPad)
+     * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad)
      */
     VIDEO_PLAYBACK_STATE_SEEKING_FORWARD:null,
 
     /**
-     * <p>playback has stopped</p>
+     * <p>Video playback is stopped.</p>
      * @type Number
-     * @since 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
+     * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad)
      */
     VIDEO_PLAYBACK_STATE_STOPPED:null,
 
     /**
-     * <p>constant for repeating no videos (IE, the one video will NOT repeat) during playback</p>
+     * <p>Constant for disabling repeat on video playback.</p>
      * @type Number
      * @since 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
      */
     VIDEO_REPEAT_MODE_NONE:null,
 
     /**
-     * <p>constant for repeating one video (IE, the one video will repeat constantly) during playback</p>
+     * <p>Constant for repeating one video (i.e., the one video will repeat constantly) during playback.</p>
      * @type Number
      * @since 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
      */
     VIDEO_REPEAT_MODE_ONE:null,
 
     /**
-     * <p>constant for video aspect where the movie will be scaled until the movie fills the entire screen. Content at the edges of the larger of the two dimensions is clipped so that the other dimension fits the screen exactly. The aspect ratio of the movie is preserved.</p>
+     * <p>Scale video to fill the screen, clipping edges if necessary.</p>
      * @type Number
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad)
      */
     VIDEO_SCALING_ASPECT_FILL:null,
 
     /**
-     * <p>constant for video aspect fit where the movie will be scaled until one dimension fits on the screen exactly. In the other dimension, the region between the edge of the movie and the edge of the screen is filled with a black bar. The aspect ratio of the movie is preserved.</p>
+     * <p>Scale video to fit the screen, letterboxing if necessary.</p>
      * @type Number
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad)
      */
     VIDEO_SCALING_ASPECT_FIT:null,
 
     /**
-     * <p>constant for video aspect where the movie will be scaled until both dimensions fit the screen exactly. The aspect ratio of the movie is not preserved.</p>
+     * <p>Video is scaled until both dimensions fit the screen exactly, stretching if necessary.</p>
      * @type Number
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad)
      */
     VIDEO_SCALING_MODE_FILL:null,
 
     /**
-     * <p>constant for video scaling where the scaling is turn off. The movie will not be scaled.</p>
+     * <p>Video scaling is disabled.</p>
      * @type Number
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad)
      */
     VIDEO_SCALING_NONE:null,
 
     /**
-     * <p>the video source type is a file. Related to the <code>sourceType</code> property of {@link Ti.Media.VideoPlayer}</p>
+     * <p>Video source type is a file.</p>
      * @type Number
      * @since 0.1 (iPhone), 0.1 (iPad)
      */
     VIDEO_SOURCE_TYPE_FILE:null,
 
     /**
-     * <p>the video source type is a remote stream. Related to the <code>sourceType</code> property of {@link Ti.Media.VideoPlayer}</p>
+     * <p>Video source type is a remote stream.</p>
      * @type Number
      * @since 0.1 (iPhone), 0.1 (iPad)
      */
     VIDEO_SOURCE_TYPE_STREAMING:null,
 
     /**
-     * <p>the video source type is unknown. Related to the <code>sourceType</code> property of {@link Ti.Media.VideoPlayer}</p>
+     * <p>Video source type is unknown.</p>
      * @type Number
      * @since 0.1 (iPhone), 0.1 (iPad)
      */
     VIDEO_SOURCE_TYPE_UNKNOWN:null,
 
     /**
-     * <p>use the exact time</p>
+     * <p>Use the exact time.</p>
      * @type Number
      * @since 0.1 (iPhone), 0.1 (iPad)
      */
     VIDEO_TIME_OPTION_EXACT:null,
 
     /**
-     * <p>use the closest keyframe in the time</p>
+     * <p>Use the closest keyframe in the time.</p>
      * @type Number
      * @since 0.1 (iPhone), 0.1 (iPad)
      */
     VIDEO_TIME_OPTION_NEAREST_KEYFRAME:null,
 
     /**
-     * <p>an instance of {@link Ti.Media.MusicPlayer} representing the app-specific music player.</p>
-     * @type Object
+     * <p>An instance of {@link Ti.Media.MusicPlayer} representing the app-specific music player.</p>
+     * @type Ti.Media.MusicPlayer
      * @since 0.1 (iPhone), 0.1 (iPad)
      */
     appMusicPlayer:null,
 
     /**
-     * <p>returns the line type constant for the current line type</p>
+     * <p>Returns the line type constant for the current line type.</p>
      * @type Number
      * @since 0.1 (iPhone), 0.1 (iPad)
      */
     audioLineType:null,
 
     /**
-     * <p>returns true if the device is playing audio</p>
+     * <p>Returns <code>true</code> if the device is playing audio.</p>
      * @type Boolean
      * @since 0.1 (iPhone), 0.1 (iPad)
      */
     audioPlaying:null,
 
     /**
-     * <p>a constant for the audio session mode to be used. Must be set while the audio session is inactive (no sounds are playing, no listeners for audio properties on the Media module, but the iPod may be active).</p>
+     * <p>A constant for the audio session mode to be used.</p>
      * @type Number
      * @since 0.1 (iPhone), 0.1 (iPad)
      */
     audioSessionMode:null,
 
     /**
-     * <p>return an array of media type constants supported for the camera</p>
+     * <p>Array of media type constants supported for the camera.</p>
      * @type Array<Object>
      * @since 0.1 (iPhone), 0.1 (iPad)
      */
     availableCameraMediaTypes:null,
 
     /**
-     * <p>return an array of media type constants supported for saving to the photo gallery</p>
+     * <p>Array of media type constants supported for saving to the device's camera roll or saved images album.</p>
      * @type Array<Object>
      * @since 0.1 (iPhone), 0.1 (iPad)
      */
     availablePhotoGalleryMediaTypes:null,
 
     /**
-     * <p>return an array of media type constants supported for the photo</p>
+     * <p>Array of media type constants supported for the photo library.</p>
      * @type Array<Object>
      * @since 0.1 (iPhone), 0.1 (iPad)
      */
     availablePhotoMediaTypes:null,
 
     /**
-     * <p>return the current average microphone level in dB or -1 if microphone monitoring is disabled</p>
+     * <p>Current average microphone level in dB or -1 if microphone monitoring is disabled.</p>
      * @type Number
      * @since 0.1 (iPhone), 0.1 (iPad)
      */
     averageMicrophonePower:null,
 
     /**
-     * <p>returns true if the device has recording input device available</p>
+     * <p><code>true</code> if the device has a recording input device available.</p>
      * @type Boolean
      * @since 0.1 (iPhone), 0.1 (iPad)
      */
     canRecord:null,
 
     /**
-     * <p>returns true if the device has camera support</p>
+     * <p><code>true</code> if the device has camera support.</p>
      * @type Boolean
-     * @since 0.1 (iPhone), 0.1 (iPad)
+     * @since 0.1 (iPhone), 0.1 (iPad), 0.1 (Android)
      */
     isCameraSupported:null,
 
     /**
-     * <p>return the current microphone level peak power in dB or -1 if microphone monitoring is disabled</p>
+     * <p>Current microphone level peak power in dB or -1 if microphone monitoring is disabled.</p>
      * @type Number
      * @since 0.1 (iPhone), 0.1 (iPad)
      */
     peakMicrophonePower:null,
 
     /**
-     * <p>an instance of {@link Ti.Media.MusicPlayer} representing the system-wide music player.</p>
-     * @type Object
+     * <p>An instance of {@link Ti.Media.MusicPlayer} representing the system-wide music player.</p>
+     * @type Ti.Media.MusicPlayer
      * @since 0.1 (iPhone), 0.1 (iPad)
      */
     systemMusicPlayer:null,
 
     /**
-     * <p>the current volume of the playback device</p>
+     * <p>Current volume of the playback device.</p>
      * @type Number
      * @since 0.1 (iPhone), 0.1 (iPad)
      */
@@ -14768,7 +14213,7 @@ Ti.Media = {
     },
 
     /**
-     * <p>play a device beep notification</p>
+     * <p>Plays a device beep notification.</p>
      * @since 0.1 (iPhone), 0.1 (iPad)
      */
     beep:function() {
@@ -14839,7 +14284,7 @@ Ti.Media = {
 
     /**
      * <p>Gets the value of the {@link Ti.Media.appMusicPlayer} property.</p>
-     * @returns Object
+     * @returns Ti.Media.MusicPlayer
      * @since 0.1 (iPhone), 0.1 (iPad)
      */
     getAppMusicPlayer:function() {
@@ -14912,7 +14357,7 @@ Ti.Media = {
     /**
      * <p>Gets the value of the {@link Ti.Media.isCameraSupported} property.</p>
      * @returns Boolean
-     * @since 0.1 (iPhone), 0.1 (iPad)
+     * @since 0.1 (iPhone), 0.1 (iPad), 0.1 (Android)
      */
     getIsCameraSupported:function() {
     },
@@ -14927,7 +14372,7 @@ Ti.Media = {
 
     /**
      * <p>Gets the value of the {@link Ti.Media.systemMusicPlayer} property.</p>
-     * @returns Object
+     * @returns Ti.Media.MusicPlayer
      * @since 0.1 (iPhone), 0.1 (iPad)
      */
     getSystemMusicPlayer:function() {
@@ -14942,40 +14387,48 @@ Ti.Media = {
     },
 
     /**
-     * <p>hide the device camera UI. this must be called after calling <code>showCamera</code> and only when <code>autohide</code> is set to false. this method will cause the media capture device be hidden.</p>
+     * <p>Hides the device camera UI.</p>
      * @since 0.1 (iPhone), 0.1 (iPad)
      */
     hideCamera:function() {
     },
 
     /**
-     * <p>hide the music library.  This must be called after calling <code>showMusicLibrary</code> and only when <code>autohide</code> is set to false.</p>
+     * <p>Hides the music library.</p>
      * @since 0.1 (iPhone), 0.1 (iPad)
      */
     hideMusicLibrary:function() {
     },
 
     /**
-     * <p>return boolean to indicate if the media type is supported</p>
-     * @param {String} media <p>media type as a string of either <code>camera</code>, <code>photo</code> or <code>photogallery</code>.</p>
-     * @param {String} type <p>the type of media to check</p>
+     * <p>Returns <code>true</code> if the source supports the specified media type.</p>
+     * @param {String} source <p>Media source specified as a string: <code>camera</code> for Camera or <code>photo</code> for Photo Library.</p>
+     * @param {String} type <p>Media type to check, either <code>MEDIA_TYPE_PHOTO</code> or <code>MEDIA_TYPE_VIDEO</code>.</p>
      * @returns Boolean
      * @since 0.1 (iPhone), 0.1 (iPad)
      */
-    isMediaTypeSupported:function(media, type) {
+    isMediaTypeSupported:function(source, type) {
     },
 
     /**
-     * <p>open the photo gallery picker</p>
-     * @param {Object} options <p>pass a dictionary with the following supported keys: <code>success</code> a function that will be called when the camera is completed, <code>error</code> a function that will be called upon receiving an error, <code>cancel</code> a function that will be called if the user presses the cancel button, <code>autohide</code> boolean if the camera should auto hide after the media capture is completed (defaults to true), <code>animated</code> boolean if the dialog should be animated (defaults to true) upon showing and hiding, <code>saveToPhotoGallery</code> boolean if the media should be saved to the photo gallery upon successful capture, <code>allowEditing</code> boolean if the media should be editable after capture in the UI interface, <code>mediaTypes</code> an array of media type constants supported by the capture device UI, <code>showControls</code> boolean to indicate if the built-in UI controls should be displayed, <code>overlay</code> view which is added as an overlay to the UI (on top), <code>transform</code> an transformation matrix that applies to the UI transform. For iPad, <code>popoverView</code> can be provided to position the photo gallery popover a specific view and <code>arrowDirection</code> can be provided to control the type of arrow and position of the gallery.</p>
+     * <p>Opens the photo gallery image picker.</p>
+     * @param {PhotoGalleryOptionsType} options <p>Photo gallery options as described in {@link PhotoGalleryOptionsType}.</p>
      * @since 0.1 (iPhone), 0.1 (iPad), 0.1 (Android)
      */
     openPhotoGallery:function(options) {
     },
 
     /**
-     * <p>run a search for music library items matching the specified search predicates.</p>
-     * @param {Dictionary<MediaQueryType>} query <p>The query object to extract information from.</p>
+     * <p>Displays the given image.</p>
+     * @param {Dictionary<PreviewImageOptions>} options <p>Dictionary containing the image and callback functions.</p>
+     * @since 0.1 (Android)
+     */
+    previewImage:function(options) {
+    },
+
+    /**
+     * <p>Searches the music library for items matching the specified search predicates.</p>
+     * @param {MediaQueryType} query <p>The query object to extract information from.</p>
      * @returns Array<MediaItemType>
      * @since 0.1 (iPhone), 0.1 (iPad)
      */
@@ -14992,36 +14445,14 @@ Ti.Media = {
     },
 
     /**
-     * <p>save media to photo gallery / camera roll</p>
-     * @param {Object} media <p>save the media passed to the cameras photo roll/media gallery. must be one of Blob object or File object or an error will be generated.</p>
-     * @param {Object} callbacks <p>pass a dictionary with the following supported keys: <code>success</code> a function that will be called when the save succeeds, and <code>error</code> a function that will be called upon anreceiving an error</p>
-     * @since 0.1 (iPhone), 0.1 (iPad), 0.1 (Android)
+     * <p>Saves media to the device's photo gallery / camera roll.</p>
+     * @param {Ti.Blob|Ti.Filesystem.File} media <p>Media to save to the camera roll or media gallery.</p>
+     * @param {Object} callbacks <p>Pass a dictionary with the following supported keys: <code>success</code> a function that 
+will be called when the save succeeds, and <code>error</code> a function that will be 
+called upon receiving an error.</p>
+     * @since 0.1 (iPhone), 0.1 (iPad)
      */
     saveToPhotoGallery:function(media, callbacks) {
-    },
-
-    /**
-     * <p>Sets the value of the {@link Ti.Media.appMusicPlayer} property.</p>
-     * @param {Object} appMusicPlayer <p>New value for the property.</p>
-     * @since 0.1 (iPhone), 0.1 (iPad)
-     */
-    setAppMusicPlayer:function(appMusicPlayer) {
-    },
-
-    /**
-     * <p>Sets the value of the {@link Ti.Media.audioLineType} property.</p>
-     * @param {Number} audioLineType <p>New value for the property.</p>
-     * @since 0.1 (iPhone), 0.1 (iPad)
-     */
-    setAudioLineType:function(audioLineType) {
-    },
-
-    /**
-     * <p>Sets the value of the {@link Ti.Media.audioPlaying} property.</p>
-     * @param {Boolean} audioPlaying <p>New value for the property.</p>
-     * @since 0.1 (iPhone), 0.1 (iPad)
-     */
-    setAudioPlaying:function(audioPlaying) {
     },
 
     /**
@@ -15065,95 +14496,56 @@ Ti.Media = {
     },
 
     /**
-     * <p>Sets the value of the {@link Ti.Media.canRecord} property.</p>
-     * @param {Boolean} canRecord <p>New value for the property.</p>
-     * @since 0.1 (iPhone), 0.1 (iPad)
-     */
-    setCanRecord:function(canRecord) {
-    },
-
-    /**
-     * <p>Sets the value of the {@link Ti.Media.isCameraSupported} property.</p>
-     * @param {Boolean} isCameraSupported <p>New value for the property.</p>
-     * @since 0.1 (iPhone), 0.1 (iPad)
-     */
-    setIsCameraSupported:function(isCameraSupported) {
-    },
-
-    /**
-     * <p>Sets the value of the {@link Ti.Media.peakMicrophonePower} property.</p>
-     * @param {Number} peakMicrophonePower <p>New value for the property.</p>
-     * @since 0.1 (iPhone), 0.1 (iPad)
-     */
-    setPeakMicrophonePower:function(peakMicrophonePower) {
-    },
-
-    /**
-     * <p>Sets the value of the {@link Ti.Media.systemMusicPlayer} property.</p>
-     * @param {Object} systemMusicPlayer <p>New value for the property.</p>
-     * @since 0.1 (iPhone), 0.1 (iPad)
-     */
-    setSystemMusicPlayer:function(systemMusicPlayer) {
-    },
-
-    /**
-     * <p>Sets the value of the {@link Ti.Media.volume} property.</p>
-     * @param {Number} volume <p>New value for the property.</p>
-     * @since 0.1 (iPhone), 0.1 (iPad)
-     */
-    setVolume:function(volume) {
-    },
-
-    /**
-     * <p>show the camera</p>
-     * @param {Object} options <p>pass a dictionary with the following supported keys: <code>success</code> a function that will be called when the camera is completed, <code>error</code> a function that will be called upon receiving an error, <code>cancel</code> a function that will be called if the user presses the cancel button, <code>autohide</code> boolean if the camera should auto hide after the media capture is completed (defaults to true), <code>animated</code> boolean if the dialog should be animated (defaults to true) upon showing and hiding, <code>saveToPhotoGallery</code> boolean if the media should be saved to the photo gallery upon successful capture, <code>allowEditing</code> boolean if the media should be editable after capture in the UI interface, <code>mediaTypes</code> an array of media type constants supported by the capture device UI, <code>videoMaximumDuration</code> float duration on how long in milliseconds to allow capture before completing, <code>videoQuality</code> constant to indicate the video quality during capture, <code>showControls</code> boolean to indicate if the built-in UI controls should be displayed, <code>overlay</code> view which is added as an overlay to the camera UI (on top), <code>transform</code> an transformation matrix that applies to the camera UI transform.</p>
+     * <p>Shows the camera.</p>
+     * @param {CameraOptionsType} options <p>A dictionary of camera options as described in {@link CameraOptionsType}.</p>
      * @since 0.1 (iPhone), 0.1 (iPad), 0.1 (Android)
      */
     showCamera:function(options) {
     },
 
     /**
-     * <p>show the music library.</p>
-     * @param {Object} options <p>pass a dictionary with the following supported keys: <code>success</code> a function that will be called when the camera is completed, <code>error</code> a function that will be called upon receiving an error, <code>cancel</code> a function that will be called if the user presses the cancel button, <code>autohide</code> boolean if the library listing should auto hide after selection is completed (defaults to true), <code>animated</code> boolean if the dialog should be animated (defaults to true) upon showing and hiding, <code>mediaTypes</code> an array of media type constants defining selectable media (see MUSIC_MEDIA_TYPE_* properties below) as either an array or a bitwise-or single value, <code>allowMultipleSelections</code> boolean whether or not more than one media selection is allowed</p>
+     * <p>Shows the music library and allows the user to select one or more tracks.</p>
+     * @param {MusicLibraryOptionsType} options <p>A dictionary of options as described in {@link MusicLibraryOptionsType}.</p>
      * @since 0.1 (iPhone), 0.1 (iPad)
      */
     showMusicLibrary:function(options) {
     },
 
     /**
-     * <p>start the monitoring of microphone sound level</p>
+     * <p>Starts monitoring the microphone sound level.</p>
      * @since 0.1 (iPhone), 0.1 (iPad)
      */
     startMicrophoneMonitor:function() {
     },
 
     /**
-     * <p>stop the monitoring of microphone sound level</p>
+     * <p>Stops monitoring the microphone sound level.</p>
      * @since 0.1 (iPhone), 0.1 (iPad)
      */
     stopMicrophoneMonitor:function() {
     },
 
     /**
-     * <p>use the device camera to capture a photo. this must be called after calling <code>showCamera</code> and only when <code>autohide</code> is set to false. this method will cause the media capture device to capture a photo and call the <code>success</code> callback.</p>
+     * <p>Uses the device camera to capture a photo.</p>
      * @since 0.1 (iPhone), 0.1 (iPad), 0.1 (Android)
      */
     takePicture:function() {
     },
 
     /**
-     * <p>take a screen shot of the visible UI on the device</p>
-     * @param {Callback<Object>} callback <p>function that will be called upon capture. the event property <code>media</code> will contain an image Blob object of the screenshot</p>
+     * <p>Takes a screen shot of the visible UI on the device</p>
+     * @param {Callback<ScreenshotResult>} callback <p>Function to call upon capture.</p>
      * @since 0.1 (iPhone), 0.1 (iPad), 0.1 (Android)
      */
     takeScreenshot:function(callback) {
     },
 
     /**
-     * <p>play a device vibration</p>
+     * <p>Makes the device vibrate.</p>
+     * @param {Array<Number>} pattern <p>Array of values identifying a vibrate pattern (only used on Android).</p>
      * @since 0.1 (iPhone), 0.1 (iPad), 0.1 (Android)
      */
-    vibrate:function() {
+    vibrate:function(pattern) {
     }
 };
 
@@ -15212,141 +14604,230 @@ Ti.Media.Android = {
 
 /**
  * platforms: Android, iPhone, iPad
+ * @namespace <p>On Android, when you are done playing a given audio file, you must call the 
+{@link Ti.Media.AudioPlayer.release} method to stop buffering audio data and 
+release associated system resources.</p>
+<p>On iOS, you can control how the audio stream interacts with other system sounds
+by setting {@link Ti.Media.audioSessionMode}.</p>
+<p>Use the {@link Ti.Media.createAudioPlayer} method to create an audio player.</p>
+ * 
+ * @example Audio Streaming
+ * <p>The following example demonstrates using the <code>AudioPlayer</code> object to stream audio.</p>
+<pre><code>var win = Ti.UI.createWindow({  
+    title:'Audio Test',
+    backgroundColor:'#fff',
+    layout: 'vertical'
+});
+
+var startStopButton = Ti.UI.createButton({
+    title:'Start/Stop Streaming',
+    top:10,
+    width:200,
+    height:40
+});
+
+var pauseResumeButton = Ti.UI.createButton({
+    title:'Pause/Resume Streaming',
+    top:10,
+    width:200,
+    height:40,
+    enabled:false
+});
+
+win.add(startStopButton);
+win.add(pauseResumeButton);
+
+// allowBackground: true on Android allows the 
+// player to keep playing when the app is in the 
+// background.
+var audioPlayer = Ti.Media.createAudioPlayer({ 
+    url: 'www.example.com/podcast.mp3',
+    allowBackground: true
+});
+
+startStopButton.addEventListener('click',function() {
+    // When paused, playing returns false.
+    // If both are false, playback is stopped.
+    if (audioPlayer.playing || audioPlayer.paused)
+    {
+        audioPlayer.stop();
+        pauseResumeButton.enabled = false;
+        if (Ti.Platform.name === 'android')
+        { 
+            audioPlayer.release();
+        }   
+    }
+    else
+    {
+        audioPlayer.start();
+        pauseResumeButton.enabled = true;
+    }
+});
+
+pauseResumeButton.addEventListener('click', function() {
+    if (audioPlayer.paused) {
+        audioPlayer.start();
+    }
+    else {
+        audioPlayer.pause();
+    }
+});
+
+audioPlayer.addEventListener('progress',function(e) {
+    Ti.API.info('Time Played: ' + Math.round(e.progress) + ' milliseconds');
+});
+
+audioPlayer.addEventListener('change',function(e)
+{
+    Ti.API.info('State: ' + e.description + ' (' + e.state + ')');
+});
+
+win.addEventListener('close',function() {
+    audioPlayer.stop();
+    if (Ti.Platform.osname === 'android')
+    { 
+        audioPlayer.release();
+    }
+});
+
+win.open();
+</code></pre>
  */
 Ti.Media.AudioPlayer = function() {
 };
 Ti.Media.AudioPlayer.prototype = {
 
     /**
-     * <p>current playback is in the buffering from the network state</p>
+     * <p>Audio data is being buffered from the network.</p>
      * @type Number
      * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     STATE_BUFFERING:null,
 
     /**
-     * <p>current playback is in the initialization state</p>
+     * <p>Audio playback is being initialized.</p>
      * @type Number
      * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     STATE_INITIALIZED:null,
 
     /**
-     * <p>current playback is in the paused state</p>
+     * <p>Playback is paused.</p>
      * @type Number
      * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     STATE_PAUSED:null,
 
     /**
-     * <p>current playback is in the playing state</p>
+     * <p>Audio playback is active.</p>
      * @type Number
      * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     STATE_PLAYING:null,
 
     /**
-     * <p>current playback is in the starting playback state</p>
+     * <p>Audio playback is starting.</p>
      * @type Number
      * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     STATE_STARTING:null,
 
     /**
-     * <p>current playback is in the stopped state</p>
+     * <p>Audio playback is stopped.</p>
      * @type Number
      * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     STATE_STOPPED:null,
 
     /**
-     * <p>current playback is in the stopping state</p>
+     * <p>Audio playback is stopping.</p>
      * @type Number
      * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     STATE_STOPPING:null,
 
     /**
-     * <p>current playback is in the waiting for audio data from the network state</p>
+     * <p>Player is waiting for audio data from the network.</p>
      * @type Number
      * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     STATE_WAITING_FOR_DATA:null,
 
     /**
-     * <p>current playback is in the waiting for audio data to fill the queue state</p>
+     * <p>Player is waiting for audio data to fill the queue.</p>
      * @type Number
      * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     STATE_WAITING_FOR_QUEUE:null,
 
     /**
-     * <p>boolean to indicate if audio should continue playing even if Activity is paused</p>
+     * <p>Boolean to indicate if audio should continue playing even if the associated
+Android {@link Ti.Android.Activity} is paused.</p>
      * @type Boolean
      * @since 0.9 (Android)
      */
     allowBackground:null,
 
     /**
-     * <p>bit rate of the current playback stream</p>
+     * <p>Bit rate of the current playback stream.</p>
      * @type Number
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
+     * @since 0.9 (iPhone), 0.9 (iPad)
      */
     bitRate:null,
 
     /**
-     * <p>the size of the buffer used for streaming, in bytes</p>
+     * <p>Size of the buffer used for streaming, in bytes.</p>
      * @type Number
      * @since 0.9 (iPhone), 0.9 (iPad)
      */
     bufferSize:null,
 
     /**
-     * <p>returns boolean indicating if the playback is idle</p>
+     * <p>Boolean indicating if the player is idle.</p>
      * @type Boolean
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
+     * @since 0.9 (iPhone), 0.9 (iPad)
      */
     idle:null,
 
     /**
-     * <p>returns boolean indicating if the playback is paused</p>
+     * <p>Boolean indicating if audio playback is paused.</p>
      * @type Boolean
      * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     paused:null,
 
     /**
-     * <p>returns boolean indicating if the playback is streaming audio</p>
+     * <p>Boolean indicating if audio is currently playing.</p>
      * @type Boolean
      * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     playing:null,
 
     /**
-     * <p>returns the current playback progress. Will return zero if sampleRate has not yet been detected</p>
+     * <p>Current playback progress, in milliseconds.</p>
      * @type Number
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
+     * @since 0.9 (iPhone), 0.9 (iPad)
      */
     progress:null,
 
     /**
-     * <p>returns int for the current state of playback</p>
+     * <p>Current state of playback, specified using one of the <code>STATE</code> constants defined on this object.</p>
      * @type Number
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
+     * @since 0.9 (iPhone), 0.9 (iPad)
      */
     state:null,
 
     /**
-     * <p>returns the url for the current playback</p>
+     * <p>URL for the audio stream.</p>
      * @type String
      * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     url:null,
 
     /**
-     * <p>returns boolean indicating if the playback is waiting for audio data from the network</p>
+     * <p>Boolean indicating if the playback is waiting for audio data from the network.</p>
      * @type Boolean
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
+     * @since 0.9 (iPhone), 0.9 (iPad)
      */
     waiting:null,
 
@@ -15380,7 +14861,7 @@ Ti.Media.AudioPlayer.prototype = {
     /**
      * <p>Gets the value of the {@link Ti.Media.AudioPlayer.bitRate} property.</p>
      * @returns Number
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
+     * @since 0.9 (iPhone), 0.9 (iPad)
      */
     getBitRate:function() {
     },
@@ -15396,23 +14877,23 @@ Ti.Media.AudioPlayer.prototype = {
     /**
      * <p>Gets the value of the {@link Ti.Media.AudioPlayer.idle} property.</p>
      * @returns Boolean
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
+     * @since 0.9 (iPhone), 0.9 (iPad)
      */
     getIdle:function() {
     },
 
     /**
-     * <p>Gets the value of the {@link Ti.Media.AudioPlayer.paused} property.</p>
+     * <p>Returns the value of the {@link Ti.Media.AudioPlayer.paused} property.</p>
      * @returns Boolean
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
+     * @since 0.9 (iPhone), 0.9 (iPad)
      */
     getPaused:function() {
     },
 
     /**
-     * <p>Gets the value of the {@link Ti.Media.AudioPlayer.playing} property.</p>
+     * <p>Returns the value of the {@link Ti.Media.AudioPlayer.playing} property.</p>
      * @returns Boolean
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
+     * @since 0.9 (iPhone), 0.9 (iPad)
      */
     getPlaying:function() {
     },
@@ -15420,7 +14901,7 @@ Ti.Media.AudioPlayer.prototype = {
     /**
      * <p>Gets the value of the {@link Ti.Media.AudioPlayer.progress} property.</p>
      * @returns Number
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
+     * @since 0.9 (iPhone), 0.9 (iPad)
      */
     getProgress:function() {
     },
@@ -15428,15 +14909,15 @@ Ti.Media.AudioPlayer.prototype = {
     /**
      * <p>Gets the value of the {@link Ti.Media.AudioPlayer.state} property.</p>
      * @returns Number
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
+     * @since 0.9 (iPhone), 0.9 (iPad)
      */
     getState:function() {
     },
 
     /**
-     * <p>Gets the value of the {@link Ti.Media.AudioPlayer.url} property.</p>
+     * <p>Returns the value of the {@link Ti.Media.AudioPlayer.url} property.</p>
      * @returns String
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
+     * @since 0.9 (iPhone), 0.9 (iPad)
      */
     getUrl:function() {
     },
@@ -15444,16 +14925,46 @@ Ti.Media.AudioPlayer.prototype = {
     /**
      * <p>Gets the value of the {@link Ti.Media.AudioPlayer.waiting} property.</p>
      * @returns Boolean
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
+     * @since 0.9 (iPhone), 0.9 (iPad)
      */
     getWaiting:function() {
     },
 
     /**
-     * <p>pause playback</p>
+     * <p>Returns the value of the {@link Ti.Media.AudioPlayer.paused} property.</p>
+     * @returns Boolean
+     * @since 0.9 (Android)
+     */
+    isPaused:function() {
+    },
+
+    /**
+     * <p>Returns the value of the {@link Ti.Media.AudioPlayer.playing} property.</p>
+     * @returns Boolean
+     * @since 0.9 (Android)
+     */
+    isPlaying:function() {
+    },
+
+    /**
+     * <p>Pauses audio playback.</p>
      * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     pause:function() {
+    },
+
+    /**
+     * <p>Starts or resumes audio playback.</p>
+     * @since 0.9 (Android)
+     */
+    play:function() {
+    },
+
+    /**
+     * <p>Stops buffering audio data and releases audio resources.</p>
+     * @since 0.9 (Android)
+     */
+    release:function() {
     },
 
     /**
@@ -15466,17 +14977,9 @@ Ti.Media.AudioPlayer.prototype = {
     },
 
     /**
-     * <p>Sets the value of the {@link Ti.Media.AudioPlayer.allowBackground} property.</p>
-     * @param {Boolean} allowBackground <p>New value for the property.</p>
-     * @since 0.9 (Android)
-     */
-    setAllowBackground:function(allowBackground) {
-    },
-
-    /**
      * <p>Sets the value of the {@link Ti.Media.AudioPlayer.bitRate} property.</p>
      * @param {Number} bitRate <p>New value for the property.</p>
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
+     * @since 0.9 (iPhone), 0.9 (iPad)
      */
     setBitRate:function(bitRate) {
     },
@@ -15490,78 +14993,40 @@ Ti.Media.AudioPlayer.prototype = {
     },
 
     /**
-     * <p>Sets the value of the {@link Ti.Media.AudioPlayer.idle} property.</p>
-     * @param {Boolean} idle <p>New value for the property.</p>
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
-     */
-    setIdle:function(idle) {
-    },
-
-    /**
-     * <p>control the playback of the audio</p>
-     * @param {Boolean} paused <p>pass true to pause the current playback temporarily, false to unpause it</p>
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
+     * <p>Sets the value of the {@link Ti.Media.AudioPlayer.paused} property.</p>
+     * @param {Boolean} paused <p>Pass <code>true</code> to pause the current playback temporarily, <code>false</code> to unpause it.</p>
+     * @since 0.9 (iPhone), 0.9 (iPad)
      */
     setPaused:function(paused) {
     },
 
     /**
-     * <p>Sets the value of the {@link Ti.Media.AudioPlayer.playing} property.</p>
-     * @param {Boolean} playing <p>New value for the property.</p>
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
-     */
-    setPlaying:function(playing) {
-    },
-
-    /**
-     * <p>Sets the value of the {@link Ti.Media.AudioPlayer.progress} property.</p>
-     * @param {Number} progress <p>New value for the property.</p>
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
-     */
-    setProgress:function(progress) {
-    },
-
-    /**
-     * <p>Sets the value of the {@link Ti.Media.AudioPlayer.state} property.</p>
-     * @param {Number} state <p>New value for the property.</p>
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
-     */
-    setState:function(state) {
-    },
-
-    /**
-     * <p>change the url of the audio playback</p>
-     * @param {String} url <p>the new url</p>
+     * <p>Sets the value of the {@link Ti.Media.AudioPlayer.url} property.</p>
+     * @param {String} url <p>URL to stream audio from.</p>
      * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     setUrl:function(url) {
     },
 
     /**
-     * <p>Sets the value of the {@link Ti.Media.AudioPlayer.waiting} property.</p>
-     * @param {Boolean} waiting <p>New value for the property.</p>
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
-     */
-    setWaiting:function(waiting) {
-    },
-
-    /**
-     * <p>start playback</p>
+     * <p>Starts or resumes audio playback.</p>
      * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     start:function() {
     },
 
     /**
-     * <p>convert a state into a textual description suitable for display</p>
+     * <p>Converts a {@link Ti.Media.AudioPlayer.state} value into a text description
+suitable for display.</p>
+     * @param {Number} state <p>State value to convert.</p>
      * @returns String
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
+     * @since 0.9 (iPhone), 0.9 (iPad)
      */
-    stateDescription:function() {
+    stateDescription:function(state) {
     },
 
     /**
-     * <p>stop playback</p>
+     * <p>Stops audio playback.</p>
      * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     stop:function() {
@@ -16838,6 +16303,13 @@ Ti.Media.VideoPlayer.prototype = {
     backgroundLeftCap:null,
 
     /**
+     * <p>Toggle for whether or not to tile a background across a view.</p>
+     * @type Boolean
+     * @since 0.9 (iPhone), 0.9 (iPad)
+     */
+    backgroundRepeat:null,
+
+    /**
      * <p>Selected background color of the view.</p>
      * @type String
      * @since 0.9 (Android), 1.8 (Mobile Web)
@@ -16892,6 +16364,13 @@ Ti.Media.VideoPlayer.prototype = {
      * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
     center:null,
+
+    /**
+     * <p>Array of this view's child views.</p>
+     * @type Array<Ti.UI.View>
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
+     */
+    children:null,
 
     /**
      * <p>use url property instead.</p>
@@ -17063,7 +16542,7 @@ One of: 'absolute', 'vertical', or 'horizontal'.</p>
     scalingMode:null,
 
     /**
-     * <p>Size of the view as a dictionary of width and height properties.</p>
+     * <p>Rendered size of the view as a dictionary of width and height properties.</p>
      * @type Object
      * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
@@ -17100,7 +16579,7 @@ One of: 'absolute', 'vertical', or 'horizontal'.</p>
     /**
      * <p>Transformation matrix to apply to the view.</p>
      * @type Ti.UI.D2Matrix|Ti.UI.iOS.D3Matrix
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
     transform:null,
 
@@ -17294,6 +16773,14 @@ If this argument is not a view, an exception will be raised.</p>
     },
 
     /**
+     * <p>Gets the value of the {@link Ti.Media.VideoPlayer.backgroundRepeat} property.</p>
+     * @returns Boolean
+     * @since 0.9 (iPhone), 0.9 (iPad)
+     */
+    getBackgroundRepeat:function() {
+    },
+
+    /**
      * <p>Gets the value of the {@link Ti.Media.VideoPlayer.backgroundSelectedColor} property.</p>
      * @returns String
      * @since 0.9 (Android), 1.8 (Mobile Web)
@@ -17356,6 +16843,14 @@ If this argument is not a view, an exception will be raised.</p>
      * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
     getCenter:function() {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.Media.VideoPlayer.children} property.</p>
+     * @returns Array<Ti.UI.View>
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
+     */
+    getChildren:function() {
     },
 
     /**
@@ -17598,7 +17093,7 @@ If this argument is not a view, an exception will be raised.</p>
      * <p>Gets the value of the {@link Ti.Media.VideoPlayer.transform} property.</p>
      * @returns Ti.UI.D2Matrix
      * @returns Ti.UI.iOS.D3Matrix
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
     getTransform:function() {
     },
@@ -17784,6 +17279,14 @@ If this argument is not a view, an exception will be raised.</p>
      * @since 0.9 (iPhone), 0.9 (iPad)
      */
     setBackgroundLeftCap:function(backgroundLeftCap) {
+    },
+
+    /**
+     * <p>Sets the value of the {@link Ti.Media.VideoPlayer.backgroundRepeat} property.</p>
+     * @param {Boolean} backgroundRepeat <p>New value for the property.</p>
+     * @since 0.9 (iPhone), 0.9 (iPad)
+     */
+    setBackgroundRepeat:function(backgroundRepeat) {
     },
 
     /**
@@ -18019,14 +17522,6 @@ If this argument is not a view, an exception will be raised.</p>
     },
 
     /**
-     * <p>Sets the value of the {@link Ti.Media.VideoPlayer.size} property.</p>
-     * @param {Object} size <p>New value for the property.</p>
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
-     */
-    setSize:function(size) {
-    },
-
-    /**
      * <p>Sets the value of the {@link Ti.Media.VideoPlayer.softKeyboardOnFocus} property.</p>
      * @param {Number} softKeyboardOnFocus <p>New value for the property.</p>
      * @since 0.9 (Android)
@@ -18061,7 +17556,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Sets the value of the {@link Ti.Media.VideoPlayer.transform} property.</p>
      * @param {Ti.UI.D2Matrix|Ti.UI.iOS.D3Matrix} transform <p>New value for the property.</p>
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
     setTransform:function(transform) {
     },
@@ -18177,148 +17672,167 @@ Ti.Module = {
 
 /**
  * platforms: Android, iPhone, iPad, Mobile Web
+ * @namespace <p>The <code>Network</code> module is used to access networking related functionality.</p>
+<p>For TCP sockets, see {@link Ti.Network.Socket.TCP}.</p>
+<p>The legacy {@link Ti.Network.TCPSocket} object is still required
+by the {@link Ti.Network.BonjourBrowser} and
+{@link Ti.Network.BonjourService} objects.</p>
+<p>For all other socket needs, use {@link Ti.Network.Socket.TCP}.</p>
  */
 Ti.Network = {
 
     /**
-     * <p>constant value representing the ability for sockets to listen on any locally available network device</p>
+     * <p>Special hostname value for listening sockets, representing all
+locally available network interfaces.</p>
      * @type String
      * @since 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
      */
     INADDR_ANY:null,
 
     /**
-     * <p>constant value to indicate that the network is LAN</p>
+     * <p>A {@link Ti.Network.networkType} value indicating that the device is
+communicating over a local-area network.</p>
      * @type Number
-     * @since 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
+     * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
      */
     NETWORK_LAN:null,
 
     /**
-     * <p>constant value to indicate that the network is MOBILE</p>
+     * <p>A {@link Ti.Network.networkType} value indicating that the device is
+communicating over a mobile network.</p>
      * @type Number
-     * @since 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
+     * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
      */
     NETWORK_MOBILE:null,
 
     /**
-     * <p>constant value to indicate that the network is not available</p>
+     * <p>A {@link Ti.Network.networkType} value indicating that no 
+network is available.</p>
      * @type Number
-     * @since 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
+     * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
      */
     NETWORK_NONE:null,
 
     /**
-     * <p>constant value to indicate that the network is not known</p>
+     * <p>A {@link Ti.Network.networkType} value indicating that the<br />
+current network type is unknown.</p>
      * @type Number
-     * @since 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
+     * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
      */
     NETWORK_UNKNOWN:null,
 
     /**
-     * <p>constant value to indicate that the network is WIFI</p>
+     * <p>A {@link Ti.Network.networkType} value indicating that the<br />
+device is communicating over a WiFi network.</p>
      * @type Number
-     * @since 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
+     * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
      */
     NETWORK_WIFI:null,
 
     /**
-     * <p>constant value for the push notification alert type</p>
+     * <p>Constant value for an Alert style push notification.</p>
      * @type Number
-     * @since 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
+     * @since 0.1 (iPhone), 0.1 (iPad)
      */
     NOTIFICATION_TYPE_ALERT:null,
 
     /**
-     * <p>constant value for the push notification badge type</p>
+     * <p>Constant value for a Badge style push notification.</p>
      * @type Number
-     * @since 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
+     * @since 0.1 (iPhone), 0.1 (iPad)
      */
     NOTIFICATION_TYPE_BADGE:null,
 
     /**
-     * <p>constant value for the push notification sound type</p>
+     * <p>Constant value for a Sound style push notification.</p>
      * @type Number
-     * @since 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
+     * @since 0.1 (iPhone), 0.1 (iPad)
      */
     NOTIFICATION_TYPE_SOUND:null,
 
     /**
-     * <p>constant value specifying read-only mode for sockets</p>
+     * <p>Constant value specifying read-only mode for sockets.</p>
      * @type Number
      * @since 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
      */
     READ_MODE:null,
 
     /**
-     * <p>constant value specifying read-write mode for sockets</p>
+     * <p>Constant value specifying read-write mode for sockets.</p>
      * @type Number
      * @since 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
      */
     READ_WRITE_MODE:null,
 
     /**
-     * <p>constant value representing a socket in the CLOSED state</p>
+     * <p>Constant value representing a socket in the CLOSED state.</p>
      * @type Number
      * @since 0.1 (iPhone), 0.1 (iPad)
      */
     SOCKET_CLOSED:null,
 
     /**
-     * <p>constant value representing a socket in the CONNECTED state</p>
+     * <p>Constant value representing a socket in the CONNECTED state.</p>
      * @type Number
      * @since 0.1 (iPhone), 0.1 (iPad)
      */
     SOCKET_CONNECTED:null,
 
     /**
-     * <p>constant value representing a socket in the ERROR state</p>
+     * <p>Constant value representing a socket in the ERROR state.</p>
      * @type Number
      * @since 0.1 (iPhone), 0.1 (iPad)
      */
     SOCKET_ERROR:null,
 
     /**
-     * <p>constant value representing a socket in the INITIALIZED state</p>
+     * <p>Constant value representing a socket in the INITIALIZED state.</p>
      * @type Number
      * @since 0.1 (iPhone), 0.1 (iPad)
      */
     SOCKET_INITIALIZED:null,
 
     /**
-     * <p>constant value representing a socket in the LISTENING state</p>
+     * <p>Constant value representing a socket in the LISTENING state.</p>
      * @type Number
      * @since 0.1 (iPhone), 0.1 (iPad)
      */
     SOCKET_LISTENING:null,
 
     /**
-     * <p>constant value specifying TLS version 1.0 for SSL</p>
+     * <p>Constant value specifying TLS version 1.0 for SSL.</p>
      * @type Number
-     * @since 0.1 (iPhone), 0.1 (iPad)
+     * @since 1.8.0.1 (iPhone), 1.8.0.1 (iPad)
      */
     TLS_VERSION_1_0:null,
 
     /**
-     * <p>constant value specifying TLS version 1.1 for SSL</p>
+     * <p>Constant value specifying TLS version 1.1 for SSL.</p>
      * @type Number
-     * @since 0.1 (iPhone), 0.1 (iPad)
+     * @since 1.8.0.1 (iPhone), 1.8.0.1 (iPad)
      */
     TLS_VERSION_1_1:null,
 
     /**
-     * <p>constant value specifying TLS version 1.2 for SSL</p>
+     * <p>Constant value specifying TLS version 1.2 for SSL.</p>
      * @type Number
-     * @since 0.1 (iPhone), 0.1 (iPad)
+     * @since 1.8.0.1 (iPhone), 1.8.0.1 (iPad)
      */
     TLS_VERSION_1_2:null,
 
     /**
-     * <p>constant value specifying write-only mode for sockets</p>
+     * <p>Constant value specifying write-only mode for sockets.</p>
      * @type Number
      * @since 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
      */
     WRITE_MODE:null,
+
+    /**
+     * <p>The IP address of the device's WiFi network interface.</p>
+     * @type String
+     * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
+     */
+    address:null,
 
     /**
      * <p>User-defined function that is called everytime HTTPClient connects to a remote resource.</p>
@@ -18328,42 +17842,44 @@ Ti.Network = {
     httpURLFormatter:null,
 
     /**
-     * <p>the network type value as a constant.</p>
+     * <p>Network type value as a constant.</p>
      * @type Number
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
      */
     networkType:null,
 
     /**
-     * <p>the network type name constant. Returns one of <code>NONE</code>, <code>WIFI</code>, <code>LAN</code> or <code>MOBILE</code>.</p>
+     * <p>Network type as a String. Returns one of <code>NONE</code>, <code>WIFI</code>, <code>LAN</code>, <code>MOBILE</code>, or <code>UNKNOWN</code>.</p>
      * @type String
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
      */
     networkTypeName:null,
 
     /**
-     * <p>boolean value that indicates if the network is reachable to the Internet either via WIFI or Carrier network</p>
+     * <p>Boolean value indicating if the device can reach the Internet.</p>
      * @type Boolean
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
      */
     online:null,
 
     /**
-     * <p>the remote device UUID if the device was registered with the Apple Push Notification Service or null if not set.</p>
+     * <p>Remote device UUID if the device is registered with the Apple Push Notification
+Service, or null if it is not registered.</p>
      * @type String
      * @since 0.1 (iPhone), 0.1 (iPad)
      */
     remoteDeviceUUID:null,
 
     /**
-     * <p>returns an array of network type constants enabled for the application.</p>
-     * @type Array<Object>
+     * <p>Array of push notification type constants enabled for the application.</p>
+     * @type Array<Number>
      * @since 0.1 (iPhone), 0.1 (iPad)
      */
     remoteNotificationTypes:null,
 
     /**
-     * <p>returns true if remote notifications have been enabled.</p>
+     * <p>Indicates whether push  notifications have been enabled using 
+{@link Ti.Network.registerForPushNotifications}.</p>
      * @type Boolean
      * @since 0.1 (iPhone), 0.1 (iPad)
      */
@@ -18371,8 +17887,8 @@ Ti.Network = {
 
 
     /**
-     * <p>adds a connectivity listener to listen for network changes. This method has been deprecated in favor of listening for a <code>change</code> event.</p>
-     * @param {Callback<Object>} callback <p>callback function to invoke upon network connectivity changes</p>
+     * <p>Use the {@link Ti.Network.change} event to monitor connectivity changes.</p>
+     * @param {Callback<Object>} callback <p>Callback function to invoke upon network connectivity changes.</p>
      * @since 0.1 (iPhone), 0.1 (iPad)
      */
     addConnectivityListener:function(callback) {
@@ -18388,10 +17904,10 @@ Ti.Network = {
     },
 
     /**
-     * <p>create and return an instance of {@link Ti.Network.BonjourBrowser}</p>
-     * @param {String} serviceType <p>service to search for, must include the protocol type suffix (._tcp)</p>
-     * @param {String} domain <p>the Bonjour service domain to conduct the search in.  Default value is 'local.'</p>
-     * @param {Dictionary<Ti.Network.BonjourBrowser>} parameters <p>A dictionary object of properties defined in {@link Ti.Network.BonjourBrowser}</p>
+     * <p>Creates and returns a <code>BonjourBrowser</code> object.</p>
+     * @param {String} serviceType <p>Service to search for, must include the protocol type suffix (._tcp).</p>
+     * @param {String} domain <p>Bonjour service domain to conduct the search in.</p>
+     * @param {Dictionary<Ti.Network.BonjourBrowser>} parameters <p>A dictionary object of properties defined in {@link Ti.Network.BonjourBrowser}.</p>
      * @returns Ti.Network.BonjourBrowser
      * @since 0.1 (iPhone), 0.1 (iPad)
      */
@@ -18399,11 +17915,11 @@ Ti.Network = {
     },
 
     /**
-     * <p>create and return an instance of {@link Ti.Network.BonjourService}</p>
-     * @param {String} name <p>the name of the service.  Must be a unique identifier for this service type and domain.</p>
-     * @param {String} type <p>the type of service.  Must include the protocol identifier (._tcp)</p>
-     * @param {String} domain <p>the domain to publish the service in.  Default value is 'local.'</p>
-     * @param {Dictionary<Ti.Network.BonjourService>} parameters <p>A dictionary object with properties defined in {@link Ti.Network.BonjourService}</p>
+     * <p>Creates and returns a <code>BonjourService</code> object.</p>
+     * @param {String} name <p>Name of the service. Must be a unique identifier for this service type and domain.</p>
+     * @param {String} type <p>Type of service.  Must include the protocol identifier (._tcp).</p>
+     * @param {String} domain <p>Domain to publish the service in.</p>
+     * @param {Dictionary<Ti.Network.BonjourService>} parameters <p>Dictionary object of properties defined in {@link Ti.Network.BonjourService}.</p>
      * @returns Ti.Network.BonjourService
      * @since 0.1 (iPhone), 0.1 (iPad)
      */
@@ -18420,11 +17936,12 @@ Ti.Network = {
     },
 
     /**
-     * <p>create and return an instance of {@link Ti.Network.TCPSocket}</p>
-     * @param {String} hostName <p>the host name to connect to/listen on</p>
-     * @param {Number} port <p>the port for the socket</p>
-     * @param {Number} mode <p>the socket's mode; one of {@link Ti.Network.READ_MODE}, {@link Ti.Network.WRITE_MODE}, {@link Ti.Network.READ_WRITE_MODE}</p>
-     * @param {Object} parameters <p>A dictionary object with properties defined in {@link Ti.Network.TCPSocket}</p>
+     * <p>Use {@link Ti.Network.Socket.createTCP} instead.</p>
+     * @param {String} hostName <p>Host name to connect to/listen on.</p>
+     * @param {Number} port <p>Port for the socket.</p>
+     * @param {Number} mode <p>Socket's mode; one of {@link Ti.Network.READ_MODE}, {@link Ti.Network.WRITE_MODE}, 
+{@link Ti.Network.READ_WRITE_MODE}.</p>
+     * @param {Dictionary<Ti.Network.TCPSocket>} parameters <p>Dictionary object with properties defined in {@link Ti.Network.TCPSocket}.</p>
      * @returns Ti.Network.TCPSocket
      * @since 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
      */
@@ -18432,8 +17949,8 @@ Ti.Network = {
     },
 
     /**
-     * <p>decode a URI component part using URI encoding</p>
-     * @param {String} value <p>input value to be decoded</p>
+     * <p>Returns a decoded version of a URI encoded value.</p>
+     * @param {String} value <p>URI encoded input value to be decoded.</p>
      * @returns String
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
      */
@@ -18441,8 +17958,8 @@ Ti.Network = {
     },
 
     /**
-     * <p>encode a URI component part using URI encoding</p>
-     * @param {String} value <p>input value to be encoded</p>
+     * <p>Returns a URI encoded version of the specified URI component.</p>
+     * @param {String} value <p>Input value to be encoded.</p>
      * @returns String
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
      */
@@ -18456,6 +17973,14 @@ Ti.Network = {
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
      */
     fireEvent:function(name, event) {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.Network.address} property.</p>
+     * @returns String
+     * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
+     */
+    getAddress:function() {
     },
 
     /**
@@ -18500,7 +18025,7 @@ Ti.Network = {
 
     /**
      * <p>Gets the value of the {@link Ti.Network.remoteNotificationTypes} property.</p>
-     * @returns Array<Object>
+     * @returns Array<Number>
      * @since 0.1 (iPhone), 0.1 (iPad)
      */
     getRemoteNotificationTypes:function() {
@@ -18515,16 +18040,16 @@ Ti.Network = {
     },
 
     /**
-     * <p>register for push notifications with the Apple Push Notification Service.</p>
-     * @param {Object} config <p>dictionary of the following: <code>types</code> is an array of type constants that the application would like to receive, <code>success</code> is a callback function that is called when the push registration is successfully completed, <code>error</code> is a callback function that is called when an error is received during registration and <code>callback</code> is a callback function that is invoked upon receiving a new push notification. This method should be called at application startup.</p>
+     * <p>Registers for push notifications with the Apple Push Notification Service.</p>
+     * @param {PushNotificationConfig} config <p>Dictionary specifying push-notification related options.</p>
      * @since 0.1 (iPhone), 0.1 (iPad)
      */
     registerForPushNotifications:function(config) {
     },
 
     /**
-     * <p>removes a connectivity listener. This method has been deprecated in favor of listening for a <code>change</code> event.</p>
-     * @param {Callback<Object>} callback <p>callback function to remove</p>
+     * <p>Use the {@link Ti.Network.change} event to monitor connectivity changes.</p>
+     * @param {Callback<Object>} callback <p>Callback function to remove.</p>
      * @since 0.1 (iPhone), 0.1 (iPad)
      */
     removeConnectivityListener:function(callback) {
@@ -18540,6 +18065,14 @@ Ti.Network = {
     },
 
     /**
+     * <p>Sets the value of the {@link Ti.Network.address} property.</p>
+     * @param {String} address <p>New value for the property.</p>
+     * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
+     */
+    setAddress:function(address) {
+    },
+
+    /**
      * <p>Sets the value of the {@link Ti.Network.httpURLFormatter} property.</p>
      * @param {Callback<String>} httpURLFormatter <p>New value for the property.</p>
      * @since 1.8 (Mobile Web)
@@ -18548,27 +18081,10 @@ Ti.Network = {
     },
 
     /**
-     * <p>Sets the value of the {@link Ti.Network.remoteDeviceUUID} property.</p>
-     * @param {String} remoteDeviceUUID <p>New value for the property.</p>
-     * @since 0.1 (iPhone), 0.1 (iPad)
+     * <p>Unregisters the application for push notifications.</p>
+     * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
      */
-    setRemoteDeviceUUID:function(remoteDeviceUUID) {
-    },
-
-    /**
-     * <p>Sets the value of the {@link Ti.Network.remoteNotificationTypes} property.</p>
-     * @param {Array<Object>} remoteNotificationTypes <p>New value for the property.</p>
-     * @since 0.1 (iPhone), 0.1 (iPad)
-     */
-    setRemoteNotificationTypes:function(remoteNotificationTypes) {
-    },
-
-    /**
-     * <p>Sets the value of the {@link Ti.Network.remoteNotificationsEnabled} property.</p>
-     * @param {Boolean} remoteNotificationsEnabled <p>New value for the property.</p>
-     * @since 0.1 (iPhone), 0.1 (iPad)
-     */
-    setRemoteNotificationsEnabled:function(remoteNotificationsEnabled) {
+    unregisterForPushNotifications:function() {
     }
 };
 
@@ -18891,46 +18407,110 @@ Ti.Network.BonjourService.prototype = {
 
 /**
  * platforms: Android, iPhone, iPad, Mobile Web
- * @namespace <p>Mobile web requires cross-domain origin policies to be configured on the web servers in order for cross-domain connections to work.</p>
+ * @namespace <p>Use {@link Ti.Network.createHTTPClient} to create a new <code>HTTPClient</code> object.</p>
+<p>An <code>HTTPClient</code> object is intended to be used for a single request. It may be 
+possible to re-use an <code>HTTPClient</code> object, but this use case is not tested. </p>
+<p>There are three steps in making a typical HTTP request:</p>
+<ul>
+<li>Creating an <code>HTTPClient</code> object.</li>
+<li>Opening the <code>HTTPClient</code> object.</li>
+<li>Sending the request.</li>
+</ul>
+<p>Before opening the request, you must define one or more callbacks to handle
+the HTTP response, as well as errors, progress updates, and other conditions.</p>
+<p>The <code>HTTPClient</code> callbacks operate somewhat differently from other
+Titanium callbacks, in accordance with the XMLHttpRequest specification.</p>
+<p>When the callbacks are invoked, the <code>this</code> value is set to either the 
+original <code>HTTPClient</code> object itself, or a response object that holds all
+of the response-related properties defined for the <code>HTTPClient</code> object. So the 
+callbacks can use code like this to access the response values:</p>
+<pre><code>httpResponse = this.responseText;
+status = this.status;
+</code></pre>
+<p>Mobile web requires cross-domain origin policies to be configured on the web servers 
+in order for cross-domain connections to work.</p>
+ * 
+ * @example Simple GET Request
+ * <p>The following code excerpt does a simple GET request and logs the response text.</p>
+<pre><code> var url = "http://www.appcelerator.com";
+ var client = Ti.Network.createHTTPClient({
+     // function called when the response data is available
+     onload : function(e) {
+         Ti.API.info("Received text: " + this.responseText);
+         alert('success');
+     },
+     // function called when an error occurs, including a timeout
+     onerror : function(e) {
+         Ti.API.debug(e.error);
+         alert('error');
+     },
+     timeout : 5000  /* in milliseconds */
+ });
+ // Prepare the connection.
+ client.open("GET", url);
+ // Send the request.
+ client.send();
+</code></pre>
  */
 Ti.Network.HTTPClient = function() {
 };
 Ti.Network.HTTPClient.prototype = {
 
     /**
-     * <p>the DONE readyState constant</p>
+     * <p>Ready state constant indicating that the request is complete.</p>
      * @type Number
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
      */
     DONE:null,
 
     /**
-     * <p>the HEADERS_RECEIVED readyState constant</p>
+     * <p>Ready state constant indicating that response headers have been received.</p>
      * @type Number
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
      */
     HEADERS_RECEIVED:null,
 
     /**
-     * <p>the LOADING readyState constant</p>
+     * <p>Ready state constant indicating that response data is being received from the remote server.</p>
      * @type Number
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
      */
     LOADING:null,
 
     /**
-     * <p>the OPENED readyState constant</p>
+     * <p>Ready state constant indicating that the connection has been opened, but the request has not yet been sent.</p>
      * @type Number
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
      */
     OPENED:null,
 
     /**
-     * <p>the UNSET readyState constant</p>
+     * <p>Ready state constant indicating that HTTPClient request has not been opened or sent.</p>
      * @type Number
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
      */
     UNSENT:null,
+
+    /**
+     * <p>All of the response headers as a single string, or an empty string if no headers are available.</p>
+     * @type String
+     * @since 0.1 (Android)
+     */
+    allResponseHeaders:null,
+
+    /**
+     * <p>Set to <code>false</code> to suppress URL-encoding of the specified URL.</p>
+     * @type Boolean
+     * @since 0.1 (Android)
+     */
+    autoEncodeUrl:null,
+
+    /**
+     * <p>Set to <code>false</code> to disable automatic handling of HTTP redirects.</p>
+     * @type Boolean
+     * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
+     */
+    autoRedirect:null,
 
     /**
      * <p>boolean to indicate that the response was successful</p>
@@ -18940,98 +18520,113 @@ Ti.Network.HTTPClient.prototype = {
     connected:null,
 
     /**
-     * <p>the connection type, normally either <code>GET</code> or <code>POST</code>.</p>
+     * <p>Connection type, normally either <code>GET</code> or <code>POST</code>.</p>
      * @type String
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
      */
     connectionType:null,
 
     /**
-     * <p>file to download contents to.  Can only be set after calling open.</p>
+     * <p>Determines whether the client should attempt to keep a persistent connection.</p>
+     * @type Boolean
+     * @since 0.1 (iPhone), 0.1 (iPad)
+     */
+    enableKeepAlive:null,
+
+    /**
+     * <p>File to download contents to.  Can only be set <strong>after</strong> calling
+{@link Ti.Network.HTTPClient.open}.</p>
      * @type String
      * @since 0.1 (iPhone), 0.1 (iPad)
      */
     file:null,
 
     /**
-     * <p>the absolute URL of the request</p>
+     * <p>Absolute URL of the request.</p>
      * @type String
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
      */
     location:null,
 
     /**
-     * <p>set this to a function before calling open to cause the function to be called at regular intervals as the request data is being received. the <code>progress</code> property of the event will contain a value from 0.0-1.0 with the progress.</p>
+     * <p>Function to be called at regular intervals as the request data is being received.</p>
      * @type Callback<Object>
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
      */
     ondatastream:null,
 
     /**
-     * <p>set this to a function before calling open to cause the function to be called upon a error response</p>
+     * <p>Function to be called upon a error response.</p>
      * @type Callback<Object>
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
      */
     onerror:null,
 
     /**
-     * <p>set this to a function before calling open to cause the function to be called upon a successful response</p>
+     * <p>Function to be called upon a successful response.</p>
      * @type Callback<Object>
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
      */
     onload:null,
 
     /**
-     * <p>set this to a function before calling open to cause the function to be called for each readyState change</p>
+     * <p>Function to be called for each {@link Ti.Network.HTTPClient.readyState} change.</p>
      * @type Callback<Object>
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
      */
     onreadystatechange:null,
 
     /**
-     * <p>set this to a function before calling open to cause the function to be called at regular intervals as the request data is being transmitted. the <code>progress</code> property of the event will contain a value from 0.0-1.0 with the progress.</p>
+     * <p>Function to be called at regular intervals as the request data is being transmitted.</p>
      * @type Callback<Object>
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
      */
     onsendstream:null,
 
     /**
-     * <p>the readyState value</p>
+     * <p>The current ready state of this HTTP request.</p>
      * @type Number
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
      */
     readyState:null,
 
     /**
-     * <p>the response data as a Blob object.</p>
+     * <p>Response data as a <code>Blob</code> object.</p>
      * @type Ti.Blob
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
      */
     responseData:null,
 
     /**
-     * <p>the response as text or null if an error was received or no data was returned</p>
+     * <p>Response as text or <code>null</code> if an error was received or no data was returned.</p>
      * @type String
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
      */
     responseText:null,
 
     /**
-     * <p>the response object as an XML DOMDocument object. returns null if the content type returned by the server was not XML or the content could not be parsed</p>
+     * <p>Response object as an XML DOM Document object.</p>
      * @type Ti.XML.Document
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
      */
     responseXML:null,
 
     /**
-     * <p>the response HTTP status code</p>
+     * <p>Response HTTP status code.</p>
      * @type Number
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
      */
     status:null,
 
     /**
-     * <p>timeout is milliseconds when the connection should be aborted</p>
+     * <p>Human-readable status message associated with the status code.</p>
+     * @type String
+     * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
+     */
+    statusText:null,
+
+    /**
+     * <p>Timeout in milliseconds when the connection should be aborted</p>
      * @type Number
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
      */
@@ -19045,7 +18640,7 @@ Ti.Network.HTTPClient.prototype = {
     tlsVersion:null,
 
     /**
-     * <p>set this to control how SSL certification validation is performed on connection.  defaults to false if in simulator or device testing and true if release for distribution mode.</p>
+     * <p>Controls how SSL certification validation is performed on connection.</p>
      * @type Boolean
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
      */
@@ -19053,7 +18648,7 @@ Ti.Network.HTTPClient.prototype = {
 
 
     /**
-     * <p>abort a pending request</p>
+     * <p>Cancels a pending request.</p>
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
      */
     abort:function() {
@@ -19069,12 +18664,43 @@ Ti.Network.HTTPClient.prototype = {
     },
 
     /**
+     * <p>Clears any cookies stored for this host.</p>
+     * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
+     */
+    clearCookies:function() {
+    },
+
+    /**
      * <p>Fires a synthesized event to any registered listeners.</p>
      * @param {String} name <p>Name of the event.</p>
      * @param {Dictionary} event <p>A dictionary of keys and values to add to the {@link Ti.Event} object sent to the listeners.</p>
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
      */
     fireEvent:function(name, event) {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.Network.HTTPClient.allResponseHeaders} property.</p>
+     * @returns String
+     * @since 0.1 (Android)
+     */
+    getAllResponseHeaders:function() {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.Network.HTTPClient.autoEncodeUrl} property.</p>
+     * @returns Boolean
+     * @since 0.1 (Android)
+     */
+    getAutoEncodeUrl:function() {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.Network.HTTPClient.autoRedirect} property.</p>
+     * @returns Boolean
+     * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
+     */
+    getAutoRedirect:function() {
     },
 
     /**
@@ -19091,6 +18717,14 @@ Ti.Network.HTTPClient.prototype = {
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
      */
     getConnectionType:function() {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.Network.HTTPClient.enableKeepAlive} property.</p>
+     * @returns Boolean
+     * @since 0.1 (iPhone), 0.1 (iPad)
+     */
+    getEnableKeepAlive:function() {
     },
 
     /**
@@ -19166,8 +18800,8 @@ Ti.Network.HTTPClient.prototype = {
     },
 
     /**
-     * <p>return the response header.</p>
-     * @param {String} name <p>the header name</p>
+     * <p>Returns the value of the specified response header.</p>
+     * @param {String} name <p>Name of the header to retrieve.</p>
      * @returns String
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
      */
@@ -19199,6 +18833,14 @@ Ti.Network.HTTPClient.prototype = {
     },
 
     /**
+     * <p>Gets the value of the {@link Ti.Network.HTTPClient.statusText} property.</p>
+     * @returns String
+     * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
+     */
+    getStatusText:function() {
+    },
+
+    /**
      * <p>Gets the value of the {@link Ti.Network.HTTPClient.timeout} property.</p>
      * @returns Number
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
@@ -19223,10 +18865,10 @@ Ti.Network.HTTPClient.prototype = {
     },
 
     /**
-     * <p>open the request and ready the connection</p>
-     * @param {String} method <p>the HTTP method</p>
-     * @param {String} url <p>the URL for the request</p>
-     * @param {Boolean} async <p>optional property to indicate if asynchronous (default) or not</p>
+     * <p>Opens the request and readies the connection.</p>
+     * @param {String} method <p>HTTP method for this request, such as 'GET' or 'POST'.</p>
+     * @param {String} url <p>URL for the request.</p>
+     * @param {Boolean} async <p>Whether the request should be made asynchronously. Only used on iOS.</p>
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
      */
     open:function(method, url, async) {
@@ -19242,27 +18884,35 @@ Ti.Network.HTTPClient.prototype = {
     },
 
     /**
-     * <p>send the request (Only async is currently supported)</p>
-     * @param {Object} data <p>the data to send in the request. can either be null, dictionary, string, File object or Blob.</p>
+     * <p>Sends the request.</p>
+     * @param {Object|String|Ti.Filesystem.File|Ti.Blob} data <p>Data to send with a POST request.</p>
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
      */
     send:function(data) {
     },
 
     /**
-     * <p>Sets the value of the {@link Ti.Network.HTTPClient.connected} property.</p>
-     * @param {Boolean} connected <p>New value for the property.</p>
-     * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
+     * <p>Sets the value of the {@link Ti.Network.HTTPClient.autoEncodeUrl} property.</p>
+     * @param {Boolean} autoEncodeUrl <p>New value for the property.</p>
+     * @since 0.1 (Android)
      */
-    setConnected:function(connected) {
+    setAutoEncodeUrl:function(autoEncodeUrl) {
     },
 
     /**
-     * <p>Sets the value of the {@link Ti.Network.HTTPClient.connectionType} property.</p>
-     * @param {String} connectionType <p>New value for the property.</p>
+     * <p>Sets the value of the {@link Ti.Network.HTTPClient.autoRedirect} property.</p>
+     * @param {Boolean} autoRedirect <p>New value for the property.</p>
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
      */
-    setConnectionType:function(connectionType) {
+    setAutoRedirect:function(autoRedirect) {
+    },
+
+    /**
+     * <p>Sets the value of the {@link Ti.Network.HTTPClient.enableKeepAlive} property.</p>
+     * @param {Boolean} enableKeepAlive <p>New value for the property.</p>
+     * @since 0.1 (iPhone), 0.1 (iPad)
+     */
+    setEnableKeepAlive:function(enableKeepAlive) {
     },
 
     /**
@@ -19271,14 +18921,6 @@ Ti.Network.HTTPClient.prototype = {
      * @since 0.1 (iPhone), 0.1 (iPad)
      */
     setFile:function(file) {
-    },
-
-    /**
-     * <p>Sets the value of the {@link Ti.Network.HTTPClient.location} property.</p>
-     * @param {String} location <p>New value for the property.</p>
-     * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
-     */
-    setLocation:function(location) {
     },
 
     /**
@@ -19322,25 +18964,17 @@ Ti.Network.HTTPClient.prototype = {
     },
 
     /**
-     * <p>Sets the value of the {@link Ti.Network.HTTPClient.readyState} property.</p>
-     * @param {Number} readyState <p>New value for the property.</p>
-     * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
-     */
-    setReadyState:function(readyState) {
-    },
-
-    /**
-     * <p>set the request header. Must be called after <code>open</code> but before <code>send</code>.</p>
-     * @param {String} name <p>name of the header</p>
-     * @param {String} value <p>value of the header. May be null to clearing out a property, such as X-Requested-With</p>
+     * <p>Sets the value for the specified request header. Must be called after <code>open</code> but before <code>send</code>.</p>
+     * @param {String} name <p>Name of the header to set.</p>
+     * @param {String} value <p>Value to assign to the header. May be <code>null</code> to clear a default header value, such as X-Requested-With.</p>
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
      */
     setRequestHeader:function(name, value) {
     },
 
     /**
-     * <p>set the request timeout</p>
-     * @param {Number} timeout <p>the timeout in milliseconds</p>
+     * <p>Sets the request timeout.</p>
+     * @param {Number} timeout <p>Timeout in milliseconds.</p>
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
      */
     setTimeout:function(timeout) {
@@ -19369,35 +19003,35 @@ Ti.Network.HTTPClient.prototype = {
 Ti.Network.Socket = {
 
     /**
-     * <p>state representing the closed state of a socket</p>
+     * <p>State value representing a closed socket.</p>
      * @type Number
      * @since 1.7 (Android), 1.7 (iPhone), 1.7 (iPad)
      */
     CLOSED:null,
 
     /**
-     * <p>state representing the connected state of a socket</p>
+     * <p>State value representing a connected socket.</p>
      * @type Number
      * @since 1.7 (Android), 1.7 (iPhone), 1.7 (iPad)
      */
     CONNECTED:null,
 
     /**
-     * <p>state representing the error state of a socket</p>
+     * <p>State value indicating an error has occurred on the socket.</p>
      * @type Number
      * @since 1.7 (Android), 1.7 (iPhone), 1.7 (iPad)
      */
     ERROR:null,
 
     /**
-     * <p>state representing the initialized state of a socket</p>
+     * <p>State value representing an initialized socket.</p>
      * @type Number
      * @since 1.7 (Android), 1.7 (iPhone), 1.7 (iPad)
      */
     INITIALIZED:null,
 
     /**
-     * <p>state representing the listening state of a socket</p>
+     * <p>State value representing a socket that is listening for connections.</p>
      * @type Number
      * @since 1.7 (Android), 1.7 (iPhone), 1.7 (iPad)
      */
@@ -19414,8 +19048,8 @@ Ti.Network.Socket = {
     },
 
     /**
-     * <p>returns new TCP socket object, takes object containing properties list defined in <code>Ti.Network.Socket.TCP</code>.  Some properties are only needed based on whether the socket will be a connecting socket or a listening socket.</p>
-     * @param {Object} params <p>creation parameters</p>
+     * <p>Returns a new TCP socket object.</p>
+     * @param {Dictionary<Ti.Network.Socket.TCP>} params <p>Creation parameters.</p>
      * @returns Ti.Network.Socket.TCP New TCP socket.
      * @since 1.7 (Android), 1.7 (iPhone), 1.7 (iPad)
      */
@@ -19443,62 +19077,211 @@ Ti.Network.Socket = {
 
 /**
  * platforms: Android, iPhone, iPad
+ * @namespace <p>Most socket operations are asynchronous. When you create a socket, you can define
+callback funtions to receive the results of API calls, as well as to handle incoming
+data.</p>
+<p>For example, for a client-side socket, you define 
+{@link Ti.Network.Socket.TCP.connected} and
+{@link Ti.Network.Socket.TCP.error} callback functions.</p>
+<p>To connect to a remote host, call the socket's
+{@link Ti.Network.Socket.TCP.connect} method. If the socket connects
+successfully, your <code>connected</code> callback is invoked, and you can send and receive data
+on the socket. If the socket connection fails, your <code>error</code> callback is invoked. </p>
+<p>After a socket is connected, you can access it like any other {@link Ti.IOStream}.
+Note that the socket's <code>read</code> and <code>write</code> methods may block, so in most cases
+you should use the asynchronous {@link Ti.Stream.read}, {@link Ti.Stream.write} 
+and {@link Ti.Stream.pump} methods provided by the {@link Ti.Stream} module,
+rather than using the socket object's <code>read</code> and <code>write</code> methods directly.</p>
+<p>A familiarity with the basics of BSD socket programming is a recommended before using 
+sockets with Ti.</p>
+<p>Use the {@link Ti.Network.Socket.createTCP} method to create a TCP socket.</p>
+ * 
+ * @example Simple Socket IO using Stream.pump
+ * <p>The following example uses the {@link Ti.Stream.pump} method from the {@link Ti.Stream} 
+module to read data from a socket. The <code>pump</code> method registers a callback that is 
+called repeatedly to process incoming data from the socket.</p>
+<pre><code>var socket = Ti.Network.Socket.createTCP({
+    host: 'blog.example.com', port: 80,
+    connected: function (e) {
+        Ti.API.info('Socket opened!');
+        Ti.Stream.pump(e.socket, readCallback, 1024, true);
+        Ti.Stream.write(socket, Ti.createBuffer({
+            value: 'GET http://blog.example.com/index.html HTTP/1.1\r\n\r\n'
+        }), writeCallback);
+    },
+        error: function (e) {
+        Ti.API.info('Error (' + e.errorCode + '): ' + e.error);
+    },
+});
+socket.connect();
+
+function writeCallback(e) {
+    Ti.API.info('Successfully wrote to socket.');
+}
+
+function readCallback(e) {
+    if (e.bytesProcessed == -1)
+    {
+        // Error / EOF on socket. Do any cleanup here.
+        ...
+    }
+    try {
+        if(e.buffer) {
+            var received = e.buffer.toString();
+            Ti.API.info('Received: ' + received);
+        } else {
+            Ti.API.error('Error: read callback called with no buffer!');
+        }
+    } catch (ex) {
+        Ti.API.error(ex);
+    }
+}
+</code></pre>
+ * 
+ * @example Listening Socket Example
+ * <p>The following sample shows a trivial example of using a listening 
+socket. In this case, the application simply sends messages to itself,
+using the loopback address. 
+    // Hostname to listen on/connect to. Here we use the loopback
+    // address. iOS also supports Ti.Network.address (the address of
+    // the WiFi interface).
+    // Android supports only the loopback address.
+    var hostname = '127.0.0.1';</p>
+<pre><code>var clientSocket = Ti.Network.Socket.createTCP({
+    host : hostname,
+    port : 40404,
+    connected : function(e) {
+        Ti.API.info('Client socket connected!');
+        Ti.Stream.pump(e.socket, pumpCallback, 1024, true);
+        e.socket.write(Ti.createBuffer({
+            value : 'A message from a connecting socket.'
+        }));
+    },
+    error : function(e) {
+        Ti.API.info('Error (' + e.errorCode + '): ' + e.error);
+    }
+});
+
+function writeCallback(e) {
+    Ti.API.info('Successfully wrote to socket.');
+}
+
+function pumpCallback(e) {
+    // Has the remote socket closed its end?
+    if (e.bytesProcessed &lt; 0) {
+        Ti.API.info("Closing client socket.");
+        clientSocket.close();
+        return;
+    }
+    try {
+        if(e.buffer) {
+            var received = e.buffer.toString();
+            Ti.API.info('Received: ' + received);
+        } else {
+            Ti.API.error('Error: read callback called with no buffer!');
+        }
+    } catch (ex) {
+        Ti.API.error(ex);
+    }
+}
+
+//Create a socket and listen for incoming connections
+var listenSocket = Ti.Network.Socket.createTCP({
+    host : hostname,
+    port : 40404,
+    accepted : function(e) {
+        // This where you would usually store the newly-connected socket, e.inbound
+        // so it can be used for read / write operations elsewhere in the app.
+        // In this case, we simply send a message then close the socket.
+        Ti.API.info("Listening socket &lt;" + e.socket + "&gt; accepted incoming connection &lt;" + e.inbound + "&gt;");
+        e.inbound.write(Ti.createBuffer({
+            value : 'You have been connected to a listening socket.\r\n'
+        }));
+        e.inbound.close();
+        // close the accepted socket
+
+    },
+    error : function(e) {
+        Ti.API.error("Socket &lt;" + e.socket + "&gt; encountered error when listening");
+        Ti.API.error(" error code &lt;" + e.errorCode + "&gt;");
+        Ti.API.error(" error description &lt;" + e.error + "&gt;");
+    }
+});
+// Starts the socket listening for connections, does not accept them
+listenSocket.listen();
+Ti.API.info("Listening now...");
+
+// Tells socket to accept the next inbound connection. listenSocket.accepted gets
+// called when a connection is accepted via accept()
+Ti.API.info("Calling accept.");
+listenSocket.accept({
+    timeout : 10000
+});
+
+// Call connect after a short timeout to ensure the listening socket is ready to go.
+Ti.API.info("Setting timer to connect.");
+setTimeout(function(e)
+{
+    Ti.API.info("Calling connect on client socket.");
+   clientSocket.connect();
+}, 500);
+</code></pre>
  */
 Ti.Network.Socket.TCP = function() {
 };
 Ti.Network.Socket.TCP.prototype = {
 
     /**
-     * <p>The callback to be fired when a listener accepts a connection</p>
+     * <p>Callback to be fired when a listener accepts a connection.</p>
      * @type Callback<AcceptedCallbackArgs>
      * @since 1.7 (Android), 1.7 (iPhone), 1.7 (iPad)
      */
     accepted:null,
 
     /**
-     * <p>The callback to be fired after the socket enters the "connected" state. Only invoked following a successful connect() call</p>
+     * <p>Callback to be fired when the socket enters the "connected" state.</p>
      * @type Callback<ConnectedCallbackArgs>
      * @since 1.7 (Android), 1.7 (iPhone), 1.7 (iPad)
      */
     connected:null,
 
     /**
-     * <p>The callback to be fired after the socket enters the ERROR state</p>
+     * <p>Callback to be fired when the socket enters the {@link Ti.Network.Socket.ERROR} state.</p>
      * @type Callback<ErrorCallbackArgs>
      * @since 1.7 (Android), 1.7 (iPhone), 1.7 (iPad)
      */
     error:null,
 
     /**
-     * <p>The host to connect to or listen on. Cannot be modified when not in the INITIALIZED state. Supports both IPv4 and IPv6</p>
+     * <p>The host to connect to or listen on.</p>
      * @type String
      * @since 1.7 (Android), 1.7 (iPhone), 1.7 (iPad)
      */
     host:null,
 
     /**
-     * <p>Max number of pending incoming connections to be allowed when listen() is called. Any incoming connections received while the max number of pending connections has been reached will be rejected.</p>
+     * <p>Max number of pending incoming connections to be allowed when the socket is in the {@link Ti.Network.Socket.LISTENING} state.</p>
      * @type Number
      * @since 1.7 (Android), 1.7 (iPhone), 1.7 (iPad)
      */
     listenQueueSize:null,
 
     /**
-     * <p>The port to connect to or listen on. Cannot be modified when not in the INITIALIZED state</p>
+     * <p>The port to connect to or listen on.</p>
      * @type Number
      * @since 1.7 (Android), 1.7 (iPhone), 1.7 (iPad)
      */
     port:null,
 
     /**
-     * <p>current state of the socket</p>
+     * <p>Current state of the socket.</p>
      * @type Number
      * @since 1.7 (Android), 1.7 (iPhone), 1.7 (iPad)
      */
     state:null,
 
     /**
-     * <p>The timeout for connect() and all I/O write() operations. Cannot be modified when not in the INITIALIZED state</p>
+     * <p>Timeout, in milliseconds, for <code>connect</code> and all <code>write</code> operations.</p>
      * @type Number
      * @since 1.7 (Android), 1.7 (iPhone), 1.7 (iPad)
      */
@@ -19506,8 +19289,8 @@ Ti.Network.Socket.TCP.prototype = {
 
 
     /**
-     * <p>Tells a LISTENING socket to accept a connection request at the top of a listener's request queue when one becomes available. Takes an argument, a box object which assigns callbacks to the created socket. Note that the connected callback is not called (the socket does not "transition to" the CONNECTED state - it's created in the CONNECTED state) on the newly created socket.  The accepted callback is called when a new connection is accepted as a result of calling accept().  If the socket is already flagged to accept the next connection, the existing accept options will be update to use the newly specified options object. Throws an exception if the socket is not in a LISTENING state</p>
-     * @param {Dictionary<AcceptDict>} options <p>options that contain callbacks to be set on next accepted socket</p>
+     * <p>Tells a {@link Ti.Network.Socket.LISTENING} socket to accept a connection request at the top of a listener's request queue when one becomes available.</p>
+     * @param {AcceptDict} options <p>Options to be set on next accepted socket.</p>
      * @since 1.7 (Android), 1.7 (iPhone), 1.7 (iPad)
      */
     accept:function(options) {
@@ -19523,14 +19306,14 @@ Ti.Network.Socket.TCP.prototype = {
     },
 
     /**
-     * <p>Closes a socket. Throws exception if the socket is not in a CONNECTED or LISTENING state. Blocking</p>
+     * <p>Closes a socket.</p>
      * @since 1.7 (Android), 1.7 (iPhone), 1.7 (iPad)
      */
     close:function() {
     },
 
     /**
-     * <p>Attempts to connect the socket to its host/port. Throws exception if the socket is in a CONNECTED or LISTENING state. Throws exception if a valid host and port has not been set on the proxy. Nonblocking; connection attempts are asynchronous</p>
+     * <p>Attempts to connect the socket to its host/port.</p>
      * @since 1.7 (Android), 1.7 (iPhone), 1.7 (iPad)
      */
     connect:function() {
@@ -19610,10 +19393,35 @@ Ti.Network.Socket.TCP.prototype = {
     },
 
     /**
-     * <p>Attempts to start listening on the socket's host/port. listen() call will attempt to listen on the specified host and/or port property for the socket if they are set. This function blocks execution and throws an exception on error (and sets the socket state to ERROR) but does not fire the error callback in this event. Throws exception if the socket is in a LISTENING or CONNECTED state</p>
+     * <p>Whether stream is readable.</p>
+     * @returns Boolean true if stream is readable, false otherwise
+     * @since 1.7 (Android), 1.7 (iPhone), 1.7 (iPad)
+     */
+    isReadable:function() {
+    },
+
+    /**
+     * <p>Whether stream is writeable.</p>
+     * @returns Boolean true if stream is writeable, false otherwise
+     * @since 1.7 (Android), 1.7 (iPhone), 1.7 (iPad)
+     */
+    isWriteable:function() {
+    },
+
+    /**
+     * <p>Attempts to start listening on the socket's host/port.</p>
      * @since 1.7 (Android), 1.7 (iPhone), 1.7 (iPad)
      */
     listen:function() {
+    },
+
+    /**
+     * <p>reads data from stream into a buffer</p>
+     * @param {Ti.Buffer} buffer <p>buffer to read stream data into</p>
+     * @returns Number Number of bytes read.
+     * @since 1.7 (Android), 1.7 (iPhone), 1.7 (iPad)
+     */
+    read:function(buffer) {
     },
 
     /**
@@ -19679,11 +19487,20 @@ Ti.Network.Socket.TCP.prototype = {
      * @since 1.7 (Android), 1.7 (iPhone), 1.7 (iPad)
      */
     setTimeout:function(timeout) {
+    },
+
+    /**
+     * <p>writes data from buffer to stream</p>
+     * @param {Ti.Buffer} buffer <p>buffer to write to stream</p>
+     * @returns Number Number of bytes written.
+     * @since 1.7 (Android), 1.7 (iPhone), 1.7 (iPad)
+     */
+    write:function(buffer) {
     }
 };
 
 /**
- * platforms: iPhone, iPad, Mobile Web
+ * platforms: iPhone, iPad
  * @namespace <p>Sockets are nontrivial; it is recommended that anyone using them be familiar with the basics of BSD sockets.  All sockets use TCP connections, and are asynchronous for read operations, so your program should be ready to receive 'read' events at any point.  Socket references cannot be transferred to socket objects, and vice-versa - socket references are an internal mechanism which is used only to determine which sockets to send data to and read data from.  For listening sockets, it is highly recommended that you use the {@link Ti.Network.INADDR_ANY} constant as the host name.  If a window containing a socket is closed, the socket MUST be closed also unless you intend to continue to receive data, otherwise the socket will consume resources (and potentially cause conflicts with opening the window again, if a listener) until the program is restarted.  Be aware of the differences between the listen() and connect() functions; attempting to use one when you mean the other may result in errors, unpredictable behavior, or both.</p>
  */
 Ti.Network.TCPSocket = function() {
@@ -19693,35 +19510,35 @@ Ti.Network.TCPSocket.prototype = {
     /**
      * <p>the host name to connect to.  Must be {@link Ti.Network.INADDR_ANY} or an identifier for the local device in order to listen</p>
      * @type String
-     * @since 1.2.0 (iPhone), 1.2.0 (iPad), 1.8 (Mobile Web)
+     * @since 1.2.0 (iPhone), 1.2.0 (iPad)
      */
     hostName:null,
 
     /**
      * <p>whether or not the socket is valid</p>
      * @type Boolean
-     * @since 1.2.0 (iPhone), 1.2.0 (iPad), 1.8 (Mobile Web)
+     * @since 1.2.0 (iPhone), 1.2.0 (iPad)
      */
     isValid:null,
 
     /**
      * <p>the socket's mode</p>
      * @type Number
-     * @since 1.2.0 (iPhone), 1.2.0 (iPad), 1.8 (Mobile Web)
+     * @since 1.2.0 (iPhone), 1.2.0 (iPad)
      */
     mode:null,
 
     /**
      * <p>the port to connect/listen on</p>
      * @type Number
-     * @since 1.2.0 (iPhone), 1.2.0 (iPad), 1.8 (Mobile Web)
+     * @since 1.2.0 (iPhone), 1.2.0 (iPad)
      */
     port:null,
 
     /**
      * <p>strip terminating null character when sending string data; default is false</p>
      * @type Boolean
-     * @since 1.2.0 (iPhone), 1.2.0 (iPad), 1.8 (Mobile Web)
+     * @since 1.2.0 (iPhone), 1.2.0 (iPad)
      */
     stripTerminator:null,
 
@@ -19730,21 +19547,21 @@ Ti.Network.TCPSocket.prototype = {
      * <p>Adds the specified callback as an event listener for the named event.</p>
      * @param {String} name <p>Name of the event.</p>
      * @param {Callback<Object>} callback <p>Callback function to invoke when the event is fired.</p>
-     * @since 1.2.0 (iPhone), 1.2.0 (iPad), 1.8 (Mobile Web)
+     * @since 1.2.0 (iPhone), 1.2.0 (iPad)
      */
     addEventListener:function(name, callback) {
     },
 
     /**
      * <p>close the socket</p>
-     * @since 1.2.0 (iPhone), 1.2.0 (iPad), 1.8 (Mobile Web)
+     * @since 1.2.0 (iPhone), 1.2.0 (iPad)
      */
     close:function() {
     },
 
     /**
      * <p>connect the scocket to a TCP server</p>
-     * @since 1.2.0 (iPhone), 1.2.0 (iPad), 1.8 (Mobile Web)
+     * @since 1.2.0 (iPhone), 1.2.0 (iPad)
      */
     connect:function() {
     },
@@ -19753,7 +19570,7 @@ Ti.Network.TCPSocket.prototype = {
      * <p>Fires a synthesized event to any registered listeners.</p>
      * @param {String} name <p>Name of the event.</p>
      * @param {Dictionary} event <p>A dictionary of keys and values to add to the {@link Ti.Event} object sent to the listeners.</p>
-     * @since 1.2.0 (iPhone), 1.2.0 (iPad), 1.8 (Mobile Web)
+     * @since 1.2.0 (iPhone), 1.2.0 (iPad)
      */
     fireEvent:function(name, event) {
     },
@@ -19761,7 +19578,7 @@ Ti.Network.TCPSocket.prototype = {
     /**
      * <p>Gets the value of the {@link Ti.Network.TCPSocket.hostName} property.</p>
      * @returns String
-     * @since 1.2.0 (iPhone), 1.2.0 (iPad), 1.8 (Mobile Web)
+     * @since 1.2.0 (iPhone), 1.2.0 (iPad)
      */
     getHostName:function() {
     },
@@ -19769,7 +19586,7 @@ Ti.Network.TCPSocket.prototype = {
     /**
      * <p>Gets the value of the {@link Ti.Network.TCPSocket.isValid} property.</p>
      * @returns Boolean
-     * @since 1.2.0 (iPhone), 1.2.0 (iPad), 1.8 (Mobile Web)
+     * @since 1.2.0 (iPhone), 1.2.0 (iPad)
      */
     getIsValid:function() {
     },
@@ -19777,7 +19594,7 @@ Ti.Network.TCPSocket.prototype = {
     /**
      * <p>Gets the value of the {@link Ti.Network.TCPSocket.mode} property.</p>
      * @returns Number
-     * @since 1.2.0 (iPhone), 1.2.0 (iPad), 1.8 (Mobile Web)
+     * @since 1.2.0 (iPhone), 1.2.0 (iPad)
      */
     getMode:function() {
     },
@@ -19785,7 +19602,7 @@ Ti.Network.TCPSocket.prototype = {
     /**
      * <p>Gets the value of the {@link Ti.Network.TCPSocket.port} property.</p>
      * @returns Number
-     * @since 1.2.0 (iPhone), 1.2.0 (iPad), 1.8 (Mobile Web)
+     * @since 1.2.0 (iPhone), 1.2.0 (iPad)
      */
     getPort:function() {
     },
@@ -19793,14 +19610,14 @@ Ti.Network.TCPSocket.prototype = {
     /**
      * <p>Gets the value of the {@link Ti.Network.TCPSocket.stripTerminator} property.</p>
      * @returns Boolean
-     * @since 1.2.0 (iPhone), 1.2.0 (iPad), 1.8 (Mobile Web)
+     * @since 1.2.0 (iPhone), 1.2.0 (iPad)
      */
     getStripTerminator:function() {
     },
 
     /**
      * <p>set up the socket to receive connections</p>
-     * @since 1.2.0 (iPhone), 1.2.0 (iPad), 1.8 (Mobile Web)
+     * @since 1.2.0 (iPhone), 1.2.0 (iPad)
      */
     listen:function() {
     },
@@ -19809,7 +19626,7 @@ Ti.Network.TCPSocket.prototype = {
      * <p>Removes the specified callback as an event listener for the named event.</p>
      * @param {String} name <p>Name of the event.</p>
      * @param {Callback<Object>} callback <p>Callback function to remove. Must be the same function passed to <code>addEventListener</code>.</p>
-     * @since 1.2.0 (iPhone), 1.2.0 (iPad), 1.8 (Mobile Web)
+     * @since 1.2.0 (iPhone), 1.2.0 (iPad)
      */
     removeEventListener:function(name, callback) {
     },
@@ -19817,7 +19634,7 @@ Ti.Network.TCPSocket.prototype = {
     /**
      * <p>Sets the value of the {@link Ti.Network.TCPSocket.hostName} property.</p>
      * @param {String} hostName <p>New value for the property.</p>
-     * @since 1.2.0 (iPhone), 1.2.0 (iPad), 1.8 (Mobile Web)
+     * @since 1.2.0 (iPhone), 1.2.0 (iPad)
      */
     setHostName:function(hostName) {
     },
@@ -19825,7 +19642,7 @@ Ti.Network.TCPSocket.prototype = {
     /**
      * <p>Sets the value of the {@link Ti.Network.TCPSocket.isValid} property.</p>
      * @param {Boolean} isValid <p>New value for the property.</p>
-     * @since 1.2.0 (iPhone), 1.2.0 (iPad), 1.8 (Mobile Web)
+     * @since 1.2.0 (iPhone), 1.2.0 (iPad)
      */
     setIsValid:function(isValid) {
     },
@@ -19833,7 +19650,7 @@ Ti.Network.TCPSocket.prototype = {
     /**
      * <p>Sets the value of the {@link Ti.Network.TCPSocket.mode} property.</p>
      * @param {Number} mode <p>New value for the property.</p>
-     * @since 1.2.0 (iPhone), 1.2.0 (iPad), 1.8 (Mobile Web)
+     * @since 1.2.0 (iPhone), 1.2.0 (iPad)
      */
     setMode:function(mode) {
     },
@@ -19841,7 +19658,7 @@ Ti.Network.TCPSocket.prototype = {
     /**
      * <p>Sets the value of the {@link Ti.Network.TCPSocket.port} property.</p>
      * @param {Number} port <p>New value for the property.</p>
-     * @since 1.2.0 (iPhone), 1.2.0 (iPad), 1.8 (Mobile Web)
+     * @since 1.2.0 (iPhone), 1.2.0 (iPad)
      */
     setPort:function(port) {
     },
@@ -19849,7 +19666,7 @@ Ti.Network.TCPSocket.prototype = {
     /**
      * <p>Sets the value of the {@link Ti.Network.TCPSocket.stripTerminator} property.</p>
      * @param {Boolean} stripTerminator <p>New value for the property.</p>
-     * @since 1.2.0 (iPhone), 1.2.0 (iPad), 1.8 (Mobile Web)
+     * @since 1.2.0 (iPhone), 1.2.0 (iPad)
      */
     setStripTerminator:function(stripTerminator) {
     },
@@ -19858,7 +19675,7 @@ Ti.Network.TCPSocket.prototype = {
      * <p>write data to the socket, if the mode is WRITE_MODE or READ_WRITE_MODE</p>
      * @param {Object|String} data <p>either a string or blob object representing the data to be transferred</p>
      * @param {Number} sendTo <p>the socket reference to send the data to.  Default is to send to all connected sockets</p>
-     * @since 1.2.0 (iPhone), 1.2.0 (iPad), 1.8 (Mobile Web)
+     * @since 1.2.0 (iPhone), 1.2.0 (iPad)
      */
     write:function(data, sendTo) {
     }
@@ -19870,161 +19687,166 @@ Ti.Network.TCPSocket.prototype = {
 Ti.Platform = {
 
     /**
-     * <p>the device is plugged in and currently being charged</p>
+     * <p>Constant to indicate that the system is plugged in and currently being
+charged.</p>
      * @type Number
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
      */
     BATTERY_STATE_CHARGING:null,
 
     /**
-     * <p>the battery is fully charged</p>
+     * <p>Constant to indicate that the battery is fully charged.</p>
      * @type Number
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
      */
     BATTERY_STATE_FULL:null,
 
     /**
-     * <p>the battery state is unknown or not monitoring is not enabled</p>
+     * <p>Constant to indicate that the battery state is not known or monitoring is disabled.</p>
      * @type Number
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
      */
     BATTERY_STATE_UNKNOWN:null,
 
     /**
-     * <p>the device is unplugged</p>
+     * <p>Constant to indicate that the system is unplugged.</p>
      * @type Number
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
      */
     BATTERY_STATE_UNPLUGGED:null,
 
     /**
-     * <p>the ip address that the device reports (only applicable on WIFI network)</p>
+     * <p>The system's WIFI IP address. No other network types are supported.</p>
      * @type String
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
      */
     address:null,
 
     /**
-     * <p>the processor architecture that the device reports</p>
+     * <p>The system's processor architecture.</p>
      * @type String
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
      */
     architecture:null,
 
     /**
-     * <p>return the amount of memory available on the device in bytes</p>
+     * <p>The system's unused memory, measured in megabytes on iOS and bytes on Android.</p>
      * @type Number
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
      */
     availableMemory:null,
 
     /**
-     * <p>the current device battery level. this property is only accessible if <code>batteryMonitoring</code> is enabled. on iPhone, this level only changes at 5% intervals.</p>
+     * <p>The battery level in percent, accessible only when <code>batteryMonitoring</code> is enabled.
+This is measured in 5% increments on iPhone/iPad.</p>
      * @type Number
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
      */
     batteryLevel:null,
 
     /**
-     * <p>boolean to indicate if battery monitoring is enabled</p>
+     * <p>Indicates whether battery monitoring is enabled.</p>
      * @type Boolean
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
      */
     batteryMonitoring:null,
 
     /**
-     * <p>constant that represents the state of the battery. this property is only accessible if <code>batteryMonitoring</code> is enabled</p>
+     * <p>Constant to indicate the state of the battery, accessible only when
+<code>batteryMonitoring</code> is enabled.</p>
      * @type Number
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
      */
     batteryState:null,
 
     /**
-     * <p>return the DisplayCaps object for platform</p>
+     * <p>Returns the DisplayCaps object.</p>
      * @type Ti.Platform.DisplayCaps
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
      */
     displayCaps:null,
 
     /**
-     * <p>the unique id of the device</p>
+     * <p>The system's globally-unique ID (UUID).</p>
      * @type String
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
      */
     id:null,
 
     /**
-     * <p>the primary language of the device that the user has enabled</p>
+     * <p>The system's default language.</p>
      * @type String
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
      */
     locale:null,
 
     /**
-     * <p>this property will return a unique identifier for the device</p>
+     * <p>The system's network interface mac address.</p>
      * @type String
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
      */
     macaddress:null,
 
     /**
-     * <p>the model of the phone that the device reports</p>
+     * <p>The model of the device.</p>
      * @type String
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad)
      */
     model:null,
 
     /**
-     * <p>the name of the platform returned by the device</p>
+     * <p>The name of the platform.</p>
      * @type String
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
      */
     name:null,
 
     /**
-     * <p>the network mask that the device reports (only applicable on WIFI network)</p>
+     * <p>The system's WIFI network mask. No other network types are supported.</p>
      * @type String
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
      */
     netmask:null,
 
     /**
-     * <p>the shortname of the operating system. for example, on an iPhone, will return <code>iphone</code>, iPad will return <code>ipad</code>, Android will return <code>android</code> and Mobile Web will return <code>mobileweb</code>.</p>
+     * <p>The short name of the system's Operating System. For example, iPhone
+will return <code>iphone</code>, iPad will return <code>ipad</code>, Android will return <code>android</code>
+and Mobile Web will return <code>mobileweb</code>.</p>
      * @type String
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
      */
     osname:null,
 
     /**
-     * <p>the OS architecture, such as 32 bit</p>
+     * <p>The Operating System architecture. On Android, this is <code>32bit</code>.</p>
      * @type String
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
      */
     ostype:null,
 
     /**
-     * <p>the number of processors the device reports</p>
+     * <p>The number of processing cores.</p>
      * @type Number
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
      */
     processorCount:null,
 
     /**
-     * <p>Short name for the JavaScript runtime in use.</p>
+     * <p>The short name of the JavaScript runtime in use.</p>
      * @type String
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
      */
     runtime:null,
 
     /**
-     * <p>the username of the device, if set</p>
+     * <p>The system name, if set. On iOS, this can be found in Settings &gt; General &gt; About &gt; Name.</p>
      * @type String
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
      */
     username:null,
 
     /**
-     * <p>the version of the platform returned by the device</p>
+     * <p>The system's OS version.</p>
      * @type String
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
      */
@@ -20041,15 +19863,17 @@ Ti.Platform = {
     },
 
     /**
-     * <p>returns whether or not a system URL can be opened.</p>
-     * @param {String} url <p>the url to check</p>
+     * <p>Returns whether the system is configured with a default application to handle
+this URL's protocol.</p>
+     * @param {String} url <p>The url to check.</p>
+     * @returns Boolean
      * @since 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
      */
     canOpenURL:function(url) {
     },
 
     /**
-     * <p>create a globally unique identifier</p>
+     * <p>Creates a globally-unique identifier.</p>
      * @returns String
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
      */
@@ -20218,7 +20042,8 @@ Ti.Platform = {
     },
 
     /**
-     * <p>Whether device settings are set to show times in 24-hour format.</p>
+     * <p>Returns whether the system settings are configured to show times in
+24-hour format.</p>
      * @returns Boolean
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad)
      */
@@ -20226,8 +20051,9 @@ Ti.Platform = {
     },
 
     /**
-     * <p>open a URL in the system default manner</p>
-     * @param {String} url <p>the url to open</p>
+     * <p>Opens this URL using the system's default application for its protocol.</p>
+     * @param {String} url <p>The url to open.</p>
+     * @returns Boolean
      * @since 0.1 (Android), 0.1 (iPhone), 0.1 (iPad), 1.8 (Mobile Web)
      */
     openURL:function(url) {
@@ -20245,35 +20071,46 @@ Ti.Platform = {
 
 /**
  * platforms: Android, iPhone, iPad, Mobile Web
- * @namespace <p>On iPhone, the <code>density</code> property will return <code>high</code> for retina devices and <code>medium</code> otherwise, the <code>dpi</code> property will return <code>160</code>. For iPad, the <code>density</code> property will return <code>medium</code> and the <code>dpi</code> property will return <code>130</code>.  For Android, these values are device specific.</p>
+ * @namespace <p>On iPhone, the <code>density</code> property will return <code>high</code> for retina devices and
+<code>medium</code> otherwise, and the <code>dpi</code> property <code>320</code> and <code>160</code> otherwise.</p>
+<p>On iPad, the <code>density</code> property will return <code>medium</code> and the <code>dpi</code> property
+will return <code>130</code>.</p>
+<p>Note that the <code>displayCaps</code> property begins with a lowercase letter,
+which is in contrast to the <code>DisplayCaps</code> object that it returns.</p>
+ * 
+ * @example System screen dimensions
+ * <p>The system's screen dimensions can be obtained using the following code.</p>
+<pre><code>var width = Ti.Platform.displayCaps.platformWidth;
+var height = Ti.Platform.displayCaps.platformHeight;
+</code></pre>
  */
 Ti.Platform.DisplayCaps = function() {
 };
 Ti.Platform.DisplayCaps.prototype = {
 
     /**
-     * <p>returns the density property of the display device.</p>
+     * <p>The system's display density.</p>
      * @type String
      * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
      */
     density:null,
 
     /**
-     * <p>the DPI of the display device.</p>
+     * <p>The system's display DPI.</p>
      * @type Number
      * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
      */
     dpi:null,
 
     /**
-     * <p>the height of the device screen</p>
+     * <p>The system's display height.</p>
      * @type Number
      * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
      */
     platformHeight:null,
 
     /**
-     * <p>the width of the device screen</p>
+     * <p>The system's display width.</p>
      * @type Number
      * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
      */
@@ -20667,6 +20504,15 @@ namespace, such as {@link Ti.UI.iPhone}.
 However, in cases where the control is in a common namespace and support
 additional features, we continue to place that functionality directly on the
 object.</p>
+<h4>Events</h4>
+<p>Event listeners must be defined before their respective events are likely to 
+be fired, otherwise they are not guaranteed to be called. The open and focus 
+{@link Ti.UI.Window} event listeners, for instance, must 
+be defined before the window is opened.</p>
+<p>Evaluating events as late as possible while bearing the above consideration 
+in mind, however, can significantly improve application responsiveness. For 
+example, an event listener for a click event may be defined after the parent 
+window has been opened.</p>
  */
 Ti.UI = {
 
@@ -20981,28 +20827,28 @@ Ti.UI = {
     /**
      * <p>Always show buttons on the input field.</p>
      * @type Number
-     * @since 0.4 (Android), 0.4 (iPhone), 0.4 (iPad)
+     * @since 0.4 (Android), 0.4 (iPhone), 0.4 (iPad), 1.8 (Mobile Web)
      */
     INPUT_BUTTONMODE_ALWAYS:null,
 
     /**
      * <p>Never show buttons on the input field.</p>
      * @type Number
-     * @since 0.4 (Android), 0.4 (iPhone), 0.4 (iPad)
+     * @since 0.4 (Android), 0.4 (iPhone), 0.4 (iPad), 1.8 (Mobile Web)
      */
     INPUT_BUTTONMODE_NEVER:null,
 
     /**
      * <p>Show buttons on the input field when it loses focus.</p>
      * @type Number
-     * @since 0.4 (Android), 0.4 (iPhone), 0.4 (iPad)
+     * @since 0.4 (Android), 0.4 (iPhone), 0.4 (iPad), 1.8 (Mobile Web)
      */
     INPUT_BUTTONMODE_ONBLUR:null,
 
     /**
      * <p>Show buttons on the input field when it gains focus.</p>
      * @type Number
-     * @since 0.4 (Android), 0.4 (iPhone), 0.4 (iPad)
+     * @since 0.4 (Android), 0.4 (iPhone), 0.4 (iPad), 1.8 (Mobile Web)
      */
     INPUT_BUTTONMODE_ONFOCUS:null,
 
@@ -21023,21 +20869,21 @@ Ti.UI = {
     /**
      * <p>Use an ASCII keyboard.</p>
      * @type Number
-     * @since 0.4 (Android), 0.4 (iPhone), 0.4 (iPad)
+     * @since 0.4 (Android), 0.4 (iPhone), 0.4 (iPad), 1.8 (Mobile Web)
      */
     KEYBOARD_ASCII:null,
 
     /**
      * <p>Use the default keyboard.</p>
      * @type Number
-     * @since 0.4 (Android), 0.4 (iPhone), 0.4 (iPad)
+     * @since 0.4 (Android), 0.4 (iPhone), 0.4 (iPad), 1.8 (Mobile Web)
      */
     KEYBOARD_DEFAULT:null,
 
     /**
      * <p>Use a keyboard suitable for composing email.</p>
      * @type Number
-     * @since 0.4 (Android), 0.4 (iPhone), 0.4 (iPad)
+     * @since 0.4 (Android), 0.4 (iPhone), 0.4 (iPad), 1.8 (Mobile Web)
      */
     KEYBOARD_EMAIL:null,
 
@@ -21058,21 +20904,21 @@ Ti.UI = {
     /**
      * <p>Use a keyboard with a number pad only.</p>
      * @type Number
-     * @since 0.4 (Android), 0.4 (iPhone), 0.4 (iPad)
+     * @since 0.4 (Android), 0.4 (iPhone), 0.4 (iPad), 1.8 (Mobile Web)
      */
     KEYBOARD_NUMBER_PAD:null,
 
     /**
      * <p>Use a keyboard with a phone-style number pad.</p>
      * @type Number
-     * @since 0.4 (Android), 0.4 (iPhone), 0.4 (iPad)
+     * @since 0.4 (Android), 0.4 (iPhone), 0.4 (iPad), 1.8 (Mobile Web)
      */
     KEYBOARD_PHONE_PAD:null,
 
     /**
      * <p>Use an keyboard optimized for entering URLs.</p>
      * @type Number
-     * @since 0.4 (Android), 0.4 (iPhone), 0.4 (iPad)
+     * @since 0.4 (Android), 0.4 (iPhone), 0.4 (iPad), 1.8 (Mobile Web)
      */
     KEYBOARD_URL:null,
 
@@ -21149,7 +20995,7 @@ Ti.UI = {
     /**
      * <p>Use the default return key on the virtual keyboard.</p>
      * @type Number
-     * @since 0.4 (Android), 0.4 (iPhone), 0.4 (iPad)
+     * @since 0.4 (Android), 0.4 (iPhone), 0.4 (iPad), 1.8 (Mobile Web)
      */
     RETURNKEY_DEFAULT:null,
 
@@ -21170,14 +21016,14 @@ Ti.UI = {
     /**
      * <p>Set the return key text to "Go".</p>
      * @type Number
-     * @since 0.4 (Android), 0.4 (iPhone), 0.4 (iPad)
+     * @since 0.4 (Android), 0.4 (iPhone), 0.4 (iPad), 1.8 (Mobile Web)
      */
     RETURNKEY_GO:null,
 
     /**
      * <p>Set the return key text to "Google".</p>
      * @type Number
-     * @since 0.4 (Android), 0.4 (iPhone), 0.4 (iPad)
+     * @since 0.4 (Android), 0.4 (iPhone), 0.4 (iPad), 1.8 (Mobile Web)
      */
     RETURNKEY_GOOGLE:null,
 
@@ -21205,7 +21051,7 @@ Ti.UI = {
     /**
      * <p>Set the return key text to "Search".</p>
      * @type Number
-     * @since 0.4 (Android), 0.4 (iPhone), 0.4 (iPad)
+     * @since 0.4 (Android), 0.4 (iPhone), 0.4 (iPad), 1.8 (Mobile Web)
      */
     RETURNKEY_SEARCH:null,
 
@@ -21219,7 +21065,7 @@ Ti.UI = {
     /**
      * <p>Set the return key text to "Yahoo".</p>
      * @type Number
-     * @since 0.4 (Android), 0.4 (iPhone), 0.4 (iPad)
+     * @since 0.4 (Android), 0.4 (iPhone), 0.4 (iPad), 1.8 (Mobile Web)
      */
     RETURNKEY_YAHOO:null,
 
@@ -21247,21 +21093,21 @@ Ti.UI = {
     /**
      * <p>Auto-capitalize all text in the input field.</p>
      * @type Number
-     * @since 0.4 (Android), 0.4 (iPhone), 0.4 (iPad)
+     * @since 0.4 (Android), 0.4 (iPhone), 0.4 (iPad), 1.8 (Mobile Web)
      */
     TEXT_AUTOCAPITALIZATION_ALL:null,
 
     /**
      * <p>Do not auto-capitalize.</p>
      * @type Number
-     * @since 0.4 (Android), 0.4 (iPhone), 0.4 (iPad)
+     * @since 0.4 (Android), 0.4 (iPhone), 0.4 (iPad), 1.8 (Mobile Web)
      */
     TEXT_AUTOCAPITALIZATION_NONE:null,
 
     /**
      * <p>Use sentence-style auto-capitalization in the input field.</p>
      * @type Number
-     * @since 0.4 (Android), 0.4 (iPhone), 0.4 (iPad)
+     * @since 0.4 (Android), 0.4 (iPhone), 0.4 (iPad), 1.8 (Mobile Web)
      */
     TEXT_AUTOCAPITALIZATION_SENTENCES:null,
 
@@ -21296,28 +21142,28 @@ Ti.UI = {
     /**
      * <p>Orientation constant representing an unknown orientation.</p>
      * @type Number
-     * @since 0.4 (Android), 0.4 (iPhone), 0.4 (iPad)
+     * @since 0.4 (Android), 0.4 (iPhone), 0.4 (iPad), 1.8 (Mobile Web)
      */
     UNKNOWN:null,
 
     /**
      * <p>Orientation constant for inverted portait orientation.</p>
      * @type Number
-     * @since 0.4 (Android), 0.4 (iPhone), 0.4 (iPad)
+     * @since 0.4 (Android), 0.4 (iPhone), 0.4 (iPad), 1.8 (Mobile Web)
      */
     UPSIDE_PORTRAIT:null,
 
     /**
      * <p>Sets the background color of the master view (when there are no windows or other top-level controls displayed).</p>
      * @type String
-     * @since 0.4 (Android), 0.4 (iPhone), 0.4 (iPad)
+     * @since 0.4 (Android), 0.4 (iPhone), 0.4 (iPad), 1.8 (Mobile Web)
      */
     backgroundColor:null,
 
     /**
      * <p>Local path or URL to an image file for setting a background for the master view (when there are no windows or other top-level controls displayed).</p>
      * @type String
-     * @since 0.4 (Android), 0.4 (iPhone), 0.4 (iPad)
+     * @since 0.4 (Android), 0.4 (iPhone), 0.4 (iPad), 1.8 (Mobile Web)
      */
     backgroundImage:null,
 
@@ -21331,7 +21177,7 @@ Ti.UI = {
     /**
      * <p>The active window associated with the executing JavaScript context.</p>
      * @type Ti.UI.Window
-     * @since 0.4 (Android), 0.4 (iPhone), 0.4 (iPad)
+     * @since 0.4 (Android), 0.4 (iPhone), 0.4 (iPad), 1.8 (Mobile Web)
      */
     currentWindow:null,
 
@@ -21353,10 +21199,10 @@ Ti.UI = {
     },
 
     /**
-     * <p>Create and return an instance of {@link Ti.UI.D2Matrix}.</p>
-     * @param {Dictionary<Ti.UI.D2Matrix>} parameters <p>(Optional) A dictionary object with properties as defined in {@link Ti.UI.D2Matrix}.</p>
+     * <p>Creates are returns an instance of {@link Ti.UI.D2Matrix}.</p>
+     * @param {MatrixCreationDict} parameters <p>A dictionary object specifying the initial transformation of the object.</p>
      * @returns Ti.UI.D2Matrix
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
+     * @since 0.4 (Android), 0.4 (iPhone), 0.4 (iPad), 1.8 (Mobile Web)
      */
     create2DMatrix:function(parameters) {
     },
@@ -21392,7 +21238,7 @@ Ti.UI = {
      * <p>Create and return an instance of {@link Ti.UI.Animation}.</p>
      * @param {Dictionary<Ti.UI.Animation>} parameters <p>(Optional) A dictionary object with properties as defined in {@link Ti.UI.Animation}.</p>
      * @returns Ti.UI.Animation
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
     createAnimation:function(parameters) {
     },
@@ -21410,9 +21256,18 @@ Ti.UI = {
      * <p>Create and return an instance of {@link Ti.UI.ButtonBar}.</p>
      * @param {Dictionary<Ti.UI.ButtonBar>} parameters <p>(Optional) A dictionary object with properties as defined in {@link Ti.UI.ButtonBar}.</p>
      * @returns Ti.UI.ButtonBar
-     * @since 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * @since 0.8 (iPhone), 0.8 (iPad)
      */
     createButtonBar:function(parameters) {
+    },
+
+    /**
+     * <p>Create and return an instance of {@link Ti.UI.CoverFlowView}.</p>
+     * @param {Dictionary<Ti.UI.CoverFlowView>} parameters <p>(Optional) A dictionary object with properties as defined in {@link Ti.UI.CoverFlowView}.</p>
+     * @returns Ti.UI.CoverFlowView
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    createCoverFlowView:function(parameters) {
     },
 
     /**
@@ -21461,6 +21316,15 @@ Ti.UI = {
     },
 
     /**
+     * <p>Create and return an instance of {@link Ti.UI.MaskedImage}.</p>
+     * @param {Dictionary<Ti.UI.MaskedImage>} parameters <p>(Optional) A dictionary object with properties as defined in {@link Ti.UI.MaskedImage}.</p>
+     * @returns Ti.UI.MaskedImage
+     * @since 0.4 (iPhone), 0.4 (iPad)
+     */
+    createMaskedImage:function(parameters) {
+    },
+
+    /**
      * <p>Create and return an instance of {@link Ti.UI.Notification}.</p>
      * @param {Dictionary<Ti.UI.Notification>} parameters <p>(Optional) A dictionary object with properties as defined in {@link Ti.UI.Notification}.</p>
      * @returns Ti.UI.Notification
@@ -21482,7 +21346,7 @@ Ti.UI = {
      * <p>Create and return an instance of {@link Ti.UI.Picker}.</p>
      * @param {Dictionary<Ti.UI.Picker>} parameters <p>(Optional) A dictionary object with properties as defined in {@link Ti.UI.Picker}.</p>
      * @returns Ti.UI.Picker
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
      */
     createPicker:function(parameters) {
     },
@@ -21500,7 +21364,7 @@ Ti.UI = {
      * <p>Create and return an instance of {@link Ti.UI.PickerRow}.</p>
      * @param {Dictionary<Ti.UI.PickerRow>} parameters <p>(Optional) A dictionary object with properties as defined in {@link Ti.UI.PickerRow}.</p>
      * @returns Ti.UI.PickerRow
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     createPickerRow:function(parameters) {
     },
@@ -21679,7 +21543,7 @@ Ti.UI = {
     /**
      * <p>Gets the value of the {@link Ti.UI.backgroundColor} property.</p>
      * @returns String
-     * @since 0.4 (Android), 0.4 (iPhone), 0.4 (iPad)
+     * @since 0.4 (Android), 0.4 (iPhone), 0.4 (iPad), 1.8 (Mobile Web)
      */
     getBackgroundColor:function() {
     },
@@ -21687,7 +21551,7 @@ Ti.UI = {
     /**
      * <p>Gets the value of the {@link Ti.UI.backgroundImage} property.</p>
      * @returns String
-     * @since 0.4 (Android), 0.4 (iPhone), 0.4 (iPad)
+     * @since 0.4 (Android), 0.4 (iPhone), 0.4 (iPad), 1.8 (Mobile Web)
      */
     getBackgroundImage:function() {
     },
@@ -21703,7 +21567,7 @@ Ti.UI = {
     /**
      * <p>Gets the value of the {@link Ti.UI.currentWindow} property.</p>
      * @returns Ti.UI.Window
-     * @since 0.4 (Android), 0.4 (iPhone), 0.4 (iPad)
+     * @since 0.4 (Android), 0.4 (iPhone), 0.4 (iPad), 1.8 (Mobile Web)
      */
     getCurrentWindow:function() {
     },
@@ -21728,7 +21592,7 @@ Ti.UI = {
     /**
      * <p>Sets the value of the {@link Ti.UI.backgroundImage} property.</p>
      * @param {String} backgroundImage <p>New value for the property.</p>
-     * @since 0.4 (Android), 0.4 (iPhone), 0.4 (iPad)
+     * @since 0.4 (Android), 0.4 (iPhone), 0.4 (iPad), 1.8 (Mobile Web)
      */
     setBackgroundImage:function(backgroundImage) {
     },
@@ -21752,8 +21616,23 @@ Ti.UI = {
 
 /**
  * platforms: Android, iPhone, iPad
- * @namespace <p>The 2DMatrix is created by {@link Ti.UI.create2DMatrix}. A 2D matrix is used to rotate, scale, translate, or skew the objects in a two-dimensional space. A 2D matrix is represented by a 3 by 3 matrix. Because the third column is always (0,0,1), the data structure contains values for only the first two columns.
-You create an <code>identity matrix</code> by creating a 2D Matrix with an empty constructor.</p>
+ * @namespace <p>A 2D matrix is used to rotate, scale, translate, or skew the objects in a two-dimensional space. 
+A 2D affine transformation can be  represented by a 3 by 3 matrix:</p>
+<table>
+<tr><td><i>a</i></td><td><i>b</i></td><td>0</td></tr>
+<tr><td><i>c</i></td><td><i>d</i></td><td>0</td></tr>
+<tr><td><i>tx</i></td><td><i>ty</i></td><td>1</td></tr>
+</table>
+
+<p>The third column is constant (0,0,1). </p>
+<p>On iOS, the matrix terms, <code>a</code>, <code>b</code>, <code>c</code>, <code>d</code>, <code>tx</code>, and <code>ty</code>, are available as
+properties. On Android, the matrix terms are not available as properties. </p>
+<p>Use the {@link Ti.UI.create2DMatrix} method to create a new 2D matrix. You can 
+pass an optional {@link MatrixCreationDict} dictionary to the method to initialize the 
+matrix. For example:</p>
+<p>var m = Ti.UI.D2Matrix({ rotate: 45 });</p>
+<p>Produces a new matrix with a 45 degree rotation.  If you pass no arguments, 
+<code>create2DMatrix</code> returns an identity matrix.</p>
  */
 Ti.UI.D2Matrix = function() {
 };
@@ -21869,16 +21748,17 @@ Ti.UI.D2Matrix.prototype = {
     },
 
     /**
-     * <p>Returns a matrix constructed by inverting an existing matrix</p>
+     * <p>Returns a matrix constructed by inverting this matrix.</p>
+     * @returns Ti.UI.D2Matrix
      * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     invert:function() {
     },
 
     /**
-     * <p>Returns a matrix constructed by combining two existing matrix.</p>
-     * @param {Object} t2 <p>The second matrix. This matrix is concatenated to the matrix instance against which the function is invoked.  The result of this function is the first matrix multiplied by the second matrix. You might perform several multiplications in order to create a single matrix that contains the cumulative effects of several transformations. Note that matrix operations are not commutative - the order in which you concatenate matrices is important. That is, the result of multiplying matrix t1 by matrix t2 does not necessarily equal the result of multiplying matrix t2 by matrix t1.</p>
-     * @returns Object
+     * <p>Returns a matrix constructed by combining two existing matrices.</p>
+     * @param {Ti.UI.D2Matrix} t2 <p>The second matrix.</p>
+     * @returns Ti.UI.D2Matrix
      * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     multiply:function(t2) {
@@ -21894,22 +21774,45 @@ Ti.UI.D2Matrix.prototype = {
     },
 
     /**
-     * <p>Returns a matrix constructed by rotating an existing matrix</p>
-     * @param {Number} angle <p>The angle, in degrees, by which to rotate the matrix. A positive value specifies counterclockwise rotation and a negative value specifies clockwise rotation.</p>
-     * @returns Object
+     * <p>Returns a matrix constructed by rotating this matrix.</p>
+     * @param {Number} angle <p>Angle, in degrees, by which to rotate the matrix.</p>
+     * @returns Ti.UI.D2Matrix
      * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     rotate:function(angle) {
     },
 
     /**
-     * <p>Returns a matrix constructed by scaling an existing matrix</p>
-     * @param {Number} sx <p>The value by which to scale x values of the matrix</p>
-     * @param {Number} sy <p>The value by which to scale y values of the matrix</p>
-     * @returns Object
+     * <p>Returns a <code>2DMatrix</code> object that specifies a rotation animation from one angle to
+another.</p>
+     * @param {Number} fromAngle <p>Starting angle for rotation, in degrees.</p>
+     * @param {Number} toAngle <p>Ending angle for rotation, in degrees.</p>
+     * @returns Ti.UI.D2Matrix
+     * @since 0.9 (Android)
+     */
+    rotate:function(fromAngle, toAngle) {
+    },
+
+    /**
+     * <p>Returns a matrix constructed by applying a scale transform to this matrix.</p>
+     * @param {Number} sx <p>Horizontal scaling factor.</p>
+     * @param {Number} sy <p>Vertical scaling factor. If not supplied, scale by <code>sx</code> in both directions.</p>
+     * @returns Ti.UI.D2Matrix
      * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     scale:function(sx, sy) {
+    },
+
+    /**
+     * <p>Returns a <code>2DMatrix</code> object that specifies a scaling animation from one scale to another.</p>
+     * @param {Number} fromX <p>Starting horizontal scaling factor, at the beginning of an animation.</p>
+     * @param {Number} fromY <p>Starting vertical scaling factor, at the beginning of an animation.</p>
+     * @param {Number} toX <p>Ending horizontal scaling factor, at the end of an animation.</p>
+     * @param {Number} toY <p>Ending vertical scaling factor, at the end of an animation.</p>
+     * @returns Ti.UI.D2Matrix
+     * @since 0.9 (Android)
+     */
+    scale:function(fromX, fromY, toX, toY) {
     },
 
     /**
@@ -21961,10 +21864,10 @@ Ti.UI.D2Matrix.prototype = {
     },
 
     /**
-     * <p>Returns a matrix constructed by translating an existing matrix</p>
-     * @param {Number} tx <p>The value by which to move x values with the matrix</p>
-     * @param {Number} ty <p>The value by which to move y values with the matrix</p>
-     * @returns Object
+     * <p>Returns a matrix constructed by applying a translation transform to this matrix.</p>
+     * @param {Number} tx <p>Horizontal component of the translation.</p>
+     * @param {Number} ty <p>Vertical component of the translation.</p>
+     * @returns Ti.UI.D2Matrix
      * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     translate:function(tx, ty) {
@@ -23144,9 +23047,46 @@ Ti.UI.Android = {
 };
 
 /**
- * platforms: Android, iPhone, iPad
+ * platforms: Android, iPhone, iPad, Mobile Web
+ * @namespace <p>An animation object describes the properties of an animation. At its 
+most basic, an animation object represents a single-phase animation with an 
+end state and a duration. </p>
+<p>When {@link Ti.UI.View.animate} is called on a {@link Ti.UI.View},
+the view is animated from its current state to the state described by the 
+animation object. The properties that can be animated include the view's 
+position, size, colors, transformation matrix and opacity. </p>
+<p>Animations can be set to reverse themselves automatically on completion,
+and to repeat a given number of times. For more complicated effects, 
+multiple animations can be combined in sequence, starting one animation 
+when the previous animation completes.</p>
+<p>Use the {@link Ti.UI.createAnimation} method to create an animation object.</p>
+<p>Note that when you animate a view's size or position, the actual layout properties
+(such as <code>top</code>, <code>left</code>, <code>width</code>, <code>height</code>) are not changed by the animation.
+See the description of the {@link Ti.UI.View.animate} method for more information.</p>
+<h4>iOS Platform Notes</h4>
+<p>iOS supports both 2D and 3D matrix transformations in animations.</p>
+<p>In iOS, you can also specify an animation curve or <em>easing function</em> to control
+the pace of the animation. To use an easing function, set the animation's 
+<code>curve</code> property to one of the <code>ANIMATION_CURVE</code> constants defined in
+{@link Ti.UI.iOS}. For example, 
+{@link Ti.UI.iOS.ANIMATION_CURVE_EASE_IN} specifies 
+an animation that starts slowly and then speeds up.</p>
+<p>Finally, iOS also supports <em>transitions</em> between windows or views. You can create a 
+transition by creating an animation object and setting the <code>view</code> property to the 
+view you want to transition to. The <code>transition</code> property specifies the transition
+effect to apply. Use one of the transition style constants defined in 
+{@link Ti.UI.iPhone.AnimationStyle}.</p>
+<h4>Android Platform Notes</h4>
+<p>Android supports 2D matrix transformations. Note that the
+{@link Ti.UI.D2Matrix.rotate} method operates differently
+on Android. Called with a single argument, it rotates from zero to the specified 
+angle. That is, it ignores any existing rotation. Called with two arguments, 
+it interprets the first argument as a "from" angle and the second argument as a 
+"to" angle. </p>
+<p>Android doesn't support any animation curves or easing functions. Animations
+always interpolate linearly between the start state and the end state.</p>
  * 
- * @example Animation applied to a view
+ * @example Simple Animation Applied to a View
  * <p>Create a simple animation and apply it to the view.  In this example, the view will animate from red to black to orange over 2 seconds.</p>
 <pre><code>var view = Ti.UI.createView({
    backgroundColor:'red'
@@ -23162,148 +23102,174 @@ var animationHandler = function() {
 animation.addEventListener('complete',animationHandler);
 view.animate(animation);
 </code></pre>
+ * 
+ * @example Animation Using Matrix Transforms
+ * <p>The following example uses a transformation matrix to animate
+a view when the view is clicked. The animation rotates and scales
+the view, then returns it to its original size and position. The
+entire animation is repeated three times.</p>
+<pre><code>var box = Ti.UI.createView({
+    backgroundColor : 'red',
+    height : '100',
+    width : '100'
+});
+win.add(box);
+
+box.addEventListener('click', function() {
+    var matrix = Ti.UI.create2DMatrix()
+    matrix = matrix.rotate(180);
+    matrix = matrix.scale(2, 2);
+    var a = Ti.UI.createAnimation({
+            transform : matrix,
+            duration : 2000,
+            autoreverse : true,
+            repeat : 3
+        });
+    box.animate(a);
+});
+</code></pre>
  */
 Ti.UI.Animation = function() {
 };
 Ti.UI.Animation.prototype = {
 
     /**
-     * <p>the property specifies if the animation should be replayed in reverse upon completion</p>
+     * <p>Specifies if the animation should be replayed in reverse upon completion.</p>
      * @type Boolean
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
     autoreverse:null,
 
     /**
-     * <p>value of the backgroundColor property to change during animation</p>
+     * <p>Value of the <code>backgroundColor</code> property at the end of the animation.</p>
      * @type String
-     * @since 0.9 (iPhone), 0.9 (iPad)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
     backgroundColor:null,
 
     /**
-     * <p>value of the bottom property to change during animation</p>
+     * <p>Value of the <code>bottom</code> property at the end of the animation.</p>
      * @type Number
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
     bottom:null,
 
     /**
-     * <p>value of the center property to change during animation</p>
+     * <p>Value of the <code>center</code> property at the end of the animation.</p>
      * @type Object
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
     center:null,
 
     /**
-     * <p>value of the color property to change during animation</p>
+     * <p>Value of the <code>color</code> property at the end of the animation.</p>
      * @type String
-     * @since 0.9 (iPhone), 0.9 (iPad)
+     * @since 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
     color:null,
 
     /**
-     * <p>the curve of the animation</p>
+     * <p>Animation curve or easing function to apply to the animation.</p>
      * @type Number
-     * @since 0.9 (iPhone), 0.9 (iPad)
+     * @since 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
     curve:null,
 
     /**
-     * <p>the duration of time in milliseconds before starting the animation</p>
+     * <p>Delay, in milliseconds before starting the animation.</p>
      * @type Number
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
     delay:null,
 
     /**
-     * <p>the duration of time in milliseconds to perform the animation</p>
+     * <p>Duration of the animation, in milliseconds.</p>
      * @type Number
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
     duration:null,
 
     /**
-     * <p>value of the height property to change during animation</p>
+     * <p>Value of the <code>height</code> property at the end of the animation.</p>
      * @type Number
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
     height:null,
 
     /**
-     * <p>value of the left property to change during animation</p>
+     * <p>Value of the <code>left</code> property at the end of the animation.</p>
      * @type Number
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
     left:null,
 
     /**
-     * <p>value of the opacity property to change during animation</p>
+     * <p>Value of the <code>opacity</code> property at the end of the animation.</p>
      * @type Number
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
     opacity:null,
 
     /**
-     * <p>value of the opaque property to change during animation</p>
+     * <p>Value of the <code>opaque</code> property at the end of the animation.</p>
      * @type Boolean
      * @since 0.9 (iPhone), 0.9 (iPad)
      */
     opaque:null,
 
     /**
-     * <p>the number of times the animation should be performed</p>
+     * <p>Number of times the animation should be performed.</p>
      * @type Number
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
     repeat:null,
 
     /**
-     * <p>value of the right property to change during animation</p>
+     * <p>Value of the <code>right</code> property at the end of the animation.</p>
      * @type Number
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
     right:null,
 
     /**
-     * <p>value of the top property to change during animation</p>
+     * <p>Value of the <code>top</code> property at the end of the animation.</p>
      * @type Number
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
     top:null,
 
     /**
-     * <p>value of the transform property to change during animation</p>
-     * @type Object
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
+     * <p>Animate the view from its current tranform to the specified transform.</p>
+     * @type Ti.UI.D2Matrix|Ti.UI.iOS.D3Matrix
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
     transform:null,
 
     /**
-     * <p>during a transition animation, this is the constant to the type of transition to use</p>
+     * <p>Transition type to use during a transition animation.</p>
      * @type Number
      * @since 0.9 (iPhone), 0.9 (iPad)
      */
     transition:null,
 
     /**
-     * <p>value of the visible property to change during animation</p>
+     * <p>Value of the <code>visible</code> property at the end of the animation.</p>
      * @type Boolean
-     * @since 0.9 (iPhone), 0.9 (iPad)
+     * @since 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
     visible:null,
 
     /**
-     * <p>value of the width property to change during animation</p>
+     * <p>Value of the <code>width</code> property at the end of the animation.</p>
      * @type Number
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
     width:null,
 
     /**
-     * <p>value of the zIndex property to change during animation</p>
+     * <p>Value of the <code>zIndex</code> property at the end of the animation.</p>
      * @type Number
-     * @since 0.9 (iPhone), 0.9 (iPad)
+     * @since 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
     zIndex:null,
 
@@ -23312,7 +23278,7 @@ Ti.UI.Animation.prototype = {
      * <p>Adds the specified callback as an event listener for the named event.</p>
      * @param {String} name <p>Name of the event.</p>
      * @param {Callback<Object>} callback <p>Callback function to invoke when the event is fired.</p>
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
     addEventListener:function(name, callback) {
     },
@@ -23321,7 +23287,7 @@ Ti.UI.Animation.prototype = {
      * <p>Fires a synthesized event to any registered listeners.</p>
      * @param {String} name <p>Name of the event.</p>
      * @param {Dictionary} event <p>A dictionary of keys and values to add to the {@link Ti.Event} object sent to the listeners.</p>
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
     fireEvent:function(name, event) {
     },
@@ -23329,7 +23295,7 @@ Ti.UI.Animation.prototype = {
     /**
      * <p>Gets the value of the {@link Ti.UI.Animation.autoreverse} property.</p>
      * @returns Boolean
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
     getAutoreverse:function() {
     },
@@ -23337,7 +23303,7 @@ Ti.UI.Animation.prototype = {
     /**
      * <p>Gets the value of the {@link Ti.UI.Animation.backgroundColor} property.</p>
      * @returns String
-     * @since 0.9 (iPhone), 0.9 (iPad)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
     getBackgroundColor:function() {
     },
@@ -23345,7 +23311,7 @@ Ti.UI.Animation.prototype = {
     /**
      * <p>Gets the value of the {@link Ti.UI.Animation.bottom} property.</p>
      * @returns Number
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
     getBottom:function() {
     },
@@ -23353,7 +23319,7 @@ Ti.UI.Animation.prototype = {
     /**
      * <p>Gets the value of the {@link Ti.UI.Animation.center} property.</p>
      * @returns Object
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
     getCenter:function() {
     },
@@ -23361,7 +23327,7 @@ Ti.UI.Animation.prototype = {
     /**
      * <p>Gets the value of the {@link Ti.UI.Animation.color} property.</p>
      * @returns String
-     * @since 0.9 (iPhone), 0.9 (iPad)
+     * @since 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
     getColor:function() {
     },
@@ -23369,7 +23335,7 @@ Ti.UI.Animation.prototype = {
     /**
      * <p>Gets the value of the {@link Ti.UI.Animation.curve} property.</p>
      * @returns Number
-     * @since 0.9 (iPhone), 0.9 (iPad)
+     * @since 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
     getCurve:function() {
     },
@@ -23377,7 +23343,7 @@ Ti.UI.Animation.prototype = {
     /**
      * <p>Gets the value of the {@link Ti.UI.Animation.delay} property.</p>
      * @returns Number
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
     getDelay:function() {
     },
@@ -23385,7 +23351,7 @@ Ti.UI.Animation.prototype = {
     /**
      * <p>Gets the value of the {@link Ti.UI.Animation.duration} property.</p>
      * @returns Number
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
     getDuration:function() {
     },
@@ -23393,7 +23359,7 @@ Ti.UI.Animation.prototype = {
     /**
      * <p>Gets the value of the {@link Ti.UI.Animation.height} property.</p>
      * @returns Number
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
     getHeight:function() {
     },
@@ -23401,7 +23367,7 @@ Ti.UI.Animation.prototype = {
     /**
      * <p>Gets the value of the {@link Ti.UI.Animation.left} property.</p>
      * @returns Number
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
     getLeft:function() {
     },
@@ -23409,7 +23375,7 @@ Ti.UI.Animation.prototype = {
     /**
      * <p>Gets the value of the {@link Ti.UI.Animation.opacity} property.</p>
      * @returns Number
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
     getOpacity:function() {
     },
@@ -23425,7 +23391,7 @@ Ti.UI.Animation.prototype = {
     /**
      * <p>Gets the value of the {@link Ti.UI.Animation.repeat} property.</p>
      * @returns Number
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
     getRepeat:function() {
     },
@@ -23433,7 +23399,7 @@ Ti.UI.Animation.prototype = {
     /**
      * <p>Gets the value of the {@link Ti.UI.Animation.right} property.</p>
      * @returns Number
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
     getRight:function() {
     },
@@ -23441,15 +23407,16 @@ Ti.UI.Animation.prototype = {
     /**
      * <p>Gets the value of the {@link Ti.UI.Animation.top} property.</p>
      * @returns Number
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
     getTop:function() {
     },
 
     /**
      * <p>Gets the value of the {@link Ti.UI.Animation.transform} property.</p>
-     * @returns Object
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
+     * @returns Ti.UI.D2Matrix
+     * @returns Ti.UI.iOS.D3Matrix
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
     getTransform:function() {
     },
@@ -23465,7 +23432,7 @@ Ti.UI.Animation.prototype = {
     /**
      * <p>Gets the value of the {@link Ti.UI.Animation.visible} property.</p>
      * @returns Boolean
-     * @since 0.9 (iPhone), 0.9 (iPad)
+     * @since 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
     getVisible:function() {
     },
@@ -23473,7 +23440,7 @@ Ti.UI.Animation.prototype = {
     /**
      * <p>Gets the value of the {@link Ti.UI.Animation.width} property.</p>
      * @returns Number
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
     getWidth:function() {
     },
@@ -23481,7 +23448,7 @@ Ti.UI.Animation.prototype = {
     /**
      * <p>Gets the value of the {@link Ti.UI.Animation.zIndex} property.</p>
      * @returns Number
-     * @since 0.9 (iPhone), 0.9 (iPad)
+     * @since 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
     getZIndex:function() {
     },
@@ -23490,7 +23457,7 @@ Ti.UI.Animation.prototype = {
      * <p>Removes the specified callback as an event listener for the named event.</p>
      * @param {String} name <p>Name of the event.</p>
      * @param {Callback<Object>} callback <p>Callback function to remove. Must be the same function passed to <code>addEventListener</code>.</p>
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
     removeEventListener:function(name, callback) {
     },
@@ -23498,7 +23465,7 @@ Ti.UI.Animation.prototype = {
     /**
      * <p>Sets the value of the {@link Ti.UI.Animation.autoreverse} property.</p>
      * @param {Boolean} autoreverse <p>New value for the property.</p>
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
     setAutoreverse:function(autoreverse) {
     },
@@ -23506,7 +23473,7 @@ Ti.UI.Animation.prototype = {
     /**
      * <p>Sets the value of the {@link Ti.UI.Animation.backgroundColor} property.</p>
      * @param {String} backgroundColor <p>New value for the property.</p>
-     * @since 0.9 (iPhone), 0.9 (iPad)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
     setBackgroundColor:function(backgroundColor) {
     },
@@ -23514,7 +23481,7 @@ Ti.UI.Animation.prototype = {
     /**
      * <p>Sets the value of the {@link Ti.UI.Animation.bottom} property.</p>
      * @param {Number} bottom <p>New value for the property.</p>
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
     setBottom:function(bottom) {
     },
@@ -23522,7 +23489,7 @@ Ti.UI.Animation.prototype = {
     /**
      * <p>Sets the value of the {@link Ti.UI.Animation.center} property.</p>
      * @param {Object} center <p>New value for the property.</p>
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
     setCenter:function(center) {
     },
@@ -23530,7 +23497,7 @@ Ti.UI.Animation.prototype = {
     /**
      * <p>Sets the value of the {@link Ti.UI.Animation.color} property.</p>
      * @param {String} color <p>New value for the property.</p>
-     * @since 0.9 (iPhone), 0.9 (iPad)
+     * @since 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
     setColor:function(color) {
     },
@@ -23538,7 +23505,7 @@ Ti.UI.Animation.prototype = {
     /**
      * <p>Sets the value of the {@link Ti.UI.Animation.curve} property.</p>
      * @param {Number} curve <p>New value for the property.</p>
-     * @since 0.9 (iPhone), 0.9 (iPad)
+     * @since 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
     setCurve:function(curve) {
     },
@@ -23546,7 +23513,7 @@ Ti.UI.Animation.prototype = {
     /**
      * <p>Sets the value of the {@link Ti.UI.Animation.delay} property.</p>
      * @param {Number} delay <p>New value for the property.</p>
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
     setDelay:function(delay) {
     },
@@ -23554,7 +23521,7 @@ Ti.UI.Animation.prototype = {
     /**
      * <p>Sets the value of the {@link Ti.UI.Animation.duration} property.</p>
      * @param {Number} duration <p>New value for the property.</p>
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
     setDuration:function(duration) {
     },
@@ -23562,7 +23529,7 @@ Ti.UI.Animation.prototype = {
     /**
      * <p>Sets the value of the {@link Ti.UI.Animation.height} property.</p>
      * @param {Number} height <p>New value for the property.</p>
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
     setHeight:function(height) {
     },
@@ -23570,7 +23537,7 @@ Ti.UI.Animation.prototype = {
     /**
      * <p>Sets the value of the {@link Ti.UI.Animation.left} property.</p>
      * @param {Number} left <p>New value for the property.</p>
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
     setLeft:function(left) {
     },
@@ -23578,7 +23545,7 @@ Ti.UI.Animation.prototype = {
     /**
      * <p>Sets the value of the {@link Ti.UI.Animation.opacity} property.</p>
      * @param {Number} opacity <p>New value for the property.</p>
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
     setOpacity:function(opacity) {
     },
@@ -23594,7 +23561,7 @@ Ti.UI.Animation.prototype = {
     /**
      * <p>Sets the value of the {@link Ti.UI.Animation.repeat} property.</p>
      * @param {Number} repeat <p>New value for the property.</p>
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
     setRepeat:function(repeat) {
     },
@@ -23602,7 +23569,7 @@ Ti.UI.Animation.prototype = {
     /**
      * <p>Sets the value of the {@link Ti.UI.Animation.right} property.</p>
      * @param {Number} right <p>New value for the property.</p>
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
     setRight:function(right) {
     },
@@ -23610,15 +23577,15 @@ Ti.UI.Animation.prototype = {
     /**
      * <p>Sets the value of the {@link Ti.UI.Animation.top} property.</p>
      * @param {Number} top <p>New value for the property.</p>
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
     setTop:function(top) {
     },
 
     /**
      * <p>Sets the value of the {@link Ti.UI.Animation.transform} property.</p>
-     * @param {Object} transform <p>New value for the property.</p>
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
+     * @param {Ti.UI.D2Matrix|Ti.UI.iOS.D3Matrix} transform <p>New value for the property.</p>
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
     setTransform:function(transform) {
     },
@@ -23634,7 +23601,7 @@ Ti.UI.Animation.prototype = {
     /**
      * <p>Sets the value of the {@link Ti.UI.Animation.visible} property.</p>
      * @param {Boolean} visible <p>New value for the property.</p>
-     * @since 0.9 (iPhone), 0.9 (iPad)
+     * @since 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
     setVisible:function(visible) {
     },
@@ -23642,7 +23609,7 @@ Ti.UI.Animation.prototype = {
     /**
      * <p>Sets the value of the {@link Ti.UI.Animation.width} property.</p>
      * @param {Number} width <p>New value for the property.</p>
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
     setWidth:function(width) {
     },
@@ -23650,7 +23617,7 @@ Ti.UI.Animation.prototype = {
     /**
      * <p>Sets the value of the {@link Ti.UI.Animation.zIndex} property.</p>
      * @param {Number} zIndex <p>New value for the property.</p>
-     * @since 0.9 (iPhone), 0.9 (iPad)
+     * @since 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
     setZIndex:function(zIndex) {
     }
@@ -23658,7 +23625,56 @@ Ti.UI.Animation.prototype = {
 
 /**
  * platforms: Android, iPhone, iPad, Mobile Web
- * @namespace <p>A button widget that has four states, normal, disabled, focused and selected. You can specify background images for each state, as well as button text and a button icon. Use the {@link Ti.UI.createButton} method to create a button. </p>
+ * @namespace <p>A button widget that has four states, normal, disabled, focused and selected. (Note
+that the focused state is only used on Android devices that have navigation keys or a
+keyboard.)</p>
+<p>You can specify background images for each state, as well as button text and a button 
+icon. On iOS, there are button styles which define appearance for each 
+state, even if no button images are set.</p>
+<p>Use the {@link Ti.UI.createButton} method to create a button. </p>
+<h4>Android Platform Notes</h4>
+<p>Android uses default button images for the normal, focused, selected and disabled
+states. If you use a custom button image, you should specify versions for the focused
+and selected states (and the disabled state, if the button is ever disabled).</p>
+<p>Android also supports setting the background color for each of the states. These are not
+supported on iOS.</p>
+<h4>iOS Platform Notes</h4>
+<p>iOS buttons have two special properties, <code>style</code> and <code>systemButton</code>.</p>
+<p>The <code>style</code> property specifies the type of button decoration, and can be set to one 
+of the values described in {@link Ti.UI.iPhone.SystemButtonStyle}. </p>
+<p>Unlike Android, iOS doesn't supply any default background images for buttons--
+system button styles serve this purpose.</p>
+<p>Button style decorations are drawn above the background gradient and background color, 
+and below any background images. </p>
+<p>To use a custom button style, for example using a background gradient,
+you may need to explicitly set <code>style</code> to <code>PLAIN</code>, to prevent the button style from<br />
+overriding any background color or gradient. In addition, the <code>backgroundImage</code> must be 
+partially or wholly transparent for the background color or background gradient to be visible.</p>
+<p>In order for a background gradient to show through, the <code>backgroundColor</code> may need to be
+set to 'transparent'.</p>
+<p>The <code>systemButton</code> property lets you create a predefined system-defined button, 
+such as the <strong>Camera</strong> or <strong>Add</strong> buttons, for use in toolbars and nav bars.
+Specifically, system buttons may be used in the following locations:</p>
+<ul>
+<li>{@link Ti.UI.iOS.Toolbar}. The <code>items</code> array can contain system buttons.</li>
+<li>{@link Ti.UI.iPad.Popover}. The <code>leftNavButton</code> and <code>rightNavButton</code> properties can
+  refer to system buttons</li>
+<li>{@link Ti.UI.iPad.SplitWindow}. The <code>toolbar</code> array can contain system buttons.</li>
+<li>{@link Ti.UI.TextField}. The <code>keyboardToolbar</code> array can contain system buttons.</li>
+<li>{@link Ti.UI.TextArea}. The <code>keyboardToolbar</code> array can contain system buttons.</li>
+<li>{@link Ti.UI.Window}. The <code>leftNavButton</code> and <code>rightNavButton</code> properties can refer to 
+  system buttons and the <code>toolbar</code> array can contain system buttons.</li>
+</ul>
+<p>Use the constants in {@link Ti.UI.iPhone.SystemButton} 
+to specify a button type. The size, style and decoration of system buttons is set
+automatically, so you can create a button by setting only the <code>systemButton</code> property.</p>
+<p>For example:</p>
+<pre><code>cancelButton = Ti.UI.createButton({ systemButton: Ti.UI.iPhone.SystemButton.CANCEL });
+</code></pre>
+<p>Note that the <code>systemButton</code> property specifies <em>appearance</em>, not behavior. For
+example, to bring up the camera when the user presses the <strong>Camera</strong> button, you must 
+add an event listener to the button and call {@link Ti.Media.showCamera} when the 
+button is clicked.</p>
  * 
  * @example Simple Button Example
  * <p>var button = Ti.UI.createButton({
@@ -23705,7 +23721,8 @@ Ti.UI.Button.prototype = {
     backgroundDisabledColor:null,
 
     /**
-     * <p>Background image for the button in its disabled state, specified as a local file path or URL.</p>
+     * <p>Background image for the button in its disabled state, specified as a local file path 
+or URL. </p>
      * @type String
      * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
      */
@@ -23719,7 +23736,8 @@ Ti.UI.Button.prototype = {
     backgroundFocusedColor:null,
 
     /**
-     * <p>Background image for the button in its focused state, specified as a local file path or URL.</p>
+     * <p>Background image for the button in its focused state, specified as a local file path 
+or URL. </p>
      * @type String
      * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
      */
@@ -23733,7 +23751,7 @@ Ti.UI.Button.prototype = {
     backgroundGradient:null,
 
     /**
-     * <p>Background image for the button in its normal state, specified as a local file path or URL.</p>
+     * <p>Background image for the button in its normal state, specified as a local file path or URL. </p>
      * @type String
      * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
      */
@@ -23747,6 +23765,13 @@ Ti.UI.Button.prototype = {
     backgroundLeftCap:null,
 
     /**
+     * <p>Toggle for whether or not to tile a background across a view.</p>
+     * @type Boolean
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    backgroundRepeat:null,
+
+    /**
      * <p>Selected background color of the view.</p>
      * @type String
      * @since 0.8 (Android), 1.8 (Mobile Web)
@@ -23754,7 +23779,8 @@ Ti.UI.Button.prototype = {
     backgroundSelectedColor:null,
 
     /**
-     * <p>Background image for the button in its selected state, specified as a local file path or URL.</p>
+     * <p>Background image for the button in its selected state, specified as a local file 
+path or URL. </p>
      * @type String
      * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
      */
@@ -23803,6 +23829,13 @@ Ti.UI.Button.prototype = {
     center:null,
 
     /**
+     * <p>Array of this view's child views.</p>
+     * @type Array<Ti.UI.View>
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     */
+    children:null,
+
+    /**
      * <p>Default button text color.</p>
      * @type String
      * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
@@ -23838,8 +23871,8 @@ Ti.UI.Button.prototype = {
     height:null,
 
     /**
-     * <p>Image to display on the button to the left of the title.</p>
-     * @type String
+     * <p>Image to display on the button, specified as a local path, URL or (on iOS only) a <code>Blob</code>.</p>
+     * @type String|Ti.Blob
      * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
      */
     image:null,
@@ -23883,12 +23916,12 @@ One of: 'absolute', 'vertical', or 'horizontal'.</p>
     /**
      * <p>Button text color used to indicate the selected state.</p>
      * @type String
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * @since 0.8 (iPhone), 0.8 (iPad)
      */
     selectedColor:null,
 
     /**
-     * <p>Size of the view as a dictionary of width and height properties.</p>
+     * <p>Rendered size of the view as a dictionary of width and height properties.</p>
      * @type Object
      * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
      */
@@ -23902,11 +23935,25 @@ One of: 'absolute', 'vertical', or 'horizontal'.</p>
     softKeyboardOnFocus:null,
 
     /**
-     * <p>Style constant for the button.</p>
+     * <p>Style constant for the button, as defined in <code>Ti.UI.iPhone.SystemButtonStyles</code>.</p>
      * @type Number
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * @since 0.8 (iPhone), 0.8 (iPad)
      */
     style:null,
+
+    /**
+     * <p>Specifies an iOS system button appearance, as defined in {@link Ti.UI.iPhone.SystemButton}.</p>
+     * @type Number
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    systemButton:null,
+
+    /**
+     * <p>Text alignment, specified using one of the {@link Ti.UI} text alignment constants: {@link Ti.UI.TEXT_ALIGNMENT_LEFT}, {@link Ti.UI.TEXT_ALIGNMENT_CENTER}, or {@link Ti.UI.TEXT_ALIGNMENT_RIGHT}.</p>
+     * @type String|Number
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     */
+    textAlign:null,
 
     /**
      * <p>Button title.</p>
@@ -23939,9 +23986,20 @@ One of: 'absolute', 'vertical', or 'horizontal'.</p>
     /**
      * <p>Transformation matrix to apply to the view.</p>
      * @type Ti.UI.D2Matrix|Ti.UI.iOS.D3Matrix
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
      */
     transform:null,
+
+    /**
+     * <p>Vertical alignment for the text field, specified using one of the 
+vertical alignment constants from {@link Ti.UI}: 
+{@link Ti.UI.TEXT_VERTICAL_ALIGNMENT_BOTTOM}, 
+{@link Ti.UI.TEXT_VERTICAL_ALIGNMENT_CENTER}, or 
+{@link Ti.UI.TEXT_VERTICAL_ALIGNMENT_TOP}.</p>
+     * @type Number|String
+     * @since 0.8 (Android)
+     */
+    verticalAlign:null,
 
     /**
      * <p>Boolean value indicating whether the view is visible.</p>
@@ -24096,6 +24154,14 @@ If this argument is not a view, an exception will be raised.</p>
     },
 
     /**
+     * <p>Gets the value of the {@link Ti.UI.Button.backgroundRepeat} property.</p>
+     * @returns Boolean
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    getBackgroundRepeat:function() {
+    },
+
+    /**
      * <p>Gets the value of the {@link Ti.UI.Button.backgroundSelectedColor} property.</p>
      * @returns String
      * @since 0.8 (Android), 1.8 (Mobile Web)
@@ -24161,6 +24227,14 @@ If this argument is not a view, an exception will be raised.</p>
     },
 
     /**
+     * <p>Gets the value of the {@link Ti.UI.Button.children} property.</p>
+     * @returns Array<Ti.UI.View>
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     */
+    getChildren:function() {
+    },
+
+    /**
      * <p>Gets the value of the {@link Ti.UI.Button.color} property.</p>
      * @returns String
      * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
@@ -24204,6 +24278,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Gets the value of the {@link Ti.UI.Button.image} property.</p>
      * @returns String
+     * @returns Ti.Blob
      * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
      */
     getImage:function() {
@@ -24254,7 +24329,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Gets the value of the {@link Ti.UI.Button.selectedColor} property.</p>
      * @returns String
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * @since 0.8 (iPhone), 0.8 (iPad)
      */
     getSelectedColor:function() {
     },
@@ -24278,9 +24353,26 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Gets the value of the {@link Ti.UI.Button.style} property.</p>
      * @returns Number
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * @since 0.8 (iPhone), 0.8 (iPad)
      */
     getStyle:function() {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.UI.Button.systemButton} property.</p>
+     * @returns Number
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    getSystemButton:function() {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.UI.Button.textAlign} property.</p>
+     * @returns String
+     * @returns Number
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     */
+    getTextAlign:function() {
     },
 
     /**
@@ -24320,9 +24412,18 @@ If this argument is not a view, an exception will be raised.</p>
      * <p>Gets the value of the {@link Ti.UI.Button.transform} property.</p>
      * @returns Ti.UI.D2Matrix
      * @returns Ti.UI.iOS.D3Matrix
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
      */
     getTransform:function() {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.UI.Button.verticalAlign} property.</p>
+     * @returns Number
+     * @returns String
+     * @since 0.8 (Android)
+     */
+    getVerticalAlign:function() {
     },
 
     /**
@@ -24447,6 +24548,14 @@ If this argument is not a view, an exception will be raised.</p>
     },
 
     /**
+     * <p>Sets the value of the {@link Ti.UI.Button.backgroundRepeat} property.</p>
+     * @param {Boolean} backgroundRepeat <p>New value for the property.</p>
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    setBackgroundRepeat:function(backgroundRepeat) {
+    },
+
+    /**
      * <p>Sets the value of the {@link Ti.UI.Button.backgroundSelectedColor} property.</p>
      * @param {String} backgroundSelectedColor <p>New value for the property.</p>
      * @since 0.8 (Android), 1.8 (Mobile Web)
@@ -24552,7 +24661,7 @@ If this argument is not a view, an exception will be raised.</p>
 
     /**
      * <p>Sets the value of the {@link Ti.UI.Button.image} property.</p>
-     * @param {String} image <p>New value for the property.</p>
+     * @param {String|Ti.Blob} image <p>New value for the property.</p>
      * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
      */
     setImage:function(image) {
@@ -24601,17 +24710,9 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Sets the value of the {@link Ti.UI.Button.selectedColor} property.</p>
      * @param {String} selectedColor <p>New value for the property.</p>
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * @since 0.8 (iPhone), 0.8 (iPad)
      */
     setSelectedColor:function(selectedColor) {
-    },
-
-    /**
-     * <p>Sets the value of the {@link Ti.UI.Button.size} property.</p>
-     * @param {Object} size <p>New value for the property.</p>
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
-     */
-    setSize:function(size) {
     },
 
     /**
@@ -24625,9 +24726,25 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Sets the value of the {@link Ti.UI.Button.style} property.</p>
      * @param {Number} style <p>New value for the property.</p>
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * @since 0.8 (iPhone), 0.8 (iPad)
      */
     setStyle:function(style) {
+    },
+
+    /**
+     * <p>Sets the value of the {@link Ti.UI.Button.systemButton} property.</p>
+     * @param {Number} systemButton <p>New value for the property.</p>
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    setSystemButton:function(systemButton) {
+    },
+
+    /**
+     * <p>Sets the value of the {@link Ti.UI.Button.textAlign} property.</p>
+     * @param {String|Number} textAlign <p>New value for the property.</p>
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     */
+    setTextAlign:function(textAlign) {
     },
 
     /**
@@ -24665,9 +24782,17 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Sets the value of the {@link Ti.UI.Button.transform} property.</p>
      * @param {Ti.UI.D2Matrix|Ti.UI.iOS.D3Matrix} transform <p>New value for the property.</p>
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
      */
     setTransform:function(transform) {
+    },
+
+    /**
+     * <p>Sets the value of the {@link Ti.UI.Button.verticalAlign} property.</p>
+     * @param {Number|String} verticalAlign <p>New value for the property.</p>
+     * @since 0.8 (Android)
+     */
+    setVerticalAlign:function(verticalAlign) {
     },
 
     /**
@@ -24713,8 +24838,29 @@ performed asynchronously. If null, it will be performed immediately.</p>
 };
 
 /**
- * platforms: iPhone, iPad, Mobile Web
- * @namespace <p>For iPhone, the style constants are available in the constants defined in {@link Ti.UI.iPhone.SystemButtonStyle}.</p>
+ * platforms: iPhone, iPad
+ * @namespace <p>The button bar is a set of buttons joined into a single control. Each button in a
+button bar can have a text label or an icon, but not both. </p>
+<p>The {@link Ti.UI.iOS.TabbedBar} control is a button bar where the 
+last selected button mantains a pressed or selected state. The following discussion
+applies to both button bar and tabbed bar.</p>
+<p>The buttons share a common style, defined by the <code>style</code> property. This can be 
+set to one of the constants defined in 
+{@link Ti.UI.iPhone.SystemButtonStyle}:</p>
+<ul>
+<li><code>PLAIN</code>. Default style for <code>ButtonBar</code> and <code>TabbedBar</code>.</li>
+<li><code>BORDERED</code>. Creates a bar like the <code>PLAIN</code> bar, but with a heavier border.</li>
+<li><code>BAR</code>. Creates a more compact bar with
+        translucent buttons that allow the bar's background color to show through.</li>
+</ul>
+<p>If you want the background color or background gradient of the button bar itself 
+to show through, the style must be set to {@link Ti.UI.iPhone.SystemButtonStyle.BAR}.</p>
+<p>Note that you cannot style individual buttons in a button bar. If you want to give a
+distinct visual style to individual buttons, to use an icon and text on the same button,
+or to use a button-bar type component on a platform other than iOS, you can use a set 
+of individual {@link Ti.UI.Button} controls wrapped in a
+{@link Ti.UI.View} to create the appearance of a button bar.</p>
+<p>Use the {@link Ti.UI.createButtonBar} method to create a button bar.</p>
  * 
  * @example Simple 3 button button bar
  * <p>var bb1 = Ti.UI.createButtonBar({
@@ -24741,14 +24887,14 @@ Ti.UI.ButtonBar.prototype = {
     /**
      * <p>Current position of the view during an animation.</p>
      * @type Point
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
+     * @since 0.8 (iPhone), 0.8 (iPad)
      */
     animatedCenterPoint:null,
 
     /**
      * <p>Background color of the view.</p>
      * @type String
-     * @since 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * @since 0.8 (iPhone), 0.8 (iPad)
      */
     backgroundColor:null,
 
@@ -24783,14 +24929,14 @@ Ti.UI.ButtonBar.prototype = {
     /**
      * <p>A background gradient for the view.</p>
      * @type Gradient
-     * @since 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * @since 0.8 (iPhone), 0.8 (iPad)
      */
     backgroundGradient:null,
 
     /**
      * <p>Background image for the view, specified as a local file path or URL.</p>
      * @type String
-     * @since 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * @since 0.8 (iPhone), 0.8 (iPad)
      */
     backgroundImage:null,
 
@@ -24800,6 +24946,13 @@ Ti.UI.ButtonBar.prototype = {
      * @since 0.8 (iPhone), 0.8 (iPad)
      */
     backgroundLeftCap:null,
+
+    /**
+     * <p>Toggle for whether or not to tile a background across a view.</p>
+     * @type Boolean
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    backgroundRepeat:null,
 
     /**
      * <p>Selected background color of the view.</p>
@@ -24825,37 +24978,44 @@ Ti.UI.ButtonBar.prototype = {
     /**
      * <p>Border color of the view.</p>
      * @type String
-     * @since 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * @since 0.8 (iPhone), 0.8 (iPad)
      */
     borderColor:null,
 
     /**
      * <p>Border radius of the view.</p>
      * @type Number
-     * @since 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * @since 0.8 (iPhone), 0.8 (iPad)
      */
     borderRadius:null,
 
     /**
      * <p>Border width of the view.</p>
      * @type Number
-     * @since 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * @since 0.8 (iPhone), 0.8 (iPad)
      */
     borderWidth:null,
 
     /**
      * <p>View's bottom position, in platform-specific units.</p>
      * @type Number|String
-     * @since 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * @since 0.8 (iPhone), 0.8 (iPad)
      */
     bottom:null,
 
     /**
      * <p>View's center position, in the parent view's coordinates.</p>
      * @type Point
-     * @since 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * @since 0.8 (iPhone), 0.8 (iPad)
      */
     center:null,
+
+    /**
+     * <p>Array of this view's child views.</p>
+     * @type Array<Ti.UI.View>
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    children:null,
 
     /**
      * <p>Whether view should be focusable while navigating with the trackball.</p>
@@ -24867,14 +25027,14 @@ Ti.UI.ButtonBar.prototype = {
     /**
      * <p>View height, in platform-specific units.</p>
      * @type Number|String
-     * @since 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * @since 0.8 (iPhone), 0.8 (iPad)
      */
     height:null,
 
     /**
-     * <p>the selected index</p>
+     * <p>Index of the currently selected button.</p>
      * @type Number
-     * @since 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * @since 0.8 (iPhone), 0.8 (iPad)
      */
     index:null,
 
@@ -24886,9 +25046,9 @@ Ti.UI.ButtonBar.prototype = {
     keepScreenOn:null,
 
     /**
-     * <p>the array of labels for the button bar. each object should have the properties <code>title</code>, <code>image</code>, <code>width</code> and <code>enabled</code>.</p>
-     * @type Array<Object>
-     * @since 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * <p>Array of labels for the button bar.</p>
+     * @type Array<String>|Array<BarItemType>
+     * @since 0.8 (iPhone), 0.8 (iPad)
      */
     labels:null,
 
@@ -24896,35 +25056,35 @@ Ti.UI.ButtonBar.prototype = {
      * <p>Specifies how the view positions its children. 
 One of: 'absolute', 'vertical', or 'horizontal'.</p>
      * @type String
-     * @since 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * @since 0.8 (iPhone), 0.8 (iPad)
      */
     layout:null,
 
     /**
      * <p>View's left position, in platform-specific units.</p>
      * @type Number|String
-     * @since 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * @since 0.8 (iPhone), 0.8 (iPad)
      */
     left:null,
 
     /**
      * <p>Opacity of this view, from 0.0 (transparent) to 1.0 (opaque).</p>
      * @type Number
-     * @since 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * @since 0.8 (iPhone), 0.8 (iPad)
      */
     opacity:null,
 
     /**
      * <p>View's right position, in platform-specific units.</p>
      * @type Number|String
-     * @since 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * @since 0.8 (iPhone), 0.8 (iPad)
      */
     right:null,
 
     /**
-     * <p>Size of the view as a dictionary of width and height properties.</p>
+     * <p>Rendered size of the view as a dictionary of width and height properties.</p>
      * @type Object
-     * @since 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * @since 0.8 (iPhone), 0.8 (iPad)
      */
     size:null,
 
@@ -24936,51 +25096,51 @@ One of: 'absolute', 'vertical', or 'horizontal'.</p>
     softKeyboardOnFocus:null,
 
     /**
-     * <p>the style of the button bar</p>
+     * <p>Style of the button bar.</p>
      * @type Number
-     * @since 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * @since 0.8 (iPhone), 0.8 (iPad)
      */
     style:null,
 
     /**
      * <p>The view's top position.</p>
      * @type Number|String
-     * @since 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * @since 0.8 (iPhone), 0.8 (iPad)
      */
     top:null,
 
     /**
      * <p>Whether view should receive touch events.</p>
      * @type Boolean
-     * @since 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * @since 0.8 (iPhone), 0.8 (iPad)
      */
     touchEnabled:null,
 
     /**
      * <p>Transformation matrix to apply to the view.</p>
      * @type Ti.UI.D2Matrix|Ti.UI.iOS.D3Matrix
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
+     * @since 0.8 (iPhone), 0.8 (iPad)
      */
     transform:null,
 
     /**
      * <p>Boolean value indicating whether the view is visible.</p>
      * @type Boolean
-     * @since 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * @since 0.8 (iPhone), 0.8 (iPad)
      */
     visible:null,
 
     /**
      * <p>View's width, in platform-specific units.</p>
      * @type Number|String
-     * @since 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * @since 0.8 (iPhone), 0.8 (iPad)
      */
     width:null,
 
     /**
      * <p>Z index position relative to other sibling views.</p>
      * @type Number
-     * @since 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * @since 0.8 (iPhone), 0.8 (iPad)
      */
     zIndex:null,
 
@@ -24988,7 +25148,7 @@ One of: 'absolute', 'vertical', or 'horizontal'.</p>
     /**
      * <p>Adds a child to this view's hierarchy.</p>
      * @param {Ti.UI.View} view <p>View to add to this view's hierarchy</p>
-     * @since 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * @since 0.8 (iPhone), 0.8 (iPad)
      */
     add:function(view) {
     },
@@ -24997,7 +25157,7 @@ One of: 'absolute', 'vertical', or 'horizontal'.</p>
      * <p>Adds the specified callback as an event listener for the named event.</p>
      * @param {String} name <p>Name of the event.</p>
      * @param {Callback<Object>} callback <p>Callback function to invoke when the event is fired.</p>
-     * @since 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * @since 0.8 (iPhone), 0.8 (iPad)
      */
     addEventListener:function(name, callback) {
     },
@@ -25007,7 +25167,7 @@ One of: 'absolute', 'vertical', or 'horizontal'.</p>
      * @param {Ti.UI.Animation|Dictionary<Ti.UI.Animation>} obj <p>Either a dictionary of animation properties or an 
 {@link Ti.UI.Animation} object.</p>
      * @param {Callback<Object>} callback <p>Function to be invoked upon completion of the animation.</p>
-     * @since 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * @since 0.8 (iPhone), 0.8 (iPad)
      */
     animate:function(obj, callback) {
     },
@@ -25021,7 +25181,7 @@ be converted into numbers, an exception will be raised.</p>
      * @param {Ti.UI.View} destinationView <p>View that specifies the destination coordinate system to convert to.
 If this argument is not a view, an exception will be raised.</p>
      * @returns Point
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
+     * @since 0.8 (iPhone), 0.8 (iPad)
      */
     convertPointToView:function(point, destinationView) {
     },
@@ -25030,7 +25190,7 @@ If this argument is not a view, an exception will be raised.</p>
      * <p>Fires a synthesized event to any registered listeners.</p>
      * @param {String} name <p>Name of the event.</p>
      * @param {Dictionary} event <p>A dictionary of keys and values to add to the {@link Ti.Event} object sent to the listeners.</p>
-     * @since 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * @since 0.8 (iPhone), 0.8 (iPad)
      */
     fireEvent:function(name, event) {
     },
@@ -25046,7 +25206,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Gets the value of the {@link Ti.UI.ButtonBar.animatedCenterPoint} property.</p>
      * @returns Point
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
+     * @since 0.8 (iPhone), 0.8 (iPad)
      */
     getAnimatedCenterPoint:function() {
     },
@@ -25054,7 +25214,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Gets the value of the {@link Ti.UI.ButtonBar.backgroundColor} property.</p>
      * @returns String
-     * @since 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * @since 0.8 (iPhone), 0.8 (iPad)
      */
     getBackgroundColor:function() {
     },
@@ -25094,7 +25254,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Gets the value of the {@link Ti.UI.ButtonBar.backgroundGradient} property.</p>
      * @returns Gradient
-     * @since 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * @since 0.8 (iPhone), 0.8 (iPad)
      */
     getBackgroundGradient:function() {
     },
@@ -25102,7 +25262,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Gets the value of the {@link Ti.UI.ButtonBar.backgroundImage} property.</p>
      * @returns String
-     * @since 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * @since 0.8 (iPhone), 0.8 (iPad)
      */
     getBackgroundImage:function() {
     },
@@ -25113,6 +25273,14 @@ If this argument is not a view, an exception will be raised.</p>
      * @since 0.8 (iPhone), 0.8 (iPad)
      */
     getBackgroundLeftCap:function() {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.UI.ButtonBar.backgroundRepeat} property.</p>
+     * @returns Boolean
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    getBackgroundRepeat:function() {
     },
 
     /**
@@ -25142,7 +25310,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Gets the value of the {@link Ti.UI.ButtonBar.borderColor} property.</p>
      * @returns String
-     * @since 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * @since 0.8 (iPhone), 0.8 (iPad)
      */
     getBorderColor:function() {
     },
@@ -25150,7 +25318,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Gets the value of the {@link Ti.UI.ButtonBar.borderRadius} property.</p>
      * @returns Number
-     * @since 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * @since 0.8 (iPhone), 0.8 (iPad)
      */
     getBorderRadius:function() {
     },
@@ -25158,7 +25326,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Gets the value of the {@link Ti.UI.ButtonBar.borderWidth} property.</p>
      * @returns Number
-     * @since 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * @since 0.8 (iPhone), 0.8 (iPad)
      */
     getBorderWidth:function() {
     },
@@ -25167,7 +25335,7 @@ If this argument is not a view, an exception will be raised.</p>
      * <p>Gets the value of the {@link Ti.UI.ButtonBar.bottom} property.</p>
      * @returns Number
      * @returns String
-     * @since 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * @since 0.8 (iPhone), 0.8 (iPad)
      */
     getBottom:function() {
     },
@@ -25175,9 +25343,17 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Gets the value of the {@link Ti.UI.ButtonBar.center} property.</p>
      * @returns Point
-     * @since 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * @since 0.8 (iPhone), 0.8 (iPad)
      */
     getCenter:function() {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.UI.ButtonBar.children} property.</p>
+     * @returns Array<Ti.UI.View>
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    getChildren:function() {
     },
 
     /**
@@ -25192,7 +25368,7 @@ If this argument is not a view, an exception will be raised.</p>
      * <p>Gets the value of the {@link Ti.UI.ButtonBar.height} property.</p>
      * @returns Number
      * @returns String
-     * @since 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * @since 0.8 (iPhone), 0.8 (iPad)
      */
     getHeight:function() {
     },
@@ -25200,7 +25376,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Gets the value of the {@link Ti.UI.ButtonBar.index} property.</p>
      * @returns Number
-     * @since 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * @since 0.8 (iPhone), 0.8 (iPad)
      */
     getIndex:function() {
     },
@@ -25215,8 +25391,9 @@ If this argument is not a view, an exception will be raised.</p>
 
     /**
      * <p>Gets the value of the {@link Ti.UI.ButtonBar.labels} property.</p>
-     * @returns Array<Object>
-     * @since 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * @returns Array<String>
+     * @returns Array<BarItemType>
+     * @since 0.8 (iPhone), 0.8 (iPad)
      */
     getLabels:function() {
     },
@@ -25224,7 +25401,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Gets the value of the {@link Ti.UI.ButtonBar.layout} property.</p>
      * @returns String
-     * @since 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * @since 0.8 (iPhone), 0.8 (iPad)
      */
     getLayout:function() {
     },
@@ -25233,7 +25410,7 @@ If this argument is not a view, an exception will be raised.</p>
      * <p>Gets the value of the {@link Ti.UI.ButtonBar.left} property.</p>
      * @returns Number
      * @returns String
-     * @since 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * @since 0.8 (iPhone), 0.8 (iPad)
      */
     getLeft:function() {
     },
@@ -25241,7 +25418,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Gets the value of the {@link Ti.UI.ButtonBar.opacity} property.</p>
      * @returns Number
-     * @since 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * @since 0.8 (iPhone), 0.8 (iPad)
      */
     getOpacity:function() {
     },
@@ -25250,7 +25427,7 @@ If this argument is not a view, an exception will be raised.</p>
      * <p>Gets the value of the {@link Ti.UI.ButtonBar.right} property.</p>
      * @returns Number
      * @returns String
-     * @since 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * @since 0.8 (iPhone), 0.8 (iPad)
      */
     getRight:function() {
     },
@@ -25258,7 +25435,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Gets the value of the {@link Ti.UI.ButtonBar.size} property.</p>
      * @returns Object
-     * @since 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * @since 0.8 (iPhone), 0.8 (iPad)
      */
     getSize:function() {
     },
@@ -25274,7 +25451,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Gets the value of the {@link Ti.UI.ButtonBar.style} property.</p>
      * @returns Number
-     * @since 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * @since 0.8 (iPhone), 0.8 (iPad)
      */
     getStyle:function() {
     },
@@ -25283,7 +25460,7 @@ If this argument is not a view, an exception will be raised.</p>
      * <p>Gets the value of the {@link Ti.UI.ButtonBar.top} property.</p>
      * @returns Number
      * @returns String
-     * @since 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * @since 0.8 (iPhone), 0.8 (iPad)
      */
     getTop:function() {
     },
@@ -25291,7 +25468,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Gets the value of the {@link Ti.UI.ButtonBar.touchEnabled} property.</p>
      * @returns Boolean
-     * @since 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * @since 0.8 (iPhone), 0.8 (iPad)
      */
     getTouchEnabled:function() {
     },
@@ -25300,7 +25477,7 @@ If this argument is not a view, an exception will be raised.</p>
      * <p>Gets the value of the {@link Ti.UI.ButtonBar.transform} property.</p>
      * @returns Ti.UI.D2Matrix
      * @returns Ti.UI.iOS.D3Matrix
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
+     * @since 0.8 (iPhone), 0.8 (iPad)
      */
     getTransform:function() {
     },
@@ -25308,7 +25485,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Gets the value of the {@link Ti.UI.ButtonBar.visible} property.</p>
      * @returns Boolean
-     * @since 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * @since 0.8 (iPhone), 0.8 (iPad)
      */
     getVisible:function() {
     },
@@ -25317,7 +25494,7 @@ If this argument is not a view, an exception will be raised.</p>
      * <p>Gets the value of the {@link Ti.UI.ButtonBar.width} property.</p>
      * @returns Number
      * @returns String
-     * @since 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * @since 0.8 (iPhone), 0.8 (iPad)
      */
     getWidth:function() {
     },
@@ -25325,14 +25502,14 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Gets the value of the {@link Ti.UI.ButtonBar.zIndex} property.</p>
      * @returns Number
-     * @since 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * @since 0.8 (iPhone), 0.8 (iPad)
      */
     getZIndex:function() {
     },
 
     /**
      * <p>Hides this view.</p>
-     * @since 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * @since 0.8 (iPhone), 0.8 (iPad)
      */
     hide:function() {
     },
@@ -25340,7 +25517,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Removes a child view from this view's hierarchy.</p>
      * @param {Ti.UI.View} view <p>View to remove from this view's hierarchy.</p>
-     * @since 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * @since 0.8 (iPhone), 0.8 (iPad)
      */
     remove:function(view) {
     },
@@ -25349,7 +25526,7 @@ If this argument is not a view, an exception will be raised.</p>
      * <p>Removes the specified callback as an event listener for the named event.</p>
      * @param {String} name <p>Name of the event.</p>
      * @param {Callback<Object>} callback <p>Callback function to remove. Must be the same function passed to <code>addEventListener</code>.</p>
-     * @since 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * @since 0.8 (iPhone), 0.8 (iPad)
      */
     removeEventListener:function(name, callback) {
     },
@@ -25365,7 +25542,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Sets the value of the {@link Ti.UI.ButtonBar.backgroundColor} property.</p>
      * @param {String} backgroundColor <p>New value for the property.</p>
-     * @since 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * @since 0.8 (iPhone), 0.8 (iPad)
      */
     setBackgroundColor:function(backgroundColor) {
     },
@@ -25405,7 +25582,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Sets the value of the {@link Ti.UI.ButtonBar.backgroundGradient} property.</p>
      * @param {Gradient} backgroundGradient <p>New value for the property.</p>
-     * @since 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * @since 0.8 (iPhone), 0.8 (iPad)
      */
     setBackgroundGradient:function(backgroundGradient) {
     },
@@ -25413,7 +25590,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Sets the value of the {@link Ti.UI.ButtonBar.backgroundImage} property.</p>
      * @param {String} backgroundImage <p>New value for the property.</p>
-     * @since 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * @since 0.8 (iPhone), 0.8 (iPad)
      */
     setBackgroundImage:function(backgroundImage) {
     },
@@ -25424,6 +25601,14 @@ If this argument is not a view, an exception will be raised.</p>
      * @since 0.8 (iPhone), 0.8 (iPad)
      */
     setBackgroundLeftCap:function(backgroundLeftCap) {
+    },
+
+    /**
+     * <p>Sets the value of the {@link Ti.UI.ButtonBar.backgroundRepeat} property.</p>
+     * @param {Boolean} backgroundRepeat <p>New value for the property.</p>
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    setBackgroundRepeat:function(backgroundRepeat) {
     },
 
     /**
@@ -25453,7 +25638,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Sets the value of the {@link Ti.UI.ButtonBar.borderColor} property.</p>
      * @param {String} borderColor <p>New value for the property.</p>
-     * @since 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * @since 0.8 (iPhone), 0.8 (iPad)
      */
     setBorderColor:function(borderColor) {
     },
@@ -25461,7 +25646,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Sets the value of the {@link Ti.UI.ButtonBar.borderRadius} property.</p>
      * @param {Number} borderRadius <p>New value for the property.</p>
-     * @since 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * @since 0.8 (iPhone), 0.8 (iPad)
      */
     setBorderRadius:function(borderRadius) {
     },
@@ -25469,7 +25654,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Sets the value of the {@link Ti.UI.ButtonBar.borderWidth} property.</p>
      * @param {Number} borderWidth <p>New value for the property.</p>
-     * @since 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * @since 0.8 (iPhone), 0.8 (iPad)
      */
     setBorderWidth:function(borderWidth) {
     },
@@ -25477,7 +25662,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Sets the value of the {@link Ti.UI.ButtonBar.bottom} property.</p>
      * @param {Number|String} bottom <p>New value for the property.</p>
-     * @since 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * @since 0.8 (iPhone), 0.8 (iPad)
      */
     setBottom:function(bottom) {
     },
@@ -25485,7 +25670,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Sets the value of the {@link Ti.UI.ButtonBar.center} property.</p>
      * @param {Point} center <p>New value for the property.</p>
-     * @since 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * @since 0.8 (iPhone), 0.8 (iPad)
      */
     setCenter:function(center) {
     },
@@ -25501,7 +25686,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Sets the value of the {@link Ti.UI.ButtonBar.height} property.</p>
      * @param {Number|String} height <p>New value for the property.</p>
-     * @since 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * @since 0.8 (iPhone), 0.8 (iPad)
      */
     setHeight:function(height) {
     },
@@ -25509,7 +25694,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Sets the value of the {@link Ti.UI.ButtonBar.index} property.</p>
      * @param {Number} index <p>New value for the property.</p>
-     * @since 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * @since 0.8 (iPhone), 0.8 (iPad)
      */
     setIndex:function(index) {
     },
@@ -25524,8 +25709,8 @@ If this argument is not a view, an exception will be raised.</p>
 
     /**
      * <p>Sets the value of the {@link Ti.UI.ButtonBar.labels} property.</p>
-     * @param {Array<Object>} labels <p>New value for the property.</p>
-     * @since 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * @param {Array<String>|Array<BarItemType>} labels <p>New value for the property.</p>
+     * @since 0.8 (iPhone), 0.8 (iPad)
      */
     setLabels:function(labels) {
     },
@@ -25533,7 +25718,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Sets the value of the {@link Ti.UI.ButtonBar.layout} property.</p>
      * @param {String} layout <p>New value for the property.</p>
-     * @since 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * @since 0.8 (iPhone), 0.8 (iPad)
      */
     setLayout:function(layout) {
     },
@@ -25541,7 +25726,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Sets the value of the {@link Ti.UI.ButtonBar.left} property.</p>
      * @param {Number|String} left <p>New value for the property.</p>
-     * @since 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * @since 0.8 (iPhone), 0.8 (iPad)
      */
     setLeft:function(left) {
     },
@@ -25549,7 +25734,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Sets the value of the {@link Ti.UI.ButtonBar.opacity} property.</p>
      * @param {Number} opacity <p>New value for the property.</p>
-     * @since 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * @since 0.8 (iPhone), 0.8 (iPad)
      */
     setOpacity:function(opacity) {
     },
@@ -25557,17 +25742,9 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Sets the value of the {@link Ti.UI.ButtonBar.right} property.</p>
      * @param {Number|String} right <p>New value for the property.</p>
-     * @since 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * @since 0.8 (iPhone), 0.8 (iPad)
      */
     setRight:function(right) {
-    },
-
-    /**
-     * <p>Sets the value of the {@link Ti.UI.ButtonBar.size} property.</p>
-     * @param {Object} size <p>New value for the property.</p>
-     * @since 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
-     */
-    setSize:function(size) {
     },
 
     /**
@@ -25581,7 +25758,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Sets the value of the {@link Ti.UI.ButtonBar.style} property.</p>
      * @param {Number} style <p>New value for the property.</p>
-     * @since 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * @since 0.8 (iPhone), 0.8 (iPad)
      */
     setStyle:function(style) {
     },
@@ -25589,7 +25766,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Sets the value of the {@link Ti.UI.ButtonBar.top} property.</p>
      * @param {Number|String} top <p>New value for the property.</p>
-     * @since 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * @since 0.8 (iPhone), 0.8 (iPad)
      */
     setTop:function(top) {
     },
@@ -25597,7 +25774,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Sets the value of the {@link Ti.UI.ButtonBar.touchEnabled} property.</p>
      * @param {Boolean} touchEnabled <p>New value for the property.</p>
-     * @since 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * @since 0.8 (iPhone), 0.8 (iPad)
      */
     setTouchEnabled:function(touchEnabled) {
     },
@@ -25605,7 +25782,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Sets the value of the {@link Ti.UI.ButtonBar.transform} property.</p>
      * @param {Ti.UI.D2Matrix|Ti.UI.iOS.D3Matrix} transform <p>New value for the property.</p>
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
+     * @since 0.8 (iPhone), 0.8 (iPad)
      */
     setTransform:function(transform) {
     },
@@ -25613,7 +25790,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Sets the value of the {@link Ti.UI.ButtonBar.visible} property.</p>
      * @param {Boolean} visible <p>New value for the property.</p>
-     * @since 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * @since 0.8 (iPhone), 0.8 (iPad)
      */
     setVisible:function(visible) {
     },
@@ -25621,7 +25798,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Sets the value of the {@link Ti.UI.ButtonBar.width} property.</p>
      * @param {Number|String} width <p>New value for the property.</p>
-     * @since 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * @since 0.8 (iPhone), 0.8 (iPad)
      */
     setWidth:function(width) {
     },
@@ -25629,14 +25806,14 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Sets the value of the {@link Ti.UI.ButtonBar.zIndex} property.</p>
      * @param {Number} zIndex <p>New value for the property.</p>
-     * @since 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * @since 0.8 (iPhone), 0.8 (iPad)
      */
     setZIndex:function(zIndex) {
     },
 
     /**
      * <p>Makes this view visible.</p>
-     * @since 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * @since 0.8 (iPhone), 0.8 (iPad)
      */
     show:function() {
     },
@@ -25646,7 +25823,7 @@ If this argument is not a view, an exception will be raised.</p>
      * @param {Callback<Object>} f <p>Function to be invoked upon completion. If non-null, this method will be 
 performed asynchronously. If null, it will be performed immediately.</p>
      * @returns Ti.Blob
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
+     * @since 0.8 (iPhone), 0.8 (iPad)
      */
     toImage:function(f) {
     }
@@ -25767,6 +25944,964 @@ Ti.UI.Clipboard = {
 
 /**
  * platforms: iPhone, iPad
+ * @namespace <p>This iOS-specific API has been moved to {@link Ti.UI.iOS.CoverFlowView}.</p>
+<p>Use the {@link Ti.UI.createCoverFlowView} method to create a cover flow view.</p>
+ * 
+ * @example Simple 3 image cover flow example
+ * <p>Create a simple cover flow view.</p>
+<pre><code>var view = Ti.UI.createCoverFlowView({
+    images:['a.png','b.png','c.png'],
+    backgroundColor:'#000'
+});
+window.add(view);
+</code></pre>
+ */
+Ti.UI.CoverFlowView = function() {
+};
+Ti.UI.CoverFlowView.prototype = {
+
+    /**
+     * <p>Anchor point where animation should occur, relative to the view's boundaries.</p>
+     * @type Point
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    anchorPoint:null,
+
+    /**
+     * <p>Current position of the view during an animation.</p>
+     * @type Point
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    animatedCenterPoint:null,
+
+    /**
+     * <p>Background color of the view.</p>
+     * @type String
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    backgroundColor:null,
+
+    /**
+     * <p>Disabled background color of the view.</p>
+     * @type String
+     * @since 0.8 (Android)
+     */
+    backgroundDisabledColor:null,
+
+    /**
+     * <p>Disabled background image for the view, specified as a local file path or URL.</p>
+     * @type String
+     * @since 0.8 (Android)
+     */
+    backgroundDisabledImage:null,
+
+    /**
+     * <p>Focused background color of the view.</p>
+     * @type String
+     * @since 0.8 (Android)
+     */
+    backgroundFocusedColor:null,
+
+    /**
+     * <p>Focused background image for the view, specified as a local file path or URL.</p>
+     * @type String
+     * @since 0.8 (Android)
+     */
+    backgroundFocusedImage:null,
+
+    /**
+     * <p>A background gradient for the view.</p>
+     * @type Gradient
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    backgroundGradient:null,
+
+    /**
+     * <p>Background image for the view, specified as a local file path or URL.</p>
+     * @type String
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    backgroundImage:null,
+
+    /**
+     * <p>Size of the left end cap.</p>
+     * @type Number
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    backgroundLeftCap:null,
+
+    /**
+     * <p>Toggle for whether or not to tile a background across a view.</p>
+     * @type Boolean
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    backgroundRepeat:null,
+
+    /**
+     * <p>Selected background color of the view.</p>
+     * @type String
+     * @since 0.8 (Android), 1.8 (Mobile Web)
+     */
+    backgroundSelectedColor:null,
+
+    /**
+     * <p>Selected background image url for the view, specified as a local file path or URL.</p>
+     * @type String
+     * @since 0.8 (Android), 1.8 (Mobile Web)
+     */
+    backgroundSelectedImage:null,
+
+    /**
+     * <p>Size of the top end cap.</p>
+     * @type Number
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    backgroundTopCap:null,
+
+    /**
+     * <p>Border color of the view.</p>
+     * @type String
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    borderColor:null,
+
+    /**
+     * <p>Border radius of the view.</p>
+     * @type Number
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    borderRadius:null,
+
+    /**
+     * <p>Border width of the view.</p>
+     * @type Number
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    borderWidth:null,
+
+    /**
+     * <p>View's bottom position, in platform-specific units.</p>
+     * @type Number|String
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    bottom:null,
+
+    /**
+     * <p>View's center position, in the parent view's coordinates.</p>
+     * @type Point
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    center:null,
+
+    /**
+     * <p>Array of this view's child views.</p>
+     * @type Array<Ti.UI.View>
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    children:null,
+
+    /**
+     * <p>Whether view should be focusable while navigating with the trackball.</p>
+     * @type Boolean
+     * @since 0.8 (Android)
+     */
+    focusable:null,
+
+    /**
+     * <p>View height, in platform-specific units.</p>
+     * @type Number|String
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    height:null,
+
+    /**
+     * <p>Array of images to display in the view.</p>
+     * @type Array<String>|Array<Ti.Blob>|Array<Ti.File>|Array<CoverFlowImageType>
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    images:null,
+
+    /**
+     * <p>Whether to keep the device screen on.</p>
+     * @type Boolean
+     * @since 0.8 (Android)
+     */
+    keepScreenOn:null,
+
+    /**
+     * <p>Specifies how the view positions its children. 
+One of: 'absolute', 'vertical', or 'horizontal'.</p>
+     * @type String
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    layout:null,
+
+    /**
+     * <p>View's left position, in platform-specific units.</p>
+     * @type Number|String
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    left:null,
+
+    /**
+     * <p>Opacity of this view, from 0.0 (transparent) to 1.0 (opaque).</p>
+     * @type Number
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    opacity:null,
+
+    /**
+     * <p>View's right position, in platform-specific units.</p>
+     * @type Number|String
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    right:null,
+
+    /**
+     * <p>Index to make selected.</p>
+     * @type Number
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    selected:null,
+
+    /**
+     * <p>Rendered size of the view as a dictionary of width and height properties.</p>
+     * @type Object
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    size:null,
+
+    /**
+     * <p>Determines keyboard behavior when this view is focused.</p>
+     * @type Number
+     * @since 0.8 (Android)
+     */
+    softKeyboardOnFocus:null,
+
+    /**
+     * <p>The view's top position.</p>
+     * @type Number|String
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    top:null,
+
+    /**
+     * <p>Whether view should receive touch events.</p>
+     * @type Boolean
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    touchEnabled:null,
+
+    /**
+     * <p>Transformation matrix to apply to the view.</p>
+     * @type Ti.UI.D2Matrix|Ti.UI.iOS.D3Matrix
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    transform:null,
+
+    /**
+     * <p>Boolean value indicating whether the view is visible.</p>
+     * @type Boolean
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    visible:null,
+
+    /**
+     * <p>View's width, in platform-specific units.</p>
+     * @type Number|String
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    width:null,
+
+    /**
+     * <p>Z index position relative to other sibling views.</p>
+     * @type Number
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    zIndex:null,
+
+
+    /**
+     * <p>Adds a child to this view's hierarchy.</p>
+     * @param {Ti.UI.View} view <p>View to add to this view's hierarchy</p>
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    add:function(view) {
+    },
+
+    /**
+     * <p>Adds the specified callback as an event listener for the named event.</p>
+     * @param {String} name <p>Name of the event.</p>
+     * @param {Callback<Object>} callback <p>Callback function to invoke when the event is fired.</p>
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    addEventListener:function(name, callback) {
+    },
+
+    /**
+     * <p>Animates this view.</p>
+     * @param {Ti.UI.Animation|Dictionary<Ti.UI.Animation>} obj <p>Either a dictionary of animation properties or an 
+{@link Ti.UI.Animation} object.</p>
+     * @param {Callback<Object>} callback <p>Function to be invoked upon completion of the animation.</p>
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    animate:function(obj, callback) {
+    },
+
+    /**
+     * <p>Translates a point from this view's coordinate system to another 
+view's coordinate system.</p>
+     * @param {Point} point <p>A point in this view's coordinate system.<br />
+If this argument is missing an <code>x</code> or <code>y</code> property, or the properties can not 
+be converted into numbers, an exception will be raised.</p>
+     * @param {Ti.UI.View} destinationView <p>View that specifies the destination coordinate system to convert to.
+If this argument is not a view, an exception will be raised.</p>
+     * @returns Point
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    convertPointToView:function(point, destinationView) {
+    },
+
+    /**
+     * <p>Fires a synthesized event to any registered listeners.</p>
+     * @param {String} name <p>Name of the event.</p>
+     * @param {Dictionary} event <p>A dictionary of keys and values to add to the {@link Ti.Event} object sent to the listeners.</p>
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    fireEvent:function(name, event) {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.UI.CoverFlowView.anchorPoint} property.</p>
+     * @returns Point
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    getAnchorPoint:function() {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.UI.CoverFlowView.animatedCenterPoint} property.</p>
+     * @returns Point
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    getAnimatedCenterPoint:function() {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.UI.CoverFlowView.backgroundColor} property.</p>
+     * @returns String
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    getBackgroundColor:function() {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.UI.CoverFlowView.backgroundDisabledColor} property.</p>
+     * @returns String
+     * @since 0.8 (Android)
+     */
+    getBackgroundDisabledColor:function() {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.UI.CoverFlowView.backgroundDisabledImage} property.</p>
+     * @returns String
+     * @since 0.8 (Android)
+     */
+    getBackgroundDisabledImage:function() {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.UI.CoverFlowView.backgroundFocusedColor} property.</p>
+     * @returns String
+     * @since 0.8 (Android)
+     */
+    getBackgroundFocusedColor:function() {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.UI.CoverFlowView.backgroundFocusedImage} property.</p>
+     * @returns String
+     * @since 0.8 (Android)
+     */
+    getBackgroundFocusedImage:function() {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.UI.CoverFlowView.backgroundGradient} property.</p>
+     * @returns Gradient
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    getBackgroundGradient:function() {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.UI.CoverFlowView.backgroundImage} property.</p>
+     * @returns String
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    getBackgroundImage:function() {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.UI.CoverFlowView.backgroundLeftCap} property.</p>
+     * @returns Number
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    getBackgroundLeftCap:function() {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.UI.CoverFlowView.backgroundRepeat} property.</p>
+     * @returns Boolean
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    getBackgroundRepeat:function() {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.UI.CoverFlowView.backgroundSelectedColor} property.</p>
+     * @returns String
+     * @since 0.8 (Android), 1.8 (Mobile Web)
+     */
+    getBackgroundSelectedColor:function() {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.UI.CoverFlowView.backgroundSelectedImage} property.</p>
+     * @returns String
+     * @since 0.8 (Android), 1.8 (Mobile Web)
+     */
+    getBackgroundSelectedImage:function() {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.UI.CoverFlowView.backgroundTopCap} property.</p>
+     * @returns Number
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    getBackgroundTopCap:function() {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.UI.CoverFlowView.borderColor} property.</p>
+     * @returns String
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    getBorderColor:function() {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.UI.CoverFlowView.borderRadius} property.</p>
+     * @returns Number
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    getBorderRadius:function() {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.UI.CoverFlowView.borderWidth} property.</p>
+     * @returns Number
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    getBorderWidth:function() {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.UI.CoverFlowView.bottom} property.</p>
+     * @returns Number
+     * @returns String
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    getBottom:function() {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.UI.CoverFlowView.center} property.</p>
+     * @returns Point
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    getCenter:function() {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.UI.CoverFlowView.children} property.</p>
+     * @returns Array<Ti.UI.View>
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    getChildren:function() {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.UI.CoverFlowView.focusable} property.</p>
+     * @returns Boolean
+     * @since 0.8 (Android)
+     */
+    getFocusable:function() {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.UI.CoverFlowView.height} property.</p>
+     * @returns Number
+     * @returns String
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    getHeight:function() {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.UI.CoverFlowView.images} property.</p>
+     * @returns Array<String>
+     * @returns Array<Ti.Blob>
+     * @returns Array<Ti.File>
+     * @returns Array<CoverFlowImageType>
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    getImages:function() {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.UI.CoverFlowView.keepScreenOn} property.</p>
+     * @returns Boolean
+     * @since 0.8 (Android)
+     */
+    getKeepScreenOn:function() {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.UI.CoverFlowView.layout} property.</p>
+     * @returns String
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    getLayout:function() {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.UI.CoverFlowView.left} property.</p>
+     * @returns Number
+     * @returns String
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    getLeft:function() {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.UI.CoverFlowView.opacity} property.</p>
+     * @returns Number
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    getOpacity:function() {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.UI.CoverFlowView.right} property.</p>
+     * @returns Number
+     * @returns String
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    getRight:function() {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.UI.CoverFlowView.selected} property.</p>
+     * @returns Number
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    getSelected:function() {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.UI.CoverFlowView.size} property.</p>
+     * @returns Object
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    getSize:function() {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.UI.CoverFlowView.softKeyboardOnFocus} property.</p>
+     * @returns Number
+     * @since 0.8 (Android)
+     */
+    getSoftKeyboardOnFocus:function() {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.UI.CoverFlowView.top} property.</p>
+     * @returns Number
+     * @returns String
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    getTop:function() {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.UI.CoverFlowView.touchEnabled} property.</p>
+     * @returns Boolean
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    getTouchEnabled:function() {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.UI.CoverFlowView.transform} property.</p>
+     * @returns Ti.UI.D2Matrix
+     * @returns Ti.UI.iOS.D3Matrix
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    getTransform:function() {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.UI.CoverFlowView.visible} property.</p>
+     * @returns Boolean
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    getVisible:function() {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.UI.CoverFlowView.width} property.</p>
+     * @returns Number
+     * @returns String
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    getWidth:function() {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.UI.CoverFlowView.zIndex} property.</p>
+     * @returns Number
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    getZIndex:function() {
+    },
+
+    /**
+     * <p>Hides this view.</p>
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    hide:function() {
+    },
+
+    /**
+     * <p>Removes a child view from this view's hierarchy.</p>
+     * @param {Ti.UI.View} view <p>View to remove from this view's hierarchy.</p>
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    remove:function(view) {
+    },
+
+    /**
+     * <p>Removes the specified callback as an event listener for the named event.</p>
+     * @param {String} name <p>Name of the event.</p>
+     * @param {Callback<Object>} callback <p>Callback function to remove. Must be the same function passed to <code>addEventListener</code>.</p>
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    removeEventListener:function(name, callback) {
+    },
+
+    /**
+     * <p>Sets the value of the {@link Ti.UI.CoverFlowView.anchorPoint} property.</p>
+     * @param {Point} anchorPoint <p>New value for the property.</p>
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    setAnchorPoint:function(anchorPoint) {
+    },
+
+    /**
+     * <p>Sets the value of the {@link Ti.UI.CoverFlowView.backgroundColor} property.</p>
+     * @param {String} backgroundColor <p>New value for the property.</p>
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    setBackgroundColor:function(backgroundColor) {
+    },
+
+    /**
+     * <p>Sets the value of the {@link Ti.UI.CoverFlowView.backgroundDisabledColor} property.</p>
+     * @param {String} backgroundDisabledColor <p>New value for the property.</p>
+     * @since 0.8 (Android)
+     */
+    setBackgroundDisabledColor:function(backgroundDisabledColor) {
+    },
+
+    /**
+     * <p>Sets the value of the {@link Ti.UI.CoverFlowView.backgroundDisabledImage} property.</p>
+     * @param {String} backgroundDisabledImage <p>New value for the property.</p>
+     * @since 0.8 (Android)
+     */
+    setBackgroundDisabledImage:function(backgroundDisabledImage) {
+    },
+
+    /**
+     * <p>Sets the value of the {@link Ti.UI.CoverFlowView.backgroundFocusedColor} property.</p>
+     * @param {String} backgroundFocusedColor <p>New value for the property.</p>
+     * @since 0.8 (Android)
+     */
+    setBackgroundFocusedColor:function(backgroundFocusedColor) {
+    },
+
+    /**
+     * <p>Sets the value of the {@link Ti.UI.CoverFlowView.backgroundFocusedImage} property.</p>
+     * @param {String} backgroundFocusedImage <p>New value for the property.</p>
+     * @since 0.8 (Android)
+     */
+    setBackgroundFocusedImage:function(backgroundFocusedImage) {
+    },
+
+    /**
+     * <p>Sets the value of the {@link Ti.UI.CoverFlowView.backgroundGradient} property.</p>
+     * @param {Gradient} backgroundGradient <p>New value for the property.</p>
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    setBackgroundGradient:function(backgroundGradient) {
+    },
+
+    /**
+     * <p>Sets the value of the {@link Ti.UI.CoverFlowView.backgroundImage} property.</p>
+     * @param {String} backgroundImage <p>New value for the property.</p>
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    setBackgroundImage:function(backgroundImage) {
+    },
+
+    /**
+     * <p>Sets the value of the {@link Ti.UI.CoverFlowView.backgroundLeftCap} property.</p>
+     * @param {Number} backgroundLeftCap <p>New value for the property.</p>
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    setBackgroundLeftCap:function(backgroundLeftCap) {
+    },
+
+    /**
+     * <p>Sets the value of the {@link Ti.UI.CoverFlowView.backgroundRepeat} property.</p>
+     * @param {Boolean} backgroundRepeat <p>New value for the property.</p>
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    setBackgroundRepeat:function(backgroundRepeat) {
+    },
+
+    /**
+     * <p>Sets the value of the {@link Ti.UI.CoverFlowView.backgroundSelectedColor} property.</p>
+     * @param {String} backgroundSelectedColor <p>New value for the property.</p>
+     * @since 0.8 (Android), 1.8 (Mobile Web)
+     */
+    setBackgroundSelectedColor:function(backgroundSelectedColor) {
+    },
+
+    /**
+     * <p>Sets the value of the {@link Ti.UI.CoverFlowView.backgroundSelectedImage} property.</p>
+     * @param {String} backgroundSelectedImage <p>New value for the property.</p>
+     * @since 0.8 (Android), 1.8 (Mobile Web)
+     */
+    setBackgroundSelectedImage:function(backgroundSelectedImage) {
+    },
+
+    /**
+     * <p>Sets the value of the {@link Ti.UI.CoverFlowView.backgroundTopCap} property.</p>
+     * @param {Number} backgroundTopCap <p>New value for the property.</p>
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    setBackgroundTopCap:function(backgroundTopCap) {
+    },
+
+    /**
+     * <p>Sets the value of the {@link Ti.UI.CoverFlowView.borderColor} property.</p>
+     * @param {String} borderColor <p>New value for the property.</p>
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    setBorderColor:function(borderColor) {
+    },
+
+    /**
+     * <p>Sets the value of the {@link Ti.UI.CoverFlowView.borderRadius} property.</p>
+     * @param {Number} borderRadius <p>New value for the property.</p>
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    setBorderRadius:function(borderRadius) {
+    },
+
+    /**
+     * <p>Sets the value of the {@link Ti.UI.CoverFlowView.borderWidth} property.</p>
+     * @param {Number} borderWidth <p>New value for the property.</p>
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    setBorderWidth:function(borderWidth) {
+    },
+
+    /**
+     * <p>Sets the value of the {@link Ti.UI.CoverFlowView.bottom} property.</p>
+     * @param {Number|String} bottom <p>New value for the property.</p>
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    setBottom:function(bottom) {
+    },
+
+    /**
+     * <p>Sets the value of the {@link Ti.UI.CoverFlowView.center} property.</p>
+     * @param {Point} center <p>New value for the property.</p>
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    setCenter:function(center) {
+    },
+
+    /**
+     * <p>Sets the value of the {@link Ti.UI.CoverFlowView.focusable} property.</p>
+     * @param {Boolean} focusable <p>New value for the property.</p>
+     * @since 0.8 (Android)
+     */
+    setFocusable:function(focusable) {
+    },
+
+    /**
+     * <p>Sets the value of the {@link Ti.UI.CoverFlowView.height} property.</p>
+     * @param {Number|String} height <p>New value for the property.</p>
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    setHeight:function(height) {
+    },
+
+    /**
+     * <p>Changes the image for a specified index.</p>
+     * @param {Number} index <p>Index to add the image at.</p>
+     * @param {String|Ti.Blob|Ti.File|CoverFlowImageType} image <p>Image to add at this index.</p>
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    setImage:function(index, image) {
+    },
+
+    /**
+     * <p>Sets the value of the {@link Ti.UI.CoverFlowView.images} property.</p>
+     * @param {Array<String>|Array<Ti.Blob>|Array<Ti.File>|Array<CoverFlowImageType>} images <p>New value for the property.</p>
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    setImages:function(images) {
+    },
+
+    /**
+     * <p>Sets the value of the {@link Ti.UI.CoverFlowView.keepScreenOn} property.</p>
+     * @param {Boolean} keepScreenOn <p>New value for the property.</p>
+     * @since 0.8 (Android)
+     */
+    setKeepScreenOn:function(keepScreenOn) {
+    },
+
+    /**
+     * <p>Sets the value of the {@link Ti.UI.CoverFlowView.layout} property.</p>
+     * @param {String} layout <p>New value for the property.</p>
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    setLayout:function(layout) {
+    },
+
+    /**
+     * <p>Sets the value of the {@link Ti.UI.CoverFlowView.left} property.</p>
+     * @param {Number|String} left <p>New value for the property.</p>
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    setLeft:function(left) {
+    },
+
+    /**
+     * <p>Sets the value of the {@link Ti.UI.CoverFlowView.opacity} property.</p>
+     * @param {Number} opacity <p>New value for the property.</p>
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    setOpacity:function(opacity) {
+    },
+
+    /**
+     * <p>Sets the value of the {@link Ti.UI.CoverFlowView.right} property.</p>
+     * @param {Number|String} right <p>New value for the property.</p>
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    setRight:function(right) {
+    },
+
+    /**
+     * <p>Sets the value of the {@link Ti.UI.CoverFlowView.selected} property.</p>
+     * @param {Number} selected <p>New value for the property.</p>
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    setSelected:function(selected) {
+    },
+
+    /**
+     * <p>Sets the value of the {@link Ti.UI.CoverFlowView.softKeyboardOnFocus} property.</p>
+     * @param {Number} softKeyboardOnFocus <p>New value for the property.</p>
+     * @since 0.8 (Android)
+     */
+    setSoftKeyboardOnFocus:function(softKeyboardOnFocus) {
+    },
+
+    /**
+     * <p>Sets the value of the {@link Ti.UI.CoverFlowView.top} property.</p>
+     * @param {Number|String} top <p>New value for the property.</p>
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    setTop:function(top) {
+    },
+
+    /**
+     * <p>Sets the value of the {@link Ti.UI.CoverFlowView.touchEnabled} property.</p>
+     * @param {Boolean} touchEnabled <p>New value for the property.</p>
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    setTouchEnabled:function(touchEnabled) {
+    },
+
+    /**
+     * <p>Sets the value of the {@link Ti.UI.CoverFlowView.transform} property.</p>
+     * @param {Ti.UI.D2Matrix|Ti.UI.iOS.D3Matrix} transform <p>New value for the property.</p>
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    setTransform:function(transform) {
+    },
+
+    /**
+     * <p>Sets the value of the {@link Ti.UI.CoverFlowView.visible} property.</p>
+     * @param {Boolean} visible <p>New value for the property.</p>
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    setVisible:function(visible) {
+    },
+
+    /**
+     * <p>Sets the value of the {@link Ti.UI.CoverFlowView.width} property.</p>
+     * @param {Number|String} width <p>New value for the property.</p>
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    setWidth:function(width) {
+    },
+
+    /**
+     * <p>Sets the value of the {@link Ti.UI.CoverFlowView.zIndex} property.</p>
+     * @param {Number} zIndex <p>New value for the property.</p>
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    setZIndex:function(zIndex) {
+    },
+
+    /**
+     * <p>Makes this view visible.</p>
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    show:function() {
+    },
+
+    /**
+     * <p>Returns an image of the rendered view, as a Blob.</p>
+     * @param {Callback<Object>} f <p>Function to be invoked upon completion. If non-null, this method will be 
+performed asynchronously. If null, it will be performed immediately.</p>
+     * @returns Ti.Blob
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    toImage:function(f) {
+    }
+};
+
+/**
+ * platforms: iPhone, iPad
  */
 Ti.UI.DashboardItem = function() {
 };
@@ -25787,15 +26922,15 @@ Ti.UI.DashboardItem.prototype = {
     canDelete:null,
 
     /**
-     * <p>the URL to the image</p>
-     * @type String
+     * <p>The image for the item.</p>
+     * @type String|Ti.Blob
      * @since 1.2 (iPhone), 1.2 (iPad)
      */
     image:null,
 
     /**
-     * <p>the URL to the image to display when the item is depressed (clicked)</p>
-     * @type String
+     * <p>The image to display when the item is depressed (clicked)</p>
+     * @type String|Ti.Blob
      * @since 1.2 (iPhone), 1.2 (iPad)
      */
     selectedImage:null,
@@ -25838,6 +26973,7 @@ Ti.UI.DashboardItem.prototype = {
     /**
      * <p>Gets the value of the {@link Ti.UI.DashboardItem.image} property.</p>
      * @returns String
+     * @returns Ti.Blob
      * @since 1.2 (iPhone), 1.2 (iPad)
      */
     getImage:function() {
@@ -25846,6 +26982,7 @@ Ti.UI.DashboardItem.prototype = {
     /**
      * <p>Gets the value of the {@link Ti.UI.DashboardItem.selectedImage} property.</p>
      * @returns String
+     * @returns Ti.Blob
      * @since 1.2 (iPhone), 1.2 (iPad)
      */
     getSelectedImage:function() {
@@ -25878,7 +27015,7 @@ Ti.UI.DashboardItem.prototype = {
 
     /**
      * <p>Sets the value of the {@link Ti.UI.DashboardItem.image} property.</p>
-     * @param {String} image <p>New value for the property.</p>
+     * @param {String|Ti.Blob} image <p>New value for the property.</p>
      * @since 1.2 (iPhone), 1.2 (iPad)
      */
     setImage:function(image) {
@@ -25886,7 +27023,7 @@ Ti.UI.DashboardItem.prototype = {
 
     /**
      * <p>Sets the value of the {@link Ti.UI.DashboardItem.selectedImage} property.</p>
-     * @param {String} selectedImage <p>New value for the property.</p>
+     * @param {String|Ti.Blob} selectedImage <p>New value for the property.</p>
      * @since 1.2 (iPhone), 1.2 (iPad)
      */
     setSelectedImage:function(selectedImage) {
@@ -25971,6 +27108,13 @@ Ti.UI.DashboardView.prototype = {
     backgroundLeftCap:null,
 
     /**
+     * <p>Toggle for whether or not to tile a background across a view.</p>
+     * @type Boolean
+     * @since 1.2 (iPhone), 1.2 (iPad)
+     */
+    backgroundRepeat:null,
+
+    /**
      * <p>Selected background color of the view.</p>
      * @type String
      * @since 1.2 (Android), 1.8 (Mobile Web)
@@ -26025,6 +27169,13 @@ Ti.UI.DashboardView.prototype = {
      * @since 1.2 (iPhone), 1.2 (iPad)
      */
     center:null,
+
+    /**
+     * <p>Array of this view's child views.</p>
+     * @type Array<Ti.UI.View>
+     * @since 1.2 (iPhone), 1.2 (iPad)
+     */
+    children:null,
 
     /**
      * <p>an array of {@link Ti.UI.DashboardItem} objects to display in the view</p>
@@ -26084,7 +27235,7 @@ One of: 'absolute', 'vertical', or 'horizontal'.</p>
     right:null,
 
     /**
-     * <p>Size of the view as a dictionary of width and height properties.</p>
+     * <p>Rendered size of the view as a dictionary of width and height properties.</p>
      * @type Object
      * @since 1.2 (iPhone), 1.2 (iPad)
      */
@@ -26278,6 +27429,14 @@ If this argument is not a view, an exception will be raised.</p>
     },
 
     /**
+     * <p>Gets the value of the {@link Ti.UI.DashboardView.backgroundRepeat} property.</p>
+     * @returns Boolean
+     * @since 1.2 (iPhone), 1.2 (iPad)
+     */
+    getBackgroundRepeat:function() {
+    },
+
+    /**
      * <p>Gets the value of the {@link Ti.UI.DashboardView.backgroundSelectedColor} property.</p>
      * @returns String
      * @since 1.2 (Android), 1.8 (Mobile Web)
@@ -26340,6 +27499,14 @@ If this argument is not a view, an exception will be raised.</p>
      * @since 1.2 (iPhone), 1.2 (iPad)
      */
     getCenter:function() {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.UI.DashboardView.children} property.</p>
+     * @returns Array<Ti.UI.View>
+     * @since 1.2 (iPhone), 1.2 (iPad)
+     */
+    getChildren:function() {
     },
 
     /**
@@ -26581,6 +27748,14 @@ If this argument is not a view, an exception will be raised.</p>
     },
 
     /**
+     * <p>Sets the value of the {@link Ti.UI.DashboardView.backgroundRepeat} property.</p>
+     * @param {Boolean} backgroundRepeat <p>New value for the property.</p>
+     * @since 1.2 (iPhone), 1.2 (iPad)
+     */
+    setBackgroundRepeat:function(backgroundRepeat) {
+    },
+
+    /**
      * <p>Sets the value of the {@link Ti.UI.DashboardView.backgroundSelectedColor} property.</p>
      * @param {String} backgroundSelectedColor <p>New value for the property.</p>
      * @since 1.2 (Android), 1.8 (Mobile Web)
@@ -26706,14 +27881,6 @@ If this argument is not a view, an exception will be raised.</p>
      * @since 1.2 (iPhone), 1.2 (iPad)
      */
     setRight:function(right) {
-    },
-
-    /**
-     * <p>Sets the value of the {@link Ti.UI.DashboardView.size} property.</p>
-     * @param {Object} size <p>New value for the property.</p>
-     * @since 1.2 (iPhone), 1.2 (iPad)
-     */
-    setSize:function(size) {
     },
 
     /**
@@ -27073,14 +28240,19 @@ Ti.UI.EmailDialog.prototype = {
 
 /**
  * platforms: Android, iPhone, iPad, Mobile Web
- * @namespace <p>If you specify a <code>width</code> and/or <code>height</code> property for the image view, the image will be 
-scaled to fit into this space while maintaining its original aspect ratio.</p>
-<p>Use the {@link Ti.UI.createImageView} method to create an image view.</p>
+ * @namespace <p>Use the {@link Ti.UI.createImageView} method to create an <code>ImageView</code>.</p>
+<p>Specifying either a <code>width</code> or <code>height</code> property for this view will scale its image(s) with 
+the aspect ratio maintained, up to a maximum size that does not exceed its parent view.</p>
  * 
  * @example Basic Image View
  * <p>In this example, we create a simple image view:</p>
-<pre><code>var image = Ti.UI.createImageView({url:'myimage.png'});
-view.add(image);
+<pre><code>Ti.UI.backgroundColor = 'white';
+var win = Ti.UI.createWindow();
+var image = Ti.UI.createImageView({
+  image:'/images/myimage.png'
+});
+win.add(image);
+win.open();
 </code></pre>
  */
 Ti.UI.ImageView = function() {
@@ -27102,7 +28274,7 @@ Ti.UI.ImageView.prototype = {
     animatedCenterPoint:null,
 
     /**
-     * <p><code>true</code> if the animation is running.</p>
+     * <p>Indicates whether animation is running.</p>
      * @type Boolean
      * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
@@ -27163,6 +28335,13 @@ Ti.UI.ImageView.prototype = {
      * @since 0.9 (iPhone), 0.9 (iPad)
      */
     backgroundLeftCap:null,
+
+    /**
+     * <p>Toggle for whether or not to tile a background across a view.</p>
+     * @type Boolean
+     * @since 0.9 (iPhone), 0.9 (iPad)
+     */
+    backgroundRepeat:null,
 
     /**
      * <p>Selected background color of the view.</p>
@@ -27228,21 +28407,28 @@ Ti.UI.ImageView.prototype = {
     center:null,
 
     /**
-     * <p>Number of times to retry decoding the bitmap at this URL.</p>
+     * <p>Array of this view's child views.</p>
+     * @type Array<Ti.UI.View>
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
+     */
+    children:null,
+
+    /**
+     * <p>Number of times to retry decoding the bitmap at a URL.</p>
      * @type Number
      * @since 1.7.0 (Android)
      */
     decodeRetries:null,
 
     /**
-     * <p>url to the default image to display while loading a remote image</p>
+     * <p>Local path to the default image to display while loading a remote image.</p>
      * @type String
      * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
     defaultImage:null,
 
     /**
-     * <p>amount of time in milliseconds to animate one cycle</p>
+     * <p>Amount of time in milliseconds to animate one cycle.</p>
      * @type Number
      * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
@@ -27270,24 +28456,25 @@ Ti.UI.ImageView.prototype = {
     height:null,
 
     /**
-     * <p>Indicates whether or not the source image is in 2x resolution for Retina displays. 
-Use for remote images ONLY.</p>
+     * <p>Set to <code>true</code> to prevent scaling of 2x-resolution remote images for Retina 
+displays.</p>
      * @type Boolean
      * @since 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
     hires:null,
 
     /**
-     * <p>Image to display. Specify using a local file path or URL, or pass a <code>Blob</code> or 
-<code>File</code> object containing image data.</p>
+     * <p>Image to display, defined using a local filesystem path, a <code>File</code> object, a remote URL, 
+or a <code>Blob</code> object containing image data.</p>
      * @type String|Ti.Blob|Ti.Filesystem.File
      * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
     image:null,
 
     /**
-     * <p>Array of images to display in an animation. Accepts the same types as <code>image</code>.</p>
-     * @type Array<Object>
+     * <p>Array of images to animate, defined using local filesystem paths, <code>File</code> objects, 
+remote URLs (Android only), or <code>Blob</code> objects containing image data.</p>
+     * @type Array<String>|Array<Ti.Blob>|Array<Ti.Filesystem.File>
      * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
     images:null,
@@ -27322,16 +28509,17 @@ One of: 'absolute', 'vertical', or 'horizontal'.</p>
     opacity:null,
 
     /**
-     * <p>Boolean value indicating if the animation is paused.</p>
+     * <p>Indicates whether the animation is paused.</p>
      * @type Boolean
      * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
     paused:null,
 
     /**
-     * <p>Set to <code>true</code> to <strong>disable</strong> display of the default image while loading a remote image.</p>
+     * <p>Prevent the default image from being displayed while loading a remote image. This property 
+is ignored when the <code>defaultImage</code> property is set.</p>
      * @type Boolean
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
+     * @since 0.9 (iPhone), 0.9 (iPad)
      */
     preventDefaultImage:null,
 
@@ -27343,7 +28531,7 @@ One of: 'absolute', 'vertical', or 'horizontal'.</p>
     repeatCount:null,
 
     /**
-     * <p>Boolean value indicating if the animation should happen in reverse (from last to first).</p>
+     * <p>Run the animation in reverse.</p>
      * @type Boolean
      * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
@@ -27357,7 +28545,7 @@ One of: 'absolute', 'vertical', or 'horizontal'.</p>
     right:null,
 
     /**
-     * <p>Size of the view as a dictionary of width and height properties.</p>
+     * <p>Rendered size of the view as a dictionary of width and height properties.</p>
      * @type Object
      * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
@@ -27387,7 +28575,7 @@ One of: 'absolute', 'vertical', or 'horizontal'.</p>
     /**
      * <p>Transformation matrix to apply to the view.</p>
      * @type Ti.UI.D2Matrix|Ti.UI.iOS.D3Matrix
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
     transform:null,
 
@@ -27559,6 +28747,14 @@ If this argument is not a view, an exception will be raised.</p>
     },
 
     /**
+     * <p>Gets the value of the {@link Ti.UI.ImageView.backgroundRepeat} property.</p>
+     * @returns Boolean
+     * @since 0.9 (iPhone), 0.9 (iPad)
+     */
+    getBackgroundRepeat:function() {
+    },
+
+    /**
      * <p>Gets the value of the {@link Ti.UI.ImageView.backgroundSelectedColor} property.</p>
      * @returns String
      * @since 0.9 (Android), 1.8 (Mobile Web)
@@ -27632,6 +28828,14 @@ If this argument is not a view, an exception will be raised.</p>
     },
 
     /**
+     * <p>Gets the value of the {@link Ti.UI.ImageView.children} property.</p>
+     * @returns Array<Ti.UI.View>
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
+     */
+    getChildren:function() {
+    },
+
+    /**
      * <p>Gets the value of the {@link Ti.UI.ImageView.decodeRetries} property.</p>
      * @returns Number
      * @since 1.7.0 (Android)
@@ -27700,7 +28904,9 @@ If this argument is not a view, an exception will be raised.</p>
 
     /**
      * <p>Gets the value of the {@link Ti.UI.ImageView.images} property.</p>
-     * @returns Array<Object>
+     * @returns Array<String>
+     * @returns Array<Ti.Blob>
+     * @returns Array<Ti.Filesystem.File>
      * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
     getImages:function() {
@@ -27750,7 +28956,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Gets the value of the {@link Ti.UI.ImageView.preventDefaultImage} property.</p>
      * @returns Boolean
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
+     * @since 0.9 (iPhone), 0.9 (iPad)
      */
     getPreventDefaultImage:function() {
     },
@@ -27817,7 +29023,7 @@ If this argument is not a view, an exception will be raised.</p>
      * <p>Gets the value of the {@link Ti.UI.ImageView.transform} property.</p>
      * @returns Ti.UI.D2Matrix
      * @returns Ti.UI.iOS.D3Matrix
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
     getTransform:function() {
     },
@@ -27863,8 +29069,9 @@ If this argument is not a view, an exception will be raised.</p>
     },
 
     /**
-     * <p>Pause a running animation.</p>
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
+     * <p>Pauses a running animation. Use <code>resume</code> method on Android and <code>start</code> method on iOS 
+to continue.</p>
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
     pause:function() {
     },
@@ -27884,6 +29091,13 @@ If this argument is not a view, an exception will be raised.</p>
      * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
     removeEventListener:function(name, callback) {
+    },
+
+    /**
+     * <p>Resumes an animation from a <code>pause</code> state.</p>
+     * @since 0.9 (Android)
+     */
+    resume:function() {
     },
 
     /**
@@ -27956,6 +29170,14 @@ If this argument is not a view, an exception will be raised.</p>
      * @since 0.9 (iPhone), 0.9 (iPad)
      */
     setBackgroundLeftCap:function(backgroundLeftCap) {
+    },
+
+    /**
+     * <p>Sets the value of the {@link Ti.UI.ImageView.backgroundRepeat} property.</p>
+     * @param {Boolean} backgroundRepeat <p>New value for the property.</p>
+     * @since 0.9 (iPhone), 0.9 (iPad)
+     */
+    setBackgroundRepeat:function(backgroundRepeat) {
     },
 
     /**
@@ -28096,7 +29318,7 @@ If this argument is not a view, an exception will be raised.</p>
 
     /**
      * <p>Sets the value of the {@link Ti.UI.ImageView.images} property.</p>
-     * @param {Array<Object>} images <p>New value for the property.</p>
+     * @param {Array<String>|Array<Ti.Blob>|Array<Ti.Filesystem.File>} images <p>New value for the property.</p>
      * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
     setImages:function(images) {
@@ -28137,7 +29359,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Sets the value of the {@link Ti.UI.ImageView.preventDefaultImage} property.</p>
      * @param {Boolean} preventDefaultImage <p>New value for the property.</p>
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
+     * @since 0.9 (iPhone), 0.9 (iPad)
      */
     setPreventDefaultImage:function(preventDefaultImage) {
     },
@@ -28167,14 +29389,6 @@ If this argument is not a view, an exception will be raised.</p>
     },
 
     /**
-     * <p>Sets the value of the {@link Ti.UI.ImageView.size} property.</p>
-     * @param {Object} size <p>New value for the property.</p>
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
-     */
-    setSize:function(size) {
-    },
-
-    /**
      * <p>Sets the value of the {@link Ti.UI.ImageView.softKeyboardOnFocus} property.</p>
      * @param {Number} softKeyboardOnFocus <p>New value for the property.</p>
      * @since 0.9 (Android)
@@ -28201,7 +29415,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Sets the value of the {@link Ti.UI.ImageView.transform} property.</p>
      * @param {Ti.UI.D2Matrix|Ti.UI.iOS.D3Matrix} transform <p>New value for the property.</p>
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
     setTransform:function(transform) {
     },
@@ -28246,22 +29460,22 @@ If this argument is not a view, an exception will be raised.</p>
     },
 
     /**
-     * <p>Start the image animation. This method only works if you set multiple images.</p>
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
+     * <p>Starts the image animation. On Android, also resets <code>index</code> to the first image.</p>
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
     start:function() {
     },
 
     /**
-     * <p>Stop a running animation and reset the index to the first image.</p>
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
+     * <p>Stops a running animation. On iOS, also resets <code>index</code> to the first image.</p>
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
     stop:function() {
     },
 
     /**
-     * <p>Return the image as a Blob object.</p>
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
+     * <p>Returns the image as a Blob object.</p>
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
     toBlob:function() {
     },
@@ -28405,6 +29619,13 @@ Ti.UI.Label.prototype = {
     backgroundPaddingTop:null,
 
     /**
+     * <p>Toggle for whether or not to tile a background across a view.</p>
+     * @type Boolean
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    backgroundRepeat:null,
+
+    /**
      * <p>Selected background color of the view.</p>
      * @type String
      * @since 0.8 (Android), 1.8 (Mobile Web)
@@ -28461,6 +29682,13 @@ Ti.UI.Label.prototype = {
     center:null,
 
     /**
+     * <p>Array of this view's child views.</p>
+     * @type Array<Ti.UI.View>
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     */
+    children:null,
+
+    /**
      * <p>Color of the label text.</p>
      * @type String
      * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
@@ -28470,7 +29698,7 @@ Ti.UI.Label.prototype = {
     /**
      * <p>Turn on/off the addition of ellipses at the end of the label if the text is too large to fit.</p>
      * @type Boolean
-     * @since 0.8 (Android)
+     * @since 0.8 (Android), 1.8 (Mobile Web)
      */
     ellipsize:null,
 
@@ -28555,19 +29783,19 @@ One of: 'absolute', 'vertical', or 'horizontal'.</p>
     /**
      * <p>Text shadow color.</p>
      * @type String
-     * @since 0.8 (iPhone), 0.8 (iPad)
+     * @since 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
      */
     shadowColor:null,
 
     /**
      * <p>Shadow offset as a dictionary with the properties <code>x</code> and <code>y</code>.</p>
      * @type Object
-     * @since 0.8 (iPhone), 0.8 (iPad)
+     * @since 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
      */
     shadowOffset:null,
 
     /**
-     * <p>Size of the view as a dictionary of width and height properties.</p>
+     * <p>Rendered size of the view as a dictionary of width and height properties.</p>
      * @type Object
      * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
      */
@@ -28618,7 +29846,7 @@ One of: 'absolute', 'vertical', or 'horizontal'.</p>
     /**
      * <p>Transformation matrix to apply to the view.</p>
      * @type Ti.UI.D2Matrix|Ti.UI.iOS.D3Matrix
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
      */
     transform:null,
 
@@ -28822,6 +30050,14 @@ If this argument is not a view, an exception will be raised.</p>
     },
 
     /**
+     * <p>Gets the value of the {@link Ti.UI.Label.backgroundRepeat} property.</p>
+     * @returns Boolean
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    getBackgroundRepeat:function() {
+    },
+
+    /**
      * <p>Gets the value of the {@link Ti.UI.Label.backgroundSelectedColor} property.</p>
      * @returns String
      * @since 0.8 (Android), 1.8 (Mobile Web)
@@ -28887,6 +30123,14 @@ If this argument is not a view, an exception will be raised.</p>
     },
 
     /**
+     * <p>Gets the value of the {@link Ti.UI.Label.children} property.</p>
+     * @returns Array<Ti.UI.View>
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     */
+    getChildren:function() {
+    },
+
+    /**
      * <p>Gets the value of the {@link Ti.UI.Label.color} property.</p>
      * @returns String
      * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
@@ -28897,7 +30141,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Gets the value of the {@link Ti.UI.Label.ellipsize} property.</p>
      * @returns Boolean
-     * @since 0.8 (Android)
+     * @since 0.8 (Android), 1.8 (Mobile Web)
      */
     getEllipsize:function() {
     },
@@ -28996,7 +30240,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Gets the value of the {@link Ti.UI.Label.shadowColor} property.</p>
      * @returns String
-     * @since 0.8 (iPhone), 0.8 (iPad)
+     * @since 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
      */
     getShadowColor:function() {
     },
@@ -29004,7 +30248,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Gets the value of the {@link Ti.UI.Label.shadowOffset} property.</p>
      * @returns Object
-     * @since 0.8 (iPhone), 0.8 (iPad)
+     * @since 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
      */
     getShadowOffset:function() {
     },
@@ -29071,7 +30315,7 @@ If this argument is not a view, an exception will be raised.</p>
      * <p>Gets the value of the {@link Ti.UI.Label.transform} property.</p>
      * @returns Ti.UI.D2Matrix
      * @returns Ti.UI.iOS.D3Matrix
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
      */
     getTransform:function() {
     },
@@ -29246,6 +30490,14 @@ If this argument is not a view, an exception will be raised.</p>
     },
 
     /**
+     * <p>Sets the value of the {@link Ti.UI.Label.backgroundRepeat} property.</p>
+     * @param {Boolean} backgroundRepeat <p>New value for the property.</p>
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    setBackgroundRepeat:function(backgroundRepeat) {
+    },
+
+    /**
      * <p>Sets the value of the {@link Ti.UI.Label.backgroundSelectedColor} property.</p>
      * @param {String} backgroundSelectedColor <p>New value for the property.</p>
      * @since 0.8 (Android), 1.8 (Mobile Web)
@@ -29320,7 +30572,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Sets the value of the {@link Ti.UI.Label.ellipsize} property.</p>
      * @param {Boolean} ellipsize <p>New value for the property.</p>
-     * @since 0.8 (Android)
+     * @since 0.8 (Android), 1.8 (Mobile Web)
      */
     setEllipsize:function(ellipsize) {
     },
@@ -29416,7 +30668,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Sets the value of the {@link Ti.UI.Label.shadowColor} property.</p>
      * @param {String} shadowColor <p>New value for the property.</p>
-     * @since 0.8 (iPhone), 0.8 (iPad)
+     * @since 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
      */
     setShadowColor:function(shadowColor) {
     },
@@ -29424,17 +30676,9 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Sets the value of the {@link Ti.UI.Label.shadowOffset} property.</p>
      * @param {Object} shadowOffset <p>New value for the property.</p>
-     * @since 0.8 (iPhone), 0.8 (iPad)
+     * @since 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
      */
     setShadowOffset:function(shadowOffset) {
-    },
-
-    /**
-     * <p>Sets the value of the {@link Ti.UI.Label.size} property.</p>
-     * @param {Object} size <p>New value for the property.</p>
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
-     */
-    setSize:function(size) {
     },
 
     /**
@@ -29488,7 +30732,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Sets the value of the {@link Ti.UI.Label.transform} property.</p>
      * @param {Ti.UI.D2Matrix|Ti.UI.iOS.D3Matrix} transform <p>New value for the property.</p>
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
      */
     setTransform:function(transform) {
     },
@@ -29538,6 +30782,1025 @@ If this argument is not a view, an exception will be raised.</p>
 performed asynchronously. If null, it will be performed immediately.</p>
      * @returns Ti.Blob
      * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
+     */
+    toImage:function(f) {
+    }
+};
+
+/**
+ * platforms: iPhone, iPad
+ * @namespace <p>This is an iOS-specific control that can be used to display an image combined with 
+another image and/or color. The layers are drawn in the following order:</p>
+<ul>
+<li>The <code>mask</code>, or background image.</li>
+<li>The <code>image</code>, or foreground image.</li>
+<li>The <code>tint</code>, or constant tint color.</li>
+</ul>
+<p>The way the layers are combined depends on the value of the <code>mode</code> property. 
+The <code>mode</code> value can be set to one of the {@link Ti.UI.iOS} <code>BLEND_MODE</code> constants. 
+These constants correspond directly to the iOS blend modes described in the iOS developer 
+library:</p>
+<p>{@link http://developer.apple.com/library/ios/#documentation/GraphicsImaging/Reference/CGContext/Reference/reference.html#//apple_ref/c/tdef/CGBlendMode}</p>
+<p>and:</p>
+<p><a href="http://developer.apple.com/library/ios/#documentation/GraphicsImaging/Conceptual/drawingwithquartz2d/dq_images/dq_images.html#//apple_ref/doc/uid/TP30001066-CH212-TPXREF101">"Using Blend Modes with Images" in Quartz2D
+Reference</a></p>
+<p>When compositing two images, the <code>mask</code> property specifies the background, or 
+destination (D) image, and the <code>image</code> property specifies the foreground, or 
+source (S) layer. For example, to use an image as an alpha mask for another image,
+you could use the following code:</p>
+<pre><code>var imageMask = Ti.UI.createMaskedImage({
+    mask : 'mask.png', // alpha mask
+    image : 'demo_image.png', // image to mask
+    mode : Ti.UI.iOS.BLEND_MODE_SOURCE_OUT
+});
+</code></pre>
+<p>Note that this legacy control lacks many of the features associated with a standard
+{@link Ti.UI.ImageView} control.</p>
+<p>Use the <code>Ti.UI.createMaskedImageView</code> method to create a masked image view.</p>
+ * 
+ * @example Luminosity Blend Mode
+ * <p>The following code excerpt creates a monochrome version of the background image,
+using the luminosity from the background image and the specified <code>tint</code> color:</p>
+<pre><code>var imageMask = Ti.UI.createMaskedImage({
+    mask : 'demo_image.png', // background image
+    tint: 'red',
+    mode : Ti.UI.iOS.BLEND_MODE_LUMINOSITY,
+});
+</code></pre>
+ */
+Ti.UI.MaskedImage = function() {
+};
+Ti.UI.MaskedImage.prototype = {
+
+    /**
+     * <p>Anchor point where animation should occur, relative to the view's boundaries.</p>
+     * @type Point
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    anchorPoint:null,
+
+    /**
+     * <p>Current position of the view during an animation.</p>
+     * @type Point
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    animatedCenterPoint:null,
+
+    /**
+     * <p>Background color of the view.</p>
+     * @type String
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    backgroundColor:null,
+
+    /**
+     * <p>Disabled background color of the view.</p>
+     * @type String
+     * @since 0.8 (Android)
+     */
+    backgroundDisabledColor:null,
+
+    /**
+     * <p>Disabled background image for the view, specified as a local file path or URL.</p>
+     * @type String
+     * @since 0.8 (Android)
+     */
+    backgroundDisabledImage:null,
+
+    /**
+     * <p>Focused background color of the view.</p>
+     * @type String
+     * @since 0.8 (Android)
+     */
+    backgroundFocusedColor:null,
+
+    /**
+     * <p>Focused background image for the view, specified as a local file path or URL.</p>
+     * @type String
+     * @since 0.8 (Android)
+     */
+    backgroundFocusedImage:null,
+
+    /**
+     * <p>A background gradient for the view.</p>
+     * @type Gradient
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    backgroundGradient:null,
+
+    /**
+     * <p>Background image for the view, specified as a local file path or URL.</p>
+     * @type String
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    backgroundImage:null,
+
+    /**
+     * <p>Size of the left end cap.</p>
+     * @type Number
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    backgroundLeftCap:null,
+
+    /**
+     * <p>Toggle for whether or not to tile a background across a view.</p>
+     * @type Boolean
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    backgroundRepeat:null,
+
+    /**
+     * <p>Selected background color of the view.</p>
+     * @type String
+     * @since 0.8 (Android), 1.8 (Mobile Web)
+     */
+    backgroundSelectedColor:null,
+
+    /**
+     * <p>Selected background image url for the view, specified as a local file path or URL.</p>
+     * @type String
+     * @since 0.8 (Android), 1.8 (Mobile Web)
+     */
+    backgroundSelectedImage:null,
+
+    /**
+     * <p>Size of the top end cap.</p>
+     * @type Number
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    backgroundTopCap:null,
+
+    /**
+     * <p>Border color of the view.</p>
+     * @type String
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    borderColor:null,
+
+    /**
+     * <p>Border radius of the view.</p>
+     * @type Number
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    borderRadius:null,
+
+    /**
+     * <p>Border width of the view.</p>
+     * @type Number
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    borderWidth:null,
+
+    /**
+     * <p>View's bottom position, in platform-specific units.</p>
+     * @type Number|String
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    bottom:null,
+
+    /**
+     * <p>View's center position, in the parent view's coordinates.</p>
+     * @type Point
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    center:null,
+
+    /**
+     * <p>Array of this view's child views.</p>
+     * @type Array<Ti.UI.View>
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    children:null,
+
+    /**
+     * <p>Whether view should be focusable while navigating with the trackball.</p>
+     * @type Boolean
+     * @since 0.8 (Android)
+     */
+    focusable:null,
+
+    /**
+     * <p>View height, in platform-specific units.</p>
+     * @type Number|String
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    height:null,
+
+    /**
+     * <p>Image drawn as the Foreground image.</p>
+     * @type String
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    image:null,
+
+    /**
+     * <p>Whether to keep the device screen on.</p>
+     * @type Boolean
+     * @since 0.8 (Android)
+     */
+    keepScreenOn:null,
+
+    /**
+     * <p>Specifies how the view positions its children. 
+One of: 'absolute', 'vertical', or 'horizontal'.</p>
+     * @type String
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    layout:null,
+
+    /**
+     * <p>View's left position, in platform-specific units.</p>
+     * @type Number|String
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    left:null,
+
+    /**
+     * <p>Image drawn as the background image.</p>
+     * @type String
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    mask:null,
+
+    /**
+     * <p>Blend mode to use to combine layers.</p>
+     * @type Number
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    mode:null,
+
+    /**
+     * <p>Opacity of this view, from 0.0 (transparent) to 1.0 (opaque).</p>
+     * @type Number
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    opacity:null,
+
+    /**
+     * <p>View's right position, in platform-specific units.</p>
+     * @type Number|String
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    right:null,
+
+    /**
+     * <p>Rendered size of the view as a dictionary of width and height properties.</p>
+     * @type Object
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    size:null,
+
+    /**
+     * <p>Determines keyboard behavior when this view is focused.</p>
+     * @type Number
+     * @since 0.8 (Android)
+     */
+    softKeyboardOnFocus:null,
+
+    /**
+     * <p>Color to combine with the image.</p>
+     * @type String
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    tint:null,
+
+    /**
+     * <p>The view's top position.</p>
+     * @type Number|String
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    top:null,
+
+    /**
+     * <p>Whether view should receive touch events.</p>
+     * @type Boolean
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    touchEnabled:null,
+
+    /**
+     * <p>Transformation matrix to apply to the view.</p>
+     * @type Ti.UI.D2Matrix|Ti.UI.iOS.D3Matrix
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    transform:null,
+
+    /**
+     * <p>Boolean value indicating whether the view is visible.</p>
+     * @type Boolean
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    visible:null,
+
+    /**
+     * <p>View's width, in platform-specific units.</p>
+     * @type Number|String
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    width:null,
+
+    /**
+     * <p>Z index position relative to other sibling views.</p>
+     * @type Number
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    zIndex:null,
+
+
+    /**
+     * <p>Adds a child to this view's hierarchy.</p>
+     * @param {Ti.UI.View} view <p>View to add to this view's hierarchy</p>
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    add:function(view) {
+    },
+
+    /**
+     * <p>Adds the specified callback as an event listener for the named event.</p>
+     * @param {String} name <p>Name of the event.</p>
+     * @param {Callback<Object>} callback <p>Callback function to invoke when the event is fired.</p>
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    addEventListener:function(name, callback) {
+    },
+
+    /**
+     * <p>Animates this view.</p>
+     * @param {Ti.UI.Animation|Dictionary<Ti.UI.Animation>} obj <p>Either a dictionary of animation properties or an 
+{@link Ti.UI.Animation} object.</p>
+     * @param {Callback<Object>} callback <p>Function to be invoked upon completion of the animation.</p>
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    animate:function(obj, callback) {
+    },
+
+    /**
+     * <p>Translates a point from this view's coordinate system to another 
+view's coordinate system.</p>
+     * @param {Point} point <p>A point in this view's coordinate system.<br />
+If this argument is missing an <code>x</code> or <code>y</code> property, or the properties can not 
+be converted into numbers, an exception will be raised.</p>
+     * @param {Ti.UI.View} destinationView <p>View that specifies the destination coordinate system to convert to.
+If this argument is not a view, an exception will be raised.</p>
+     * @returns Point
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    convertPointToView:function(point, destinationView) {
+    },
+
+    /**
+     * <p>Fires a synthesized event to any registered listeners.</p>
+     * @param {String} name <p>Name of the event.</p>
+     * @param {Dictionary} event <p>A dictionary of keys and values to add to the {@link Ti.Event} object sent to the listeners.</p>
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    fireEvent:function(name, event) {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.UI.MaskedImage.anchorPoint} property.</p>
+     * @returns Point
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    getAnchorPoint:function() {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.UI.MaskedImage.animatedCenterPoint} property.</p>
+     * @returns Point
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    getAnimatedCenterPoint:function() {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.UI.MaskedImage.backgroundColor} property.</p>
+     * @returns String
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    getBackgroundColor:function() {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.UI.MaskedImage.backgroundDisabledColor} property.</p>
+     * @returns String
+     * @since 0.8 (Android)
+     */
+    getBackgroundDisabledColor:function() {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.UI.MaskedImage.backgroundDisabledImage} property.</p>
+     * @returns String
+     * @since 0.8 (Android)
+     */
+    getBackgroundDisabledImage:function() {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.UI.MaskedImage.backgroundFocusedColor} property.</p>
+     * @returns String
+     * @since 0.8 (Android)
+     */
+    getBackgroundFocusedColor:function() {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.UI.MaskedImage.backgroundFocusedImage} property.</p>
+     * @returns String
+     * @since 0.8 (Android)
+     */
+    getBackgroundFocusedImage:function() {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.UI.MaskedImage.backgroundGradient} property.</p>
+     * @returns Gradient
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    getBackgroundGradient:function() {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.UI.MaskedImage.backgroundImage} property.</p>
+     * @returns String
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    getBackgroundImage:function() {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.UI.MaskedImage.backgroundLeftCap} property.</p>
+     * @returns Number
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    getBackgroundLeftCap:function() {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.UI.MaskedImage.backgroundRepeat} property.</p>
+     * @returns Boolean
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    getBackgroundRepeat:function() {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.UI.MaskedImage.backgroundSelectedColor} property.</p>
+     * @returns String
+     * @since 0.8 (Android), 1.8 (Mobile Web)
+     */
+    getBackgroundSelectedColor:function() {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.UI.MaskedImage.backgroundSelectedImage} property.</p>
+     * @returns String
+     * @since 0.8 (Android), 1.8 (Mobile Web)
+     */
+    getBackgroundSelectedImage:function() {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.UI.MaskedImage.backgroundTopCap} property.</p>
+     * @returns Number
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    getBackgroundTopCap:function() {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.UI.MaskedImage.borderColor} property.</p>
+     * @returns String
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    getBorderColor:function() {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.UI.MaskedImage.borderRadius} property.</p>
+     * @returns Number
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    getBorderRadius:function() {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.UI.MaskedImage.borderWidth} property.</p>
+     * @returns Number
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    getBorderWidth:function() {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.UI.MaskedImage.bottom} property.</p>
+     * @returns Number
+     * @returns String
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    getBottom:function() {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.UI.MaskedImage.center} property.</p>
+     * @returns Point
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    getCenter:function() {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.UI.MaskedImage.children} property.</p>
+     * @returns Array<Ti.UI.View>
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    getChildren:function() {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.UI.MaskedImage.focusable} property.</p>
+     * @returns Boolean
+     * @since 0.8 (Android)
+     */
+    getFocusable:function() {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.UI.MaskedImage.height} property.</p>
+     * @returns Number
+     * @returns String
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    getHeight:function() {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.UI.MaskedImage.image} property.</p>
+     * @returns String
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    getImage:function() {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.UI.MaskedImage.keepScreenOn} property.</p>
+     * @returns Boolean
+     * @since 0.8 (Android)
+     */
+    getKeepScreenOn:function() {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.UI.MaskedImage.layout} property.</p>
+     * @returns String
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    getLayout:function() {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.UI.MaskedImage.left} property.</p>
+     * @returns Number
+     * @returns String
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    getLeft:function() {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.UI.MaskedImage.mask} property.</p>
+     * @returns String
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    getMask:function() {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.UI.MaskedImage.mode} property.</p>
+     * @returns Number
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    getMode:function() {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.UI.MaskedImage.opacity} property.</p>
+     * @returns Number
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    getOpacity:function() {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.UI.MaskedImage.right} property.</p>
+     * @returns Number
+     * @returns String
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    getRight:function() {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.UI.MaskedImage.size} property.</p>
+     * @returns Object
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    getSize:function() {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.UI.MaskedImage.softKeyboardOnFocus} property.</p>
+     * @returns Number
+     * @since 0.8 (Android)
+     */
+    getSoftKeyboardOnFocus:function() {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.UI.MaskedImage.tint} property.</p>
+     * @returns String
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    getTint:function() {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.UI.MaskedImage.top} property.</p>
+     * @returns Number
+     * @returns String
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    getTop:function() {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.UI.MaskedImage.touchEnabled} property.</p>
+     * @returns Boolean
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    getTouchEnabled:function() {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.UI.MaskedImage.transform} property.</p>
+     * @returns Ti.UI.D2Matrix
+     * @returns Ti.UI.iOS.D3Matrix
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    getTransform:function() {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.UI.MaskedImage.visible} property.</p>
+     * @returns Boolean
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    getVisible:function() {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.UI.MaskedImage.width} property.</p>
+     * @returns Number
+     * @returns String
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    getWidth:function() {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.UI.MaskedImage.zIndex} property.</p>
+     * @returns Number
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    getZIndex:function() {
+    },
+
+    /**
+     * <p>Hides this view.</p>
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    hide:function() {
+    },
+
+    /**
+     * <p>Removes a child view from this view's hierarchy.</p>
+     * @param {Ti.UI.View} view <p>View to remove from this view's hierarchy.</p>
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    remove:function(view) {
+    },
+
+    /**
+     * <p>Removes the specified callback as an event listener for the named event.</p>
+     * @param {String} name <p>Name of the event.</p>
+     * @param {Callback<Object>} callback <p>Callback function to remove. Must be the same function passed to <code>addEventListener</code>.</p>
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    removeEventListener:function(name, callback) {
+    },
+
+    /**
+     * <p>Sets the value of the {@link Ti.UI.MaskedImage.anchorPoint} property.</p>
+     * @param {Point} anchorPoint <p>New value for the property.</p>
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    setAnchorPoint:function(anchorPoint) {
+    },
+
+    /**
+     * <p>Sets the value of the {@link Ti.UI.MaskedImage.backgroundColor} property.</p>
+     * @param {String} backgroundColor <p>New value for the property.</p>
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    setBackgroundColor:function(backgroundColor) {
+    },
+
+    /**
+     * <p>Sets the value of the {@link Ti.UI.MaskedImage.backgroundDisabledColor} property.</p>
+     * @param {String} backgroundDisabledColor <p>New value for the property.</p>
+     * @since 0.8 (Android)
+     */
+    setBackgroundDisabledColor:function(backgroundDisabledColor) {
+    },
+
+    /**
+     * <p>Sets the value of the {@link Ti.UI.MaskedImage.backgroundDisabledImage} property.</p>
+     * @param {String} backgroundDisabledImage <p>New value for the property.</p>
+     * @since 0.8 (Android)
+     */
+    setBackgroundDisabledImage:function(backgroundDisabledImage) {
+    },
+
+    /**
+     * <p>Sets the value of the {@link Ti.UI.MaskedImage.backgroundFocusedColor} property.</p>
+     * @param {String} backgroundFocusedColor <p>New value for the property.</p>
+     * @since 0.8 (Android)
+     */
+    setBackgroundFocusedColor:function(backgroundFocusedColor) {
+    },
+
+    /**
+     * <p>Sets the value of the {@link Ti.UI.MaskedImage.backgroundFocusedImage} property.</p>
+     * @param {String} backgroundFocusedImage <p>New value for the property.</p>
+     * @since 0.8 (Android)
+     */
+    setBackgroundFocusedImage:function(backgroundFocusedImage) {
+    },
+
+    /**
+     * <p>Sets the value of the {@link Ti.UI.MaskedImage.backgroundGradient} property.</p>
+     * @param {Gradient} backgroundGradient <p>New value for the property.</p>
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    setBackgroundGradient:function(backgroundGradient) {
+    },
+
+    /**
+     * <p>Sets the value of the {@link Ti.UI.MaskedImage.backgroundImage} property.</p>
+     * @param {String} backgroundImage <p>New value for the property.</p>
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    setBackgroundImage:function(backgroundImage) {
+    },
+
+    /**
+     * <p>Sets the value of the {@link Ti.UI.MaskedImage.backgroundLeftCap} property.</p>
+     * @param {Number} backgroundLeftCap <p>New value for the property.</p>
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    setBackgroundLeftCap:function(backgroundLeftCap) {
+    },
+
+    /**
+     * <p>Sets the value of the {@link Ti.UI.MaskedImage.backgroundRepeat} property.</p>
+     * @param {Boolean} backgroundRepeat <p>New value for the property.</p>
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    setBackgroundRepeat:function(backgroundRepeat) {
+    },
+
+    /**
+     * <p>Sets the value of the {@link Ti.UI.MaskedImage.backgroundSelectedColor} property.</p>
+     * @param {String} backgroundSelectedColor <p>New value for the property.</p>
+     * @since 0.8 (Android), 1.8 (Mobile Web)
+     */
+    setBackgroundSelectedColor:function(backgroundSelectedColor) {
+    },
+
+    /**
+     * <p>Sets the value of the {@link Ti.UI.MaskedImage.backgroundSelectedImage} property.</p>
+     * @param {String} backgroundSelectedImage <p>New value for the property.</p>
+     * @since 0.8 (Android), 1.8 (Mobile Web)
+     */
+    setBackgroundSelectedImage:function(backgroundSelectedImage) {
+    },
+
+    /**
+     * <p>Sets the value of the {@link Ti.UI.MaskedImage.backgroundTopCap} property.</p>
+     * @param {Number} backgroundTopCap <p>New value for the property.</p>
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    setBackgroundTopCap:function(backgroundTopCap) {
+    },
+
+    /**
+     * <p>Sets the value of the {@link Ti.UI.MaskedImage.borderColor} property.</p>
+     * @param {String} borderColor <p>New value for the property.</p>
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    setBorderColor:function(borderColor) {
+    },
+
+    /**
+     * <p>Sets the value of the {@link Ti.UI.MaskedImage.borderRadius} property.</p>
+     * @param {Number} borderRadius <p>New value for the property.</p>
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    setBorderRadius:function(borderRadius) {
+    },
+
+    /**
+     * <p>Sets the value of the {@link Ti.UI.MaskedImage.borderWidth} property.</p>
+     * @param {Number} borderWidth <p>New value for the property.</p>
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    setBorderWidth:function(borderWidth) {
+    },
+
+    /**
+     * <p>Sets the value of the {@link Ti.UI.MaskedImage.bottom} property.</p>
+     * @param {Number|String} bottom <p>New value for the property.</p>
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    setBottom:function(bottom) {
+    },
+
+    /**
+     * <p>Sets the value of the {@link Ti.UI.MaskedImage.center} property.</p>
+     * @param {Point} center <p>New value for the property.</p>
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    setCenter:function(center) {
+    },
+
+    /**
+     * <p>Sets the value of the {@link Ti.UI.MaskedImage.focusable} property.</p>
+     * @param {Boolean} focusable <p>New value for the property.</p>
+     * @since 0.8 (Android)
+     */
+    setFocusable:function(focusable) {
+    },
+
+    /**
+     * <p>Sets the value of the {@link Ti.UI.MaskedImage.height} property.</p>
+     * @param {Number|String} height <p>New value for the property.</p>
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    setHeight:function(height) {
+    },
+
+    /**
+     * <p>Sets the value of the {@link Ti.UI.MaskedImage.image} property.</p>
+     * @param {String} image <p>New value for the property.</p>
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    setImage:function(image) {
+    },
+
+    /**
+     * <p>Sets the value of the {@link Ti.UI.MaskedImage.keepScreenOn} property.</p>
+     * @param {Boolean} keepScreenOn <p>New value for the property.</p>
+     * @since 0.8 (Android)
+     */
+    setKeepScreenOn:function(keepScreenOn) {
+    },
+
+    /**
+     * <p>Sets the value of the {@link Ti.UI.MaskedImage.layout} property.</p>
+     * @param {String} layout <p>New value for the property.</p>
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    setLayout:function(layout) {
+    },
+
+    /**
+     * <p>Sets the value of the {@link Ti.UI.MaskedImage.left} property.</p>
+     * @param {Number|String} left <p>New value for the property.</p>
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    setLeft:function(left) {
+    },
+
+    /**
+     * <p>Sets the value of the {@link Ti.UI.MaskedImage.mask} property.</p>
+     * @param {String} mask <p>New value for the property.</p>
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    setMask:function(mask) {
+    },
+
+    /**
+     * <p>Sets the value of the {@link Ti.UI.MaskedImage.mode} property.</p>
+     * @param {Number} mode <p>New value for the property.</p>
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    setMode:function(mode) {
+    },
+
+    /**
+     * <p>Sets the value of the {@link Ti.UI.MaskedImage.opacity} property.</p>
+     * @param {Number} opacity <p>New value for the property.</p>
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    setOpacity:function(opacity) {
+    },
+
+    /**
+     * <p>Sets the value of the {@link Ti.UI.MaskedImage.right} property.</p>
+     * @param {Number|String} right <p>New value for the property.</p>
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    setRight:function(right) {
+    },
+
+    /**
+     * <p>Sets the value of the {@link Ti.UI.MaskedImage.softKeyboardOnFocus} property.</p>
+     * @param {Number} softKeyboardOnFocus <p>New value for the property.</p>
+     * @since 0.8 (Android)
+     */
+    setSoftKeyboardOnFocus:function(softKeyboardOnFocus) {
+    },
+
+    /**
+     * <p>Sets the value of the {@link Ti.UI.MaskedImage.tint} property.</p>
+     * @param {String} tint <p>New value for the property.</p>
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    setTint:function(tint) {
+    },
+
+    /**
+     * <p>Sets the value of the {@link Ti.UI.MaskedImage.top} property.</p>
+     * @param {Number|String} top <p>New value for the property.</p>
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    setTop:function(top) {
+    },
+
+    /**
+     * <p>Sets the value of the {@link Ti.UI.MaskedImage.touchEnabled} property.</p>
+     * @param {Boolean} touchEnabled <p>New value for the property.</p>
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    setTouchEnabled:function(touchEnabled) {
+    },
+
+    /**
+     * <p>Sets the value of the {@link Ti.UI.MaskedImage.transform} property.</p>
+     * @param {Ti.UI.D2Matrix|Ti.UI.iOS.D3Matrix} transform <p>New value for the property.</p>
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    setTransform:function(transform) {
+    },
+
+    /**
+     * <p>Sets the value of the {@link Ti.UI.MaskedImage.visible} property.</p>
+     * @param {Boolean} visible <p>New value for the property.</p>
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    setVisible:function(visible) {
+    },
+
+    /**
+     * <p>Sets the value of the {@link Ti.UI.MaskedImage.width} property.</p>
+     * @param {Number|String} width <p>New value for the property.</p>
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    setWidth:function(width) {
+    },
+
+    /**
+     * <p>Sets the value of the {@link Ti.UI.MaskedImage.zIndex} property.</p>
+     * @param {Number} zIndex <p>New value for the property.</p>
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    setZIndex:function(zIndex) {
+    },
+
+    /**
+     * <p>Makes this view visible.</p>
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    show:function() {
+    },
+
+    /**
+     * <p>Returns an image of the rendered view, as a Blob.</p>
+     * @param {Callback<Object>} f <p>Function to be invoked upon completion. If non-null, this method will be 
+performed asynchronously. If null, it will be performed immediately.</p>
+     * @returns Ti.Blob
+     * @since 0.8 (iPhone), 0.8 (iPad)
      */
     toImage:function(f) {
     }
@@ -29634,6 +31897,13 @@ Ti.UI.Notification.prototype = {
     backgroundLeftCap:null,
 
     /**
+     * <p>Toggle for whether or not to tile a background across a view.</p>
+     * @type Boolean
+     * @since 0.8 (Android)
+     */
+    backgroundRepeat:null,
+
+    /**
      * <p>Selected background color of the view.</p>
      * @type String
      * @since 0.8 (Android)
@@ -29688,6 +31958,13 @@ Ti.UI.Notification.prototype = {
      * @since 0.8 (Android)
      */
     center:null,
+
+    /**
+     * <p>Array of this view's child views.</p>
+     * @type Array<Ti.UI.View>
+     * @since 0.8 (Android)
+     */
+    children:null,
 
     /**
      * <p>Determines how long the notification stays on screen.</p>
@@ -29761,7 +32038,7 @@ One of: 'absolute', 'vertical', or 'horizontal'.</p>
     right:null,
 
     /**
-     * <p>Size of the view as a dictionary of width and height properties.</p>
+     * <p>Rendered size of the view as a dictionary of width and height properties.</p>
      * @type Object
      * @since 0.8 (Android)
      */
@@ -29969,6 +32246,14 @@ If this argument is not a view, an exception will be raised.</p>
     },
 
     /**
+     * <p>Gets the value of the {@link Ti.UI.Notification.backgroundRepeat} property.</p>
+     * @returns Boolean
+     * @since 0.8 (Android)
+     */
+    getBackgroundRepeat:function() {
+    },
+
+    /**
      * <p>Gets the value of the {@link Ti.UI.Notification.backgroundSelectedColor} property.</p>
      * @returns String
      * @since 0.8 (Android)
@@ -30031,6 +32316,14 @@ If this argument is not a view, an exception will be raised.</p>
      * @since 0.8 (Android)
      */
     getCenter:function() {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.UI.Notification.children} property.</p>
+     * @returns Array<Ti.UI.View>
+     * @since 0.8 (Android)
+     */
+    getChildren:function() {
     },
 
     /**
@@ -30304,6 +32597,14 @@ If this argument is not a view, an exception will be raised.</p>
     },
 
     /**
+     * <p>Sets the value of the {@link Ti.UI.Notification.backgroundRepeat} property.</p>
+     * @param {Boolean} backgroundRepeat <p>New value for the property.</p>
+     * @since 0.8 (Android)
+     */
+    setBackgroundRepeat:function(backgroundRepeat) {
+    },
+
+    /**
      * <p>Sets the value of the {@link Ti.UI.Notification.backgroundSelectedColor} property.</p>
      * @param {String} backgroundSelectedColor <p>New value for the property.</p>
      * @since 0.8 (Android)
@@ -30445,14 +32746,6 @@ If this argument is not a view, an exception will be raised.</p>
      * @since 0.8 (Android)
      */
     setRight:function(right) {
-    },
-
-    /**
-     * <p>Sets the value of the {@link Ti.UI.Notification.size} property.</p>
-     * @param {Object} size <p>New value for the property.</p>
-     * @since 0.8 (Android)
-     */
-    setSize:function(size) {
     },
 
     /**
@@ -30769,35 +33062,135 @@ Ti.UI.OptionDialog.prototype = {
 };
 
 /**
- * platforms: Android, iPhone, iPad, Mobile Web
- * @namespace <p>For Android, note the <code>useSpinner</code> property above.  By default, when you create a picker you will get Android's native picker control, which looks more like the classic "dropdown" widget.  If you'd prefer to use something that looks more like iOS's picker -- which looks like one or more spinning wheels --, you can set <code>useSpinner: true</code>.</p>
-<p>Titanium's Android picker control (both the native and the <code>useSpinner</code> variety) does not support/display views that are added to picker rows.  Only the <code>title</code> of the row will be displayed within the control.
-Titanium for Android does not support the DateTime or Count Down Timer picker type.</p>
+ * platforms: Android, iPhone, iPad
+ * @namespace <p>Use the {@link Ti.UI.createPicker} method to create a picker control.</p>
+<p>On Android, the <code>useSpinner</code> property must be enabled to support multiple columns.</p>
+<p>Adding views to picker rows is only supported on iOS.</p>
  * 
  * @example Basic Single Column Picker
- * <p>In this basic picker example, we create a one column picker with 4 rows. </p>
-<pre><code>var picker = Ti.UI.createPicker();
+ * <p>Create a one-column, platform-specific style, picker and automatically select a row.</p>
+<pre><code>Ti.UI.backgroundColor = 'white';
+var win = Ti.UI.createWindow({
+  exitOnClose: true,
+  layout: 'vertical'
+});
+
+var picker = Ti.UI.createPicker({
+  top:50
+});
+
 var data = [];
 data[0]=Ti.UI.createPickerRow({title:'Bananas'});
 data[1]=Ti.UI.createPickerRow({title:'Strawberries'});
 data[2]=Ti.UI.createPickerRow({title:'Mangos'});
 data[3]=Ti.UI.createPickerRow({title:'Grapes'});
+
 picker.add(data);
+picker.selectionIndicator = true;
+
+win.add(picker);
+win.open();
+
+// must be after picker has been displayed
+picker.setSelectedRow(0, 2, false); // select Mangos
 </code></pre>
  * 
- * @example Custom View for Row
- * <p>In this example, we use a custom label for each row in a column.</p>
-<pre><code>var picker = Ti.UI.createPicker();
-var row = Ti.UI.createPickerRow();
-var label = Ti.UI.createLabel({
-    text:text,
-    font:{fontSize:24,fontWeight:'bold'},
-    color:text,
-    width:'auto',
-    height:'auto'
+ * @example Multi-Column Picker
+ * <p>Create a two-column, platform-specific style, picker and automatically select a row in 
+each column.</p>
+<pre><code>Ti.UI.backgroundColor = 'white';
+var win = Ti.UI.createWindow({
+  exitOnClose: true,
+  layout: 'vertical'
 });
-row.add(label);
-picker.add(row);
+
+var picker = Ti.UI.createPicker({
+  top:50
+});
+picker.selectionIndicator = true;
+
+var fruit = [ 'Bananas', 'Strawberries', 'Mangos', 'Grapes' ];
+var color = [ 'red', 'green', 'blue', 'orange' ];
+
+var column1 = Ti.UI.createPickerColumn();
+
+for(var i=0, ilen=fruit.length; i&lt;ilen; i++){
+  var row = Ti.UI.createPickerRow({
+    title: fruit[i]
+  });
+  column1.addRow(row);
+}
+
+var column2 = Ti.UI.createPickerColumn();
+
+for(var i=0, ilen=color.length; i&lt;ilen; i++){
+  var row = Ti.UI.createPickerRow({ title: color[i] });
+  column2.addRow(row);
+}
+
+picker.add([column1,column2]);
+
+win.add(picker);
+
+win.open();
+
+// must be after picker has been displayed
+picker.setSelectedRow(0, 2, false); // select Mangos
+picker.setSelectedRow(1, 3, false); // select Orange
+</code></pre>
+ * 
+ * @example Date Picker
+ * <p>Create a date picker and handle the subsequent user action.</p>
+<pre><code>Ti.UI.backgroundColor = 'white';
+var win = Ti.UI.createWindow({
+  exitOnClose: true,
+  layout: 'vertical'
+});
+
+var picker = Ti.UI.createPicker({
+  type:Ti.UI.PICKER_TYPE_DATE,
+  minDate:new Date(2009,0,1),
+  maxDate:new Date(2014,11,31),
+  value:new Date(2014,3,12),
+  top:50
+});
+
+win.add(picker);
+win.open();
+
+picker.addEventListener('change',function(e){
+  Ti.API.info("User selected date: " + e.value.toLocaleString());
+});
+</code></pre>
+ * 
+ * @example Date Picker using showDatePickerDialog() (Android only)
+ * <p>Create a date picker that is automatically displayed as a modal dialog and handle the 
+subsequent user action.</p>
+<pre><code>Ti.UI.backgroundColor = 'white';
+var win = Ti.UI.createWindow({
+  exitOnClose: true,
+  layout: 'vertical'
+});
+
+var picker = Ti.UI.createPicker({
+  type:Ti.UI.PICKER_TYPE_DATE,
+  minDate:new Date(2009,0,1),
+  maxDate:new Date(2014,11,31),
+  value:new Date(2014,3,12)
+});
+
+win.open();
+
+picker.showDatePickerDialog({
+  value: new Date(2010,8,1),
+  callback: function(e) {
+    if (e.cancel) {
+      Ti.API.info('User canceled dialog');
+    } else {
+      Ti.API.info('User selected date: ' + e.value);
+    }
+  }
+});
 </code></pre>
  */
 Ti.UI.Picker = function() {
@@ -30805,77 +33198,89 @@ Ti.UI.Picker = function() {
 Ti.UI.Picker.prototype = {
 
     /**
-     * <p>array of column values</p>
+     * <p>Columns used for this picker, as an array of {@link Ti.UI.PickerColumn} objects.</p>
      * @type Array<Object>
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
      */
     columns:null,
 
     /**
-     * <p>the duration value in milliseconds for count down timer pickers. (Note that Titanium's Android implementation does not support the countdown timer.)</p>
+     * <p>Duration in milliseconds used for a Countdown Timer picker.</p>
      * @type Number
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * @since 0.8 (iPhone), 0.8 (iPad)
      */
     countDownDuration:null,
 
     /**
-     * <p>(applicable only to the {@link Ti.UI.PICKER_TYPE_TIME} picker.)  If true, a 24-hour cloc will be used, with hours 0 through 23.  If false, a 12-hour clock will be used, with hours 1 through 12 and am/pm controls.  For reasons of backward compatibility, the default value depends on the type of time picker being used.  For the native time picker (when "useSpinner" is either un-set or false), the default is false.  For the spinner-style time picker, the default is true.</p>
+     * <p>Determines whether the Time pickers display in 24-hour or 12-hour clock format.</p>
      * @type Boolean
      * @since 0.8 (Android)
      */
     format24:null,
 
     /**
-     * <p>the locale used for displaying Date/Time pickers values</p>
+     * <p>Locale used when displaying Date and Time picker values.</p>
      * @type String
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * @since 0.8 (Android)
      */
     locale:null,
 
     /**
-     * <p>the minimum Date/Time for value for date pickers</p>
+     * <p>Maximum date displayed when a Date picker is in use.</p>
      * @type Date
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
+     */
+    maxDate:null,
+
+    /**
+     * <p>Minimum date displayed when a Date picker is in use.</p>
+     * @type Date
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
      */
     minDate:null,
 
     /**
-     * <p>property to set the interval displayed by the minutes wheel (for example, 15 minutes). The interval value must be evenly divided into 60; if it is not, the default value is used. The default and minimum values are 1; the maximum value is 30.  (Not currently supported on Android.)</p>
+     * <p>Interval in minutes displayed when one of the Time types of pickers is in use.</p>
      * @type Number
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * @since 0.8 (iPhone), 0.8 (iPad)
      */
     minuteInterval:null,
 
     /**
-     * <p>for basic picker, boolean value to indicate whether the visual selection style is shown. On the iPhone, this is a blue selected bar.</p>
+     * <p>Determines whether the visual selection style is shown. On iPhone, this is a blue bar.</p>
      * @type Boolean
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
      */
     selectionIndicator:null,
 
     /**
-     * <p>the type constant for the picker. One of {@link Ti.UI.PICKER_TYPE_PLAIN} (default), {@link Ti.UI.PICKER_TYPE_DATE_AND_TIME}, {@link Ti.UI.PICKER_TYPE_DATE}, {@link Ti.UI.PICKER_TYPE_TIME} or {@link Ti.UI.PICKER_TYPE_COUNT_DOWN_TIMER}. (Note that Titanium's Android implementation does not support the countdown timer or date+time varieties.)</p>
+     * <p>Determines the type of picker displayed. One of {@link Ti.UI.PICKER_TYPE_PLAIN}, 
+{@link Ti.UI.PICKER_TYPE_DATE}, {@link Ti.UI.PICKER_TYPE_TIME}, 
+{@link Ti.UI.PICKER_TYPE_DATE_AND_TIME} (iPhone, iPad-only) 
+and {@link Ti.UI.PICKER_TYPE_COUNT_DOWN_TIMER} (iPhone, iPad-only.)</p>
      * @type Number
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
      */
     type:null,
 
     /**
-     * <p>An indicator that you wish to use a non-native Android control that looks and behaves more like the iOS picker in the sense that the user selects values by spinning a wheel.  (The native Android spinner is more like a conventional "dropdown".)  Note that this option works both plain pickers, date pickers and time pickers.  Set it preferably immediately when creating the picker, i.e., <code>Ti.UI.createPicker({useSpinner:true});</code>, but definitely before <code>.add()</code>ing the picker to its parent.</p>
+     * <p>Enables the non-native Android control, with a spinning wheel that looks 
+and behaves like the iOS picker, rather than the default native "dropdown" style.</p>
      * @type Boolean
      * @since 0.8 (Android)
      */
     useSpinner:null,
 
     /**
-     * <p>the Date/Time value for date pickers</p>
+     * <p>Date/Time value. Only applicable to Date pickers.</p>
      * @type Date
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
      */
     value:null,
 
     /**
-     * <p>This is relevant only if you set <code>useSpinner</code> to <code>true</code>, and it is relevant only for the plain picker (not date/time).  By default, the spinner-style Android picker will show 5 rows: the one in the middle which is selected, and then 2 above and below.  You can set this to allow more (use an odd number to be sure the selected row is in the middle.)</p>
+     * <p>Number of visible rows to display. This is only applicable to a plain picker and when the 
+<code>useSpinner</code> is <code>true</code>.</p>
      * @type Number
      * @since 0.8 (Android)
      */
@@ -30883,9 +33288,9 @@ Ti.UI.Picker.prototype = {
 
 
     /**
-     * <p>add an array of rows, a single row or a column to the picker</p>
-     * @param {Array<Ti.UI.PickerRow>|Ti.UI.PickerColumn|Ti.UI.PickerRow} data <p>add an array of rows, a single row or a column to the picker</p>
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * <p>Adds rows or columns to the picker.</p>
+     * @param {Array<Ti.UI.PickerRow>|Ti.UI.PickerRow|Array<Ti.UI.PickerColumn>|Ti.UI.PickerColumn} data <p>An array of rows, a single row, an array of columns or a single column.</p>
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
      */
     add:function(data) {
     },
@@ -30894,7 +33299,7 @@ Ti.UI.Picker.prototype = {
      * <p>Adds the specified callback as an event listener for the named event.</p>
      * @param {String} name <p>Name of the event.</p>
      * @param {Callback<Object>} callback <p>Callback function to invoke when the event is fired.</p>
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
      */
     addEventListener:function(name, callback) {
     },
@@ -30903,7 +33308,7 @@ Ti.UI.Picker.prototype = {
      * <p>Fires a synthesized event to any registered listeners.</p>
      * @param {String} name <p>Name of the event.</p>
      * @param {Dictionary} event <p>A dictionary of keys and values to add to the {@link Ti.Event} object sent to the listeners.</p>
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
      */
     fireEvent:function(name, event) {
     },
@@ -30911,7 +33316,7 @@ Ti.UI.Picker.prototype = {
     /**
      * <p>Gets the value of the {@link Ti.UI.Picker.columns} property.</p>
      * @returns Array<Object>
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
      */
     getColumns:function() {
     },
@@ -30919,7 +33324,7 @@ Ti.UI.Picker.prototype = {
     /**
      * <p>Gets the value of the {@link Ti.UI.Picker.countDownDuration} property.</p>
      * @returns Number
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * @since 0.8 (iPhone), 0.8 (iPad)
      */
     getCountDownDuration:function() {
     },
@@ -30935,15 +33340,23 @@ Ti.UI.Picker.prototype = {
     /**
      * <p>Gets the value of the {@link Ti.UI.Picker.locale} property.</p>
      * @returns String
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * @since 0.8 (Android)
      */
     getLocale:function() {
     },
 
     /**
+     * <p>Gets the value of the {@link Ti.UI.Picker.maxDate} property.</p>
+     * @returns Date
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
+     */
+    getMaxDate:function() {
+    },
+
+    /**
      * <p>Gets the value of the {@link Ti.UI.Picker.minDate} property.</p>
      * @returns Date
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
      */
     getMinDate:function() {
     },
@@ -30951,16 +33364,16 @@ Ti.UI.Picker.prototype = {
     /**
      * <p>Gets the value of the {@link Ti.UI.Picker.minuteInterval} property.</p>
      * @returns Number
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * @since 0.8 (iPhone), 0.8 (iPad)
      */
     getMinuteInterval:function() {
     },
 
     /**
-     * <p>get the selected row object for column</p>
-     * @param {Number} index <p>for the column index, return the row object or nil if not found</p>
-     * @returns Object
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * <p>Gets the selected row for a column, or <code>null</code> if none exists.</p>
+     * @param {Number} index <p>A column index.</p>
+     * @returns Ti.UI.PickerRow
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
      */
     getSelectedRow:function(index) {
     },
@@ -30968,7 +33381,7 @@ Ti.UI.Picker.prototype = {
     /**
      * <p>Gets the value of the {@link Ti.UI.Picker.selectionIndicator} property.</p>
      * @returns Boolean
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
      */
     getSelectionIndicator:function() {
     },
@@ -30976,7 +33389,7 @@ Ti.UI.Picker.prototype = {
     /**
      * <p>Gets the value of the {@link Ti.UI.Picker.type} property.</p>
      * @returns Number
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
      */
     getType:function() {
     },
@@ -30992,7 +33405,7 @@ Ti.UI.Picker.prototype = {
     /**
      * <p>Gets the value of the {@link Ti.UI.Picker.value} property.</p>
      * @returns Date
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
      */
     getValue:function() {
     },
@@ -31006,9 +33419,9 @@ Ti.UI.Picker.prototype = {
     },
 
     /**
-     * <p>causes the picker to reload the values from the new column.</p>
-     * @param {Object} column <p>new column to load</p>
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
+     * <p>Repopulates values for a column.</p>
+     * @param {Ti.UI.PickerColumn} column <p>Column to repopulate.</p>
+     * @since 0.8 (iPhone), 0.8 (iPad)
      */
     reloadColumn:function(column) {
     },
@@ -31017,7 +33430,7 @@ Ti.UI.Picker.prototype = {
      * <p>Removes the specified callback as an event listener for the named event.</p>
      * @param {String} name <p>Name of the event.</p>
      * @param {Callback<Object>} callback <p>Callback function to remove. Must be the same function passed to <code>addEventListener</code>.</p>
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
      */
     removeEventListener:function(name, callback) {
     },
@@ -31025,7 +33438,7 @@ Ti.UI.Picker.prototype = {
     /**
      * <p>Sets the value of the {@link Ti.UI.Picker.columns} property.</p>
      * @param {Array<Object>} columns <p>New value for the property.</p>
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
      */
     setColumns:function(columns) {
     },
@@ -31033,7 +33446,7 @@ Ti.UI.Picker.prototype = {
     /**
      * <p>Sets the value of the {@link Ti.UI.Picker.countDownDuration} property.</p>
      * @param {Number} countDownDuration <p>New value for the property.</p>
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * @since 0.8 (iPhone), 0.8 (iPad)
      */
     setCountDownDuration:function(countDownDuration) {
     },
@@ -31049,15 +33462,23 @@ Ti.UI.Picker.prototype = {
     /**
      * <p>Sets the value of the {@link Ti.UI.Picker.locale} property.</p>
      * @param {String} locale <p>New value for the property.</p>
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * @since 0.8 (Android)
      */
     setLocale:function(locale) {
     },
 
     /**
+     * <p>Sets the value of the {@link Ti.UI.Picker.maxDate} property.</p>
+     * @param {Date} maxDate <p>New value for the property.</p>
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
+     */
+    setMaxDate:function(maxDate) {
+    },
+
+    /**
      * <p>Sets the value of the {@link Ti.UI.Picker.minDate} property.</p>
      * @param {Date} minDate <p>New value for the property.</p>
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
      */
     setMinDate:function(minDate) {
     },
@@ -31065,17 +33486,18 @@ Ti.UI.Picker.prototype = {
     /**
      * <p>Sets the value of the {@link Ti.UI.Picker.minuteInterval} property.</p>
      * @param {Number} minuteInterval <p>New value for the property.</p>
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * @since 0.8 (iPhone), 0.8 (iPad)
      */
     setMinuteInterval:function(minuteInterval) {
     },
 
     /**
-     * <p>set the column's row to the selected state</p>
-     * @param {Number} column <p>the column index</p>
-     * @param {Number} row <p>the row index</p>
-     * @param {Boolean} animated <p>boolean to indicate if the selection should be animated (default) (optional)</p>
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * <p>Selects a column's row.</p>
+     * @param {Number} column <p>A column index.</p>
+     * @param {Number} row <p>A row index.</p>
+     * @param {Boolean} animated <p>Determines whether the selection should be animated. On iOS, only effective if the 
+picker is already rendered. (iPhone, iPad-only)</p>
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
      */
     setSelectedRow:function(column, row, animated) {
     },
@@ -31083,7 +33505,7 @@ Ti.UI.Picker.prototype = {
     /**
      * <p>Sets the value of the {@link Ti.UI.Picker.selectionIndicator} property.</p>
      * @param {Boolean} selectionIndicator <p>New value for the property.</p>
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
      */
     setSelectionIndicator:function(selectionIndicator) {
     },
@@ -31091,7 +33513,7 @@ Ti.UI.Picker.prototype = {
     /**
      * <p>Sets the value of the {@link Ti.UI.Picker.type} property.</p>
      * @param {Number} type <p>New value for the property.</p>
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
      */
     setType:function(type) {
     },
@@ -31105,11 +33527,13 @@ Ti.UI.Picker.prototype = {
     },
 
     /**
-     * <p>Sets the value of the {@link Ti.UI.Picker.value} property.</p>
-     * @param {Date} value <p>New value for the property.</p>
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * <p>Sets the Date/Time value property. Only applicable to Date pickers.</p>
+     * @param {Object} date <p>A Javascript <code>Date</code> object.</p>
+     * @param {Boolean} suppressEvent <p>Determines whether a <code>change</code> event is fired.</p>
+     * @returns Ti.UI.PickerRow
+     * @since 0.8 (iPhone), 0.8 (iPad)
      */
-    setValue:function(value) {
+    setValue:function(date, suppressEvent) {
     },
 
     /**
@@ -31118,11 +33542,32 @@ Ti.UI.Picker.prototype = {
      * @since 0.8 (Android)
      */
     setVisibleItems:function(visibleItems) {
+    },
+
+    /**
+     * <p>Shows Date picker as modal dialog.</p>
+     * @param {Object} dictObj <p>Dictionary object with a subset of <code>Ti.UI.Picker</code> properties 
+and a callback defined. Acceptable object properties are 
+<code>callback</code>, <code>format24</code>, <code>okButtonTitle</code>, <code>title</code> and <code>value</code>.</p>
+     * @since 0.8 (Android)
+     */
+    showDatePickerDialog:function(dictObj) {
+    },
+
+    /**
+     * <p>Shows Time picker as modal dialog.</p>
+     * @param {Object} dictObj <p>Dictionary object with a subset of <code>Ti.UI.Picker</code> properties 
+and a callback defined. Acceptable object properties are 
+<code>callback</code>, <code>format24</code>, <code>okButtonTitle</code>, <code>title</code> and <code>value</code>.</p>
+     * @since 0.8 (Android)
+     */
+    showTimePickerDialog:function(dictObj) {
     }
 };
 
 /**
  * platforms: Android, iPhone, iPad
+ * @namespace <p>Use the {@link Ti.UI.createPickerRow} method to create a picker row control.</p>
  */
 Ti.UI.PickerColumn = function() {
 };
@@ -31199,6 +33644,13 @@ Ti.UI.PickerColumn.prototype = {
     backgroundLeftCap:null,
 
     /**
+     * <p>Toggle for whether or not to tile a background across a view.</p>
+     * @type Boolean
+     * @since 0.9 (iPhone), 0.9 (iPad)
+     */
+    backgroundRepeat:null,
+
+    /**
      * <p>Selected background color of the view.</p>
      * @type String
      * @since 0.9 (Android), 1.8 (Mobile Web)
@@ -31255,6 +33707,13 @@ Ti.UI.PickerColumn.prototype = {
     center:null,
 
     /**
+     * <p>Array of this view's child views.</p>
+     * @type Array<Ti.UI.View>
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
+     */
+    children:null,
+
+    /**
      * <p>Whether view should be focusable while navigating with the trackball.</p>
      * @type Boolean
      * @since 0.9 (Android)
@@ -31305,21 +33764,22 @@ One of: 'absolute', 'vertical', or 'horizontal'.</p>
     right:null,
 
     /**
-     * <p>number of rows in the column</p>
+     * <p>Number of rows in this column.</p>
      * @type Number
      * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     rowCount:null,
 
     /**
-     * <p>an array of rows</p>
-     * @type Array<Object>
+     * <p>Array of rows. While this property is currently writable on Android, changing its 
+value is strongly discouraged.</p>
+     * @type Array<Ti.UI.PickerRow>
      * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     rows:null,
 
     /**
-     * <p>Size of the view as a dictionary of width and height properties.</p>
+     * <p>Rendered size of the view as a dictionary of width and height properties.</p>
      * @type Object
      * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
@@ -31393,8 +33853,8 @@ One of: 'absolute', 'vertical', or 'horizontal'.</p>
     },
 
     /**
-     * <p>add a row to the column.</p>
-     * @param {Ti.UI.PickerRow} row <p>The row to add.</p>
+     * <p>Adds a row to this column.</p>
+     * @param {Ti.UI.PickerRow} row <p>A row to add.</p>
      * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     addRow:function(row) {
@@ -31514,6 +33974,14 @@ If this argument is not a view, an exception will be raised.</p>
     },
 
     /**
+     * <p>Gets the value of the {@link Ti.UI.PickerColumn.backgroundRepeat} property.</p>
+     * @returns Boolean
+     * @since 0.9 (iPhone), 0.9 (iPad)
+     */
+    getBackgroundRepeat:function() {
+    },
+
+    /**
      * <p>Gets the value of the {@link Ti.UI.PickerColumn.backgroundSelectedColor} property.</p>
      * @returns String
      * @since 0.9 (Android), 1.8 (Mobile Web)
@@ -31576,6 +34044,14 @@ If this argument is not a view, an exception will be raised.</p>
      * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     getCenter:function() {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.UI.PickerColumn.children} property.</p>
+     * @returns Array<Ti.UI.View>
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
+     */
+    getChildren:function() {
     },
 
     /**
@@ -31647,7 +34123,7 @@ If this argument is not a view, an exception will be raised.</p>
 
     /**
      * <p>Gets the value of the {@link Ti.UI.PickerColumn.rows} property.</p>
-     * @returns Array<Object>
+     * @returns Array<Ti.UI.PickerRow>
      * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     getRows:function() {
@@ -31745,8 +34221,8 @@ If this argument is not a view, an exception will be raised.</p>
     },
 
     /**
-     * <p>remove a row from the column.</p>
-     * @param {Ti.UI.PickerRow} row <p>The row to remove.</p>
+     * <p>Removes a row from this column.</p>
+     * @param {Ti.UI.PickerRow} row <p>A row to remove.</p>
      * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     removeRow:function(row) {
@@ -31822,6 +34298,14 @@ If this argument is not a view, an exception will be raised.</p>
      * @since 0.9 (iPhone), 0.9 (iPad)
      */
     setBackgroundLeftCap:function(backgroundLeftCap) {
+    },
+
+    /**
+     * <p>Sets the value of the {@link Ti.UI.PickerColumn.backgroundRepeat} property.</p>
+     * @param {Boolean} backgroundRepeat <p>New value for the property.</p>
+     * @since 0.9 (iPhone), 0.9 (iPad)
+     */
+    setBackgroundRepeat:function(backgroundRepeat) {
     },
 
     /**
@@ -31945,22 +34429,6 @@ If this argument is not a view, an exception will be raised.</p>
     },
 
     /**
-     * <p>Sets the value of the {@link Ti.UI.PickerColumn.rows} property.</p>
-     * @param {Array<Object>} rows <p>New value for the property.</p>
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
-     */
-    setRows:function(rows) {
-    },
-
-    /**
-     * <p>Sets the value of the {@link Ti.UI.PickerColumn.size} property.</p>
-     * @param {Object} size <p>New value for the property.</p>
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
-     */
-    setSize:function(size) {
-    },
-
-    /**
      * <p>Sets the value of the {@link Ti.UI.PickerColumn.softKeyboardOnFocus} property.</p>
      * @param {Number} softKeyboardOnFocus <p>New value for the property.</p>
      * @since 0.9 (Android)
@@ -32035,22 +34503,67 @@ performed asynchronously. If null, it will be performed immediately.</p>
 };
 
 /**
- * platforms: Android, iPhone, iPad, Mobile Web
- * @namespace <p>Use the {@link Ti.UI.createPickerRow} method to create a picker row.</p>
+ * platforms: Android, iPhone, iPad
+ * @namespace <p>Use the {@link Ti.UI.createPickerRow} method to create a picker row control.</p>
+<p>Views added to picker rows is only supported on iOS.</p>
  * 
  * @example Custom Views for a Picker Row
  * <p>Since the row object is itself a view, you can add views and widgets to it to customize the 
 the row's display. In the example below, we create a custom label for the row.</p>
-<pre><code>var row = Ti.UI.createPickerRow();
-var label = Ti.UI.createLabel({
-    text:text,
-    font:{fontSize:24,fontWeight:'bold'},
-    color:text,
-    width:'auto',
-    height:'auto'
+ * 
+ * @example Custom View for Row (iOS only)
+ * <p>Create a two-column picker, with the first column containing a child view, and automatically 
+select a row in each column.</p>
+<pre><code>Ti.UI.backgroundColor = 'white';
+var win = Ti.UI.createWindow({
+  exitOnClose: true,
+  layout: 'vertical'
 });
-row.add(label);
-picker.add(row);
+
+var fruit = [ 'Bananas', 'Strawberries', 'Mangos', 'Grapes' ];
+var color = [ 'red', 'green', 'blue', 'orange' ];
+
+var column1 = Ti.UI.createPickerColumn();
+
+for(var i=0, ilen=fruit.length; i&lt;ilen; i++){
+  var row = Ti.UI.createPickerRow();
+
+  var label = Ti.UI.createLabel({
+    color:'red',
+    font:{fontSize:20,fontWeight:'bold'},
+    text: fruit[i],
+    textAlign:'left',
+    height:'auto',
+    width:'126'
+  });
+
+  row.add(label);
+  column1.addRow(row);
+}
+
+var column2 = Ti.UI.createPickerColumn();
+
+for(var i=0, ilen=color.length; i&lt;ilen; i++){
+  var row = Ti.UI.createPickerRow({
+    title: color[i]
+  });
+  column2.addRow(row);
+}
+
+var picker = Ti.UI.createPicker({
+  top:50,
+  columns: [column1, column2],
+  visibleItems: 3,
+  selectionIndicator: true
+});
+
+win.add(picker);
+
+win.open();
+
+// must be after picker has been displayed
+picker.setSelectedRow(0, 2, false); // select Mangos
+picker.setSelectedRow(1, 3, false); // select Orange
 </code></pre>
  */
 Ti.UI.PickerRow = function() {
@@ -32074,7 +34587,7 @@ Ti.UI.PickerRow.prototype = {
     /**
      * <p>Background color of the view.</p>
      * @type String
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     backgroundColor:null,
 
@@ -32116,7 +34629,7 @@ Ti.UI.PickerRow.prototype = {
     /**
      * <p>Background image for the view, specified as a local file path or URL.</p>
      * @type String
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     backgroundImage:null,
 
@@ -32126,6 +34639,13 @@ Ti.UI.PickerRow.prototype = {
      * @since 0.9 (iPhone), 0.9 (iPad)
      */
     backgroundLeftCap:null,
+
+    /**
+     * <p>Toggle for whether or not to tile a background across a view.</p>
+     * @type Boolean
+     * @since 0.9 (iPhone), 0.9 (iPad)
+     */
+    backgroundRepeat:null,
 
     /**
      * <p>Selected background color of the view.</p>
@@ -32151,37 +34671,44 @@ Ti.UI.PickerRow.prototype = {
     /**
      * <p>Border color of the view.</p>
      * @type String
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     borderColor:null,
 
     /**
      * <p>Border radius of the view.</p>
      * @type Number
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     borderRadius:null,
 
     /**
      * <p>Border width of the view.</p>
      * @type Number
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     borderWidth:null,
 
     /**
      * <p>View's bottom position, in platform-specific units.</p>
      * @type Number|String
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     bottom:null,
 
     /**
      * <p>View's center position, in the parent view's coordinates.</p>
      * @type Point
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     center:null,
+
+    /**
+     * <p>Array of this view's child views.</p>
+     * @type Array<Ti.UI.View>
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
+     */
+    children:null,
 
     /**
      * <p>Whether view should be focusable while navigating with the trackball.</p>
@@ -32193,14 +34720,14 @@ Ti.UI.PickerRow.prototype = {
     /**
      * <p>Font size for displaying item text. Ignored when using a custom view.</p>
      * @type Number
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
+     * @since 0.9 (iPhone), 0.9 (iPad)
      */
     fontSize:null,
 
     /**
      * <p>View height, in platform-specific units.</p>
      * @type Number|String
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     height:null,
 
@@ -32215,42 +34742,35 @@ Ti.UI.PickerRow.prototype = {
      * <p>Specifies how the view positions its children. 
 One of: 'absolute', 'vertical', or 'horizontal'.</p>
      * @type String
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     layout:null,
 
     /**
      * <p>View's left position, in platform-specific units.</p>
      * @type Number|String
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     left:null,
 
     /**
      * <p>Opacity of this view, from 0.0 (transparent) to 1.0 (opaque).</p>
      * @type Number
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     opacity:null,
 
     /**
      * <p>View's right position, in platform-specific units.</p>
      * @type Number|String
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     right:null,
 
     /**
-     * <p>When set to <code>true</code> in the <code>createPickerRow</code> method, sets the row to selected on initial display.</p>
-     * @type Boolean
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
-     */
-    selected:null,
-
-    /**
-     * <p>Size of the view as a dictionary of width and height properties.</p>
+     * <p>Rendered size of the view as a dictionary of width and height properties.</p>
      * @type Object
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     size:null,
 
@@ -32264,21 +34784,21 @@ One of: 'absolute', 'vertical', or 'horizontal'.</p>
     /**
      * <p>Item text.</p>
      * @type String
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     title:null,
 
     /**
      * <p>The view's top position.</p>
      * @type Number|String
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     top:null,
 
     /**
      * <p>Whether view should receive touch events.</p>
      * @type Boolean
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     touchEnabled:null,
 
@@ -32292,29 +34812,29 @@ One of: 'absolute', 'vertical', or 'horizontal'.</p>
     /**
      * <p>Boolean value indicating whether the view is visible.</p>
      * @type Boolean
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     visible:null,
 
     /**
      * <p>View's width, in platform-specific units.</p>
      * @type Number|String
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     width:null,
 
     /**
      * <p>Z index position relative to other sibling views.</p>
      * @type Number
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     zIndex:null,
 
 
     /**
-     * <p>Adds a child to this view's hierarchy.</p>
-     * @param {Ti.UI.View} view <p>View to add to this view's hierarchy</p>
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
+     * <p>Adds a child view to this picker row, to provide a custom row.</p>
+     * @param {Object} view <p>A view object.</p>
+     * @since 0.9 (iPhone), 0.9 (iPad)
      */
     add:function(view) {
     },
@@ -32323,7 +34843,7 @@ One of: 'absolute', 'vertical', or 'horizontal'.</p>
      * <p>Adds the specified callback as an event listener for the named event.</p>
      * @param {String} name <p>Name of the event.</p>
      * @param {Callback<Object>} callback <p>Callback function to invoke when the event is fired.</p>
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     addEventListener:function(name, callback) {
     },
@@ -32333,7 +34853,7 @@ One of: 'absolute', 'vertical', or 'horizontal'.</p>
      * @param {Ti.UI.Animation|Dictionary<Ti.UI.Animation>} obj <p>Either a dictionary of animation properties or an 
 {@link Ti.UI.Animation} object.</p>
      * @param {Callback<Object>} callback <p>Function to be invoked upon completion of the animation.</p>
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     animate:function(obj, callback) {
     },
@@ -32356,7 +34876,7 @@ If this argument is not a view, an exception will be raised.</p>
      * <p>Fires a synthesized event to any registered listeners.</p>
      * @param {String} name <p>Name of the event.</p>
      * @param {Dictionary} event <p>A dictionary of keys and values to add to the {@link Ti.Event} object sent to the listeners.</p>
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     fireEvent:function(name, event) {
     },
@@ -32380,7 +34900,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Gets the value of the {@link Ti.UI.PickerRow.backgroundColor} property.</p>
      * @returns String
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     getBackgroundColor:function() {
     },
@@ -32428,7 +34948,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Gets the value of the {@link Ti.UI.PickerRow.backgroundImage} property.</p>
      * @returns String
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     getBackgroundImage:function() {
     },
@@ -32439,6 +34959,14 @@ If this argument is not a view, an exception will be raised.</p>
      * @since 0.9 (iPhone), 0.9 (iPad)
      */
     getBackgroundLeftCap:function() {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.UI.PickerRow.backgroundRepeat} property.</p>
+     * @returns Boolean
+     * @since 0.9 (iPhone), 0.9 (iPad)
+     */
+    getBackgroundRepeat:function() {
     },
 
     /**
@@ -32468,7 +34996,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Gets the value of the {@link Ti.UI.PickerRow.borderColor} property.</p>
      * @returns String
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     getBorderColor:function() {
     },
@@ -32476,7 +35004,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Gets the value of the {@link Ti.UI.PickerRow.borderRadius} property.</p>
      * @returns Number
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     getBorderRadius:function() {
     },
@@ -32484,7 +35012,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Gets the value of the {@link Ti.UI.PickerRow.borderWidth} property.</p>
      * @returns Number
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     getBorderWidth:function() {
     },
@@ -32493,7 +35021,7 @@ If this argument is not a view, an exception will be raised.</p>
      * <p>Gets the value of the {@link Ti.UI.PickerRow.bottom} property.</p>
      * @returns Number
      * @returns String
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     getBottom:function() {
     },
@@ -32501,9 +35029,17 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Gets the value of the {@link Ti.UI.PickerRow.center} property.</p>
      * @returns Point
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     getCenter:function() {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.UI.PickerRow.children} property.</p>
+     * @returns Array<Ti.UI.View>
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
+     */
+    getChildren:function() {
     },
 
     /**
@@ -32517,7 +35053,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Gets the value of the {@link Ti.UI.PickerRow.fontSize} property.</p>
      * @returns Number
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
+     * @since 0.9 (iPhone), 0.9 (iPad)
      */
     getFontSize:function() {
     },
@@ -32526,7 +35062,7 @@ If this argument is not a view, an exception will be raised.</p>
      * <p>Gets the value of the {@link Ti.UI.PickerRow.height} property.</p>
      * @returns Number
      * @returns String
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     getHeight:function() {
     },
@@ -32542,7 +35078,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Gets the value of the {@link Ti.UI.PickerRow.layout} property.</p>
      * @returns String
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     getLayout:function() {
     },
@@ -32551,7 +35087,7 @@ If this argument is not a view, an exception will be raised.</p>
      * <p>Gets the value of the {@link Ti.UI.PickerRow.left} property.</p>
      * @returns Number
      * @returns String
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     getLeft:function() {
     },
@@ -32559,7 +35095,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Gets the value of the {@link Ti.UI.PickerRow.opacity} property.</p>
      * @returns Number
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     getOpacity:function() {
     },
@@ -32568,23 +35104,15 @@ If this argument is not a view, an exception will be raised.</p>
      * <p>Gets the value of the {@link Ti.UI.PickerRow.right} property.</p>
      * @returns Number
      * @returns String
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     getRight:function() {
     },
 
     /**
-     * <p>Gets the value of the {@link Ti.UI.PickerRow.selected} property.</p>
-     * @returns Boolean
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
-     */
-    getSelected:function() {
-    },
-
-    /**
      * <p>Gets the value of the {@link Ti.UI.PickerRow.size} property.</p>
      * @returns Object
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     getSize:function() {
     },
@@ -32600,7 +35128,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Gets the value of the {@link Ti.UI.PickerRow.title} property.</p>
      * @returns String
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     getTitle:function() {
     },
@@ -32609,7 +35137,7 @@ If this argument is not a view, an exception will be raised.</p>
      * <p>Gets the value of the {@link Ti.UI.PickerRow.top} property.</p>
      * @returns Number
      * @returns String
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     getTop:function() {
     },
@@ -32617,7 +35145,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Gets the value of the {@link Ti.UI.PickerRow.touchEnabled} property.</p>
      * @returns Boolean
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     getTouchEnabled:function() {
     },
@@ -32634,7 +35162,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Gets the value of the {@link Ti.UI.PickerRow.visible} property.</p>
      * @returns Boolean
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     getVisible:function() {
     },
@@ -32643,7 +35171,7 @@ If this argument is not a view, an exception will be raised.</p>
      * <p>Gets the value of the {@link Ti.UI.PickerRow.width} property.</p>
      * @returns Number
      * @returns String
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     getWidth:function() {
     },
@@ -32651,14 +35179,14 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Gets the value of the {@link Ti.UI.PickerRow.zIndex} property.</p>
      * @returns Number
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     getZIndex:function() {
     },
 
     /**
      * <p>Hides this view.</p>
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     hide:function() {
     },
@@ -32666,7 +35194,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Removes a child view from this view's hierarchy.</p>
      * @param {Ti.UI.View} view <p>View to remove from this view's hierarchy.</p>
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     remove:function(view) {
     },
@@ -32675,7 +35203,7 @@ If this argument is not a view, an exception will be raised.</p>
      * <p>Removes the specified callback as an event listener for the named event.</p>
      * @param {String} name <p>Name of the event.</p>
      * @param {Callback<Object>} callback <p>Callback function to remove. Must be the same function passed to <code>addEventListener</code>.</p>
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     removeEventListener:function(name, callback) {
     },
@@ -32691,7 +35219,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Sets the value of the {@link Ti.UI.PickerRow.backgroundColor} property.</p>
      * @param {String} backgroundColor <p>New value for the property.</p>
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     setBackgroundColor:function(backgroundColor) {
     },
@@ -32739,7 +35267,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Sets the value of the {@link Ti.UI.PickerRow.backgroundImage} property.</p>
      * @param {String} backgroundImage <p>New value for the property.</p>
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     setBackgroundImage:function(backgroundImage) {
     },
@@ -32750,6 +35278,14 @@ If this argument is not a view, an exception will be raised.</p>
      * @since 0.9 (iPhone), 0.9 (iPad)
      */
     setBackgroundLeftCap:function(backgroundLeftCap) {
+    },
+
+    /**
+     * <p>Sets the value of the {@link Ti.UI.PickerRow.backgroundRepeat} property.</p>
+     * @param {Boolean} backgroundRepeat <p>New value for the property.</p>
+     * @since 0.9 (iPhone), 0.9 (iPad)
+     */
+    setBackgroundRepeat:function(backgroundRepeat) {
     },
 
     /**
@@ -32779,7 +35315,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Sets the value of the {@link Ti.UI.PickerRow.borderColor} property.</p>
      * @param {String} borderColor <p>New value for the property.</p>
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     setBorderColor:function(borderColor) {
     },
@@ -32787,7 +35323,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Sets the value of the {@link Ti.UI.PickerRow.borderRadius} property.</p>
      * @param {Number} borderRadius <p>New value for the property.</p>
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     setBorderRadius:function(borderRadius) {
     },
@@ -32795,7 +35331,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Sets the value of the {@link Ti.UI.PickerRow.borderWidth} property.</p>
      * @param {Number} borderWidth <p>New value for the property.</p>
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     setBorderWidth:function(borderWidth) {
     },
@@ -32803,7 +35339,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Sets the value of the {@link Ti.UI.PickerRow.bottom} property.</p>
      * @param {Number|String} bottom <p>New value for the property.</p>
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     setBottom:function(bottom) {
     },
@@ -32811,7 +35347,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Sets the value of the {@link Ti.UI.PickerRow.center} property.</p>
      * @param {Point} center <p>New value for the property.</p>
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     setCenter:function(center) {
     },
@@ -32827,7 +35363,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Sets the value of the {@link Ti.UI.PickerRow.fontSize} property.</p>
      * @param {Number} fontSize <p>New value for the property.</p>
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
+     * @since 0.9 (iPhone), 0.9 (iPad)
      */
     setFontSize:function(fontSize) {
     },
@@ -32835,7 +35371,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Sets the value of the {@link Ti.UI.PickerRow.height} property.</p>
      * @param {Number|String} height <p>New value for the property.</p>
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     setHeight:function(height) {
     },
@@ -32851,7 +35387,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Sets the value of the {@link Ti.UI.PickerRow.layout} property.</p>
      * @param {String} layout <p>New value for the property.</p>
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     setLayout:function(layout) {
     },
@@ -32859,7 +35395,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Sets the value of the {@link Ti.UI.PickerRow.left} property.</p>
      * @param {Number|String} left <p>New value for the property.</p>
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     setLeft:function(left) {
     },
@@ -32867,7 +35403,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Sets the value of the {@link Ti.UI.PickerRow.opacity} property.</p>
      * @param {Number} opacity <p>New value for the property.</p>
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     setOpacity:function(opacity) {
     },
@@ -32875,25 +35411,9 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Sets the value of the {@link Ti.UI.PickerRow.right} property.</p>
      * @param {Number|String} right <p>New value for the property.</p>
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     setRight:function(right) {
-    },
-
-    /**
-     * <p>Sets the value of the {@link Ti.UI.PickerRow.selected} property.</p>
-     * @param {Boolean} selected <p>New value for the property.</p>
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
-     */
-    setSelected:function(selected) {
-    },
-
-    /**
-     * <p>Sets the value of the {@link Ti.UI.PickerRow.size} property.</p>
-     * @param {Object} size <p>New value for the property.</p>
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
-     */
-    setSize:function(size) {
     },
 
     /**
@@ -32907,7 +35427,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Sets the value of the {@link Ti.UI.PickerRow.title} property.</p>
      * @param {String} title <p>New value for the property.</p>
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     setTitle:function(title) {
     },
@@ -32915,7 +35435,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Sets the value of the {@link Ti.UI.PickerRow.top} property.</p>
      * @param {Number|String} top <p>New value for the property.</p>
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     setTop:function(top) {
     },
@@ -32923,7 +35443,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Sets the value of the {@link Ti.UI.PickerRow.touchEnabled} property.</p>
      * @param {Boolean} touchEnabled <p>New value for the property.</p>
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     setTouchEnabled:function(touchEnabled) {
     },
@@ -32939,7 +35459,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Sets the value of the {@link Ti.UI.PickerRow.visible} property.</p>
      * @param {Boolean} visible <p>New value for the property.</p>
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     setVisible:function(visible) {
     },
@@ -32947,7 +35467,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Sets the value of the {@link Ti.UI.PickerRow.width} property.</p>
      * @param {Number|String} width <p>New value for the property.</p>
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     setWidth:function(width) {
     },
@@ -32955,14 +35475,14 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Sets the value of the {@link Ti.UI.PickerRow.zIndex} property.</p>
      * @param {Number} zIndex <p>New value for the property.</p>
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     setZIndex:function(zIndex) {
     },
 
     /**
      * <p>Makes this view visible.</p>
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
      */
     show:function() {
     },
@@ -33081,6 +35601,13 @@ Ti.UI.ProgressBar.prototype = {
     backgroundLeftCap:null,
 
     /**
+     * <p>Toggle for whether or not to tile a background across a view.</p>
+     * @type Boolean
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    backgroundRepeat:null,
+
+    /**
      * <p>Selected background color of the view.</p>
      * @type String
      * @since 0.8 (Android), 1.8 (Mobile Web)
@@ -33135,6 +35662,13 @@ Ti.UI.ProgressBar.prototype = {
      * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
      */
     center:null,
+
+    /**
+     * <p>Array of this view's child views.</p>
+     * @type Array<Ti.UI.View>
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
+     */
+    children:null,
 
     /**
      * <p>Color of the progress bar text.</p>
@@ -33222,7 +35756,7 @@ One of: 'absolute', 'vertical', or 'horizontal'.</p>
     right:null,
 
     /**
-     * <p>Size of the view as a dictionary of width and height properties.</p>
+     * <p>Rendered size of the view as a dictionary of width and height properties.</p>
      * @type Object
      * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
      */
@@ -33423,6 +35957,14 @@ If this argument is not a view, an exception will be raised.</p>
     },
 
     /**
+     * <p>Gets the value of the {@link Ti.UI.ProgressBar.backgroundRepeat} property.</p>
+     * @returns Boolean
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    getBackgroundRepeat:function() {
+    },
+
+    /**
      * <p>Gets the value of the {@link Ti.UI.ProgressBar.backgroundSelectedColor} property.</p>
      * @returns String
      * @since 0.8 (Android), 1.8 (Mobile Web)
@@ -33485,6 +36027,14 @@ If this argument is not a view, an exception will be raised.</p>
      * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
      */
     getCenter:function() {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.UI.ProgressBar.children} property.</p>
+     * @returns Array<Ti.UI.View>
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
+     */
+    getChildren:function() {
     },
 
     /**
@@ -33766,6 +36316,14 @@ If this argument is not a view, an exception will be raised.</p>
     },
 
     /**
+     * <p>Sets the value of the {@link Ti.UI.ProgressBar.backgroundRepeat} property.</p>
+     * @param {Boolean} backgroundRepeat <p>New value for the property.</p>
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    setBackgroundRepeat:function(backgroundRepeat) {
+    },
+
+    /**
      * <p>Sets the value of the {@link Ti.UI.ProgressBar.backgroundSelectedColor} property.</p>
      * @param {String} backgroundSelectedColor <p>New value for the property.</p>
      * @since 0.8 (Android), 1.8 (Mobile Web)
@@ -33923,14 +36481,6 @@ If this argument is not a view, an exception will be raised.</p>
      * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
      */
     setRight:function(right) {
-    },
-
-    /**
-     * <p>Sets the value of the {@link Ti.UI.ProgressBar.size} property.</p>
-     * @param {Object} size <p>New value for the property.</p>
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
-     */
-    setSize:function(size) {
     },
 
     /**
@@ -34137,6 +36687,13 @@ Ti.UI.ScrollView.prototype = {
     backgroundLeftCap:null,
 
     /**
+     * <p>Toggle for whether or not to tile a background across a view.</p>
+     * @type Boolean
+     * @since 0.9 (iPhone), 0.9 (iPad)
+     */
+    backgroundRepeat:null,
+
+    /**
      * <p>Selected background color of the view.</p>
      * @type String
      * @since 0.9 (Android), 1.8 (Mobile Web)
@@ -34198,6 +36755,13 @@ Ti.UI.ScrollView.prototype = {
      * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
     center:null,
+
+    /**
+     * <p>Array of this view's child views.</p>
+     * @type Array<Ti.UI.View>
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
+     */
+    children:null,
 
     /**
      * <p>the height of the scrollable area</p>
@@ -34322,7 +36886,7 @@ direction when this property is <em>not</em> set.</p>
     showVerticalScrollIndicator:null,
 
     /**
-     * <p>Size of the view as a dictionary of width and height properties.</p>
+     * <p>Rendered size of the view as a dictionary of width and height properties.</p>
      * @type Object
      * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
@@ -34352,7 +36916,7 @@ direction when this property is <em>not</em> set.</p>
     /**
      * <p>Transformation matrix to apply to the view.</p>
      * @type Ti.UI.D2Matrix|Ti.UI.iOS.D3Matrix
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
     transform:null,
 
@@ -34523,6 +37087,14 @@ If this argument is not a view, an exception will be raised.</p>
     },
 
     /**
+     * <p>Gets the value of the {@link Ti.UI.ScrollView.backgroundRepeat} property.</p>
+     * @returns Boolean
+     * @since 0.9 (iPhone), 0.9 (iPad)
+     */
+    getBackgroundRepeat:function() {
+    },
+
+    /**
      * <p>Gets the value of the {@link Ti.UI.ScrollView.backgroundSelectedColor} property.</p>
      * @returns String
      * @since 0.9 (Android), 1.8 (Mobile Web)
@@ -34593,6 +37165,14 @@ If this argument is not a view, an exception will be raised.</p>
      * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
     getCenter:function() {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.UI.ScrollView.children} property.</p>
+     * @returns Array<Ti.UI.View>
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
+     */
+    getChildren:function() {
     },
 
     /**
@@ -34771,7 +37351,7 @@ If this argument is not a view, an exception will be raised.</p>
      * <p>Gets the value of the {@link Ti.UI.ScrollView.transform} property.</p>
      * @returns Ti.UI.D2Matrix
      * @returns Ti.UI.iOS.D3Matrix
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
     getTransform:function() {
     },
@@ -34923,6 +37503,14 @@ If this argument is not a view, an exception will be raised.</p>
     },
 
     /**
+     * <p>Sets the value of the {@link Ti.UI.ScrollView.backgroundRepeat} property.</p>
+     * @param {Boolean} backgroundRepeat <p>New value for the property.</p>
+     * @since 0.9 (iPhone), 0.9 (iPad)
+     */
+    setBackgroundRepeat:function(backgroundRepeat) {
+    },
+
+    /**
      * <p>Sets the value of the {@link Ti.UI.ScrollView.backgroundSelectedColor} property.</p>
      * @param {String} backgroundSelectedColor <p>New value for the property.</p>
      * @since 0.9 (Android), 1.8 (Mobile Web)
@@ -35003,11 +37591,12 @@ If this argument is not a view, an exception will be raised.</p>
     },
 
     /**
-     * <p>Sets the value of the {@link Ti.UI.ScrollView.contentOffset} property.</p>
-     * @param {Object} contentOffset <p>New value for the property.</p>
+     * <p>Sets the value of {@link Ti.UI.ScrollView.contentOffset} property.</p>
+     * @param {Object} contentOffset <p>New value for the property</p>
+     * @param {contentOffsetOption} animated <p>Whether this content area change should be animated.</p>
      * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
-    setContentOffset:function(contentOffset) {
+    setContentOffset:function(contentOffset, animated) {
     },
 
     /**
@@ -35131,14 +37720,6 @@ If this argument is not a view, an exception will be raised.</p>
     },
 
     /**
-     * <p>Sets the value of the {@link Ti.UI.ScrollView.size} property.</p>
-     * @param {Object} size <p>New value for the property.</p>
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
-     */
-    setSize:function(size) {
-    },
-
-    /**
      * <p>Sets the value of the {@link Ti.UI.ScrollView.softKeyboardOnFocus} property.</p>
      * @param {Number} softKeyboardOnFocus <p>New value for the property.</p>
      * @since 0.9 (Android)
@@ -35165,7 +37746,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Sets the value of the {@link Ti.UI.ScrollView.transform} property.</p>
      * @param {Ti.UI.D2Matrix|Ti.UI.iOS.D3Matrix} transform <p>New value for the property.</p>
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
     setTransform:function(transform) {
     },
@@ -35230,17 +37811,58 @@ performed asynchronously. If null, it will be performed immediately.</p>
 
 /**
  * platforms: Android, iPhone, iPad
+ * @namespace <p>Use the {@link Ti.UI.createScrollableView} method to create a scrollable view.</p>
+<p>ScrollableView supports a visual paging control that may be enabled to indicate on-screen that 
+a view is visible.</p>
+<p>Only the <code>scroll</code> event exists on Android. To support those that are missing, event listeners 
+may be added to its child views.</p>
+<p>In a previous Titanium version for iOS, the <code>maxZoomScale</code> and <code>minZoomScale</code> properties were 
+removed for performance and parity reasons. As they still remain in {@link Ti.UI.ScrollView}, 
+the equivalent functionality may be obtained by adding a ScrollView to ScrollableView. See the 
+"Simple Scrollable View with 2 Zoomable Images" example for a demonstration.</p>
  * 
  * @example Simple Scrollable View with 3 Views
  * <p>Create three views and place each into a scrollable view.</p>
-<pre><code>var view1 = Ti.UI.createView({backgroundColor:'#123'});
-var view2 = Ti.UI.createView({backgroundColor:'#123'});
-var view3 = Ti.UI.createView({backgroundColor:'#123'});
-var scrollView = Ti.UI.createScrollableView({
-    views:[view1,view2,view3],
-    showPagingControl:true
+<pre><code>var win = Ti.UI.createWindow();
+
+var view1 = Ti.UI.createView({ backgroundColor:'#123' });
+var view2 = Ti.UI.createView({ backgroundColor:'#246' });
+var view3 = Ti.UI.createView({ backgroundColor:'#48b' });
+
+var scrollableView = Ti.UI.createScrollableView({
+  views:[view1,view2,view3],
+  showPagingControl:true
 });
-win.add(scrollView);
+
+win.add(scrollableView);
+win.open();
+</code></pre>
+ * 
+ * @example Simple Scrollable View with 2 Zoomable Images
+ * <p>Create two scroll views, each containing an image view, and place them in a scrollable view.</p>
+<pre><code>var img1 = Ti.UI.createImageView({
+    image:'http://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/' +
+    'Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg/' +
+    '402px-Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg'
+});
+var img1Wrapper = Ti.UI.createScrollView({
+    maxZoomScale:4.0,
+});
+img1Wrapper.add(img1);
+
+var img2 = Ti.UI.createImageView({
+    image:'http://www.nasa.gov/images/content/' + 
+    '616903main_rover_comparison1600_1600-1200.jpg'
+});
+var img2Wrapper = Ti.UI.createScrollView({
+    maxZoomScale:4.0,
+});
+img2Wrapper.add(img2);
+var photosView = Ti.UI.createScrollableView({
+    showPagingControl:true,
+    views:[img1Wrapper,img2Wrapper]
+});
+win.add(photosView);
 </code></pre>
  */
 Ti.UI.ScrollableView = function() {
@@ -35318,6 +37940,13 @@ Ti.UI.ScrollableView.prototype = {
     backgroundLeftCap:null,
 
     /**
+     * <p>Toggle for whether or not to tile a background across a view.</p>
+     * @type Boolean
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    backgroundRepeat:null,
+
+    /**
      * <p>Selected background color of the view.</p>
      * @type String
      * @since 0.8 (Android), 1.8 (Mobile Web)
@@ -35367,7 +37996,7 @@ Ti.UI.ScrollableView.prototype = {
     bottom:null,
 
     /**
-     * <p>The number of views to cache (prerender).  Views are rendered in the range (currentPage +/- (cacheSize - 1)/2), ROUNDED DOWN for even values (i.e. cacheSize=4 renders 3 views into the cache).  Keep in mind that improved performance (larger cache) will lead to faster performance, but more memory usage.</p>
+     * <p>Number of views to cache (pre-render).</p>
      * @type Number
      * @since 0.8 (iPhone), 0.8 (iPad)
      */
@@ -35381,14 +38010,21 @@ Ti.UI.ScrollableView.prototype = {
     center:null,
 
     /**
-     * <p>the current page visible in the view</p>
+     * <p>Array of this view's child views.</p>
+     * @type Array<Ti.UI.View>
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
+     */
+    children:null,
+
+    /**
+     * <p>Index of the active page.</p>
      * @type Number
      * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
      */
     currentPage:null,
 
     /**
-     * <p>disable view bouncing.</p>
+     * <p>Determines whether view bouncing effect is disabled.</p>
      * @type Boolean
      * @since 0.8 (iPhone), 0.8 (iPad)
      */
@@ -35438,21 +38074,23 @@ One of: 'absolute', 'vertical', or 'horizontal'.</p>
     opacity:null,
 
     /**
-     * <p>the color of the paging control. defaults to black.</p>
+     * <p>Color of the paging control, in 
+{@link http://en.wikipedia.org/wiki/Web_colors#HTML_color_names} name or hex format.</p>
      * @type String
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
+     * @since 0.8 (iPhone), 0.8 (iPad)
      */
     pagingControlColor:null,
 
     /**
-     * <p>the height in pixels of the paging control, if visible. defaults to 20</p>
+     * <p>Height of the paging control, in pixels.</p>
      * @type Number
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
+     * @since 0.8 (iPhone), 0.8 (iPad)
      */
     pagingControlHeight:null,
 
     /**
-     * <p>number of milliseconds to wait before hiding the paging control. Less than or equal to 0 disables timeout keeping controls displayed.</p>
+     * <p>Number of milliseconds to wait before hiding the paging control. Less than or equal to 
+0 disables timeout, keeping controls displayed.</p>
      * @type Number
      * @since 0.8 (Android)
      */
@@ -35466,14 +38104,14 @@ One of: 'absolute', 'vertical', or 'horizontal'.</p>
     right:null,
 
     /**
-     * <p>boolean to indicate whether the paging control UI is visible</p>
+     * <p>Determines whether the paging control is visible.</p>
      * @type Boolean
      * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
      */
     showPagingControl:null,
 
     /**
-     * <p>Size of the view as a dictionary of width and height properties.</p>
+     * <p>Rendered size of the view as a dictionary of width and height properties.</p>
      * @type Object
      * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
      */
@@ -35508,8 +38146,8 @@ One of: 'absolute', 'vertical', or 'horizontal'.</p>
     transform:null,
 
     /**
-     * <p>array of view objects to place in the view</p>
-     * @type Array<Object>
+     * <p>Sets the views within this Scrollable View.</p>
+     * @type Array<Ti.UI.View>
      * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
      */
     views:null,
@@ -35554,8 +38192,8 @@ One of: 'absolute', 'vertical', or 'horizontal'.</p>
     },
 
     /**
-     * <p>add a new view to the Scrollable View</p>
-     * @param {Object} view <p>the view to add</p>
+     * <p>Adds a new view to this Scrollable View.</p>
+     * @param {Object} view <p>The view to add.</p>
      * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
      */
     addView:function(view) {
@@ -35675,6 +38313,14 @@ If this argument is not a view, an exception will be raised.</p>
     },
 
     /**
+     * <p>Gets the value of the {@link Ti.UI.ScrollableView.backgroundRepeat} property.</p>
+     * @returns Boolean
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    getBackgroundRepeat:function() {
+    },
+
+    /**
      * <p>Gets the value of the {@link Ti.UI.ScrollableView.backgroundSelectedColor} property.</p>
      * @returns String
      * @since 0.8 (Android), 1.8 (Mobile Web)
@@ -35748,6 +38394,14 @@ If this argument is not a view, an exception will be raised.</p>
     },
 
     /**
+     * <p>Gets the value of the {@link Ti.UI.ScrollableView.children} property.</p>
+     * @returns Array<Ti.UI.View>
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
+     */
+    getChildren:function() {
+    },
+
+    /**
      * <p>Gets the value of the {@link Ti.UI.ScrollableView.currentPage} property.</p>
      * @returns Number
      * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
@@ -35816,7 +38470,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Gets the value of the {@link Ti.UI.ScrollableView.pagingControlColor} property.</p>
      * @returns String
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
+     * @since 0.8 (iPhone), 0.8 (iPad)
      */
     getPagingControlColor:function() {
     },
@@ -35824,7 +38478,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Gets the value of the {@link Ti.UI.ScrollableView.pagingControlHeight} property.</p>
      * @returns Number
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
+     * @since 0.8 (iPhone), 0.8 (iPad)
      */
     getPagingControlHeight:function() {
     },
@@ -35898,7 +38552,7 @@ If this argument is not a view, an exception will be raised.</p>
 
     /**
      * <p>Gets the value of the {@link Ti.UI.ScrollableView.views} property.</p>
-     * @returns Array<Object>
+     * @returns Array<Ti.UI.View>
      * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
      */
     getViews:function() {
@@ -35937,6 +38591,20 @@ If this argument is not a view, an exception will be raised.</p>
     },
 
     /**
+     * <p>Sets the current page to the next consecutive view in {@link Ti.UI.ScrollableView.views}.</p>
+     * @since 0.8 (Android)
+     */
+    moveNext:function() {
+    },
+
+    /**
+     * <p>Sets the current page to the previous consecutive view in {@link Ti.UI.ScrollableView.views}.</p>
+     * @since 0.8 (Android)
+     */
+    movePrevious:function() {
+    },
+
+    /**
      * <p>Removes a child view from this view's hierarchy.</p>
      * @param {Ti.UI.View} view <p>View to remove from this view's hierarchy.</p>
      * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
@@ -35954,16 +38622,17 @@ If this argument is not a view, an exception will be raised.</p>
     },
 
     /**
-     * <p>remove an existing view from the Scrollable View</p>
-     * @param {Object} view <p>the view to remove</p>
+     * <p>Removes an existing view from this Scrollable View. Does nothing if view proivded does 
+not exist.</p>
+     * @param {Number|Object} view <p>A {@link Ti.UI.View} object or integer index (iPhone, iPad only) of a view to remove.</p>
      * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
      */
     removeView:function(view) {
     },
 
     /**
-     * <p>scroll to a specific view</p>
-     * @param {Number|Object} view <p>either an integer index or the view object to bring into view as the currentPage</p>
+     * <p>Scrolls to the specified view in {@link Ti.UI.ScrollableView.views}.</p>
+     * @param {Number|Object} view <p>An integer index or a {@link Ti.UI.View} object of the view to set as the current page.</p>
      * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
      */
     scrollToView:function(view) {
@@ -36039,6 +38708,14 @@ If this argument is not a view, an exception will be raised.</p>
      * @since 0.8 (iPhone), 0.8 (iPad)
      */
     setBackgroundLeftCap:function(backgroundLeftCap) {
+    },
+
+    /**
+     * <p>Sets the value of the {@link Ti.UI.ScrollableView.backgroundRepeat} property.</p>
+     * @param {Boolean} backgroundRepeat <p>New value for the property.</p>
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    setBackgroundRepeat:function(backgroundRepeat) {
     },
 
     /**
@@ -36180,7 +38857,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Sets the value of the {@link Ti.UI.ScrollableView.pagingControlColor} property.</p>
      * @param {String} pagingControlColor <p>New value for the property.</p>
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
+     * @since 0.8 (iPhone), 0.8 (iPad)
      */
     setPagingControlColor:function(pagingControlColor) {
     },
@@ -36188,7 +38865,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Sets the value of the {@link Ti.UI.ScrollableView.pagingControlHeight} property.</p>
      * @param {Number} pagingControlHeight <p>New value for the property.</p>
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
+     * @since 0.8 (iPhone), 0.8 (iPad)
      */
     setPagingControlHeight:function(pagingControlHeight) {
     },
@@ -36207,14 +38884,6 @@ If this argument is not a view, an exception will be raised.</p>
      * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
      */
     setShowPagingControl:function(showPagingControl) {
-    },
-
-    /**
-     * <p>Sets the value of the {@link Ti.UI.ScrollableView.size} property.</p>
-     * @param {Object} size <p>New value for the property.</p>
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
-     */
-    setSize:function(size) {
     },
 
     /**
@@ -36251,7 +38920,7 @@ If this argument is not a view, an exception will be raised.</p>
 
     /**
      * <p>Sets the value of the {@link Ti.UI.ScrollableView.views} property.</p>
-     * @param {Array<Object>} views <p>New value for the property.</p>
+     * @param {Array<Ti.UI.View>} views <p>New value for the property.</p>
      * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
      */
     setViews:function(views) {
@@ -36399,6 +39068,13 @@ Ti.UI.SearchBar.prototype = {
     backgroundLeftCap:null,
 
     /**
+     * <p>Toggle for whether or not to tile a background across a view.</p>
+     * @type Boolean
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    backgroundRepeat:null,
+
+    /**
      * <p>Selected background color of the view.</p>
      * @type String
      * @since 0.8 (Android), 1.8 (Mobile Web)
@@ -36460,6 +39136,13 @@ Ti.UI.SearchBar.prototype = {
      * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
      */
     center:null,
+
+    /**
+     * <p>Array of this view's child views.</p>
+     * @type Array<Ti.UI.View>
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     */
+    children:null,
 
     /**
      * <p>Whether view should be focusable while navigating with the trackball.</p>
@@ -36554,7 +39237,7 @@ One of: 'absolute', 'vertical', or 'horizontal'.</p>
     showCancel:null,
 
     /**
-     * <p>Size of the view as a dictionary of width and height properties.</p>
+     * <p>Rendered size of the view as a dictionary of width and height properties.</p>
      * @type Object
      * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
      */
@@ -36584,7 +39267,7 @@ One of: 'absolute', 'vertical', or 'horizontal'.</p>
     /**
      * <p>Transformation matrix to apply to the view.</p>
      * @type Ti.UI.D2Matrix|Ti.UI.iOS.D3Matrix
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
      */
     transform:null,
 
@@ -36778,6 +39461,14 @@ If this argument is not a view, an exception will be raised.</p>
     },
 
     /**
+     * <p>Gets the value of the {@link Ti.UI.SearchBar.backgroundRepeat} property.</p>
+     * @returns Boolean
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    getBackgroundRepeat:function() {
+    },
+
+    /**
      * <p>Gets the value of the {@link Ti.UI.SearchBar.backgroundSelectedColor} property.</p>
      * @returns String
      * @since 0.8 (Android), 1.8 (Mobile Web)
@@ -36848,6 +39539,14 @@ If this argument is not a view, an exception will be raised.</p>
      * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
      */
     getCenter:function() {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.UI.SearchBar.children} property.</p>
+     * @returns Array<Ti.UI.View>
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     */
+    getChildren:function() {
     },
 
     /**
@@ -36994,7 +39693,7 @@ If this argument is not a view, an exception will be raised.</p>
      * <p>Gets the value of the {@link Ti.UI.SearchBar.transform} property.</p>
      * @returns Ti.UI.D2Matrix
      * @returns Ti.UI.iOS.D3Matrix
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
      */
     getTransform:function() {
     },
@@ -37142,6 +39841,14 @@ If this argument is not a view, an exception will be raised.</p>
      * @since 0.8 (iPhone), 0.8 (iPad)
      */
     setBackgroundLeftCap:function(backgroundLeftCap) {
+    },
+
+    /**
+     * <p>Sets the value of the {@link Ti.UI.SearchBar.backgroundRepeat} property.</p>
+     * @param {Boolean} backgroundRepeat <p>New value for the property.</p>
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    setBackgroundRepeat:function(backgroundRepeat) {
     },
 
     /**
@@ -37321,14 +40028,6 @@ If this argument is not a view, an exception will be raised.</p>
     },
 
     /**
-     * <p>Sets the value of the {@link Ti.UI.SearchBar.size} property.</p>
-     * @param {Object} size <p>New value for the property.</p>
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
-     */
-    setSize:function(size) {
-    },
-
-    /**
      * <p>Sets the value of the {@link Ti.UI.SearchBar.softKeyboardOnFocus} property.</p>
      * @param {Number} softKeyboardOnFocus <p>New value for the property.</p>
      * @since 0.8 (Android)
@@ -37355,7 +40054,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Sets the value of the {@link Ti.UI.SearchBar.transform} property.</p>
      * @param {Ti.UI.D2Matrix|Ti.UI.iOS.D3Matrix} transform <p>New value for the property.</p>
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
      */
     setTransform:function(transform) {
     },
@@ -37488,6 +40187,13 @@ Ti.UI.Slider.prototype = {
     backgroundLeftCap:null,
 
     /**
+     * <p>Toggle for whether or not to tile a background across a view.</p>
+     * @type Boolean
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    backgroundRepeat:null,
+
+    /**
      * <p>Selected background color of the view.</p>
      * @type String
      * @since 0.8 (Android), 1.8 (Mobile Web)
@@ -37542,6 +40248,13 @@ Ti.UI.Slider.prototype = {
      * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
      */
     center:null,
+
+    /**
+     * <p>Array of this view's child views.</p>
+     * @type Array<Ti.UI.View>
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     */
+    children:null,
 
     /**
      * <p>the image url of the slider left track when in the disabled state</p>
@@ -37706,7 +40419,7 @@ One of: 'absolute', 'vertical', or 'horizontal'.</p>
     selectedThumbImage:null,
 
     /**
-     * <p>Size of the view as a dictionary of width and height properties.</p>
+     * <p>Rendered size of the view as a dictionary of width and height properties.</p>
      * @type Object
      * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
      */
@@ -37720,8 +40433,8 @@ One of: 'absolute', 'vertical', or 'horizontal'.</p>
     softKeyboardOnFocus:null,
 
     /**
-     * <p>the image url to the slider thumb</p>
-     * @type String
+     * <p>The image for the slider thumb.</p>
+     * @type String|Ti.Blob
      * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
      */
     thumbImage:null,
@@ -37743,7 +40456,7 @@ One of: 'absolute', 'vertical', or 'horizontal'.</p>
     /**
      * <p>Transformation matrix to apply to the view.</p>
      * @type Ti.UI.D2Matrix|Ti.UI.iOS.D3Matrix
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
      */
     transform:null,
 
@@ -37907,6 +40620,14 @@ If this argument is not a view, an exception will be raised.</p>
     },
 
     /**
+     * <p>Gets the value of the {@link Ti.UI.Slider.backgroundRepeat} property.</p>
+     * @returns Boolean
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    getBackgroundRepeat:function() {
+    },
+
+    /**
      * <p>Gets the value of the {@link Ti.UI.Slider.backgroundSelectedColor} property.</p>
      * @returns String
      * @since 0.8 (Android), 1.8 (Mobile Web)
@@ -37969,6 +40690,14 @@ If this argument is not a view, an exception will be raised.</p>
      * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
      */
     getCenter:function() {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.UI.Slider.children} property.</p>
+     * @returns Array<Ti.UI.View>
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     */
+    getChildren:function() {
     },
 
     /**
@@ -38177,6 +40906,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Gets the value of the {@link Ti.UI.Slider.thumbImage} property.</p>
      * @returns String
+     * @returns Ti.Blob
      * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
      */
     getThumbImage:function() {
@@ -38203,7 +40933,7 @@ If this argument is not a view, an exception will be raised.</p>
      * <p>Gets the value of the {@link Ti.UI.Slider.transform} property.</p>
      * @returns Ti.UI.D2Matrix
      * @returns Ti.UI.iOS.D3Matrix
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
      */
     getTransform:function() {
     },
@@ -38335,6 +41065,14 @@ If this argument is not a view, an exception will be raised.</p>
      * @since 0.8 (iPhone), 0.8 (iPad)
      */
     setBackgroundLeftCap:function(backgroundLeftCap) {
+    },
+
+    /**
+     * <p>Sets the value of the {@link Ti.UI.Slider.backgroundRepeat} property.</p>
+     * @param {Boolean} backgroundRepeat <p>New value for the property.</p>
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    setBackgroundRepeat:function(backgroundRepeat) {
     },
 
     /**
@@ -38586,14 +41324,6 @@ If this argument is not a view, an exception will be raised.</p>
     },
 
     /**
-     * <p>Sets the value of the {@link Ti.UI.Slider.size} property.</p>
-     * @param {Object} size <p>New value for the property.</p>
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
-     */
-    setSize:function(size) {
-    },
-
-    /**
      * <p>Sets the value of the {@link Ti.UI.Slider.softKeyboardOnFocus} property.</p>
      * @param {Number} softKeyboardOnFocus <p>New value for the property.</p>
      * @since 0.8 (Android)
@@ -38603,7 +41333,7 @@ If this argument is not a view, an exception will be raised.</p>
 
     /**
      * <p>Sets the value of the {@link Ti.UI.Slider.thumbImage} property.</p>
-     * @param {String} thumbImage <p>New value for the property.</p>
+     * @param {String|Ti.Blob} thumbImage <p>New value for the property.</p>
      * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
      */
     setThumbImage:function(thumbImage) {
@@ -38628,7 +41358,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Sets the value of the {@link Ti.UI.Slider.transform} property.</p>
      * @param {Ti.UI.D2Matrix|Ti.UI.iOS.D3Matrix} transform <p>New value for the property.</p>
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
      */
     setTransform:function(transform) {
     },
@@ -38685,6 +41415,11 @@ performed asynchronously. If null, it will be performed immediately.</p>
 
 /**
  * platforms: Android, iPhone, iPad, Mobile Web
+ * @namespace <p>On Android, a switch can have text associated with it, and appears as either a 
+checkbox or toggle button.</p>
+<p>On iOS, the switch appears as an iOS on/off switch and doesn't have any text
+associated with it. </p>
+<p>Use the {@link Ti.UI.createSwitch} method to create a switch.</p>
  * 
  * @example Simple Switch Example
  * <p>The following is a simple example of a switch and receiving <code>change</code> events.</p>
@@ -38772,6 +41507,13 @@ Ti.UI.Switch.prototype = {
     backgroundLeftCap:null,
 
     /**
+     * <p>Toggle for whether or not to tile a background across a view.</p>
+     * @type Boolean
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    backgroundRepeat:null,
+
+    /**
      * <p>Selected background color of the view.</p>
      * @type String
      * @since 0.8 (Android), 1.8 (Mobile Web)
@@ -38828,7 +41570,21 @@ Ti.UI.Switch.prototype = {
     center:null,
 
     /**
-     * <p>boolean for the state of the switch</p>
+     * <p>Array of this view's child views.</p>
+     * @type Array<Ti.UI.View>
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     */
+    children:null,
+
+    /**
+     * <p>Color to use for switch text.</p>
+     * @type String
+     * @since 0.8 (Android)
+     */
+    color:null,
+
+    /**
+     * <p>Set to <code>true</code> to enable the switch, <code>false</code> to disable the switch.</p>
      * @type Boolean
      * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
      */
@@ -38840,6 +41596,13 @@ Ti.UI.Switch.prototype = {
      * @since 0.8 (Android)
      */
     focusable:null,
+
+    /**
+     * <p>Font to use for the switch text.</p>
+     * @type Font
+     * @since 0.8 (Android)
+     */
+    font:null,
 
     /**
      * <p>View height, in platform-specific units.</p>
@@ -38885,7 +41648,7 @@ One of: 'absolute', 'vertical', or 'horizontal'.</p>
     right:null,
 
     /**
-     * <p>Size of the view as a dictionary of width and height properties.</p>
+     * <p>Rendered size of the view as a dictionary of width and height properties.</p>
      * @type Object
      * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
      */
@@ -38899,30 +41662,37 @@ One of: 'absolute', 'vertical', or 'horizontal'.</p>
     softKeyboardOnFocus:null,
 
     /**
-     * <p>one of <code>Ti.UI.Android.SWITCH_STYLE_CHECKBOX</code> or <code>Ti.UI.Android.SWITCH_STYLE_TOGGLEBUTTON</code> (default).</p>
+     * <p>Style of the switch, either checkbox or toggle button.</p>
      * @type Number
-     * @since 0.8 (Android), 1.8 (Mobile Web)
+     * @since 0.8 (Android)
      */
     style:null,
 
     /**
+     * <p>Text alignment, specified using one of the {@link Ti.UI} text alignment constants: {@link Ti.UI.TEXT_ALIGNMENT_LEFT}, {@link Ti.UI.TEXT_ALIGNMENT_CENTER}, or {@link Ti.UI.TEXT_ALIGNMENT_RIGHT}.</p>
+     * @type String|Number
+     * @since 0.8 (Android)
+     */
+    textAlign:null,
+
+    /**
      * <p>text to display with checkbox. Used if style is <code>Ti.UI.Android.SWITCH_STYLE_CHECKBOX</code></p>
      * @type String
-     * @since 0.8 (Android), 1.8 (Mobile Web)
+     * @since 0.8 (Android)
      */
     title:null,
 
     /**
-     * <p>text to display when value is <code>false</code>. used if style is <code>Ti.UI.Android.SWITCH_STYLE_TOGGLEBUTTON</code></p>
+     * <p>Text to display when a toggle button-style switch is toggled on.</p>
      * @type String
-     * @since 0.8 (Android), 1.8 (Mobile Web)
+     * @since 0.8 (Android)
      */
     titleOff:null,
 
     /**
-     * <p>text to display when value is <code>true</code>. used if style is <code>Ti.UI.Android.SWITCH_STYLE_TOGGLEBUTTON</code></p>
+     * <p>Text to display when a toggle button-style switch is toggled off.</p>
      * @type String
-     * @since 0.8 (Android), 1.8 (Mobile Web)
+     * @since 0.8 (Android)
      */
     titleOn:null,
 
@@ -38943,16 +41713,27 @@ One of: 'absolute', 'vertical', or 'horizontal'.</p>
     /**
      * <p>Transformation matrix to apply to the view.</p>
      * @type Ti.UI.D2Matrix|Ti.UI.iOS.D3Matrix
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
      */
     transform:null,
 
     /**
-     * <p>boolean value of the switch where true is the switch is <code>on</code> and false the switch if <code>off</code></p>
+     * <p>Current switch value, <code>true</code> if the switch is on, and <code>false</code> if switch is off.</p>
      * @type Boolean
      * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
      */
     value:null,
+
+    /**
+     * <p>Vertical alignment for the text field, specified using one of the 
+vertical alignment constants from {@link Ti.UI}: 
+{@link Ti.UI.TEXT_VERTICAL_ALIGNMENT_BOTTOM}, 
+{@link Ti.UI.TEXT_VERTICAL_ALIGNMENT_CENTER}, or 
+{@link Ti.UI.TEXT_VERTICAL_ALIGNMENT_TOP}.</p>
+     * @type Number|String
+     * @since 0.8 (Android)
+     */
+    verticalAlign:null,
 
     /**
      * <p>Boolean value indicating whether the view is visible.</p>
@@ -39107,6 +41888,14 @@ If this argument is not a view, an exception will be raised.</p>
     },
 
     /**
+     * <p>Gets the value of the {@link Ti.UI.Switch.backgroundRepeat} property.</p>
+     * @returns Boolean
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    getBackgroundRepeat:function() {
+    },
+
+    /**
      * <p>Gets the value of the {@link Ti.UI.Switch.backgroundSelectedColor} property.</p>
      * @returns String
      * @since 0.8 (Android), 1.8 (Mobile Web)
@@ -39172,6 +41961,22 @@ If this argument is not a view, an exception will be raised.</p>
     },
 
     /**
+     * <p>Gets the value of the {@link Ti.UI.Switch.children} property.</p>
+     * @returns Array<Ti.UI.View>
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     */
+    getChildren:function() {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.UI.Switch.color} property.</p>
+     * @returns String
+     * @since 0.8 (Android)
+     */
+    getColor:function() {
+    },
+
+    /**
      * <p>Gets the value of the {@link Ti.UI.Switch.enabled} property.</p>
      * @returns Boolean
      * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
@@ -39185,6 +41990,14 @@ If this argument is not a view, an exception will be raised.</p>
      * @since 0.8 (Android)
      */
     getFocusable:function() {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.UI.Switch.font} property.</p>
+     * @returns Font
+     * @since 0.8 (Android)
+     */
+    getFont:function() {
     },
 
     /**
@@ -39257,15 +42070,24 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Gets the value of the {@link Ti.UI.Switch.style} property.</p>
      * @returns Number
-     * @since 0.8 (Android), 1.8 (Mobile Web)
+     * @since 0.8 (Android)
      */
     getStyle:function() {
     },
 
     /**
+     * <p>Gets the value of the {@link Ti.UI.Switch.textAlign} property.</p>
+     * @returns String
+     * @returns Number
+     * @since 0.8 (Android)
+     */
+    getTextAlign:function() {
+    },
+
+    /**
      * <p>Gets the value of the {@link Ti.UI.Switch.title} property.</p>
      * @returns String
-     * @since 0.8 (Android), 1.8 (Mobile Web)
+     * @since 0.8 (Android)
      */
     getTitle:function() {
     },
@@ -39273,7 +42095,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Gets the value of the {@link Ti.UI.Switch.titleOff} property.</p>
      * @returns String
-     * @since 0.8 (Android), 1.8 (Mobile Web)
+     * @since 0.8 (Android)
      */
     getTitleOff:function() {
     },
@@ -39281,7 +42103,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Gets the value of the {@link Ti.UI.Switch.titleOn} property.</p>
      * @returns String
-     * @since 0.8 (Android), 1.8 (Mobile Web)
+     * @since 0.8 (Android)
      */
     getTitleOn:function() {
     },
@@ -39307,7 +42129,7 @@ If this argument is not a view, an exception will be raised.</p>
      * <p>Gets the value of the {@link Ti.UI.Switch.transform} property.</p>
      * @returns Ti.UI.D2Matrix
      * @returns Ti.UI.iOS.D3Matrix
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
      */
     getTransform:function() {
     },
@@ -39318,6 +42140,15 @@ If this argument is not a view, an exception will be raised.</p>
      * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
      */
     getValue:function() {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.UI.Switch.verticalAlign} property.</p>
+     * @returns Number
+     * @returns String
+     * @since 0.8 (Android)
+     */
+    getVerticalAlign:function() {
     },
 
     /**
@@ -39442,6 +42273,14 @@ If this argument is not a view, an exception will be raised.</p>
     },
 
     /**
+     * <p>Sets the value of the {@link Ti.UI.Switch.backgroundRepeat} property.</p>
+     * @param {Boolean} backgroundRepeat <p>New value for the property.</p>
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    setBackgroundRepeat:function(backgroundRepeat) {
+    },
+
+    /**
      * <p>Sets the value of the {@link Ti.UI.Switch.backgroundSelectedColor} property.</p>
      * @param {String} backgroundSelectedColor <p>New value for the property.</p>
      * @since 0.8 (Android), 1.8 (Mobile Web)
@@ -39506,6 +42345,14 @@ If this argument is not a view, an exception will be raised.</p>
     },
 
     /**
+     * <p>Sets the value of the {@link Ti.UI.Switch.color} property.</p>
+     * @param {String} color <p>New value for the property.</p>
+     * @since 0.8 (Android)
+     */
+    setColor:function(color) {
+    },
+
+    /**
      * <p>Sets the value of the {@link Ti.UI.Switch.enabled} property.</p>
      * @param {Boolean} enabled <p>New value for the property.</p>
      * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
@@ -39519,6 +42366,14 @@ If this argument is not a view, an exception will be raised.</p>
      * @since 0.8 (Android)
      */
     setFocusable:function(focusable) {
+    },
+
+    /**
+     * <p>Sets the value of the {@link Ti.UI.Switch.font} property.</p>
+     * @param {Font} font <p>New value for the property.</p>
+     * @since 0.8 (Android)
+     */
+    setFont:function(font) {
     },
 
     /**
@@ -39570,14 +42425,6 @@ If this argument is not a view, an exception will be raised.</p>
     },
 
     /**
-     * <p>Sets the value of the {@link Ti.UI.Switch.size} property.</p>
-     * @param {Object} size <p>New value for the property.</p>
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
-     */
-    setSize:function(size) {
-    },
-
-    /**
      * <p>Sets the value of the {@link Ti.UI.Switch.softKeyboardOnFocus} property.</p>
      * @param {Number} softKeyboardOnFocus <p>New value for the property.</p>
      * @since 0.8 (Android)
@@ -39588,15 +42435,23 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Sets the value of the {@link Ti.UI.Switch.style} property.</p>
      * @param {Number} style <p>New value for the property.</p>
-     * @since 0.8 (Android), 1.8 (Mobile Web)
+     * @since 0.8 (Android)
      */
     setStyle:function(style) {
     },
 
     /**
+     * <p>Sets the value of the {@link Ti.UI.Switch.textAlign} property.</p>
+     * @param {String|Number} textAlign <p>New value for the property.</p>
+     * @since 0.8 (Android)
+     */
+    setTextAlign:function(textAlign) {
+    },
+
+    /**
      * <p>Sets the value of the {@link Ti.UI.Switch.title} property.</p>
      * @param {String} title <p>New value for the property.</p>
-     * @since 0.8 (Android), 1.8 (Mobile Web)
+     * @since 0.8 (Android)
      */
     setTitle:function(title) {
     },
@@ -39604,7 +42459,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Sets the value of the {@link Ti.UI.Switch.titleOff} property.</p>
      * @param {String} titleOff <p>New value for the property.</p>
-     * @since 0.8 (Android), 1.8 (Mobile Web)
+     * @since 0.8 (Android)
      */
     setTitleOff:function(titleOff) {
     },
@@ -39612,7 +42467,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Sets the value of the {@link Ti.UI.Switch.titleOn} property.</p>
      * @param {String} titleOn <p>New value for the property.</p>
-     * @since 0.8 (Android), 1.8 (Mobile Web)
+     * @since 0.8 (Android)
      */
     setTitleOn:function(titleOn) {
     },
@@ -39636,7 +42491,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Sets the value of the {@link Ti.UI.Switch.transform} property.</p>
      * @param {Ti.UI.D2Matrix|Ti.UI.iOS.D3Matrix} transform <p>New value for the property.</p>
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
      */
     setTransform:function(transform) {
     },
@@ -39647,6 +42502,14 @@ If this argument is not a view, an exception will be raised.</p>
      * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
      */
     setValue:function(value) {
+    },
+
+    /**
+     * <p>Sets the value of the {@link Ti.UI.Switch.verticalAlign} property.</p>
+     * @param {Number|String} verticalAlign <p>New value for the property.</p>
+     * @since 0.8 (Android)
+     */
+    setVerticalAlign:function(verticalAlign) {
     },
 
     /**
@@ -39807,6 +42670,13 @@ Ti.UI.Tab.prototype = {
     backgroundLeftCap:null,
 
     /**
+     * <p>Toggle for whether or not to tile a background across a view.</p>
+     * @type Boolean
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    backgroundRepeat:null,
+
+    /**
      * <p>Selected background color of the view.</p>
      * @type String
      * @since 0.8 (Android), 1.8 (Mobile Web)
@@ -39870,6 +42740,13 @@ Ti.UI.Tab.prototype = {
     center:null,
 
     /**
+     * <p>Array of this view's child views.</p>
+     * @type Array<Ti.UI.View>
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     */
+    children:null,
+
+    /**
      * <p>Whether view should be focusable while navigating with the trackball.</p>
      * @type Boolean
      * @since 0.8 (Android)
@@ -39927,7 +42804,7 @@ One of: 'absolute', 'vertical', or 'horizontal'.</p>
     right:null,
 
     /**
-     * <p>Size of the view as a dictionary of width and height properties.</p>
+     * <p>Rendered size of the view as a dictionary of width and height properties.</p>
      * @type Object
      * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
      */
@@ -39971,7 +42848,7 @@ One of: 'absolute', 'vertical', or 'horizontal'.</p>
     /**
      * <p>Transformation matrix to apply to the view.</p>
      * @type Ti.UI.D2Matrix|Ti.UI.iOS.D3Matrix
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
      */
     transform:null,
 
@@ -40151,6 +43028,14 @@ If this argument is not a view, an exception will be raised.</p>
     },
 
     /**
+     * <p>Gets the value of the {@link Ti.UI.Tab.backgroundRepeat} property.</p>
+     * @returns Boolean
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    getBackgroundRepeat:function() {
+    },
+
+    /**
      * <p>Gets the value of the {@link Ti.UI.Tab.backgroundSelectedColor} property.</p>
      * @returns String
      * @since 0.8 (Android), 1.8 (Mobile Web)
@@ -40221,6 +43106,14 @@ If this argument is not a view, an exception will be raised.</p>
      * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
      */
     getCenter:function() {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.UI.Tab.children} property.</p>
+     * @returns Array<Ti.UI.View>
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     */
+    getChildren:function() {
     },
 
     /**
@@ -40343,7 +43236,7 @@ If this argument is not a view, an exception will be raised.</p>
      * <p>Gets the value of the {@link Ti.UI.Tab.transform} property.</p>
      * @returns Ti.UI.D2Matrix
      * @returns Ti.UI.iOS.D3Matrix
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
      */
     getTransform:function() {
     },
@@ -40495,6 +43388,14 @@ If this argument is not a view, an exception will be raised.</p>
     },
 
     /**
+     * <p>Sets the value of the {@link Ti.UI.Tab.backgroundRepeat} property.</p>
+     * @param {Boolean} backgroundRepeat <p>New value for the property.</p>
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    setBackgroundRepeat:function(backgroundRepeat) {
+    },
+
+    /**
      * <p>Sets the value of the {@link Ti.UI.Tab.backgroundSelectedColor} property.</p>
      * @param {String} backgroundSelectedColor <p>New value for the property.</p>
      * @since 0.8 (Android), 1.8 (Mobile Web)
@@ -40631,14 +43532,6 @@ If this argument is not a view, an exception will be raised.</p>
     },
 
     /**
-     * <p>Sets the value of the {@link Ti.UI.Tab.size} property.</p>
-     * @param {Object} size <p>New value for the property.</p>
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
-     */
-    setSize:function(size) {
-    },
-
-    /**
      * <p>Sets the value of the {@link Ti.UI.Tab.softKeyboardOnFocus} property.</p>
      * @param {Number} softKeyboardOnFocus <p>New value for the property.</p>
      * @since 0.8 (Android)
@@ -40681,7 +43574,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Sets the value of the {@link Ti.UI.Tab.transform} property.</p>
      * @param {Ti.UI.D2Matrix|Ti.UI.iOS.D3Matrix} transform <p>New value for the property.</p>
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
      */
     setTransform:function(transform) {
     },
@@ -40850,6 +43743,13 @@ Ti.UI.TabGroup.prototype = {
     backgroundLeftCap:null,
 
     /**
+     * <p>Toggle for whether or not to tile a background across a view.</p>
+     * @type Boolean
+     * @since 0.9 (iPhone), 0.9 (iPad)
+     */
+    backgroundRepeat:null,
+
+    /**
      * <p>Selected background color of the view.</p>
      * @type String
      * @since 0.9 (Android), 1.8 (Mobile Web)
@@ -40913,6 +43813,13 @@ Ti.UI.TabGroup.prototype = {
     center:null,
 
     /**
+     * <p>Array of this view's child views.</p>
+     * @type Array<Ti.UI.View>
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
+     */
+    children:null,
+
+    /**
      * <p>Title for the edit button on the <strong>More</strong> tab.</p>
      * @type String
      * @since 0.9 (iPhone), 0.9 (iPad)
@@ -40970,7 +43877,7 @@ One of: 'absolute', 'vertical', or 'horizontal'.</p>
     right:null,
 
     /**
-     * <p>Size of the view as a dictionary of width and height properties.</p>
+     * <p>Rendered size of the view as a dictionary of width and height properties.</p>
      * @type Object
      * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
@@ -41007,7 +43914,7 @@ One of: 'absolute', 'vertical', or 'horizontal'.</p>
     /**
      * <p>Transformation matrix to apply to the view.</p>
      * @type Ti.UI.D2Matrix|Ti.UI.iOS.D3Matrix
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
     transform:null,
 
@@ -41202,6 +44109,14 @@ If this argument is not a view, an exception will be raised.</p>
     },
 
     /**
+     * <p>Gets the value of the {@link Ti.UI.TabGroup.backgroundRepeat} property.</p>
+     * @returns Boolean
+     * @since 0.9 (iPhone), 0.9 (iPad)
+     */
+    getBackgroundRepeat:function() {
+    },
+
+    /**
      * <p>Gets the value of the {@link Ti.UI.TabGroup.backgroundSelectedColor} property.</p>
      * @returns String
      * @since 0.9 (Android), 1.8 (Mobile Web)
@@ -41272,6 +44187,14 @@ If this argument is not a view, an exception will be raised.</p>
      * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
     getCenter:function() {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.UI.TabGroup.children} property.</p>
+     * @returns Array<Ti.UI.View>
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
+     */
+    getChildren:function() {
     },
 
     /**
@@ -41386,7 +44309,7 @@ If this argument is not a view, an exception will be raised.</p>
      * <p>Gets the value of the {@link Ti.UI.TabGroup.transform} property.</p>
      * @returns Ti.UI.D2Matrix
      * @returns Ti.UI.iOS.D3Matrix
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
     getTransform:function() {
     },
@@ -41552,6 +44475,14 @@ If this argument is not a view, an exception will be raised.</p>
     },
 
     /**
+     * <p>Sets the value of the {@link Ti.UI.TabGroup.backgroundRepeat} property.</p>
+     * @param {Boolean} backgroundRepeat <p>New value for the property.</p>
+     * @since 0.9 (iPhone), 0.9 (iPad)
+     */
+    setBackgroundRepeat:function(backgroundRepeat) {
+    },
+
+    /**
      * <p>Sets the value of the {@link Ti.UI.TabGroup.backgroundSelectedColor} property.</p>
      * @param {String} backgroundSelectedColor <p>New value for the property.</p>
      * @since 0.9 (Android), 1.8 (Mobile Web)
@@ -41688,14 +44619,6 @@ If this argument is not a view, an exception will be raised.</p>
     },
 
     /**
-     * <p>Sets the value of the {@link Ti.UI.TabGroup.size} property.</p>
-     * @param {Object} size <p>New value for the property.</p>
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
-     */
-    setSize:function(size) {
-    },
-
-    /**
      * <p>Sets the value of the {@link Ti.UI.TabGroup.softKeyboardOnFocus} property.</p>
      * @param {Number} softKeyboardOnFocus <p>New value for the property.</p>
      * @since 0.9 (Android)
@@ -41730,7 +44653,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Sets the value of the {@link Ti.UI.TabGroup.transform} property.</p>
      * @param {Ti.UI.D2Matrix|Ti.UI.iOS.D3Matrix} transform <p>New value for the property.</p>
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
     setTransform:function(transform) {
     },
@@ -41787,8 +44710,13 @@ performed asynchronously. If null, it will be performed immediately.</p>
 
 /**
  * platforms: iPhone, iPad
- * @namespace <p>A Tabbed Bar is created by the method {@link Ti.UI.createTabbedBar}. The difference between the Tabbed Bar and the Button Bar is that the tabbed bar visually maintains a state (visually distinguished as a pressed or selected look). This module has been deprecated and is moved to Ti.UI.iOS.TabbedBar</p>
-<p>For iPhone, the style constants are available in the constants defined in {@link Ti.UI.iPhone.SystemButtonStyle}.</p>
+ * @namespace <p>This object has been deprecated and moved to {@link Ti.UI.iOS.TabbedBar}.</p>
+<p>A tabbed bar is a button bar that
+maintains a state (visually distinguished as a pressed or selected look).
+It is closely related to the <code>ButtonBar</code> control. See the description of 
+{@link Ti.UI.ButtonBar} for information on styling tabbed bars and buttons
+bars.</p>
+<p>Use the {@link Ti.UI.createTabbedBar} method to create a Tabbed Bar.</p>
  * 
  * @example Simple Tabbed Bar with 3 items
  * <p>var bb1 = Ti.UI.createTabbedBar({
@@ -41876,6 +44804,13 @@ Ti.UI.TabbedBar.prototype = {
     backgroundLeftCap:null,
 
     /**
+     * <p>Toggle for whether or not to tile a background across a view.</p>
+     * @type Boolean
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    backgroundRepeat:null,
+
+    /**
      * <p>Selected background color of the view.</p>
      * @type String
      * @since 0.8 (Android), 1.8 (Mobile Web)
@@ -41932,6 +44867,13 @@ Ti.UI.TabbedBar.prototype = {
     center:null,
 
     /**
+     * <p>Array of this view's child views.</p>
+     * @type Array<Ti.UI.View>
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    children:null,
+
+    /**
      * <p>Whether view should be focusable while navigating with the trackball.</p>
      * @type Boolean
      * @since 0.8 (Android)
@@ -41946,7 +44888,7 @@ Ti.UI.TabbedBar.prototype = {
     height:null,
 
     /**
-     * <p>the selected index</p>
+     * <p>Index of the currently selected button.</p>
      * @type Number
      * @since 0.8 (iPhone), 0.8 (iPad)
      */
@@ -41960,8 +44902,8 @@ Ti.UI.TabbedBar.prototype = {
     keepScreenOn:null,
 
     /**
-     * <p>the array of labels for the tabbed bar. each object should have the properties <code>title</code>, <code>image</code>, <code>width</code> and <code>enabled</code>.</p>
-     * @type Array<Object>
+     * <p>Array of labels for the tabbed bar.</p>
+     * @type Array<String>|Array<BarItemType>
      * @since 0.8 (iPhone), 0.8 (iPad)
      */
     labels:null,
@@ -41996,7 +44938,7 @@ One of: 'absolute', 'vertical', or 'horizontal'.</p>
     right:null,
 
     /**
-     * <p>Size of the view as a dictionary of width and height properties.</p>
+     * <p>Rendered size of the view as a dictionary of width and height properties.</p>
      * @type Object
      * @since 0.8 (iPhone), 0.8 (iPad)
      */
@@ -42010,7 +44952,7 @@ One of: 'absolute', 'vertical', or 'horizontal'.</p>
     softKeyboardOnFocus:null,
 
     /**
-     * <p>the style of the tabbed bar</p>
+     * <p>Style of the tabbed bar.</p>
      * @type Number
      * @since 0.8 (iPhone), 0.8 (iPad)
      */
@@ -42190,6 +45132,14 @@ If this argument is not a view, an exception will be raised.</p>
     },
 
     /**
+     * <p>Gets the value of the {@link Ti.UI.TabbedBar.backgroundRepeat} property.</p>
+     * @returns Boolean
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    getBackgroundRepeat:function() {
+    },
+
+    /**
      * <p>Gets the value of the {@link Ti.UI.TabbedBar.backgroundSelectedColor} property.</p>
      * @returns String
      * @since 0.8 (Android), 1.8 (Mobile Web)
@@ -42255,6 +45205,14 @@ If this argument is not a view, an exception will be raised.</p>
     },
 
     /**
+     * <p>Gets the value of the {@link Ti.UI.TabbedBar.children} property.</p>
+     * @returns Array<Ti.UI.View>
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    getChildren:function() {
+    },
+
+    /**
      * <p>Gets the value of the {@link Ti.UI.TabbedBar.focusable} property.</p>
      * @returns Boolean
      * @since 0.8 (Android)
@@ -42289,7 +45247,8 @@ If this argument is not a view, an exception will be raised.</p>
 
     /**
      * <p>Gets the value of the {@link Ti.UI.TabbedBar.labels} property.</p>
-     * @returns Array<Object>
+     * @returns Array<String>
+     * @returns Array<BarItemType>
      * @since 0.8 (iPhone), 0.8 (iPad)
      */
     getLabels:function() {
@@ -42501,6 +45460,14 @@ If this argument is not a view, an exception will be raised.</p>
     },
 
     /**
+     * <p>Sets the value of the {@link Ti.UI.TabbedBar.backgroundRepeat} property.</p>
+     * @param {Boolean} backgroundRepeat <p>New value for the property.</p>
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    setBackgroundRepeat:function(backgroundRepeat) {
+    },
+
+    /**
      * <p>Sets the value of the {@link Ti.UI.TabbedBar.backgroundSelectedColor} property.</p>
      * @param {String} backgroundSelectedColor <p>New value for the property.</p>
      * @since 0.8 (Android), 1.8 (Mobile Web)
@@ -42598,7 +45565,7 @@ If this argument is not a view, an exception will be raised.</p>
 
     /**
      * <p>Sets the value of the {@link Ti.UI.TabbedBar.labels} property.</p>
-     * @param {Array<Object>} labels <p>New value for the property.</p>
+     * @param {Array<String>|Array<BarItemType>} labels <p>New value for the property.</p>
      * @since 0.8 (iPhone), 0.8 (iPad)
      */
     setLabels:function(labels) {
@@ -42634,14 +45601,6 @@ If this argument is not a view, an exception will be raised.</p>
      * @since 0.8 (iPhone), 0.8 (iPad)
      */
     setRight:function(right) {
-    },
-
-    /**
-     * <p>Sets the value of the {@link Ti.UI.TabbedBar.size} property.</p>
-     * @param {Object} size <p>New value for the property.</p>
-     * @since 0.8 (iPhone), 0.8 (iPad)
-     */
-    setSize:function(size) {
     },
 
     /**
@@ -42835,6 +45794,13 @@ Ti.UI.TableView.prototype = {
     backgroundLeftCap:null,
 
     /**
+     * <p>Toggle for whether or not to tile a background across a view.</p>
+     * @type Boolean
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    backgroundRepeat:null,
+
+    /**
      * <p>Selected background color of the view.</p>
      * @type String
      * @since 0.8 (Android), 1.8 (Mobile Web)
@@ -42889,6 +45855,13 @@ Ti.UI.TableView.prototype = {
      * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
      */
     center:null,
+
+    /**
+     * <p>Array of this view's child views.</p>
+     * @type Array<Ti.UI.View>
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     */
+    children:null,
 
     /**
      * <p>Array of objects to be used for the rows of the table view.</p>
@@ -43067,7 +46040,7 @@ One of: 'absolute', 'vertical', or 'horizontal'.</p>
     separatorColor:null,
 
     /**
-     * <p>Separator style constant. For iOS specify one of the {@link Ti.UI.iPhone.TableViewSeparatorStyle} constants.</p>
+     * <p>Separator style constant.</p>
      * @type Number
      * @since 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
      */
@@ -43081,7 +46054,7 @@ One of: 'absolute', 'vertical', or 'horizontal'.</p>
     showVerticalScrollIndicator:null,
 
     /**
-     * <p>Size of the view as a dictionary of width and height properties.</p>
+     * <p>Rendered size of the view as a dictionary of width and height properties.</p>
      * @type Object
      * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
      */
@@ -43118,7 +46091,7 @@ One of: 'absolute', 'vertical', or 'horizontal'.</p>
     /**
      * <p>Transformation matrix to apply to the view.</p>
      * @type Ti.UI.D2Matrix|Ti.UI.iOS.D3Matrix
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
      */
     transform:null,
 
@@ -43317,6 +46290,14 @@ If this argument is not a view, an exception will be raised.</p>
     },
 
     /**
+     * <p>Gets the value of the {@link Ti.UI.TableView.backgroundRepeat} property.</p>
+     * @returns Boolean
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    getBackgroundRepeat:function() {
+    },
+
+    /**
      * <p>Gets the value of the {@link Ti.UI.TableView.backgroundSelectedColor} property.</p>
      * @returns String
      * @since 0.8 (Android), 1.8 (Mobile Web)
@@ -43379,6 +46360,14 @@ If this argument is not a view, an exception will be raised.</p>
      * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
      */
     getCenter:function() {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.UI.TableView.children} property.</p>
+     * @returns Array<Ti.UI.View>
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     */
+    getChildren:function() {
     },
 
     /**
@@ -43646,7 +46635,7 @@ If this argument is not a view, an exception will be raised.</p>
      * <p>Gets the value of the {@link Ti.UI.TableView.transform} property.</p>
      * @returns Ti.UI.D2Matrix
      * @returns Ti.UI.iOS.D3Matrix
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
      */
     getTransform:function() {
     },
@@ -43832,6 +46821,14 @@ If this argument is not a view, an exception will be raised.</p>
      * @since 0.8 (iPhone), 0.8 (iPad)
      */
     setBackgroundLeftCap:function(backgroundLeftCap) {
+    },
+
+    /**
+     * <p>Sets the value of the {@link Ti.UI.TableView.backgroundRepeat} property.</p>
+     * @param {Boolean} backgroundRepeat <p>New value for the property.</p>
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    setBackgroundRepeat:function(backgroundRepeat) {
     },
 
     /**
@@ -44116,14 +47113,6 @@ If this argument is not a view, an exception will be raised.</p>
     },
 
     /**
-     * <p>Sets the value of the {@link Ti.UI.TableView.size} property.</p>
-     * @param {Object} size <p>New value for the property.</p>
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
-     */
-    setSize:function(size) {
-    },
-
-    /**
      * <p>Sets the value of the {@link Ti.UI.TableView.softKeyboardOnFocus} property.</p>
      * @param {Number} softKeyboardOnFocus <p>New value for the property.</p>
      * @since 0.8 (Android)
@@ -44158,7 +47147,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Sets the value of the {@link Ti.UI.TableView.transform} property.</p>
      * @param {Ti.UI.D2Matrix|Ti.UI.iOS.D3Matrix} transform <p>New value for the property.</p>
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
      */
     setTransform:function(transform) {
     },
@@ -44217,8 +47206,38 @@ performed asynchronously. If null, it will be performed immediately.</p>
 
 /**
  * platforms: Android, iPhone, iPad, Mobile Web
- * @namespace <p>Make sure you set the tableClass on each row instance if using more than one type of row layout. You can use the same value for each instance of a row where the layout is the same - even if the value of the elements inside the row have different values.  For example, if the text is the only thing different between two cells but the layout is the same, both row instances should have the same value for tableClass.</p>
-<p>You can listen for table row events on all rows by adding an event listener to the table view instance.  Events automatically propagate to parent views.</p>
+ * @namespace <p>Use the {@link Ti.UI.createTableViewRow} method to create a table view row.</p>
+<p>A table view row represents a single item in a <code>TableView</code>. The row's contents can be 
+as simple as a single line of text, or the row can be a completely customized with
+its own child views.</p>
+<p>A basic table view row includes properties for setting:</p>
+<ul>
+<li>Row title--the text displayed on the row.</li>
+<li>Optional images on the left and right sides of the row.</li>
+<li>Optional system decorations, such as checkboxes.</li>
+</ul>
+<p>You can also set the usual view properties, such as background color and 
+background image.</p>
+<p>If you want a custom layout for your view, such as multiple lines of text,
+different fonts, or additional images or controls, you can add child views
+to the row. In this case, you should not specify a <code>title</code> for the row.</p>
+<p>Make sure you set the <code>className</code> on each row instance if using more than one type 
+of row layout. You can use the same value for each instance of a row where the 
+layout is the same - even if the value of the elements inside the row have different 
+values. For example, if the text is the only thing different between two cells but 
+the layout is the same, both row instances should have the same value for <code>className</code>.</p>
+<p>You can listen for table row events on all rows by adding an event listener to the 
+table view instance.  Events automatically propagate to parent views.</p>
+<h4>Platform Implementation Notes</h4>
+<p>The <code>top</code>, <code>left</code> and other positional parameters are not used for their usual
+purposes, because the table view row is automatically positioned by its parent.</p>
+<p>On Android, these properties are used to position the content (title) inside the row. 
+For example, setting <code>top</code> to 20 moves the title down from the top of the row. 
+On iOS, these values have no effect.</p>
+<p>On Mobile Web, these properties are used to relatively position the row, treating
+the <code>TableView</code> as if it were a horizontal layout.</p>
+<p>Also, note that the selected text color, <code>selectedColor</code>, can only be set on iOS and 
+Mobile Web. On Android, the text color does not change when the row is selected.</p>
  * 
  * @example Simple Table View Row example
  * <p>In this simple example, we create a table view row with a red square in the cell.</p>
@@ -44303,6 +47322,13 @@ Ti.UI.TableViewRow.prototype = {
     backgroundLeftCap:null,
 
     /**
+     * <p>Toggle for whether or not to tile a background across a view.</p>
+     * @type Boolean
+     * @since 0.9 (iPhone), 0.9 (iPad)
+     */
+    backgroundRepeat:null,
+
+    /**
      * <p>Selected background color of the view.</p>
      * @type String
      * @since 0.9 (Android), 1.8 (Mobile Web)
@@ -44359,21 +47385,28 @@ Ti.UI.TableViewRow.prototype = {
     center:null,
 
     /**
-     * <p>the class name of the table. each table view cell must have a unique class name if the cell layout is different. however, use the same name for rows that have the same structural layout (even if the content is different) to provide maximum rendering performance.</p>
+     * <p>Array of this view's child views.</p>
+     * @type Array<Ti.UI.View>
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
+     */
+    children:null,
+
+    /**
+     * <p>Class name for the row.</p>
      * @type String
      * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
     className:null,
 
     /**
-     * <p>default color of the row when not selected</p>
+     * <p>Default text color of the row when not selected.</p>
      * @type String
      * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
     color:null,
 
     /**
-     * <p>whether or not the row can be deleted</p>
+     * <p>Whether or not this row can be deleted when the table is in edit mode.</p>
      * @type Boolean
      * @since 0.9 (iPhone), 0.9 (iPad)
      */
@@ -44387,23 +47420,30 @@ Ti.UI.TableViewRow.prototype = {
     focusable:null,
 
     /**
-     * <p>render a system provided check mark in the right image area of the row cell</p>
+     * <p>Font to use for the row title.</p>
+     * @type Font
+     * @since 0.9 (Android)
+     */
+    font:null,
+
+    /**
+     * <p>Render a system provided check mark in the right image area of the row.</p>
      * @type Boolean
      * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
     hasCheck:null,
 
     /**
-     * <p>render a system provided right arrow in the right image area of the row cell</p>
+     * <p>Render a system provided arrow in the right image area of the row.</p>
      * @type Boolean
      * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
     hasChild:null,
 
     /**
-     * <p>render a system provided blue indicator icon in the right image area of the row cell</p>
+     * <p>Render a system provided detail disclosure button in the right image area of the row.</p>
      * @type Boolean
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
+     * @since 0.9 (iPhone), 0.9 (iPad)
      */
     hasDetail:null,
 
@@ -44415,9 +47455,9 @@ Ti.UI.TableViewRow.prototype = {
     height:null,
 
     /**
-     * <p>the indention level for the cell (defaults to 0)</p>
+     * <p>Indention level for the row.</p>
      * @type Number
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
+     * @since 0.9 (iPhone), 0.9 (iPad)
      */
     indentionLevel:null,
 
@@ -44429,9 +47469,10 @@ Ti.UI.TableViewRow.prototype = {
     keepScreenOn:null,
 
     /**
-     * <p>the layout algorithm to use for the layout. either absolute (default) or vertical.</p>
+     * <p>Specifies how the view positions its children. 
+One of: 'absolute', 'vertical', or 'horizontal'.</p>
      * @type String
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
     layout:null,
 
@@ -44443,7 +47484,7 @@ Ti.UI.TableViewRow.prototype = {
     left:null,
 
     /**
-     * <p>image url to render in the left image area of the row cell</p>
+     * <p>Image to render in the left image area of the row, specified as a local path or URL.</p>
      * @type String
      * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
@@ -44464,42 +47505,42 @@ Ti.UI.TableViewRow.prototype = {
     right:null,
 
     /**
-     * <p>image url to render in the right image area of the row cell</p>
+     * <p>Image to render in the right image area of the row, specified as a local path or URL.</p>
      * @type String
      * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
     rightImage:null,
 
     /**
-     * <p>the background color to render when the row cell is selected</p>
+     * <p>Background color to render when the row is selected.</p>
      * @type String
      * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
     selectedBackgroundColor:null,
 
     /**
-     * <p>the background image to render when the row cell is selected</p>
+     * <p>Background image to render when the row is selected.</p>
      * @type String
      * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
     selectedBackgroundImage:null,
 
     /**
-     * <p>color of the row during selection</p>
+     * <p>Color of the row text when the row is selected.</p>
      * @type String
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
+     * @since 0.9 (iPhone), 0.9 (iPad)
      */
     selectedColor:null,
 
     /**
-     * <p>a selection style constant to control the selection color. For iPhone, use the constants from Ti.UI.iPhone.TableViewCellSelectionStyle</p>
+     * <p>Selection style constant to control the selection color.</p>
      * @type Number
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
+     * @since 0.9 (iPhone), 0.9 (iPad)
      */
     selectionStyle:null,
 
     /**
-     * <p>Size of the view as a dictionary of width and height properties.</p>
+     * <p>Rendered size of the view as a dictionary of width and height properties.</p>
      * @type Object
      * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
@@ -44513,7 +47554,7 @@ Ti.UI.TableViewRow.prototype = {
     softKeyboardOnFocus:null,
 
     /**
-     * <p>the title cell value. do not specify if using views as children of the row</p>
+     * <p>Text to display on the row.</p>
      * @type String
      * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
@@ -44536,7 +47577,7 @@ Ti.UI.TableViewRow.prototype = {
     /**
      * <p>Transformation matrix to apply to the view.</p>
      * @type Ti.UI.D2Matrix|Ti.UI.iOS.D3Matrix
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
     transform:null,
 
@@ -44683,6 +47724,14 @@ If this argument is not a view, an exception will be raised.</p>
     },
 
     /**
+     * <p>Gets the value of the {@link Ti.UI.TableViewRow.backgroundRepeat} property.</p>
+     * @returns Boolean
+     * @since 0.9 (iPhone), 0.9 (iPad)
+     */
+    getBackgroundRepeat:function() {
+    },
+
+    /**
      * <p>Gets the value of the {@link Ti.UI.TableViewRow.backgroundSelectedColor} property.</p>
      * @returns String
      * @since 0.9 (Android), 1.8 (Mobile Web)
@@ -44748,6 +47797,14 @@ If this argument is not a view, an exception will be raised.</p>
     },
 
     /**
+     * <p>Gets the value of the {@link Ti.UI.TableViewRow.children} property.</p>
+     * @returns Array<Ti.UI.View>
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
+     */
+    getChildren:function() {
+    },
+
+    /**
      * <p>Gets the value of the {@link Ti.UI.TableViewRow.className} property.</p>
      * @returns String
      * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
@@ -44780,6 +47837,14 @@ If this argument is not a view, an exception will be raised.</p>
     },
 
     /**
+     * <p>Gets the value of the {@link Ti.UI.TableViewRow.font} property.</p>
+     * @returns Font
+     * @since 0.9 (Android)
+     */
+    getFont:function() {
+    },
+
+    /**
      * <p>Gets the value of the {@link Ti.UI.TableViewRow.hasCheck} property.</p>
      * @returns Boolean
      * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
@@ -44798,7 +47863,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Gets the value of the {@link Ti.UI.TableViewRow.hasDetail} property.</p>
      * @returns Boolean
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
+     * @since 0.9 (iPhone), 0.9 (iPad)
      */
     getHasDetail:function() {
     },
@@ -44815,7 +47880,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Gets the value of the {@link Ti.UI.TableViewRow.indentionLevel} property.</p>
      * @returns Number
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
+     * @since 0.9 (iPhone), 0.9 (iPad)
      */
     getIndentionLevel:function() {
     },
@@ -44831,7 +47896,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Gets the value of the {@link Ti.UI.TableViewRow.layout} property.</p>
      * @returns String
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
     getLayout:function() {
     },
@@ -44897,7 +47962,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Gets the value of the {@link Ti.UI.TableViewRow.selectedColor} property.</p>
      * @returns String
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
+     * @since 0.9 (iPhone), 0.9 (iPad)
      */
     getSelectedColor:function() {
     },
@@ -44905,7 +47970,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Gets the value of the {@link Ti.UI.TableViewRow.selectionStyle} property.</p>
      * @returns Number
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
+     * @since 0.9 (iPhone), 0.9 (iPad)
      */
     getSelectionStyle:function() {
     },
@@ -44955,7 +48020,7 @@ If this argument is not a view, an exception will be raised.</p>
      * <p>Gets the value of the {@link Ti.UI.TableViewRow.transform} property.</p>
      * @returns Ti.UI.D2Matrix
      * @returns Ti.UI.iOS.D3Matrix
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
     getTransform:function() {
     },
@@ -45082,6 +48147,14 @@ If this argument is not a view, an exception will be raised.</p>
     },
 
     /**
+     * <p>Sets the value of the {@link Ti.UI.TableViewRow.backgroundRepeat} property.</p>
+     * @param {Boolean} backgroundRepeat <p>New value for the property.</p>
+     * @since 0.9 (iPhone), 0.9 (iPad)
+     */
+    setBackgroundRepeat:function(backgroundRepeat) {
+    },
+
+    /**
      * <p>Sets the value of the {@link Ti.UI.TableViewRow.backgroundSelectedColor} property.</p>
      * @param {String} backgroundSelectedColor <p>New value for the property.</p>
      * @since 0.9 (Android), 1.8 (Mobile Web)
@@ -45178,6 +48251,14 @@ If this argument is not a view, an exception will be raised.</p>
     },
 
     /**
+     * <p>Sets the value of the {@link Ti.UI.TableViewRow.font} property.</p>
+     * @param {Font} font <p>New value for the property.</p>
+     * @since 0.9 (Android)
+     */
+    setFont:function(font) {
+    },
+
+    /**
      * <p>Sets the value of the {@link Ti.UI.TableViewRow.hasCheck} property.</p>
      * @param {Boolean} hasCheck <p>New value for the property.</p>
      * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
@@ -45196,7 +48277,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Sets the value of the {@link Ti.UI.TableViewRow.hasDetail} property.</p>
      * @param {Boolean} hasDetail <p>New value for the property.</p>
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
+     * @since 0.9 (iPhone), 0.9 (iPad)
      */
     setHasDetail:function(hasDetail) {
     },
@@ -45212,7 +48293,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Sets the value of the {@link Ti.UI.TableViewRow.indentionLevel} property.</p>
      * @param {Number} indentionLevel <p>New value for the property.</p>
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
+     * @since 0.9 (iPhone), 0.9 (iPad)
      */
     setIndentionLevel:function(indentionLevel) {
     },
@@ -45228,7 +48309,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Sets the value of the {@link Ti.UI.TableViewRow.layout} property.</p>
      * @param {String} layout <p>New value for the property.</p>
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
     setLayout:function(layout) {
     },
@@ -45292,7 +48373,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Sets the value of the {@link Ti.UI.TableViewRow.selectedColor} property.</p>
      * @param {String} selectedColor <p>New value for the property.</p>
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
+     * @since 0.9 (iPhone), 0.9 (iPad)
      */
     setSelectedColor:function(selectedColor) {
     },
@@ -45300,17 +48381,9 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Sets the value of the {@link Ti.UI.TableViewRow.selectionStyle} property.</p>
      * @param {Number} selectionStyle <p>New value for the property.</p>
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
+     * @since 0.9 (iPhone), 0.9 (iPad)
      */
     setSelectionStyle:function(selectionStyle) {
-    },
-
-    /**
-     * <p>Sets the value of the {@link Ti.UI.TableViewRow.size} property.</p>
-     * @param {Object} size <p>New value for the property.</p>
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
-     */
-    setSize:function(size) {
     },
 
     /**
@@ -45348,7 +48421,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Sets the value of the {@link Ti.UI.TableViewRow.transform} property.</p>
      * @param {Ti.UI.D2Matrix|Ti.UI.iOS.D3Matrix} transform <p>New value for the property.</p>
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
     setTransform:function(transform) {
     },
@@ -45484,6 +48557,13 @@ Ti.UI.TableViewSection.prototype = {
     backgroundLeftCap:null,
 
     /**
+     * <p>Toggle for whether or not to tile a background across a view.</p>
+     * @type Boolean
+     * @since 0.9 (iPhone), 0.9 (iPad)
+     */
+    backgroundRepeat:null,
+
+    /**
      * <p>Selected background color of the view.</p>
      * @type String
      * @since 0.9 (Android), 1.8 (Mobile Web)
@@ -45538,6 +48618,13 @@ Ti.UI.TableViewSection.prototype = {
      * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
     center:null,
+
+    /**
+     * <p>Array of this view's child views.</p>
+     * @type Array<Ti.UI.View>
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
+     */
+    children:null,
 
     /**
      * <p>Whether view should be focusable while navigating with the trackball.</p>
@@ -45625,7 +48712,14 @@ One of: 'absolute', 'vertical', or 'horizontal'.</p>
     rowCount:null,
 
     /**
-     * <p>Size of the view as a dictionary of width and height properties.</p>
+     * <p>Array of rows in the section.</p>
+     * @type Array<Ti.UI.TableViewRow>
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
+     */
+    rows:null,
+
+    /**
+     * <p>Rendered size of the view as a dictionary of width and height properties.</p>
      * @type Object
      * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
@@ -45655,7 +48749,7 @@ One of: 'absolute', 'vertical', or 'horizontal'.</p>
     /**
      * <p>Transformation matrix to apply to the view.</p>
      * @type Ti.UI.D2Matrix|Ti.UI.iOS.D3Matrix
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
     transform:null,
 
@@ -45812,6 +48906,14 @@ If this argument is not a view, an exception will be raised.</p>
     },
 
     /**
+     * <p>Gets the value of the {@link Ti.UI.TableViewSection.backgroundRepeat} property.</p>
+     * @returns Boolean
+     * @since 0.9 (iPhone), 0.9 (iPad)
+     */
+    getBackgroundRepeat:function() {
+    },
+
+    /**
      * <p>Gets the value of the {@link Ti.UI.TableViewSection.backgroundSelectedColor} property.</p>
      * @returns String
      * @since 0.9 (Android), 1.8 (Mobile Web)
@@ -45874,6 +48976,14 @@ If this argument is not a view, an exception will be raised.</p>
      * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
     getCenter:function() {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.UI.TableViewSection.children} property.</p>
+     * @returns Array<Ti.UI.View>
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
+     */
+    getChildren:function() {
     },
 
     /**
@@ -45976,6 +49086,14 @@ If this argument is not a view, an exception will be raised.</p>
     },
 
     /**
+     * <p>Gets the value of the {@link Ti.UI.TableViewSection.rows} property.</p>
+     * @returns Array<Ti.UI.TableViewRow>
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
+     */
+    getRows:function() {
+    },
+
+    /**
      * <p>Gets the value of the {@link Ti.UI.TableViewSection.size} property.</p>
      * @returns Object
      * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
@@ -46012,7 +49130,7 @@ If this argument is not a view, an exception will be raised.</p>
      * <p>Gets the value of the {@link Ti.UI.TableViewSection.transform} property.</p>
      * @returns Ti.UI.D2Matrix
      * @returns Ti.UI.iOS.D3Matrix
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
     getTransform:function() {
     },
@@ -46136,6 +49254,14 @@ If this argument is not a view, an exception will be raised.</p>
      * @since 0.9 (iPhone), 0.9 (iPad)
      */
     setBackgroundLeftCap:function(backgroundLeftCap) {
+    },
+
+    /**
+     * <p>Sets the value of the {@link Ti.UI.TableViewSection.backgroundRepeat} property.</p>
+     * @param {Boolean} backgroundRepeat <p>New value for the property.</p>
+     * @since 0.9 (iPhone), 0.9 (iPad)
+     */
+    setBackgroundRepeat:function(backgroundRepeat) {
     },
 
     /**
@@ -46291,14 +49417,6 @@ If this argument is not a view, an exception will be raised.</p>
     },
 
     /**
-     * <p>Sets the value of the {@link Ti.UI.TableViewSection.size} property.</p>
-     * @param {Object} size <p>New value for the property.</p>
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
-     */
-    setSize:function(size) {
-    },
-
-    /**
      * <p>Sets the value of the {@link Ti.UI.TableViewSection.softKeyboardOnFocus} property.</p>
      * @param {Number} softKeyboardOnFocus <p>New value for the property.</p>
      * @since 0.9 (Android)
@@ -46325,7 +49443,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Sets the value of the {@link Ti.UI.TableViewSection.transform} property.</p>
      * @param {Ti.UI.D2Matrix|Ti.UI.iOS.D3Matrix} transform <p>New value for the property.</p>
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
     setTransform:function(transform) {
     },
@@ -46529,6 +49647,13 @@ Ti.UI.TextArea.prototype = {
     backgroundLeftCap:null,
 
     /**
+     * <p>Toggle for whether or not to tile a background across a view.</p>
+     * @type Boolean
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    backgroundRepeat:null,
+
+    /**
      * <p>Selected background color of the view.</p>
      * @type String
      * @since 0.8 (Android), 1.8 (Mobile Web)
@@ -46585,6 +49710,13 @@ Ti.UI.TextArea.prototype = {
     center:null,
 
     /**
+     * <p>Array of this view's child views.</p>
+     * @type Array<Ti.UI.View>
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     */
+    children:null,
+
+    /**
      * <p>Is the text area editable?</p>
      * @type Boolean
      * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
@@ -46604,6 +49736,13 @@ Ti.UI.TextArea.prototype = {
      * @since 0.8 (Android)
      */
     focusable:null,
+
+    /**
+     * <p>Font to use for text.</p>
+     * @type Font
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     */
+    font:null,
 
     /**
      * <p>View height, in platform-specific units.</p>
@@ -46691,7 +49830,7 @@ One of: 'absolute', 'vertical', or 'horizontal'.</p>
     scrollable:null,
 
     /**
-     * <p>Size of the view as a dictionary of width and height properties.</p>
+     * <p>Rendered size of the view as a dictionary of width and height properties.</p>
      * @type Object
      * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
      */
@@ -46707,7 +49846,7 @@ One of: 'absolute', 'vertical', or 'horizontal'.</p>
     /**
      * <p>Should the return key be suppressed during entry?</p>
      * @type Boolean
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * @since 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
      */
     suppressReturn:null,
 
@@ -46735,7 +49874,7 @@ One of: 'absolute', 'vertical', or 'horizontal'.</p>
     /**
      * <p>Transformation matrix to apply to the view.</p>
      * @type Ti.UI.D2Matrix|Ti.UI.iOS.D3Matrix
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
      */
     transform:null,
 
@@ -46937,6 +50076,14 @@ If this argument is not a view, an exception will be raised.</p>
     },
 
     /**
+     * <p>Gets the value of the {@link Ti.UI.TextArea.backgroundRepeat} property.</p>
+     * @returns Boolean
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    getBackgroundRepeat:function() {
+    },
+
+    /**
      * <p>Gets the value of the {@link Ti.UI.TextArea.backgroundSelectedColor} property.</p>
      * @returns String
      * @since 0.8 (Android), 1.8 (Mobile Web)
@@ -47002,6 +50149,14 @@ If this argument is not a view, an exception will be raised.</p>
     },
 
     /**
+     * <p>Gets the value of the {@link Ti.UI.TextArea.children} property.</p>
+     * @returns Array<Ti.UI.View>
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     */
+    getChildren:function() {
+    },
+
+    /**
      * <p>Gets the value of the {@link Ti.UI.TextArea.editable} property.</p>
      * @returns Boolean
      * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
@@ -47023,6 +50178,14 @@ If this argument is not a view, an exception will be raised.</p>
      * @since 0.8 (Android)
      */
     getFocusable:function() {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.UI.TextArea.font} property.</p>
+     * @returns Font
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     */
+    getFont:function() {
     },
 
     /**
@@ -47143,7 +50306,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Gets the value of the {@link Ti.UI.TextArea.suppressReturn} property.</p>
      * @returns Boolean
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * @since 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
      */
     getSuppressReturn:function() {
     },
@@ -47178,7 +50341,7 @@ If this argument is not a view, an exception will be raised.</p>
      * <p>Gets the value of the {@link Ti.UI.TextArea.transform} property.</p>
      * @returns Ti.UI.D2Matrix
      * @returns Ti.UI.iOS.D3Matrix
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
      */
     getTransform:function() {
     },
@@ -47344,6 +50507,14 @@ If this argument is not a view, an exception will be raised.</p>
     },
 
     /**
+     * <p>Sets the value of the {@link Ti.UI.TextArea.backgroundRepeat} property.</p>
+     * @param {Boolean} backgroundRepeat <p>New value for the property.</p>
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    setBackgroundRepeat:function(backgroundRepeat) {
+    },
+
+    /**
      * <p>Sets the value of the {@link Ti.UI.TextArea.backgroundSelectedColor} property.</p>
      * @param {String} backgroundSelectedColor <p>New value for the property.</p>
      * @since 0.8 (Android), 1.8 (Mobile Web)
@@ -47429,6 +50600,14 @@ If this argument is not a view, an exception will be raised.</p>
      * @since 0.8 (Android)
      */
     setFocusable:function(focusable) {
+    },
+
+    /**
+     * <p>Sets the value of the {@link Ti.UI.TextArea.font} property.</p>
+     * @param {Font} font <p>New value for the property.</p>
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     */
+    setFont:function(font) {
     },
 
     /**
@@ -47528,14 +50707,6 @@ If this argument is not a view, an exception will be raised.</p>
     },
 
     /**
-     * <p>Sets the value of the {@link Ti.UI.TextArea.size} property.</p>
-     * @param {Object} size <p>New value for the property.</p>
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
-     */
-    setSize:function(size) {
-    },
-
-    /**
      * <p>Sets the value of the {@link Ti.UI.TextArea.softKeyboardOnFocus} property.</p>
      * @param {Number} softKeyboardOnFocus <p>New value for the property.</p>
      * @since 0.8 (Android)
@@ -47546,7 +50717,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Sets the value of the {@link Ti.UI.TextArea.suppressReturn} property.</p>
      * @param {Boolean} suppressReturn <p>New value for the property.</p>
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * @since 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
      */
     setSuppressReturn:function(suppressReturn) {
     },
@@ -47578,7 +50749,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Sets the value of the {@link Ti.UI.TextArea.transform} property.</p>
      * @param {Ti.UI.D2Matrix|Ti.UI.iOS.D3Matrix} transform <p>New value for the property.</p>
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
      */
     setTransform:function(transform) {
     },
@@ -47716,6 +50887,13 @@ Ti.UI.TextField.prototype = {
     autocapitalization:null,
 
     /**
+     * <p>If true, allows the input field to autocorrect misspelled words.</p>
+     * @type Boolean
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     */
+    autocorrect:null,
+
+    /**
      * <p>Background color of the view.</p>
      * @type String
      * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
@@ -47770,6 +50948,13 @@ Ti.UI.TextField.prototype = {
      * @since 0.8 (iPhone), 0.8 (iPad)
      */
     backgroundLeftCap:null,
+
+    /**
+     * <p>Toggle for whether or not to tile a background across a view.</p>
+     * @type Boolean
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    backgroundRepeat:null,
 
     /**
      * <p>Selected background color of the view.</p>
@@ -47835,9 +51020,16 @@ Ti.UI.TextField.prototype = {
     center:null,
 
     /**
+     * <p>Array of this view's child views.</p>
+     * @type Array<Ti.UI.View>
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     */
+    children:null,
+
+    /**
      * <p>When to display the clear button.</p>
      * @type Number
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
+     * @since 0.8 (iPhone), 0.8 (iPad)
      */
     clearButtonMode:null,
 
@@ -47868,6 +51060,13 @@ Ti.UI.TextField.prototype = {
      * @since 0.8 (Android)
      */
     focusable:null,
+
+    /**
+     * <p>Font to use for text.</p>
+     * @type Font
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     */
+    font:null,
 
     /**
      * <p>View height, in platform-specific units.</p>
@@ -47914,7 +51113,7 @@ Ti.UI.TextField.prototype = {
     /**
      * <p>Specifies the keyboard type to display when this field is focused, such as {@link Ti.UI.KEYBOARD_EMAIL} or {@link Ti.UI.KEYBOARD_NUMBER_PAD}.</p>
      * @type Number
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
      */
     keyboardType:null,
 
@@ -47957,7 +51156,7 @@ One of: 'absolute', 'vertical', or 'horizontal'.</p>
     /**
      * <p>Maximum length of text field input.</p>
      * @type Number
-     * @since 0.8 (iPhone)
+     * @since 0.8 (iPhone), 1.8 (Mobile Web)
      */
     maxLength:null,
 
@@ -47978,14 +51177,14 @@ One of: 'absolute', 'vertical', or 'horizontal'.</p>
     /**
      * <p>Left padding of the text field.</p>
      * @type Number
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * @since 0.8 (iPhone), 0.8 (iPad)
      */
     paddingLeft:null,
 
     /**
      * <p>Right padding of the text field.</p>
      * @type Number
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * @since 0.8 (iPhone), 0.8 (iPad)
      */
     paddingRight:null,
 
@@ -47999,7 +51198,7 @@ One of: 'absolute', 'vertical', or 'horizontal'.</p>
     /**
      * <p>Specifies the text to display on the keyboard <strong>Return</strong> key when this field is focused.</p>
      * @type Number
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
      */
     returnKeyType:null,
 
@@ -48032,7 +51231,7 @@ One of: 'absolute', 'vertical', or 'horizontal'.</p>
     rightButtonPadding:null,
 
     /**
-     * <p>Size of the view as a dictionary of width and height properties.</p>
+     * <p>Rendered size of the view as a dictionary of width and height properties.</p>
      * @type Object
      * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
      */
@@ -48048,7 +51247,7 @@ One of: 'absolute', 'vertical', or 'horizontal'.</p>
     /**
      * <p>Should the return key should be suppressed during entry?</p>
      * @type Boolean
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * @since 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
      */
     suppressReturn:null,
 
@@ -48076,7 +51275,7 @@ One of: 'absolute', 'vertical', or 'horizontal'.</p>
     /**
      * <p>Transformation matrix to apply to the view.</p>
      * @type Ti.UI.D2Matrix|Ti.UI.iOS.D3Matrix
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
      */
     transform:null,
 
@@ -48094,7 +51293,7 @@ vertical alignment constants from {@link Ti.UI}:
 {@link Ti.UI.TEXT_VERTICAL_ALIGNMENT_CENTER}, or 
 {@link Ti.UI.TEXT_VERTICAL_ALIGNMENT_TOP}.</p>
      * @type Number|String
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * @since 0.8 (iPhone), 0.8 (iPad), 0.8 (Android)
      */
     verticalAlign:null,
 
@@ -48217,6 +51416,14 @@ If this argument is not a view, an exception will be raised.</p>
     },
 
     /**
+     * <p>Gets the value of the {@link Ti.UI.TextField.autocorrect} property.</p>
+     * @returns Boolean
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     */
+    getAutocorrect:function() {
+    },
+
+    /**
      * <p>Gets the value of the {@link Ti.UI.TextField.backgroundColor} property.</p>
      * @returns String
      * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
@@ -48278,6 +51485,14 @@ If this argument is not a view, an exception will be raised.</p>
      * @since 0.8 (iPhone), 0.8 (iPad)
      */
     getBackgroundLeftCap:function() {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.UI.TextField.backgroundRepeat} property.</p>
+     * @returns Boolean
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    getBackgroundRepeat:function() {
     },
 
     /**
@@ -48354,9 +51569,17 @@ If this argument is not a view, an exception will be raised.</p>
     },
 
     /**
+     * <p>Gets the value of the {@link Ti.UI.TextField.children} property.</p>
+     * @returns Array<Ti.UI.View>
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     */
+    getChildren:function() {
+    },
+
+    /**
      * <p>Gets the value of the {@link Ti.UI.TextField.clearButtonMode} property.</p>
      * @returns Number
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
+     * @since 0.8 (iPhone), 0.8 (iPad)
      */
     getClearButtonMode:function() {
     },
@@ -48391,6 +51614,14 @@ If this argument is not a view, an exception will be raised.</p>
      * @since 0.8 (Android)
      */
     getFocusable:function() {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.UI.TextField.font} property.</p>
+     * @returns Font
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     */
+    getFont:function() {
     },
 
     /**
@@ -48445,7 +51676,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Gets the value of the {@link Ti.UI.TextField.keyboardType} property.</p>
      * @returns Number
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
      */
     getKeyboardType:function() {
     },
@@ -48494,7 +51725,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Gets the value of the {@link Ti.UI.TextField.maxLength} property.</p>
      * @returns Number
-     * @since 0.8 (iPhone)
+     * @since 0.8 (iPhone), 1.8 (Mobile Web)
      */
     getMaxLength:function() {
     },
@@ -48518,7 +51749,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Gets the value of the {@link Ti.UI.TextField.paddingLeft} property.</p>
      * @returns Number
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * @since 0.8 (iPhone), 0.8 (iPad)
      */
     getPaddingLeft:function() {
     },
@@ -48526,7 +51757,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Gets the value of the {@link Ti.UI.TextField.paddingRight} property.</p>
      * @returns Number
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * @since 0.8 (iPhone), 0.8 (iPad)
      */
     getPaddingRight:function() {
     },
@@ -48542,7 +51773,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Gets the value of the {@link Ti.UI.TextField.returnKeyType} property.</p>
      * @returns Number
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
      */
     getReturnKeyType:function() {
     },
@@ -48599,7 +51830,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Gets the value of the {@link Ti.UI.TextField.suppressReturn} property.</p>
      * @returns Boolean
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * @since 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
      */
     getSuppressReturn:function() {
     },
@@ -48634,7 +51865,7 @@ If this argument is not a view, an exception will be raised.</p>
      * <p>Gets the value of the {@link Ti.UI.TextField.transform} property.</p>
      * @returns Ti.UI.D2Matrix
      * @returns Ti.UI.iOS.D3Matrix
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
      */
     getTransform:function() {
     },
@@ -48651,7 +51882,7 @@ If this argument is not a view, an exception will be raised.</p>
      * <p>Gets the value of the {@link Ti.UI.TextField.verticalAlign} property.</p>
      * @returns Number
      * @returns String
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * @since 0.8 (iPhone), 0.8 (iPad), 0.8 (Android)
      */
     getVerticalAlign:function() {
     },
@@ -48737,6 +51968,14 @@ If this argument is not a view, an exception will be raised.</p>
     },
 
     /**
+     * <p>Sets the value of the {@link Ti.UI.TextField.autocorrect} property.</p>
+     * @param {Boolean} autocorrect <p>New value for the property.</p>
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     */
+    setAutocorrect:function(autocorrect) {
+    },
+
+    /**
      * <p>Sets the value of the {@link Ti.UI.TextField.backgroundColor} property.</p>
      * @param {String} backgroundColor <p>New value for the property.</p>
      * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
@@ -48798,6 +52037,14 @@ If this argument is not a view, an exception will be raised.</p>
      * @since 0.8 (iPhone), 0.8 (iPad)
      */
     setBackgroundLeftCap:function(backgroundLeftCap) {
+    },
+
+    /**
+     * <p>Sets the value of the {@link Ti.UI.TextField.backgroundRepeat} property.</p>
+     * @param {Boolean} backgroundRepeat <p>New value for the property.</p>
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    setBackgroundRepeat:function(backgroundRepeat) {
     },
 
     /**
@@ -48875,7 +52122,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Sets the value of the {@link Ti.UI.TextField.clearButtonMode} property.</p>
      * @param {Number} clearButtonMode <p>New value for the property.</p>
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
+     * @since 0.8 (iPhone), 0.8 (iPad)
      */
     setClearButtonMode:function(clearButtonMode) {
     },
@@ -48910,6 +52157,14 @@ If this argument is not a view, an exception will be raised.</p>
      * @since 0.8 (Android)
      */
     setFocusable:function(focusable) {
+    },
+
+    /**
+     * <p>Sets the value of the {@link Ti.UI.TextField.font} property.</p>
+     * @param {Font} font <p>New value for the property.</p>
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     */
+    setFont:function(font) {
     },
 
     /**
@@ -48963,7 +52218,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Sets the value of the {@link Ti.UI.TextField.keyboardType} property.</p>
      * @param {Number} keyboardType <p>New value for the property.</p>
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
      */
     setKeyboardType:function(keyboardType) {
     },
@@ -49011,7 +52266,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Sets the value of the {@link Ti.UI.TextField.maxLength} property.</p>
      * @param {Number} maxLength <p>New value for the property.</p>
-     * @since 0.8 (iPhone)
+     * @since 0.8 (iPhone), 1.8 (Mobile Web)
      */
     setMaxLength:function(maxLength) {
     },
@@ -49035,7 +52290,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Sets the value of the {@link Ti.UI.TextField.paddingLeft} property.</p>
      * @param {Number} paddingLeft <p>New value for the property.</p>
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * @since 0.8 (iPhone), 0.8 (iPad)
      */
     setPaddingLeft:function(paddingLeft) {
     },
@@ -49043,7 +52298,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Sets the value of the {@link Ti.UI.TextField.paddingRight} property.</p>
      * @param {Number} paddingRight <p>New value for the property.</p>
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * @since 0.8 (iPhone), 0.8 (iPad)
      */
     setPaddingRight:function(paddingRight) {
     },
@@ -49059,7 +52314,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Sets the value of the {@link Ti.UI.TextField.returnKeyType} property.</p>
      * @param {Number} returnKeyType <p>New value for the property.</p>
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
      */
     setReturnKeyType:function(returnKeyType) {
     },
@@ -49097,14 +52352,6 @@ If this argument is not a view, an exception will be raised.</p>
     },
 
     /**
-     * <p>Sets the value of the {@link Ti.UI.TextField.size} property.</p>
-     * @param {Object} size <p>New value for the property.</p>
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
-     */
-    setSize:function(size) {
-    },
-
-    /**
      * <p>Sets the value of the {@link Ti.UI.TextField.softKeyboardOnFocus} property.</p>
      * @param {Number} softKeyboardOnFocus <p>New value for the property.</p>
      * @since 0.8 (Android)
@@ -49115,7 +52362,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Sets the value of the {@link Ti.UI.TextField.suppressReturn} property.</p>
      * @param {Boolean} suppressReturn <p>New value for the property.</p>
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * @since 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
      */
     setSuppressReturn:function(suppressReturn) {
     },
@@ -49147,7 +52394,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Sets the value of the {@link Ti.UI.TextField.transform} property.</p>
      * @param {Ti.UI.D2Matrix|Ti.UI.iOS.D3Matrix} transform <p>New value for the property.</p>
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
      */
     setTransform:function(transform) {
     },
@@ -49163,7 +52410,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Sets the value of the {@link Ti.UI.TextField.verticalAlign} property.</p>
      * @param {Number|String} verticalAlign <p>New value for the property.</p>
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * @since 0.8 (iPhone), 0.8 (iPad), 0.8 (Android)
      */
     setVerticalAlign:function(verticalAlign) {
     },
@@ -49289,6 +52536,13 @@ Ti.UI.Toolbar.prototype = {
     backgroundLeftCap:null,
 
     /**
+     * <p>Toggle for whether or not to tile a background across a view.</p>
+     * @type Boolean
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    backgroundRepeat:null,
+
+    /**
      * <p>Selected background color of the view.</p>
      * @type String
      * @since 0.8 (Android), 1.8 (Mobile Web)
@@ -49345,6 +52599,13 @@ Ti.UI.Toolbar.prototype = {
     center:null,
 
     /**
+     * <p>Array of this view's child views.</p>
+     * @type Array<Ti.UI.View>
+     * @since 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     */
+    children:null,
+
+    /**
      * <p>Whether view should be focusable while navigating with the trackball.</p>
      * @type Boolean
      * @since 0.8 (Android)
@@ -49395,7 +52656,7 @@ One of: 'absolute', 'vertical', or 'horizontal'.</p>
     right:null,
 
     /**
-     * <p>Size of the view as a dictionary of width and height properties.</p>
+     * <p>Rendered size of the view as a dictionary of width and height properties.</p>
      * @type Object
      * @since 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
      */
@@ -49425,7 +52686,7 @@ One of: 'absolute', 'vertical', or 'horizontal'.</p>
     /**
      * <p>Transformation matrix to apply to the view.</p>
      * @type Ti.UI.D2Matrix|Ti.UI.iOS.D3Matrix
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
+     * @since 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
      */
     transform:null,
 
@@ -49582,6 +52843,14 @@ If this argument is not a view, an exception will be raised.</p>
     },
 
     /**
+     * <p>Gets the value of the {@link Ti.UI.Toolbar.backgroundRepeat} property.</p>
+     * @returns Boolean
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    getBackgroundRepeat:function() {
+    },
+
+    /**
      * <p>Gets the value of the {@link Ti.UI.Toolbar.backgroundSelectedColor} property.</p>
      * @returns String
      * @since 0.8 (Android), 1.8 (Mobile Web)
@@ -49644,6 +52913,14 @@ If this argument is not a view, an exception will be raised.</p>
      * @since 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
      */
     getCenter:function() {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.UI.Toolbar.children} property.</p>
+     * @returns Array<Ti.UI.View>
+     * @since 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     */
+    getChildren:function() {
     },
 
     /**
@@ -49742,7 +53019,7 @@ If this argument is not a view, an exception will be raised.</p>
      * <p>Gets the value of the {@link Ti.UI.Toolbar.transform} property.</p>
      * @returns Ti.UI.D2Matrix
      * @returns Ti.UI.iOS.D3Matrix
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
+     * @since 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
      */
     getTransform:function() {
     },
@@ -49869,6 +53146,14 @@ If this argument is not a view, an exception will be raised.</p>
     },
 
     /**
+     * <p>Sets the value of the {@link Ti.UI.Toolbar.backgroundRepeat} property.</p>
+     * @param {Boolean} backgroundRepeat <p>New value for the property.</p>
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    setBackgroundRepeat:function(backgroundRepeat) {
+    },
+
+    /**
      * <p>Sets the value of the {@link Ti.UI.Toolbar.backgroundSelectedColor} property.</p>
      * @param {String} backgroundSelectedColor <p>New value for the property.</p>
      * @since 0.8 (Android), 1.8 (Mobile Web)
@@ -49989,14 +53274,6 @@ If this argument is not a view, an exception will be raised.</p>
     },
 
     /**
-     * <p>Sets the value of the {@link Ti.UI.Toolbar.size} property.</p>
-     * @param {Object} size <p>New value for the property.</p>
-     * @since 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
-     */
-    setSize:function(size) {
-    },
-
-    /**
      * <p>Sets the value of the {@link Ti.UI.Toolbar.softKeyboardOnFocus} property.</p>
      * @param {Number} softKeyboardOnFocus <p>New value for the property.</p>
      * @since 0.8 (Android)
@@ -50023,7 +53300,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Sets the value of the {@link Ti.UI.Toolbar.transform} property.</p>
      * @param {Ti.UI.D2Matrix|Ti.UI.iOS.D3Matrix} transform <p>New value for the property.</p>
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
+     * @since 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
      */
     setTransform:function(transform) {
     },
@@ -50072,6 +53349,44 @@ performed asynchronously. If null, it will be performed immediately.</p>
 
 /**
  * platforms: Android, iPhone, iPad, Mobile Web
+ * @namespace <p>The <code>View</code> is the base type for all UI widgets in Ti.</p>
+<h4>Units and Coordinates</h4>
+<p>Sizes and coordinates are specified using platform-specific units. </p>
+<p>The default unit on Android is pixels, but users can specify other units, including 
+pixels (px), points (pt), device-independent pixels (dp or dip), millimeters (mm) or 
+inches (in). For example, '16pt' is interpreted as 16 points. Points on Android always 
+refers to the typographical unit of 1/72 of an inch.</p>
+<p>Android's density-independent pixels (DIPs) maintain a consistent visual size independent 
+of the display's density. One DIP corresponds to one pixel on a medium density display 
+(160 DPI).</p>
+<p>iOS accepts sizes in Apple "points," where one "point" corresponds to one pixel on 
+non-Retina displays, and two pixels on Retina displays. This unit is roughly equivalent
+to the Android density-independent pixel, and shouldn't be confused with the typographical
+unit. </p>
+<p>Any unit specifier appended to a size or coordinate value on iOS is ignored: for example, 
+'16in' is interpreted as 16 Apple "points", as is '16px' or '16mm'. </p>
+<p>Font sizes on iOS are treated differently than other sizes: font sizes are always 
+specified in typographical points.</p>
+<p>Mobile Web accepts all of the standard web units, including 
+pixels (px), ems (em), points (pt), picas (pc), millimeters (mm) or inches (in). The 
+default unit is pixels. Note that in Mobile Web, the interpretation of these units 
+is browser-dependent.</p>
+<p>Some {@link Ti.UI.View} size fields, such as <code>height</code> and <code>width</code> accept the 
+special value <code>'auto'</code> to specify that the value should be calculated based on the 
+view's contents. Sizes and positions can also be specified as a percentage of the 
+parent, for example, '50%'.</p>
+<h4>Size and Position</h4>
+<p>Titanium views are positioned using the <code>left</code>, <code>right</code>, <code>top,</code> <code>bottom</code> and <code>center</code> 
+properties, and sized using the <code>width</code> and <code>height</code> properties. These are
+input properties, set by the user to specify layout, and not modified by the 
+system to indicate actual calculated positions and sizes. </p>
+<p>How these properties are interpreted depends on the value of the view's <code>layout</code> 
+property. See the description of the {@link Ti.UI.View.layout} property 
+for details.</p>
+<p>The {@link Ti.UI.View.size} property is a read-only dictionary with 
+two properties, <code>width</code> and <code>height</code>. It provides the <em>rendered</em> size of the 
+view, and thus is only available once both it and its ancestors have been 
+fully drawn.</p>
  * 
  * @example Round View Example
  * <p>Create a rounded view.</p>
@@ -50157,6 +53472,13 @@ Ti.UI.View = {
     backgroundLeftCap:null,
 
     /**
+     * <p>Toggle for whether or not to tile a background across a view.</p>
+     * @type Boolean
+     * @since 0.9 (iPhone), 0.9 (iPad)
+     */
+    backgroundRepeat:null,
+
+    /**
      * <p>Selected background color of the view.</p>
      * @type String
      * @since 0.9 (Android), 1.8 (Mobile Web)
@@ -50213,6 +53535,13 @@ Ti.UI.View = {
     center:null,
 
     /**
+     * <p>Array of this view's child views.</p>
+     * @type Array<Ti.UI.View>
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
+     */
+    children:null,
+
+    /**
      * <p>Whether view should be focusable while navigating with the trackball.</p>
      * @type Boolean
      * @since 0.9 (Android)
@@ -50263,7 +53592,7 @@ One of: 'absolute', 'vertical', or 'horizontal'.</p>
     right:null,
 
     /**
-     * <p>Size of the view as a dictionary of width and height properties.</p>
+     * <p>Rendered size of the view as a dictionary of width and height properties.</p>
      * @type Object
      * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
@@ -50293,7 +53622,7 @@ One of: 'absolute', 'vertical', or 'horizontal'.</p>
     /**
      * <p>Transformation matrix to apply to the view.</p>
      * @type Ti.UI.D2Matrix|Ti.UI.iOS.D3Matrix
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
     transform:null,
 
@@ -50450,6 +53779,14 @@ If this argument is not a view, an exception will be raised.</p>
     },
 
     /**
+     * <p>Gets the value of the {@link Ti.UI.View.backgroundRepeat} property.</p>
+     * @returns Boolean
+     * @since 0.9 (iPhone), 0.9 (iPad)
+     */
+    getBackgroundRepeat:function() {
+    },
+
+    /**
      * <p>Gets the value of the {@link Ti.UI.View.backgroundSelectedColor} property.</p>
      * @returns String
      * @since 0.9 (Android), 1.8 (Mobile Web)
@@ -50512,6 +53849,14 @@ If this argument is not a view, an exception will be raised.</p>
      * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
     getCenter:function() {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.UI.View.children} property.</p>
+     * @returns Array<Ti.UI.View>
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
+     */
+    getChildren:function() {
     },
 
     /**
@@ -50610,7 +53955,7 @@ If this argument is not a view, an exception will be raised.</p>
      * <p>Gets the value of the {@link Ti.UI.View.transform} property.</p>
      * @returns Ti.UI.D2Matrix
      * @returns Ti.UI.iOS.D3Matrix
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
     getTransform:function() {
     },
@@ -50737,6 +54082,14 @@ If this argument is not a view, an exception will be raised.</p>
     },
 
     /**
+     * <p>Sets the value of the {@link Ti.UI.View.backgroundRepeat} property.</p>
+     * @param {Boolean} backgroundRepeat <p>New value for the property.</p>
+     * @since 0.9 (iPhone), 0.9 (iPad)
+     */
+    setBackgroundRepeat:function(backgroundRepeat) {
+    },
+
+    /**
      * <p>Sets the value of the {@link Ti.UI.View.backgroundSelectedColor} property.</p>
      * @param {String} backgroundSelectedColor <p>New value for the property.</p>
      * @since 0.9 (Android), 1.8 (Mobile Web)
@@ -50857,14 +54210,6 @@ If this argument is not a view, an exception will be raised.</p>
     },
 
     /**
-     * <p>Sets the value of the {@link Ti.UI.View.size} property.</p>
-     * @param {Object} size <p>New value for the property.</p>
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
-     */
-    setSize:function(size) {
-    },
-
-    /**
      * <p>Sets the value of the {@link Ti.UI.View.softKeyboardOnFocus} property.</p>
      * @param {Number} softKeyboardOnFocus <p>New value for the property.</p>
      * @since 0.9 (Android)
@@ -50891,7 +54236,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Sets the value of the {@link Ti.UI.View.transform} property.</p>
      * @param {Ti.UI.D2Matrix|Ti.UI.iOS.D3Matrix} transform <p>New value for the property.</p>
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
     setTransform:function(transform) {
     },
@@ -51027,6 +54372,13 @@ Ti.UI.WebView.prototype = {
     backgroundLeftCap:null,
 
     /**
+     * <p>Toggle for whether or not to tile a background across a view.</p>
+     * @type Boolean
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    backgroundRepeat:null,
+
+    /**
      * <p>Selected background color of the view.</p>
      * @type String
      * @since 0.8 (Android), 1.8 (Mobile Web)
@@ -51083,9 +54435,16 @@ Ti.UI.WebView.prototype = {
     center:null,
 
     /**
+     * <p>Array of this view's child views.</p>
+     * @type Array<Ti.UI.View>
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     */
+    children:null,
+
+    /**
      * <p>a data blob or file that is used to load the web document</p>
      * @type Object
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
      */
     data:null,
 
@@ -51175,7 +54534,7 @@ One of: 'absolute', 'vertical', or 'horizontal'.</p>
     scalesPageToFit:null,
 
     /**
-     * <p>Size of the view as a dictionary of width and height properties.</p>
+     * <p>Rendered size of the view as a dictionary of width and height properties.</p>
      * @type Object
      * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
      */
@@ -51205,7 +54564,7 @@ One of: 'absolute', 'vertical', or 'horizontal'.</p>
     /**
      * <p>Transformation matrix to apply to the view.</p>
      * @type Ti.UI.D2Matrix|Ti.UI.iOS.D3Matrix
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
      */
     transform:null,
 
@@ -51394,6 +54753,14 @@ If this argument is not a view, an exception will be raised.</p>
     },
 
     /**
+     * <p>Gets the value of the {@link Ti.UI.WebView.backgroundRepeat} property.</p>
+     * @returns Boolean
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    getBackgroundRepeat:function() {
+    },
+
+    /**
      * <p>Gets the value of the {@link Ti.UI.WebView.backgroundSelectedColor} property.</p>
      * @returns String
      * @since 0.8 (Android), 1.8 (Mobile Web)
@@ -51459,9 +54826,17 @@ If this argument is not a view, an exception will be raised.</p>
     },
 
     /**
+     * <p>Gets the value of the {@link Ti.UI.WebView.children} property.</p>
+     * @returns Array<Ti.UI.View>
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     */
+    getChildren:function() {
+    },
+
+    /**
      * <p>Gets the value of the {@link Ti.UI.WebView.data} property.</p>
      * @returns Object
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
      */
     getData:function() {
     },
@@ -51602,7 +54977,7 @@ If this argument is not a view, an exception will be raised.</p>
      * <p>Gets the value of the {@link Ti.UI.WebView.transform} property.</p>
      * @returns Ti.UI.D2Matrix
      * @returns Ti.UI.iOS.D3Matrix
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
      */
     getTransform:function() {
     },
@@ -51687,7 +55062,7 @@ If this argument is not a view, an exception will be raised.</p>
 
     /**
      * <p>force the webview to repaint its contents</p>
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
+     * @since 0.8 (iPhone), 0.8 (iPad)
      */
     repaint:function() {
     },
@@ -51762,6 +55137,14 @@ If this argument is not a view, an exception will be raised.</p>
      * @since 0.8 (iPhone), 0.8 (iPad)
      */
     setBackgroundLeftCap:function(backgroundLeftCap) {
+    },
+
+    /**
+     * <p>Sets the value of the {@link Ti.UI.WebView.backgroundRepeat} property.</p>
+     * @param {Boolean} backgroundRepeat <p>New value for the property.</p>
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    setBackgroundRepeat:function(backgroundRepeat) {
     },
 
     /**
@@ -51840,7 +55223,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Sets the value of the {@link Ti.UI.WebView.data} property.</p>
      * @param {Object} data <p>New value for the property.</p>
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
      */
     setData:function(data) {
     },
@@ -51870,11 +55253,13 @@ If this argument is not a view, an exception will be raised.</p>
     },
 
     /**
-     * <p>Sets the value of the {@link Ti.UI.WebView.html} property.</p>
-     * @param {String} html <p>New value for the property.</p>
+     * <p>Sets the value of {@link Ti.UI.WebView.html} property.</p>
+     * @param {Object} html <p>New value for the property</p>
+     * @param {String} baseURL <p>The base URL for the content</p>
+     * @param {String} mimeType <p>The MIME type of the content (default is <code>text/html</code>)</p>
      * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
      */
-    setHtml:function(html) {
+    setHtml:function(html, baseURL, mimeType) {
     },
 
     /**
@@ -51942,14 +55327,6 @@ If this argument is not a view, an exception will be raised.</p>
     },
 
     /**
-     * <p>Sets the value of the {@link Ti.UI.WebView.size} property.</p>
-     * @param {Object} size <p>New value for the property.</p>
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
-     */
-    setSize:function(size) {
-    },
-
-    /**
      * <p>Sets the value of the {@link Ti.UI.WebView.softKeyboardOnFocus} property.</p>
      * @param {Number} softKeyboardOnFocus <p>New value for the property.</p>
      * @since 0.8 (Android)
@@ -51976,7 +55353,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Sets the value of the {@link Ti.UI.WebView.transform} property.</p>
      * @param {Ti.UI.D2Matrix|Ti.UI.iOS.D3Matrix} transform <p>New value for the property.</p>
-     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad)
+     * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
      */
     setTransform:function(transform) {
     },
@@ -52022,9 +55399,10 @@ If this argument is not a view, an exception will be raised.</p>
 
     /**
      * <p>stop loading a currently loading page</p>
+     * @param {Boolean} hardStop <p>Forces the WebView to destroy the iframe (Mobile Web only)</p>
      * @since 0.8 (Android), 0.8 (iPhone), 0.8 (iPad), 1.8 (Mobile Web)
      */
-    stopLoading:function() {
+    stopLoading:function(hardStop) {
     },
 
     /**
@@ -52281,8 +55659,8 @@ Android Activity object associated with this window.</p>
     backButtonTitle:null,
 
     /**
-     * <p>URL to an image to show as the back button. This is only valid when the window is a child of a tab.</p>
-     * @type String
+     * <p>The image to show as the back button. This is only valid when the window is a child of a tab.</p>
+     * @type String|Ti.Blob
      * @since 0.9 (iPhone), 0.9 (iPad)
      */
     backButtonTitleImage:null,
@@ -52342,6 +55720,13 @@ Android Activity object associated with this window.</p>
      * @since 0.9 (iPhone), 0.9 (iPad)
      */
     backgroundLeftCap:null,
+
+    /**
+     * <p>Toggle for whether or not to tile a background across a view.</p>
+     * @type Boolean
+     * @since 0.9 (iPhone), 0.9 (iPad)
+     */
+    backgroundRepeat:null,
 
     /**
      * <p>Selected background color of the view.</p>
@@ -52414,6 +55799,13 @@ Android Activity object associated with this window.</p>
     center:null,
 
     /**
+     * <p>Array of this view's child views.</p>
+     * @type Array<Ti.UI.View>
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
+     */
+    children:null,
+
+    /**
      * <p>Boolean value indicating if the application should exit when the Android
 Back button is pressed while the window is being shown.</p>
      * @type Boolean
@@ -52474,7 +55866,7 @@ One of: 'absolute', 'vertical', or 'horizontal'.</p>
     /**
      * <p>Boolean to indicate if the window should be opened modal in front of other windows.</p>
      * @type Boolean
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
     modal:null,
 
@@ -52488,14 +55880,14 @@ One of: 'absolute', 'vertical', or 'horizontal'.</p>
     /**
      * <p>The opacity from 0.0-1.0.</p>
      * @type Number
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
     opacity:null,
 
     /**
      * <p>Current orientation of the window.</p>
      * @type Number
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
     orientation:null,
 
@@ -52522,7 +55914,7 @@ constants defined in {@link Ti.UI}.</p>
     rightNavButton:null,
 
     /**
-     * <p>Size of the view as a dictionary of width and height properties.</p>
+     * <p>Rendered size of the view as a dictionary of width and height properties.</p>
      * @type Object
      * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
@@ -52566,7 +55958,7 @@ constants defined in {@link Ti.UI}.</p>
     /**
      * <p>Title prompt for the window.</p>
      * @type String
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
+     * @since 0.9 (iPhone), 0.9 (iPad)
      */
     titlePrompt:null,
 
@@ -52580,7 +55972,7 @@ constants defined in {@link Ti.UI}.</p>
     /**
      * <p>Key identifying a string from the locale file to use for the window title prompt.</p>
      * @type String
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
+     * @since 0.9 (iPhone), 0.9 (iPad)
      */
     titlepromptid:null,
 
@@ -52609,7 +56001,7 @@ the window is the child of a tab.</p>
     /**
      * <p>Transformation matrix to apply to the view.</p>
      * @type Ti.UI.D2Matrix|Ti.UI.iOS.D3Matrix
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
     transform:null,
 
@@ -52757,6 +56149,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Gets the value of the {@link Ti.UI.Window.backButtonTitleImage} property.</p>
      * @returns String
+     * @returns Ti.Blob
      * @since 0.9 (iPhone), 0.9 (iPad)
      */
     getBackButtonTitleImage:function() {
@@ -52824,6 +56217,14 @@ If this argument is not a view, an exception will be raised.</p>
      * @since 0.9 (iPhone), 0.9 (iPad)
      */
     getBackgroundLeftCap:function() {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.UI.Window.backgroundRepeat} property.</p>
+     * @returns Boolean
+     * @since 0.9 (iPhone), 0.9 (iPad)
+     */
+    getBackgroundRepeat:function() {
     },
 
     /**
@@ -52908,6 +56309,14 @@ If this argument is not a view, an exception will be raised.</p>
     },
 
     /**
+     * <p>Gets the value of the {@link Ti.UI.Window.children} property.</p>
+     * @returns Array<Ti.UI.View>
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
+     */
+    getChildren:function() {
+    },
+
+    /**
      * <p>Gets the value of the {@link Ti.UI.Window.exitOnClose} property.</p>
      * @returns Boolean
      * @since 0.9 (Android)
@@ -52976,7 +56385,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Gets the value of the {@link Ti.UI.Window.modal} property.</p>
      * @returns Boolean
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
     getModal:function() {
     },
@@ -52992,7 +56401,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Gets the value of the {@link Ti.UI.Window.opacity} property.</p>
      * @returns Number
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
     getOpacity:function() {
     },
@@ -53000,7 +56409,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Gets the value of the {@link Ti.UI.Window.orientation} property.</p>
      * @returns Number
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
     getOrientation:function() {
     },
@@ -53081,7 +56490,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Gets the value of the {@link Ti.UI.Window.titlePrompt} property.</p>
      * @returns String
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
+     * @since 0.9 (iPhone), 0.9 (iPad)
      */
     getTitlePrompt:function() {
     },
@@ -53097,7 +56506,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Gets the value of the {@link Ti.UI.Window.titlepromptid} property.</p>
      * @returns String
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
+     * @since 0.9 (iPhone), 0.9 (iPad)
      */
     getTitlepromptid:function() {
     },
@@ -53131,7 +56540,7 @@ If this argument is not a view, an exception will be raised.</p>
      * <p>Gets the value of the {@link Ti.UI.Window.transform} property.</p>
      * @returns Ti.UI.D2Matrix
      * @returns Ti.UI.iOS.D3Matrix
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
     getTransform:function() {
     },
@@ -53258,7 +56667,7 @@ If this argument is not a view, an exception will be raised.</p>
 
     /**
      * <p>Sets the value of the {@link Ti.UI.Window.backButtonTitleImage} property.</p>
-     * @param {String} backButtonTitleImage <p>New value for the property.</p>
+     * @param {String|Ti.Blob} backButtonTitleImage <p>New value for the property.</p>
      * @since 0.9 (iPhone), 0.9 (iPad)
      */
     setBackButtonTitleImage:function(backButtonTitleImage) {
@@ -53326,6 +56735,14 @@ If this argument is not a view, an exception will be raised.</p>
      * @since 0.9 (iPhone), 0.9 (iPad)
      */
     setBackgroundLeftCap:function(backgroundLeftCap) {
+    },
+
+    /**
+     * <p>Sets the value of the {@link Ti.UI.Window.backgroundRepeat} property.</p>
+     * @param {Boolean} backgroundRepeat <p>New value for the property.</p>
+     * @since 0.9 (iPhone), 0.9 (iPad)
+     */
+    setBackgroundRepeat:function(backgroundRepeat) {
     },
 
     /**
@@ -53467,7 +56884,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Sets the value of the {@link Ti.UI.Window.modal} property.</p>
      * @param {Boolean} modal <p>New value for the property.</p>
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
     setModal:function(modal) {
     },
@@ -53483,7 +56900,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Sets the value of the {@link Ti.UI.Window.opacity} property.</p>
      * @param {Number} opacity <p>New value for the property.</p>
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
     setOpacity:function(opacity) {
     },
@@ -53491,7 +56908,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Sets the value of the {@link Ti.UI.Window.orientation} property.</p>
      * @param {Number} orientation <p>New value for the property.</p>
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
     setOrientation:function(orientation) {
     },
@@ -53518,14 +56935,6 @@ If this argument is not a view, an exception will be raised.</p>
      * @since 0.9 (iPhone), 0.9 (iPad)
      */
     setRightNavButton:function(rightNavButton) {
-    },
-
-    /**
-     * <p>Sets the value of the {@link Ti.UI.Window.size} property.</p>
-     * @param {Object} size <p>New value for the property.</p>
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
-     */
-    setSize:function(size) {
     },
 
     /**
@@ -53571,7 +56980,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Sets the value of the {@link Ti.UI.Window.titlePrompt} property.</p>
      * @param {String} titlePrompt <p>New value for the property.</p>
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
+     * @since 0.9 (iPhone), 0.9 (iPad)
      */
     setTitlePrompt:function(titlePrompt) {
     },
@@ -53587,7 +56996,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Sets the value of the {@link Ti.UI.Window.titlepromptid} property.</p>
      * @param {String} titlepromptid <p>New value for the property.</p>
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
+     * @since 0.9 (iPhone), 0.9 (iPad)
      */
     setTitlepromptid:function(titlepromptid) {
     },
@@ -53619,7 +57028,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Sets the value of the {@link Ti.UI.Window.transform} property.</p>
      * @param {Ti.UI.D2Matrix|Ti.UI.iOS.D3Matrix} transform <p>New value for the property.</p>
-     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad)
+     * @since 0.9 (Android), 0.9 (iPhone), 0.9 (iPad), 1.8 (Mobile Web)
      */
     setTransform:function(transform) {
     },
@@ -53686,6 +57095,20 @@ performed asynchronously. If null, it will be performed immediately.</p>
  * platforms: iPhone, iPad
  */
 Ti.UI.iOS = {
+
+    /**
+     * <p>Constant for ad size appropriate for "landscape" orientations.</p>
+     * @type String
+     * @since 1.9.0 (iPhone), 1.9.0 (iPad)
+     */
+    AD_SIZE_LANDSCAPE:null,
+
+    /**
+     * <p>Constant for ad size appropriate for "portrait" orientations.</p>
+     * @type String
+     * @since 1.9.0 (iPhone), 1.9.0 (iPad)
+     */
+    AD_SIZE_PORTRAIT:null,
 
     /**
      * <p>animation curve constant</p>
@@ -54494,18 +57917,11 @@ Ti.UI.iOS.AdView = function() {
 Ti.UI.iOS.AdView.prototype = {
 
     /**
-     * <p>constant for 320x50 ad sizes</p>
+     * <p>The size of the advertisement when minimized.</p>
      * @type String
-     * @since 1.4 (iPhone), 1.4 (iPad)
+     * @since 1.9.0 (iPhone), 1.9.0 (iPad)
      */
-    SIZE_320x50:null,
-
-    /**
-     * <p>constant for 480x32 ad sizes</p>
-     * @type String
-     * @since 1.4 (iPhone), 1.4 (iPad)
-     */
-    SIZE_480x32:null,
+    adSize:null,
 
     /**
      * <p>Anchor point where animation should occur, relative to the view's boundaries.</p>
@@ -54578,6 +57994,13 @@ Ti.UI.iOS.AdView.prototype = {
     backgroundLeftCap:null,
 
     /**
+     * <p>Toggle for whether or not to tile a background across a view.</p>
+     * @type Boolean
+     * @since 1.4 (iPhone), 1.4 (iPad)
+     */
+    backgroundRepeat:null,
+
+    /**
      * <p>Selected background color of the view.</p>
      * @type String
      * @since 1.4 (Android), 1.8 (Mobile Web)
@@ -54634,6 +58057,13 @@ Ti.UI.iOS.AdView.prototype = {
     center:null,
 
     /**
+     * <p>Array of this view's child views.</p>
+     * @type Array<Ti.UI.View>
+     * @since 1.4 (iPhone), 1.4 (iPad)
+     */
+    children:null,
+
+    /**
      * <p>Whether view should be focusable while navigating with the trackball.</p>
      * @type Boolean
      * @since 1.4 (Android)
@@ -54684,7 +58114,7 @@ One of: 'absolute', 'vertical', or 'horizontal'.</p>
     right:null,
 
     /**
-     * <p>Size of the view as a dictionary of width and height properties.</p>
+     * <p>Rendered size of the view as a dictionary of width and height properties.</p>
      * @type Object
      * @since 1.4 (iPhone), 1.4 (iPad)
      */
@@ -54798,6 +58228,14 @@ If this argument is not a view, an exception will be raised.</p>
     },
 
     /**
+     * <p>Gets the value of the {@link Ti.UI.iOS.AdView.adSize} property.</p>
+     * @returns String
+     * @since 1.9.0 (iPhone), 1.9.0 (iPad)
+     */
+    getAdSize:function() {
+    },
+
+    /**
      * <p>Gets the value of the {@link Ti.UI.iOS.AdView.anchorPoint} property.</p>
      * @returns Point
      * @since 1.4 (iPhone), 1.4 (iPad)
@@ -54878,6 +58316,14 @@ If this argument is not a view, an exception will be raised.</p>
     },
 
     /**
+     * <p>Gets the value of the {@link Ti.UI.iOS.AdView.backgroundRepeat} property.</p>
+     * @returns Boolean
+     * @since 1.4 (iPhone), 1.4 (iPad)
+     */
+    getBackgroundRepeat:function() {
+    },
+
+    /**
      * <p>Gets the value of the {@link Ti.UI.iOS.AdView.backgroundSelectedColor} property.</p>
      * @returns String
      * @since 1.4 (Android), 1.8 (Mobile Web)
@@ -54943,6 +58389,14 @@ If this argument is not a view, an exception will be raised.</p>
     },
 
     /**
+     * <p>Gets the value of the {@link Ti.UI.iOS.AdView.children} property.</p>
+     * @returns Array<Ti.UI.View>
+     * @since 1.4 (iPhone), 1.4 (iPad)
+     */
+    getChildren:function() {
+    },
+
+    /**
      * <p>Gets the value of the {@link Ti.UI.iOS.AdView.focusable} property.</p>
      * @returns Boolean
      * @since 1.4 (Android)
@@ -54999,22 +58453,6 @@ If this argument is not a view, an exception will be raised.</p>
      * @since 1.4 (iPhone), 1.4 (iPad)
      */
     getRight:function() {
-    },
-
-    /**
-     * <p>Gets the value of the {@link Ti.UI.iOS.AdView.SIZE_320x50} property.</p>
-     * @returns String
-     * @since 1.4 (iPhone), 1.4 (iPad)
-     */
-    getSIZE_320x50:function() {
-    },
-
-    /**
-     * <p>Gets the value of the {@link Ti.UI.iOS.AdView.SIZE_480x32} property.</p>
-     * @returns String
-     * @since 1.4 (iPhone), 1.4 (iPad)
-     */
-    getSIZE_480x32:function() {
     },
 
     /**
@@ -55109,6 +58547,14 @@ If this argument is not a view, an exception will be raised.</p>
     },
 
     /**
+     * <p>Sets the value of the {@link Ti.UI.iOS.AdView.adSize} property.</p>
+     * @param {String} adSize <p>New value for the property.</p>
+     * @since 1.9.0 (iPhone), 1.9.0 (iPad)
+     */
+    setAdSize:function(adSize) {
+    },
+
+    /**
      * <p>Sets the value of the {@link Ti.UI.iOS.AdView.anchorPoint} property.</p>
      * @param {Point} anchorPoint <p>New value for the property.</p>
      * @since 1.4 (iPhone), 1.4 (iPad)
@@ -55178,6 +58624,14 @@ If this argument is not a view, an exception will be raised.</p>
      * @since 1.4 (iPhone), 1.4 (iPad)
      */
     setBackgroundLeftCap:function(backgroundLeftCap) {
+    },
+
+    /**
+     * <p>Sets the value of the {@link Ti.UI.iOS.AdView.backgroundRepeat} property.</p>
+     * @param {Boolean} backgroundRepeat <p>New value for the property.</p>
+     * @since 1.4 (iPhone), 1.4 (iPad)
+     */
+    setBackgroundRepeat:function(backgroundRepeat) {
     },
 
     /**
@@ -55301,14 +58755,6 @@ If this argument is not a view, an exception will be raised.</p>
     },
 
     /**
-     * <p>Sets the value of the {@link Ti.UI.iOS.AdView.size} property.</p>
-     * @param {Object} size <p>New value for the property.</p>
-     * @since 1.4 (iPhone), 1.4 (iPad)
-     */
-    setSize:function(size) {
-    },
-
-    /**
      * <p>Sets the value of the {@link Ti.UI.iOS.AdView.softKeyboardOnFocus} property.</p>
      * @param {Number} softKeyboardOnFocus <p>New value for the property.</p>
      * @since 1.4 (Android)
@@ -55384,6 +58830,7 @@ performed asynchronously. If null, it will be performed immediately.</p>
 
 /**
  * platforms: iPhone, iPad
+ * @namespace <p>Use the {@link Ti.UI.iOS.createCoverFlowView} method to create a cover flow view.</p>
  * 
  * @example Simple 3 image cover flow example
  * <p>Create a simple cover flow view.</p>
@@ -55469,6 +58916,13 @@ Ti.UI.iOS.CoverFlowView.prototype = {
     backgroundLeftCap:null,
 
     /**
+     * <p>Toggle for whether or not to tile a background across a view.</p>
+     * @type Boolean
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    backgroundRepeat:null,
+
+    /**
      * <p>Selected background color of the view.</p>
      * @type String
      * @since 0.8 (Android), 1.8 (Mobile Web)
@@ -55525,6 +58979,13 @@ Ti.UI.iOS.CoverFlowView.prototype = {
     center:null,
 
     /**
+     * <p>Array of this view's child views.</p>
+     * @type Array<Ti.UI.View>
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    children:null,
+
+    /**
      * <p>Whether view should be focusable while navigating with the trackball.</p>
      * @type Boolean
      * @since 0.8 (Android)
@@ -55539,8 +59000,8 @@ Ti.UI.iOS.CoverFlowView.prototype = {
     height:null,
 
     /**
-     * <p>array of images to display in the view</p>
-     * @type Array<Object>
+     * <p>Array of images to display in the view.</p>
+     * @type Array<String>|Array<Ti.Blob>|Array<Ti.File>|Array<CoverFlowImageType>
      * @since 0.8 (iPhone), 0.8 (iPad)
      */
     images:null,
@@ -55582,14 +59043,14 @@ One of: 'absolute', 'vertical', or 'horizontal'.</p>
     right:null,
 
     /**
-     * <p>index to make selected</p>
+     * <p>Index to make selected.</p>
      * @type Number
      * @since 0.8 (iPhone), 0.8 (iPad)
      */
     selected:null,
 
     /**
-     * <p>Size of the view as a dictionary of width and height properties.</p>
+     * <p>Rendered size of the view as a dictionary of width and height properties.</p>
      * @type Object
      * @since 0.8 (iPhone), 0.8 (iPad)
      */
@@ -55776,6 +59237,14 @@ If this argument is not a view, an exception will be raised.</p>
     },
 
     /**
+     * <p>Gets the value of the {@link Ti.UI.iOS.CoverFlowView.backgroundRepeat} property.</p>
+     * @returns Boolean
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    getBackgroundRepeat:function() {
+    },
+
+    /**
      * <p>Gets the value of the {@link Ti.UI.iOS.CoverFlowView.backgroundSelectedColor} property.</p>
      * @returns String
      * @since 0.8 (Android), 1.8 (Mobile Web)
@@ -55841,6 +59310,14 @@ If this argument is not a view, an exception will be raised.</p>
     },
 
     /**
+     * <p>Gets the value of the {@link Ti.UI.iOS.CoverFlowView.children} property.</p>
+     * @returns Array<Ti.UI.View>
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    getChildren:function() {
+    },
+
+    /**
      * <p>Gets the value of the {@link Ti.UI.iOS.CoverFlowView.focusable} property.</p>
      * @returns Boolean
      * @since 0.8 (Android)
@@ -55859,7 +59336,10 @@ If this argument is not a view, an exception will be raised.</p>
 
     /**
      * <p>Gets the value of the {@link Ti.UI.iOS.CoverFlowView.images} property.</p>
-     * @returns Array<Object>
+     * @returns Array<String>
+     * @returns Array<Ti.Blob>
+     * @returns Array<Ti.File>
+     * @returns Array<CoverFlowImageType>
      * @since 0.8 (iPhone), 0.8 (iPad)
      */
     getImages:function() {
@@ -56079,6 +59559,14 @@ If this argument is not a view, an exception will be raised.</p>
     },
 
     /**
+     * <p>Sets the value of the {@link Ti.UI.iOS.CoverFlowView.backgroundRepeat} property.</p>
+     * @param {Boolean} backgroundRepeat <p>New value for the property.</p>
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    setBackgroundRepeat:function(backgroundRepeat) {
+    },
+
+    /**
      * <p>Sets the value of the {@link Ti.UI.iOS.CoverFlowView.backgroundSelectedColor} property.</p>
      * @param {String} backgroundSelectedColor <p>New value for the property.</p>
      * @since 0.8 (Android), 1.8 (Mobile Web)
@@ -56159,9 +59647,9 @@ If this argument is not a view, an exception will be raised.</p>
     },
 
     /**
-     * <p>change an image for a index</p>
-     * @param {Number} index <p>index to change</p>
-     * @param {Object} image <p>the image to set the index to. May be a TiBlob, TiFile, URL, or dictionary with 'image' (may be any of TiBlob, TiFile, URL), 'width', 'height' keys.  'auto' is not allowed, only exact sizes (although a size may be omitted to keep the image at that size).  If passed as a TiFile or URL, will perform a check for '@2x' on Retina displays</p>
+     * <p>Changes the image for a specified index.</p>
+     * @param {Number} index <p>Index to add the image at.</p>
+     * @param {String|Ti.Blob|Ti.File|CoverFlowImageType} image <p>Image to add at this index.</p>
      * @since 0.8 (iPhone), 0.8 (iPad)
      */
     setImage:function(index, image) {
@@ -56169,7 +59657,7 @@ If this argument is not a view, an exception will be raised.</p>
 
     /**
      * <p>Sets the value of the {@link Ti.UI.iOS.CoverFlowView.images} property.</p>
-     * @param {Array<Object>} images <p>New value for the property.</p>
+     * @param {Array<String>|Array<Ti.Blob>|Array<Ti.File>|Array<CoverFlowImageType>} images <p>New value for the property.</p>
      * @since 0.8 (iPhone), 0.8 (iPad)
      */
     setImages:function(images) {
@@ -56221,14 +59709,6 @@ If this argument is not a view, an exception will be raised.</p>
      * @since 0.8 (iPhone), 0.8 (iPad)
      */
     setSelected:function(selected) {
-    },
-
-    /**
-     * <p>Sets the value of the {@link Ti.UI.iOS.CoverFlowView.size} property.</p>
-     * @param {Object} size <p>New value for the property.</p>
-     * @since 0.8 (iPhone), 0.8 (iPad)
-     */
-    setSize:function(size) {
     },
 
     /**
@@ -56307,9 +59787,12 @@ performed asynchronously. If null, it will be performed immediately.</p>
 
 /**
  * platforms: iPhone, iPad
- * @namespace <p>A Tabbed Bar is created by the method {@link Ti.UI.iOS.createTabbedBar}. The 
-difference between the Tabbed Bar and the Button Bar is that the tabbed bar visually 
-maintains a state (visually distinguished as a pressed or selected look).</p>
+ * @namespace <p>A tabbed bar is a button bar that
+maintains a state (visually distinguished as a pressed or selected look).
+It is closely related to the <code>ButtonBar</code> control. See the description of 
+{@link Ti.UI.ButtonBar} for information on styling tabbed bars and buttons
+bars.</p>
+<p>Use the {@link Ti.UI.iOS.createTabbedBar} method to create a Tabbed Bar.</p>
  * 
  * @example Simple Tabbed Bar with 3 items
  * <p>var bb1 = Ti.UI.iOS.createTabbedBar({
@@ -56397,6 +59880,13 @@ Ti.UI.iOS.TabbedBar.prototype = {
     backgroundLeftCap:null,
 
     /**
+     * <p>Toggle for whether or not to tile a background across a view.</p>
+     * @type Boolean
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    backgroundRepeat:null,
+
+    /**
      * <p>Selected background color of the view.</p>
      * @type String
      * @since 0.8 (Android), 1.8 (Mobile Web)
@@ -56453,6 +59943,13 @@ Ti.UI.iOS.TabbedBar.prototype = {
     center:null,
 
     /**
+     * <p>Array of this view's child views.</p>
+     * @type Array<Ti.UI.View>
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    children:null,
+
+    /**
      * <p>Whether view should be focusable while navigating with the trackball.</p>
      * @type Boolean
      * @since 0.8 (Android)
@@ -56467,7 +59964,7 @@ Ti.UI.iOS.TabbedBar.prototype = {
     height:null,
 
     /**
-     * <p>the selected index</p>
+     * <p>Index of the currently selected button.</p>
      * @type Number
      * @since 0.8 (iPhone), 0.8 (iPad)
      */
@@ -56481,8 +59978,8 @@ Ti.UI.iOS.TabbedBar.prototype = {
     keepScreenOn:null,
 
     /**
-     * <p>the array of labels for the tabbed bar. each object should have the properties <code>title</code>, <code>image</code>, <code>width</code> and <code>enabled</code>.</p>
-     * @type Array<Object>
+     * <p>Array of labels for the tabbed bar.</p>
+     * @type Array<String>|Array<BarItemType>
      * @since 0.8 (iPhone), 0.8 (iPad)
      */
     labels:null,
@@ -56517,7 +60014,7 @@ One of: 'absolute', 'vertical', or 'horizontal'.</p>
     right:null,
 
     /**
-     * <p>Size of the view as a dictionary of width and height properties.</p>
+     * <p>Rendered size of the view as a dictionary of width and height properties.</p>
      * @type Object
      * @since 0.8 (iPhone), 0.8 (iPad)
      */
@@ -56711,6 +60208,14 @@ If this argument is not a view, an exception will be raised.</p>
     },
 
     /**
+     * <p>Gets the value of the {@link Ti.UI.iOS.TabbedBar.backgroundRepeat} property.</p>
+     * @returns Boolean
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    getBackgroundRepeat:function() {
+    },
+
+    /**
      * <p>Gets the value of the {@link Ti.UI.iOS.TabbedBar.backgroundSelectedColor} property.</p>
      * @returns String
      * @since 0.8 (Android), 1.8 (Mobile Web)
@@ -56776,6 +60281,14 @@ If this argument is not a view, an exception will be raised.</p>
     },
 
     /**
+     * <p>Gets the value of the {@link Ti.UI.iOS.TabbedBar.children} property.</p>
+     * @returns Array<Ti.UI.View>
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    getChildren:function() {
+    },
+
+    /**
      * <p>Gets the value of the {@link Ti.UI.iOS.TabbedBar.focusable} property.</p>
      * @returns Boolean
      * @since 0.8 (Android)
@@ -56810,7 +60323,8 @@ If this argument is not a view, an exception will be raised.</p>
 
     /**
      * <p>Gets the value of the {@link Ti.UI.iOS.TabbedBar.labels} property.</p>
-     * @returns Array<Object>
+     * @returns Array<String>
+     * @returns Array<BarItemType>
      * @since 0.8 (iPhone), 0.8 (iPad)
      */
     getLabels:function() {
@@ -57022,6 +60536,14 @@ If this argument is not a view, an exception will be raised.</p>
     },
 
     /**
+     * <p>Sets the value of the {@link Ti.UI.iOS.TabbedBar.backgroundRepeat} property.</p>
+     * @param {Boolean} backgroundRepeat <p>New value for the property.</p>
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    setBackgroundRepeat:function(backgroundRepeat) {
+    },
+
+    /**
      * <p>Sets the value of the {@link Ti.UI.iOS.TabbedBar.backgroundSelectedColor} property.</p>
      * @param {String} backgroundSelectedColor <p>New value for the property.</p>
      * @since 0.8 (Android), 1.8 (Mobile Web)
@@ -57119,7 +60641,7 @@ If this argument is not a view, an exception will be raised.</p>
 
     /**
      * <p>Sets the value of the {@link Ti.UI.iOS.TabbedBar.labels} property.</p>
-     * @param {Array<Object>} labels <p>New value for the property.</p>
+     * @param {Array<String>|Array<BarItemType>} labels <p>New value for the property.</p>
      * @since 0.8 (iPhone), 0.8 (iPad)
      */
     setLabels:function(labels) {
@@ -57155,14 +60677,6 @@ If this argument is not a view, an exception will be raised.</p>
      * @since 0.8 (iPhone), 0.8 (iPad)
      */
     setRight:function(right) {
-    },
-
-    /**
-     * <p>Sets the value of the {@link Ti.UI.iOS.TabbedBar.size} property.</p>
-     * @param {Object} size <p>New value for the property.</p>
-     * @since 0.8 (iPhone), 0.8 (iPad)
-     */
-    setSize:function(size) {
     },
 
     /**
@@ -57370,6 +60884,13 @@ Ti.UI.iOS.Toolbar.prototype = {
     backgroundLeftCap:null,
 
     /**
+     * <p>Toggle for whether or not to tile a background across a view.</p>
+     * @type Boolean
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    backgroundRepeat:null,
+
+    /**
      * <p>Selected background color of the view.</p>
      * @type String
      * @since 0.8 (Android), 1.8 (Mobile Web)
@@ -57447,6 +60968,13 @@ Ti.UI.iOS.Toolbar.prototype = {
     center:null,
 
     /**
+     * <p>Array of this view's child views.</p>
+     * @type Array<Ti.UI.View>
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    children:null,
+
+    /**
      * <p>Whether view should be focusable while navigating with the trackball.</p>
      * @type Boolean
      * @since 0.8 (Android)
@@ -57504,7 +61032,7 @@ One of: 'absolute', 'vertical', or 'horizontal'.</p>
     right:null,
 
     /**
-     * <p>Size of the view as a dictionary of width and height properties.</p>
+     * <p>Rendered size of the view as a dictionary of width and height properties.</p>
      * @type Object
      * @since 0.8 (iPhone), 0.8 (iPad)
      */
@@ -57698,6 +61226,14 @@ If this argument is not a view, an exception will be raised.</p>
     },
 
     /**
+     * <p>Gets the value of the {@link Ti.UI.iOS.Toolbar.backgroundRepeat} property.</p>
+     * @returns Boolean
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    getBackgroundRepeat:function() {
+    },
+
+    /**
      * <p>Gets the value of the {@link Ti.UI.iOS.Toolbar.backgroundSelectedColor} property.</p>
      * @returns String
      * @since 0.8 (Android), 1.8 (Mobile Web)
@@ -57784,6 +61320,14 @@ If this argument is not a view, an exception will be raised.</p>
      * @since 0.8 (iPhone), 0.8 (iPad)
      */
     getCenter:function() {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.UI.iOS.Toolbar.children} property.</p>
+     * @returns Array<Ti.UI.View>
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    getChildren:function() {
     },
 
     /**
@@ -58025,6 +61569,14 @@ If this argument is not a view, an exception will be raised.</p>
     },
 
     /**
+     * <p>Sets the value of the {@link Ti.UI.iOS.Toolbar.backgroundRepeat} property.</p>
+     * @param {Boolean} backgroundRepeat <p>New value for the property.</p>
+     * @since 0.8 (iPhone), 0.8 (iPad)
+     */
+    setBackgroundRepeat:function(backgroundRepeat) {
+    },
+
+    /**
      * <p>Sets the value of the {@link Ti.UI.iOS.Toolbar.backgroundSelectedColor} property.</p>
      * @param {String} backgroundSelectedColor <p>New value for the property.</p>
      * @since 0.8 (Android), 1.8 (Mobile Web)
@@ -58174,14 +61726,6 @@ If this argument is not a view, an exception will be raised.</p>
      * @since 0.8 (iPhone), 0.8 (iPad)
      */
     setRight:function(right) {
-    },
-
-    /**
-     * <p>Sets the value of the {@link Ti.UI.iOS.Toolbar.size} property.</p>
-     * @param {Object} size <p>New value for the property.</p>
-     * @since 0.8 (iPhone), 0.8 (iPad)
-     */
-    setSize:function(size) {
     },
 
     /**
@@ -58493,6 +62037,13 @@ Ti.UI.iPad.DocumentViewer.prototype = {
     backgroundLeftCap:null,
 
     /**
+     * <p>Toggle for whether or not to tile a background across a view.</p>
+     * @type Boolean
+     * @since 1.8 (iPad)
+     */
+    backgroundRepeat:null,
+
+    /**
      * <p>Selected background color of the view.</p>
      * @type String
      * @since 1.8 (iPad)
@@ -58549,6 +62100,13 @@ Ti.UI.iPad.DocumentViewer.prototype = {
     center:null,
 
     /**
+     * <p>Array of this view's child views.</p>
+     * @type Array<Ti.UI.View>
+     * @since 1.8 (iPad)
+     */
+    children:null,
+
+    /**
      * <p>Whether view should be focusable while navigating with the trackball.</p>
      * @type Boolean
      * @since 1.8 (Android)
@@ -58599,7 +62157,7 @@ One of: 'absolute', 'vertical', or 'horizontal'.</p>
     right:null,
 
     /**
-     * <p>Size of the view as a dictionary of width and height properties.</p>
+     * <p>Rendered size of the view as a dictionary of width and height properties.</p>
      * @type Object
      * @since 1.8 (iPad)
      */
@@ -58786,6 +62344,14 @@ If this argument is not a view, an exception will be raised.</p>
     },
 
     /**
+     * <p>Gets the value of the {@link Ti.UI.iPad.DocumentViewer.backgroundRepeat} property.</p>
+     * @returns Boolean
+     * @since 1.8 (iPad)
+     */
+    getBackgroundRepeat:function() {
+    },
+
+    /**
      * <p>Gets the value of the {@link Ti.UI.iPad.DocumentViewer.backgroundSelectedColor} property.</p>
      * @returns String
      * @since 1.8 (iPad)
@@ -58848,6 +62414,14 @@ If this argument is not a view, an exception will be raised.</p>
      * @since 1.8 (iPad)
      */
     getCenter:function() {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.UI.iPad.DocumentViewer.children} property.</p>
+     * @returns Array<Ti.UI.View>
+     * @since 1.8 (iPad)
+     */
+    getChildren:function() {
     },
 
     /**
@@ -59073,6 +62647,14 @@ If this argument is not a view, an exception will be raised.</p>
     },
 
     /**
+     * <p>Sets the value of the {@link Ti.UI.iPad.DocumentViewer.backgroundRepeat} property.</p>
+     * @param {Boolean} backgroundRepeat <p>New value for the property.</p>
+     * @since 1.8 (iPad)
+     */
+    setBackgroundRepeat:function(backgroundRepeat) {
+    },
+
+    /**
      * <p>Sets the value of the {@link Ti.UI.iPad.DocumentViewer.backgroundSelectedColor} property.</p>
      * @param {String} backgroundSelectedColor <p>New value for the property.</p>
      * @since 1.8 (iPad)
@@ -59190,14 +62772,6 @@ If this argument is not a view, an exception will be raised.</p>
      * @since 1.8 (iPad)
      */
     setRight:function(right) {
-    },
-
-    /**
-     * <p>Sets the value of the {@link Ti.UI.iPad.DocumentViewer.size} property.</p>
-     * @param {Object} size <p>New value for the property.</p>
-     * @since 1.8 (iPad)
-     */
-    setSize:function(size) {
     },
 
     /**
@@ -59392,6 +62966,13 @@ Ti.UI.iPad.Popover.prototype = {
     backgroundLeftCap:null,
 
     /**
+     * <p>Toggle for whether or not to tile a background across a view.</p>
+     * @type Boolean
+     * @since 1.2 (iPad)
+     */
+    backgroundRepeat:null,
+
+    /**
      * <p>Selected background color of the view.</p>
      * @type String
      * @since 1.2 (iPad)
@@ -59446,6 +63027,13 @@ Ti.UI.iPad.Popover.prototype = {
      * @since 1.2 (iPad)
      */
     center:null,
+
+    /**
+     * <p>Array of this view's child views.</p>
+     * @type Array<Ti.UI.View>
+     * @since 1.2 (iPad)
+     */
+    children:null,
 
     /**
      * <p>Whether view should be focusable while navigating with the trackball.</p>
@@ -59505,7 +63093,7 @@ One of: 'absolute', 'vertical', or 'horizontal'.</p>
     right:null,
 
     /**
-     * <p>Size of the view as a dictionary of width and height properties.</p>
+     * <p>Rendered size of the view as a dictionary of width and height properties.</p>
      * @type Object
      * @since 1.2 (iPad)
      */
@@ -59707,6 +63295,14 @@ If this argument is not a view, an exception will be raised.</p>
     },
 
     /**
+     * <p>Gets the value of the {@link Ti.UI.iPad.Popover.backgroundRepeat} property.</p>
+     * @returns Boolean
+     * @since 1.2 (iPad)
+     */
+    getBackgroundRepeat:function() {
+    },
+
+    /**
      * <p>Gets the value of the {@link Ti.UI.iPad.Popover.backgroundSelectedColor} property.</p>
      * @returns String
      * @since 1.2 (iPad)
@@ -59769,6 +63365,14 @@ If this argument is not a view, an exception will be raised.</p>
      * @since 1.2 (iPad)
      */
     getCenter:function() {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.UI.iPad.Popover.children} property.</p>
+     * @returns Array<Ti.UI.View>
+     * @since 1.2 (iPad)
+     */
+    getChildren:function() {
     },
 
     /**
@@ -60018,6 +63622,14 @@ If this argument is not a view, an exception will be raised.</p>
     },
 
     /**
+     * <p>Sets the value of the {@link Ti.UI.iPad.Popover.backgroundRepeat} property.</p>
+     * @param {Boolean} backgroundRepeat <p>New value for the property.</p>
+     * @since 1.2 (iPad)
+     */
+    setBackgroundRepeat:function(backgroundRepeat) {
+    },
+
+    /**
      * <p>Sets the value of the {@link Ti.UI.iPad.Popover.backgroundSelectedColor} property.</p>
      * @param {String} backgroundSelectedColor <p>New value for the property.</p>
      * @since 1.2 (iPad)
@@ -60151,14 +63763,6 @@ If this argument is not a view, an exception will be raised.</p>
      * @since 1.2 (iPad)
      */
     setRight:function(right) {
-    },
-
-    /**
-     * <p>Sets the value of the {@link Ti.UI.iPad.Popover.size} property.</p>
-     * @param {Object} size <p>New value for the property.</p>
-     * @since 1.2 (iPad)
-     */
-    setSize:function(size) {
     },
 
     /**
@@ -60322,8 +63926,8 @@ Android Activity object associated with this window.</p>
     backButtonTitle:null,
 
     /**
-     * <p>URL to an image to show as the back button. This is only valid when the window is a child of a tab.</p>
-     * @type String
+     * <p>The image to show as the back button. This is only valid when the window is a child of a tab.</p>
+     * @type String|Ti.Blob
      * @since 1.2 (iPad)
      */
     backButtonTitleImage:null,
@@ -60383,6 +63987,13 @@ Android Activity object associated with this window.</p>
      * @since 1.2 (iPad)
      */
     backgroundLeftCap:null,
+
+    /**
+     * <p>Toggle for whether or not to tile a background across a view.</p>
+     * @type Boolean
+     * @since 1.2 (iPad)
+     */
+    backgroundRepeat:null,
 
     /**
      * <p>Selected background color of the view.</p>
@@ -60453,6 +64064,13 @@ Android Activity object associated with this window.</p>
      * @since 1.2 (iPad)
      */
     center:null,
+
+    /**
+     * <p>Array of this view's child views.</p>
+     * @type Array<Ti.UI.View>
+     * @since 1.2 (iPad)
+     */
+    children:null,
 
     /**
      * <p>View for the detail view section of the SplitWindow.</p>
@@ -60584,7 +64202,7 @@ constants defined in {@link Ti.UI}.</p>
     showMasterInPortrait:null,
 
     /**
-     * <p>Size of the view as a dictionary of width and height properties.</p>
+     * <p>Rendered size of the view as a dictionary of width and height properties.</p>
      * @type Object
      * @since 1.2 (iPad)
      */
@@ -60819,6 +64437,7 @@ If this argument is not a view, an exception will be raised.</p>
     /**
      * <p>Gets the value of the {@link Ti.UI.iPad.SplitWindow.backButtonTitleImage} property.</p>
      * @returns String
+     * @returns Ti.Blob
      * @since 1.2 (iPad)
      */
     getBackButtonTitleImage:function() {
@@ -60886,6 +64505,14 @@ If this argument is not a view, an exception will be raised.</p>
      * @since 1.2 (iPad)
      */
     getBackgroundLeftCap:function() {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.UI.iPad.SplitWindow.backgroundRepeat} property.</p>
+     * @returns Boolean
+     * @since 1.2 (iPad)
+     */
+    getBackgroundRepeat:function() {
     },
 
     /**
@@ -60967,6 +64594,14 @@ If this argument is not a view, an exception will be raised.</p>
      * @since 1.2 (iPad)
      */
     getCenter:function() {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.UI.iPad.SplitWindow.children} property.</p>
+     * @returns Array<Ti.UI.View>
+     * @since 1.2 (iPad)
+     */
+    getChildren:function() {
     },
 
     /**
@@ -61344,7 +64979,7 @@ If this argument is not a view, an exception will be raised.</p>
 
     /**
      * <p>Sets the value of the {@link Ti.UI.iPad.SplitWindow.backButtonTitleImage} property.</p>
-     * @param {String} backButtonTitleImage <p>New value for the property.</p>
+     * @param {String|Ti.Blob} backButtonTitleImage <p>New value for the property.</p>
      * @since 1.2 (iPad)
      */
     setBackButtonTitleImage:function(backButtonTitleImage) {
@@ -61412,6 +65047,14 @@ If this argument is not a view, an exception will be raised.</p>
      * @since 1.2 (iPad)
      */
     setBackgroundLeftCap:function(backgroundLeftCap) {
+    },
+
+    /**
+     * <p>Sets the value of the {@link Ti.UI.iPad.SplitWindow.backgroundRepeat} property.</p>
+     * @param {Boolean} backgroundRepeat <p>New value for the property.</p>
+     * @since 1.2 (iPad)
+     */
+    setBackgroundRepeat:function(backgroundRepeat) {
     },
 
     /**
@@ -61612,14 +65255,6 @@ If this argument is not a view, an exception will be raised.</p>
      * @since 1.7.2 (iPad)
      */
     setShowMasterInPortrait:function(showMasterInPortrait) {
-    },
-
-    /**
-     * <p>Sets the value of the {@link Ti.UI.iPad.SplitWindow.size} property.</p>
-     * @param {Object} size <p>New value for the property.</p>
-     * @since 1.2 (iPad)
-     */
-    setSize:function(size) {
     },
 
     /**
@@ -62218,6 +65853,13 @@ Ti.UI.iPhone.NavigationGroup.prototype = {
     backgroundLeftCap:null,
 
     /**
+     * <p>Toggle for whether or not to tile a background across a view.</p>
+     * @type Boolean
+     * @since 1.2 (iPhone), 1.2 (iPad)
+     */
+    backgroundRepeat:null,
+
+    /**
      * <p>Selected background color of the view.</p>
      * @type String
      * @since 1.2 (Android), 1.8 (Mobile Web)
@@ -62274,6 +65916,13 @@ Ti.UI.iPhone.NavigationGroup.prototype = {
     center:null,
 
     /**
+     * <p>Array of this view's child views.</p>
+     * @type Array<Ti.UI.View>
+     * @since 1.2 (iPhone), 1.2 (iPad)
+     */
+    children:null,
+
+    /**
      * <p>Whether view should be focusable while navigating with the trackball.</p>
      * @type Boolean
      * @since 1.2 (Android)
@@ -62324,7 +65973,7 @@ One of: 'absolute', 'vertical', or 'horizontal'.</p>
     right:null,
 
     /**
-     * <p>Size of the view as a dictionary of width and height properties.</p>
+     * <p>Rendered size of the view as a dictionary of width and height properties.</p>
      * @type Object
      * @since 1.2 (iPhone), 1.2 (iPad)
      */
@@ -62520,6 +66169,14 @@ If this argument is not a view, an exception will be raised.</p>
     },
 
     /**
+     * <p>Gets the value of the {@link Ti.UI.iPhone.NavigationGroup.backgroundRepeat} property.</p>
+     * @returns Boolean
+     * @since 1.2 (iPhone), 1.2 (iPad)
+     */
+    getBackgroundRepeat:function() {
+    },
+
+    /**
      * <p>Gets the value of the {@link Ti.UI.iPhone.NavigationGroup.backgroundSelectedColor} property.</p>
      * @returns String
      * @since 1.2 (Android), 1.8 (Mobile Web)
@@ -62582,6 +66239,14 @@ If this argument is not a view, an exception will be raised.</p>
      * @since 1.2 (iPhone), 1.2 (iPad)
      */
     getCenter:function() {
+    },
+
+    /**
+     * <p>Gets the value of the {@link Ti.UI.iPhone.NavigationGroup.children} property.</p>
+     * @returns Array<Ti.UI.View>
+     * @since 1.2 (iPhone), 1.2 (iPad)
+     */
+    getChildren:function() {
     },
 
     /**
@@ -62816,6 +66481,14 @@ If this argument is not a view, an exception will be raised.</p>
     },
 
     /**
+     * <p>Sets the value of the {@link Ti.UI.iPhone.NavigationGroup.backgroundRepeat} property.</p>
+     * @param {Boolean} backgroundRepeat <p>New value for the property.</p>
+     * @since 1.2 (iPhone), 1.2 (iPad)
+     */
+    setBackgroundRepeat:function(backgroundRepeat) {
+    },
+
+    /**
      * <p>Sets the value of the {@link Ti.UI.iPhone.NavigationGroup.backgroundSelectedColor} property.</p>
      * @param {String} backgroundSelectedColor <p>New value for the property.</p>
      * @since 1.2 (Android), 1.8 (Mobile Web)
@@ -62933,14 +66606,6 @@ If this argument is not a view, an exception will be raised.</p>
      * @since 1.2 (iPhone), 1.2 (iPad)
      */
     setRight:function(right) {
-    },
-
-    /**
-     * <p>Sets the value of the {@link Ti.UI.iPhone.NavigationGroup.size} property.</p>
-     * @param {Object} size <p>New value for the property.</p>
-     * @since 1.2 (iPhone), 1.2 (iPad)
-     */
-    setSize:function(size) {
     },
 
     /**
@@ -63493,13 +67158,45 @@ Ti.UI.iPhone.SystemButton.prototype = {
 
 /**
  * platforms: iPhone, iPad
+ * @namespace <p>These constants represent standard iOS system button styles that affect the 
+{@link Ti.UI.Button}, {@link Ti.UI.ButtonBar}, and 
+{@link Ti.UI.iOS.TabbedBar} UI elements.</p>
+<p>The different styles are used in different places. For normal buttons which are
+<strong>not</strong> contained in a nav bar, toolbar, button bar or tabbed bar, the following
+styles apply:</p>
+<ul>
+<li><code>BORDERED</code>. Simple button style with a rounded border and a white background. 
+            The default style for normal buttons.</li>
+<li><code>DONE</code>. Like the bordered button, but with a blue background. Button style for a button 
+        that indicates completion, such as OK, Save, or Go. </li>
+<li><code>PLAIN</code> Button style for an undecorated button. </li>
+</ul>
+<p>Note that if you specify the <code>PLAIN</code> style, you must style the button using the 
+other button properties. For example, there is no indication that the button has been
+pressed unless you set other properties for the selected state, such as<br />
+<code>backgroundSelectedImage</code> and <code>selectedColor</code>.</p>
+<p>When you add a button to a {@link Ti.UI.iOS.Toolbar}, the styles have a 
+slightly different effect:</p>
+<ul>
+<li><code>PLAIN</code> Button style for an undecorated button with large text and a <em>glow</em> effect 
+          when the button is pressed. Default style for buttons in toolbars.</li>
+<li><code>BORDERED</code>. Simple button style with a rounded border and a light blue background. </li>
+<li><code>DONE</code>. Like the bordered button, but with a dark blue background. </li>
+</ul>
+<p>For <code>TabbedBar</code> and <code>ButtonBar</code> controls, styles have the following meaning:</p>
+<ul>
+<li><code>PLAIN</code>. Default style for <code>ButtonBar</code> and <code>TabbedBar</code>.</li>
+<li><code>BORDERED</code>. Creates a bar like the <code>PLAIN</code> bar, but with a heavier border.</li>
+<li><code>BAR</code>. Used on <code>ButtonBar</code> and <code>TabbedBar</code> controls to produce a more compact bar with
+        translucent buttons that allow the bar's background color to show through.</li>
+</ul>
  */
 Ti.UI.iPhone.SystemButtonStyle = function() {
 };
 Ti.UI.iPhone.SystemButtonStyle.prototype = {
 
     /**
-     * <p>Used by tabbed bar and button bar only to use the more condensed style used in nav bars and tool bars.</p>
+     * <p>Used with {@link Ti.UI.ButtonBar} or {@link Ti.UI.iOS.TabbedBar} only, to use the more condensed style used in nav bars and tool bars.</p>
      * @type Number
      * @since 0.8 (iPhone), 0.8 (iPad)
      */
@@ -63513,14 +67210,15 @@ Ti.UI.iPhone.SystemButtonStyle.prototype = {
     BORDERED:null,
 
     /**
-     * <p>The style for a done button - for example, a button that completes some task and returns to the previous view.</p>
+     * <p>The style for a <strong>Done</strong> button--for example, a button that completes some task and 
+returns to the previous view.</p>
      * @type Number
      * @since 0.8 (iPhone), 0.8 (iPad)
      */
     DONE:null,
 
     /**
-     * <p>Glows when tapped. The default item style.</p>
+     * <p>Specifies a borderless button, the default style for toolbars, button bars, and tabbed bars.</p>
      * @type Number
      * @since 0.8 (iPhone), 0.8 (iPad)
      */
@@ -68560,69 +72258,7 @@ WriteCallbackArgs.prototype = {
     source:null,
 
 
-    /**
-     * <p>Gets the value of the {@link WriteCallbackArgs.bytesProcessed} property.</p>
-     * @returns Number
-     * @since 1.7 (Android), 1.7 (iPhone), 1.7 (iPad), 1.8 (Mobile Web)
-     */
-    getBytesProcessed:function() {
-    },
 
-    /**
-     * <p>Gets the value of the {@link WriteCallbackArgs.errorDescription} property.</p>
-     * @returns String
-     * @since 1.7 (Android), 1.7 (iPhone), 1.7 (iPad), 1.8 (Mobile Web)
-     */
-    getErrorDescription:function() {
-    },
-
-    /**
-     * <p>Gets the value of the {@link WriteCallbackArgs.errorState} property.</p>
-     * @returns String
-     * @since 1.7 (Android), 1.7 (iPhone), 1.7 (iPad), 1.8 (Mobile Web)
-     */
-    getErrorState:function() {
-    },
-
-    /**
-     * <p>Gets the value of the {@link WriteCallbackArgs.source} property.</p>
-     * @returns Ti.IOStream
-     * @since 1.7 (Android), 1.7 (iPhone), 1.7 (iPad), 1.8 (Mobile Web)
-     */
-    getSource:function() {
-    },
-
-    /**
-     * <p>Sets the value of the {@link WriteCallbackArgs.bytesProcessed} property.</p>
-     * @param {Number} bytesProcessed <p>New value for the property.</p>
-     * @since 1.7 (Android), 1.7 (iPhone), 1.7 (iPad), 1.8 (Mobile Web)
-     */
-    setBytesProcessed:function(bytesProcessed) {
-    },
-
-    /**
-     * <p>Sets the value of the {@link WriteCallbackArgs.errorDescription} property.</p>
-     * @param {String} errorDescription <p>New value for the property.</p>
-     * @since 1.7 (Android), 1.7 (iPhone), 1.7 (iPad), 1.8 (Mobile Web)
-     */
-    setErrorDescription:function(errorDescription) {
-    },
-
-    /**
-     * <p>Sets the value of the {@link WriteCallbackArgs.errorState} property.</p>
-     * @param {String} errorState <p>New value for the property.</p>
-     * @since 1.7 (Android), 1.7 (iPhone), 1.7 (iPad), 1.8 (Mobile Web)
-     */
-    setErrorState:function(errorState) {
-    },
-
-    /**
-     * <p>Sets the value of the {@link WriteCallbackArgs.source} property.</p>
-     * @param {Ti.IOStream} source <p>New value for the property.</p>
-     * @since 1.7 (Android), 1.7 (iPhone), 1.7 (iPad), 1.8 (Mobile Web)
-     */
-    setSource:function(source) {
-    }
 };
 
 /**
@@ -68668,85 +72304,25 @@ WriteStreamCallbackArgs.prototype = {
     toStream:null,
 
 
-    /**
-     * <p>Gets the value of the {@link WriteStreamCallbackArgs.bytesProcessed} property.</p>
-     * @returns Number
-     * @since 1.7 (Android), 1.7 (iPhone), 1.7 (iPad), 1.8 (Mobile Web)
-     */
-    getBytesProcessed:function() {
-    },
+
+};
+
+/**
+ * platforms: iPhone, iPad
+ */
+var contentOffsetOption = function() {
+};
+contentOffsetOption.prototype = {
 
     /**
-     * <p>Gets the value of the {@link WriteStreamCallbackArgs.errorDescription} property.</p>
-     * @returns String
-     * @since 1.7 (Android), 1.7 (iPhone), 1.7 (iPad), 1.8 (Mobile Web)
+     * <p>Boolean to indicate whether the scrollview's content area change is animated.</p>
+     * @type Boolean
+     * @since 1.8.1 (iPhone), 1.8.1 (iPad)
      */
-    getErrorDescription:function() {
-    },
+    animated:null,
 
-    /**
-     * <p>Gets the value of the {@link WriteStreamCallbackArgs.errorState} property.</p>
-     * @returns String
-     * @since 1.7 (Android), 1.7 (iPhone), 1.7 (iPad), 1.8 (Mobile Web)
-     */
-    getErrorState:function() {
-    },
 
-    /**
-     * <p>Gets the value of the {@link WriteStreamCallbackArgs.fromStream} property.</p>
-     * @returns Ti.IOStream
-     * @since 1.7 (Android), 1.7 (iPhone), 1.7 (iPad), 1.8 (Mobile Web)
-     */
-    getFromStream:function() {
-    },
 
-    /**
-     * <p>Gets the value of the {@link WriteStreamCallbackArgs.toStream} property.</p>
-     * @returns Ti.IOStream
-     * @since 1.7 (Android), 1.7 (iPhone), 1.7 (iPad), 1.8 (Mobile Web)
-     */
-    getToStream:function() {
-    },
-
-    /**
-     * <p>Sets the value of the {@link WriteStreamCallbackArgs.bytesProcessed} property.</p>
-     * @param {Number} bytesProcessed <p>New value for the property.</p>
-     * @since 1.7 (Android), 1.7 (iPhone), 1.7 (iPad), 1.8 (Mobile Web)
-     */
-    setBytesProcessed:function(bytesProcessed) {
-    },
-
-    /**
-     * <p>Sets the value of the {@link WriteStreamCallbackArgs.errorDescription} property.</p>
-     * @param {String} errorDescription <p>New value for the property.</p>
-     * @since 1.7 (Android), 1.7 (iPhone), 1.7 (iPad), 1.8 (Mobile Web)
-     */
-    setErrorDescription:function(errorDescription) {
-    },
-
-    /**
-     * <p>Sets the value of the {@link WriteStreamCallbackArgs.errorState} property.</p>
-     * @param {String} errorState <p>New value for the property.</p>
-     * @since 1.7 (Android), 1.7 (iPhone), 1.7 (iPad), 1.8 (Mobile Web)
-     */
-    setErrorState:function(errorState) {
-    },
-
-    /**
-     * <p>Sets the value of the {@link WriteStreamCallbackArgs.fromStream} property.</p>
-     * @param {Ti.IOStream} fromStream <p>New value for the property.</p>
-     * @since 1.7 (Android), 1.7 (iPhone), 1.7 (iPad), 1.8 (Mobile Web)
-     */
-    setFromStream:function(fromStream) {
-    },
-
-    /**
-     * <p>Sets the value of the {@link WriteStreamCallbackArgs.toStream} property.</p>
-     * @param {Ti.IOStream} toStream <p>New value for the property.</p>
-     * @since 1.7 (Android), 1.7 (iPhone), 1.7 (iPad), 1.8 (Mobile Web)
-     */
-    setToStream:function(toStream) {
-    }
 };
 
 
