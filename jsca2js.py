@@ -187,16 +187,48 @@ def formatMethods(namespace):
     return formatter.getResult()
 
 
+def formatGlobal(namespace):
+    formatter = Formatter(METHOD_INDENTATION)
+
+    for method in namespace['methods']:
+        formatter.add(generateMethodJSDoc(method))
+        formatter.addLine('function ', convertKey(method['name']), '(', formatParams(method['parameters']), ") {")
+        formatter.addLine('}')
+        formatter.newLine()
+    return formatter.getResult()
+
+
+def extendGlobal(name, namespace):
+    formatter = Formatter(METHOD_INDENTATION)
+
+    for method in namespace['methods']:
+        formatter.add(generateMethodJSDoc(method))
+        formatter.addLine(name, '.prototype.', convertKey(method['name']), ' = function(', formatParams(method['parameters']), ") {")
+        formatter.addLine('};')
+        formatter.newLine()
+    return formatter.getResult()
+
+
 def formatNamespace(namespace):
     namespaceName = convertIds(namespace[0])
     namespaceContent = namespace[1]
 
     formatter = Formatter()
     formatter.add(generateNamespaceJSDoc(namespaceContent))
+
     if namespaceName.find('.') < 0:
+        if namespaceName == 'Global': # ie. Global.alert -> alert()
+            formatter.add(formatGlobal(namespaceContent))
+            return formatter.getResult();
+            
         formatter.add('var ')
         if namespaceName == 'Titanium':
             namespaceName = 'Ti'
+
+    elif namespaceName.startswith('Global.'): # ie. Global.String prototype extension
+        formatter.add(extendGlobal(namespaceName[7:], namespaceContent))
+        return formatter.getResult();
+
     if namespaceContent['subtype'] == 'proxy':
         formatter.addLine(namespaceName, ' = function() {').addLine('};')
         formatter.addLine(namespaceName, '.prototype = {').newLine()
