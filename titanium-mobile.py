@@ -16,8 +16,10 @@ DEFAULT_HTTP_TIMEOUT_SECS = 10
 
 TITANIUM_VERSION_REGEX = re.compile('\d\.\d\.\d')
 
+starts_with = ('3.','2.')
+
 def retrieveJsca(version):
-    if version.startswith('2.'):
+    if version.startswith(starts_with):
         url = 'http://docs.appcelerator.com/titanium/data/' + version + '/api.json'
     else:
         url = 'http://developer.appcelerator.com/apidoc/mobile/' + version + '/api.json'
