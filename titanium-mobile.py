@@ -38,6 +38,8 @@ def retrieveJsca(version):
             file.close()
         return json.JSONDecoder().decode(content)
     except urllib2.HTTPError as e:
+        if e.code == 404:
+            raise Exception('Documentation for Titanium version ' + version + ' has not been published.')
         raise Exception('Unable to retrieve API for Titanium version ' + version)
 
 
@@ -52,7 +54,7 @@ def writeJsFile(content, filepath):
 
 def errorExit(message=None):
     if message:
-        sys.stderr.write(message)
+        sys.stderr.write(message + '\n')
     sys.exit(1)
 
 
@@ -66,7 +68,10 @@ def main():
         errorExit('ERROR: Invalid titanium version specified. Must be in the format X.X.X')
 
     print('Retrieving Titanium JSCA API for version: ' + version)
-    jsca = retrieveJsca(version)
+    try:
+        jsca = retrieveJsca(version)
+    except Exception, e:
+        errorExit(str(e))
 
     print('Converting API to JavaScript')
     javascript = convertJsca2Js(jsca, version)
