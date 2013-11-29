@@ -7,7 +7,7 @@ __status__ = "Development"
 
 import re
 import sys
-import urllib2
+import urllib
 import json
 import os.path
 from jsca2js import convertJsca2Js
@@ -18,29 +18,43 @@ TITANIUM_VERSION_REGEX = re.compile('\d\.\d\.\d')
 
 starts_with = ('3.','2.')
 
-def retrieveJsca(version):
+def retrieveJsca(version, module='titanium'):
     if version.startswith(starts_with):
-        url = 'http://docs.appcelerator.com/titanium/data/' + version + '/api.json'
+        url = 'http://docs.appcelerator.com/titanium/data/' + version + '/'
     else:
-        url = 'http://developer.appcelerator.com/apidoc/mobile/' + version + '/api.json'
+        url = 'http://developer.appcelerator.com/apidoc/mobile/' + version + '/'
 
-    cache = 'titanium-js/api-' + version + '.json'
+    url += 'api.json' if module == 'titanium' else module + '_api.json'
+
+    cache = 'titanium-js/api-' + module.lower() + '-' + version + '.json'
     try:
-        if os.path.isfile(cache):
-            file = open(cache, 'r')
-            content = file.read()
-            file.close()
-        else:
-            response = urllib2.urlopen(url, timeout=DEFAULT_HTTP_TIMEOUT_SECS)
-            content = response.read()
-            file = open(cache, 'w')
-            file.write(content)
-            file.close()
+        if not os.path.isfile(cache):
+            def reporthook(blocknum, blocksize, totalsize):
+                readsofar = blocknum * blocksize
+                if totalsize > 0:
+                    percent = readsofar * 1e2 / totalsize
+                    s = "\r%5.1f%% %*d / %d" % (
+                        percent, len(str(totalsize)), readsofar, totalsize)
+                    sys.stderr.write(s)
+                    if readsofar >= totalsize: # near the end
+                        sys.stderr.write("\n")
+                else: # total size is unknown
+                    sys.stderr.write("read %d\n" % (readsofar,))
+
+            urllib.urlretrieve(url, cache, reporthook)
+
+        file    = open(cache, 'r')
+        content = file.read()
+        file.close()
+
         return json.JSONDecoder().decode(content)
-    except urllib2.HTTPError as e:
-        if e.code == 404:
-            raise Exception('Documentation for Titanium version ' + version + ' has not been published.')
-        raise Exception('Unable to retrieve API for Titanium version ' + version)
+    except Exception as e:
+        if module == 'titanium':
+            errStr = 'Unable to retrieve API for Titanium version ' + version
+        else:
+            errStr = module + ' was not found'
+
+        raise Exception(errStr)
 
 
 def writeJsFile(content, filepath):
@@ -57,6 +71,24 @@ def errorExit(message=None):
         sys.stderr.write(message + '\n')
     sys.exit(1)
 
+#
+# Function tries to find Alloy framework files with the same version which 
+# Titanium have. If it finds - download it and convert it too
+#
+def tryFindAlloy(version):
+    print 'Searching for Alloy Framework'
+
+    try:
+        jsca = retrieveJsca(version,'alloy')
+    except Exception, e:
+        errorExit('Not found for this version')
+
+    print('Converting API to JavaScript')
+    javascript = convertJsca2Js(jsca, version)
+
+    outputFilePath = 'titanium-js/titanium-mobile-alloy-' + version + '.js'
+    print('Writing JavaScript to file: ' + outputFilePath)
+    writeJsFile(javascript, outputFilePath)
 
 def main():
     if len(sys.argv) != 2:
@@ -79,6 +111,8 @@ def main():
     outputFilePath = 'titanium-js/titanium-mobile-' + version + '.js'
     print('Writing JavaScript to file: ' + outputFilePath)
     writeJsFile(javascript, outputFilePath)
+
+    tryFindAlloy(version)
 
 if __name__ == '__main__':
     #try:

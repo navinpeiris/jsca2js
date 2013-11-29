@@ -17,6 +17,8 @@ smart JS editors' code completion will help you write this kind of stuff easily:
     var win = Ti.UI.createWindow(options);
     win.<completion for Window proxy object>
 
+Also, this project tries to find Alloy framework JSCA files and convert them too.
+
 Converting JSCA JSON to JavaScript
 ----------------------------------
 
@@ -40,3 +42,12 @@ the corresponding JavaScript file.
 The script will produce the JavaScript file in the current directory with a name that follows the following format:
 
     titanium-mobile-<titanium-version>.js
+
+If the script would find Alloy JSCA file too, it will produce one more file with a name:
+
+	titanium-mobile-alloy-<titanium-version>.js
+
+### PS
+
+Be aware that versions of Titanium and Alloy framework can be different. Check firstly [Appcelerator Portal](http://docs.appcelerator.com/titanium/latest/) in JSON SDK 
+section to find the proper latest version of Alloy framework
