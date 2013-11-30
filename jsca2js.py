@@ -85,8 +85,11 @@ def formatSince(decl):
     if 'since' in decl:
         return decl['since']
     res = list()
-    for platform in decl['platforms']:
-        res.append(platform['since'] + ' (' + platform['pretty_name'] + ')')
+    if 'platforms' in decl:
+        for platform in decl['platforms']:
+            res.append(platform['since'] + ' (' + platform['pretty_name'] + ')')
+    else:
+        return False
     return ', '.join(res)
 
 
@@ -96,11 +99,15 @@ def generatePropertyJSDoc(property):
 
     prefix = ' * '
 
-    formatter.addLine(prefix, property[KEYS['value']])
+    if KEYS['value'] in property:
+        formatter.addLine(prefix, property[KEYS['value']])
     if 'since' in property:
         formatter.addLine(prefix, 'platforms: ', ', '.join(getPlatforms(property['platforms'])))
     formatter.addLine(prefix, '@type ', formatType(property['type']))
-    formatter.addLine(prefix, '@since ', formatSince(property))
+
+    sinceVer = formatSince(property)
+    if sinceVer:
+        formatter.addLine(prefix, '@since ', sinceVer)
 
     formatter.addLine(' */')
 
@@ -113,14 +120,15 @@ def generateMethodJSDoc(method):
 
     prefix = ' * '
 
-    formatter.addLine(prefix, method[KEYS['value']])
+    if KEYS['value'] in method:
+        formatter.addLine(prefix, method[KEYS['value']])
 
-    if 'since' in method:
+    if 'platforms' in method and 'since' in method:
         formatter.addLine(prefix, 'platforms: ', ', '.join(getPlatforms(method['platforms'])))
 
     for param in method['parameters']:
         formatter.addLine(prefix, '@param {', formatType(param['type']), '} ',
-            convertIds(param['name']), ' ', param[KEYS['description']])
+            convertIds(param['name']), ' ', (param[KEYS['description']] if KEYS['description'] in param else param['description'] ) or '')
 
     if 'returntype' in method and method['returntype'] == 'void':
         formatter.addLine(prefix, '@returns ', method['returntype'])
@@ -133,7 +141,9 @@ def generateMethodJSDoc(method):
         elif returns['type'] != 'void':
             formatter.addLine(prefix, '@returns ', formatReturn(returns))
 
-    formatter.addLine(prefix, '@since ', formatSince(method))
+    sinceVer = formatSince(method)
+    if sinceVer:
+        formatter.addLine(prefix, '@since ', sinceVer)
 
     formatter.addLine(' */')
 
@@ -148,16 +158,18 @@ def generateNamespaceJSDoc(namespace):
     if 'notes' in namespace and namespace['notes']:
         formatter.addLine(prefix, 'Notes: ', namespace['notes'])
 
-    formatter.addLine(prefix, 'platforms: ', ', '.join(getPlatforms(namespace['platforms'])))
+    if 'platforms' in namespace:
+        formatter.addLine(prefix, 'platforms: ', ', '.join(getPlatforms(namespace['platforms'])))
     if namespace['description']:
         formatter.addLine(prefix, '@namespace ', namespace['description'])
     if 'since' in namespace:
         formatter.addLine(prefix, '@since ', namespace['since'])
 
-    for example in namespace['examples']:
-        formatter.addLine(prefix)
-        formatter.addLine(prefix, '@example ', example['description'])
-        formatter.addLine(prefix, example['code'])
+    if 'examples' in namespace:
+        for example in namespace['examples']:
+            formatter.addLine(prefix)
+            formatter.addLine(prefix, '@example ', example['description'])
+            formatter.addLine(prefix, example['code'])
 
     formatter.addLine(' */')
     return convertLinks(formatter.getResult())
@@ -179,7 +191,8 @@ def formatProperties(namespace):
 
 def formatMethods(namespace):
     formatter = Formatter(METHOD_INDENTATION)
-    for method in namespace['methods']:
+    key = 'methods' if 'methods' in namespace else 'method'
+    for method in namespace[key]:
         formatter.add(generateMethodJSDoc(method))
         formatter.addLine(convertKey(method['name']), ':function(', formatParams(method['parameters']), ") {")
         formatter.addLine('},')
@@ -229,7 +242,7 @@ def formatNamespace(namespace):
         formatter.add(extendGlobal(namespaceName[7:], namespaceContent))
         return formatter.getResult();
 
-    if namespaceContent['subtype'] == 'proxy':
+    if 'subtype' in namespaceContent and namespaceContent['subtype'] == 'proxy':
         formatter.addLine(namespaceName, ' = function() {').addLine('};')
         formatter.addLine(namespaceName, '.prototype = {').newLine()
     else:
