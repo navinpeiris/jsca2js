@@ -76,7 +76,7 @@ def errorExit(message=None):
 # Titanium have. If it finds - download it and convert it too
 #
 def tryFindAlloy(version):
-    print 'Searching for Alloy Framework'
+    print 'Searching for Alloy Framework corresponding to Titanium version ' + version
 
     try:
         jsca = retrieveJsca(version,'alloy')
@@ -91,10 +91,15 @@ def tryFindAlloy(version):
     writeJsFile(javascript, outputFilePath)
 
 def main():
-    if len(sys.argv) != 2:
-        errorExit('USAGE: ' + sys.argv[0] + ' <titanium-version>')
+    if len(sys.argv) < 2 or len(sys.argv) > 3:
+        errorExit('USAGE: ' + sys.argv[0] + ' <titanium-version> (optional)<alloy-titanium-version>')
 
     version = sys.argv[1]
+
+    if len(sys.argv) > 2:
+        alloy_version = sys.argv[2]
+    else:
+        alloy_version = version
 
     if not TITANIUM_VERSION_REGEX.match(version):
         errorExit('ERROR: Invalid titanium version specified. Must be in the format X.X.X')
@@ -112,7 +117,7 @@ def main():
     print('Writing JavaScript to file: ' + outputFilePath)
     writeJsFile(javascript, outputFilePath)
 
-    tryFindAlloy(version)
+    tryFindAlloy(alloy_version)
 
 if __name__ == '__main__':
     #try:
