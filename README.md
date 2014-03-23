@@ -35,7 +35,7 @@ the corresponding JavaScript file.
 
 ### Usage:
 
-    titanium-mobile.py <titanium-version>
+    titanium-mobile.py <titanium-version> (optional)<alloy-titanium-version>
 
 ### Output
 
@@ -50,4 +50,4 @@ If the script would find Alloy JSCA file too, it will produce one more file with
 ### PS
 
 Be aware that versions of Titanium and Alloy framework can be different. Check firstly [Appcelerator Portal](http://docs.appcelerator.com/titanium/latest/) in JSON SDK 
-section to find the proper latest version of Alloy framework
+section to find the proper latest version of Alloy framework. The titanium version for alloy is in the URL for the alloy file (eg. the 1.3.x alloy json is at version 3.2.0 of titanium).
