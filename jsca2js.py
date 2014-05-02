@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+# !/usr/bin/env python
 
 __author__ = "Navin Peiris"
 __copyright__ = "Copyright 2011, Navin Peiris. All rights reserved."
@@ -127,8 +127,12 @@ def generateMethodJSDoc(method):
         formatter.addLine(prefix, 'platforms: ', ', '.join(getPlatforms(method['platforms'])))
 
     for param in method['parameters']:
+        name = convertIds(param['name'])
+        if 'optional' in param and param['optional']:
+            name = "[" + name + "]"
         formatter.addLine(prefix, '@param {', formatType(param['type']), '} ',
-            convertIds(param['name']), ' ', (param[KEYS['description']] if KEYS['description'] in param else param['description'] ) or '')
+                          name, ' ',
+                          (param[KEYS['description']] if KEYS['description'] in param else param['description']) or '')
 
     if 'returntype' in method and method['returntype'] == 'void':
         formatter.addLine(prefix, '@returns ', method['returntype'])
@@ -216,7 +220,8 @@ def extendGlobal(name, namespace):
 
     for method in namespace['methods']:
         formatter.add(generateMethodJSDoc(method))
-        formatter.addLine(name, '.prototype.', convertKey(method['name']), ' = function(', formatParams(method['parameters']), ") {")
+        formatter.addLine(name, '.prototype.', convertKey(method['name']), ' = function(',
+                          formatParams(method['parameters']), ") {")
         formatter.addLine('};')
         formatter.newLine()
     return formatter.getResult()
@@ -230,15 +235,15 @@ def formatNamespace(namespace):
     formatter.add(generateNamespaceJSDoc(namespaceContent))
 
     if namespaceName.find('.') < 0:
-        if namespaceName == 'Global': # ie. Global.alert -> alert()
+        if namespaceName == 'Global':  # ie. Global.alert -> alert()
             formatter.add(formatGlobal(namespaceContent))
             return formatter.getResult();
-            
+
         formatter.add('var ')
         if namespaceName == 'Titanium':
             namespaceName = 'Ti'
 
-    elif namespaceName.startswith('Global.'): # ie. Global.String prototype extension
+    elif namespaceName.startswith('Global.'):  # ie. Global.String prototype extension
         formatter.add(extendGlobal(namespaceName[7:], namespaceContent))
         return formatter.getResult();
 
