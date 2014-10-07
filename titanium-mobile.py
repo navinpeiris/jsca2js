@@ -60,7 +60,7 @@ def retrieveJsca(version, module='titanium'):
 def writeJsFile(content, filepath):
     try:
         file = open(filepath, 'w')
-        file.write(content)
+        file.write(content.encode('utf8'))
         file.close()
     except IOError:
         raise Exception('Unable to write JavaScript to file: ' + TITANIUM_JS_FILE_PATH)
