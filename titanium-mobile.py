@@ -16,7 +16,7 @@ DEFAULT_HTTP_TIMEOUT_SECS = 10
 
 TITANIUM_VERSION_REGEX = re.compile('\d\.\d\.\d')
 
-starts_with = ('3.','2.')
+starts_with = ('4.','3.','2.')
 
 def retrieveJsca(version, module='titanium'):
     if version.startswith(starts_with):
